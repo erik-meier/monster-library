@@ -1,0 +1,284 @@
+<template>
+  <div class="home">
+    <div class="hero">
+      <h1 class="hero-title">Monster Codex</h1>
+      <p class="hero-subtitle">
+        Your comprehensive library for tabletop RPG monsters and encounters
+      </p>
+      
+      <div class="hero-actions">
+        <router-link to="/monsters" class="btn btn-primary">
+          Browse Monsters
+        </router-link>
+        <button class="btn btn-secondary" @click="viewRandomMonster">
+          Random Monster
+        </button>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📖</div>
+          <h3>Monster Library</h3>
+          <p>Browse a comprehensive collection of creatures with detailed stat blocks</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚔️</div>
+          <h3>Encounter Builder</h3>
+          <p>Create balanced encounters for your campaigns (Coming Soon)</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎲</div>
+          <h3>Combat Tools</h3>
+          <p>Initiative tracking and combat management tools (Coming Soon)</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile Ready</h3>
+          <p>Access your monsters on any device, perfect for gaming sessions</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="recent-section">
+      <h2>Quick Access</h2>
+      <div class="quick-links">
+        <router-link 
+          v-for="monster in sampleMonsters" 
+          :key="monster.id"
+          :to="`/monster/${monster.id}`"
+          class="quick-link"
+        >
+          <div class="quick-link-content">
+            <h4>{{ monster.name }}</h4>
+            <span class="cr-badge">CR {{ monster.cr }}</span>
+          </div>
+        </router-link>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Home',
+  data() {
+    return {
+      sampleMonsters: [
+        { id: 'ancient-red-dragon', name: 'Ancient Red Dragon', cr: '24' },
+        { id: 'owlbear', name: 'Owlbear', cr: '3' },
+        { id: 'goblin', name: 'Goblin', cr: '1/4' },
+        { id: 'lich', name: 'Lich', cr: '21' }
+      ]
+    }
+  },
+  methods: {
+    async viewRandomMonster() {
+      // For now, just pick a random sample monster
+      const randomMonster = this.sampleMonsters[Math.floor(Math.random() * this.sampleMonsters.length)]
+      this.$router.push(`/monster/${randomMonster.id}`)
+    }
+  }
+}
+</script>
+
+<style scoped>
+.home {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #8b4513;
+  margin-bottom: 1rem;
+  font-family: 'Libre Baskerville', 'Book Antiqua', serif;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: #8b4513;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #a0522d;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #8b4513;
+  border: 2px solid #8b4513;
+}
+
+.btn-secondary:hover {
+  background-color: #8b4513;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.features {
+  margin: 3rem 0;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  color: #8b4513;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.feature-card p {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.recent-section {
+  margin: 3rem 0;
+}
+
+.recent-section h2 {
+  color: #8b4513;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.quick-link {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  border-left: 4px solid #8b4513;
+}
+
+.quick-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.quick-link-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quick-link h4 {
+  color: #333;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.cr-badge {
+  background-color: #8b4513;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 200px;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-links {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
