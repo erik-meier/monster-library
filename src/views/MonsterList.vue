@@ -84,12 +84,10 @@ export default {
         const response = await fetch('/data/monster_index.json');
         if (!response.ok) throw new Error(`Failed to fetch monster index (${response.status})`);
         const indexData = await response.json();
-        // The structure is { name: { "Monster Name": "path/to/file.json", ... } }
-        const monsters = Object.keys(indexData.name).map(name => ({
-          id: name.replace(/\s+/g, '-').toLowerCase(),
-          name
-        }));
-        this.monsters = monsters.sort((a, b) => a.name.localeCompare(b.name));
+        // The structure is { name: { "monster-id": "Monster Name", ... } }
+        // Transform the index data into an array of { id, name } objects
+        this.monsters = Object.entries(indexData.name).map(([id, name]) => ({ id, name }));
+        this.monsters.sort((a, b) => a.name.localeCompare(b.name));
       } catch (err) {
         this.error = `Failed to load monsters: ${err.message}`;
       } finally {

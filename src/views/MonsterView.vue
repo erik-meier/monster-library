@@ -30,7 +30,7 @@ export default {
     return {
       monster: null,
       loading: true,
-      error: null
+      error: null,
     }
   },
   async mounted() {
@@ -49,16 +49,29 @@ export default {
       this.error = null
       
       try {
-        const response = await fetch(`/data/monsters/${this.monsterId}.json`)
-        if (!response.ok) {
-          throw new Error(`Monster not found: ${this.monsterId}`)
+          const indexResponse = await fetch('/data/monster_index.json');
+          if (!indexResponse.ok) {
+            throw new Error('Failed to load monster index');
+          }
+          const index = await indexResponse.json();
+          const monsterPath = "/data/monsters/" + index.path[this.monsterId];
+          if (!monsterPath) {
+            throw new Error('Monster not found in index');
+          }
+          const monsterResponse = await fetch(monsterPath);
+          if (!monsterResponse.ok) {
+            throw new Error('Failed to load monster details');
+          }
+          const contentType = monsterResponse.headers.get('content-type');
+          if (!contentType || !contentType.includes('application/json')) {
+            throw new Error('Expected JSON but got ' + contentType);
+          }
+          this.monster = await monsterResponse.json();
+        } catch (err) {
+          this.error = err.message;
+        } finally {
+          this.loading = false;
         }
-        this.monster = await response.json()
-      } catch (err) {
-        this.error = err.message
-      } finally {
-        this.loading = false
-      }
     }
   }
 }
