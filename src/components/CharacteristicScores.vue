@@ -7,7 +7,7 @@
     >
       <div class="characteristic-name">{{ getCharacteristicName(characteristic) }}</div>
       <div class="characteristic-value">
-        {{ formatModifier(characteristics[characteristic] || 0) }}
+        {{ formatModifier(characteristics[characteristic].value || 0) }}
       </div>
     </div>
   </div>
@@ -28,18 +28,18 @@ export default {
     }
   },
   methods: {
+    formatModifier(value) {
+      return value >= 0 ? `+${value}` : `${value}`
+    },
     getCharacteristicName(characteristic) {
       const names = {
         might: 'Might',
-        agility: 'Agility', 
+        agility: 'Agility',
         reason: 'Reason',
         intuition: 'Intuition',
         presence: 'Presence'
-      }
-      return names[characteristic] || characteristic
-    },
-    formatModifier(value) {
-      return value >= 0 ? `+${value}` : `${value}`
+      };
+      return names[characteristic];
     }
   }
 }

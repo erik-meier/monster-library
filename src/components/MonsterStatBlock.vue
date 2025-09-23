@@ -4,8 +4,15 @@
     <div class="header">
       <h1 class="monster-name">{{ monster.name }}</h1>
       <div class="monster-meta-container">
-        <p class="monster-meta-left">{{ monster.system.monster.keywords.join(', ') }}, {{ monster.system.monster.organization }} {{ monster.system.monster.role }}</p>
-        <p class="monster-meta-right">EV {{ monster.system.monster.ev }}</p>
+        <p class="monster-meta-left">
+          {{ formatMonsterRole(monster.system.monster) }}
+        </p>
+        <p class="monster-meta-center">
+          {{ monster.system.monster.keywords.join(", ") }}
+        </p>
+        <p class="monster-meta-right">
+          EV {{ monster.system.monster.ev }}
+        </p>
       </div>
     </div>
 
@@ -13,34 +20,26 @@
 
     <!-- Core Stats Grid -->
     <div class="core-stats-grid">
-      <div class="stat-block-row">
-        <div class="stat-group">
-          <span class="stat-label">Size</span>
-          <span class="stat-value">{{ monster.system.combat.size.value }}{{ monster.system.combat.size.letter }}</span>
-        </div>
-        <div class="stat-group">
-          <span class="stat-label">Speed</span>
-          <span class="stat-value">{{ monster.system.movement.value }}</span>
-        </div>
-        <div class="stat-group">
-          <span class="stat-label">Stamina</span>
-          <span class="stat-value">{{ monster.system.stamina.max }}</span>
-        </div>
-        <div class="stat-group">
-          <span class="stat-label">Stability</span>
-          <span class="stat-value">{{ monster.system.combat.stability }}</span>
-        </div>
-        <div class="stat-group">
-          <span class="stat-label">Free Strike</span>
-          <span class="stat-value">{{ monster.system.monster.freeStrike }}</span>
-        </div>
+      <div class="stat-labels">
+        <div class="stat-label">Size</div>
+        <div class="stat-label">Speed</div>
+        <div class="stat-label">Stamina</div>
+        <div class="stat-label">Stability</div>
+        <div class="stat-label">Free Strike</div>
+      </div>
+      <div class="stat-values">
+        <div class="stat-value">{{ monster.system.combat.size.value }}{{ monster.system.combat.size.letter }}</div>
+        <div class="stat-value">{{ monster.system.movement.value }}</div>
+        <div class="stat-value">{{ monster.system.stamina.max }}</div>
+        <div class="stat-value">{{ monster.system.combat.stability }}</div>
+        <div class="stat-value">{{ monster.system.monster.freeStrike }}</div>
       </div>
     </div>
 
     <div class="divider"></div>
 
     <!-- Characteristics -->
-    <CharacteristicScores :characteristics="monster.characteristics" />
+    <CharacteristicScores :characteristics="monster.system.characteristics" />
 
     <div class="divider"></div>
 
@@ -67,25 +66,18 @@
     <div class="divider"></div>
 
     <!-- Abilities -->
-    <div v-if="monster.items && monster.items.length" class="abilities-section">
-      <div v-for="item in monster.items" :key="item.name" class="ability">
-        <h4 class="ability-name">{{ item.name }}</h4>
-        <p class="ability-text" v-html="item.system.description.value"></p>
-      </div>
-    </div>
-
-    <div v-if="monster.actions && monster.actions.length" class="divider"></div>
+    <ActionsList :title="Abilities" :actions="monster.items" :chr="Math.max(...Object.values(monster.system.characteristics).map(c => c.value))" />
   </div>
 </template>
 
 <script>
-import AbilityScores from './AbilityScores.vue'
-import ActionsList from './ActionsList.vue'
+import CharacteristicScores from './CharacteristicScores.vue'
+import ActionsList from './ActionsList.vue';
 
 export default {
   name: 'MonsterStatBlock',
   components: {
-    AbilityScores,
+    CharacteristicScores,
     ActionsList
   },
   props: {
@@ -95,6 +87,9 @@ export default {
     }
   },
   methods: {
+    formatMonsterRole(monster) {
+      return `Level ${monster.level} ${monster.organization}${monster.role ? ' ' + monster.role : ''}`;
+    },
     formatImmunity(immunity) {
       let result = null;
       if (typeof immunity === 'object') {
@@ -155,9 +150,17 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin: 0 0 0.5rem 0;
+  text-transform: capitalize;
 }
 
 .monster-meta-left {
+  margin: 0;
+  font-weight: bold;
+  color: #666;
+  font-size: 1rem;
+}
+
+.monster-meta-center {
   margin: 0;
   font-style: italic;
   color: #666;
@@ -181,22 +184,28 @@ export default {
   margin-bottom: 1rem;
 }
 
-.stat-row {
+.stat-labels {
   display: flex;
-  margin-bottom: 0.25rem;
-  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 
 .stat-label {
   font-weight: bold;
   color: #8b4513;
-  min-width: 140px;
-  flex-shrink: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.stat-values {
+  display: flex;
+  justify-content: space-between;
 }
 
 .stat-value {
   flex: 1;
   color: #333;
+  text-align: center;
 }
 
 .secondary-stats {
