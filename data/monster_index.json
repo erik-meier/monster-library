@@ -1,0 +1,3761 @@
+{
+  "name": {
+    "familiar": "Familiar",
+    "ashen-hoarder": "Ashen Hoarder",
+    "hag-hut": "Hag Hut",
+    "wode-hag": "Wode Hag",
+    "wode-elf-druid": "Wode Elf Druid",
+    "wode-elf-guerrilla": "Wode Elf Guerrilla",
+    "wodenelg": "Wodenelg",
+    "wode-elf-chirurgeon": "Wode Elf Chirurgeon",
+    "wode-elf-gweiadur": "Wode Elf Gweiadur",
+    "wode-elf-yeoman": "Wode Elf Yeoman",
+    "wode-elf-green-seer": "Wode Elf Green Seer",
+    "wode-elf-scout": "Wode Elf Scout",
+    "wode-elf-sentry": "Wode Elf Sentry",
+    "wode-elf-greenskeeper": "Wode Elf Greenskeeper",
+    "wode-elf-lookout": "Wode Elf Lookout",
+    "wode-elf-warleader": "Wode Elf Warleader",
+    "wode-elf-runner": "Wode Elf Runner",
+    "shieldscale-drangolin-(size-3)": "Shieldscale Drangolin (Size 3)",
+    "kobold-artifex": "Kobold Artifex",
+    "kobold-venator": "Kobold Venator",
+    "kobold-adeptus": "Kobold Adeptus",
+    "trained-gummy-brick": "Trained Gummy Brick",
+    "kobold-veles": "Kobold Veles",
+    "shieldscale-drangolin-(size-2)": "Shieldscale Drangolin (Size 2)",
+    "kobold-centurion": "Kobold Centurion",
+    "kobold-signifer": "Kobold Signifer",
+    "kobold-sagittarion": "Kobold Sagittarion",
+    "kobold-princeps": "Kobold Princeps",
+    "kobold-legionary": "Kobold Legionary",
+    "kobold-tiro": "Kobold Tiro",
+    "bale-eye": "Bale Eye",
+    "tormenauk": "Tormenauk",
+    "fangling": "Fangling",
+    "gunge": "Gunge",
+    "grulqin": "Grulqin",
+    "orliq": "Orliq",
+    "fiktin": "Fiktin",
+    "lumbering-egress": "Lumbering Egress",
+    "wobalas": "Wobalas",
+    "muceron": "Muceron",
+    "remasch": "Remasch",
+    "pitling": "Pitling",
+    "bendrak": "Bendrak",
+    "ensnarer": "Ensnarer",
+    "frenzied": "Frenzied",
+    "ruinant": "Ruinant",
+    "torlas": "Torlas",
+    "chorogaunt": "Chorogaunt",
+    "high-elf-palinode": "High Elf Palinode",
+    "high-elf-bloodletter": "High Elf Bloodletter",
+    "soot-crow": "Soot Crow",
+    "high-elf-dawn-mage": "High Elf Dawn Mage",
+    "high-elf-quiver": "High Elf Quiver",
+    "brambleguard": "Brambleguard",
+    "high-elf-deathtouch": "High Elf Deathtouch",
+    "high-elf-wyrd": "High Elf Wyrd",
+    "elemental-mote": "Elemental Mote",
+    "high-elf-zephyr": "High Elf Zephyr",
+    "high-elf-ordinator": "High Elf Ordinator",
+    "ceramic-horse": "Ceramic Horse",
+    "high-elf-orbweaver": "High Elf Orbweaver",
+    "striped-condor-griffon": "Striped Condor Griffon",
+    "griffon": "Griffon",
+    "gnoll-mage-mauler": "Gnoll Mage Mauler",
+    "tusker-demon": "Tusker Demon",
+    "gnoll-carnage": "Gnoll Carnage",
+    "gnoll-marauder": "Gnoll Marauder",
+    "gnoll-bonesplitter": "Gnoll Bonesplitter",
+    "gnoll-abyssal-summoner": "Gnoll Abyssal Summoner",
+    "gnoll-abyssal-archer": "Gnoll Abyssal Archer",
+    "abyssal-hyena": "Abyssal Hyena",
+    "gnoll-cackler": "Gnoll Cackler",
+    "gnoll-wildling": "Gnoll Wildling",
+    "gnoll-chainflail": "Gnoll Chainflail",
+    "wyvern-predator": "Wyvern Predator",
+    "wyvern-lurker": "Wyvern Lurker",
+    "thorn-dragon": "Thorn Dragon",
+    "chimera": "Chimera",
+    "dwarf-launcher": "Dwarf Launcher",
+    "dwarf-axethrower": "Dwarf Axethrower",
+    "dwarf-warden": "Dwarf Warden",
+    "dwarf-catchpole": "Dwarf Catchpole",
+    "servitor-war-walker": "Servitor War Walker",
+    "dwarf-shieldwall": "Dwarf Shieldwall",
+    "dwarf-marauder": "Dwarf Marauder",
+    "dwarf-trapper": "Dwarf Trapper",
+    "dwarf-driver": "Dwarf Driver",
+    "dwarf-reel-winch": "Dwarf Reel Winch",
+    "dwarf-hunter": "Dwarf Hunter",
+    "dwarf-stone-whisperer": "Dwarf Stone Whisperer",
+    "dwarf-gunner": "Dwarf Gunner",
+    "clawfish": "Clawfish",
+    "angulotl-dart": "Angulotl Dart",
+    "angulotl-wave": "Angulotl Wave",
+    "angulotl-needler": "Angulotl Needler",
+    "angulotl-pollywog": "Angulotl Pollywog",
+    "angulotl-cleaver": "Angulotl Cleaver",
+    "angulotl-slink": "Angulotl Slink",
+    "angulotl-daybringer": "Angulotl Daybringer",
+    "fossil-cryptic": "Fossil Cryptic",
+    "time-raider-armiger": "Time Raider Armiger",
+    "time-raider-myriad": "Time Raider Myriad",
+    "time-raider-cannonfall": "Time Raider Cannonfall",
+    "time-raider-archon": "Time Raider Archon",
+    "time-raider-mind-punk": "Time Raider Mind Punk",
+    "time-raider-hijack": "Time Raider Hijack",
+    "time-raider-vertex": "Time Raider Vertex",
+    "time-raider-nemesis": "Time Raider Nemesis",
+    "time-raider-helix": "Time Raider Helix",
+    "time-raider-tyrannis": "Time Raider Tyrannis",
+    "basilisk-tonguesnapper": "Basilisk Tonguesnapper",
+    "basilisk": "Basilisk",
+    "lizardfolk-scaletooth": "Lizardfolk Scaletooth",
+    "lizardfolk-bloodeye": "Lizardfolk Bloodeye",
+    "lizardfolk-grunt": "Lizardfolk Grunt",
+    "lizardfolk-deathrex": "Lizardfolk Deathrex",
+    "lizardfolk-deathrex-shedded-skin": "Lizardfolk Deathrex Shedded Skin",
+    "lizardfolk-shellguard": "Lizardfolk Shellguard",
+    "lizardfolk-tonguer": "Lizardfolk Tonguer",
+    "lizardfolk-skyterror": "Lizardfolk Skyterror",
+    "rival-null": "Rival Null",
+    "rival-elementalist": "Rival Elementalist",
+    "rival-shadow": "Rival Shadow",
+    "rival-fury": "Rival Fury",
+    "rival-conduit": "Rival Conduit",
+    "rival-tactician": "Rival Tactician",
+    "rival-talent": "Rival Talent",
+    "manticore": "Manticore",
+    "ogre-juggernaut": "Ogre Juggernaut",
+    "ogre-tantrum": "Ogre Tantrum",
+    "cyclops": "Cyclops",
+    "ogre-goon": "Ogre Goon",
+    "ogre-blue-blood": "Ogre Blue Blood",
+    "orc-chainlock": "Orc Chainlock",
+    "orc-godcaller": "Orc Godcaller",
+    "mohler": "Mohler",
+    "orc-blitzer": "Orc Blitzer",
+    "orc-glorifier": "Orc Glorifier",
+    "orc-warleader": "Orc Warleader",
+    "orc-juggernaut": "Orc Juggernaut",
+    "orc-eye-of-grole": "Orc Eye of Grole",
+    "orc-rampart": "Orc Rampart",
+    "orc-terranova": "Orc Terranova",
+    "orc-razor": "Orc Razor",
+    "scyza": "Scyza",
+    "orc-bloodspark": "Orc Bloodspark",
+    "orc-bloodrunner": "Orc Bloodrunner",
+    "orc-garotter": "Orc Garotter",
+    "bugbear-sneak": "Bugbear Sneak",
+    "bugbear-roughneck": "Bugbear Roughneck",
+    "bugbear-commander": "Bugbear Commander",
+    "bugbear-knightmare": "Bugbear Knightmare",
+    "bugbear-snare": "Bugbear Snare",
+    "bugbear-channeler": "Bugbear Channeler",
+    "bugbear-mob": "Bugbear Mob",
+    "human-storm-mage": "Human Storm Mage",
+    "human-archer": "Human Archer",
+    "human-guard": "Human Guard",
+    "human-bandit-chief": "Human Bandit Chief",
+    "human-knave": "Human Knave",
+    "human-death-cultist": "Human Death Cultist",
+    "human-apprentice-mage": "Human Apprentice Mage",
+    "human-scoundrel": "Human Scoundrel",
+    "human-death-acolyte": "Human Death Acolyte",
+    "human-blackguard": "Human Blackguard",
+    "human-trickshot": "Human Trickshot",
+    "giant-hawk": "Giant Hawk",
+    "human-brawler": "Human Brawler",
+    "human-raider": "Human Raider",
+    "human-rogue": "Human Rogue",
+    "force-of-earth": "Force of Earth",
+    "field-of-growth": "Field of Growth",
+    "essence-of-storms": "Essence of Storms",
+    "essence-of-tides": "Essence of Tides",
+    "crux-of-fire": "Crux of Fire",
+    "rotting-zombie": "Rotting Zombie",
+    "ghoul": "Ghoul",
+    "soulwight": "Soulwight",
+    "zombie": "Zombie",
+    "shade": "Shade",
+    "ghost": "Ghost",
+    "umbral-stalker": "Umbral Stalker",
+    "decrepit-skeleton": "Decrepit Skeleton",
+    "crawling-claw": "Crawling Claw",
+    "specter": "Specter",
+    "skeleton": "Skeleton",
+    "lightbender-pouncer": "Lightbender Pouncer",
+    "lightbender": "Lightbender",
+    "radenwight-ratcrobat": "Radenwight Ratcrobat",
+    "radenwight-mischiever": "Radenwight Mischiever",
+    "radenwight-swiftpaw": "Radenwight Swiftpaw",
+    "radenwight-scrapper": "Radenwight Scrapper",
+    "radenwight-piper": "Radenwight Piper",
+    "radenwight-maestro": "Radenwight Maestro",
+    "radenwight-redeye": "Radenwight Redeye",
+    "radenwight-bruxer": "Radenwight Bruxer",
+    "minotaur": "Minotaur",
+    "minotaur-lackey": "Minotaur Lackey",
+    "minotaur-bully": "Minotaur Bully",
+    "minotaur-sunderer": "Minotaur Sunderer",
+    "minotaur-stampede": "Minotaur Stampede",
+    "war-dog-crucibite": "War Dog Crucibite",
+    "war-dog-commando": "War Dog Commando",
+    "war-dog-amalgamite": "War Dog Amalgamite",
+    "war-dog-subcommander": "War Dog Subcommander",
+    "war-dog-eviscerite": "War Dog Eviscerite",
+    "war-dog-sharpshooter": "War Dog Sharpshooter",
+    "war-dog-neuronite": "War Dog Neuronite",
+    "war-dog-teletalite": "War Dog Teletalite",
+    "war-dog-tetherite": "War Dog Tetherite",
+    "war-dog-conscript": "War Dog Conscript",
+    "war-dog-pestilite": "War Dog Pestilite",
+    "war-dog-phosphorite": "War Dog Phosphorite",
+    "war-dog-ground-commander": "War Dog Ground Commander",
+    "bredbeddle": "Bredbeddle",
+    "phantom-bredbeddle": "Phantom Bredbeddle",
+    "gloom-dragon": "Gloom Dragon",
+    "animal": "Animal",
+    "big-animal-a": "Big Animal A",
+    "big-animal-b": "Big Animal B",
+    "predator-b": "Predator B",
+    "animal-swarm": "Animal Swarm",
+    "predator-a": "Predator A",
+    "war-spider": "War Spider",
+    "goblin-cursespitter": "Goblin Cursespitter",
+    "goblin-stinker": "Goblin Stinker",
+    "goblin-runner": "Goblin Runner",
+    "goblin-sniper": "Goblin Sniper",
+    "goblin-spinecleaver": "Goblin Spinecleaver",
+    "goblin-assassin": "Goblin Assassin",
+    "goblin-monarch": "Goblin Monarch",
+    "goblin-warrior": "Goblin Warrior",
+    "skitterling": "Skitterling",
+    "goblin-underboss": "Goblin Underboss",
+    "worg": "Worg",
+    "noncombatant": "Noncombatant",
+    "arixx": "Arixx",
+    "werewolf": "Werewolf"
+  },
+  "path": {
+    "familiar": "Summons_SN3x5ZfzmkqqFmny/npc_Familiar_cBkB3TyhBE1UsNGM.json",
+    "ashen-hoarder": "Ashen_Hoarder_GXX2DnZcth3KWFfL/npc_Ashen_Hoarder_EwN0CLt7UmEzQA0J.json",
+    "hag-hut": "Hag_Xlv2aLypC87MCZAS/npc_Hag_Hut_NUhSw7w60od1d4tY.json",
+    "wode-hag": "Hag_Xlv2aLypC87MCZAS/npc_Wode_Hag_FTLYZPKo0ZIJ0n5q.json",
+    "wode-elf-druid": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Druid_yMEa6an4oR6p9Gdh.json",
+    "wode-elf-guerrilla": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Guerrilla_fxrxgxrky46MUDDr.json",
+    "wodenelg": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wodenelg_NQvgDrxoMKgRWnpz.json",
+    "wode-elf-chirurgeon": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Chirurgeon_fdiWz48rMPj1kox9.json",
+    "wode-elf-gweiadur": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Gweiadur_yboi3ynXj3ZDrnEb.json",
+    "wode-elf-yeoman": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Yeoman_vR0BUQxowgWhDyVT.json",
+    "wode-elf-green-seer": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Green_Seer_2DdC6ESKS4KBIQ70.json",
+    "wode-elf-scout": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Scout_qFslxQyHvY6xxv0Q.json",
+    "wode-elf-sentry": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Sentry_zcULy0ecxvFr8BiC.json",
+    "wode-elf-greenskeeper": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Greenskeeper_IwMfsA1NBhr01cC8.json",
+    "wode-elf-lookout": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Lookout_yNSkx0BCKnepbb0W.json",
+    "wode-elf-warleader": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Warleader_yPvu9Qwb9zl29eFZ.json",
+    "wode-elf-runner": "Elves__Wode_Ji95GDWQ7qRIum3n/npc_Wode_Elf_Runner_CONQBjqWcvi4c77X.json",
+    "shieldscale-drangolin-(size-3)": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Shieldscale_Drangolin__Size_3__hYJnlT4BiFTtYYvL.json",
+    "kobold-artifex": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Kobold_Artifex_FHZkr0qisqJxByYK.json",
+    "kobold-venator": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Kobold_Venator_50RUglwzyIkqqnOV.json",
+    "kobold-adeptus": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Kobold_Adeptus_Li9JlvgHDfRJod3p.json",
+    "trained-gummy-brick": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Trained_Gummy_Brick_pSo8ZnNvMIPuwfbb.json",
+    "kobold-veles": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Kobold_Veles_jCFtKlDWA1VRIanb.json",
+    "shieldscale-drangolin-(size-2)": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Shieldscale_Drangolin__Size_2__hcefTkFaqh8e8eXf.json",
+    "kobold-centurion": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Kobold_Centurion_sQnPdTwdehktLvxo.json",
+    "kobold-signifer": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Kobold_Signifer_wjt5ZFcacSsShHMc.json",
+    "kobold-sagittarion": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Kobold_Sagittarion_A2IJElaA0cJlTTsX.json",
+    "kobold-princeps": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Kobold_Princeps_gWjAaDWAa6dtxBNa.json",
+    "kobold-legionary": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Kobold_Legionary_1rcyL6J5vNBSuPV0.json",
+    "kobold-tiro": "Kobolds_SWbDTDwNDPa3JlDQ/npc_Kobold_Tiro_7l9gYevMavIPZfkw.json",
+    "bale-eye": "Demons_PimL3ExIxSjDqzsY/Demons___2nd_Echelon_fgQNWiICJVzfSdZ8/npc_Bale_Eye_zauGBxHmXDDJxFtk.json",
+    "tormenauk": "Demons_PimL3ExIxSjDqzsY/Demons___2nd_Echelon_fgQNWiICJVzfSdZ8/npc_Tormenauk_5Mp3vWzzanrRPdaB.json",
+    "fangling": "Demons_PimL3ExIxSjDqzsY/Demons___2nd_Echelon_fgQNWiICJVzfSdZ8/npc_Fangling_AXJ1tMkKqDLh29ok.json",
+    "gunge": "Demons_PimL3ExIxSjDqzsY/Demons___2nd_Echelon_fgQNWiICJVzfSdZ8/npc_Gunge_cHfXpw0gAtswgtvd.json",
+    "grulqin": "Demons_PimL3ExIxSjDqzsY/Demons___2nd_Echelon_fgQNWiICJVzfSdZ8/npc_Grulqin_WwVzCeCSmWxzavYt.json",
+    "orliq": "Demons_PimL3ExIxSjDqzsY/Demons___2nd_Echelon_fgQNWiICJVzfSdZ8/npc_Orliq_tE6gzFGlFDdSV0nT.json",
+    "fiktin": "Demons_PimL3ExIxSjDqzsY/Demons___2nd_Echelon_fgQNWiICJVzfSdZ8/npc_Fiktin_YQRgvGD96zv7pDVe.json",
+    "lumbering-egress": "Demons_PimL3ExIxSjDqzsY/Demons___2nd_Echelon_fgQNWiICJVzfSdZ8/npc_Lumbering_Egress_PgfTJjJwE66nvFkA.json",
+    "wobalas": "Demons_PimL3ExIxSjDqzsY/Demons___2nd_Echelon_fgQNWiICJVzfSdZ8/npc_Wobalas_FlhenZoGvBLM5GOu.json",
+    "muceron": "Demons_PimL3ExIxSjDqzsY/Demons___1st_Echelon_6DKl8v5ROTdmTFsZ/npc_Muceron_7aFwUBr6PfaX6x2n.json",
+    "remasch": "Demons_PimL3ExIxSjDqzsY/Demons___1st_Echelon_6DKl8v5ROTdmTFsZ/npc_Remasch_fVi6MoM2NGfbv56a.json",
+    "pitling": "Demons_PimL3ExIxSjDqzsY/Demons___1st_Echelon_6DKl8v5ROTdmTFsZ/npc_Pitling_mk2BTfD8Mv9ffTLT.json",
+    "bendrak": "Demons_PimL3ExIxSjDqzsY/Demons___1st_Echelon_6DKl8v5ROTdmTFsZ/npc_Bendrak_E3cI02r1zBQaBr1i.json",
+    "ensnarer": "Demons_PimL3ExIxSjDqzsY/Demons___1st_Echelon_6DKl8v5ROTdmTFsZ/npc_Ensnarer_UhfOrqouXnHoIS8h.json",
+    "frenzied": "Demons_PimL3ExIxSjDqzsY/Demons___1st_Echelon_6DKl8v5ROTdmTFsZ/npc_Frenzied_LObGOqAbCzceqLsZ.json",
+    "ruinant": "Demons_PimL3ExIxSjDqzsY/Demons___1st_Echelon_6DKl8v5ROTdmTFsZ/npc_Ruinant_NBo4IrVK1iFIgSdQ.json",
+    "torlas": "Demons_PimL3ExIxSjDqzsY/Demons___1st_Echelon_6DKl8v5ROTdmTFsZ/npc_Torlas_MH2w4vm4a1H8TzMj.json",
+    "chorogaunt": "Demons_PimL3ExIxSjDqzsY/Demons___1st_Echelon_6DKl8v5ROTdmTFsZ/npc_Chorogaunt_GqufFfTfLOy6sHxx.json",
+    "high-elf-palinode": "Elves__High_Dj36vXEyn9vry4NO/npc_High_Elf_Palinode_UxoLvIdRzgdLOAY0.json",
+    "high-elf-bloodletter": "Elves__High_Dj36vXEyn9vry4NO/npc_High_Elf_Bloodletter_SOI6moopt7T3E9m3.json",
+    "soot-crow": "Elves__High_Dj36vXEyn9vry4NO/npc_Soot_Crow_a44HNNYHX0iwwarq.json",
+    "high-elf-dawn-mage": "Elves__High_Dj36vXEyn9vry4NO/npc_High_Elf_Dawn_Mage_bwvpJYeEjwKRG0kx.json",
+    "high-elf-quiver": "Elves__High_Dj36vXEyn9vry4NO/npc_High_Elf_Quiver_Wwp3YDZcu2BFkqSl.json",
+    "brambleguard": "Elves__High_Dj36vXEyn9vry4NO/npc_Brambleguard_27zPkjxDlEJYgfDi.json",
+    "high-elf-deathtouch": "Elves__High_Dj36vXEyn9vry4NO/npc_High_Elf_Deathtouch_eyTHq6aYy6kKRuwr.json",
+    "high-elf-wyrd": "Elves__High_Dj36vXEyn9vry4NO/npc_High_Elf_Wyrd_rjQGZMW9Bif2TbbL.json",
+    "elemental-mote": "Elves__High_Dj36vXEyn9vry4NO/npc_Elemental_Mote_yYTmi4JwOnyA0w1s.json",
+    "high-elf-zephyr": "Elves__High_Dj36vXEyn9vry4NO/npc_High_Elf_Zephyr_bA6Nv7tqSLXReEZi.json",
+    "high-elf-ordinator": "Elves__High_Dj36vXEyn9vry4NO/npc_High_Elf_Ordinator_GMlN5QMe8ETbrF7p.json",
+    "ceramic-horse": "Elves__High_Dj36vXEyn9vry4NO/npc_Ceramic_Horse_yfV2i9ze6UxOhIeu.json",
+    "high-elf-orbweaver": "Elves__High_Dj36vXEyn9vry4NO/npc_High_Elf_Orbweaver_b2rJVHgioMG34egl.json",
+    "striped-condor-griffon": "Griffon_2v4ZizI6Z9zyx8Ef/npc_Striped_Condor_Griffon_TkLz5ooBo5ojam6p.json",
+    "griffon": "Griffon_2v4ZizI6Z9zyx8Ef/npc_Griffon_F8kSvfxmCGq0lT9V.json",
+    "gnoll-mage-mauler": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Gnoll_Mage_Mauler_y7up2vlFSplqKGN4.json",
+    "tusker-demon": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Tusker_Demon_MRvZrfVxA5VuDAIF.json",
+    "gnoll-carnage": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Gnoll_Carnage_zbLiA7cPHhdpkhYx.json",
+    "gnoll-marauder": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Gnoll_Marauder_NWOCoxzsguUP85Bk.json",
+    "gnoll-bonesplitter": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Gnoll_Bonesplitter_6OtKjm4juYqustqw.json",
+    "gnoll-abyssal-summoner": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Gnoll_Abyssal_Summoner_mNtGL8Wbj8mqpCzy.json",
+    "gnoll-abyssal-archer": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Gnoll_Abyssal_Archer_O6zR2JbaxoIkHbDV.json",
+    "abyssal-hyena": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Abyssal_Hyena_5oS4rixqbIcsziNm.json",
+    "gnoll-cackler": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Gnoll_Cackler_GtHSux5DwCQ0sx2O.json",
+    "gnoll-wildling": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Gnoll_Wildling_Kc2sZy0gSk44lX4N.json",
+    "gnoll-chainflail": "Gnoll_6ZOnXQw3kIUDhVuS/npc_Gnoll_Chainflail_Woh5sK0JwN1uuG0E.json",
+    "wyvern-predator": "Wyverns_ZzGUpnHJpMCEXTe2/npc_Wyvern_Predator_sjhjUvdLiz3ThjEa.json",
+    "wyvern-lurker": "Wyverns_ZzGUpnHJpMCEXTe2/npc_Wyvern_Lurker_GoqG711wxHjEkeKh.json",
+    "thorn-dragon": "Dragons_1xAB7dzxBYqdc7qX/npc_Thorn_Dragon_s8Dvj26hssemdUrw.json",
+    "chimera": "Chimera_kgEKDnLbyyQ3RtLK/npc_Chimera_yMkWRu1AYXU4ukn1.json",
+    "dwarf-launcher": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Launcher_lWlxKkrNrpLbU7VY.json",
+    "dwarf-axethrower": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Axethrower_3HwFmtwoNKEFELHd.json",
+    "dwarf-warden": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Warden_oOrOtSddf3x85DG3.json",
+    "dwarf-catchpole": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Catchpole_D2bOQ1WeHPKrJzWa.json",
+    "servitor-war-walker": "Dwarves_aym4mi5JvyLiP0uV/npc_Servitor_War_Walker_Avq9RV6W2gmatMgI.json",
+    "dwarf-shieldwall": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Shieldwall_wVhtZJ0nZAbxJ5t4.json",
+    "dwarf-marauder": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Marauder_STHK2rkTd1XJ0og0.json",
+    "dwarf-trapper": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Trapper_yYKle19pHJYfKMfQ.json",
+    "dwarf-driver": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Driver_Dh8T75p1oaKXU1P1.json",
+    "dwarf-reel-winch": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Reel_Winch_BndhpOqmRXyhCsJ6.json",
+    "dwarf-hunter": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Hunter_yhGxrXcM6ixD9Bfr.json",
+    "dwarf-stone-whisperer": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Stone_Whisperer_0wvOWjLAh0BeOvCp.json",
+    "dwarf-gunner": "Dwarves_aym4mi5JvyLiP0uV/npc_Dwarf_Gunner_r44P94IM2nXlCbR9.json",
+    "clawfish": "Angulotl_VG4LRhUl5RB1EpzH/npc_Clawfish_rmkUHKgXlVPjsH25.json",
+    "angulotl-dart": "Angulotl_VG4LRhUl5RB1EpzH/npc_Angulotl_Dart_R1CEitcfoGyEwRZY.json",
+    "angulotl-wave": "Angulotl_VG4LRhUl5RB1EpzH/npc_Angulotl_Wave_7suKjfefBKKA5IMH.json",
+    "angulotl-needler": "Angulotl_VG4LRhUl5RB1EpzH/npc_Angulotl_Needler_MJ9n87vH7gWykWh5.json",
+    "angulotl-pollywog": "Angulotl_VG4LRhUl5RB1EpzH/npc_Angulotl_Pollywog_UIerVsSyMb36Bm4D.json",
+    "angulotl-cleaver": "Angulotl_VG4LRhUl5RB1EpzH/npc_Angulotl_Cleaver_G1fUng66ZtDXk6Ts.json",
+    "angulotl-slink": "Angulotl_VG4LRhUl5RB1EpzH/npc_Angulotl_Slink_fWNfG7NHtHubyHk8.json",
+    "angulotl-daybringer": "Angulotl_VG4LRhUl5RB1EpzH/npc_Angulotl_Daybringer_PgfqdFL9IvSAPf3B.json",
+    "fossil-cryptic": "Fossil_Cryptic_1HvjuVmZEBELv9LR/npc_Fossil_Cryptic_GrwkywAeRHqyGAiu.json",
+    "time-raider-armiger": "Time_Raider_9g4m05r5B3CZpEms/npc_Time_Raider_Armiger_a9jPmlDEtQV3Ilof.json",
+    "time-raider-myriad": "Time_Raider_9g4m05r5B3CZpEms/npc_Time_Raider_Myriad_pU91Jsq2kqf4Dino.json",
+    "time-raider-cannonfall": "Time_Raider_9g4m05r5B3CZpEms/npc_Time_Raider_Cannonfall_QK220xei6VbKwMdS.json",
+    "time-raider-archon": "Time_Raider_9g4m05r5B3CZpEms/npc_Time_Raider_Archon_77lNsdTkalkPbwlS.json",
+    "time-raider-mind-punk": "Time_Raider_9g4m05r5B3CZpEms/npc_Time_Raider_Mind_Punk_VoI6hS00REXALNBw.json",
+    "time-raider-hijack": "Time_Raider_9g4m05r5B3CZpEms/npc_Time_Raider_Hijack_HTTWLDPRm5hcquM5.json",
+    "time-raider-vertex": "Time_Raider_9g4m05r5B3CZpEms/npc_Time_Raider_Vertex_1oOzxD3GIL79fY8l.json",
+    "time-raider-nemesis": "Time_Raider_9g4m05r5B3CZpEms/npc_Time_Raider_Nemesis_mw33S1pehccuDhxF.json",
+    "time-raider-helix": "Time_Raider_9g4m05r5B3CZpEms/npc_Time_Raider_Helix_krjUOITR6uvFfyVz.json",
+    "time-raider-tyrannis": "Time_Raider_9g4m05r5B3CZpEms/npc_Time_Raider_Tyrannis_mTkZYmsNyoV0ihlR.json",
+    "basilisk-tonguesnapper": "Basilisk_NRaN60UtPwKNNmqT/npc_Basilisk_Tonguesnapper_i0GhOpwXdSNQzEA9.json",
+    "basilisk": "Basilisk_NRaN60UtPwKNNmqT/npc_Basilisk_8HEM1GaGSfmENWij.json",
+    "lizardfolk-scaletooth": "Lizardfolk_SUuKqERiLGfeX4ZI/npc_Lizardfolk_Scaletooth_HPdefRGqU7sWO73E.json",
+    "lizardfolk-bloodeye": "Lizardfolk_SUuKqERiLGfeX4ZI/npc_Lizardfolk_Bloodeye_3JbQAIlCMulw2YKv.json",
+    "lizardfolk-grunt": "Lizardfolk_SUuKqERiLGfeX4ZI/npc_Lizardfolk_Grunt_W67PiJGnmIc6WzPY.json",
+    "lizardfolk-deathrex": "Lizardfolk_SUuKqERiLGfeX4ZI/npc_Lizardfolk_Deathrex_cmB79a1nLuwimt3P.json",
+    "lizardfolk-deathrex-shedded-skin": "Lizardfolk_SUuKqERiLGfeX4ZI/npc_Lizardfolk_Deathrex_Shedded_Skin_zkHAnfXdQmEJ7sXQ.json",
+    "lizardfolk-shellguard": "Lizardfolk_SUuKqERiLGfeX4ZI/npc_Lizardfolk_Shellguard_JOyUIYLf6M8DLCAa.json",
+    "lizardfolk-tonguer": "Lizardfolk_SUuKqERiLGfeX4ZI/npc_Lizardfolk_Tonguer_7Yyc8rkABIIRqGvP.json",
+    "lizardfolk-skyterror": "Lizardfolk_SUuKqERiLGfeX4ZI/npc_Lizardfolk_Skyterror_nTDHRfhlwXq0FP2R.json",
+    "rival-null": "Rivals_JYYzmjl4NO5qaYjj/1st_Echelon_SFuvViqB8j9ZtHt6/npc_Rival_Null_aoWQpSc0poFyHs60.json",
+    "rival-elementalist": "Rivals_JYYzmjl4NO5qaYjj/1st_Echelon_SFuvViqB8j9ZtHt6/npc_Rival_Elementalist_hTF6vMqyzn5lkLDl.json",
+    "rival-shadow": "Rivals_JYYzmjl4NO5qaYjj/1st_Echelon_SFuvViqB8j9ZtHt6/npc_Rival_Shadow_q7fB8aErCmLG2Lhc.json",
+    "rival-fury": "Rivals_JYYzmjl4NO5qaYjj/1st_Echelon_SFuvViqB8j9ZtHt6/npc_Rival_Fury_ztua9qq0M4CRGTEb.json",
+    "rival-conduit": "Rivals_JYYzmjl4NO5qaYjj/1st_Echelon_SFuvViqB8j9ZtHt6/npc_Rival_Conduit_EhnU9L0Aew7nM5aT.json",
+    "rival-tactician": "Rivals_JYYzmjl4NO5qaYjj/1st_Echelon_SFuvViqB8j9ZtHt6/npc_Rival_Tactician_6ipD4f10bXqtf0jn.json",
+    "rival-talent": "Rivals_JYYzmjl4NO5qaYjj/1st_Echelon_SFuvViqB8j9ZtHt6/npc_Rival_Talent_NNKEcoB39e1P5Rrq.json",
+    "manticore": "Manticore_GjGhUOD7nBaOg0ca/npc_Manticore_8DT1J2OmO380DsYt.json",
+    "ogre-juggernaut": "Ogre_mKoQH5eH9bOQmkFl/npc_Ogre_Juggernaut_0vlpHQthL2FpdZHA.json",
+    "ogre-tantrum": "Ogre_mKoQH5eH9bOQmkFl/npc_Ogre_Tantrum_HNt4p9nPWlekoh0y.json",
+    "cyclops": "Ogre_mKoQH5eH9bOQmkFl/npc_Cyclops_1KvJeGOPiH0umRrb.json",
+    "ogre-goon": "Ogre_mKoQH5eH9bOQmkFl/npc_Ogre_Goon_c9ltn5pwCDDrXdaa.json",
+    "ogre-blue-blood": "Ogre_mKoQH5eH9bOQmkFl/npc_Ogre_Blue_Blood_GfCJmfAMdlEutNaB.json",
+    "orc-chainlock": "Orc_y0titlZe5vQIjdy5/npc_Orc_Chainlock_SJUVvObxUoyDitPo.json",
+    "orc-godcaller": "Orc_y0titlZe5vQIjdy5/npc_Orc_Godcaller_H9g0gJh0NUx79miR.json",
+    "mohler": "Orc_y0titlZe5vQIjdy5/npc_Mohler_My8y85XQkQHc0cqp.json",
+    "orc-blitzer": "Orc_y0titlZe5vQIjdy5/npc_Orc_Blitzer_ZX7i3OxKuj1FPTqJ.json",
+    "orc-glorifier": "Orc_y0titlZe5vQIjdy5/npc_Orc_Glorifier_MRtQiQWUQmy4rUYk.json",
+    "orc-warleader": "Orc_y0titlZe5vQIjdy5/npc_Orc_Warleader_wPqLDtHMO3t3lXOd.json",
+    "orc-juggernaut": "Orc_y0titlZe5vQIjdy5/npc_Orc_Juggernaut_10qn5uruDQSrHuGK.json",
+    "orc-eye-of-grole": "Orc_y0titlZe5vQIjdy5/npc_Orc_Eye_of_Grole_yYWFOFrVfkcLLkZw.json",
+    "orc-rampart": "Orc_y0titlZe5vQIjdy5/npc_Orc_Rampart_uNF9WZsSUAVZKHls.json",
+    "orc-terranova": "Orc_y0titlZe5vQIjdy5/npc_Orc_Terranova_OK7dDOMHmlEa69BN.json",
+    "orc-razor": "Orc_y0titlZe5vQIjdy5/npc_Orc_Razor_EXcMJH79Q4vMPtm4.json",
+    "scyza": "Orc_y0titlZe5vQIjdy5/npc_Scyza_Emq63NO4oAwQQmEZ.json",
+    "orc-bloodspark": "Orc_y0titlZe5vQIjdy5/npc_Orc_Bloodspark_3y2tRRGSXTCi59k3.json",
+    "orc-bloodrunner": "Orc_y0titlZe5vQIjdy5/npc_Orc_Bloodrunner_eKCLLyQ2xbOcJ09p.json",
+    "orc-garotter": "Orc_y0titlZe5vQIjdy5/npc_Orc_Garotter_woWae6aOJtYs39CS.json",
+    "bugbear-sneak": "Bugbears_IOJX0Gbij4nZLkvh/npc_Bugbear_Sneak_v517WAkDcsA2qxit.json",
+    "bugbear-roughneck": "Bugbears_IOJX0Gbij4nZLkvh/npc_Bugbear_Roughneck_kYb1A4yFNpXsTXff.json",
+    "bugbear-commander": "Bugbears_IOJX0Gbij4nZLkvh/npc_Bugbear_Commander_CfTBjxc0S0zbpYFU.json",
+    "bugbear-knightmare": "Bugbears_IOJX0Gbij4nZLkvh/npc_Bugbear_Knightmare_BUM1285qoUoaorwL.json",
+    "bugbear-snare": "Bugbears_IOJX0Gbij4nZLkvh/npc_Bugbear_Snare_YpvSj9tJzpiPSmLl.json",
+    "bugbear-channeler": "Bugbears_IOJX0Gbij4nZLkvh/npc_Bugbear_Channeler_ZaENuomw1aFn4Ffw.json",
+    "bugbear-mob": "Bugbears_IOJX0Gbij4nZLkvh/npc_Bugbear_Mob_1uTE9K7c8YUOVjhm.json",
+    "human-storm-mage": "Humans_zBFE173ZFzlEPX1o/npc_Human_Storm_Mage_jDsNfbQ953UKHmCj.json",
+    "human-archer": "Humans_zBFE173ZFzlEPX1o/npc_Human_Archer_DIT7gzYgU7pwjP4j.json",
+    "human-guard": "Humans_zBFE173ZFzlEPX1o/npc_Human_Guard_3sZIJ1aJRhMF6iK5.json",
+    "human-bandit-chief": "Humans_zBFE173ZFzlEPX1o/npc_Human_Bandit_Chief_uuMc9pmKbvUdWMOz.json",
+    "human-knave": "Humans_zBFE173ZFzlEPX1o/npc_Human_Knave_hgK8SgOIzJ0bcAtf.json",
+    "human-death-cultist": "Humans_zBFE173ZFzlEPX1o/npc_Human_Death_Cultist_CkZ2TBOk3gFe9Klt.json",
+    "human-apprentice-mage": "Humans_zBFE173ZFzlEPX1o/npc_Human_Apprentice_Mage_WjcqXlH2CzC9vI7f.json",
+    "human-scoundrel": "Humans_zBFE173ZFzlEPX1o/npc_Human_Scoundrel_D6Lb4iGCwZfYh1GB.json",
+    "human-death-acolyte": "Humans_zBFE173ZFzlEPX1o/npc_Human_Death_Acolyte_SH0LmY9NtWTp7oNV.json",
+    "human-blackguard": "Humans_zBFE173ZFzlEPX1o/npc_Human_Blackguard_h0iw7LTM1djcBzn9.json",
+    "human-trickshot": "Humans_zBFE173ZFzlEPX1o/npc_Human_Trickshot_aky9I9tbWEWgNQ25.json",
+    "giant-hawk": "Humans_zBFE173ZFzlEPX1o/npc_Giant_Hawk_5GcG7VaEuDKSbO5Q.json",
+    "human-brawler": "Humans_zBFE173ZFzlEPX1o/npc_Human_Brawler_DSEkUDEnQeS4LsWr.json",
+    "human-raider": "Humans_zBFE173ZFzlEPX1o/npc_Human_Raider_wTq3vb6iy92uivRO.json",
+    "human-rogue": "Humans_zBFE173ZFzlEPX1o/npc_Human_Rogue_dhs3FHouwzVD0Acn.json",
+    "force-of-earth": "Elementals_hatSTUdV3EGvlnvE/npc_Force_of_Earth_B31nPHgv2Ntimj4M.json",
+    "field-of-growth": "Elementals_hatSTUdV3EGvlnvE/npc_Field_of_Growth_PXW5yXKwvf2N0voc.json",
+    "essence-of-storms": "Elementals_hatSTUdV3EGvlnvE/npc_Essence_of_Storms_o7svM5XupL9ptozE.json",
+    "essence-of-tides": "Elementals_hatSTUdV3EGvlnvE/npc_Essence_of_Tides_5zvKKDS1CYv21d3d.json",
+    "crux-of-fire": "Elementals_hatSTUdV3EGvlnvE/npc_Crux_of_Fire_65JYST23SoHMm6FN.json",
+    "rotting-zombie": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Rotting_Zombie_2KiVCGcov7SmCkWU.json",
+    "ghoul": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Ghoul_DXM53Md2acyvSVNo.json",
+    "soulwight": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Soulwight_NkO0TYxtdVNVRjYB.json",
+    "zombie": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Zombie_G7bFOGyqq0Z4xJ7F.json",
+    "shade": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Shade_6HlLZCuKCPy73OCb.json",
+    "ghost": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Ghost_hCxrYde7uzidWWWp.json",
+    "umbral-stalker": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Umbral_Stalker_vAz4ctYuex5Fk7W8.json",
+    "decrepit-skeleton": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Decrepit_Skeleton_HTNu9LRNpFYtB5G6.json",
+    "crawling-claw": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Crawling_Claw_V8CFcw8SAUNkcm7P.json",
+    "specter": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Specter_4uRj8zIBAqukwmrN.json",
+    "skeleton": "Undead_Awroz7YqtpURNlF5/1st_Echelon_qZ8RbdImvXjWh2yn/npc_Skeleton_2h6PhbOuGeraFQZm.json",
+    "lightbender-pouncer": "Lightbender_nnQsDoBty46nEVFU/npc_Lightbender_Pouncer_nbbnCsLdqvFr4NIr.json",
+    "lightbender": "Lightbender_nnQsDoBty46nEVFU/npc_Lightbender_XucGqdcsBppnBCLq.json",
+    "radenwight-ratcrobat": "Radenwights_DQYQ5rpRsohluWYD/npc_Radenwight_Ratcrobat_EvGzzdiWClb2el1r.json",
+    "radenwight-mischiever": "Radenwights_DQYQ5rpRsohluWYD/npc_Radenwight_Mischiever_loKZoNvfv5OAZ6Vz.json",
+    "radenwight-swiftpaw": "Radenwights_DQYQ5rpRsohluWYD/npc_Radenwight_Swiftpaw_5Y3a5k56mKlmygyf.json",
+    "radenwight-scrapper": "Radenwights_DQYQ5rpRsohluWYD/npc_Radenwight_Scrapper_XB2mjnDsGqfefASD.json",
+    "radenwight-piper": "Radenwights_DQYQ5rpRsohluWYD/npc_Radenwight_Piper_0gav5RD1rRDqtxqw.json",
+    "radenwight-maestro": "Radenwights_DQYQ5rpRsohluWYD/npc_Radenwight_Maestro_mkez5eqX6Les2RJ9.json",
+    "radenwight-redeye": "Radenwights_DQYQ5rpRsohluWYD/npc_Radenwight_Redeye_KwdPnQj8bc4JlTqB.json",
+    "radenwight-bruxer": "Radenwights_DQYQ5rpRsohluWYD/npc_Radenwight_Bruxer_HSUqmBWYzQjG5khd.json",
+    "minotaur": "Minotaurs_4k38bNEZVVE6p4vF/npc_Minotaur_1bpsxvntgDqnitLO.json",
+    "minotaur-lackey": "Minotaurs_4k38bNEZVVE6p4vF/npc_Minotaur_Lackey_DaQEYF7pWREuafBC.json",
+    "minotaur-bully": "Minotaurs_4k38bNEZVVE6p4vF/npc_Minotaur_Bully_7KbaTJ3urd1TCguP.json",
+    "minotaur-sunderer": "Minotaurs_4k38bNEZVVE6p4vF/npc_Minotaur_Sunderer_slz721CAB9N1vJyz.json",
+    "minotaur-stampede": "Minotaurs_4k38bNEZVVE6p4vF/npc_Minotaur_Stampede_YOICAI5K97ZwsJu4.json",
+    "war-dog-crucibite": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Crucibite_Ea3lpqgtaFP3vqny.json",
+    "war-dog-commando": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Commando_9MiuXFcZ5VQYbqKz.json",
+    "war-dog-amalgamite": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Amalgamite_pGCtSYaNWIm3Y34L.json",
+    "war-dog-subcommander": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Subcommander_VkQVkyhM4k3WoLKh.json",
+    "war-dog-eviscerite": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Eviscerite_nBEAm8zwmdl21L7x.json",
+    "war-dog-sharpshooter": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Sharpshooter_HrovSrIU6dYZaTYS.json",
+    "war-dog-neuronite": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Neuronite_mxmtKA1s4exOuZbS.json",
+    "war-dog-teletalite": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Teletalite_PcJcUvof9jZgqyIJ.json",
+    "war-dog-tetherite": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Tetherite_1UwUQqkYXpUhxwK5.json",
+    "war-dog-conscript": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Conscript_vbinl6G2ypCaRjSh.json",
+    "war-dog-pestilite": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Pestilite_MP2Ev6fcBPIStnEL.json",
+    "war-dog-phosphorite": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Phosphorite_kZiETCGT2OHBcd5a.json",
+    "war-dog-ground-commander": "War_Dogs_RKA1vCuIIGKGpRsZ/War_Dogs___1st_Echelon_DYl6Qljp14rd7e7s/npc_War_Dog_Ground_Commander_Y2m150vDEZJprWgF.json",
+    "bredbeddle": "Bredbeddle_O7zizfGvMA07rRKX/npc_Bredbeddle_wzvNh7FYggjoU6Hv.json",
+    "phantom-bredbeddle": "Bredbeddle_O7zizfGvMA07rRKX/npc_Phantom_Bredbeddle_gYUnLS5eDPZZtcGA.json",
+    "gloom-dragon": "Gloom_Dragon_gsy78qjGN57mu5so/npc_Gloom_Dragon_awNlSowdCYs0igx0.json",
+    "animal": "Animal_OygqHojAVhOF59fl/npc_Animal_G3wVCAmEi7MwsOW3.json",
+    "big-animal-a": "Animal_OygqHojAVhOF59fl/npc_Big_Animal_A_UBTaAFYnIGKvvAOj.json",
+    "big-animal-b": "Animal_OygqHojAVhOF59fl/npc_Big_Animal_B_OkRrwcUUPTtqBF25.json",
+    "predator-b": "Animal_OygqHojAVhOF59fl/npc_Predator_B_Y2AAe1rDENo3rDzo.json",
+    "animal-swarm": "Animal_OygqHojAVhOF59fl/npc_Animal_Swarm_8hyc2xbJy825dRTZ.json",
+    "predator-a": "Animal_OygqHojAVhOF59fl/npc_Predator_A_XXEwAvRCXvey9KVr.json",
+    "war-spider": "Goblins_iEPVvWezLlidfEbg/npc_War_Spider_B4gltUWwUjv812ka.json",
+    "goblin-cursespitter": "Goblins_iEPVvWezLlidfEbg/npc_Goblin_Cursespitter_ABCSkDOKuSHQOWU7.json",
+    "goblin-stinker": "Goblins_iEPVvWezLlidfEbg/npc_Goblin_Stinker_CWcc0FNUfUaiYyH7.json",
+    "goblin-runner": "Goblins_iEPVvWezLlidfEbg/npc_Goblin_Runner_Xw0gZCS09gdMjaw8.json",
+    "goblin-sniper": "Goblins_iEPVvWezLlidfEbg/npc_Goblin_Sniper_E637uEMv0INA5LPW.json",
+    "goblin-spinecleaver": "Goblins_iEPVvWezLlidfEbg/npc_Goblin_Spinecleaver_Mdk2jvvw26BaR1HL.json",
+    "goblin-assassin": "Goblins_iEPVvWezLlidfEbg/npc_Goblin_Assassin_6bpHvy0N4rObJBZq.json",
+    "goblin-monarch": "Goblins_iEPVvWezLlidfEbg/npc_Goblin_Monarch_Vxxc0EcLHPPnpSbK.json",
+    "goblin-warrior": "Goblins_iEPVvWezLlidfEbg/npc_Goblin_Warrior_6SR8siFeC5lWUzoO.json",
+    "skitterling": "Goblins_iEPVvWezLlidfEbg/npc_Skitterling_CtnlwvEcJb9YdZQ3.json",
+    "goblin-underboss": "Goblins_iEPVvWezLlidfEbg/npc_Goblin_Underboss_RTBXFv1dj9NBfVRU.json",
+    "worg": "Goblins_iEPVvWezLlidfEbg/npc_Worg_6M62ZA9L6xuu0AHz.json",
+    "noncombatant": "Harmless_Creatures_uzDlhwRlxqGNSV32/npc_Noncombatant_n6KfPTM9QRvDr4x2.json",
+    "arixx": "Arixx_EG5wfhMcZMyNvf8C/npc_Arixx_3B9NyJN29f9wjIpa.json",
+    "werewolf": "Werebeast_lOWAfMfJap4eXijF/npc_Werewolf_0gfYrTzOgWNi0QBy.json"
+  },
+  "keyword": {
+    "animal": [
+      "familiar",
+      "abyssal-hyena",
+      "clawfish",
+      "mohler",
+      "scyza",
+      "giant-hawk",
+      "animal",
+      "big-animal-a",
+      "big-animal-b",
+      "predator-b",
+      "animal-swarm",
+      "predator-a",
+      "war-spider",
+      "skitterling",
+      "worg",
+      "noncombatant"
+    ],
+    "construct": [
+      "ashen-hoarder"
+    ],
+    "undead": [
+      "ashen-hoarder",
+      "ghoul",
+      "soulwight",
+      "zombie",
+      "shade",
+      "ghost",
+      "umbral-stalker",
+      "decrepit-skeleton",
+      "specter",
+      "skeleton"
+    ],
+    "fey": [
+      "wode-hag",
+      "wode-elf-druid",
+      "wode-elf-guerrilla",
+      "wode-elf-chirurgeon",
+      "wode-elf-gweiadur",
+      "wode-elf-yeoman",
+      "wode-elf-green-seer",
+      "wode-elf-scout",
+      "wode-elf-sentry",
+      "wode-elf-greenskeeper",
+      "wode-elf-lookout",
+      "wode-elf-warleader",
+      "wode-elf-runner",
+      "high-elf-palinode",
+      "high-elf-bloodletter",
+      "high-elf-dawn-mage",
+      "high-elf-quiver",
+      "high-elf-deathtouch",
+      "high-elf-wyrd",
+      "high-elf-zephyr",
+      "high-elf-ordinator",
+      "high-elf-orbweaver",
+      "bugbear-sneak",
+      "bugbear-roughneck",
+      "bugbear-knightmare",
+      "bugbear-snare",
+      "bugbear-channeler",
+      "bugbear-mob"
+    ],
+    "humanoid": [
+      "wode-elf-druid",
+      "wode-elf-guerrilla",
+      "wode-elf-chirurgeon",
+      "wode-elf-gweiadur",
+      "wode-elf-yeoman",
+      "wode-elf-green-seer",
+      "wode-elf-scout",
+      "wode-elf-sentry",
+      "wode-elf-greenskeeper",
+      "wode-elf-lookout",
+      "wode-elf-runner",
+      "shieldscale-drangolin-(size-3)",
+      "kobold-artifex",
+      "kobold-venator",
+      "kobold-adeptus",
+      "kobold-veles",
+      "shieldscale-drangolin-(size-2)",
+      "kobold-centurion",
+      "kobold-signifer",
+      "kobold-sagittarion",
+      "kobold-princeps",
+      "kobold-legionary",
+      "kobold-tiro",
+      "high-elf-palinode",
+      "high-elf-bloodletter",
+      "high-elf-dawn-mage",
+      "high-elf-quiver",
+      "high-elf-deathtouch",
+      "high-elf-wyrd",
+      "high-elf-zephyr",
+      "high-elf-ordinator",
+      "high-elf-orbweaver",
+      "dwarf-launcher",
+      "dwarf-axethrower",
+      "dwarf-warden",
+      "dwarf-catchpole",
+      "servitor-war-walker",
+      "dwarf-shieldwall",
+      "dwarf-marauder",
+      "dwarf-trapper",
+      "dwarf-driver",
+      "dwarf-reel-winch",
+      "dwarf-hunter",
+      "dwarf-stone-whisperer",
+      "dwarf-gunner",
+      "angulotl-dart",
+      "angulotl-wave",
+      "angulotl-needler",
+      "angulotl-pollywog",
+      "angulotl-cleaver",
+      "angulotl-slink",
+      "angulotl-daybringer",
+      "time-raider-armiger",
+      "time-raider-myriad",
+      "time-raider-cannonfall",
+      "time-raider-archon",
+      "time-raider-mind-punk",
+      "time-raider-hijack",
+      "time-raider-vertex",
+      "time-raider-nemesis",
+      "time-raider-helix",
+      "time-raider-tyrannis",
+      "lizardfolk-scaletooth",
+      "lizardfolk-bloodeye",
+      "lizardfolk-grunt",
+      "lizardfolk-deathrex",
+      "lizardfolk-deathrex-shedded-skin",
+      "lizardfolk-shellguard",
+      "lizardfolk-tonguer",
+      "lizardfolk-skyterror",
+      "rival-null",
+      "rival-elementalist",
+      "rival-shadow",
+      "rival-fury",
+      "rival-conduit",
+      "rival-tactician",
+      "rival-talent",
+      "orc-chainlock",
+      "orc-godcaller",
+      "orc-blitzer",
+      "orc-glorifier",
+      "orc-warleader",
+      "orc-juggernaut",
+      "orc-eye-of-grole",
+      "orc-rampart",
+      "orc-terranova",
+      "orc-razor",
+      "orc-bloodspark",
+      "orc-bloodrunner",
+      "orc-garotter",
+      "bugbear-sneak",
+      "bugbear-roughneck",
+      "bugbear-commander",
+      "bugbear-knightmare",
+      "bugbear-snare",
+      "bugbear-channeler",
+      "bugbear-mob",
+      "human-storm-mage",
+      "human-archer",
+      "human-guard",
+      "human-bandit-chief",
+      "human-knave",
+      "human-death-cultist",
+      "human-apprentice-mage",
+      "human-scoundrel",
+      "human-death-acolyte",
+      "human-blackguard",
+      "human-trickshot",
+      "human-brawler",
+      "human-rogue",
+      "radenwight-ratcrobat",
+      "radenwight-mischiever",
+      "radenwight-swiftpaw",
+      "radenwight-scrapper",
+      "radenwight-piper",
+      "radenwight-maestro",
+      "radenwight-redeye",
+      "radenwight-bruxer",
+      "minotaur",
+      "minotaur-lackey",
+      "minotaur-bully",
+      "minotaur-sunderer",
+      "minotaur-stampede",
+      "war-dog-crucibite",
+      "war-dog-commando",
+      "war-dog-amalgamite",
+      "war-dog-subcommander",
+      "war-dog-eviscerite",
+      "war-dog-sharpshooter",
+      "war-dog-neuronite",
+      "war-dog-teletalite",
+      "war-dog-tetherite",
+      "war-dog-conscript",
+      "war-dog-pestilite",
+      "war-dog-phosphorite",
+      "war-dog-ground-commander",
+      "goblin-cursespitter",
+      "goblin-stinker",
+      "goblin-sniper",
+      "goblin-spinecleaver",
+      "goblin-assassin",
+      "goblin-monarch",
+      "goblin-warrior",
+      "goblin-underboss",
+      "noncombatant",
+      "werewolf"
+    ],
+    "plant": [
+      "wodenelg"
+    ],
+    "soulless": [
+      "trained-gummy-brick",
+      "war-dog-crucibite",
+      "war-dog-commando",
+      "war-dog-amalgamite",
+      "war-dog-subcommander",
+      "war-dog-eviscerite",
+      "war-dog-sharpshooter",
+      "war-dog-neuronite",
+      "war-dog-teletalite",
+      "war-dog-tetherite",
+      "war-dog-conscript",
+      "war-dog-phosphorite"
+    ],
+    "abyssal": [
+      "bale-eye",
+      "tormenauk",
+      "fangling",
+      "gunge",
+      "grulqin",
+      "orliq",
+      "fiktin",
+      "lumbering-egress",
+      "wobalas",
+      "muceron",
+      "remasch",
+      "pitling",
+      "bendrak",
+      "ensnarer",
+      "frenzied",
+      "ruinant",
+      "torlas",
+      "chorogaunt",
+      "gnoll-mage-mauler",
+      "tusker-demon",
+      "gnoll-carnage",
+      "gnoll-marauder",
+      "gnoll-bonesplitter",
+      "gnoll-abyssal-summoner",
+      "gnoll-abyssal-archer",
+      "abyssal-hyena",
+      "gnoll-cackler",
+      "gnoll-wildling",
+      "gnoll-chainflail"
+    ],
+    "elemental": [
+      "soot-crow",
+      "brambleguard",
+      "elemental-mote",
+      "ceramic-horse",
+      "thorn-dragon",
+      "fossil-cryptic",
+      "force-of-earth",
+      "field-of-growth",
+      "essence-of-storms",
+      "essence-of-tides",
+      "crux-of-fire",
+      "gloom-dragon"
+    ],
+    "beast": [
+      "striped-condor-griffon",
+      "griffon",
+      "wyvern-predator",
+      "wyvern-lurker",
+      "chimera",
+      "basilisk-tonguesnapper",
+      "basilisk",
+      "manticore",
+      "lightbender-pouncer",
+      "lightbender",
+      "arixx"
+    ],
+    "dragon": [
+      "thorn-dragon",
+      "gloom-dragon"
+    ],
+    "giant": [
+      "ogre-juggernaut",
+      "ogre-tantrum",
+      "cyclops",
+      "ogre-goon",
+      "ogre-blue-blood",
+      "bredbeddle",
+      "phantom-bredbeddle"
+    ],
+    "accursed": [
+      "minotaur",
+      "minotaur-lackey",
+      "minotaur-bully",
+      "minotaur-sunderer",
+      "minotaur-stampede",
+      "werewolf"
+    ],
+    "swarm": [
+      "minotaur-stampede",
+      "animal-swarm"
+    ]
+  },
+  "ev": {
+    "4": [
+      "familiar",
+      "hag-hut",
+      "remasch",
+      "bendrak",
+      "gnoll-mage-mauler",
+      "gnoll-marauder",
+      "gnoll-bonesplitter",
+      "gnoll-abyssal-summoner",
+      "gnoll-abyssal-archer",
+      "abyssal-hyena",
+      "gnoll-cackler",
+      "gnoll-wildling",
+      "gnoll-chainflail",
+      "dwarf-catchpole",
+      "angulotl-slink",
+      "human-apprentice-mage",
+      "war-dog-amalgamite",
+      "war-dog-subcommander",
+      "war-dog-phosphorite"
+    ],
+    "72": [
+      "ashen-hoarder",
+      "manticore",
+      "gloom-dragon"
+    ],
+    "60": [
+      "wode-hag",
+      "chimera",
+      "bredbeddle",
+      "phantom-bredbeddle"
+    ],
+    "8": [
+      "wode-elf-druid",
+      "wode-elf-chirurgeon",
+      "tormenauk",
+      "brambleguard",
+      "high-elf-deathtouch",
+      "dwarf-launcher",
+      "dwarf-warden",
+      "orc-rampart",
+      "orc-terranova",
+      "human-knave",
+      "human-death-cultist"
+    ],
+    "10": [
+      "wode-elf-guerrilla",
+      "wode-elf-gweiadur",
+      "high-elf-wyrd",
+      "high-elf-orbweaver",
+      "dwarf-shieldwall",
+      "dwarf-stone-whisperer",
+      "time-raider-armiger",
+      "time-raider-cannonfall",
+      "time-raider-mind-punk",
+      "time-raider-hijack",
+      "time-raider-vertex",
+      "time-raider-nemesis",
+      "time-raider-helix",
+      "orc-juggernaut",
+      "orc-bloodrunner",
+      "bugbear-knightmare",
+      "human-storm-mage",
+      "minotaur-lackey",
+      "minotaur-bully"
+    ],
+    "6": [
+      "wodenelg",
+      "wode-elf-green-seer",
+      "wode-elf-sentry",
+      "wode-elf-greenskeeper",
+      "fangling",
+      "gunge",
+      "grulqin",
+      "orliq",
+      "wobalas",
+      "high-elf-palinode",
+      "high-elf-bloodletter",
+      "high-elf-zephyr",
+      "ceramic-horse",
+      "dwarf-trapper",
+      "dwarf-reel-winch",
+      "dwarf-gunner",
+      "lizardfolk-scaletooth",
+      "lizardfolk-bloodeye",
+      "lizardfolk-skyterror",
+      "orc-chainlock",
+      "orc-godcaller",
+      "orc-eye-of-grole",
+      "orc-garotter",
+      "human-scoundrel",
+      "human-trickshot",
+      "giant-hawk",
+      "human-brawler",
+      "radenwight-ratcrobat",
+      "radenwight-piper",
+      "radenwight-bruxer"
+    ],
+    "3": [
+      "wode-elf-yeoman",
+      "wode-elf-scout",
+      "wode-elf-lookout",
+      "wode-elf-runner",
+      "kobold-artifex",
+      "kobold-venator",
+      "kobold-adeptus",
+      "kobold-veles",
+      "kobold-signifer",
+      "kobold-sagittarion",
+      "kobold-princeps",
+      "kobold-legionary",
+      "kobold-tiro",
+      "pitling",
+      "ensnarer",
+      "frenzied",
+      "ruinant",
+      "torlas",
+      "soot-crow",
+      "high-elf-dawn-mage",
+      "high-elf-quiver",
+      "elemental-mote",
+      "dwarf-axethrower",
+      "dwarf-driver",
+      "dwarf-hunter",
+      "clawfish",
+      "angulotl-dart",
+      "angulotl-wave",
+      "angulotl-needler",
+      "angulotl-pollywog",
+      "angulotl-cleaver",
+      "lizardfolk-grunt",
+      "lizardfolk-shellguard",
+      "lizardfolk-tonguer",
+      "mohler",
+      "orc-blitzer",
+      "orc-glorifier",
+      "orc-razor",
+      "orc-bloodspark",
+      "human-archer",
+      "human-guard",
+      "human-death-acolyte",
+      "human-raider",
+      "human-rogue",
+      "rotting-zombie",
+      "ghoul",
+      "soulwight",
+      "zombie",
+      "shade",
+      "umbral-stalker",
+      "decrepit-skeleton",
+      "crawling-claw",
+      "specter",
+      "skeleton",
+      "radenwight-mischiever",
+      "radenwight-swiftpaw",
+      "radenwight-scrapper",
+      "radenwight-redeye",
+      "war-dog-crucibite",
+      "war-dog-commando",
+      "war-dog-eviscerite",
+      "war-dog-sharpshooter",
+      "war-dog-neuronite",
+      "war-dog-teletalite",
+      "war-dog-tetherite",
+      "war-dog-conscript",
+      "goblin-cursespitter",
+      "goblin-stinker",
+      "goblin-runner",
+      "goblin-sniper",
+      "goblin-spinecleaver",
+      "goblin-assassin",
+      "goblin-warrior",
+      "skitterling",
+      "goblin-underboss",
+      "worg"
+    ],
+    "20": [
+      "wode-elf-warleader",
+      "chorogaunt",
+      "high-elf-ordinator",
+      "dwarf-marauder",
+      "time-raider-tyrannis",
+      "orc-warleader",
+      "scyza",
+      "human-bandit-chief",
+      "force-of-earth",
+      "essence-of-storms",
+      "essence-of-tides",
+      "crux-of-fire",
+      "lightbender-pouncer",
+      "lightbender",
+      "minotaur",
+      "minotaur-sunderer",
+      "war-dog-ground-commander"
+    ],
+    "12": [
+      "shieldscale-drangolin-(size-3)",
+      "trained-gummy-brick",
+      "shieldscale-drangolin-(size-2)",
+      "kobold-centurion",
+      "servitor-war-walker",
+      "angulotl-daybringer",
+      "basilisk-tonguesnapper",
+      "basilisk",
+      "lizardfolk-deathrex",
+      "lizardfolk-deathrex-shedded-skin",
+      "cyclops",
+      "human-blackguard",
+      "ghost",
+      "radenwight-maestro",
+      "minotaur-stampede",
+      "animal",
+      "big-animal-a",
+      "animal-swarm",
+      "predator-a",
+      "war-spider",
+      "goblin-monarch"
+    ],
+    "7": [
+      "bale-eye",
+      "fiktin",
+      "bugbear-snare",
+      "bugbear-mob"
+    ],
+    "32": [
+      "lumbering-egress"
+    ],
+    "5": [
+      "muceron",
+      "time-raider-myriad",
+      "time-raider-archon",
+      "war-dog-pestilite"
+    ],
+    "16": [
+      "striped-condor-griffon",
+      "griffon",
+      "tusker-demon",
+      "gnoll-carnage",
+      "rival-null",
+      "rival-elementalist",
+      "rival-shadow",
+      "rival-fury",
+      "rival-conduit",
+      "rival-tactician",
+      "rival-talent",
+      "ogre-juggernaut",
+      "ogre-goon",
+      "bugbear-sneak",
+      "bugbear-roughneck",
+      "bugbear-commander",
+      "bugbear-channeler",
+      "big-animal-b",
+      "predator-b"
+    ],
+    "24": [
+      "wyvern-predator",
+      "wyvern-lurker"
+    ],
+    "48": [
+      "thorn-dragon",
+      "fossil-cryptic"
+    ],
+    "9": [
+      "ogre-tantrum",
+      "ogre-blue-blood"
+    ],
+    "28": [
+      "field-of-growth"
+    ],
+    "0": [
+      "noncombatant"
+    ],
+    "36": [
+      "arixx",
+      "werewolf"
+    ]
+  },
+  "role": {
+    "support": [
+      "familiar",
+      "wode-elf-sentry",
+      "wode-elf-lookout",
+      "kobold-signifer",
+      "kobold-princeps",
+      "high-elf-palinode",
+      "gnoll-abyssal-summoner",
+      "dwarf-reel-winch",
+      "dwarf-hunter",
+      "time-raider-vertex",
+      "rival-conduit",
+      "orc-godcaller",
+      "bugbear-commander",
+      "human-death-cultist",
+      "radenwight-piper",
+      "war-dog-subcommander",
+      "goblin-underboss"
+    ],
+    "solo": [
+      "ashen-hoarder",
+      "wode-hag",
+      "thorn-dragon",
+      "chimera",
+      "fossil-cryptic",
+      "manticore",
+      "bredbeddle",
+      "phantom-bredbeddle",
+      "gloom-dragon",
+      "arixx",
+      "werewolf"
+    ],
+    "": [
+      "hag-hut",
+      "noncombatant"
+    ],
+    "controller": [
+      "wode-elf-druid",
+      "kobold-artifex",
+      "gunge",
+      "torlas",
+      "high-elf-dawn-mage",
+      "high-elf-wyrd",
+      "dwarf-stone-whisperer",
+      "angulotl-wave",
+      "time-raider-helix",
+      "rival-elementalist",
+      "cyclops",
+      "orc-glorifier",
+      "orc-terranova",
+      "bugbear-channeler",
+      "human-storm-mage",
+      "human-apprentice-mage",
+      "field-of-growth",
+      "essence-of-tides",
+      "war-dog-pestilite",
+      "goblin-stinker"
+    ],
+    "ambusher": [
+      "wode-elf-guerrilla",
+      "wode-elf-scout",
+      "kobold-venator",
+      "fiktin",
+      "remasch",
+      "high-elf-bloodletter",
+      "wyvern-lurker",
+      "angulotl-cleaver",
+      "angulotl-slink",
+      "time-raider-hijack",
+      "rival-shadow",
+      "mohler",
+      "orc-garotter",
+      "bugbear-sneak",
+      "bugbear-snare",
+      "human-scoundrel",
+      "human-rogue",
+      "shade",
+      "umbral-stalker",
+      "lightbender",
+      "radenwight-mischiever",
+      "war-dog-commando",
+      "war-dog-teletalite",
+      "goblin-assassin"
+    ],
+    "mount": [
+      "wodenelg",
+      "ceramic-horse",
+      "griffon",
+      "servitor-war-walker",
+      "scyza",
+      "giant-hawk",
+      "big-animal-a",
+      "big-animal-b",
+      "war-spider",
+      "worg"
+    ],
+    "harrier": [
+      "wode-elf-chirurgeon",
+      "wode-elf-runner",
+      "kobold-veles",
+      "fangling",
+      "frenzied",
+      "ruinant",
+      "soot-crow",
+      "high-elf-zephyr",
+      "gnoll-marauder",
+      "gnoll-wildling",
+      "dwarf-trapper",
+      "dwarf-driver",
+      "angulotl-pollywog",
+      "time-raider-archon",
+      "time-raider-nemesis",
+      "lizardfolk-grunt",
+      "lizardfolk-skyterror",
+      "rival-null",
+      "ogre-juggernaut",
+      "orc-blitzer",
+      "orc-bloodrunner",
+      "human-raider",
+      "essence-of-storms",
+      "ghoul",
+      "crawling-claw",
+      "lightbender-pouncer",
+      "radenwight-ratcrobat",
+      "radenwight-swiftpaw",
+      "minotaur",
+      "minotaur-lackey",
+      "war-dog-eviscerite",
+      "war-dog-conscript",
+      "animal",
+      "goblin-runner",
+      "goblin-warrior"
+    ],
+    "artillery": [
+      "wode-elf-gweiadur",
+      "wode-elf-yeoman",
+      "kobold-adeptus",
+      "kobold-sagittarion",
+      "pitling",
+      "high-elf-quiver",
+      "high-elf-deathtouch",
+      "gnoll-abyssal-archer",
+      "gnoll-chainflail",
+      "dwarf-gunner",
+      "angulotl-dart",
+      "angulotl-needler",
+      "time-raider-cannonfall",
+      "lizardfolk-tonguer",
+      "rival-tactician",
+      "ogre-tantrum",
+      "orc-eye-of-grole",
+      "orc-bloodspark",
+      "human-archer",
+      "human-trickshot",
+      "crux-of-fire",
+      "decrepit-skeleton",
+      "skeleton",
+      "radenwight-redeye",
+      "war-dog-crucibite",
+      "war-dog-sharpshooter",
+      "goblin-sniper"
+    ],
+    "hexer": [
+      "wode-elf-green-seer",
+      "trained-gummy-brick",
+      "bale-eye",
+      "bendrak",
+      "elemental-mote",
+      "high-elf-orbweaver",
+      "gnoll-mage-mauler",
+      "gnoll-cackler",
+      "dwarf-launcher",
+      "time-raider-mind-punk",
+      "basilisk-tonguesnapper",
+      "lizardfolk-bloodeye",
+      "rival-talent",
+      "orc-chainlock",
+      "bugbear-knightmare",
+      "human-death-acolyte",
+      "soulwight",
+      "specter",
+      "war-dog-phosphorite",
+      "animal-swarm",
+      "goblin-cursespitter",
+      "skitterling"
+    ],
+    "defender": [
+      "wode-elf-greenskeeper",
+      "kobold-legionary",
+      "kobold-tiro",
+      "brambleguard",
+      "dwarf-axethrower",
+      "dwarf-shieldwall",
+      "time-raider-armiger",
+      "lizardfolk-shellguard",
+      "orc-rampart",
+      "human-knave",
+      "radenwight-scrapper",
+      "minotaur-stampede",
+      "war-dog-neuronite"
+    ],
+    "leader": [
+      "wode-elf-warleader",
+      "kobold-centurion",
+      "lumbering-egress",
+      "chorogaunt",
+      "high-elf-ordinator",
+      "gnoll-carnage",
+      "dwarf-marauder",
+      "angulotl-daybringer",
+      "time-raider-tyrannis",
+      "lizardfolk-deathrex",
+      "lizardfolk-deathrex-shedded-skin",
+      "orc-warleader",
+      "human-bandit-chief",
+      "human-blackguard",
+      "ghost",
+      "radenwight-maestro",
+      "war-dog-ground-commander",
+      "goblin-monarch"
+    ],
+    "brute": [
+      "shieldscale-drangolin-(size-3)",
+      "shieldscale-drangolin-(size-2)",
+      "tormenauk",
+      "muceron",
+      "ensnarer",
+      "striped-condor-griffon",
+      "tusker-demon",
+      "gnoll-bonesplitter",
+      "abyssal-hyena",
+      "wyvern-predator",
+      "dwarf-warden",
+      "dwarf-catchpole",
+      "clawfish",
+      "time-raider-myriad",
+      "basilisk",
+      "lizardfolk-scaletooth",
+      "rival-fury",
+      "ogre-goon",
+      "ogre-blue-blood",
+      "orc-juggernaut",
+      "orc-razor",
+      "bugbear-roughneck",
+      "bugbear-mob",
+      "human-guard",
+      "human-brawler",
+      "force-of-earth",
+      "rotting-zombie",
+      "zombie",
+      "radenwight-bruxer",
+      "minotaur-bully",
+      "minotaur-sunderer",
+      "war-dog-amalgamite",
+      "war-dog-tetherite",
+      "predator-b",
+      "predator-a",
+      "goblin-spinecleaver"
+    ],
+    "minion": [
+      "grulqin",
+      "orliq",
+      "wobalas"
+    ]
+  },
+  "card": {
+    "familiar": {
+      "name": "Familiar",
+      "ev": 4,
+      "level": 1,
+      "role": "support",
+      "organization": "minion",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "ashen-hoarder": {
+      "name": "Ashen Hoarder",
+      "ev": 72,
+      "level": 4,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "construct",
+        "undead"
+      ]
+    },
+    "hag-hut": {
+      "name": "Hag Hut",
+      "ev": 4,
+      "level": 1,
+      "role": "",
+      "organization": "",
+      "keywords": []
+    },
+    "wode-hag": {
+      "name": "Wode Hag",
+      "ev": 60,
+      "level": 3,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "fey"
+      ]
+    },
+    "wode-elf-druid": {
+      "name": "Wode Elf Druid",
+      "ev": 8,
+      "level": 2,
+      "role": "controller",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "wode-elf-guerrilla": {
+      "name": "Wode Elf Guerrilla",
+      "ev": 10,
+      "level": 3,
+      "role": "ambusher",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "wodenelg": {
+      "name": "Wodenelg",
+      "ev": 6,
+      "level": 1,
+      "role": "mount",
+      "organization": "platoon",
+      "keywords": [
+        "plant"
+      ]
+    },
+    "wode-elf-chirurgeon": {
+      "name": "Wode Elf Chirurgeon",
+      "ev": 8,
+      "level": 2,
+      "role": "harrier",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "wode-elf-gweiadur": {
+      "name": "Wode Elf Gweiadur",
+      "ev": 10,
+      "level": 3,
+      "role": "artillery",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "wode-elf-yeoman": {
+      "name": "Wode Elf Yeoman",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "wode-elf-green-seer": {
+      "name": "Wode Elf Green Seer",
+      "ev": 6,
+      "level": 1,
+      "role": "hexer",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "wode-elf-scout": {
+      "name": "Wode Elf Scout",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "minion",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "wode-elf-sentry": {
+      "name": "Wode Elf Sentry",
+      "ev": 6,
+      "level": 1,
+      "role": "support",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "wode-elf-greenskeeper": {
+      "name": "Wode Elf Greenskeeper",
+      "ev": 6,
+      "level": 1,
+      "role": "defender",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "wode-elf-lookout": {
+      "name": "Wode Elf Lookout",
+      "ev": 3,
+      "level": 1,
+      "role": "support",
+      "organization": "minion",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "wode-elf-warleader": {
+      "name": "Wode Elf Warleader",
+      "ev": 20,
+      "level": 3,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "fey"
+      ]
+    },
+    "wode-elf-runner": {
+      "name": "Wode Elf Runner",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "shieldscale-drangolin-(size-3)": {
+      "name": "Shieldscale Drangolin (Size 3)",
+      "ev": 12,
+      "level": 1,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "kobold-artifex": {
+      "name": "Kobold Artifex",
+      "ev": 3,
+      "level": 1,
+      "role": "controller",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "kobold-venator": {
+      "name": "Kobold Venator",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "kobold-adeptus": {
+      "name": "Kobold Adeptus",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "trained-gummy-brick": {
+      "name": "Trained Gummy Brick",
+      "ev": 12,
+      "level": 1,
+      "role": "hexer",
+      "organization": "elite",
+      "keywords": [
+        "soulless"
+      ]
+    },
+    "kobold-veles": {
+      "name": "Kobold Veles",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "shieldscale-drangolin-(size-2)": {
+      "name": "Shieldscale Drangolin (Size 2)",
+      "ev": 12,
+      "level": 1,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "kobold-centurion": {
+      "name": "Kobold Centurion",
+      "ev": 12,
+      "level": 1,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "kobold-signifer": {
+      "name": "Kobold Signifer",
+      "ev": 3,
+      "level": 1,
+      "role": "support",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "kobold-sagittarion": {
+      "name": "Kobold Sagittarion",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "kobold-princeps": {
+      "name": "Kobold Princeps",
+      "ev": 3,
+      "level": 1,
+      "role": "support",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "kobold-legionary": {
+      "name": "Kobold Legionary",
+      "ev": 3,
+      "level": 1,
+      "role": "defender",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "kobold-tiro": {
+      "name": "Kobold Tiro",
+      "ev": 3,
+      "level": 1,
+      "role": "defender",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "bale-eye": {
+      "name": "Bale Eye",
+      "ev": 7,
+      "level": 5,
+      "role": "hexer",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "tormenauk": {
+      "name": "Tormenauk",
+      "ev": 8,
+      "level": 6,
+      "role": "brute",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "fangling": {
+      "name": "Fangling",
+      "ev": 6,
+      "level": 4,
+      "role": "harrier",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "gunge": {
+      "name": "Gunge",
+      "ev": 6,
+      "level": 4,
+      "role": "controller",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "grulqin": {
+      "name": "Grulqin",
+      "ev": 6,
+      "level": 4,
+      "role": "minion",
+      "organization": "minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "orliq": {
+      "name": "Orliq",
+      "ev": 6,
+      "level": 4,
+      "role": "minion",
+      "organization": "minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "fiktin": {
+      "name": "Fiktin",
+      "ev": 7,
+      "level": 5,
+      "role": "ambusher",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "lumbering-egress": {
+      "name": "Lumbering Egress",
+      "ev": 32,
+      "level": 6,
+      "role": "leader",
+      "organization": "leader",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "wobalas": {
+      "name": "Wobalas",
+      "ev": 6,
+      "level": 4,
+      "role": "minion",
+      "organization": "minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "muceron": {
+      "name": "Muceron",
+      "ev": 5,
+      "level": 3,
+      "role": "brute",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "remasch": {
+      "name": "Remasch",
+      "ev": 4,
+      "level": 2,
+      "role": "ambusher",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "pitling": {
+      "name": "Pitling",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "bendrak": {
+      "name": "Bendrak",
+      "ev": 4,
+      "level": 2,
+      "role": "hexer",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "ensnarer": {
+      "name": "Ensnarer",
+      "ev": 3,
+      "level": 1,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "frenzied": {
+      "name": "Frenzied",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "ruinant": {
+      "name": "Ruinant",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "torlas": {
+      "name": "Torlas",
+      "ev": 3,
+      "level": 1,
+      "role": "controller",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "chorogaunt": {
+      "name": "Chorogaunt",
+      "ev": 20,
+      "level": 3,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "high-elf-palinode": {
+      "name": "High Elf Palinode",
+      "ev": 6,
+      "level": 1,
+      "role": "support",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "high-elf-bloodletter": {
+      "name": "High Elf Bloodletter",
+      "ev": 6,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "soot-crow": {
+      "name": "Soot Crow",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "elemental"
+      ]
+    },
+    "high-elf-dawn-mage": {
+      "name": "High Elf Dawn Mage",
+      "ev": 3,
+      "level": 1,
+      "role": "controller",
+      "organization": "minion",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "high-elf-quiver": {
+      "name": "High Elf Quiver",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "brambleguard": {
+      "name": "Brambleguard",
+      "ev": 8,
+      "level": 2,
+      "role": "defender",
+      "organization": "platoon",
+      "keywords": [
+        "elemental"
+      ]
+    },
+    "high-elf-deathtouch": {
+      "name": "High Elf Deathtouch",
+      "ev": 8,
+      "level": 2,
+      "role": "artillery",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "high-elf-wyrd": {
+      "name": "High Elf Wyrd",
+      "ev": 10,
+      "level": 3,
+      "role": "controller",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "elemental-mote": {
+      "name": "Elemental Mote",
+      "ev": 3,
+      "level": 1,
+      "role": "hexer",
+      "organization": "minion",
+      "keywords": [
+        "elemental"
+      ]
+    },
+    "high-elf-zephyr": {
+      "name": "High Elf Zephyr",
+      "ev": 6,
+      "level": 1,
+      "role": "harrier",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "high-elf-ordinator": {
+      "name": "High Elf Ordinator",
+      "ev": 20,
+      "level": 3,
+      "role": "leader",
+      "organization": "leader",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "ceramic-horse": {
+      "name": "Ceramic Horse",
+      "ev": 6,
+      "level": 1,
+      "role": "mount",
+      "organization": "platoon",
+      "keywords": [
+        "elemental"
+      ]
+    },
+    "high-elf-orbweaver": {
+      "name": "High Elf Orbweaver",
+      "ev": 10,
+      "level": 3,
+      "role": "hexer",
+      "organization": "platoon",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "striped-condor-griffon": {
+      "name": "Striped Condor Griffon",
+      "ev": 16,
+      "level": 2,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "griffon": {
+      "name": "Griffon",
+      "ev": 16,
+      "level": 2,
+      "role": "mount",
+      "organization": "elite",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "gnoll-mage-mauler": {
+      "name": "Gnoll Mage Mauler",
+      "ev": 4,
+      "level": 2,
+      "role": "hexer",
+      "organization": "minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "tusker-demon": {
+      "name": "Tusker Demon",
+      "ev": 16,
+      "level": 2,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "gnoll-carnage": {
+      "name": "Gnoll Carnage",
+      "ev": 16,
+      "level": 2,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "gnoll-marauder": {
+      "name": "Gnoll Marauder",
+      "ev": 4,
+      "level": 2,
+      "role": "harrier",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "gnoll-bonesplitter": {
+      "name": "Gnoll Bonesplitter",
+      "ev": 4,
+      "level": 2,
+      "role": "brute",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "gnoll-abyssal-summoner": {
+      "name": "Gnoll Abyssal Summoner",
+      "ev": 4,
+      "level": 2,
+      "role": "support",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "gnoll-abyssal-archer": {
+      "name": "Gnoll Abyssal Archer",
+      "ev": 4,
+      "level": 2,
+      "role": "artillery",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "abyssal-hyena": {
+      "name": "Abyssal Hyena",
+      "ev": 4,
+      "level": 2,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "abyssal",
+        "animal"
+      ]
+    },
+    "gnoll-cackler": {
+      "name": "Gnoll Cackler",
+      "ev": 4,
+      "level": 2,
+      "role": "hexer",
+      "organization": "horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "gnoll-wildling": {
+      "name": "Gnoll Wildling",
+      "ev": 4,
+      "level": 2,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "gnoll-chainflail": {
+      "name": "Gnoll Chainflail",
+      "ev": 4,
+      "level": 2,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "wyvern-predator": {
+      "name": "Wyvern Predator",
+      "ev": 24,
+      "level": 4,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "wyvern-lurker": {
+      "name": "Wyvern Lurker",
+      "ev": 24,
+      "level": 4,
+      "role": "ambusher",
+      "organization": "elite",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "thorn-dragon": {
+      "name": "Thorn Dragon",
+      "ev": 48,
+      "level": 2,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "dragon",
+        "elemental"
+      ]
+    },
+    "chimera": {
+      "name": "Chimera",
+      "ev": 60,
+      "level": 3,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "dwarf-launcher": {
+      "name": "Dwarf Launcher",
+      "ev": 8,
+      "level": 1,
+      "role": "hexer",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-axethrower": {
+      "name": "Dwarf Axethrower",
+      "ev": 3,
+      "level": 1,
+      "role": "defender",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-warden": {
+      "name": "Dwarf Warden",
+      "ev": 8,
+      "level": 2,
+      "role": "brute",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-catchpole": {
+      "name": "Dwarf Catchpole",
+      "ev": 4,
+      "level": 1,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "servitor-war-walker": {
+      "name": "Servitor War Walker",
+      "ev": 12,
+      "level": 1,
+      "role": "mount",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-shieldwall": {
+      "name": "Dwarf Shieldwall",
+      "ev": 10,
+      "level": 3,
+      "role": "defender",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-marauder": {
+      "name": "Dwarf Marauder",
+      "ev": 20,
+      "level": 3,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-trapper": {
+      "name": "Dwarf Trapper",
+      "ev": 6,
+      "level": 1,
+      "role": "harrier",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-driver": {
+      "name": "Dwarf Driver",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-reel-winch": {
+      "name": "Dwarf Reel Winch",
+      "ev": 6,
+      "level": 1,
+      "role": "support",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-hunter": {
+      "name": "Dwarf Hunter",
+      "ev": 3,
+      "level": 1,
+      "role": "support",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-stone-whisperer": {
+      "name": "Dwarf Stone Whisperer",
+      "ev": 10,
+      "level": 3,
+      "role": "controller",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "dwarf-gunner": {
+      "name": "Dwarf Gunner",
+      "ev": 6,
+      "level": 1,
+      "role": "artillery",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "clawfish": {
+      "name": "Clawfish",
+      "ev": 3,
+      "level": 1,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "angulotl-dart": {
+      "name": "Angulotl Dart",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "angulotl-wave": {
+      "name": "Angulotl Wave",
+      "ev": 3,
+      "level": 1,
+      "role": "controller",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "angulotl-needler": {
+      "name": "Angulotl Needler",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "angulotl-pollywog": {
+      "name": "Angulotl Pollywog",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "angulotl-cleaver": {
+      "name": "Angulotl Cleaver",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "angulotl-slink": {
+      "name": "Angulotl Slink",
+      "ev": 4,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "angulotl-daybringer": {
+      "name": "Angulotl Daybringer",
+      "ev": 12,
+      "level": 1,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "fossil-cryptic": {
+      "name": "Fossil Cryptic",
+      "ev": 48,
+      "level": 2,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "elemental"
+      ]
+    },
+    "time-raider-armiger": {
+      "name": "Time Raider Armiger",
+      "ev": 10,
+      "level": 3,
+      "role": "defender",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "time-raider-myriad": {
+      "name": "Time Raider Myriad",
+      "ev": 5,
+      "level": 3,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "time-raider-cannonfall": {
+      "name": "Time Raider Cannonfall",
+      "ev": 10,
+      "level": 3,
+      "role": "artillery",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "time-raider-archon": {
+      "name": "Time Raider Archon",
+      "ev": 5,
+      "level": 3,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "time-raider-mind-punk": {
+      "name": "Time Raider Mind Punk",
+      "ev": 10,
+      "level": 3,
+      "role": "hexer",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "time-raider-hijack": {
+      "name": "Time Raider Hijack",
+      "ev": 10,
+      "level": 3,
+      "role": "ambusher",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "time-raider-vertex": {
+      "name": "Time Raider Vertex",
+      "ev": 10,
+      "level": 3,
+      "role": "support",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "time-raider-nemesis": {
+      "name": "Time Raider Nemesis",
+      "ev": 10,
+      "level": 3,
+      "role": "harrier",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "time-raider-helix": {
+      "name": "Time Raider Helix",
+      "ev": 10,
+      "level": 3,
+      "role": "controller",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "time-raider-tyrannis": {
+      "name": "Time Raider Tyrannis",
+      "ev": 20,
+      "level": 3,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "basilisk-tonguesnapper": {
+      "name": "Basilisk Tonguesnapper",
+      "ev": 12,
+      "level": 1,
+      "role": "hexer",
+      "organization": "elite",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "basilisk": {
+      "name": "Basilisk",
+      "ev": 12,
+      "level": 1,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "lizardfolk-scaletooth": {
+      "name": "Lizardfolk Scaletooth",
+      "ev": 6,
+      "level": 1,
+      "role": "brute",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "lizardfolk-bloodeye": {
+      "name": "Lizardfolk Bloodeye",
+      "ev": 6,
+      "level": 1,
+      "role": "hexer",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "lizardfolk-grunt": {
+      "name": "Lizardfolk Grunt",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "lizardfolk-deathrex": {
+      "name": "Lizardfolk Deathrex",
+      "ev": 12,
+      "level": 1,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "lizardfolk-deathrex-shedded-skin": {
+      "name": "Lizardfolk Deathrex Shedded Skin",
+      "ev": 12,
+      "level": 1,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "lizardfolk-shellguard": {
+      "name": "Lizardfolk Shellguard",
+      "ev": 3,
+      "level": 1,
+      "role": "defender",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "lizardfolk-tonguer": {
+      "name": "Lizardfolk Tonguer",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "lizardfolk-skyterror": {
+      "name": "Lizardfolk Skyterror",
+      "ev": 6,
+      "level": 1,
+      "role": "harrier",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-null": {
+      "name": "Rival Null",
+      "ev": 16,
+      "level": 2,
+      "role": "harrier",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-elementalist": {
+      "name": "Rival Elementalist",
+      "ev": 16,
+      "level": 2,
+      "role": "controller",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-shadow": {
+      "name": "Rival Shadow",
+      "ev": 16,
+      "level": 2,
+      "role": "ambusher",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-fury": {
+      "name": "Rival Fury",
+      "ev": 16,
+      "level": 2,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-conduit": {
+      "name": "Rival Conduit",
+      "ev": 16,
+      "level": 2,
+      "role": "support",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-tactician": {
+      "name": "Rival Tactician",
+      "ev": 16,
+      "level": 2,
+      "role": "artillery",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-talent": {
+      "name": "Rival Talent",
+      "ev": 16,
+      "level": 2,
+      "role": "hexer",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "manticore": {
+      "name": "Manticore",
+      "ev": 72,
+      "level": 4,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "ogre-juggernaut": {
+      "name": "Ogre Juggernaut",
+      "ev": 16,
+      "level": 2,
+      "role": "harrier",
+      "organization": "elite",
+      "keywords": [
+        "giant"
+      ]
+    },
+    "ogre-tantrum": {
+      "name": "Ogre Tantrum",
+      "ev": 9,
+      "level": 7,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "giant"
+      ]
+    },
+    "cyclops": {
+      "name": "Cyclops",
+      "ev": 12,
+      "level": 10,
+      "role": "controller",
+      "organization": "minion",
+      "keywords": [
+        "giant"
+      ]
+    },
+    "ogre-goon": {
+      "name": "Ogre Goon",
+      "ev": 16,
+      "level": 2,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "giant"
+      ]
+    },
+    "ogre-blue-blood": {
+      "name": "Ogre Blue Blood",
+      "ev": 9,
+      "level": 7,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "giant"
+      ]
+    },
+    "orc-chainlock": {
+      "name": "Orc Chainlock",
+      "ev": 6,
+      "level": 1,
+      "role": "hexer",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "orc-godcaller": {
+      "name": "Orc Godcaller",
+      "ev": 6,
+      "level": 1,
+      "role": "support",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "mohler": {
+      "name": "Mohler",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "minion",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "orc-blitzer": {
+      "name": "Orc Blitzer",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "orc-glorifier": {
+      "name": "Orc Glorifier",
+      "ev": 3,
+      "level": 1,
+      "role": "controller",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "orc-warleader": {
+      "name": "Orc Warleader",
+      "ev": 20,
+      "level": 3,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "orc-juggernaut": {
+      "name": "Orc Juggernaut",
+      "ev": 10,
+      "level": 3,
+      "role": "brute",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "orc-eye-of-grole": {
+      "name": "Orc Eye of Grole",
+      "ev": 6,
+      "level": 1,
+      "role": "artillery",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "orc-rampart": {
+      "name": "Orc Rampart",
+      "ev": 8,
+      "level": 2,
+      "role": "defender",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "orc-terranova": {
+      "name": "Orc Terranova",
+      "ev": 8,
+      "level": 2,
+      "role": "controller",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "orc-razor": {
+      "name": "Orc Razor",
+      "ev": 3,
+      "level": 1,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "scyza": {
+      "name": "Scyza",
+      "ev": 20,
+      "level": 3,
+      "role": "mount",
+      "organization": "elite",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "orc-bloodspark": {
+      "name": "Orc Bloodspark",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "orc-bloodrunner": {
+      "name": "Orc Bloodrunner",
+      "ev": 10,
+      "level": 3,
+      "role": "harrier",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "orc-garotter": {
+      "name": "Orc Garotter",
+      "ev": 6,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "bugbear-sneak": {
+      "name": "Bugbear Sneak",
+      "ev": 16,
+      "level": 2,
+      "role": "ambusher",
+      "organization": "elite",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "bugbear-roughneck": {
+      "name": "Bugbear Roughneck",
+      "ev": 16,
+      "level": 2,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "bugbear-commander": {
+      "name": "Bugbear Commander",
+      "ev": 16,
+      "level": 2,
+      "role": "support",
+      "organization": "elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "bugbear-knightmare": {
+      "name": "Bugbear Knightmare",
+      "ev": 10,
+      "level": 8,
+      "role": "hexer",
+      "organization": "minion",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "bugbear-snare": {
+      "name": "Bugbear Snare",
+      "ev": 7,
+      "level": 5,
+      "role": "ambusher",
+      "organization": "minion",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "bugbear-channeler": {
+      "name": "Bugbear Channeler",
+      "ev": 16,
+      "level": 2,
+      "role": "controller",
+      "organization": "elite",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "bugbear-mob": {
+      "name": "Bugbear Mob",
+      "ev": 7,
+      "level": 5,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "fey",
+        "humanoid"
+      ]
+    },
+    "human-storm-mage": {
+      "name": "Human Storm Mage",
+      "ev": 10,
+      "level": 3,
+      "role": "controller",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-archer": {
+      "name": "Human Archer",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-guard": {
+      "name": "Human Guard",
+      "ev": 3,
+      "level": 1,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-bandit-chief": {
+      "name": "Human Bandit Chief",
+      "ev": 20,
+      "level": 3,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-knave": {
+      "name": "Human Knave",
+      "ev": 8,
+      "level": 2,
+      "role": "defender",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-death-cultist": {
+      "name": "Human Death Cultist",
+      "ev": 8,
+      "level": 2,
+      "role": "support",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-apprentice-mage": {
+      "name": "Human Apprentice Mage",
+      "ev": 4,
+      "level": 2,
+      "role": "controller",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-scoundrel": {
+      "name": "Human Scoundrel",
+      "ev": 6,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-death-acolyte": {
+      "name": "Human Death Acolyte",
+      "ev": 3,
+      "level": 1,
+      "role": "hexer",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-blackguard": {
+      "name": "Human Blackguard",
+      "ev": 12,
+      "level": 1,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-trickshot": {
+      "name": "Human Trickshot",
+      "ev": 6,
+      "level": 1,
+      "role": "artillery",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "giant-hawk": {
+      "name": "Giant Hawk",
+      "ev": 6,
+      "level": 1,
+      "role": "mount",
+      "organization": "platoon",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "human-brawler": {
+      "name": "Human Brawler",
+      "ev": 6,
+      "level": 1,
+      "role": "brute",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "human-raider": {
+      "name": "Human Raider",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": []
+    },
+    "human-rogue": {
+      "name": "Human Rogue",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "force-of-earth": {
+      "name": "Force of Earth",
+      "ev": 20,
+      "level": 3,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "elemental"
+      ]
+    },
+    "field-of-growth": {
+      "name": "Field of Growth",
+      "ev": 28,
+      "level": 3,
+      "role": "controller",
+      "organization": "elite",
+      "keywords": [
+        "elemental"
+      ]
+    },
+    "essence-of-storms": {
+      "name": "Essence of Storms",
+      "ev": 20,
+      "level": 3,
+      "role": "harrier",
+      "organization": "elite",
+      "keywords": [
+        "elemental"
+      ]
+    },
+    "essence-of-tides": {
+      "name": "Essence of Tides",
+      "ev": 20,
+      "level": 3,
+      "role": "controller",
+      "organization": "elite",
+      "keywords": [
+        "elemental"
+      ]
+    },
+    "crux-of-fire": {
+      "name": "Crux of Fire",
+      "ev": 20,
+      "level": 3,
+      "role": "artillery",
+      "organization": "elite",
+      "keywords": [
+        "elemental"
+      ]
+    },
+    "rotting-zombie": {
+      "name": "Rotting Zombie",
+      "ev": 3,
+      "level": 1,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": []
+    },
+    "ghoul": {
+      "name": "Ghoul",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "soulwight": {
+      "name": "Soulwight",
+      "ev": 3,
+      "level": 1,
+      "role": "hexer",
+      "organization": "horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "zombie": {
+      "name": "Zombie",
+      "ev": 3,
+      "level": 1,
+      "role": "brute",
+      "organization": "horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "shade": {
+      "name": "Shade",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "minion",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "ghost": {
+      "name": "Ghost",
+      "ev": 12,
+      "level": 1,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "umbral-stalker": {
+      "name": "Umbral Stalker",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "decrepit-skeleton": {
+      "name": "Decrepit Skeleton",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "crawling-claw": {
+      "name": "Crawling Claw",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": []
+    },
+    "specter": {
+      "name": "Specter",
+      "ev": 3,
+      "level": 1,
+      "role": "hexer",
+      "organization": "horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "skeleton": {
+      "name": "Skeleton",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "lightbender-pouncer": {
+      "name": "Lightbender Pouncer",
+      "ev": 20,
+      "level": 3,
+      "role": "harrier",
+      "organization": "elite",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "lightbender": {
+      "name": "Lightbender",
+      "ev": 20,
+      "level": 3,
+      "role": "ambusher",
+      "organization": "elite",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "radenwight-ratcrobat": {
+      "name": "Radenwight Ratcrobat",
+      "ev": 6,
+      "level": 1,
+      "role": "harrier",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "radenwight-mischiever": {
+      "name": "Radenwight Mischiever",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "radenwight-swiftpaw": {
+      "name": "Radenwight Swiftpaw",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "radenwight-scrapper": {
+      "name": "Radenwight Scrapper",
+      "ev": 3,
+      "level": 1,
+      "role": "defender",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "radenwight-piper": {
+      "name": "Radenwight Piper",
+      "ev": 6,
+      "level": 1,
+      "role": "support",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "radenwight-maestro": {
+      "name": "Radenwight Maestro",
+      "ev": 12,
+      "level": 1,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "radenwight-redeye": {
+      "name": "Radenwight Redeye",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "radenwight-bruxer": {
+      "name": "Radenwight Bruxer",
+      "ev": 6,
+      "level": 1,
+      "role": "brute",
+      "organization": "platoon",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "minotaur": {
+      "name": "Minotaur",
+      "ev": 20,
+      "level": 3,
+      "role": "harrier",
+      "organization": "elite",
+      "keywords": [
+        "accursed",
+        "humanoid"
+      ]
+    },
+    "minotaur-lackey": {
+      "name": "Minotaur Lackey",
+      "ev": 10,
+      "level": 8,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "accursed",
+        "humanoid"
+      ]
+    },
+    "minotaur-bully": {
+      "name": "Minotaur Bully",
+      "ev": 10,
+      "level": 8,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "accursed",
+        "humanoid"
+      ]
+    },
+    "minotaur-sunderer": {
+      "name": "Minotaur Sunderer",
+      "ev": 20,
+      "level": 3,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "accursed",
+        "humanoid"
+      ]
+    },
+    "minotaur-stampede": {
+      "name": "Minotaur Stampede",
+      "ev": 12,
+      "level": 10,
+      "role": "defender",
+      "organization": "minion",
+      "keywords": [
+        "accursed",
+        "humanoid",
+        "swarm"
+      ]
+    },
+    "war-dog-crucibite": {
+      "name": "War Dog Crucibite",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-commando": {
+      "name": "War Dog Commando",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "minion",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-amalgamite": {
+      "name": "War Dog Amalgamite",
+      "ev": 4,
+      "level": 2,
+      "role": "brute",
+      "organization": "horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-subcommander": {
+      "name": "War Dog Subcommander",
+      "ev": 4,
+      "level": 2,
+      "role": "support",
+      "organization": "horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-eviscerite": {
+      "name": "War Dog Eviscerite",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-sharpshooter": {
+      "name": "War Dog Sharpshooter",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-neuronite": {
+      "name": "War Dog Neuronite",
+      "ev": 3,
+      "level": 1,
+      "role": "defender",
+      "organization": "horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-teletalite": {
+      "name": "War Dog Teletalite",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-tetherite": {
+      "name": "War Dog Tetherite",
+      "ev": 3,
+      "level": 1,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-conscript": {
+      "name": "War Dog Conscript",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-pestilite": {
+      "name": "War Dog Pestilite",
+      "ev": 5,
+      "level": 3,
+      "role": "controller",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "war-dog-phosphorite": {
+      "name": "War Dog Phosphorite",
+      "ev": 4,
+      "level": 2,
+      "role": "hexer",
+      "organization": "horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-ground-commander": {
+      "name": "War Dog Ground Commander",
+      "ev": 20,
+      "level": 3,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "bredbeddle": {
+      "name": "Bredbeddle",
+      "ev": 60,
+      "level": 3,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "giant"
+      ]
+    },
+    "phantom-bredbeddle": {
+      "name": "Phantom Bredbeddle",
+      "ev": 60,
+      "level": 3,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "giant"
+      ]
+    },
+    "gloom-dragon": {
+      "name": "Gloom Dragon",
+      "ev": 72,
+      "level": 4,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "dragon",
+        "elemental"
+      ]
+    },
+    "animal": {
+      "name": "Animal",
+      "ev": 12,
+      "level": 1,
+      "role": "harrier",
+      "organization": "elite",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "big-animal-a": {
+      "name": "Big Animal A",
+      "ev": 12,
+      "level": 1,
+      "role": "mount",
+      "organization": "elite",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "big-animal-b": {
+      "name": "Big Animal B",
+      "ev": 16,
+      "level": 2,
+      "role": "mount",
+      "organization": "elite",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "predator-b": {
+      "name": "Predator B",
+      "ev": 16,
+      "level": 3,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "animal-swarm": {
+      "name": "Animal Swarm",
+      "ev": 12,
+      "level": 1,
+      "role": "hexer",
+      "organization": "elite",
+      "keywords": [
+        "animal",
+        "swarm"
+      ]
+    },
+    "predator-a": {
+      "name": "Predator A",
+      "ev": 12,
+      "level": 1,
+      "role": "brute",
+      "organization": "elite",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "war-spider": {
+      "name": "War Spider",
+      "ev": 12,
+      "level": 1,
+      "role": "mount",
+      "organization": "elite",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "goblin-cursespitter": {
+      "name": "Goblin Cursespitter",
+      "ev": 3,
+      "level": 1,
+      "role": "hexer",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "goblin-stinker": {
+      "name": "Goblin Stinker",
+      "ev": 3,
+      "level": 1,
+      "role": "controller",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "goblin-runner": {
+      "name": "Goblin Runner",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "minion",
+      "keywords": []
+    },
+    "goblin-sniper": {
+      "name": "Goblin Sniper",
+      "ev": 3,
+      "level": 1,
+      "role": "artillery",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "goblin-spinecleaver": {
+      "name": "Goblin Spinecleaver",
+      "ev": 3,
+      "level": 1,
+      "role": "brute",
+      "organization": "minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "goblin-assassin": {
+      "name": "Goblin Assassin",
+      "ev": 3,
+      "level": 1,
+      "role": "ambusher",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "goblin-monarch": {
+      "name": "Goblin Monarch",
+      "ev": 12,
+      "level": 1,
+      "role": "",
+      "organization": "leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "goblin-warrior": {
+      "name": "Goblin Warrior",
+      "ev": 3,
+      "level": 1,
+      "role": "harrier",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "skitterling": {
+      "name": "Skitterling",
+      "ev": 3,
+      "level": 1,
+      "role": "hexer",
+      "organization": "minion",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "goblin-underboss": {
+      "name": "Goblin Underboss",
+      "ev": 3,
+      "level": 1,
+      "role": "support",
+      "organization": "horde",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "worg": {
+      "name": "Worg",
+      "ev": 3,
+      "level": 1,
+      "role": "mount",
+      "organization": "horde",
+      "keywords": [
+        "animal"
+      ]
+    },
+    "noncombatant": {
+      "name": "Noncombatant",
+      "ev": 0,
+      "level": 0,
+      "role": "",
+      "organization": "",
+      "keywords": [
+        "animal",
+        "humanoid"
+      ]
+    },
+    "arixx": {
+      "name": "Arixx",
+      "ev": 36,
+      "level": 1,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "beast"
+      ]
+    },
+    "werewolf": {
+      "name": "Werewolf",
+      "ev": 36,
+      "level": 1,
+      "role": "",
+      "organization": "solo",
+      "keywords": [
+        "accursed",
+        "humanoid"
+      ]
+    }
+  }
+}

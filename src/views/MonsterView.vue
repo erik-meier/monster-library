@@ -30,7 +30,7 @@ export default {
     return {
       monster: null,
       loading: true,
-      error: null
+      error: null,
     }
   },
   async mounted() {
@@ -49,16 +49,52 @@ export default {
       this.error = null
       
       try {
-        const response = await fetch(`/data/monsters/${this.monsterId}.json`)
-        if (!response.ok) {
-          throw new Error(`Monster not found: ${this.monsterId}`)
+        // Use bundled data instead of fetch
+        const { getMonster } = await import('@/data/monsters.js')
+        const monster = getMonster(this.monsterId)
+        
+        if (!monster) {
+          throw new Error('Monster not found')
         }
-        this.monster = await response.json()
+        
+        this.monster = monster
+        
+        // Add to recently viewed monsters
+        this.addToRecentlyViewed()
       } catch (err) {
         this.error = err.message
       } finally {
         this.loading = false
       }
+    },
+    addToRecentlyViewed() {
+      if (!this.monster) return;
+
+      const recentMonster = {
+        id: this.monsterId,
+        name: this.monster.name,
+        level: this.monster.system?.monster?.level || 0,
+        viewedAt: new Date().toISOString()
+      };
+
+      // Get existing recent monsters
+      let recentMonsters = [];
+      const existing = localStorage.getItem('recentlyViewedMonsters');
+      if (existing) {
+        recentMonsters = JSON.parse(existing);
+      }
+
+      // Remove if already exists (we'll add it to the front)
+      recentMonsters = recentMonsters.filter(m => m.id !== this.monsterId);
+
+      // Add to front
+      recentMonsters.unshift(recentMonster);
+
+      // Keep only the 10 most recent
+      recentMonsters = recentMonsters.slice(0, 10);
+
+      // Save back to localStorage
+      localStorage.setItem('recentlyViewedMonsters', JSON.stringify(recentMonsters));
     }
   }
 }

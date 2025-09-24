@@ -33,6 +33,17 @@
       >
         <div class="monster-card-header">
           <h3 class="monster-name">{{ monster.name }}</h3>
+          <div class="monster-role">Level {{ monster.level }}{{ monster.organization ? ` ${monster.organization}` : '' }}{{ monster.role ? ` ${monster.role}` : '' }}</div>
+        </div>
+        
+        <div class="monster-keywords" v-if="monster.keywords && monster.keywords.length > 0">
+          <span 
+            v-for="keyword in monster.keywords" 
+            :key="keyword"
+            class="keyword-tag"
+          >
+            {{ keyword }}
+          </span>
         </div>
       </div>
     </div>
@@ -80,16 +91,21 @@ export default {
       this.loading = true;
       this.error = null;
       try {
-        // Fetch the monster_index.json file from the project root
-        const response = await fetch('/data/monster_index.json');
-        if (!response.ok) throw new Error(`Failed to fetch monster index (${response.status})`);
-        const indexData = await response.json();
-        // The structure is { name: { "Monster Name": "path/to/file.json", ... } }
-        const monsters = Object.keys(indexData.name).map(name => ({
-          id: name.replace(/\s+/g, '-').toLowerCase(),
-          name
+        // Use bundled data instead of fetch
+        const { getMonsterIndex } = await import('@/data/monsters.js')
+        const indexData = getMonsterIndex()
+        
+        // Transform the card data into monsters array with full details
+        this.monsters = Object.entries(indexData.card).map(([id, cardData]) => ({
+          id,
+          name: cardData.name,
+          level: cardData.level,
+          role: cardData.role,
+          organization: cardData.organization,
+          keywords: cardData.keywords || []
         }));
-        this.monsters = monsters.sort((a, b) => a.name.localeCompare(b.name));
+        
+        this.monsters.sort((a, b) => a.name.localeCompare(b.name));
       } catch (err) {
         this.error = `Failed to load monsters: ${err.message}`;
       } finally {
@@ -216,9 +232,10 @@ export default {
   font-size: 1.3rem;
   margin: 0;
   font-weight: bold;
+  flex: 1;
 }
 
-.cr-badge {
+.monster-role {
   background-color: #8b4513;
   color: white;
   padding: 0.25rem 0.75rem;
@@ -226,6 +243,34 @@ export default {
   font-size: 0.8rem;
   font-weight: bold;
   white-space: nowrap;
+  margin-left: 0.5rem;
+  text-transform: capitalize;
+}
+
+.monster-info {
+  margin-bottom: 1rem;
+}
+
+.monster-organization {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.monster-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.keyword-tag {
+  background: #f8f9fa;
+  color: #495057;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: 1px solid #e9ecef;
 }
 
 .monster-details {

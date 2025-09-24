@@ -1,6 +1,6 @@
 # monster-viewer
 
-This template should help get you started developing with Vue 3 in Vite.
+Web app for building encounters and view monster stat blocks for the tabletop roleplaying game Draw Steel.
 
 ## Recommended IDE Setup
 

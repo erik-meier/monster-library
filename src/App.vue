@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="nav-container">
         <router-link to="/" class="nav-brand">
-          Monster Codex
+          Steel Cauldron
         </router-link>
         
         <div class="nav-menu">
@@ -18,7 +18,7 @@
     </main>
 
     <footer class="footer">
-      <p>&copy; 2025 Monster Codex - Your TTRPG Companion</p>
+      <p>&copy; 2025 Steel Cauldron - Draw Steel Monster Brewing</p>
     </footer>
   </div>
 </template>
