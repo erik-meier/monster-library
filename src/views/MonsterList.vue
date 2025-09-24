@@ -330,10 +330,13 @@ export default {
   .filter-row {
     flex-direction: column;
     align-items: stretch;
+    gap: 1rem;
   }
   
   .filter-select {
     min-width: auto;
+    padding: 0.75rem;
+    font-size: 1rem;
   }
   
   .monsters-grid {
@@ -343,6 +346,53 @@ export default {
   
   .monster-card {
     padding: 1rem;
+    min-height: 44px; /* Touch-friendly target */
+  }
+  
+  .monster-card:hover {
+    transform: none; /* Reduce hover effects on mobile */
+  }
+  
+  .monster-card:active {
+    transform: scale(0.98); /* Touch feedback */
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .filters {
+    padding: 0.75rem;
+  }
+  
+  .filter-select {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+  
+  .monsters-grid {
+    gap: 0.75rem;
+  }
+  
+  .monster-card {
+    padding: 0.875rem;
+  }
+  
+  .monster-name {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+  
+  .monster-role {
+    font-size: 0.9rem;
+  }
+  
+  .keywords {
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 }
 </style>

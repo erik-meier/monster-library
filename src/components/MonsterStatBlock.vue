@@ -298,16 +298,91 @@ export default {
     flex-direction: column;
     gap: 0.25rem;
     text-align: center;
+    align-items: center;
+  }
+  
+  .monster-meta-left,
+  .monster-meta-center,
+  .monster-meta-right {
+    position: static;
+    transform: none;
+    margin: 0;
+    width: auto;
+  }
+  
+  .core-stats {
+    margin-bottom: 1.25rem;
+  }
+  
+  .stat-labels,
+  .stat-values {
+    gap: 0.25rem;
+  }
+  
+  .stat-label,
+  .stat-value {
+    font-size: 0.9rem;
+    min-width: 0;
   }
   
   .secondary-stats {
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.5rem;
     font-size: 0.85rem;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .stat-item {
+    white-space: normal;
+    word-break: break-word;
   }
   
   .stat-separator {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-block {
+    padding: 0.75rem;
+  }
+  
+  .monster-name {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .monster-meta-container {
+    gap: 0.4rem;
+  }
+  
+  .monster-meta-left,
+  .monster-meta-center,
+  .monster-meta-right {
+    font-size: 0.9rem;
+  }
+  
+  .core-stats {
+    margin-bottom: 1rem;
+  }
+  
+  .stat-labels {
+    margin-bottom: 0.4rem;
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+  }
+  
+  .stat-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .secondary-stats {
+    font-size: 0.8rem;
+    gap: 0.4rem;
   }
 }
 </style>

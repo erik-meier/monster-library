@@ -86,6 +86,10 @@ export default {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+  min-height: 44px; /* Ensure touch-friendly target size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-link:hover {
@@ -117,19 +121,25 @@ export default {
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 0.5rem;
+    min-height: 56px;
+    height: auto;
   }
   
   .nav-brand {
     font-size: 1.2rem;
+    flex-shrink: 0;
   }
   
   .nav-menu {
-    gap: 1rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
   
   .nav-link {
-    padding: 0.25rem 0.5rem;
+    padding: 0.375rem 0.75rem;
     font-size: 0.9rem;
+    white-space: nowrap;
   }
   
   .main-content {
@@ -138,9 +148,37 @@ export default {
 }
 
 @media (max-width: 480px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem 0.5rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .nav-menu {
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
   .nav-menu {
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .nav-link {
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
   }
 }
 </style>
