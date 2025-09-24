@@ -1,0 +1,311 @@
+{
+  "id": "ghoul",
+  "name": "Ghoul",
+  "level": 1,
+  "ev": 3,
+  "role": "harrier",
+  "organization": "horde",
+  "keywords": [
+    "undead"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 7,
+  "stamina": 15,
+  "stability": 0,
+  "freeStrike": 1,
+  "characteristics": {
+    "might": 0,
+    "agility": 2,
+    "reason": -2,
+    "intuition": 0,
+    "presence": -1
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 1,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 1,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Razor Claws",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {
+            "4CQjGvtYKZpe08U1": {
+              "type": "damage",
+              "_id": "4CQjGvtYKZpe08U1",
+              "damage": {
+                "tier1": {
+                  "value": "3",
+                  "types": [],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.weak",
+                    "characteristic": "none"
+                  }
+                },
+                "tier2": {
+                  "value": "4",
+                  "types": [],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.average",
+                    "characteristic": ""
+                  }
+                },
+                "tier3": {
+                  "value": "5",
+                  "types": [],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.strong",
+                    "characteristic": ""
+                  }
+                }
+              },
+              "name": "",
+              "img": null
+            },
+            "uzc7ZBgbPsmznKxB": {
+              "type": "applied",
+              "_id": "uzc7ZBgbPsmznKxB",
+              "applied": {
+                "tier3": {
+                  "potency": {
+                    "characteristic": "might",
+                    "value": "2"
+                  },
+                  "display": "{{potency}} bleeding (save ends)",
+                  "effects": {
+                    "bleeding": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  }
+                },
+                "tier2": {
+                  "potency": {
+                    "characteristic": "none",
+                    "value": "@potency.average"
+                  },
+                  "display": "",
+                  "effects": {}
+                },
+                "tier1": {
+                  "display": "",
+                  "potency": {
+                    "value": "@potency.weak",
+                    "characteristic": "none"
+                  },
+                  "effects": {}
+                }
+              },
+              "name": "",
+              "img": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Leap",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Hunger",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the ghoul uses the Charge main action, they gain a +2 bonus to speed until the end of their turn.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Arise",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The first time the ghoul is reduced to 0 Stamina by damage that isnʼt fire damage or holy damage and their body isnʼt destroyed, they instead have 1 Stamina and fall prone.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Dread March",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Paranormal Fling",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Ravenous Horde",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 2,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "The Grasping, the Hungry",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "262",
+    "license": "Draw Steel Creator License"
+  }
+}

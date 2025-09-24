@@ -1,0 +1,256 @@
+{
+  "id": "orliq",
+  "name": "Orliq",
+  "level": 4,
+  "ev": 6,
+  "role": "minion",
+  "organization": "minion",
+  "keywords": [
+    "abyssal"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "T"
+  },
+  "speed": 6,
+  "stamina": 8,
+  "stability": 0,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": -1,
+    "agility": 3,
+    "reason": 1,
+    "intuition": 0,
+    "presence": -1
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 5,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk",
+    "fly"
+  ],
+  "items": [
+    {
+      "name": "Imposing Energy",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Any enemy who starts their turn with two or more orliq adjacent to them is slowed (EoT).</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Soulsight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Any creature within 2 squares of the orliq can't be hidden from them.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Soul Prism",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {
+            "S2EUOMSShCGvOGpY": {
+              "_id": "S2EUOMSShCGvOGpY",
+              "type": "damage",
+              "name": "",
+              "img": null,
+              "damage": {
+                "tier1": {
+                  "value": "2",
+                  "types": [
+                    "corruption"
+                  ],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.weak",
+                    "characteristic": "none"
+                  }
+                },
+                "tier2": {
+                  "value": "4",
+                  "types": [
+                    "corruption"
+                  ],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.average",
+                    "characteristic": ""
+                  }
+                },
+                "tier3": {
+                  "value": "6",
+                  "types": [
+                    "corruption"
+                  ],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.strong",
+                    "characteristic": ""
+                  }
+                }
+              }
+            },
+            "QXtb55nZg240kllv": {
+              "_id": "QXtb55nZg240kllv",
+              "type": "forced",
+              "name": "slide",
+              "img": null,
+              "forced": {
+                "tier1": {
+                  "movement": [
+                    "slide"
+                  ],
+                  "distance": "2",
+                  "display": "{{forced}}",
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.weak",
+                    "characteristic": "agility"
+                  }
+                },
+                "tier2": {
+                  "movement": [
+                    "slide"
+                  ],
+                  "distance": "2",
+                  "display": "{{forced}}",
+                  "properties": [
+                    "vertical"
+                  ],
+                  "potency": {
+                    "value": "@potency.average",
+                    "characteristic": "agility"
+                  }
+                },
+                "tier3": {
+                  "movement": [
+                    "slide"
+                  ],
+                  "distance": "2",
+                  "display": "{{forced}}",
+                  "properties": [
+                    "vertical"
+                  ],
+                  "potency": {
+                    "value": "@potency.strong",
+                    "characteristic": "agility"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Abyssal Jaunt",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "65",
+    "license": "Draw Steel Creator License"
+  }
+}

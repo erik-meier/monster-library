@@ -1,0 +1,432 @@
+{
+  "id": "dwarf-stone-whisperer",
+  "name": "Dwarf Stone Whisperer",
+  "level": 3,
+  "ev": 10,
+  "role": "controller",
+  "organization": "platoon",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 52,
+  "stability": 2,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 1,
+    "agility": 0,
+    "reason": 2,
+    "intuition": 2,
+    "presence": 0
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk",
+    "burrow"
+  ],
+  "items": [
+    {
+      "name": "Tile Slide",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 2,
+          "secondary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {
+            "fuNoLDZEGFNM5dwv": {
+              "type": "damage",
+              "_id": "fuNoLDZEGFNM5dwv",
+              "damage": {
+                "tier1": {
+                  "value": "5",
+                  "types": [],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.weak",
+                    "characteristic": "none"
+                  }
+                },
+                "tier2": {
+                  "value": "8",
+                  "types": [],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.average",
+                    "characteristic": ""
+                  }
+                },
+                "tier3": {
+                  "value": "11",
+                  "types": [],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.strong",
+                    "characteristic": ""
+                  }
+                }
+              },
+              "name": "",
+              "img": null
+            },
+            "JofqLQqq2eHq4mTO": {
+              "type": "applied",
+              "_id": "JofqLQqq2eHq4mTO",
+              "name": "Slowed",
+              "applied": {
+                "tier1": {
+                  "display": "{{potency}} slowed (save ends)",
+                  "potency": {
+                    "characteristic": "might",
+                    "value": "0"
+                  },
+                  "effects": {
+                    "slowed": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  }
+                },
+                "tier2": {
+                  "potency": {
+                    "value": "1",
+                    "characteristic": ""
+                  },
+                  "display": "",
+                  "effects": {
+                    "slowed": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  }
+                },
+                "tier3": {
+                  "potency": {
+                    "value": "2",
+                    "characteristic": ""
+                  },
+                  "display": "{{potency}} restrained (save ends)",
+                  "effects": {
+                    "restrained": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  }
+                }
+              },
+              "img": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Stone Wave",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 3,
+          "secondary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2",
+            "characteristics": []
+          },
+          "effects": {
+            "H3pbwJAcDcy6JLwJ": {
+              "type": "damage",
+              "_id": "H3pbwJAcDcy6JLwJ",
+              "damage": {
+                "tier1": {
+                  "value": "4",
+                  "types": [],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.weak",
+                    "characteristic": "none"
+                  }
+                },
+                "tier2": {
+                  "value": "6",
+                  "types": [],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.average",
+                    "characteristic": ""
+                  }
+                },
+                "tier3": {
+                  "value": "9",
+                  "types": [],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.strong",
+                    "characteristic": ""
+                  }
+                }
+              },
+              "name": "",
+              "img": null
+            },
+            "6fj9kR4yFPP6m3Yl": {
+              "type": "forced",
+              "_id": "6fj9kR4yFPP6m3Yl",
+              "forced": {
+                "tier1": {
+                  "distance": "2",
+                  "display": "{{forced}}",
+                  "movement": [
+                    "push"
+                  ],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.weak",
+                    "characteristic": "none"
+                  }
+                },
+                "tier2": {
+                  "distance": "3",
+                  "display": "{{forced}}",
+                  "movement": [
+                    "push"
+                  ],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.average",
+                    "characteristic": ""
+                  }
+                },
+                "tier3": {
+                  "distance": "3",
+                  "display": "{{forced}}",
+                  "movement": [
+                    "push"
+                  ],
+                  "properties": [],
+                  "potency": {
+                    "value": "@potency.strong",
+                    "characteristic": ""
+                  }
+                }
+              },
+              "name": "",
+              "img": null
+            },
+            "rMb99yePISbKHJN7": {
+              "type": "applied",
+              "_id": "rMb99yePISbKHJN7",
+              "name": "Slowed",
+              "applied": {
+                "tier1": {
+                  "display": "{{potency}} slowed (save ends)",
+                  "potency": {
+                    "value": "1",
+                    "characteristic": "reason"
+                  },
+                  "effects": {
+                    "slowed": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  }
+                },
+                "tier2": {
+                  "potency": {
+                    "value": "2",
+                    "characteristic": ""
+                  },
+                  "display": "",
+                  "effects": {
+                    "slowed": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  }
+                },
+                "tier3": {
+                  "potency": {
+                    "value": "3",
+                    "characteristic": ""
+                  },
+                  "display": "",
+                  "effects": {
+                    "slowed": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  }
+                }
+              },
+              "img": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Stone Walker",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Whenever the stone whisperer willingly moves, they can phase through up to 2 squares of stone as part of that movement. If they end their movement inside stone, they are shunted out into the space from which they entered it.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Rappelling Barrage",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A dwarf starts their turn",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Snaring Line",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 7,
+        "keywords": [
+          "area",
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 10,
+          "secondary": 1,
+          "tertiary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Breaching Charge",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A dwarf starts their turn",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "109",
+    "license": "Draw Steel Creator License"
+  }
+}

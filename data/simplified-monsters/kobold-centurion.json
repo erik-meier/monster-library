@@ -1,0 +1,492 @@
+{
+  "id": "kobold-centurion",
+  "name": "Kobold Centurion",
+  "level": 1,
+  "ev": 12,
+  "role": "",
+  "organization": "leader",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "S"
+  },
+  "speed": 5,
+  "stamina": 80,
+  "stability": 2,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 2,
+    "agility": 3,
+    "reason": 2,
+    "intuition": 0,
+    "presence": 2
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Shield? Shield!",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While adjacent to an ally who also has this trait, the centurion has stability 3, has cover, and grants cover to allies.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "End Effect",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the end of each of their turns, the centurion can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Maniple Tactics",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Set the Initiative",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Shield Wall",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Boom Pilum!",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area",
+          "ranged",
+          "weapon"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 5,
+          "secondary": 10
+        },
+        "target": {
+          "type": "enemy"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Firetail Pilum",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {
+            "PYzKSnbLXLxxzZqu": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "PYzKSnbLXLxxzZqu",
+              "damage": {
+                "tier1": {
+                  "value": "7+5"
+                },
+                "tier2": {
+                  "value": "10+5"
+                },
+                "tier3": {
+                  "value": "13+5"
+                }
+              }
+            },
+            "SxQ67eqUxWyJ0Hs5": {
+              "name": "Firetail Weakened",
+              "img": null,
+              "type": "applied",
+              "_id": "SxQ67eqUxWyJ0Hs5",
+              "applied": {
+                "tier1": {
+                  "potency": {
+                    "characteristic": "might",
+                    "value": "1"
+                  },
+                  "display": "{{potency}} weakened (save ends)",
+                  "effects": {
+                    "7j7mrAssAYhW4Cpc": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier2": {
+                  "potency": {
+                    "value": "1"
+                  },
+                  "effects": {
+                    "7j7mrAssAYhW4Cpc": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier3": {
+                  "potency": {
+                    "value": "1"
+                  },
+                  "effects": {
+                    "7j7mrAssAYhW4Cpc": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Are You Not Entertained?!",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Testudo!",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "triggered",
+        "resource": null,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 5
+        },
+        "target": {
+          "type": "ally",
+          "value": null
+        },
+        "trigger": "A creature uses an ability that targets the centurion or an ally  of the centurion within distance.",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Concentrate All Fire on That Hero!",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Pilum",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "meleeRanged",
+          "primary": 1,
+          "secondary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {
+            "ZQnM7lGGZB3n3w0r": {
+              "name": "Damage",
+              "img": null,
+              "type": "damage",
+              "_id": "ZQnM7lGGZB3n3w0r",
+              "damage": {
+                "tier1": {
+                  "value": "7"
+                },
+                "tier2": {
+                  "value": "10"
+                },
+                "tier3": {
+                  "value": "13"
+                }
+              }
+            },
+            "0hwqoy9hPVSwCdVa": {
+              "name": "Weakened",
+              "img": null,
+              "type": "applied",
+              "_id": "0hwqoy9hPVSwCdVa",
+              "applied": {
+                "tier1": {
+                  "display": "{{potency}} weakened (save ends)",
+                  "potency": {
+                    "characteristic": "might",
+                    "value": "1"
+                  },
+                  "effects": {
+                    "weakened": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier2": {
+                  "potency": {
+                    "value": "1"
+                  },
+                  "effects": {
+                    "weakened": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier3": {
+                  "potency": {
+                    "value": "1"
+                  },
+                  "effects": {
+                    "weakened": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                }
+              }
+            },
+            "bjRwxYHZ0fG26hfw": {
+              "name": "Weakened + Restrained",
+              "img": null,
+              "type": "applied",
+              "_id": "bjRwxYHZ0fG26hfw",
+              "applied": {
+                "tier1": {
+                  "effects": {
+                    "vXLk5HAJ3tyspyll": {
+                      "condition": "failure",
+                      "end": ""
+                    }
+                  },
+                  "potency": {
+                    "value": "1"
+                  }
+                },
+                "tier2": {
+                  "potency": {
+                    "value": "1"
+                  },
+                  "effects": {
+                    "vXLk5HAJ3tyspyll": {
+                      "condition": "failure",
+                      "end": ""
+                    }
+                  }
+                },
+                "tier3": {
+                  "potency": {
+                    "value": "1"
+                  },
+                  "effects": {
+                    "vXLk5HAJ3tyspyll": {
+                      "condition": "failure"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "194",
+    "license": "Draw Steel Creator License"
+  }
+}

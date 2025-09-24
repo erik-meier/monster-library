@@ -1,0 +1,268 @@
+{
+  "id": "orc-rampart",
+  "name": "Orc Rampart",
+  "level": 2,
+  "ev": 8,
+  "role": "defender",
+  "organization": "platoon",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "L"
+  },
+  "speed": 6,
+  "stamina": 59,
+  "stability": 2,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 2,
+    "agility": 2,
+    "reason": 2,
+    "intuition": 2,
+    "presence": 2
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Relentless",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>If the rampart is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the rampart is reduced to 1 Stamina instead.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "No.",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "triggered",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "A creature targets an ally adjacent to the rampart with an  ability that doesn’t also target the rampart.",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Castling",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "ally",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Mohler Trench",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Mohler Cavity",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Overwhelming March",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "My Spear, My Foe",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {
+            "FudiXFjJk7IFs4Ur": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "FudiXFjJk7IFs4Ur",
+              "damage": {
+                "tier1": {
+                  "value": "6"
+                },
+                "tier2": {
+                  "value": "9"
+                },
+                "tier3": {
+                  "value": "12"
+                }
+              }
+            },
+            "t9q6cPQwAOd0n3zA": {
+              "name": "taunted",
+              "img": null,
+              "type": "applied",
+              "_id": "t9q6cPQwAOd0n3zA",
+              "applied": {
+                "tier2": {
+                  "display": "taunted (Eot)",
+                  "effects": {
+                    "taunted": {
+                      "condition": "always",
+                      "end": "turn"
+                    }
+                  }
+                },
+                "tier3": {
+                  "effects": {
+                    "taunted": {
+                      "condition": "always",
+                      "end": "turn"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "220",
+    "license": "Draw Steel Creator License"
+  }
+}

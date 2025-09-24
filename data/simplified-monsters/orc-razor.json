@@ -1,0 +1,226 @@
+{
+  "id": "orc-razor",
+  "name": "Orc Razor",
+  "level": 1,
+  "ev": 3,
+  "role": "brute",
+  "organization": "minion",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "L"
+  },
+  "speed": 6,
+  "stamina": 5,
+  "stability": 0,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 2,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "With Captain",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>+1 damage bonus to strikes</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Bloodfire Burn",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>If the razor is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Overwhelming March",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Mohler Trench",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Mohler Cavity",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Boot and Blade",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {
+            "jMG02168KP341FJk": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "jMG02168KP341FJk",
+              "damage": {
+                "tier1": {
+                  "value": "2"
+                },
+                "tier2": {
+                  "value": "4"
+                },
+                "tier3": {
+                  "value": "5"
+                }
+              }
+            },
+            "7FZxbu8MCbHOR9CG": {
+              "name": "Push",
+              "img": null,
+              "type": "forced",
+              "_id": "7FZxbu8MCbHOR9CG",
+              "forced": {
+                "tier1": {
+                  "movement": [],
+                  "display": "",
+                  "distance": ""
+                },
+                "tier2": {
+                  "distance": "3"
+                },
+                "tier3": {
+                  "distance": "3",
+                  "display": "{{forced}} or prone"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "216",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "id": "kobold-tiro",
+  "name": "Kobold Tiro",
+  "level": 1,
+  "ev": 3,
+  "role": "defender",
+  "organization": "minion",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "S"
+  },
+  "speed": 5,
+  "stamina": 5,
+  "stability": 0,
+  "freeStrike": 1,
+  "characteristics": {
+    "might": 0,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "With Captain",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>+1 bonus to speed</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Pugio",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {
+            "s8y65C1ynyw33Pr0": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "s8y65C1ynyw33Pr0",
+              "damage": {
+                "tier1": {
+                  "value": "1"
+                },
+                "tier2": {
+                  "value": "2"
+                },
+                "tier3": {
+                  "value": "3"
+                }
+              }
+            },
+            "G22rxl2OG1t1fL3J": {
+              "name": "",
+              "img": null,
+              "type": "other",
+              "_id": "G22rxl2OG1t1fL3J",
+              "other": {
+                "tier2": {
+                  "display": "the tiro can shift 1 square"
+                },
+                "tier3": {
+                  "display": "the tiro can shift 2 squares"
+                }
+              }
+            },
+            "H8TkS7gCUo85xALg": {
+              "name": "Can't shift",
+              "img": null,
+              "type": "applied",
+              "_id": "H8TkS7gCUo85xALg",
+              "applied": {
+                "tier1": {
+                  "effects": {
+                    "Ib78clUVwMPg7pKx": {
+                      "condition": "failure"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Shield? Shield!",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While adjacent to an ally who also has this trait, the tiro has stability 1, has cover, and grants cover to allies.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Maniple Tactics",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Set the Initiative",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Shield Wall",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "191",
+    "license": "Draw Steel Creator License"
+  }
+}

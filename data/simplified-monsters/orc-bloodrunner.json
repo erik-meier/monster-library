@@ -1,0 +1,239 @@
+{
+  "id": "orc-bloodrunner",
+  "name": "Orc Bloodrunner",
+  "level": 3,
+  "ev": 10,
+  "role": "harrier",
+  "organization": "platoon",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 8,
+  "stamina": 50,
+  "stability": 0,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 2,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 1,
+    "presence": 1
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Unimpeded",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The bloodrunner can end their movement in a prone creature’s space. The first time on a turn that a bloodrunner enters any crea ture’s space, that creature takes [[/damage 3]] damage.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Relentless",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>If the bloodrunner is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the bloodrunner is reduced to 1 Stamina instead.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Overwhelming March",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Mohler Trench",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Mohler Cavity",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Shield Bash",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {
+            "rrzMNzhEiKPxd4mY": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "rrzMNzhEiKPxd4mY",
+              "damage": {
+                "tier1": {
+                  "value": "7"
+                },
+                "tier2": {
+                  "value": "10"
+                },
+                "tier3": {
+                  "value": "13"
+                }
+              }
+            },
+            "dCRdz0mv8qqjLPYv": {
+              "name": "Push",
+              "img": null,
+              "type": "other",
+              "_id": "dCRdz0mv8qqjLPYv",
+              "other": {
+                "tier1": {
+                  "display": "push special"
+                },
+                "tier2": {
+                  "display": "push special"
+                },
+                "tier3": {
+                  "display": "push special or prone"
+                }
+              }
+            },
+            "ExZ2oVSAODIpPBim": {
+              "name": "Prone",
+              "img": null,
+              "type": "applied",
+              "_id": "ExZ2oVSAODIpPBim",
+              "applied": {
+                "tier3": {
+                  "effects": {
+                    "prone": {
+                      "condition": "always",
+                      "end": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "217",
+    "license": "Draw Steel Creator License"
+  }
+}

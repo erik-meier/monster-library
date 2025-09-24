@@ -5,13 +5,13 @@
       <h1 class="monster-name">{{ monster.name }}</h1>
       <div class="monster-meta-container">
         <p class="monster-meta-left">
-          {{ formatMonsterRole(monster.system.monster) }}
+          {{ formatMonsterRole(monster) }}
         </p>
         <p class="monster-meta-center">
-          {{ formatKeywords(monster.system.monster.keywords) }}
+          {{ formatKeywords(monster.keywords) }}
         </p>
         <p class="monster-meta-right">
-          EV {{ monster.system.monster.ev }}
+          EV {{ monster.ev }}
         </p>
       </div>
     </div>
@@ -28,48 +28,48 @@
         <div class="stat-label">Free Strike</div>
       </div>
       <div class="stat-values">
-        <div class="stat-value">{{ monster.system.combat.size.value }}{{ monster.system.combat.size.letter }}</div>
-        <div class="stat-value">{{ monster.system.movement.value }}</div>
-        <div class="stat-value">{{ monster.system.stamina.max }}</div>
-        <div class="stat-value">{{ monster.system.combat.stability }}</div>
-        <div class="stat-value">{{ monster.system.monster.freeStrike }}</div>
+        <div class="stat-value">{{ monster.size.value }}{{ monster.size.letter }}</div>
+        <div class="stat-value">{{ monster.speed }}</div>
+        <div class="stat-value">{{ monster.stamina }}</div>
+        <div class="stat-value">{{ monster.stability }}</div>
+        <div class="stat-value">{{ monster.freeStrike }}</div>
       </div>
     </div>
 
     <div class="divider"></div>
 
     <!-- Characteristics -->
-    <CharacteristicScores :characteristics="monster.system.characteristics" />
+    <CharacteristicScores :characteristics="monster.characteristics" />
 
     <div class="divider"></div>
 
     <!-- Secondary Stats -->
     <div class="secondary-stats">
       <span class="stat-item">
-        <strong>Immunity</strong> {{ formatImmunity(monster.system.damage.immunities) }}
+        <strong>Immunity</strong> {{ formatImmunity(monster.immunities) }}
       </span>
       <span class="stat-separator">•</span>
       <span class="stat-item">
-        <strong>Weakness</strong> {{ formatWeakness(monster.system.damage.weaknesses) }}
+        <strong>Weakness</strong> {{ formatWeakness(monster.weaknesses) }}
       </span>
       <span class="stat-separator">•</span>
       <span class="stat-item">
-        <strong>Movement</strong> {{ formatMovement(monster.system.movement.types) }}
+        <strong>Movement</strong> {{ formatMovement(monster.movementTypes) }}
       </span>
     </div>
 
     <div class="divider"></div>
 
     <!-- Abilities -->
-    <ActionsList :title="Abilities" :actions="monster.items" :chr="Math.max(...Object.values(monster.system.characteristics).map(c => c.value))" :monster="monster" />
+    <ActionsList :title="Abilities" :actions="monster.items" :chr="Math.max(...Object.values(monster.characteristics))" :monster="monster" />
 
     <!-- Source Information -->
-    <div v-if="monster.system.source" class="source-info">
+    <div v-if="monster.source" class="source-info">
       <div class="divider"></div>
       <div class="source-text">
-        <span v-if="monster.system.source.book">{{ monster.system.source.book }}</span>
-        <span v-if="monster.system.source.page">, page {{ monster.system.source.page }}</span>
-        <span v-if="monster.system.source.license"> • {{ monster.system.source.license }}</span>
+        <span v-if="monster.source.book">{{ monster.source.book }}</span>
+        <span v-if="monster.source.page">, page {{ monster.source.page }}</span>
+        <span v-if="monster.source.license"> • {{ monster.source.license }}</span>
       </div>
     </div>
   </div>

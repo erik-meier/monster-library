@@ -1,0 +1,165 @@
+{
+  "id": "orc-bloodspark",
+  "name": "Orc Bloodspark",
+  "level": 1,
+  "ev": 3,
+  "role": "artillery",
+  "organization": "minion",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 3,
+  "stability": 0,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 0,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 2
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "With Captain",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p><strong>With Captain:</strong> +2 bonus to forced movement distance</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Explosive Mote",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "effects": {
+            "45zMfCxJsPchTgZm": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "45zMfCxJsPchTgZm",
+              "damage": {
+                "tier1": {
+                  "value": "2"
+                },
+                "tier2": {
+                  "value": "4"
+                },
+                "tier3": {
+                  "value": "5"
+                }
+              }
+            },
+            "ZbW1NHHSHnsu561m": {
+              "name": "Push",
+              "img": null,
+              "type": "forced",
+              "_id": "ZbW1NHHSHnsu561m",
+              "forced": {
+                "tier2": {
+                  "distance": "2"
+                },
+                "tier3": {
+                  "distance": "4"
+                }
+              }
+            },
+            "5IqS3xXb75utDlY8": {
+              "name": "Shift",
+              "img": null,
+              "type": "other",
+              "_id": "5IqS3xXb75utDlY8",
+              "other": {
+                "tier1": {
+                  "display": "or the bloodspark can shift 1 square away from the target."
+                },
+                "tier2": {
+                  "display": "or the bloodspark can shift 2 square away from the target."
+                },
+                "tier3": {
+                  "display": "or the bloodspark can shift 4 square away from the target."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Bloodfire Burn",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>If the bloodspark is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying.</p>",
+          "director": ""
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "216",
+    "license": "Draw Steel Creator License"
+  }
+}

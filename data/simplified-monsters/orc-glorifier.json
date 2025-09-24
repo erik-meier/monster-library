@@ -1,0 +1,247 @@
+{
+  "id": "orc-glorifier",
+  "name": "Orc Glorifier",
+  "level": 1,
+  "ev": 3,
+  "role": "controller",
+  "organization": "minion",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 3,
+  "stability": 0,
+  "freeStrike": 1,
+  "characteristics": {
+    "might": 0,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 2
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "With Captain",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>With Captain: +5 bonus to ranged distance</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Bloodfire Burn",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>If the glorifier is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Overwhelming March",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Mohler Trench",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Mohler Cavity",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Call to Victory",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "meleeRanged",
+          "primary": 1,
+          "secondary": 5
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "effects": {
+            "BH8OouasVRSiqZq6": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "BH8OouasVRSiqZq6",
+              "damage": {
+                "tier1": {
+                  "value": "1",
+                  "types": [
+                    "sonic"
+                  ]
+                },
+                "tier2": {
+                  "value": "2",
+                  "types": [
+                    "sonic"
+                  ]
+                },
+                "tier3": {
+                  "value": "3",
+                  "types": [
+                    "sonic"
+                  ]
+                }
+              }
+            },
+            "NlsynKV9fkWzrmYq": {
+              "name": "Slowed",
+              "img": null,
+              "type": "applied",
+              "_id": "NlsynKV9fkWzrmYq",
+              "applied": {
+                "tier1": {
+                  "potency": {
+                    "characteristic": "presence"
+                  }
+                },
+                "tier2": {
+                  "display": "{{potency}} slowed (save ends)",
+                  "effects": {
+                    "slowed": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier3": {
+                  "effects": {
+                    "slowed": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "216",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -73,7 +73,7 @@ export default {
       const recentMonster = {
         id: this.monsterId,
         name: this.monster.name,
-        level: this.monster.system?.monster?.level || 0,
+        level: this.monster.level || 0,
         viewedAt: new Date().toISOString()
       };
 

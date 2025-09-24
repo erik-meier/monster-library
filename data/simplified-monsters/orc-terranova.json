@@ -1,0 +1,340 @@
+{
+  "id": "orc-terranova",
+  "name": "Orc Terranova",
+  "level": 2,
+  "ev": 8,
+  "role": "controller",
+  "organization": "platoon",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 30,
+  "stability": 2,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 1,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk",
+    "burrow"
+  ],
+  "items": [
+    {
+      "name": "Relentless",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>If the terranova is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the terranova is reduced to 1 Stamina instead.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Seismic Step",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The terranova ignores difficult terrain. Additionally, they don’t need line of effect to use abilities against creatures touching the ground.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Earth Pillar",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 3
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "effects": {
+            "Wgs0vYsos6HdSjI4": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "Wgs0vYsos6HdSjI4",
+              "damage": {
+                "tier1": {
+                  "value": "6"
+                },
+                "tier2": {
+                  "value": "9"
+                },
+                "tier3": {
+                  "value": "12"
+                }
+              }
+            },
+            "ZIGVROTYUGsE8uxf": {
+              "name": "prone",
+              "img": null,
+              "type": "applied",
+              "_id": "ZIGVROTYUGsE8uxf",
+              "applied": {
+                "tier1": {
+                  "potency": {
+                    "characteristic": "agility"
+                  },
+                  "display": "{{potency}} prone and can’t stand (save ends)",
+                  "effects": {
+                    "prone": {
+                      "condition": "failure",
+                      "end": ""
+                    },
+                    "A45TKyRHuWHnNj7M": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier2": {
+                  "effects": {
+                    "prone": {
+                      "condition": "failure",
+                      "end": ""
+                    },
+                    "A45TKyRHuWHnNj7M": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier3": {
+                  "effects": {
+                    "prone": {
+                      "condition": "failure",
+                      "end": ""
+                    },
+                    "A45TKyRHuWHnNj7M": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Mohler Trench",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Mohler Cavity",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Overwhelming March",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        }
+      }
+    },
+    {
+      "name": "Sinkhole",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "weapon"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 3
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "effects": {
+            "ZP2R2qA3pKhQ2Q87": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "ZP2R2qA3pKhQ2Q87",
+              "damage": {
+                "tier1": {
+                  "value": "4"
+                },
+                "tier2": {
+                  "value": "7"
+                },
+                "tier3": {
+                  "value": "10"
+                }
+              }
+            },
+            "5KzPrLlNBlOhyQWw": {
+              "name": "Restrained",
+              "img": null,
+              "type": "applied",
+              "_id": "5KzPrLlNBlOhyQWw",
+              "applied": {
+                "tier1": {
+                  "display": "{{potency}} restrained (save ends)",
+                  "potency": {
+                    "characteristic": "might"
+                  },
+                  "effects": {
+                    "restrained": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier2": {
+                  "effects": {
+                    "restrained": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier3": {
+                  "effects": {
+                    "restrained": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "220",
+    "license": "Draw Steel Creator License"
+  }
+}
