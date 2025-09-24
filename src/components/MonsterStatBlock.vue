@@ -8,7 +8,7 @@
           {{ formatMonsterRole(monster.system.monster) }}
         </p>
         <p class="monster-meta-center">
-          {{ monster.system.monster.keywords.join(", ") }}
+          {{ formatKeywords(monster.system.monster.keywords) }}
         </p>
         <p class="monster-meta-right">
           EV {{ monster.system.monster.ev }}
@@ -45,28 +45,33 @@
 
     <!-- Secondary Stats -->
     <div class="secondary-stats">
-      <div class="stat-row">
-        <span class="stat-label">Immunity</span>
-        <span class="stat-value">{{ formatImmunity(monster.system.damage.immunities) }}</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">Weakness</span>
-        <span class="stat-value">{{ formatWeakness(monster.system.damage.weaknesses) }}</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">Movement</span>
-        <span class="stat-value">{{ formatMovement(monster.system.movement.types) }}</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">Languages</span>
-        <span class="stat-value">{{ monster.system.biography.languages.join(', ') || '—' }}</span>
-      </div>
+      <span class="stat-item">
+        <strong>Immunity</strong> {{ formatImmunity(monster.system.damage.immunities) }}
+      </span>
+      <span class="stat-separator">•</span>
+      <span class="stat-item">
+        <strong>Weakness</strong> {{ formatWeakness(monster.system.damage.weaknesses) }}
+      </span>
+      <span class="stat-separator">•</span>
+      <span class="stat-item">
+        <strong>Movement</strong> {{ formatMovement(monster.system.movement.types) }}
+      </span>
     </div>
 
     <div class="divider"></div>
 
     <!-- Abilities -->
-    <ActionsList :title="Abilities" :actions="monster.items" :chr="Math.max(...Object.values(monster.system.characteristics).map(c => c.value))" />
+    <ActionsList :title="Abilities" :actions="monster.items" :chr="Math.max(...Object.values(monster.system.characteristics).map(c => c.value))" :monster="monster" />
+
+    <!-- Source Information -->
+    <div v-if="monster.system.source" class="source-info">
+      <div class="divider"></div>
+      <div class="source-text">
+        <span v-if="monster.system.source.book">{{ monster.system.source.book }}</span>
+        <span v-if="monster.system.source.page">, page {{ monster.system.source.page }}</span>
+        <span v-if="monster.system.source.license"> • {{ monster.system.source.license }}</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -87,6 +92,12 @@ export default {
     }
   },
   methods: {
+    formatKeywords(keywords) {
+      if (!keywords || !Array.isArray(keywords)) return '';
+      return keywords.map(keyword => 
+        keyword.charAt(0).toUpperCase() + keyword.slice(1).toLowerCase()
+      ).join(', ');
+    },
     formatMonsterRole(monster) {
       return `Level ${monster.level} ${monster.organization}${monster.role ? ' ' + monster.role : ''}`;
     },
@@ -151,6 +162,7 @@ export default {
   align-items: center;
   margin: 0 0 0.5rem 0;
   text-transform: capitalize;
+  position: relative;
 }
 
 .monster-meta-left {
@@ -165,6 +177,10 @@ export default {
   font-style: italic;
   color: #666;
   font-size: 1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
 .monster-meta-right {
@@ -210,6 +226,40 @@ export default {
 
 .secondary-stats {
   font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  line-height: 1.4;
+}
+
+.stat-item {
+  white-space: nowrap;
+}
+
+.stat-item strong {
+  color: #8b4513;
+  font-weight: bold;
+}
+
+.stat-separator {
+  color: #8b4513;
+  font-weight: bold;
+  margin: 0 0.25rem;
+}
+
+.source-info {
+  margin-top: 1rem;
+}
+
+.source-text {
+  font-size: 0.8rem;
+  color: #777;
+  text-align: center;
+  font-style: italic;
 }
 
 .abilities-section {
@@ -243,15 +293,21 @@ export default {
   .monster-name {
     font-size: 1.5rem;
   }
-  
-  .stat-row {
+
+  .monster-meta-container {
     flex-direction: column;
-    margin-bottom: 0.5rem;
+    gap: 0.25rem;
+    text-align: center;
   }
   
-  .stat-label {
-    min-width: auto;
-    margin-bottom: 0.25rem;
+  .secondary-stats {
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+  }
+  
+  .stat-separator {
+    display: none;
   }
 }
 </style>

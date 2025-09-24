@@ -67,11 +67,43 @@ export default {
             throw new Error('Expected JSON but got ' + contentType);
           }
           this.monster = await monsterResponse.json();
+          
+          // Add to recently viewed monsters
+          this.addToRecentlyViewed();
         } catch (err) {
           this.error = err.message;
         } finally {
           this.loading = false;
         }
+    },
+    addToRecentlyViewed() {
+      if (!this.monster) return;
+
+      const recentMonster = {
+        id: this.monsterId,
+        name: this.monster.name,
+        level: this.monster.system?.monster?.level || 0,
+        viewedAt: new Date().toISOString()
+      };
+
+      // Get existing recent monsters
+      let recentMonsters = [];
+      const existing = localStorage.getItem('recentlyViewedMonsters');
+      if (existing) {
+        recentMonsters = JSON.parse(existing);
+      }
+
+      // Remove if already exists (we'll add it to the front)
+      recentMonsters = recentMonsters.filter(m => m.id !== this.monsterId);
+
+      // Add to front
+      recentMonsters.unshift(recentMonster);
+
+      // Keep only the 10 most recent
+      recentMonsters = recentMonsters.slice(0, 10);
+
+      // Save back to localStorage
+      localStorage.setItem('recentlyViewedMonsters', JSON.stringify(recentMonsters));
     }
   }
 }

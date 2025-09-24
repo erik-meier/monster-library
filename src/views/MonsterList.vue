@@ -33,6 +33,22 @@
       >
         <div class="monster-card-header">
           <h3 class="monster-name">{{ monster.name }}</h3>
+          <div class="monster-level">Level {{ monster.level }}</div>
+        </div>
+        
+        <div class="monster-info">
+          <div class="monster-role">{{ monster.role }}</div>
+          <div class="monster-organization" v-if="monster.organization">{{ monster.organization }}</div>
+        </div>
+        
+        <div class="monster-keywords" v-if="monster.keywords && monster.keywords.length > 0">
+          <span 
+            v-for="keyword in monster.keywords" 
+            :key="keyword"
+            class="keyword-tag"
+          >
+            {{ keyword }}
+          </span>
         </div>
       </div>
     </div>
@@ -214,9 +230,10 @@ export default {
   font-size: 1.3rem;
   margin: 0;
   font-weight: bold;
+  flex: 1;
 }
 
-.cr-badge {
+.monster-level {
   background-color: #8b4513;
   color: white;
   padding: 0.25rem 0.75rem;
@@ -224,6 +241,40 @@ export default {
   font-size: 0.8rem;
   font-weight: bold;
   white-space: nowrap;
+  margin-left: 0.5rem;
+}
+
+.monster-info {
+  margin-bottom: 1rem;
+}
+
+.monster-role {
+  color: #495057;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.monster-organization {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.monster-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.keyword-tag {
+  background: #f8f9fa;
+  color: #495057;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: 1px solid #e9ecef;
 }
 
 .monster-details {

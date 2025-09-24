@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <div class="hero">
-      <h1 class="hero-title">Monster Codex</h1>
+      <h1 class="hero-title">Steel Cauldron</h1>
       <p class="hero-subtitle">
-        Your comprehensive library for tabletop RPG monsters and encounters
+        Your comprehensive library for Draw Steel monsters and encounters
       </p>
       
       <div class="hero-actions">
@@ -21,19 +21,13 @@
         <div class="feature-card">
           <div class="feature-icon">📖</div>
           <h3>Monster Library</h3>
-          <p>Browse a comprehensive collection of creatures with detailed stat blocks</p>
+          <p>Browse Draw Steel monsters with detailed stat blocks</p>
         </div>
         
         <div class="feature-card">
           <div class="feature-icon">⚔️</div>
           <h3>Encounter Builder</h3>
-          <p>Create balanced encounters for your campaigns (Coming Soon)</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🎲</div>
-          <h3>Combat Tools</h3>
-          <p>Initiative tracking and combat management tools (Coming Soon)</p>
+          <p>Create balanced encounters for your Draw Steel campaigns (Coming Soon)</p>
         </div>
         
         <div class="feature-card">
@@ -45,19 +39,22 @@
     </div>
 
     <div class="recent-section">
-      <h2>Quick Access</h2>
-      <div class="quick-links">
+      <h2>{{ recentMonsters.length > 0 ? 'Recently Viewed' : 'Getting Started' }}</h2>
+      <div v-if="recentMonsters.length > 0" class="quick-links">
         <router-link 
-          v-for="monster in sampleMonsters" 
+          v-for="monster in recentMonsters" 
           :key="monster.id"
           :to="`/monster/${monster.id}`"
           class="quick-link"
         >
           <div class="quick-link-content">
             <h4>{{ monster.name }}</h4>
-            <span class="cr-badge">CR {{ monster.cr }}</span>
+            <span class="level-badge">Level {{ monster.level }}</span>
           </div>
         </router-link>
+      </div>
+      <div v-else class="getting-started">
+        <p>No recently viewed monsters yet. Browse the monster library or try a random monster to get started!</p>
       </div>
     </div>
   </div>
@@ -68,19 +65,49 @@ export default {
   name: 'Home',
   data() {
     return {
-      sampleMonsters: [
-        { id: 'ancient-red-dragon', name: 'Ancient Red Dragon', cr: '24' },
-        { id: 'owlbear', name: 'Owlbear', cr: '3' },
-        { id: 'goblin', name: 'Goblin', cr: '1/4' },
-        { id: 'lich', name: 'Lich', cr: '21' }
-      ]
+      recentMonsters: [],
+      monsterIndex: null
     }
   },
+  async created() {
+    // Load recently viewed monsters from localStorage
+    this.loadRecentMonsters()
+    
+    // Load monster index for random monster functionality
+    await this.loadMonsterIndex()
+  },
   methods: {
+    loadRecentMonsters() {
+      const recent = localStorage.getItem('recentlyViewedMonsters')
+      if (recent) {
+        this.recentMonsters = JSON.parse(recent).slice(0, 4) // Show max 4 recent monsters
+      }
+    },
+    async loadMonsterIndex() {
+      try {
+        const response = await fetch('/data/monster_index.json')
+        this.monsterIndex = await response.json()
+      } catch (error) {
+        console.error('Failed to load monster index:', error)
+      }
+    },
     async viewRandomMonster() {
-      // For now, just pick a random sample monster
-      const randomMonster = this.sampleMonsters[Math.floor(Math.random() * this.sampleMonsters.length)]
-      this.$router.push(`/monster/${randomMonster.id}`)
+      if (!this.monsterIndex || !this.monsterIndex.card) {
+        console.error('Monster index not loaded')
+        return
+      }
+
+      // Get all monster IDs from the card data
+      const monsterIds = Object.keys(this.monsterIndex.card)
+      
+      if (monsterIds.length === 0) {
+        console.error('No monsters found in index')
+        return
+      }
+
+      // Pick a random monster
+      const randomId = monsterIds[Math.floor(Math.random() * monsterIds.length)]
+      this.$router.push(`/monster/${randomId}`)
     }
   }
 }
@@ -208,6 +235,21 @@ export default {
   font-size: 1.8rem;
 }
 
+.getting-started {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-left: 4px solid #8b4513;
+}
+
+.getting-started p {
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.6;
+}
+
 .quick-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -242,7 +284,7 @@ export default {
   font-size: 1.1rem;
 }
 
-.cr-badge {
+.level-badge {
   background-color: #8b4513;
   color: white;
   padding: 0.25rem 0.5rem;

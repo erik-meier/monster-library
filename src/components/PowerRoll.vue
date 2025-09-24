@@ -1,22 +1,14 @@
 <template>
   <div class="power-roll">
-    <div v-if="processedEffects.length" class="outcomes">
+    <div v-if="processedEffects.length && processedEffects[0].tiers && Object.keys(processedEffects[0].tiers).length > 0" class="outcomes">
       <div 
-        v-for="effect in processedEffects" 
-        :key="effect._id"
-        class="effect-group"
+        v-for="(tierText, tier) in processedEffects[0].tiers" 
+        :key="tier"
+        class="outcome"
+        :class="`tier-${tier}`"
       >
-        <div v-if="effect.name" class="effect-name">{{ effect.name }}</div>
-        
-        <div 
-          v-for="(tierText, tier) in effect.tiers" 
-          :key="tier"
-          class="outcome"
-          :class="`tier-${tier}`"
-        >
-          <span class="tier-number">{{ tier }}</span>
-          <span class="outcome-text" v-html="tierText"></span>
-        </div>
+        <span class="tier-number">{{ formatTierNumber(tier) }}</span>
+        <span class="outcome-text" v-html="tierText"></span>
       </div>
     </div>
     
@@ -31,8 +23,8 @@ export default {
   name: 'PowerRoll',
   props: {
     effects: {
-      type: Array,
-      default: () => []
+      type: Object,
+      default: () => ({})
     },
     chr: {
       type: String,
@@ -41,7 +33,37 @@ export default {
   },
   computed: {
     processedEffects() {
-      return Object.entries(this.effects).map(([_, effect]) => this.processEffect(effect))
+      // Group all effects by tier instead of processing them individually
+      const tierData = { 1: [], 2: [], 3: [] }
+      
+      // Process each effect and add to appropriate tiers
+      if (this.effects && typeof this.effects === 'object') {
+        Object.entries(this.effects).forEach(([_, effect]) => {
+          const processedEffect = this.processEffect(effect)
+          
+          // Add each tier's text to the appropriate tier array
+          Object.entries(processedEffect.tiers).forEach(([tier, text]) => {
+            if (text && tierData[tier]) {
+              tierData[tier].push(text)
+            }
+          })
+        })
+      }
+      
+      // Combine all effects for each tier into single strings
+      const collatedTiers = {}
+      Object.entries(tierData).forEach(([tier, texts]) => {
+        if (texts.length > 0) {
+          collatedTiers[tier] = texts.join('; ')
+        }
+      })
+      
+      // Return single effect object with collated tiers
+      return [{
+        _id: 'collated-effects',
+        name: '',
+        tiers: collatedTiers
+      }]
     }
   },
   methods: {
@@ -74,7 +96,77 @@ export default {
               }
             }
             
+            // Apply description formatting
+            description = this.formatDescription(description)
+            
             tiers[index + 1] = description
+          }
+        })
+      } else if (effect.type === 'forced' && effect.forced) {
+        // Handle forced movement effects (push, pull, etc.)
+        ['tier1', 'tier2', 'tier3'].forEach((tier, index) => {
+          const tierData = effect.forced[tier]
+          if (tierData) {
+            let description = tierData.display
+            
+            // If display is {{forced}}, generate the movement description
+            if (description === '{{forced}}') {
+              const properties = tierData.properties || []
+              const movement = tierData.movement || []
+              const distance = tierData.distance || ''
+              
+              // Format as "properties movement distance" (e.g., "vertical push 2")
+              description = [
+                ...properties,
+                ...movement,
+                distance
+              ].filter(Boolean).join(' ')
+            }
+            
+            if (description) {
+              // Apply description formatting
+              description = this.formatDescription(description)
+              tiers[index + 1] = description
+            }
+          }
+        })
+      } else if (effect.type === 'applied' && effect.applied) {
+        // Handle applied effects (conditions, etc.)
+        // First check if any tier has a display value
+        const hasAnyDisplay = ['tier1', 'tier2', 'tier3'].some(tier => 
+          effect.applied[tier] && effect.applied[tier].display
+        );
+        
+        ['tier1', 'tier2', 'tier3'].forEach((tier, index) => {
+          const tierData = effect.applied[tier]
+          if (tierData) {
+            let description = tierData.display
+            
+            // If this tier has no display, try tier1 display if hasAnyDisplay
+            if (!description && hasAnyDisplay && effect.applied.tier1 && effect.applied.tier1.display) {
+              description = effect.applied.tier1.display
+            }
+
+            
+            if (description) {
+              // Fall back to tier1 characteristic if not specified
+              if (tierData.potency && (!tierData.potency.characteristic || tierData.potency.characteristic === 'none')) {
+                if (effect.applied.tier1?.potency?.characteristic) {
+                  tierData.potency.characteristic = effect.applied.tier1.potency.characteristic
+                }
+              }
+
+              // Replace {{potency}} placeholder with formatted potency if it exists
+              if (description.includes('{{potency}}') && tierData.potency && tierData.potency.value && tierData.potency.characteristic) {
+                const potencyText = this.formatPotency(tierData.potency)
+                description = description.replace('{{potency}}', potencyText)
+              }
+              
+              // Apply description formatting
+              description = this.formatDescription(description)
+              
+              tiers[index + 1] = description
+            }
           }
         })
       } else {
@@ -91,23 +183,45 @@ export default {
     },
     formatPotency(potency) {
       if (!potency.value || !potency.characteristic || potency.characteristic === 'none') return null
+      
       // Map common potency patterns to numeric values
       const potencyMap = {
-        '@potency.weak': this.chr-2,
-        '@potency.average': this.chr-1, 
-        '@potency.strong': this.cr
+        '@potency.weak': parseInt(this.chr) - 2,
+        '@potency.average': parseInt(this.chr) - 1, 
+        '@potency.strong': parseInt(this.chr)
       }
       
       let potencyValue = potencyMap[potency.value] || potency.value
-      let result = `(${potency.characteristic.charAt(0).toUpperCase()}<${potencyValue}})`
       
-      return result
+      // Format as characteristic abbreviation + < + value with bold emphasis
+      const charAbbrev = potency.characteristic.charAt(0).toUpperCase()
+      return `<strong class="potency-value">${charAbbrev}&lt;${potencyValue}</strong>`
+    },
+    formatDescription(description) {
+      if (!description) return description
+      
+      // Parse and replace [[/damage type X]] directives
+      description = description.replace(/\[\[\/damage\s+(\d+)(?:\s+(\w+))?\]\]/g, (match, value, type) => {
+        const damageClass = type ? `damage-${type.toLowerCase()}` : 'damage-generic'
+        return `<span class="damage-value ${damageClass}">${value}${type ? ` ${type}` : ''}</span>`
+      })
+      
+      // Bold any remaining potency patterns that might exist in descriptions
+      description = description.replace(/([A-Z]<\d+)/g, '<strong class="potency-value">$1</strong>')
+      
+      return description
     },
     formatGenericTier(tierData) {
       // Handle non-damage effects
-      if (typeof tierData === 'string') return tierData
-      if (tierData.description) return tierData.description
+      if (typeof tierData === 'string') return this.formatDescription(tierData)
+      if (tierData.description) return this.formatDescription(tierData.description)
       return JSON.stringify(tierData) // Fallback for complex objects
+    },
+    formatTierNumber(tier) {
+      if (tier === '1') return '<=11'
+      if (tier === '2') return '12-16'
+      if (tier === '3') return '17+'
+      return ''
     }
   }
 }
@@ -120,65 +234,6 @@ export default {
   border-radius: 6px;
   padding: 1rem;
   margin: 0.5rem 0;
-}
-
-.power-roll-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.75rem;
-}
-
-.dice-notation {
-  font-family: 'Courier New', monospace;
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #495057;
-  background: white;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ced4da;
-}
-
-.signature-badge {
-  background: linear-gradient(45deg, #8b4513, #a0522d);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.effect-group {
-  margin-bottom: 1rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.effect-name {
-  background: #f3f4f6;
-  padding: 0.5rem 0.75rem;
-  font-weight: bold;
-  color: #374151;
-  font-size: 0.9rem;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.outcomes .effect-group:last-child {
-  margin-bottom: 0;
-}
-
-.effect-group .outcome {
-  border-left: none;
-  border-radius: 0;
-  margin-bottom: 0;
-}
-
-.effect-group .outcome:not(:last-child) {
-  border-bottom: 1px solid #f3f4f6;
 }
 
 .outcome {
@@ -209,16 +264,17 @@ export default {
   background: white;
   color: #495057;
   font-weight: bold;
-  font-size: 0.9rem;
-  min-width: 1.5rem;
+  font-size: 0.8rem;
+  min-width: 3rem;
   height: 1.5rem;
-  border-radius: 50%;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 0.75rem;
   flex-shrink: 0;
   border: 2px solid;
+  padding: 0 0.25rem;
 }
 
 .tier-1 .tier-number {
@@ -256,44 +312,117 @@ export default {
   color: #4338ca;
 }
 
-.malice-effects {
-  margin-top: 0.75rem;
-}
-
-.malice-effect {
-  display: block;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  background: #fef3c7;
-  border: 1px solid #f59e0b;
-  border-radius: 4px;
-  color: #374151;
-  line-height: 1.4;
-}
-
-.malice-cost {
-  color: #92400e;
-  font-weight: bold;
-  margin-right: 0.5rem;
-}
-
 /* Handle HTML formatting in descriptions */
 .outcome-text :deep(strong),
-.effect :deep(strong),
-.malice-effect :deep(strong) {
+.effect :deep(strong) {
   font-weight: bold;
 }
 
 .outcome-text :deep(em),
-.effect :deep(em),
-.malice-effect :deep(em) {
+.effect :deep(em) {
   font-style: italic;
 }
 
 .outcome-text :deep(br),
-.effect :deep(br),
-.malice-effect :deep(br) {
+.effect :deep(br) {
   margin-bottom: 0.25rem;
+}
+
+/* Potency value styling */
+.outcome-text :deep(.potency-value),
+.effect :deep(.potency-value) {
+  font-weight: bold;
+  color: #2563eb;
+  background: #dbeafe;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+/* Damage type styling */
+.outcome-text :deep(.damage-value),
+.effect :deep(.damage-value) {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Specific damage type colors */
+.outcome-text :deep(.damage-value.damage-acid),
+.effect :deep(.damage-value.damage-acid) {
+  color: #059669;
+  background: #d1fae5;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.outcome-text :deep(.damage-value.damage-cold),
+.effect :deep(.damage-value.damage-cold) {
+  color: #0891b2;
+  background: #cffafe;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.outcome-text :deep(.damage-value.damage-corruption),
+.effect :deep(.damage-value.damage-corruption) {
+  color: #7c2d12;
+  background: #fef3c7;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.outcome-text :deep(.damage-value.damage-fire),
+.effect :deep(.damage-value.damage-fire) {
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.outcome-text :deep(.damage-value.damage-holy),
+.effect :deep(.damage-value.damage-holy) {
+  color: #ca8a04;
+  background: #fef9c3;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.outcome-text :deep(.damage-value.damage-lightning),
+.effect :deep(.damage-value.damage-lightning) {
+  color: #7c3aed;
+  background: #ede9fe;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.outcome-text :deep(.damage-value.damage-poison),
+.effect :deep(.damage-value.damage-poison) {
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.outcome-text :deep(.damage-value.damage-psychic),
+.effect :deep(.damage-value.damage-psychic) {
+  color: #be185d;
+  background: #fce7f3;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.outcome-text :deep(.damage-value.damage-sonic),
+.effect :deep(.damage-value.damage-sonic) {
+  color: #8b5cf6;
+  background: #f3e8ff;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+/* Untyped damage - just bold, no background */
+.outcome-text :deep(.damage-value.damage-generic),
+.effect :deep(.damage-value.damage-generic) {
+  color: inherit;
 }
 
 @media (max-width: 768px) {
@@ -301,30 +430,16 @@ export default {
     padding: 0.75rem;
   }
   
-  .power-roll-header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-  }
-  
-  .signature-badge {
-    text-align: center;
-  }
-  
   .outcome {
     padding: 0.4rem;
   }
   
   .tier-number {
-    min-width: 1.25rem;
+    min-width: 2.5rem;
     height: 1.25rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin-right: 0.5rem;
-  }
-  
-  .dice-notation {
-    font-size: 1rem;
-    text-align: center;
+    padding: 0 0.2rem;
   }
 }
 </style>
