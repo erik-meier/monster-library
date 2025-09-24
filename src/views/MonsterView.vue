@@ -49,32 +49,23 @@ export default {
       this.error = null
       
       try {
-          const indexResponse = await fetch('/data/monster_index.json');
-          if (!indexResponse.ok) {
-            throw new Error('Failed to load monster index');
-          }
-          const index = await indexResponse.json();
-          const monsterPath = "/data/monsters/" + index.path[this.monsterId];
-          if (!monsterPath) {
-            throw new Error('Monster not found in index');
-          }
-          const monsterResponse = await fetch(monsterPath);
-          if (!monsterResponse.ok) {
-            throw new Error('Failed to load monster details');
-          }
-          const contentType = monsterResponse.headers.get('content-type');
-          if (!contentType || !contentType.includes('application/json')) {
-            throw new Error('Expected JSON but got ' + contentType);
-          }
-          this.monster = await monsterResponse.json();
-          
-          // Add to recently viewed monsters
-          this.addToRecentlyViewed();
-        } catch (err) {
-          this.error = err.message;
-        } finally {
-          this.loading = false;
+        // Use bundled data instead of fetch
+        const { getMonster } = await import('@/data/monsters.js')
+        const monster = getMonster(this.monsterId)
+        
+        if (!monster) {
+          throw new Error('Monster not found')
         }
+        
+        this.monster = monster
+        
+        // Add to recently viewed monsters
+        this.addToRecentlyViewed()
+      } catch (err) {
+        this.error = err.message
+      } finally {
+        this.loading = false
+      }
     },
     addToRecentlyViewed() {
       if (!this.monster) return;

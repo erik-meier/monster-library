@@ -15,4 +15,16 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  // Enable JSON imports
+  assetsInclude: ['**/*.json'],
+  // Optimize build for better tree shaking
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'monster-data': ['src/data/monsters.js']
+        }
+      }
+    }
+  }
 })

@@ -85,8 +85,9 @@ export default {
     },
     async loadMonsterIndex() {
       try {
-        const response = await fetch('/data/monster_index.json')
-        this.monsterIndex = await response.json()
+        // Use bundled data instead of fetch
+        const { getMonsterIndex } = await import('@/data/monsters.js')
+        this.monsterIndex = getMonsterIndex()
       } catch (error) {
         console.error('Failed to load monster index:', error)
       }

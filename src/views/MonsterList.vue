@@ -33,12 +33,7 @@
       >
         <div class="monster-card-header">
           <h3 class="monster-name">{{ monster.name }}</h3>
-          <div class="monster-level">Level {{ monster.level }}</div>
-        </div>
-        
-        <div class="monster-info">
-          <div class="monster-role">{{ monster.role }}</div>
-          <div class="monster-organization" v-if="monster.organization">{{ monster.organization }}</div>
+          <div class="monster-role">Level {{ monster.level }}{{ monster.organization ? ` ${monster.organization}` : '' }}{{ monster.role ? ` ${monster.role}` : '' }}</div>
         </div>
         
         <div class="monster-keywords" v-if="monster.keywords && monster.keywords.length > 0">
@@ -96,13 +91,20 @@ export default {
       this.loading = true;
       this.error = null;
       try {
-        // Fetch the monster_index.json file from the project root
-        const response = await fetch('/data/monster_index.json');
-        if (!response.ok) throw new Error(`Failed to fetch monster index (${response.status})`);
-        const indexData = await response.json();
-        // The structure is { name: { "monster-id": "Monster Name", ... } }
-        // Transform the index data into an array of { id, name } objects
-        this.monsters = Object.entries(indexData.name).map(([id, name]) => ({ id, name }));
+        // Use bundled data instead of fetch
+        const { getMonsterIndex } = await import('@/data/monsters.js')
+        const indexData = getMonsterIndex()
+        
+        // Transform the card data into monsters array with full details
+        this.monsters = Object.entries(indexData.card).map(([id, cardData]) => ({
+          id,
+          name: cardData.name,
+          level: cardData.level,
+          role: cardData.role,
+          organization: cardData.organization,
+          keywords: cardData.keywords || []
+        }));
+        
         this.monsters.sort((a, b) => a.name.localeCompare(b.name));
       } catch (err) {
         this.error = `Failed to load monsters: ${err.message}`;
@@ -233,7 +235,7 @@ export default {
   flex: 1;
 }
 
-.monster-level {
+.monster-role {
   background-color: #8b4513;
   color: white;
   padding: 0.25rem 0.75rem;
@@ -242,17 +244,11 @@ export default {
   font-weight: bold;
   white-space: nowrap;
   margin-left: 0.5rem;
+  text-transform: capitalize;
 }
 
 .monster-info {
   margin-bottom: 1rem;
-}
-
-.monster-role {
-  color: #495057;
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
 }
 
 .monster-organization {
