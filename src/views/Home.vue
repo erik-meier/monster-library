@@ -5,7 +5,7 @@
       <p class="hero-subtitle">
         Your comprehensive library for Draw Steel monsters and encounters
       </p>
-      
+
       <div class="hero-actions">
         <router-link to="/monsters" class="btn btn-primary">
           Browse Monsters
@@ -23,13 +23,13 @@
           <h3>Monster Library</h3>
           <p>Browse Draw Steel monsters with detailed stat blocks</p>
         </div>
-        
+
         <div class="feature-card">
           <div class="feature-icon">⚔️</div>
           <h3>Encounter Builder</h3>
           <p>Create balanced encounters for your Draw Steel campaigns (Coming Soon)</p>
         </div>
-        
+
         <div class="feature-card">
           <div class="feature-icon">📱</div>
           <h3>Mobile Ready</h3>
@@ -41,12 +41,8 @@
     <div class="recent-section">
       <h2>{{ recentMonsters.length > 0 ? 'Recently Viewed' : 'Getting Started' }}</h2>
       <div v-if="recentMonsters.length > 0" class="quick-links">
-        <router-link 
-          v-for="monster in recentMonsters" 
-          :key="monster.id"
-          :to="`/monster/${monster.id}`"
-          class="quick-link"
-        >
+        <router-link v-for="monster in recentMonsters" :key="monster.id" :to="`/monster/${monster.id}`"
+          class="quick-link">
           <div class="quick-link-content">
             <h4>{{ monster.name }}</h4>
             <span class="level-badge">Level {{ monster.level }}</span>
@@ -62,7 +58,7 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'HomeView',
   data() {
     return {
       recentMonsters: []
@@ -82,7 +78,7 @@ export default {
     async viewRandomMonster() {
       const { getRandomMonsterId } = await import('@/utils/monsterUtils.js')
       const randomId = await getRandomMonsterId()
-      
+
       if (randomId) {
         this.$router.push(`/monster/${randomId}`)
       }
@@ -275,28 +271,28 @@ export default {
   .hero {
     padding: 2rem 1rem;
   }
-  
+
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1rem;
   }
-  
+
   .hero-actions {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .btn {
     width: 200px;
   }
-  
+
   .feature-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .quick-links {
     grid-template-columns: 1fr;
   }

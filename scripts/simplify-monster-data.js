@@ -38,7 +38,6 @@ if (fs.existsSync(TEMP_MONSTERS_DIR)) {
 }
 
 // Process all monster files
-const monstersData = {}
 const monsterIndex = {
   name: {},
   keyword: {},

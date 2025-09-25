@@ -3,7 +3,7 @@ export interface ValidationResult {
   errors: Array<{
     field: string;
     message: string;
-    value?: any;
+    value?: unknown;
   }>;
 }
 
@@ -32,10 +32,11 @@ export interface MonsterSchema {
   };
   immunities?: Record<string, number>;
   weaknesses?: Record<string, number>;
-  abilities?: any[];
-  actions?: any[];
+  abilities?: unknown[];
+  actions?: unknown[];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function validateMonster(monster: any): ValidationResult {
   const errors: ValidationResult['errors'] = [];
 
@@ -162,8 +163,11 @@ export function validateMonster(monster: any): ValidationResult {
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function validateMonsterBatch(monsters: any[]): { valid: any[]; invalid: Array<{ monster: any; errors: ValidationResult['errors'] }> } {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const valid: any[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const invalid: Array<{ monster: any; errors: ValidationResult['errors'] }> = [];
 
   for (const monster of monsters) {

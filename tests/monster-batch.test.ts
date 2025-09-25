@@ -24,6 +24,7 @@ describe('Batch Monster Validation', () => {
                 console.warn(`Failed to parse ${file}:`, error);
                 return null;
             }
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         }).filter((monster: any) => monster !== null);
 
         const result = validateMonsterBatch(monsters);

@@ -1,13 +1,17 @@
 export interface FormattingResult {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   formatted: any;
   changes: Array<{
     field: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     old: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     new: any;
     reason: string;
   }>;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function formatMonster(monster: any): FormattingResult {
   const formatted = { ...monster };
   const changes: FormattingResult['changes'] = [];
@@ -141,6 +145,7 @@ export function formatMonster(monster: any): FormattingResult {
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function formatMonsterBatch(monsters: any[]): Array<{ original: any; result: FormattingResult }> {
   return monsters.map(monster => ({
     original: monster,
