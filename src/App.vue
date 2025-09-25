@@ -19,10 +19,6 @@
 
     <footer class="footer">
       <div class="footer-content">
-        <div class="footer-logo">
-          <!-- Draw Steel compatibility logo placeholder - to be added when logo is available -->
-          <div class="powered-by-text">Powered by Draw Steel</div>
-        </div>
         <div class="footer-text">
           <p class="copyright">&copy; 2025 Erik Meier</p>
           <p class="disclaimer">
@@ -140,17 +136,6 @@ export default {
 .footer-logo {
   display: flex;
   justify-content: center;
-}
-
-.powered-by-text {
-  background: linear-gradient(135deg, #8b4513, #a0522d);
-  color: #fdf6e3;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .footer-text {
