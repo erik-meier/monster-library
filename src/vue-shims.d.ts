@@ -18,3 +18,9 @@ declare module '@/views/*' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module '@/data/monsters.js' {
+  export function getMonster(id: string): any | null
+  export function getAllMonsters(): any[]
+  export function getMonsterIndex(): any
+}

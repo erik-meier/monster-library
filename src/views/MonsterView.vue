@@ -21,6 +21,7 @@
 
 <script>
 import MonsterStatBlock from '@/components/MonsterStatBlock.vue'
+import { useCustomMonstersStore } from '@/stores/customMonsters'
 
 export default {
   name: 'MonsterView',
@@ -32,6 +33,10 @@ export default {
       type: String,
       required: true
     }
+  },
+  setup() {
+    const customMonstersStore = useCustomMonstersStore()
+    return { customMonstersStore }
   },
   data() {
     return {
@@ -57,9 +62,8 @@ export default {
       this.error = null
       
       try {
-        // Use bundled data instead of fetch
-        const { getMonster } = await import('@/data/monsters.js')
-        const monster = getMonster(this.monsterId)
+        // Use integrated store that checks both custom and bundled monsters
+        const monster = this.customMonstersStore.getMonster(this.monsterId)
         
         if (!monster) {
           throw new Error('Monster not found')
