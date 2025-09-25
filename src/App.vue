@@ -5,7 +5,7 @@
         <router-link to="/" class="nav-brand">
           Steel Cauldron
         </router-link>
-        
+
         <div class="nav-menu">
           <router-link to="/" class="nav-link">Home</router-link>
           <router-link to="/monsters" class="nav-link">Browse Monsters</router-link>
@@ -18,7 +18,18 @@
     </main>
 
     <footer class="footer">
-      <p>&copy; 2025 Steel Cauldron - Draw Steel Monster Brewing</p>
+      <div class="footer-content">
+        <div class="footer-text">
+          <p class="copyright">&copy; 2025 Erik Meier</p>
+          <p class="disclaimer">
+            Steel Cauldron is an independent product published under the DRAW STEEL Creator License
+            and is not affiliated with MCDM Productions, LLC. DRAW STEEL © 2024 MCDM Productions, LLC.
+          </p>
+        </div>
+        <div class="footer-logo">
+          <img src="/assets/Draw-Steel-Compatibility-Logo.webp" alt="Draw Steel Compatibility Logo" />
+        </div>
+      </div>
     </footer>
   </div>
 </template>
@@ -86,7 +97,8 @@ export default {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: background-color 0.2s ease;
-  min-height: 44px; /* Ensure touch-friendly target size */
+  min-height: 44px;
+  /* Ensure touch-friendly target size */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,9 +124,51 @@ export default {
 .footer {
   background-color: #343a40;
   color: #adb5bd;
-  text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.footer-logo {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer-logo img {
+  max-height: 60px;
+  height: auto;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+.footer-text {
+  text-align: center;
+  line-height: 1.6;
+}
+
+.copyright {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #dee2e6;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Responsive navigation */
@@ -124,24 +178,24 @@ export default {
     min-height: 56px;
     height: auto;
   }
-  
+
   .nav-brand {
     font-size: 1.2rem;
     flex-shrink: 0;
   }
-  
+
   .nav-menu {
     gap: 0.75rem;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
-  
+
   .nav-link {
     padding: 0.375rem 0.75rem;
     font-size: 0.9rem;
     white-space: nowrap;
   }
-  
+
   .main-content {
     padding: 1rem 0.5rem;
   }
@@ -155,13 +209,13 @@ export default {
     align-items: center;
     text-align: center;
   }
-  
+
   .nav-menu {
     gap: 1rem;
     justify-content: center;
     flex-wrap: nowrap;
   }
-  
+
   .nav-link {
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
@@ -174,11 +228,60 @@ export default {
     gap: 0.5rem;
     width: 100%;
   }
-  
+
   .nav-link {
     display: block;
     text-align: center;
     padding: 0.5rem;
+  }
+}
+
+/* Footer responsive styles */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-content {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+  }
+
+  .footer-text {
+    text-align: center;
+  }
+
+  .footer-logo {
+    position: static;
+    transform: none;
+    justify-content: center;
+    display: flex;
+  }
+
+  .powered-by-text {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+  }
+
+  .disclaimer {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0.5rem;
+  }
+
+  .disclaimer {
+    font-size: 0.7rem;
+    line-height: 1.5;
   }
 }
 </style>
