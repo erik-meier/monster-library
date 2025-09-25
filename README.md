@@ -1,6 +1,8 @@
-# Monster Library
+# Steel Cauldron
 
-Web app for browsing and viewing monster stat blocks for the tabletop roleplaying game Draw Steel.
+![Test Status](https://github.com/erik-meier/monster-library/workflows/Test%20Monster%20Data/badge.svg)
+
+Web app for building and viewing monsters and encounters for the tabletop roleplaying game Draw Steel.
 
 ## Features
 
@@ -94,6 +96,59 @@ npm run refresh-all
 - `npm run simplify-monsters` - Process raw data for the application
 - `npm run build-data` - Bundle data for production (runs automatically during build)
 - `npm run refresh-all` - Complete data refresh from upstream
+- `npm run format-monsters` - Apply formatting fixes to monster data
+- `npm run format-monsters:dry-run` - Preview formatting changes without applying
+- `npm test` - Run validation tests in watch mode
+- `npm run test:run` - Run validation tests once (used in CI)
+
+## Automated Testing & Quality Assurance
+
+The project includes comprehensive automated testing for monster data quality and validation.
+
+### Test Suite
+
+The testing system validates:
+- **Schema Compliance**: All monsters match required data structure
+- **Formatting Consistency**: Names, roles, and organizations follow standard formatting
+- **Batch Validation**: Reports on overall data health across all 238+ monsters
+
+### Running Tests
+
+```bash
+# Run tests in watch mode (development)
+npm test
+
+# Run tests once (CI/production)
+npm run test:run
+
+# Check data formatting issues
+npm run format-monsters:dry-run
+
+# Fix formatting issues
+npm run format-monsters
+```
+
+### GitHub Actions Workflows
+
+The project includes automated CI/CD workflows:
+
+1. **Test Monster Data** (`.github/workflows/test.yml`)
+   - Runs on push/PR to main branch
+   - Tests on Node.js 20.19.0 and 22.12.0
+   - Validates all monster data, runs ESLint, and type checking
+
+2. **PR Validation** (`.github/workflows/pr-validation.yml`)
+   - Runs on PRs that modify monster data or code
+   - Provides automated feedback on changes
+   - Checks formatting consistency
+
+### Quality Metrics
+
+Current validation status: **99% of monsters pass validation**
+
+The remaining issues are typically:
+- Missing organization values for special monsters
+- Edge cases requiring manual review
 
 ### Updating Monster Data
 
