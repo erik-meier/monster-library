@@ -28,14 +28,8 @@ let errorCount = 0
 
 for (const [monsterId, cardData] of Object.entries(monsterIndex.card)) {
   try {
-    // Find the corresponding path
-    const filePath = monsterIndex.path?.[monsterId]
-    if (!filePath) {
-      console.warn(`⚠️  No path found for monster: ${monsterId}`)
-      continue
-    }
-    
-    const fullPath = path.join(MONSTERS_DIR, filePath)
+    // Direct file mapping for simplified monster structure
+    const fullPath = path.join(MONSTERS_DIR, `${monsterId}.json`)
     
     if (!fs.existsSync(fullPath)) {
       console.warn(`⚠️  File not found: ${fullPath}`)

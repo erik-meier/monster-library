@@ -1,0 +1,225 @@
+{
+  "id": "orc-godcaller",
+  "name": "Orc Godcaller",
+  "level": 1,
+  "ev": 6,
+  "role": "support",
+  "organization": "platoon",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 30,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 1,
+    "agility": 0,
+    "reason": 0,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Relentless",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>If the godcaller is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the godcaller is reduced to 1 Stamina instead.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Power Chord",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "melee",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "meleeRanged",
+          "primary": 1,
+          "secondary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "effects": {
+            "q3dz0RPDzCknhPqz": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "q3dz0RPDzCknhPqz",
+              "damage": {
+                "tier1": {
+                  "value": "5",
+                  "types": [
+                    "sonic"
+                  ]
+                },
+                "tier2": {
+                  "value": "7",
+                  "types": [
+                    "sonic"
+                  ]
+                },
+                "tier3": {
+                  "value": "9",
+                  "types": [
+                    "sonic"
+                  ]
+                }
+              }
+            },
+            "E9GctMb0SzxD2lTs": {
+              "name": "weakened",
+              "img": null,
+              "type": "applied",
+              "_id": "E9GctMb0SzxD2lTs",
+              "applied": {
+                "tier3": {
+                  "display": "{{potency}} weakened (save ends)",
+                  "effects": {
+                    "weakened": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier1": {
+                  "potency": {
+                    "characteristic": "presence"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Cadenza",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "ally",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>The target moves up to their speed and can use a main action.</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Rallying Ostinato",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 2,
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "selfAlly",
+          "value": 3
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each target regains [[/heal 15]] and ignores difficult terrain until the end of the encounter.</p>",
+          "after": ""
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "219",
+    "license": "Draw Steel Creator License"
+  }
+}

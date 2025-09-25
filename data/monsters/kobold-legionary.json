@@ -1,0 +1,338 @@
+{
+  "id": "kobold-legionary",
+  "name": "Kobold Legionary",
+  "level": 1,
+  "ev": 3,
+  "role": "defender",
+  "organization": "horde",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "S"
+  },
+  "speed": 5,
+  "stamina": 20,
+  "stability": 0,
+  "freeStrike": 1,
+  "characteristics": {
+    "might": 2,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Shield? Shield!",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While adjacent to an ally who also has this trait, the legionary has stability 1, has cover, and grants cover to allies.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Maniple Tactics",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Set the Initiative",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Two kobolds take their turns in a row.</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Shield Wall",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Gladius",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 5
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {
+            "ts5bBsRsOZ4iqQ5G": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "ts5bBsRsOZ4iqQ5G",
+              "damage": {
+                "tier1": {
+                  "value": "3"
+                },
+                "tier2": {
+                  "value": "4"
+                },
+                "tier3": {
+                  "value": "5"
+                }
+              }
+            },
+            "ALCmI1LoqwebRnsm": {
+              "name": "Taunted",
+              "img": null,
+              "type": "applied",
+              "_id": "ALCmI1LoqwebRnsm",
+              "applied": {
+                "tier1": {
+                  "display": "taunted (EoT)",
+                  "effects": {
+                    "taunted": {
+                      "condition": "always",
+                      "end": "turn"
+                    }
+                  }
+                },
+                "tier2": {
+                  "effects": {
+                    "taunted": {
+                      "condition": "always",
+                      "end": "turn"
+                    }
+                  }
+                },
+                "tier3": {
+                  "effects": {
+                    "taunted": {
+                      "condition": "always",
+                      "end": "turn"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Shield Bash",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {
+            "2ZjlDcrEoz2gzFzu": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "2ZjlDcrEoz2gzFzu",
+              "damage": {
+                "tier1": {
+                  "value": "2"
+                },
+                "tier2": {
+                  "value": "3"
+                },
+                "tier3": {
+                  "value": "4"
+                }
+              }
+            },
+            "FWRSIF51y02dbOtY": {
+              "name": "Push",
+              "img": null,
+              "type": "forced",
+              "_id": "FWRSIF51y02dbOtY"
+            },
+            "V6oxqEJnKgQfHMPX": {
+              "name": "Prone",
+              "img": null,
+              "type": "applied",
+              "_id": "V6oxqEJnKgQfHMPX",
+              "applied": {
+                "tier1": {
+                  "display": "{{potency}} prone",
+                  "potency": {
+                    "characteristic": "might"
+                  },
+                  "effects": {
+                    "prone": {
+                      "condition": "failure",
+                      "end": ""
+                    }
+                  }
+                },
+                "tier2": {
+                  "effects": {
+                    "prone": {
+                      "condition": "failure",
+                      "end": ""
+                    }
+                  }
+                },
+                "tier3": {
+                  "effects": {
+                    "prone": {
+                      "condition": "failure"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "192",
+    "license": "Draw Steel Creator License"
+  }
+}

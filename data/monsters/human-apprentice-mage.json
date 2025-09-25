@@ -1,0 +1,235 @@
+{
+  "id": "human-apprentice-mage",
+  "name": "Human Apprentice Mage",
+  "level": 2,
+  "ev": 4,
+  "role": "controller",
+  "organization": "minion",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 4,
+  "stability": 0,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 0,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 2
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 2,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 2,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "With Captain",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>+5 bonus to ranged distance</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Supernatural Insight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The apprentice mage ignores concealment if it’s granted by a supernatural effect.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Lightning Strike",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "effects": {
+            "edaSJy3ESyeSt7Pb": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "edaSJy3ESyeSt7Pb",
+              "damage": {
+                "tier1": {
+                  "value": "2",
+                  "types": [
+                    "lightning"
+                  ]
+                },
+                "tier2": {
+                  "value": "3",
+                  "types": [
+                    "lightning"
+                  ]
+                },
+                "tier3": {
+                  "value": "5",
+                  "types": [
+                    "lightning"
+                  ]
+                }
+              }
+            },
+            "J6nkFAcQPfzqLeuF": {
+              "name": "Slowed",
+              "img": null,
+              "type": "applied",
+              "_id": "J6nkFAcQPfzqLeuF",
+              "applied": {
+                "tier1": {
+                  "effects": {
+                    "slowed": {
+                      "condition": "failure",
+                      "end": "turn"
+                    }
+                  }
+                },
+                "tier2": {
+                  "effects": {
+                    "slowed": {
+                      "condition": "failure",
+                      "end": "turn"
+                    }
+                  }
+                },
+                "tier3": {
+                  "effects": {
+                    "slowed": {
+                      "condition": "failure",
+                      "end": "turn"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>If the apprentice mage doesn’t use a maneuver or a move action this turn, the target is also slowed (EoT).</p>"
+        }
+      }
+    },
+    {
+      "name": "Exploit Opening",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A human's turn starts",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Staying Power",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "a human's turn starts",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
+          "after": ""
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "181",
+    "license": "Draw Steel Creator License"
+  }
+}

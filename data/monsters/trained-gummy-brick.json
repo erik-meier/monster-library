@@ -1,0 +1,285 @@
+{
+  "id": "trained-gummy-brick",
+  "name": "Trained Gummy Brick",
+  "level": 1,
+  "ev": 12,
+  "role": "hexer",
+  "organization": "elite",
+  "keywords": [
+    "soulless"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 40,
+  "stability": 2,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 2,
+    "agility": -1,
+    "reason": -3,
+    "intuition": 0,
+    "presence": -2
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 3,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Translucent Brick",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The brick completely occupies their space, blocking line of effect for enemies. The brick is hidden until they act.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Engulf",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {
+            "17cXhXjKm5coBgL0": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "17cXhXjKm5coBgL0",
+              "damage": {
+                "tier1": {
+                  "value": "7",
+                  "types": [
+                    "acid"
+                  ]
+                },
+                "tier2": {
+                  "value": "10",
+                  "types": [
+                    "acid"
+                  ]
+                },
+                "tier3": {
+                  "value": "14",
+                  "types": [
+                    "acid"
+                  ]
+                }
+              }
+            },
+            "FgM4It1q5CaBFrdp": {
+              "name": "Dazed or Restrained",
+              "img": null,
+              "type": "applied",
+              "_id": "FgM4It1q5CaBFrdp",
+              "applied": {
+                "tier1": {
+                  "potency": {
+                    "characteristic": "agility"
+                  },
+                  "display": "{{potency}} dazed (save ends)",
+                  "effects": {
+                    "dazed": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier2": {
+                  "effects": {
+                    "dazed": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                },
+                "tier3": {
+                  "display": "{{potency}} restrained (save ends)",
+                  "effects": {
+                    "restrained": {
+                      "condition": "failure",
+                      "end": "save"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>A size 2 or smaller creature restrained this way is pulled into the brick’s space, moves with the brick, and takes [[/damage 4 acid]] damage at the start of each of their turns. An engulfed creature who is no longer restrained moves to the nearest unoccupied space adtjacent to the brick. The brick can have as many creatures or objects engulfed as will fit within their space.</p>"
+        }
+      }
+    },
+    {
+      "name": "You Didn't Pay Attention!",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "freeTriggered",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "A creature moves or is force moved adjacent to the brick.",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>The brick uses Engulf against the triggering creature and has a double edge.</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Maniple Tactics",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Set the Initiative",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Two kobolds take their turns in a row.</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Shield Wall",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
+          "after": ""
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "194",
+    "license": "Draw Steel Creator License"
+  }
+}

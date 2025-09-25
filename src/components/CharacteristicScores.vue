@@ -7,7 +7,7 @@
     >
       <div class="characteristic-name">{{ getCharacteristicName(characteristic) }}</div>
       <div class="characteristic-value">
-        {{ formatModifier(characteristics[characteristic].value || 0) }}
+        {{ formatModifier(characteristics[characteristic] || 0) }}
       </div>
     </div>
   </div>

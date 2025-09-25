@@ -1,0 +1,372 @@
+{
+  "id": "shieldscale-drangolin-size-3",
+  "name": "Shieldscale Drangolin (Size 3)",
+  "level": 1,
+  "ev": 12,
+  "role": "brute",
+  "organization": "elite",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 3,
+    "letter": "M"
+  },
+  "speed": 7,
+  "stamina": 80,
+  "stability": 0,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 2,
+    "agility": 1,
+    "reason": -3,
+    "intuition": 0,
+    "presence": -2
+  },
+  "immunities": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "weaknesses": {
+    "all": 0,
+    "acid": 0,
+    "cold": 0,
+    "corruption": 0,
+    "fire": 0,
+    "holy": 0,
+    "lightning": 0,
+    "poison": 0,
+    "psychic": 0,
+    "sonic": 0
+  },
+  "movementTypes": [
+    "walk",
+    "burrow"
+  ],
+  "items": [
+    {
+      "name": "Ashen Cloud",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Any ally adjacent to the drangolin has concealment.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Burrow Bond",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the drangolin burrows, each adjacent size 1S or smaller ally can move with them.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Maniple Tactics",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Set the Initiative",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Two kobolds take their turns in a row.</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Shield Wall",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Fiery Claws",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 2
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {
+            "GRvW6HMmtz7bgqAH": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "GRvW6HMmtz7bgqAH",
+              "damage": {
+                "tier1": {
+                  "value": "7",
+                  "types": [
+                    "fire"
+                  ]
+                },
+                "tier2": {
+                  "value": "10",
+                  "types": [
+                    "fire"
+                  ]
+                },
+                "tier3": {
+                  "value": "13",
+                  "types": [
+                    "fire"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>Special: If the drangolin is size 3, the distance becomes Melee 2.</p>"
+        }
+      }
+    },
+    {
+      "name": "Drangolin Plume",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "before": "<p>The drangolin shifts up to their speed and uses Fiery Claws against each creature who comes adjacent to them during the shift. The drangolin makes one power roll against all targets.</p>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "name": "Erupt",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "weapon"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 2
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "@chr",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {
+            "65MY29NDl5E3WeXo": {
+              "name": "",
+              "img": null,
+              "type": "damage",
+              "_id": "65MY29NDl5E3WeXo",
+              "damage": {
+                "tier1": {
+                  "value": "6"
+                },
+                "tier2": {
+                  "value": "8"
+                },
+                "tier3": {
+                  "value": "11"
+                }
+              }
+            },
+            "ToGnUiDWtiFk8zHJ": {
+              "name": "Push",
+              "img": null,
+              "type": "forced",
+              "_id": "ToGnUiDWtiFk8zHJ",
+              "forced": {
+                "tier2": {
+                  "distance": "3"
+                },
+                "tier3": {
+                  "distance": "5"
+                }
+              }
+            },
+            "7GEheZyQEACpCNgL": {
+              "name": "Prone",
+              "img": null,
+              "type": "applied",
+              "_id": "7GEheZyQEACpCNgL",
+              "applied": {
+                "tier1": {
+                  "potency": {
+                    "characteristic": "agility",
+                    "value": "0"
+                  },
+                  "effects": {
+                    "prone": {
+                      "condition": "failure",
+                      "end": ""
+                    }
+                  },
+                  "display": "{{potency}} prone"
+                },
+                "tier2": {
+                  "potency": {
+                    "characteristic": "agility",
+                    "value": "0"
+                  },
+                  "effects": {
+                    "prone": {
+                      "condition": "failure",
+                      "end": ""
+                    }
+                  }
+                },
+                "tier3": {
+                  "potency": {
+                    "characteristic": "agility",
+                    "value": "0"
+                  },
+                  "effects": {
+                    "prone": {
+                      "condition": "failure",
+                      "end": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra [[/damage 2 fire]] damage.</p>",
+          "after": ""
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "195",
+    "license": "Draw Steel Creator License"
+  }
+}
