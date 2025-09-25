@@ -56,8 +56,14 @@
 </template>
 
 <script>
+import { useCustomMonstersStore } from '@/stores/customMonsters'
+
 export default {
   name: 'MonsterList',
+  setup() {
+    const customMonstersStore = useCustomMonstersStore()
+    return { customMonstersStore }
+  },
   data() {
     return {
       monsters: [],
@@ -96,15 +102,29 @@ export default {
         const indexData = getMonsterIndex()
         
         // Transform the card data into monsters array with full details
-        this.monsters = Object.entries(indexData.card).map(([id, cardData]) => ({
+        const bundledMonsters = Object.entries(indexData.card).map(([id, cardData]) => ({
           id,
           name: cardData.name,
           level: cardData.level,
           role: cardData.role,
           organization: cardData.organization,
-          keywords: cardData.keywords || []
+          keywords: cardData.keywords || [],
+          isCustom: false
         }));
         
+        // Get custom monsters
+        const customMonsters = this.customMonstersStore.getAllCustomMonsters().map(monster => ({
+          id: monster.id,
+          name: monster.name,
+          level: monster.level,
+          role: monster.role,
+          organization: monster.organization,
+          keywords: monster.keywords || [],
+          isCustom: true
+        }));
+        
+        // Combine and sort all monsters
+        this.monsters = [...bundledMonsters, ...customMonsters];
         this.monsters.sort((a, b) => a.name.localeCompare(b.name));
       } catch (err) {
         this.error = `Failed to load monsters: ${err.message}`;
