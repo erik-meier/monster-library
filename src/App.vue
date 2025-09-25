@@ -18,7 +18,19 @@
     </main>
 
     <footer class="footer">
-      <p>&copy; 2025 Steel Cauldron - Draw Steel Monster Brewing</p>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <!-- Draw Steel compatibility logo placeholder - to be added when logo is available -->
+          <div class="powered-by-text">Powered by Draw Steel</div>
+        </div>
+        <div class="footer-text">
+          <p class="copyright">&copy; 2025 Steel Cauldron - Draw Steel Monster Brewing</p>
+          <p class="disclaimer">
+            Steel Cauldron is an independent product published under the DRAW STEEL Creator License 
+            and is not affiliated with MCDM Productions, LLC. DRAW STEEL © 2024 MCDM Productions, LLC.
+          </p>
+        </div>
+      </div>
     </footer>
   </div>
 </template>
@@ -112,9 +124,51 @@ export default {
 .footer {
   background-color: #343a40;
   color: #adb5bd;
-  text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.powered-by-text {
+  background: linear-gradient(135deg, #8b4513, #a0522d);
+  color: #fdf6e3;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-text {
+  text-align: center;
+  line-height: 1.6;
+}
+
+.copyright {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #dee2e6;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Responsive navigation */
@@ -179,6 +233,41 @@ export default {
     display: block;
     text-align: center;
     padding: 0.5rem;
+  }
+}
+
+/* Footer responsive styles */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .footer-content {
+    gap: 1rem;
+  }
+  
+  .powered-by-text {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+  }
+  
+  .disclaimer {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0.5rem;
+  }
+  
+  .disclaimer {
+    font-size: 0.7rem;
+    line-height: 1.5;
   }
 }
 </style>
