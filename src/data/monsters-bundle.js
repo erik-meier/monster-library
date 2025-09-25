@@ -1,5 +1,5 @@
 // Auto-generated monster data bundle
-// Generated on: 2025-09-25T18:40:00.750Z
+// Generated on: 2025-09-25T20:14:56.462Z
 
 export const monsterIndex = {
   "name": {
@@ -3529,8 +3529,8 @@ export const monsters = {
     "name": "Angulotl Cleaver",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "minion",
+    "role": "Ambusher",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -3550,29 +3550,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 2,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "swim",
@@ -3804,8 +3784,8 @@ export const monsters = {
     "name": "Angulotl Dart",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -3825,29 +3805,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 2,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "swim",
@@ -4089,7 +4049,7 @@ export const monsters = {
     "level": 1,
     "ev": 12,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -4109,29 +4069,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 3,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "swim",
@@ -4569,8 +4509,8 @@ export const monsters = {
     "name": "Angulotl Needler",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "horde",
+    "role": "Artillery",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -4590,29 +4530,9 @@ export const monsters = {
       "presence": -1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 2,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "swim",
@@ -4895,8 +4815,8 @@ export const monsters = {
     "name": "Angulotl Pollywog",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -4916,29 +4836,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 2,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "swim",
@@ -5205,8 +5105,8 @@ export const monsters = {
     "name": "Angulotl Slink",
     "level": 1,
     "ev": 4,
-    "role": "ambusher",
-    "organization": "horde",
+    "role": "Ambusher",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -5226,29 +5126,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 2,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb",
@@ -5569,8 +5449,8 @@ export const monsters = {
     "name": "Angulotl Wave",
     "level": 1,
     "ev": 3,
-    "role": "controller",
-    "organization": "horde",
+    "role": "Controller",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -5590,29 +5470,9 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 2,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "swim",
@@ -5918,8 +5778,8 @@ export const monsters = {
     "name": "Clawfish",
     "level": 1,
     "ev": 3,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "animal"
     ],
@@ -5939,29 +5799,10 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
       "lightning": 3,
-      "poison": 2,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb",
@@ -6249,8 +6090,8 @@ export const monsters = {
     "name": "Animal",
     "level": 1,
     "ev": 12,
-    "role": "harrier",
-    "organization": "elite",
+    "role": "Harrier",
+    "organization": "Elite",
     "keywords": [
       "animal"
     ],
@@ -6269,30 +6110,8 @@ export const monsters = {
       "intuition": 1,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -6426,8 +6245,8 @@ export const monsters = {
     "name": "Animal Swarm",
     "level": 1,
     "ev": 12,
-    "role": "hexer",
-    "organization": "elite",
+    "role": "Hexer",
+    "organization": "Elite",
     "keywords": [
       "animal",
       "swarm"
@@ -6447,30 +6266,8 @@ export const monsters = {
       "intuition": 2,
       "presence": -3
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -6659,8 +6456,8 @@ export const monsters = {
     "name": "Big Animal A",
     "level": 1,
     "ev": 12,
-    "role": "mount",
-    "organization": "elite",
+    "role": "Mount",
+    "organization": "Elite",
     "keywords": [
       "animal"
     ],
@@ -6679,30 +6476,8 @@ export const monsters = {
       "intuition": 1,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -6901,8 +6676,8 @@ export const monsters = {
     "name": "Big Animal B",
     "level": 2,
     "ev": 16,
-    "role": "mount",
-    "organization": "elite",
+    "role": "Mount",
+    "organization": "Elite",
     "keywords": [
       "animal"
     ],
@@ -6921,30 +6696,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -7162,8 +6915,8 @@ export const monsters = {
     "name": "Predator A",
     "level": 1,
     "ev": 12,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "animal"
     ],
@@ -7182,30 +6935,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -7417,8 +7148,8 @@ export const monsters = {
     "name": "Predator B",
     "level": 3,
     "ev": 16,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "animal"
     ],
@@ -7437,30 +7168,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -7803,7 +7512,7 @@ export const monsters = {
     "level": 1,
     "ev": 36,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "beast"
     ],
@@ -7822,30 +7531,8 @@ export const monsters = {
       "intuition": 1,
       "presence": -4
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "burrow"
@@ -8778,7 +8465,7 @@ export const monsters = {
     "level": 4,
     "ev": 72,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "construct",
       "undead"
@@ -8798,29 +8485,9 @@ export const monsters = {
       "intuition": 0,
       "presence": -5
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
     "movementTypes": [
       "walk",
@@ -9734,8 +9401,8 @@ export const monsters = {
     "name": "Basilisk",
     "level": 1,
     "ev": 12,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "beast"
     ],
@@ -9755,29 +9422,9 @@ export const monsters = {
       "presence": -1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 4,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 4
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -10355,8 +10002,8 @@ export const monsters = {
     "name": "Basilisk Tonguesnapper",
     "level": 1,
     "ev": 12,
-    "role": "hexer",
-    "organization": "elite",
+    "role": "Hexer",
+    "organization": "Elite",
     "keywords": [
       "beast"
     ],
@@ -10376,29 +10023,9 @@ export const monsters = {
       "presence": -1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 2,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -11021,7 +10648,7 @@ export const monsters = {
     "level": 3,
     "ev": 60,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "giant"
     ],
@@ -11040,30 +10667,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -12014,7 +11619,7 @@ export const monsters = {
     "level": 3,
     "ev": 60,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "giant"
     ],
@@ -12034,29 +11639,9 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 10,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "corruption": 10
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "fly"
@@ -12751,8 +12336,8 @@ export const monsters = {
     "name": "Bugbear Channeler",
     "level": 2,
     "ev": 16,
-    "role": "controller",
-    "organization": "elite",
+    "role": "Controller",
+    "organization": "Elite",
     "keywords": [
       "fey",
       "humanoid"
@@ -12772,30 +12357,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -13383,8 +12946,8 @@ export const monsters = {
     "name": "Bugbear Commander",
     "level": 2,
     "ev": 16,
-    "role": "support",
-    "organization": "elite",
+    "role": "Support",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -13403,30 +12966,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -13799,8 +13340,8 @@ export const monsters = {
     "name": "Bugbear Knightmare",
     "level": 8,
     "ev": 10,
-    "role": "hexer",
-    "organization": "minion",
+    "role": "Hexer",
+    "organization": "Minion",
     "keywords": [
       "fey",
       "humanoid"
@@ -13820,30 +13361,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 4
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -14169,8 +13688,8 @@ export const monsters = {
     "name": "Bugbear Mob",
     "level": 5,
     "ev": 7,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "fey",
       "humanoid"
@@ -14190,30 +13709,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -14520,8 +14017,8 @@ export const monsters = {
     "name": "Bugbear Roughneck",
     "level": 2,
     "ev": 16,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "fey",
       "humanoid"
@@ -14541,30 +14038,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -15111,8 +14586,8 @@ export const monsters = {
     "name": "Bugbear Snare",
     "level": 5,
     "ev": 7,
-    "role": "ambusher",
-    "organization": "minion",
+    "role": "Ambusher",
+    "organization": "Minion",
     "keywords": [
       "fey",
       "humanoid"
@@ -15132,30 +14607,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -15407,8 +14860,8 @@ export const monsters = {
     "name": "Bugbear Sneak",
     "level": 2,
     "ev": 16,
-    "role": "ambusher",
-    "organization": "elite",
+    "role": "Ambusher",
+    "organization": "Elite",
     "keywords": [
       "fey",
       "humanoid"
@@ -15428,30 +14881,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -16031,7 +15462,7 @@ export const monsters = {
     "level": 3,
     "ev": 60,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "beast"
     ],
@@ -16051,29 +15482,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 6,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "fire": 6
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -16848,8 +16259,8 @@ export const monsters = {
     "name": "Bendrak",
     "level": 2,
     "ev": 4,
-    "role": "hexer",
-    "organization": "horde",
+    "role": "Hexer",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -16868,29 +16279,9 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 3,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 3
     },
     "movementTypes": [
       "walk"
@@ -17174,7 +16565,7 @@ export const monsters = {
     "level": 3,
     "ev": 20,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "abyssal"
     ],
@@ -17194,29 +16585,9 @@ export const monsters = {
       "presence": 3
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -17651,8 +17022,8 @@ export const monsters = {
     "name": "Ensnarer",
     "level": 1,
     "ev": 3,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "abyssal"
     ],
@@ -17671,29 +17042,9 @@ export const monsters = {
       "intuition": -1,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 3,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 3
     },
     "movementTypes": [
       "walk"
@@ -17937,8 +17288,8 @@ export const monsters = {
     "name": "Frenzied",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "abyssal"
     ],
@@ -17957,29 +17308,9 @@ export const monsters = {
       "intuition": -1,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 3,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 3
     },
     "movementTypes": [
       "walk"
@@ -18180,8 +17511,8 @@ export const monsters = {
     "name": "Muceron",
     "level": 3,
     "ev": 5,
-    "role": "brute",
-    "organization": "horde",
+    "role": "Brute",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -18201,29 +17532,9 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 3,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -18502,8 +17813,8 @@ export const monsters = {
     "name": "Pitling",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "abyssal"
     ],
@@ -18522,29 +17833,9 @@ export const monsters = {
       "intuition": -2,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 3,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 3
     },
     "movementTypes": [
       "fly"
@@ -18762,8 +18053,8 @@ export const monsters = {
     "name": "Remasch",
     "level": 2,
     "ev": 4,
-    "role": "ambusher",
-    "organization": "horde",
+    "role": "Ambusher",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -18782,29 +18073,9 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 3,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 3
     },
     "movementTypes": [
       "teleport"
@@ -19067,8 +18338,8 @@ export const monsters = {
     "name": "Ruinant",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "horde",
+    "role": "Harrier",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -19087,29 +18358,9 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 3,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 3
     },
     "movementTypes": [
       "walk"
@@ -19425,8 +18676,8 @@ export const monsters = {
     "name": "Torlas",
     "level": 1,
     "ev": 3,
-    "role": "controller",
-    "organization": "horde",
+    "role": "Controller",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -19445,29 +18696,9 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 3,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 3
     },
     "movementTypes": [
       "walk"
@@ -19712,8 +18943,8 @@ export const monsters = {
     "name": "Bale Eye",
     "level": 5,
     "ev": 7,
-    "role": "hexer",
-    "organization": "horde",
+    "role": "Hexer",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -19732,29 +18963,9 @@ export const monsters = {
       "intuition": 3,
       "presence": 3
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
     "movementTypes": [
       "walk",
@@ -20189,8 +19400,8 @@ export const monsters = {
     "name": "Fangling",
     "level": 4,
     "ev": 6,
-    "role": "harrier",
-    "organization": "horde",
+    "role": "Harrier",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -20209,29 +19420,9 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
     "movementTypes": [
       "walk"
@@ -20580,8 +19771,8 @@ export const monsters = {
     "name": "Fiktin",
     "level": 5,
     "ev": 7,
-    "role": "ambusher",
-    "organization": "horde",
+    "role": "Ambusher",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -20600,29 +19791,9 @@ export const monsters = {
       "intuition": 1,
       "presence": 3
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
     "movementTypes": [
       "walk"
@@ -20868,8 +20039,8 @@ export const monsters = {
     "name": "Grulqin",
     "level": 4,
     "ev": 6,
-    "role": "minion",
-    "organization": "minion",
+    "role": "",
+    "organization": "Minion",
     "keywords": [
       "abyssal"
     ],
@@ -20888,29 +20059,9 @@ export const monsters = {
       "intuition": -1,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
     "movementTypes": [
       "walk"
@@ -21069,8 +20220,8 @@ export const monsters = {
     "name": "Gunge",
     "level": 4,
     "ev": 6,
-    "role": "controller",
-    "organization": "horde",
+    "role": "Controller",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -21089,29 +20240,9 @@ export const monsters = {
       "intuition": 2,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
     "movementTypes": [
       "walk"
@@ -21368,8 +20499,8 @@ export const monsters = {
     "name": "Lumbering Egress",
     "level": 6,
     "ev": 32,
-    "role": "leader",
-    "organization": "leader",
+    "role": "",
+    "organization": "Leader",
     "keywords": [
       "abyssal"
     ],
@@ -21388,29 +20519,9 @@ export const monsters = {
       "intuition": 2,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
     "movementTypes": [
       "walk"
@@ -21976,8 +21087,8 @@ export const monsters = {
     "name": "Orliq",
     "level": 4,
     "ev": 6,
-    "role": "minion",
-    "organization": "minion",
+    "role": "",
+    "organization": "Minion",
     "keywords": [
       "abyssal"
     ],
@@ -21996,29 +21107,9 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
     "movementTypes": [
       "walk",
@@ -22244,8 +21335,8 @@ export const monsters = {
     "name": "Tormenauk",
     "level": 6,
     "ev": 8,
-    "role": "brute",
-    "organization": "horde",
+    "role": "Brute",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -22264,29 +21355,9 @@ export const monsters = {
       "intuition": 1,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
     "movementTypes": [
       "walk"
@@ -22621,8 +21692,8 @@ export const monsters = {
     "name": "Wobalas",
     "level": 4,
     "ev": 6,
-    "role": "minion",
-    "organization": "minion",
+    "role": "",
+    "organization": "Minion",
     "keywords": [
       "abyssal"
     ],
@@ -22641,29 +21712,9 @@ export const monsters = {
       "intuition": 2,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
     "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 5,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "holy": 5
     },
     "movementTypes": [
       "walk"
@@ -22817,7 +21868,7 @@ export const monsters = {
     "level": 2,
     "ev": 48,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "dragon",
       "elemental"
@@ -22838,29 +21889,9 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 5,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 5
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "fly",
       "walk"
@@ -23567,8 +22598,8 @@ export const monsters = {
     "name": "Dwarf Axethrower",
     "level": 1,
     "ev": 3,
-    "role": "defender",
-    "organization": "minion",
+    "role": "Defender",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -23587,30 +22618,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -23762,8 +22771,8 @@ export const monsters = {
     "name": "Dwarf Catchpole",
     "level": 1,
     "ev": 4,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -23782,30 +22791,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -23966,8 +22953,8 @@ export const monsters = {
     "name": "Dwarf Driver",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -23986,30 +22973,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -24213,8 +23178,8 @@ export const monsters = {
     "name": "Dwarf Gunner",
     "level": 1,
     "ev": 6,
-    "role": "artillery",
-    "organization": "platoon",
+    "role": "Artillery",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -24233,30 +23198,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -24578,8 +23521,8 @@ export const monsters = {
     "name": "Dwarf Hunter",
     "level": 1,
     "ev": 3,
-    "role": "support",
-    "organization": "minion",
+    "role": "Support",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -24598,30 +23541,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -24822,8 +23743,8 @@ export const monsters = {
     "name": "Dwarf Launcher",
     "level": 1,
     "ev": 8,
-    "role": "hexer",
-    "organization": "platoon",
+    "role": "Hexer",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -24842,30 +23763,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -25276,7 +24175,7 @@ export const monsters = {
     "level": 3,
     "ev": 20,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -25295,30 +24194,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -25735,8 +24612,8 @@ export const monsters = {
     "name": "Dwarf Reel Winch",
     "level": 1,
     "ev": 6,
-    "role": "support",
-    "organization": "platoon",
+    "role": "Support",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -25755,30 +24632,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -26056,8 +24911,8 @@ export const monsters = {
     "name": "Dwarf Shieldwall",
     "level": 3,
     "ev": 10,
-    "role": "defender",
-    "organization": "platoon",
+    "role": "Defender",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -26076,30 +24931,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -26369,8 +25202,8 @@ export const monsters = {
     "name": "Dwarf Stone Whisperer",
     "level": 3,
     "ev": 10,
-    "role": "controller",
-    "organization": "platoon",
+    "role": "Controller",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -26389,30 +25222,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "burrow"
@@ -26821,8 +25632,8 @@ export const monsters = {
     "name": "Dwarf Trapper",
     "level": 1,
     "ev": 6,
-    "role": "harrier",
-    "organization": "platoon",
+    "role": "Harrier",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -26841,30 +25652,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -27129,8 +25918,8 @@ export const monsters = {
     "name": "Dwarf Warden",
     "level": 2,
     "ev": 8,
-    "role": "brute",
-    "organization": "platoon",
+    "role": "Brute",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -27149,30 +25938,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -27569,8 +26336,8 @@ export const monsters = {
     "name": "Servitor War Walker",
     "level": 1,
     "ev": 12,
-    "role": "mount",
-    "organization": "elite",
+    "role": "Mount",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -27589,30 +26356,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "climb",
       "walk"
@@ -27945,11 +26690,11 @@ export const monsters = {
   },
   "crux-of-fire": {
     "id": "crux-of-fire",
-    "name": "Crux of Fire",
+    "name": "Crux Of Fire",
     "level": 3,
     "ev": 20,
-    "role": "artillery",
-    "organization": "elite",
+    "role": "Artillery",
+    "organization": "Elite",
     "keywords": [
       "elemental"
     ],
@@ -27969,29 +26714,9 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 5,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "fire": 5
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -28292,11 +27017,11 @@ export const monsters = {
   },
   "essence-of-storms": {
     "id": "essence-of-storms",
-    "name": "Essence of Storms",
+    "name": "Essence Of Storms",
     "level": 3,
     "ev": 20,
-    "role": "harrier",
-    "organization": "elite",
+    "role": "Harrier",
+    "organization": "Elite",
     "keywords": [
       "elemental"
     ],
@@ -28316,29 +27041,9 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 5,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "lightning": 5
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "fly"
@@ -28674,11 +27379,11 @@ export const monsters = {
   },
   "essence-of-tides": {
     "id": "essence-of-tides",
-    "name": "Essence of Tides",
+    "name": "Essence Of Tides",
     "level": 3,
     "ev": 20,
-    "role": "controller",
-    "organization": "elite",
+    "role": "Controller",
+    "organization": "Elite",
     "keywords": [
       "elemental"
     ],
@@ -28698,29 +27403,9 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 5,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "cold": 5
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "swim"
@@ -29079,11 +27764,11 @@ export const monsters = {
   },
   "field-of-growth": {
     "id": "field-of-growth",
-    "name": "Field of Growth",
+    "name": "Field Of Growth",
     "level": 3,
     "ev": 28,
-    "role": "controller",
-    "organization": "elite",
+    "role": "Controller",
+    "organization": "Elite",
     "keywords": [
       "elemental"
     ],
@@ -29103,29 +27788,9 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 5,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 5
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "climb",
       "walk"
@@ -29455,11 +28120,11 @@ export const monsters = {
   },
   "force-of-earth": {
     "id": "force-of-earth",
-    "name": "Force of Earth",
+    "name": "Force Of Earth",
     "level": 3,
     "ev": 20,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "elemental"
     ],
@@ -29478,30 +28143,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "burrow"
     ],
@@ -29823,8 +28466,8 @@ export const monsters = {
     "name": "Brambleguard",
     "level": 2,
     "ev": 8,
-    "role": "defender",
-    "organization": "platoon",
+    "role": "Defender",
+    "organization": "Platoon",
     "keywords": [
       "elemental"
     ],
@@ -29843,30 +28486,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -30299,8 +28920,8 @@ export const monsters = {
     "name": "Ceramic Horse",
     "level": 1,
     "ev": 6,
-    "role": "mount",
-    "organization": "platoon",
+    "role": "Mount",
+    "organization": "Platoon",
     "keywords": [
       "elemental"
     ],
@@ -30319,30 +28940,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -30807,8 +29406,8 @@ export const monsters = {
     "name": "Elemental Mote",
     "level": 1,
     "ev": 3,
-    "role": "hexer",
-    "organization": "minion",
+    "role": "Hexer",
+    "organization": "Minion",
     "keywords": [
       "elemental"
     ],
@@ -30827,30 +29426,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "fly",
       "walk"
@@ -31064,8 +29641,8 @@ export const monsters = {
     "name": "High Elf Bloodletter",
     "level": 1,
     "ev": 6,
-    "role": "ambusher",
-    "organization": "platoon",
+    "role": "Ambusher",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -31085,30 +29662,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -31501,8 +30056,8 @@ export const monsters = {
     "name": "High Elf Dawn Mage",
     "level": 1,
     "ev": 3,
-    "role": "controller",
-    "organization": "minion",
+    "role": "Controller",
+    "organization": "Minion",
     "keywords": [
       "fey",
       "humanoid"
@@ -31522,30 +30077,8 @@ export const monsters = {
       "intuition": -1,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -31720,8 +30253,8 @@ export const monsters = {
     "name": "High Elf Deathtouch",
     "level": 2,
     "ev": 8,
-    "role": "artillery",
-    "organization": "platoon",
+    "role": "Artillery",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -31741,30 +30274,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -32420,8 +30931,8 @@ export const monsters = {
     "name": "High Elf Orbweaver",
     "level": 3,
     "ev": 10,
-    "role": "hexer",
-    "organization": "platoon",
+    "role": "Hexer",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -32441,30 +30952,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -33000,8 +31489,8 @@ export const monsters = {
     "name": "High Elf Ordinator",
     "level": 3,
     "ev": 20,
-    "role": "leader",
-    "organization": "leader",
+    "role": "",
+    "organization": "Leader",
     "keywords": [
       "fey",
       "humanoid"
@@ -33021,30 +31510,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 3
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "fly",
       "walk"
@@ -33643,8 +32110,8 @@ export const monsters = {
     "name": "High Elf Palinode",
     "level": 1,
     "ev": 6,
-    "role": "support",
-    "organization": "platoon",
+    "role": "Support",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -33665,29 +32132,9 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 5,
-      "sonic": 0
+      "psychic": 5
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -34092,8 +32539,8 @@ export const monsters = {
     "name": "High Elf Quiver",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "fey",
       "humanoid"
@@ -34113,30 +32560,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -34305,8 +32730,8 @@ export const monsters = {
     "name": "High Elf Wyrd",
     "level": 3,
     "ev": 10,
-    "role": "controller",
-    "organization": "platoon",
+    "role": "Controller",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -34326,30 +32751,8 @@ export const monsters = {
       "intuition": -1,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -34754,8 +33157,8 @@ export const monsters = {
     "name": "High Elf Zephyr",
     "level": 1,
     "ev": 6,
-    "role": "harrier",
-    "organization": "platoon",
+    "role": "Harrier",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -34775,30 +33178,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -35163,8 +33544,8 @@ export const monsters = {
     "name": "Soot Crow",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "elemental"
     ],
@@ -35183,30 +33564,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "fly",
       "walk"
@@ -35402,8 +33761,8 @@ export const monsters = {
     "name": "Wode Elf Chirurgeon",
     "level": 2,
     "ev": 8,
-    "role": "harrier",
-    "organization": "platoon",
+    "role": "Harrier",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -35423,30 +33782,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "climb",
       "walk"
@@ -35714,8 +34051,8 @@ export const monsters = {
     "name": "Wode Elf Druid",
     "level": 2,
     "ev": 8,
-    "role": "controller",
-    "organization": "platoon",
+    "role": "Controller",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -35735,30 +34072,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "climb",
       "walk"
@@ -36068,8 +34383,8 @@ export const monsters = {
     "name": "Wode Elf Green Seer",
     "level": 1,
     "ev": 6,
-    "role": "hexer",
-    "organization": "platoon",
+    "role": "Hexer",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -36089,30 +34404,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -36496,8 +34789,8 @@ export const monsters = {
     "name": "Wode Elf Greenskeeper",
     "level": 1,
     "ev": 6,
-    "role": "defender",
-    "organization": "platoon",
+    "role": "Defender",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -36517,30 +34810,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -36811,8 +35082,8 @@ export const monsters = {
     "name": "Wode Elf Guerrilla",
     "level": 3,
     "ev": 10,
-    "role": "ambusher",
-    "organization": "platoon",
+    "role": "Ambusher",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -36832,30 +35103,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "teleport",
       "walk"
@@ -37127,8 +35376,8 @@ export const monsters = {
     "name": "Wode Elf Gweiadur",
     "level": 3,
     "ev": 10,
-    "role": "artillery",
-    "organization": "platoon",
+    "role": "Artillery",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -37148,30 +35397,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "climb"
     ],
@@ -37527,8 +35754,8 @@ export const monsters = {
     "name": "Wode Elf Lookout",
     "level": 1,
     "ev": 3,
-    "role": "support",
-    "organization": "minion",
+    "role": "Support",
+    "organization": "Minion",
     "keywords": [
       "fey",
       "humanoid"
@@ -37548,30 +35775,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "climb",
       "walk"
@@ -37781,8 +35986,8 @@ export const monsters = {
     "name": "Wode Elf Runner",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "fey",
       "humanoid"
@@ -37802,30 +36007,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -38024,8 +36207,8 @@ export const monsters = {
     "name": "Wode Elf Scout",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "minion",
+    "role": "Ambusher",
+    "organization": "Minion",
     "keywords": [
       "fey",
       "humanoid"
@@ -38045,30 +36228,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -38279,8 +36440,8 @@ export const monsters = {
     "name": "Wode Elf Sentry",
     "level": 1,
     "ev": 6,
-    "role": "support",
-    "organization": "platoon",
+    "role": "Support",
+    "organization": "Platoon",
     "keywords": [
       "fey",
       "humanoid"
@@ -38300,30 +36461,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -38582,7 +36721,7 @@ export const monsters = {
     "level": 3,
     "ev": 20,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "fey"
     ],
@@ -38601,30 +36740,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "teleport",
       "walk"
@@ -39055,8 +37172,8 @@ export const monsters = {
     "name": "Wode Elf Yeoman",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "fey",
       "humanoid"
@@ -39076,30 +37193,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -39340,8 +37435,8 @@ export const monsters = {
     "name": "Wodenelg",
     "level": 1,
     "ev": 6,
-    "role": "mount",
-    "organization": "platoon",
+    "role": "Mount",
+    "organization": "Platoon",
     "keywords": [
       "plant"
     ],
@@ -39360,30 +37455,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -39625,7 +37698,7 @@ export const monsters = {
     "level": 2,
     "ev": 48,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "elemental"
     ],
@@ -39644,30 +37717,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "burrow"
@@ -40786,7 +38837,7 @@ export const monsters = {
     "level": 4,
     "ev": 72,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "dragon",
       "elemental"
@@ -40807,29 +38858,9 @@ export const monsters = {
       "presence": 4
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 5,
-      "sonic": 0
+      "psychic": 5
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -41510,8 +39541,8 @@ export const monsters = {
     "name": "Abyssal Hyena",
     "level": 2,
     "ev": 4,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "abyssal",
       "animal"
@@ -41531,30 +39562,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -41795,8 +39804,8 @@ export const monsters = {
     "name": "Gnoll Abyssal Archer",
     "level": 2,
     "ev": 4,
-    "role": "artillery",
-    "organization": "horde",
+    "role": "Artillery",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -41815,30 +39824,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -42119,8 +40106,8 @@ export const monsters = {
     "name": "Gnoll Abyssal Summoner",
     "level": 2,
     "ev": 4,
-    "role": "support",
-    "organization": "horde",
+    "role": "Support",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -42139,30 +40126,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -42465,8 +40430,8 @@ export const monsters = {
     "name": "Gnoll Bonesplitter",
     "level": 2,
     "ev": 4,
-    "role": "brute",
-    "organization": "horde",
+    "role": "Brute",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -42485,30 +40450,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -42815,8 +40758,8 @@ export const monsters = {
     "name": "Gnoll Cackler",
     "level": 2,
     "ev": 4,
-    "role": "hexer",
-    "organization": "horde",
+    "role": "Hexer",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -42835,30 +40778,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -43120,7 +41041,7 @@ export const monsters = {
     "level": 2,
     "ev": 16,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "abyssal"
     ],
@@ -43139,30 +41060,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 3
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -43564,8 +41463,8 @@ export const monsters = {
     "name": "Gnoll Chainflail",
     "level": 2,
     "ev": 4,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "abyssal"
     ],
@@ -43584,30 +41483,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -43854,8 +41731,8 @@ export const monsters = {
     "name": "Gnoll Mage Mauler",
     "level": 2,
     "ev": 4,
-    "role": "hexer",
-    "organization": "minion",
+    "role": "Hexer",
+    "organization": "Minion",
     "keywords": [
       "abyssal"
     ],
@@ -43874,30 +41751,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -44144,8 +41999,8 @@ export const monsters = {
     "name": "Gnoll Marauder",
     "level": 2,
     "ev": 4,
-    "role": "harrier",
-    "organization": "horde",
+    "role": "Harrier",
+    "organization": "Horde",
     "keywords": [
       "abyssal"
     ],
@@ -44164,30 +42019,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -44396,8 +42229,8 @@ export const monsters = {
     "name": "Gnoll Wildling",
     "level": 2,
     "ev": 4,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "abyssal"
     ],
@@ -44416,30 +42249,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -44671,8 +42482,8 @@ export const monsters = {
     "name": "Tusker Demon",
     "level": 2,
     "ev": 16,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "abyssal"
     ],
@@ -44691,30 +42502,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -45034,8 +42823,8 @@ export const monsters = {
     "name": "Goblin Assassin",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "horde",
+    "role": "Ambusher",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -45054,30 +42843,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -45405,8 +43172,8 @@ export const monsters = {
     "name": "Goblin Cursespitter",
     "level": 1,
     "ev": 3,
-    "role": "hexer",
-    "organization": "horde",
+    "role": "Hexer",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -45425,30 +43192,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -45780,7 +43525,7 @@ export const monsters = {
     "level": 1,
     "ev": 12,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -45799,30 +43544,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 3
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -46143,8 +43866,8 @@ export const monsters = {
     "name": "Goblin Runner",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [],
     "size": {
       "value": 1,
@@ -46161,30 +43884,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -46373,8 +44074,8 @@ export const monsters = {
     "name": "Goblin Sniper",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -46393,30 +44094,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -46604,8 +44283,8 @@ export const monsters = {
     "name": "Goblin Spinecleaver",
     "level": 1,
     "ev": 3,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -46624,30 +44303,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -46879,8 +44536,8 @@ export const monsters = {
     "name": "Goblin Stinker",
     "level": 1,
     "ev": 3,
-    "role": "controller",
-    "organization": "horde",
+    "role": "Controller",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -46899,30 +44556,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -47195,8 +44830,8 @@ export const monsters = {
     "name": "Goblin Underboss",
     "level": 1,
     "ev": 3,
-    "role": "support",
-    "organization": "horde",
+    "role": "Support",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -47215,30 +44850,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -47456,8 +45069,8 @@ export const monsters = {
     "name": "Goblin Warrior",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "horde",
+    "role": "Harrier",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -47476,30 +45089,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -47810,8 +45401,8 @@ export const monsters = {
     "name": "Skitterling",
     "level": 1,
     "ev": 3,
-    "role": "hexer",
-    "organization": "minion",
+    "role": "Hexer",
+    "organization": "Minion",
     "keywords": [
       "animal"
     ],
@@ -47830,30 +45421,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -47948,8 +45517,8 @@ export const monsters = {
     "name": "War Spider",
     "level": 1,
     "ev": 12,
-    "role": "mount",
-    "organization": "elite",
+    "role": "Mount",
+    "organization": "Elite",
     "keywords": [
       "animal"
     ],
@@ -47968,30 +45537,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -3
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -48376,8 +45923,8 @@ export const monsters = {
     "name": "Worg",
     "level": 1,
     "ev": 3,
-    "role": "mount",
-    "organization": "horde",
+    "role": "Mount",
+    "organization": "Horde",
     "keywords": [
       "animal"
     ],
@@ -48396,30 +45943,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -48561,8 +46086,8 @@ export const monsters = {
     "name": "Griffon",
     "level": 2,
     "ev": 16,
-    "role": "mount",
-    "organization": "elite",
+    "role": "Mount",
+    "organization": "Elite",
     "keywords": [
       "beast"
     ],
@@ -48581,30 +46106,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -49089,8 +46592,8 @@ export const monsters = {
     "name": "Striped Condor Griffon",
     "level": 2,
     "ev": 16,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "beast"
     ],
@@ -49109,30 +46612,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -49554,29 +47035,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 3,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "all": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -49741,7 +47202,7 @@ export const monsters = {
     "level": 3,
     "ev": 60,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "fey"
     ],
@@ -49760,30 +47221,8 @@ export const monsters = {
       "intuition": 3,
       "presence": 3
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -50736,30 +48175,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -50788,8 +48205,8 @@ export const monsters = {
     "name": "Giant Hawk",
     "level": 1,
     "ev": 6,
-    "role": "mount",
-    "organization": "platoon",
+    "role": "Mount",
+    "organization": "Platoon",
     "keywords": [
       "animal"
     ],
@@ -50808,30 +48225,8 @@ export const monsters = {
       "intuition": 1,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "fly"
@@ -51143,8 +48538,8 @@ export const monsters = {
     "name": "Human Apprentice Mage",
     "level": 2,
     "ev": 4,
-    "role": "controller",
-    "organization": "minion",
+    "role": "Controller",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -51164,29 +48559,10 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 2,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 2,
-      "sonic": 0
+      "psychic": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -51378,8 +48754,8 @@ export const monsters = {
     "name": "Human Archer",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -51399,29 +48775,10 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 1,
-      "sonic": 0
+      "psychic": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -51591,7 +48948,7 @@ export const monsters = {
     "level": 3,
     "ev": 20,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -51611,29 +48968,10 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 4,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 4,
-      "sonic": 0
+      "psychic": 4
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -52198,7 +49536,7 @@ export const monsters = {
     "level": 1,
     "ev": 12,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -52218,29 +49556,10 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 2,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 2,
-      "sonic": 0
+      "psychic": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -52737,8 +50056,8 @@ export const monsters = {
     "name": "Human Brawler",
     "level": 1,
     "ev": 6,
-    "role": "brute",
-    "organization": "platoon",
+    "role": "Brute",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -52758,29 +50077,10 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 1,
-      "sonic": 0
+      "psychic": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -53162,8 +50462,8 @@ export const monsters = {
     "name": "Human Death Acolyte",
     "level": 1,
     "ev": 3,
-    "role": "hexer",
-    "organization": "minion",
+    "role": "Hexer",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -53183,29 +50483,10 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 1,
-      "sonic": 0
+      "psychic": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -53351,8 +50632,8 @@ export const monsters = {
     "name": "Human Death Cultist",
     "level": 2,
     "ev": 8,
-    "role": "support",
-    "organization": "platoon",
+    "role": "Support",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -53372,29 +50653,10 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 2,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 2,
-      "sonic": 0
+      "psychic": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -53725,8 +50987,8 @@ export const monsters = {
     "name": "Human Guard",
     "level": 1,
     "ev": 3,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -53746,29 +51008,10 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 1,
-      "sonic": 0
+      "psychic": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -53937,8 +51180,8 @@ export const monsters = {
     "name": "Human Knave",
     "level": 2,
     "ev": 8,
-    "role": "defender",
-    "organization": "platoon",
+    "role": "Defender",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -53958,29 +51201,10 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 2,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 2,
-      "sonic": 0
+      "psychic": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -54337,8 +51561,8 @@ export const monsters = {
     "name": "Human Raider",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [],
     "size": {
       "value": 1,
@@ -54356,29 +51580,10 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 1,
-      "sonic": 0
+      "psychic": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -54548,8 +51753,8 @@ export const monsters = {
     "name": "Human Rogue",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "minion",
+    "role": "Ambusher",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -54569,29 +51774,10 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 1,
-      "sonic": 0
+      "psychic": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -54762,8 +51948,8 @@ export const monsters = {
     "name": "Human Scoundrel",
     "level": 1,
     "ev": 6,
-    "role": "ambusher",
-    "organization": "platoon",
+    "role": "Ambusher",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -54783,29 +51969,10 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 1,
-      "sonic": 0
+      "psychic": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -55117,8 +52284,8 @@ export const monsters = {
     "name": "Human Storm Mage",
     "level": 3,
     "ev": 10,
-    "role": "controller",
-    "organization": "platoon",
+    "role": "Controller",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -55138,29 +52305,10 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 3,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 3,
-      "sonic": 0
+      "psychic": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -55547,8 +52695,8 @@ export const monsters = {
     "name": "Human Trickshot",
     "level": 1,
     "ev": 6,
-    "role": "artillery",
-    "organization": "platoon",
+    "role": "Artillery",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -55568,29 +52716,10 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 1,
-      "sonic": 0
+      "psychic": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -55876,8 +53005,8 @@ export const monsters = {
     "name": "Kobold Adeptus",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "horde",
+    "role": "Artillery",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -55896,30 +53025,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -56149,8 +53256,8 @@ export const monsters = {
     "name": "Kobold Artifex",
     "level": 1,
     "ev": 3,
-    "role": "controller",
-    "organization": "horde",
+    "role": "Controller",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -56169,30 +53276,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -56406,7 +53491,7 @@ export const monsters = {
     "level": 1,
     "ev": 12,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -56425,30 +53510,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -56933,8 +53996,8 @@ export const monsters = {
     "name": "Kobold Legionary",
     "level": 1,
     "ev": 3,
-    "role": "defender",
-    "organization": "horde",
+    "role": "Defender",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -56953,30 +54016,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -57271,8 +54312,8 @@ export const monsters = {
     "name": "Kobold Princeps",
     "level": 1,
     "ev": 3,
-    "role": "support",
-    "organization": "minion",
+    "role": "Support",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -57291,30 +54332,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -57493,8 +54512,8 @@ export const monsters = {
     "name": "Kobold Sagittarion",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -57513,30 +54532,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -57715,8 +54712,8 @@ export const monsters = {
     "name": "Kobold Signifer",
     "level": 1,
     "ev": 3,
-    "role": "support",
-    "organization": "horde",
+    "role": "Support",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -57735,30 +54732,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -57969,8 +54944,8 @@ export const monsters = {
     "name": "Kobold Tiro",
     "level": 1,
     "ev": 3,
-    "role": "defender",
-    "organization": "minion",
+    "role": "Defender",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -57989,30 +54964,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -58220,8 +55173,8 @@ export const monsters = {
     "name": "Kobold Veles",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -58240,30 +55193,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -58444,8 +55375,8 @@ export const monsters = {
     "name": "Kobold Venator",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "horde",
+    "role": "Ambusher",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -58464,30 +55395,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -58737,8 +55646,8 @@ export const monsters = {
     "name": "Shieldscale Drangolin (Size 2)",
     "level": 1,
     "ev": 12,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -58757,30 +55666,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "burrow"
@@ -59177,8 +56064,8 @@ export const monsters = {
     "name": "Shieldscale Drangolin (Size 3)",
     "level": 1,
     "ev": 12,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -59197,30 +56084,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "burrow"
@@ -59549,8 +56414,8 @@ export const monsters = {
     "name": "Trained Gummy Brick",
     "level": 1,
     "ev": 12,
-    "role": "hexer",
-    "organization": "elite",
+    "role": "Hexer",
+    "organization": "Elite",
     "keywords": [
       "soulless"
     ],
@@ -59570,29 +56435,9 @@ export const monsters = {
       "presence": -2
     },
     "immunities": {
-      "all": 0,
-      "acid": 3,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "acid": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -59834,8 +56679,8 @@ export const monsters = {
     "name": "Lightbender Pouncer",
     "level": 3,
     "ev": 20,
-    "role": "harrier",
-    "organization": "elite",
+    "role": "Harrier",
+    "organization": "Elite",
     "keywords": [
       "beast"
     ],
@@ -59854,30 +56699,8 @@ export const monsters = {
       "intuition": 1,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -60343,8 +57166,8 @@ export const monsters = {
     "name": "Lightbender",
     "level": 3,
     "ev": 20,
-    "role": "ambusher",
-    "organization": "elite",
+    "role": "Ambusher",
+    "organization": "Elite",
     "keywords": [
       "beast"
     ],
@@ -60363,30 +57186,8 @@ export const monsters = {
       "intuition": 1,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -60806,8 +57607,8 @@ export const monsters = {
     "name": "Lizardfolk Bloodeye",
     "level": 1,
     "ev": 6,
-    "role": "hexer",
-    "organization": "platoon",
+    "role": "Hexer",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -60826,30 +57627,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "swim"
     ],
@@ -61123,7 +57902,7 @@ export const monsters = {
     "level": 1,
     "ev": 12,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -61142,30 +57921,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "swim",
@@ -61640,7 +58397,7 @@ export const monsters = {
     "level": 1,
     "ev": 12,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -61659,30 +58416,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "swim",
       "climb",
@@ -62251,8 +58986,8 @@ export const monsters = {
     "name": "Lizardfolk Grunt",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -62271,30 +59006,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "swim",
       "walk"
@@ -62528,8 +59241,8 @@ export const monsters = {
     "name": "Lizardfolk Scaletooth",
     "level": 1,
     "ev": 6,
-    "role": "brute",
-    "organization": "platoon",
+    "role": "Brute",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -62548,30 +59261,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "swim",
       "walk"
@@ -62961,8 +59652,8 @@ export const monsters = {
     "name": "Lizardfolk Shellguard",
     "level": 1,
     "ev": 3,
-    "role": "defender",
-    "organization": "minion",
+    "role": "Defender",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -62981,30 +59672,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "swim",
       "walk"
@@ -63208,8 +59877,8 @@ export const monsters = {
     "name": "Lizardfolk Skyterror",
     "level": 1,
     "ev": 6,
-    "role": "harrier",
-    "organization": "platoon",
+    "role": "Harrier",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -63228,30 +59897,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "swim",
       "walk"
@@ -63615,8 +60262,8 @@ export const monsters = {
     "name": "Lizardfolk Tonguer",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -63635,30 +60282,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "swim",
       "walk"
@@ -63974,7 +60599,7 @@ export const monsters = {
     "level": 4,
     "ev": 72,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "beast"
     ],
@@ -63993,30 +60618,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "fly"
@@ -64776,8 +61379,8 @@ export const monsters = {
     "name": "Minotaur",
     "level": 3,
     "ev": 20,
-    "role": "harrier",
-    "organization": "elite",
+    "role": "Harrier",
+    "organization": "Elite",
     "keywords": [
       "accursed",
       "humanoid"
@@ -64797,30 +61400,8 @@ export const monsters = {
       "intuition": 1,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -65238,8 +61819,8 @@ export const monsters = {
     "name": "Minotaur Bully",
     "level": 8,
     "ev": 10,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "accursed",
       "humanoid"
@@ -65259,30 +61840,8 @@ export const monsters = {
       "intuition": 3,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -65513,8 +62072,8 @@ export const monsters = {
     "name": "Minotaur Lackey",
     "level": 8,
     "ev": 10,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "accursed",
       "humanoid"
@@ -65534,30 +62093,8 @@ export const monsters = {
       "intuition": 1,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -65835,8 +62372,8 @@ export const monsters = {
     "name": "Minotaur Stampede",
     "level": 10,
     "ev": 12,
-    "role": "defender",
-    "organization": "minion",
+    "role": "Defender",
+    "organization": "Minion",
     "keywords": [
       "accursed",
       "humanoid",
@@ -65857,30 +62394,8 @@ export const monsters = {
       "intuition": 2,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -66148,8 +62663,8 @@ export const monsters = {
     "name": "Minotaur Sunderer",
     "level": 3,
     "ev": 20,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "accursed",
       "humanoid"
@@ -66169,30 +62684,8 @@ export const monsters = {
       "intuition": 2,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -66661,8 +63154,8 @@ export const monsters = {
     "name": "Cyclops",
     "level": 10,
     "ev": 12,
-    "role": "controller",
-    "organization": "minion",
+    "role": "Controller",
+    "organization": "Minion",
     "keywords": [
       "giant"
     ],
@@ -66681,30 +63174,8 @@ export const monsters = {
       "intuition": 3,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -66996,8 +63467,8 @@ export const monsters = {
     "name": "Ogre Blue Blood",
     "level": 7,
     "ev": 9,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "giant"
     ],
@@ -67016,30 +63487,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -67280,8 +63729,8 @@ export const monsters = {
     "name": "Ogre Goon",
     "level": 2,
     "ev": 16,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "giant"
     ],
@@ -67300,30 +63749,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -67850,8 +64277,8 @@ export const monsters = {
     "name": "Ogre Juggernaut",
     "level": 2,
     "ev": 16,
-    "role": "harrier",
-    "organization": "elite",
+    "role": "Harrier",
+    "organization": "Elite",
     "keywords": [
       "giant"
     ],
@@ -67870,30 +64297,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -68456,8 +64861,8 @@ export const monsters = {
     "name": "Ogre Tantrum",
     "level": 7,
     "ev": 9,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "giant"
     ],
@@ -68476,30 +64881,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -68726,8 +65109,8 @@ export const monsters = {
     "name": "Mohler",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "minion",
+    "role": "Ambusher",
+    "organization": "Minion",
     "keywords": [
       "animal"
     ],
@@ -68746,30 +65129,8 @@ export const monsters = {
       "intuition": 1,
       "presence": -3
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "burrow"
@@ -69028,8 +65389,8 @@ export const monsters = {
     "name": "Orc Blitzer",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -69048,30 +65409,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -69250,8 +65589,8 @@ export const monsters = {
     "name": "Orc Bloodrunner",
     "level": 3,
     "ev": 10,
-    "role": "harrier",
-    "organization": "platoon",
+    "role": "Harrier",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -69270,30 +65609,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -69505,8 +65822,8 @@ export const monsters = {
     "name": "Orc Bloodspark",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -69525,30 +65842,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -69674,8 +65969,8 @@ export const monsters = {
     "name": "Orc Chainlock",
     "level": 1,
     "ev": 6,
-    "role": "hexer",
-    "organization": "platoon",
+    "role": "Hexer",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -69694,30 +65989,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -70038,11 +66311,11 @@ export const monsters = {
   },
   "orc-eye-of-grole": {
     "id": "orc-eye-of-grole",
-    "name": "Orc Eye of Grole",
+    "name": "Orc Eye Of Grole",
     "level": 1,
     "ev": 6,
-    "role": "artillery",
-    "organization": "platoon",
+    "role": "Artillery",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -70061,30 +66334,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -70463,8 +66714,8 @@ export const monsters = {
     "name": "Orc Garotter",
     "level": 1,
     "ev": 6,
-    "role": "ambusher",
-    "organization": "platoon",
+    "role": "Ambusher",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -70483,30 +66734,8 @@ export const monsters = {
       "intuition": 1,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -70813,8 +67042,8 @@ export const monsters = {
     "name": "Orc Glorifier",
     "level": 1,
     "ev": 3,
-    "role": "controller",
-    "organization": "minion",
+    "role": "Controller",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -70833,30 +67062,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -71076,8 +67283,8 @@ export const monsters = {
     "name": "Orc Godcaller",
     "level": 1,
     "ev": 6,
-    "role": "support",
-    "organization": "platoon",
+    "role": "Support",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -71096,30 +67303,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -71301,8 +67486,8 @@ export const monsters = {
     "name": "Orc Juggernaut",
     "level": 3,
     "ev": 10,
-    "role": "brute",
-    "organization": "platoon",
+    "role": "Brute",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -71321,30 +67506,8 @@ export const monsters = {
       "intuition": -1,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -71584,8 +67747,8 @@ export const monsters = {
     "name": "Orc Rampart",
     "level": 2,
     "ev": 8,
-    "role": "defender",
-    "organization": "platoon",
+    "role": "Defender",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -71604,30 +67767,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -71876,8 +68017,8 @@ export const monsters = {
     "name": "Orc Razor",
     "level": 1,
     "ev": 3,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -71896,30 +68037,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -72118,8 +68237,8 @@ export const monsters = {
     "name": "Orc Terranova",
     "level": 2,
     "ev": 8,
-    "role": "controller",
-    "organization": "platoon",
+    "role": "Controller",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -72138,30 +68257,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "burrow"
@@ -72479,7 +68576,7 @@ export const monsters = {
     "level": 3,
     "ev": 20,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -72498,30 +68595,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -72937,8 +69012,8 @@ export const monsters = {
     "name": "Scyza",
     "level": 3,
     "ev": 20,
-    "role": "mount",
-    "organization": "elite",
+    "role": "Mount",
+    "organization": "Elite",
     "keywords": [
       "animal"
     ],
@@ -72957,30 +69032,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -73399,8 +69452,8 @@ export const monsters = {
     "name": "Radenwight Bruxer",
     "level": 1,
     "ev": 6,
-    "role": "brute",
-    "organization": "platoon",
+    "role": "Brute",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -73419,30 +69472,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "climb",
       "walk"
@@ -73955,7 +69986,7 @@ export const monsters = {
     "level": 1,
     "ev": 12,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -73974,30 +70005,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 3
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -74603,8 +70612,8 @@ export const monsters = {
     "name": "Radenwight Mischiever",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "minion",
+    "role": "Ambusher",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -74623,30 +70632,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -74825,8 +70812,8 @@ export const monsters = {
     "name": "Radenwight Piper",
     "level": 1,
     "ev": 6,
-    "role": "support",
-    "organization": "platoon",
+    "role": "Support",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -74845,30 +70832,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "climb",
       "walk"
@@ -75307,8 +71272,8 @@ export const monsters = {
     "name": "Radenwight Ratcrobat",
     "level": 1,
     "ev": 6,
-    "role": "harrier",
-    "organization": "platoon",
+    "role": "Harrier",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -75327,30 +71292,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "climb",
       "walk"
@@ -75737,8 +71680,8 @@ export const monsters = {
     "name": "Radenwight Redeye",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -75757,30 +71700,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -75956,8 +71877,8 @@ export const monsters = {
     "name": "Radenwight Scrapper",
     "level": 1,
     "ev": 3,
-    "role": "defender",
-    "organization": "minion",
+    "role": "Defender",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -75976,30 +71897,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "climb"
     ],
@@ -76225,8 +72124,8 @@ export const monsters = {
     "name": "Radenwight Swiftpaw",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -76245,30 +72144,8 @@ export const monsters = {
       "intuition": 0,
       "presence": -1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -76518,8 +72395,8 @@ export const monsters = {
     "name": "Rival Conduit",
     "level": 2,
     "ev": 16,
-    "role": "support",
-    "organization": "elite",
+    "role": "Support",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -76538,30 +72415,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -76855,8 +72710,8 @@ export const monsters = {
     "name": "Rival Elementalist",
     "level": 2,
     "ev": 16,
-    "role": "controller",
-    "organization": "elite",
+    "role": "Controller",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -76875,30 +72730,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -77334,8 +73167,8 @@ export const monsters = {
     "name": "Rival Fury",
     "level": 2,
     "ev": 16,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -77354,30 +73187,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -77785,8 +73596,8 @@ export const monsters = {
     "name": "Rival Null",
     "level": 2,
     "ev": 16,
-    "role": "harrier",
-    "organization": "elite",
+    "role": "Harrier",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -77805,30 +73616,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -78221,8 +74010,8 @@ export const monsters = {
     "name": "Rival Shadow",
     "level": 2,
     "ev": 16,
-    "role": "ambusher",
-    "organization": "elite",
+    "role": "Ambusher",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -78241,30 +74030,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -78588,8 +74355,8 @@ export const monsters = {
     "name": "Rival Tactician",
     "level": 2,
     "ev": 16,
-    "role": "artillery",
-    "organization": "elite",
+    "role": "Artillery",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -78608,30 +74375,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -79026,8 +74771,8 @@ export const monsters = {
     "name": "Rival Talent",
     "level": 2,
     "ev": 16,
-    "role": "hexer",
-    "organization": "elite",
+    "role": "Hexer",
+    "organization": "Elite",
     "keywords": [
       "humanoid"
     ],
@@ -79046,30 +74791,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -79528,8 +75251,8 @@ export const monsters = {
     "name": "Familiar",
     "level": 1,
     "ev": 4,
-    "role": "support",
-    "organization": "minion",
+    "role": "Support",
+    "organization": "Minion",
     "keywords": [
       "animal"
     ],
@@ -79548,30 +75271,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -79600,8 +75301,8 @@ export const monsters = {
     "name": "Time Raider Archon",
     "level": 3,
     "ev": 5,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -79621,29 +75322,9 @@ export const monsters = {
       "presence": -1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 3,
-      "sonic": 0
+      "psychic": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -79865,8 +75546,8 @@ export const monsters = {
     "name": "Time Raider Armiger",
     "level": 3,
     "ev": 10,
-    "role": "defender",
-    "organization": "platoon",
+    "role": "Defender",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -79886,29 +75567,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 3,
-      "sonic": 0
+      "psychic": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -80274,8 +75935,8 @@ export const monsters = {
     "name": "Time Raider Cannonfall",
     "level": 3,
     "ev": 10,
-    "role": "artillery",
-    "organization": "platoon",
+    "role": "Artillery",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -80295,29 +75956,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 3,
-      "sonic": 0
+      "psychic": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -80628,8 +76269,8 @@ export const monsters = {
     "name": "Time Raider Helix",
     "level": 3,
     "ev": 10,
-    "role": "controller",
-    "organization": "platoon",
+    "role": "Controller",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -80649,29 +76290,9 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 3,
-      "sonic": 0
+      "psychic": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -80990,8 +76611,8 @@ export const monsters = {
     "name": "Time Raider Hijack",
     "level": 3,
     "ev": 10,
-    "role": "ambusher",
-    "organization": "platoon",
+    "role": "Ambusher",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -81011,29 +76632,9 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 3,
-      "sonic": 0
+      "psychic": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -81300,8 +76901,8 @@ export const monsters = {
     "name": "Time Raider Mind Punk",
     "level": 3,
     "ev": 10,
-    "role": "hexer",
-    "organization": "platoon",
+    "role": "Hexer",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -81321,29 +76922,9 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 3,
-      "sonic": 0
+      "psychic": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -81759,8 +77340,8 @@ export const monsters = {
     "name": "Time Raider Myriad",
     "level": 3,
     "ev": 5,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "humanoid"
     ],
@@ -81780,29 +77361,9 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 3,
-      "sonic": 0
+      "psychic": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -82077,8 +77638,8 @@ export const monsters = {
     "name": "Time Raider Nemesis",
     "level": 3,
     "ev": 10,
-    "role": "harrier",
-    "organization": "platoon",
+    "role": "Harrier",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -82098,29 +77659,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 3,
-      "sonic": 0
+      "psychic": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "fly",
       "walk"
@@ -82522,7 +78063,7 @@ export const monsters = {
     "level": 3,
     "ev": 20,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -82541,30 +78082,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "teleport"
     ],
@@ -82950,8 +78469,8 @@ export const monsters = {
     "name": "Time Raider Vertex",
     "level": 3,
     "ev": 10,
-    "role": "support",
-    "organization": "platoon",
+    "role": "Support",
+    "organization": "Platoon",
     "keywords": [
       "humanoid"
     ],
@@ -82971,29 +78490,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 3,
-      "sonic": 0
+      "psychic": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "fly"
@@ -83299,8 +78798,8 @@ export const monsters = {
     "name": "Crawling Claw",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [],
     "size": {
       "value": 1,
@@ -83318,29 +78817,10 @@ export const monsters = {
       "presence": -1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 1,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -83566,8 +79046,8 @@ export const monsters = {
     "name": "Decrepit Skeleton",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "undead"
     ],
@@ -83587,29 +79067,10 @@ export const monsters = {
       "presence": -2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 1,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -83835,7 +79296,7 @@ export const monsters = {
     "level": 1,
     "ev": 12,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "undead"
     ],
@@ -83855,29 +79316,10 @@ export const monsters = {
       "presence": 3
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 3,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 3,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -84416,8 +79858,8 @@ export const monsters = {
     "name": "Ghoul",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "horde",
+    "role": "Harrier",
+    "organization": "Horde",
     "keywords": [
       "undead"
     ],
@@ -84437,29 +79879,10 @@ export const monsters = {
       "presence": -1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 1,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -84751,8 +80174,8 @@ export const monsters = {
     "name": "Rotting Zombie",
     "level": 1,
     "ev": 3,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [],
     "size": {
       "value": 1,
@@ -84770,29 +80193,10 @@ export const monsters = {
       "presence": -3
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 1,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -85060,8 +80464,8 @@ export const monsters = {
     "name": "Shade",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "minion",
+    "role": "Ambusher",
+    "organization": "Minion",
     "keywords": [
       "undead"
     ],
@@ -85081,29 +80485,10 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 1,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -85372,8 +80757,8 @@ export const monsters = {
     "name": "Skeleton",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "horde",
+    "role": "Artillery",
+    "organization": "Horde",
     "keywords": [
       "undead"
     ],
@@ -85393,29 +80778,10 @@ export const monsters = {
       "presence": -1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 1,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -85751,8 +81117,8 @@ export const monsters = {
     "name": "Soulwight",
     "level": 1,
     "ev": 3,
-    "role": "hexer",
-    "organization": "horde",
+    "role": "Hexer",
+    "organization": "Horde",
     "keywords": [
       "undead"
     ],
@@ -85772,29 +81138,10 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 1,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -86090,8 +81437,8 @@ export const monsters = {
     "name": "Specter",
     "level": 1,
     "ev": 3,
-    "role": "hexer",
-    "organization": "horde",
+    "role": "Hexer",
+    "organization": "Horde",
     "keywords": [
       "undead"
     ],
@@ -86111,29 +81458,10 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 1,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -86430,8 +81758,8 @@ export const monsters = {
     "name": "Umbral Stalker",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "horde",
+    "role": "Ambusher",
+    "organization": "Horde",
     "keywords": [
       "undead"
     ],
@@ -86451,29 +81779,10 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 1,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk",
       "climb"
@@ -86831,8 +82140,8 @@ export const monsters = {
     "name": "Zombie",
     "level": 1,
     "ev": 3,
-    "role": "brute",
-    "organization": "horde",
+    "role": "Brute",
+    "organization": "Horde",
     "keywords": [
       "undead"
     ],
@@ -86852,29 +82161,10 @@ export const monsters = {
       "presence": 1
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
       "corruption": 1,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 1,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 1
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -87294,8 +82584,8 @@ export const monsters = {
     "name": "War Dog Amalgamite",
     "level": 2,
     "ev": 4,
-    "role": "brute",
-    "organization": "horde",
+    "role": "Brute",
+    "organization": "Horde",
     "keywords": [
       "humanoid",
       "soulless"
@@ -87315,30 +82605,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -87609,8 +82877,8 @@ export const monsters = {
     "name": "War Dog Commando",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "minion",
+    "role": "Ambusher",
+    "organization": "Minion",
     "keywords": [
       "humanoid",
       "soulless"
@@ -87630,30 +82898,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -87755,8 +83001,8 @@ export const monsters = {
     "name": "War Dog Conscript",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "minion",
+    "role": "Harrier",
+    "organization": "Minion",
     "keywords": [
       "humanoid",
       "soulless"
@@ -87776,30 +83022,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -87994,8 +83218,8 @@ export const monsters = {
     "name": "War Dog Crucibite",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "horde",
+    "role": "Artillery",
+    "organization": "Horde",
     "keywords": [
       "humanoid",
       "soulless"
@@ -88016,29 +83240,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 2,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "fire": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -88272,8 +83476,8 @@ export const monsters = {
     "name": "War Dog Eviscerite",
     "level": 1,
     "ev": 3,
-    "role": "harrier",
-    "organization": "horde",
+    "role": "Harrier",
+    "organization": "Horde",
     "keywords": [
       "humanoid",
       "soulless"
@@ -88293,30 +83497,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -88635,7 +83817,7 @@ export const monsters = {
     "level": 3,
     "ev": 20,
     "role": "",
-    "organization": "leader",
+    "organization": "Leader",
     "keywords": [
       "humanoid"
     ],
@@ -88654,30 +83836,8 @@ export const monsters = {
       "intuition": 2,
       "presence": 2
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -89101,8 +84261,8 @@ export const monsters = {
     "name": "War Dog Neuronite",
     "level": 1,
     "ev": 3,
-    "role": "defender",
-    "organization": "horde",
+    "role": "Defender",
+    "organization": "Horde",
     "keywords": [
       "humanoid",
       "soulless"
@@ -89123,29 +84283,9 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 2,
-      "sonic": 0
+      "psychic": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "fly",
       "walk"
@@ -89463,8 +84603,8 @@ export const monsters = {
     "name": "War Dog Pestilite",
     "level": 3,
     "ev": 5,
-    "role": "controller",
-    "organization": "horde",
+    "role": "Controller",
+    "organization": "Horde",
     "keywords": [
       "humanoid"
     ],
@@ -89484,29 +84624,9 @@ export const monsters = {
       "presence": 2
     },
     "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 3,
-      "psychic": 0,
-      "sonic": 0
+      "poison": 3
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -89790,8 +84910,8 @@ export const monsters = {
     "name": "War Dog Phosphorite",
     "level": 2,
     "ev": 4,
-    "role": "hexer",
-    "organization": "horde",
+    "role": "Hexer",
+    "organization": "Horde",
     "keywords": [
       "humanoid",
       "soulless"
@@ -89812,29 +84932,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 2,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "acid": 2
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -90116,8 +85216,8 @@ export const monsters = {
     "name": "War Dog Sharpshooter",
     "level": 1,
     "ev": 3,
-    "role": "artillery",
-    "organization": "minion",
+    "role": "Artillery",
+    "organization": "Minion",
     "keywords": [
       "humanoid",
       "soulless"
@@ -90137,30 +85237,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -90352,8 +85430,8 @@ export const monsters = {
     "name": "War Dog Subcommander",
     "level": 2,
     "ev": 4,
-    "role": "support",
-    "organization": "horde",
+    "role": "Support",
+    "organization": "Horde",
     "keywords": [
       "humanoid",
       "soulless"
@@ -90373,30 +85451,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -90635,8 +85691,8 @@ export const monsters = {
     "name": "War Dog Teletalite",
     "level": 1,
     "ev": 3,
-    "role": "ambusher",
-    "organization": "horde",
+    "role": "Ambusher",
+    "organization": "Horde",
     "keywords": [
       "humanoid",
       "soulless"
@@ -90656,30 +85712,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "teleport"
     ],
@@ -90985,8 +86019,8 @@ export const monsters = {
     "name": "War Dog Tetherite",
     "level": 1,
     "ev": 3,
-    "role": "brute",
-    "organization": "minion",
+    "role": "Brute",
+    "organization": "Minion",
     "keywords": [
       "humanoid",
       "soulless"
@@ -91006,30 +86040,8 @@ export const monsters = {
       "intuition": 0,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -91234,7 +86246,7 @@ export const monsters = {
     "level": 1,
     "ev": 36,
     "role": "",
-    "organization": "solo",
+    "organization": "Solo",
     "keywords": [
       "accursed",
       "humanoid"
@@ -91254,30 +86266,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 1
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "walk"
     ],
@@ -92159,8 +87149,8 @@ export const monsters = {
     "name": "Wyvern Lurker",
     "level": 4,
     "ev": 24,
-    "role": "ambusher",
-    "organization": "elite",
+    "role": "Ambusher",
+    "organization": "Elite",
     "keywords": [
       "beast"
     ],
@@ -92180,29 +87170,9 @@ export const monsters = {
       "presence": 0
     },
     "immunities": {
-      "all": 0,
-      "acid": 5,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
+      "acid": 5
     },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -92636,8 +87606,8 @@ export const monsters = {
     "name": "Wyvern Predator",
     "level": 4,
     "ev": 24,
-    "role": "brute",
-    "organization": "elite",
+    "role": "Brute",
+    "organization": "Elite",
     "keywords": [
       "beast"
     ],
@@ -92656,30 +87626,8 @@ export const monsters = {
       "intuition": 1,
       "presence": 0
     },
-    "immunities": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
-    "weaknesses": {
-      "all": 0,
-      "acid": 0,
-      "cold": 0,
-      "corruption": 0,
-      "fire": 0,
-      "holy": 0,
-      "lightning": 0,
-      "poison": 0,
-      "psychic": 0,
-      "sonic": 0
-    },
+    "immunities": {},
+    "weaknesses": {},
     "movementTypes": [
       "fly"
     ],
@@ -93204,5 +88152,5 @@ export const monsterCards = monsterIndex.card;
 
 console.log('✅ Monster data bundle loaded:', {
   totalMonsters: Object.keys(monsters).length,
-  indexVersion: '2025-09-25T18:40:00.766Z'
+  indexVersion: '2025-09-25T20:14:56.476Z'
 });
