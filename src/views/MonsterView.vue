@@ -8,7 +8,14 @@
       Error: {{ error }}
     </div>
     
-    <MonsterStatBlock v-else-if="monster" :monster="monster" />
+    <div v-else-if="monster">
+      <MonsterStatBlock :monster="monster" />
+      <div class="monster-actions">
+        <button class="btn btn-secondary" @click="viewRandomMonster" :disabled="loadingRandom">
+          {{ loadingRandom ? 'Loading...' : 'Random Monster' }}
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -31,6 +38,7 @@ export default {
       monster: null,
       loading: true,
       error: null,
+      loadingRandom: false,
     }
   },
   async mounted() {
@@ -95,6 +103,27 @@ export default {
 
       // Save back to localStorage
       localStorage.setItem('recentlyViewedMonsters', JSON.stringify(recentMonsters));
+    },
+    async viewRandomMonster() {
+      this.loadingRandom = true
+      
+      try {
+        const { getRandomMonsterId } = await import('@/utils/monsterUtils.js')
+        const randomId = await getRandomMonsterId()
+        
+        if (randomId && randomId !== this.monsterId) {
+          // Navigate to the new random monster
+          this.$router.push(`/monster/${randomId}`)
+        } else if (randomId === this.monsterId) {
+          // If we got the same monster, try again
+          this.viewRandomMonster()
+          return
+        }
+      } catch (error) {
+        console.error('Failed to get random monster:', error)
+      } finally {
+        this.loadingRandom = false
+      }
     }
   }
 }
@@ -105,6 +134,40 @@ export default {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+.monster-actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border-color: #dee2e6;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+  color: #495057;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .loading, .error {

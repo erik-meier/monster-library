@@ -157,7 +157,7 @@ export default {
       
       // Parse and replace [[/damage type X]] directives, including @monster.freeStrike
       description = description.replace(/\[\[\/damage\s+(@monster\.freeStrike|\d+|\dd\d)(?:\s+(\w+))?\]\]/g, (match, value, type) => {
-        let damageValue = value
+        const damageValue = value
         
         // Handle @monster.freeStrike reference
         if (value === '@monster.freeStrike') {
