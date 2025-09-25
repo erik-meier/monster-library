@@ -19,21 +19,23 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // Paths
 const SOURCE_MONSTERS_DIR = path.join(__dirname, '../data/monsters')
-const OUTPUT_MONSTERS_DIR = path.join(__dirname, '../data/optimized-monsters')  
-const OUTPUT_INDEX_FILE = path.join(__dirname, '../data/optimized_monster_index.json')
+const TEMP_MONSTERS_DIR = path.join(__dirname, '../data/monsters-temp')  
+const OUTPUT_INDEX_FILE = path.join(__dirname, '../data/monster_index.json')
 
 console.log('🔄 Simplifying monster data...')
 
-// Create output directory
-if (!fs.existsSync(OUTPUT_MONSTERS_DIR)) {
-  fs.mkdirSync(OUTPUT_MONSTERS_DIR, { recursive: true })
+// Create temp directory
+if (!fs.existsSync(TEMP_MONSTERS_DIR)) {
+  fs.mkdirSync(TEMP_MONSTERS_DIR, { recursive: true })
 }
 
-// Clear output directory
-const existingFiles = fs.readdirSync(OUTPUT_MONSTERS_DIR)
-existingFiles.forEach(file => {
-  fs.unlinkSync(path.join(OUTPUT_MONSTERS_DIR, file))
-})
+// Clear temp directory
+if (fs.existsSync(TEMP_MONSTERS_DIR)) {
+  const existingFiles = fs.readdirSync(TEMP_MONSTERS_DIR)
+  existingFiles.forEach(file => {
+    fs.unlinkSync(path.join(TEMP_MONSTERS_DIR, file))
+  })
+}
 
 // Process all monster files
 const monstersData = {}
@@ -137,7 +139,7 @@ function processMonsterFile(filePath) {
     }
     
     // Save simplified monster to individual file
-    const outputFilePath = path.join(OUTPUT_MONSTERS_DIR, `${monsterId}.json`)
+    const outputFilePath = path.join(TEMP_MONSTERS_DIR, `${monsterId}.json`)
     fs.writeFileSync(outputFilePath, JSON.stringify(simplifiedMonster, null, 2))
     
     // Update index
@@ -191,7 +193,7 @@ fs.writeFileSync(OUTPUT_INDEX_FILE, JSON.stringify(monsterIndex, null, 2))
 
 // Calculate size savings
 const originalSize = execSync(`find "${SOURCE_MONSTERS_DIR}" -name "*.json" -exec wc -c {} + | tail -1 | awk '{print $1}'`).toString().trim()
-const simplifiedSize = execSync(`find "${OUTPUT_MONSTERS_DIR}" -name "*.json" -exec wc -c {} + | tail -1 | awk '{print $1}'`).toString().trim()
+const simplifiedSize = execSync(`find "${TEMP_MONSTERS_DIR}" -name "*.json" -exec wc -c {} + | tail -1 | awk '{print $1}'`).toString().trim()
 const indexSize = fs.statSync(OUTPUT_INDEX_FILE).size
 
 const totalSimplifiedSize = parseInt(simplifiedSize) + indexSize
@@ -203,4 +205,20 @@ console.log(`⚠️  Errors: ${errorCount} monsters`)
 console.log(`📦 Original size: ${(parseInt(originalSize) / 1024 / 1024).toFixed(2)} MB`)
 console.log(`📦 Simplified size: ${(totalSimplifiedSize / 1024 / 1024).toFixed(2)} MB`)
 console.log(`🎉 Size reduction: ${reduction}%`)
+
+// Replace original monsters directory with simplified versions
+console.log('🔄 Replacing original monsters with simplified versions...')
+
+// Backup original monsters directory
+const backupDir = path.join(__dirname, '../data/monsters-original')
+if (fs.existsSync(backupDir)) {
+  fs.rmSync(backupDir, { recursive: true })
+}
+fs.renameSync(SOURCE_MONSTERS_DIR, backupDir)
+
+// Move simplified monsters to main location
+fs.renameSync(TEMP_MONSTERS_DIR, SOURCE_MONSTERS_DIR)
+
+console.log('✅ Monster data replacement complete!')
+console.log('📁 Original data backed up to monsters-original/')
 

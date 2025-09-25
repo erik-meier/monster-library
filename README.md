@@ -1,13 +1,13 @@
 # Monster Library
 
-Web app for building encounters and viewing monster stat blocks for the tabletop roleplaying game Draw Steel.
+Web app for browsing and viewing monster stat blocks for the tabletop roleplaying game Draw Steel.
 
 ## Features
 
-- Browse and search through 238+ Draw Steel monsters
+- Browse and search through Draw Steel monsters
 - View detailed stat blocks with complete monster information
-- Optimized data structure for fast loading and small bundle sizes
 - Responsive design for desktop and mobile use
+- Fast loading and optimized performance
 
 ## Project Setup
 
@@ -15,13 +15,13 @@ Web app for building encounters and viewing monster stat blocks for the tabletop
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Development
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Production Build
 
 ```sh
 npm run build
@@ -33,142 +33,77 @@ npm run build
 npm run lint
 ```
 
-## Data Processing
+## Data Management
 
-The monster data is processed through an optimization pipeline that significantly reduces bundle size while maintaining all functionality.
+The application uses monster data from the Draw Steel Foundry VTT module.
 
-### Data Structure Overview
+### File Structure
 
-The application uses an optimized monster data structure that:
-- **Reduces bundle size by 60%+** compared to the original Foundry VTT data
-- **Flattens nested structures** for easier access and processing
-- **Extracts only fields used by the application** from the comprehensive source data
-- **Maintains complete monster information** including descriptions, abilities, and statistics
+```
+data/
+├── monster_index.json          # Index with all monster metadata
+└── monsters/                   # Monster files in simplified format
+    ├── angulotl-cleaver.json
+    ├── arixx.json
+    └── ...
 
-### Monster Data Scripts
-
-#### 1. Data Optimization
-
-```sh
-node scripts/simplify-monster-data.js
+scripts/
+├── clone_monsters.sh           # Clone raw data from draw-steel repository
+├── create-monster-index.js     # Create index from raw Foundry VTT data
+├── simplify-monster-data.js    # Convert raw data to simplified format
+└── build-monster-data.js       # Bundle simplified data for app consumption
 ```
 
-This script processes the raw Foundry VTT monster data and creates an optimized version:
-- Extracts only the fields needed by the application (~20 fields vs 100+ in source)
-- Flattens nested object structures (e.g., `monster.system.monster.level` → `monster.level`)
-- Converts from nested folder structure to flat file organization
-- Includes both `description` and `effect` fields for complete ability descriptions
+### Workflow Steps
 
-**Input:** `data/monsters/` (raw Foundry VTT files)
-**Output:** `data/optimized-monsters/` (optimized JSON files) + `data/optimized_monster_index.json`
+#### 1. Clone Raw Monster Data
+```bash
+npm run clone-monsters
+```
+- Clones latest monster data from draw-steel Foundry module
+- Creates initial `monster_index.json` from raw Foundry VTT data
+- Removes Foundry folder files that aren't monsters
 
-#### 2. Bundle Generation
+#### 2. Simplify Monster Data
+```bash
+npm run simplify-monsters
+```
+- Converts complex Foundry VTT monster files to simplified format
+- Extracts only the fields actually used by the Vue components
+- Replaces raw monsters with simplified versions (backs up originals)
+- Updates `monster_index.json` for simplified structure
 
-```sh
-node scripts/build-monster-data.js
-# or via npm script:
+#### 3. Build Bundle for App
+```bash
 npm run build-data
 ```
+- Creates JavaScript bundle from simplified monsters
+- Generates `src/data/monsters-bundle.js` for app consumption
+- Used automatically during `npm run build`
 
-This script creates the final JavaScript bundle used by the application:
-- Automatically detects and uses optimized data when available
-- Falls back to original data structure if optimized data doesn't exist
-- Generates a single JavaScript module with all monster data
-- Creates optimized exports for fast access (`getMonster()`, `getAllMonsters()`, etc.)
+#### 4. Full Refresh (All Steps)
+```bash
+npm run refresh-all
+```
+- Runs all three steps in sequence
+- Complete refresh from upstream draw-steel data
 
-**Input:** `data/optimized-monsters/` (preferred) or `data/monsters/` (fallback)
-**Output:** `src/data/monsters-bundle.js`
+### Available Scripts
+
+- `npm run clone-monsters` - Fetch latest monster data from upstream
+- `npm run simplify-monsters` - Process raw data for the application
+- `npm run build-data` - Bundle data for production (runs automatically during build)
+- `npm run refresh-all` - Complete data refresh from upstream
 
 ### Updating Monster Data
 
-To update the monster data with new releases:
+To update with new monster releases:
 
-1. **Get latest data** (if using the clone script):
-   ```sh
-   ./scripts/clone_monsters.sh
-   ```
-
-2. **Optimize the data**:
-   ```sh
-   node scripts/simplify-monster-data.js
-   ```
-
-3. **Build the bundle**:
-   ```sh
-   npm run build-data
-   ```
-
-4. **Build the application**:
-   ```sh
-   npm run build
-   ```
-
-### Data Structure Details
-
-#### Optimized Monster Format
-
-```javascript
-{
-  "id": "monster-name",
-  "name": "Monster Name", 
-  "level": 1,
-  "ev": 3,
-  "role": "artillery",
-  "organization": "horde",
-  "keywords": ["humanoid"],
-  
-  // Combat stats
-  "size": { "value": 1, "letter": "S" },
-  "speed": 5,
-  "stamina": 10,
-  "stability": 0,
-  "freeStrike": 2,
-  
-  // Flattened characteristics
-  "characteristics": {
-    "might": 0,
-    "agility": 2,
-    "reason": 1,
-    "intuition": 0,
-    "presence": -1
-  },
-  
-  // Damage info
-  "immunities": { "poison": 2, /* ... */ },
-  "weaknesses": { /* ... */ },
-  "movementTypes": ["walk", "swim", "climb"],
-  
-  // Abilities and features
-  "items": [
-    {
-      "name": "Ability Name",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "keywords": ["ranged", "strike"],
-        "power": { /* power roll data */ },
-        "description": { "value": "Feature description..." },
-        "effect": { 
-          "before": "Ability description...",
-          "after": ""
-        }
-      }
-    }
-  ],
-  
-  "source": {
-    "book": "Monsters",
-    "page": "36",
-    "license": "Draw Steel Creator License"
-  }
-}
+```sh
+npm run refresh-all
 ```
 
-#### Size Comparison
-
-- **Original Foundry VTT data**: ~4.8MB JSON, ~2.8MB bundle (gzipped: 230KB)
-- **Optimized data**: ~2.4MB JSON, ~2.6MB bundle (gzipped: 85KB)
-- **Improvement**: 63% reduction in gzipped bundle size
+This will fetch the latest data, process it for the application, and prepare it for use.
 
 ## Recommended IDE Setup
 

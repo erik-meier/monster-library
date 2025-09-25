@@ -18,19 +18,8 @@ const OUTPUT_FILE = path.join(__dirname, '../src/data/monsters-bundle.js')
 
 console.log('🏗️  Building monster data bundle...')
 
-// Check if we should use optimized data structure (new default)
-const OPTIMIZED_MONSTERS_DIR = path.join(DATA_DIR, 'optimized-monsters')
-const OPTIMIZED_INDEX_FILE = path.join(DATA_DIR, 'optimized_monster_index.json')
-
-const useOptimized = fs.existsSync(OPTIMIZED_MONSTERS_DIR) && fs.existsSync(OPTIMIZED_INDEX_FILE)
-
-if (useOptimized) {
-  console.log('📦 Using optimized monster data structure...')
-}
-
 // Load the monster index
-const indexFile = useOptimized ? OPTIMIZED_INDEX_FILE : INDEX_FILE
-const monsterIndex = JSON.parse(fs.readFileSync(indexFile, 'utf8'))
+const monsterIndex = JSON.parse(fs.readFileSync(INDEX_FILE, 'utf8'))
 
 // Bundle all monster data
 const monsters = {}
@@ -39,20 +28,8 @@ let errorCount = 0
 
 for (const [monsterId, cardData] of Object.entries(monsterIndex.card)) {
   try {
-    let fullPath
-    
-    if (useOptimized) {
-      // Use optimized data structure - direct file mapping
-      fullPath = path.join(OPTIMIZED_MONSTERS_DIR, `${monsterId}.json`)
-    } else {
-      // Use original data structure - path lookup
-      const filePath = monsterIndex.path?.[monsterId]
-      if (!filePath) {
-        console.warn(`⚠️  No path found for monster: ${monsterId}`)
-        continue
-      }
-      fullPath = path.join(MONSTERS_DIR, filePath)
-    }
+    // Direct file mapping for simplified monster structure
+    const fullPath = path.join(MONSTERS_DIR, `${monsterId}.json`)
     
     if (!fs.existsSync(fullPath)) {
       console.warn(`⚠️  File not found: ${fullPath}`)
@@ -71,7 +48,6 @@ for (const [monsterId, cardData] of Object.entries(monsterIndex.card)) {
 // Generate the bundle file
 const bundleContent = `// Auto-generated monster data bundle
 // Generated on: ${new Date().toISOString()}
-// Data structure: ${useOptimized ? 'optimized' : 'original'}
 
 export const monsterIndex = ${JSON.stringify(monsterIndex, null, 2)};
 
@@ -94,7 +70,6 @@ export const monsterCards = monsterIndex.card;
 
 console.log('✅ Monster data bundle loaded:', {
   totalMonsters: Object.keys(monsters).length,
-  dataStructure: '${useOptimized ? 'optimized' : 'original'}',
   indexVersion: '${new Date().toISOString()}'
 });
 `

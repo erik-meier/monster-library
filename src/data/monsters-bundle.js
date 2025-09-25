@@ -1,6 +1,5 @@
 // Auto-generated monster data bundle
-// Generated on: 2025-09-25T16:32:47.783Z
-// Data structure: optimized
+// Generated on: 2025-09-25T17:15:34.298Z
 
 export const monsterIndex = {
   "name": {
@@ -11950,13 +11949,14 @@ export const monsters = {
         "system": {
           "category": "heroic",
           "type": "none",
-          "resource": null,
+          "resource": 5,
           "keywords": [],
           "distance": {
             "type": "special"
           },
           "target": {
-            "type": "special"
+            "type": "special",
+            "custom": ""
           },
           "trigger": "",
           "power": {
@@ -11978,13 +11978,14 @@ export const monsters = {
         "system": {
           "category": "heroic",
           "type": "none",
-          "resource": null,
+          "resource": 7,
           "keywords": [],
           "distance": {
             "type": "special"
           },
           "target": {
-            "type": "special"
+            "type": "special",
+            "custom": ""
           },
           "trigger": "",
           "power": {
@@ -12686,13 +12687,14 @@ export const monsters = {
         "system": {
           "category": "heroic",
           "type": "none",
-          "resource": null,
+          "resource": 5,
           "keywords": [],
           "distance": {
             "type": "special"
           },
           "target": {
-            "type": "special"
+            "type": "special",
+            "custom": ""
           },
           "trigger": "",
           "power": {
@@ -12714,13 +12716,14 @@ export const monsters = {
         "system": {
           "category": "heroic",
           "type": "none",
-          "resource": null,
+          "resource": 7,
           "keywords": [],
           "distance": {
             "type": "special"
           },
           "target": {
-            "type": "special"
+            "type": "special",
+            "custom": ""
           },
           "trigger": "",
           "power": {
@@ -17000,10 +17003,9 @@ export const monsters = {
                       "characteristic": "presence"
                     },
                     "effects": {
-                      "weakened": {
+                      "1cB1VkgEN5Hg04Cw": {
                         "condition": "failure",
-                        "end": "save",
-                        "properties": []
+                        "end": "save"
                       }
                     }
                   },
@@ -17014,10 +17016,9 @@ export const monsters = {
                       "characteristic": "presence"
                     },
                     "effects": {
-                      "weakened": {
+                      "1cB1VkgEN5Hg04Cw": {
                         "condition": "failure",
-                        "end": "save",
-                        "properties": []
+                        "end": "save"
                       }
                     }
                   },
@@ -67916,7 +67917,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>The juggernaut automatically destroys any mundane size 1 objects in their path when they move or are forced moved. They can break through any mundane wall made of wood, stone, or a similarly sturdy material this way as long as the wall is 2 squares thick or less.</p>",
+            "value": "<p>The juggernaut automatically destroys any mundane size 1 objects in their path when they move or are force moved. They can break through any mundane wall made of wood, stone, or a similarly sturdy material this way as long as the wall is 2 squares thick or less.</p>",
             "director": ""
           }
         }
@@ -68336,8 +68337,8 @@ export const monsters = {
         "type": "ability",
         "system": {
           "category": "",
-          "type": "none",
-          "resource": null,
+          "type": "freeTriggered",
+          "resource": 1,
           "keywords": [],
           "distance": {
             "type": "self"
@@ -93203,6 +93204,5 @@ export const monsterCards = monsterIndex.card;
 
 console.log('✅ Monster data bundle loaded:', {
   totalMonsters: Object.keys(monsters).length,
-  dataStructure: 'optimized',
-  indexVersion: '2025-09-25T16:32:47.797Z'
+  indexVersion: '2025-09-25T17:15:34.308Z'
 });
