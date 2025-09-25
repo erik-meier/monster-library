@@ -128,6 +128,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The animal shifts up to 2 squares between strikes.</p>"
         }
       }
     },
@@ -157,6 +161,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The animal moves up to their speed.</p>"
         }
       }
     }

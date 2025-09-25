@@ -178,6 +178,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>A burning creature takes [[/damage 1d6 fire]] damage at the start of each of their turns. A burning object takes [[/damage 1d6 fire]] damage at the end of each round.</p>"
         }
       }
     },
@@ -209,6 +213,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the crux's next turn, the target has fire immunity 5.</p>",
+          "after": ""
         }
       }
     },
@@ -238,6 +246,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The crux ignores any effects associated with the damage and can fly up to their speed. If the crux doesn't end this movement on solid ground, they fall.</p>"
         }
       }
     },
@@ -262,6 +274,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
+          "after": ""
         }
       }
     },
@@ -286,6 +302,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
+          "after": ""
         }
       }
     },
@@ -311,6 +331,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
+          "after": ""
         }
       }
     }

@@ -186,6 +186,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>Until the start of the ordinator's next turn, each ally high elf in the encounter gains an edge on ability rolls against the target.</p>"
         }
       }
     },
@@ -217,6 +221,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Note: Targets Each elemental ally in the area</p><p>Each target can move up to their speed or make a free strike. Elemental mote targets can, instead, use their Spark of Life trait.</p>",
+          "after": ""
         }
       }
     },
@@ -247,6 +255,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The ordinator summons four @UUID[Actor.yYTmi4JwOnyA0w1s]{Elemental Motes} or four @UUID[Actor.a44HNNYHX0iwwarq]{Soot Crows} into unoccupied space within distance.</p>"
         }
       }
     },
@@ -277,6 +289,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The ordinator uses Lightning Rod against the target after the ability is resolved.</p>",
+          "after": ""
         }
       }
     },
@@ -308,6 +324,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each target glows briefly, and can end one effect on themself then move up to their speed.</p>",
+          "after": ""
         }
       }
     },
@@ -341,6 +361,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each target makes a **Presence test**.</p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p>[[/damage 12 corruption]] damage; pull 5 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p>[[/damage 9 corruption]] damage; pull 3 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p>Pull 1 toward the center of the cube</p></td></tr></tbody></table>",
+          "after": "<p>The area turns dark and distorted, and is difficult terrain for enemies.</p>"
         }
       }
     },
@@ -372,6 +396,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each target’s free strike now has the Magic keyword and can target two creatures or objects. Additionally, each target glows with magic.</p>",
+          "after": ""
         }
       }
     },
@@ -408,6 +436,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
+          "after": ""
         }
       }
     },
@@ -567,6 +599,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
+          "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
         }
       }
     },
@@ -591,6 +627,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
+          "after": ""
         }
       }
     }

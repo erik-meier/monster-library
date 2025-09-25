@@ -256,6 +256,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>If a target made prone this way is already prone, they are instead restrained (EoT).</p>"
         }
       }
     },
@@ -412,6 +416,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The cryptic reforms their body and appears in an unoccupied space in the area.</p>"
         }
       }
     },
@@ -442,6 +450,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The cryptic slides the target up to 3 squares.</p>",
+          "after": ""
         }
       }
     },
@@ -469,6 +481,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The cryptic halves the damage, ignores any nondamaging effects associated with it, and shifts up to 3 squares</p>",
+          "after": ""
         }
       }
     },
@@ -623,6 +639,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>Before using the Dig maneuver, the cryptic moves up to their speed. They then create the burst when they breach the surface.</p>"
         }
       }
     },
@@ -653,6 +673,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Special: A target must be on the ground.</p><p>Each target makes a Might test.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>Prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>Prone</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     },
@@ -683,6 +707,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p><strong>Special</strong>: A target must be on the ground.</p><p>The area drops 2 squares and is difficult terrain. Each target enemy falls, while each target ally drops safely. Additionally, each target enemy makes an <strong>Agility test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"91\"><p>11 or less</p></td><td><p>[[/damage 9]] damage; prone</p></td></tr><tr><td data-colwidth=\"91\"><p>12-16</p></td><td><p>[[/damage 5]] damage</p></td></tr><tr><td data-colwidth=\"91\"><p>17+</p></td><td><p>The target moves to the nearest unoccupied space outside the area.</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     },
@@ -849,6 +877,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p>The cryptic makes an initial power roll that calls down stone pillars from the ceiling.</p>",
+          "after": "<p>The cryptic then makes a second power roll that raises stone pillars from the floor.</p>"
         }
       }
     },
@@ -1001,6 +1033,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -1025,6 +1061,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Two pillars of stone 1 square wide either thrust up out of the ground or jut down from the ceiling anywhere on the encounter map, to a height of up to 5 squares. A creature in the area of a pillar before it appears is knocked prone on its surface. If the creature comes into contact with the ceiling above or the floor beneath the pillar and has M&lt;2 they are restrained (save ends).</p>",
+          "after": ""
         }
       }
     },
@@ -1049,6 +1089,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The fossil cryptic takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
+          "after": ""
         }
       }
     },
@@ -1073,6 +1117,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The fossil cryptic slides one creature on the ground up to 5 squares. If the creature is prone, this forced movement ignores stability.</p>",
+          "after": ""
         }
       }
     },
@@ -1097,6 +1145,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The air across the encounter map is thick with dust until the end of the encounter. Each enemy in the dust is suffocating. Additionally, at the end of each round, each enemy in the dust makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"94\"><p>11 or less</p></td><td><p>Until the end of the enemy’s next turn, their stability is reduced to 0, and any forced movement effects targeting them gain a +2 bonus to the distance moved.</p></td></tr><tr><td data-colwidth=\"94\"><p>12-16</p></td><td><p>The enemy’s stability is halved (EoT).</p></td></tr><tr><td data-colwidth=\"94\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     }

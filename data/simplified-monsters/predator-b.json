@@ -226,6 +226,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -331,6 +335,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -361,6 +369,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The target is pushed up to 5 squares.</p>"
         }
       }
     }

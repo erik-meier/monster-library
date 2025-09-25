@@ -122,6 +122,10 @@
               "img": null
             }
           }
+        },
+        "effect": {
+          "after": "<p>The target takes a bane on their next strike.</p>",
+          "before": ""
         }
       }
     }

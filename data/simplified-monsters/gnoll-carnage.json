@@ -201,6 +201,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>An ally targeted by this ability ignores the damage and can make a free strike.</p>"
         }
       }
     },
@@ -231,6 +235,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>Each target deals an extra 3 damage with their next strike until the start of the carnage's next turn. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
         }
       }
     },
@@ -262,6 +270,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The carnage summons four abyssal hyenas into unoccupied spaces within distance.</p>"
         }
       }
     },
@@ -292,6 +304,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>Each target moves up to their speed and can make a free strike. Any creature damaged by one of these free strikes who has M &lt; 2 is knocked prone.</p>"
         }
       }
     },
@@ -323,6 +339,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The carnage's eyes and all exposed blood within distance glow bright red. Each target makes a <strong>Presence test.</strong></p><table><tbody><tr><td data-colwidth=\"113\"><p>11 or less</p></td><td><p>The target can’t regain Stamina until the end of the encounter.</p></td></tr><tr><td data-colwidth=\"113\"><p>12-16</p></td><td><p>The target can’t regain Stamina (save ends).</p></td></tr><tr><td data-colwidth=\"113\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "after": "<p>Until the end of the encounter, all gnolls have a double edge on power rolls that target a winded enemy.</p>"
         }
       }
     },
@@ -347,6 +367,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra [[/damage 5]] damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a @UUID[Compendium.draw-steel.monsters.Actor.NWOCoxzsguUP85Bk]{gnoll marauder}, keeping their current Stamina</p>",
+          "after": ""
         }
       }
     },
@@ -371,6 +395,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
+          "after": ""
         }
       }
     },
@@ -401,6 +429,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>[[/damage 6]] damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>[[/damage 4]] damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
         }
       }
     }

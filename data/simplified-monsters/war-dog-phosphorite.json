@@ -184,6 +184,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>Special: A creature adjacent to the target can attempt an <strong>Agility test</strong> as a maneuver to remove the detonator.</p><p></p><table><tbody><tr><td data-colwidth=\"113\"><p>11 or less</p></td><td><p>No effect.</p></td></tr><tr><td data-colwidth=\"113\"><p>12-16</p></td><td><p>The detonator is disarmed and destroyed.</p></td></tr><tr><td data-colwidth=\"113\"><p>17+</p></td><td><p>The creature can attach the detonator to another creature or object within 5 squares of them.</p></td></tr></tbody></table>"
         }
       }
     },
@@ -215,6 +219,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
         }
       }
     },
@@ -246,6 +254,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p>[[/damage 5 fire]] damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p>[[/damage 5 fire]] damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p>[[/damage 5 fire]] damage</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     },
@@ -270,6 +282,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
+          "after": ""
         }
       }
     },
@@ -294,6 +310,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
+          "after": ""
         }
       }
     }

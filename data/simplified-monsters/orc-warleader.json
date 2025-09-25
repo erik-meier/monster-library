@@ -72,6 +72,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p>[[/damage 6]] damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p>[[/damage 4]] damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     },
@@ -96,6 +100,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
+          "after": ""
         }
       }
     },
@@ -120,6 +128,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 4]] damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>[[/damage 4]] damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     },
@@ -172,6 +184,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The target moves up to their speed and can use a main action.</p>",
+          "after": "<p><strong>3 Malice:</strong> The warleader targets one ally and a minion squad.</p>"
         }
       }
     },
@@ -272,6 +288,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -300,6 +320,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each target moves up to their speed and can use the Grab maneuver, which gains an edge.</p>",
+          "after": ""
         }
       }
     },
@@ -328,6 +352,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The target has a double edge on their next power roll before the end of the encounter.</p>",
+          "after": ""
         }
       }
     },
@@ -356,6 +384,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each target moves up to their speed. Each enemy adjacent to a target after this move makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p>Frightened of the warleader (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p>Frightened of the warleader (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     },
@@ -383,6 +415,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The warleader shifts up to their speed, and four orc blitzers appear in unoccupied spaces within distance.</p>",
+          "after": ""
         }
       }
     },
@@ -407,6 +443,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Three times in succession, the warleader shifts up to their speed and can use Mace Lariat.</p>",
+          "after": ""
         }
       }
     }

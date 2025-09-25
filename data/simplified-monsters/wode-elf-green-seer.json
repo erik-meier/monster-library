@@ -173,6 +173,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>While restrained this way, a target can't search for hidden creatures.</p>"
         }
       }
     },
@@ -290,6 +294,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>While bleeding or weakened this way, a target is covered in lichen.</p>"
         }
       }
     },
@@ -320,6 +328,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The green seer makes a free strike against the target after the target’s triggered action is resolved.</p>"
         }
       }
     },
@@ -344,6 +356,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
+          "after": ""
         }
       }
     },
@@ -368,6 +384,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
+          "after": ""
         }
       }
     },
@@ -392,6 +412,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 8]] damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     }

@@ -247,6 +247,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The target has corruption weakness 5 (EoT).</p>"
         }
       }
     },
@@ -401,6 +405,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p><strong>Special:</strong> The bale eye must create the cube beneath themself.</p>",
+          "after": "<p>While warped, a creature has a double bane on power rolls using any characteristic higher than 0, and has a double edge on power rolls using any characteristic lower than 0.</p>"
         }
       }
     },
@@ -425,6 +433,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p>@UUID[Compendium.draw-steel.monster-features.Item.G1VEc1g9pr75VU0O]{Abyssal Rift}</p><p>@UUID[Compendium.draw-steel.monster-features.Item.RXLSjlORw6A3YBHN]{Soulburn}</p><p>@UUID[Compendium.draw-steel.monster-features.Item.koF8i0TPdYrfcm4F]{Abyssal Evolution}</p>",
+          "after": ""
         }
       }
     },
@@ -449,6 +461,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
+          "after": ""
         }
       }
     }

@@ -88,6 +88,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>NOTE: Targets \"One Trap or Other Terrain Object\"</p><p>The trap or terrain object instantly triggers.</p>",
+          "after": ""
         }
       }
     },
@@ -152,6 +156,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>If this forced movement triggers a trap that uses a power roll, that roll has a double edge.</p>"
         }
       }
     },
@@ -176,6 +184,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "after": ""
         }
       }
     },
@@ -200,6 +212,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Two kobolds take their turns in a row.</p>",
+          "after": ""
         }
       }
     },
@@ -224,6 +240,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
+          "after": ""
         }
       }
     }

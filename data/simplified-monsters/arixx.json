@@ -203,6 +203,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>A size 1 target grabbed this way takes [[/damage 3 acid]] damage at the start of each of their turns.</p>"
         }
       }
     },
@@ -320,6 +324,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The arixx can vertically slide each grabbed target up to 3 squares.</p>"
         }
       }
     },
@@ -432,6 +440,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The ground beneath each target is covered in burning acid until the end of the encounter. Any enemy who enters an affected space for the first time in a round or starts their turn there takes [[/damage 2 acid]] damage.</p>"
         }
       }
     },
@@ -540,6 +552,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The arixx flings rocks and debris to fill the area, and has a double edge on the power roll if they started their turn underground. The area is difficult terrain.</p>"
         }
       }
     },
@@ -567,6 +583,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The arixx kicks up dust to fill the area until the start of their next turn, then moves up to their speed. Any enemy in the area or who targets a creature in the area takes a bane on power rolls.</p>",
+          "after": ""
         }
       }
     },
@@ -591,6 +611,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The arixx halves the damage and shifts up to 3 squares after the triggering effect resolves.</p>",
+          "after": ""
         }
       }
     },
@@ -666,6 +690,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The ground in the area is covered in a puddle of acid until the end of the encounter. Any enemy who enters the area for the first time in a round or starts their turn there takes [[/damage 2 acid]] damage.</p>"
         }
       }
     },
@@ -690,6 +718,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The arixx shifts up to their speed. If they end this shift above ground and within 2 squares of a creature, they use Bite against the creature and can then use the Dig maneuver.</p>",
+          "after": ""
         }
       }
     },
@@ -813,6 +845,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -837,6 +873,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The arixx dribbles acid over their mandibles, causing the next strike they make to gain an edge and deal an extra 3 acid damage.</p>",
+          "after": ""
         }
       }
     },
@@ -861,6 +901,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The encounter map suddenly quakes, then begins to sink. Each creature on the ground who has A &lt; 1 is knocked prone. Until the end of the encounter, each creature who starts their turn on the ground and can’t burrow must spend 1 additional square of move ment to leave their starting position, or 2 squares if they start their turn prone or underground. A creature who starts and ends their turn in the same space on the ground and can’t burrow sinks 1 square into the ground.</p>",
+          "after": ""
         }
       }
     },
@@ -887,6 +931,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The arixx’s underground tunnels swell with pressure, causing a sudden influx of hot gas to burst from a 3-square-by-3-square area anywhere on the surface. Each enemy in the area makes an Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"111\"><p>11 or less</p></td><td><p>[[/damage 4]] damage; vertical push 5</p></td></tr><tr><td data-colwidth=\"111\"><p>12-16</p></td><td><p>[[/damage 4]] damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"111\"><p>17+</p></td><td><p>The target shifts to the nearest unoccupied space outside the area.</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     },
@@ -911,6 +959,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The arixx takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
+          "after": ""
         }
       }
     }

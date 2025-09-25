@@ -140,6 +140,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>This strike deals an extra [[/damage 3]] damage if it gains an edge or has a double edge.</p>"
         }
       }
     },
@@ -256,6 +260,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -373,6 +381,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -449,6 +461,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -576,6 +592,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p>The chimera shifts up to 5 squares. If they end this shift within distance of the target, make a <strong>power roll.</strong></p>",
+          "after": ""
         }
       }
     },
@@ -606,6 +626,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The chimera can use Bite and Lion’s Toss against each target</p>",
+          "after": ""
         }
       }
     },
@@ -635,6 +659,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The chimera uses Dragon's Eruption and Roar without spending Malice.</p>"
         }
       }
     },
@@ -662,6 +690,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The chimera uses Roar, then shifts up to their speed and can make a free strike against each enemy who comes adjacent to them during the shift. When the chimera ends this shift, they use Dragon's Eruption. The use of these abilities as part of this villain action costs no Malice.</p>",
+          "after": ""
         }
       }
     },
@@ -686,6 +718,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has I&lt;2 Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has</p>",
+          "after": ""
         }
       }
     },
@@ -710,6 +746,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The chimera takes up a defensive stance. Until the start of their next turn, the chimera can make a free strike against each enemy who comes within 2 squares of them.</p>",
+          "after": ""
         }
       }
     },
@@ -734,6 +774,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The chimera takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
+          "after": ""
         }
       }
     },
@@ -758,6 +802,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The chimera shakes the ground, causing an eruption of loose rocks and debris that creates three size 2 stone objects anywhere on the encounter map. Each creature adjacent to one or more objects when they appear who has A&lt;2 takes [[/damage 5]] damage.</p>",
+          "after": ""
         }
       }
     }

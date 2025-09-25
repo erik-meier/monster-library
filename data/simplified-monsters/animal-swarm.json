@@ -183,6 +183,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>If the target is pulled into the animal swarm, that forced movement deals damage only at the Director's determination.</p>"
         }
       }
     },
@@ -213,6 +217,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The area is difficult terrain for enemies until the start of the animal swarm's next turn.</p>"
         }
       }
     }

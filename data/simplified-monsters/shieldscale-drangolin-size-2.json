@@ -147,6 +147,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>Special: If the drangolin is size 3, the distance becomes Melee 2.</p>"
         }
       }
     },
@@ -171,6 +175,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The drangolin shifts up to their speed and uses Fiery Claws against each creature who comes adjacent to them during the shift. The drangolin makes one power roll against all targets.</p>",
+          "after": ""
         }
       }
     },
@@ -332,6 +340,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra [[/damage 2 fire]] damage.</p>",
+          "after": ""
         }
       }
     },
@@ -356,6 +368,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "after": ""
         }
       }
     },
@@ -380,6 +396,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Two kobolds take their turns in a row.</p>",
+          "after": ""
         }
       }
     },
@@ -404,6 +424,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
+          "after": ""
         }
       }
     }

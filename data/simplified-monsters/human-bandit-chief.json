@@ -185,6 +185,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>Any target who is adjacent to the bandit chief after the power roll is resolved takes [[/damage 3]] corruption damage.</p>"
         }
       }
     },
@@ -310,6 +314,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -336,6 +344,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The bandit chief takes [[/damage 5 corruption]] damage and increases the outcome of the power roll by one tier. This damage can’t be reduced in any way.</p>",
+          "after": ""
         }
       }
     },
@@ -364,6 +376,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Note: Each artillery ally in the area.</p><p>Each target makes a ranged free strike.</p>",
+          "after": ""
         }
       }
     },
@@ -392,6 +408,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each target shifts up to their speed. Additionally, until the end of the encounter, while the bandit chief or any ally is adjacent to a target, they have damage immunity 2.</p>",
+          "after": ""
         }
       }
     },
@@ -416,6 +436,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The bandit chief shifts up to 10 squares. During or after this movement, they can use their Whip and Magic Longsword against up to four targets. Additionally, one ally adjacent to each target can make a free strike against that target.</p>",
+          "after": ""
         }
       }
     },
@@ -539,6 +563,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
+          "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
         }
       }
     },
@@ -563,6 +591,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
+          "after": ""
         }
       }
     }

@@ -96,6 +96,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "after": ""
         }
       }
     },
@@ -120,6 +124,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Two kobolds take their turns in a row.</p>",
+          "after": ""
         }
       }
     },
@@ -144,6 +152,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
+          "after": ""
         }
       }
     },
@@ -174,6 +186,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The centurion uses Pilum against each target and has a double edge. Each target is then pushed up to 3 squares.</p>",
+          "after": ""
         }
       }
     },
@@ -261,6 +277,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p>The centurion moves up to their speed, ignoring difficult terrain, and uses Pilum against each creature whose space they move through. They make one power roll against all targets, and the ability deals an extra [[/damage 5]] damage. While weakened by that ability, each target takes [[/damage 2 fire]] damage at the start of each of their turns.</p>",
+          "after": ""
         }
       }
     },
@@ -289,6 +309,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>A target who has P &lt; 2 is taunted (save ends). Each ally within distance can make a [[/damage @monster.freeStrike]]{Free Strike}. Additionally, until the end of the encounter, the centurion has damage immunity 2.</p>",
+          "after": ""
         }
       }
     },
@@ -317,6 +341,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each target shifts up to 2 squares before the damage is resolved. Each kobold with the Shield? Shield! trait gains damage immunity 2 against the triggering ability.</p>",
+          "after": ""
         }
       }
     },
@@ -345,6 +373,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the start of the centurion’s next turn, the centurion and their allies gain an edge on power rolls against the target.</p>",
+          "after": ""
         }
       }
     },
@@ -480,6 +512,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>Each ally adjacent to a target can make a free strike against that target.</p>"
         }
       }
     }

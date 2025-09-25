@@ -139,6 +139,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The target can’t shift until the start of the tiro’s next turn.</p>"
         }
       }
     },
@@ -175,6 +179,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "after": ""
         }
       }
     },
@@ -199,6 +207,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Two kobolds take their turns in a row.</p>",
+          "after": ""
         }
       }
     },
@@ -223,6 +235,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
+          "after": ""
         }
       }
     }

@@ -123,7 +123,8 @@ function processMonsterFile(filePath) {
             roll: item.system.power.roll,
             effects: item.system.power.effects
           } : null,
-          description: item.system?.description
+          description: item.system?.description,
+          effect: item.system?.effect  // Include effect field for ability descriptions
         }
       })),
       

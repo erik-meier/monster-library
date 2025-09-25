@@ -181,6 +181,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The next time the target makes a strike against the daybringer, the target takes [[/damage 4 acid]] damage after the strike is resolved.</p>"
         }
       }
     },
@@ -205,6 +209,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The daybringer expands their throat to make it resemble the sun until the start of their next turn. During that time, each angulotl who starts their turn within 10 squares of the daybringer regains [[/heal 5]] and gains a +3 bonus to speed until the end of their turn.</p>",
+          "after": ""
         }
       }
     },
@@ -231,6 +239,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The outcome of the strike’s power roll is reduced by one tier.</p>",
+          "after": ""
         }
       }
     },
@@ -258,6 +270,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Four @UUID[Compendium.draw-steel.monsters.Actor.UIerVsSyMb36Bm4D]{angulotl pollywogs} erupt from the daybringer’s back and waddle into unoccupied spaces within distance.</p>",
+          "after": ""
         }
       }
     },
@@ -286,6 +302,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each target can jump up to 4 squares. Each non-minion target can make a free strike at the end of the jump.</p>",
+          "after": ""
         }
       }
     },
@@ -310,6 +330,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The encounter map dries up and each enemy and object on it is illuminated until the end of the encounter. An illuminated creature or object can’t hide or become invisible, and any strike made against an illuminated target gains an edge. Additionally, each enemy in the encounter who is wet has that effect end and takes [[/damage 6 acid]] damage. Each angulotl in the encounter has a double edge on their next strike.</p>",
+          "after": ""
         }
       }
     },
@@ -334,6 +358,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
+          "after": ""
         }
       }
     },
@@ -358,6 +386,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p>[[/damage 5 sonic]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p>[[/damage 4 sonic]] damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     },
@@ -433,6 +465,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
+          "after": ""
         }
       }
     }

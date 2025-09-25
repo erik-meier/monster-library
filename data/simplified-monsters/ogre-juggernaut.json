@@ -237,6 +237,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -389,6 +393,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p>The juggernaut jumps up to 6 squares before using this ability.</p>",
+          "after": ""
         }
       }
     },
@@ -470,6 +478,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>While a target is frightened this way, any ogre gains an edge on strikes against them.</p>"
         }
       }
     },
@@ -494,6 +506,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The juggernaut moves up to their speed and can make a [[/damage @monster.freeStrike]]{Free Strike}.</p>",
+          "after": ""
         }
       }
     },
@@ -518,6 +534,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>",
+          "after": ""
         }
       }
     },
@@ -542,6 +562,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 5]] damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>[[/damage 4]] damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     },
@@ -566,6 +590,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra [[/damage 5]] damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
+          "after": ""
         }
       }
     }

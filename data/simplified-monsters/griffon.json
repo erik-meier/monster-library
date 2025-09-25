@@ -214,6 +214,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The griffon must be flying and must have a creature or object grabbed.</p>"
         }
       }
     },
@@ -291,6 +295,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>A target object must be size 2 or smaller.</p>"
         }
       }
     },
@@ -318,6 +326,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The griffon halves the damage, ignores any nondamaging effects associated with it, and shifts up to 2 squares.</p>",
+          "after": ""
         }
       }
     },
@@ -342,6 +354,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The griffon flies up to their speed, and can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>",
+          "after": ""
         }
       }
     },
@@ -366,6 +382,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>A griffon acting this turn unleashes a hideous screech at one enemy within 5 squares of them, forcing that creature to make an <strong>Intuition test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p>Frightened (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "after": ""
         }
       }
     },
@@ -390,6 +410,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Winds bluster and blow across the encounter map. Until the end of the encounter, each creature who can’t fly or isn’t mounted on a fly ing creature takes a −3 penalty to stability, and any forced movement effect targeting such a creature moves them an additional 5 squares.</p>",
+          "after": ""
         }
       }
     },
@@ -488,6 +512,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>If this ability is used as part of the Charge main action, the griffon can grab one of the targets.</p>"
         }
       }
     }

@@ -189,6 +189,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>One ally within 10 squares can make a free strike.</p>"
         }
       }
     },
@@ -217,6 +221,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The target is marked until the start of the blackguard’s next turn. The blackguard and each of their allies gain an edge on abilities used against targets marked by the blackguard.</p>",
+          "after": ""
         }
       }
     },
@@ -244,6 +252,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The damage is halved.</p>",
+          "after": ""
         }
       }
     },
@@ -268,6 +280,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The blackguard shifts up to their speed. During or after this movement, they can use their Zweihander Swing twice</p>",
+          "after": ""
         }
       }
     },
@@ -297,6 +313,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The blackguard slides each target up to 5 squares.</p>",
+          "after": ""
         }
       }
     },
@@ -321,6 +341,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The blackguard uses their Zweihander Swing against each tar get. Each ally within 5 squares of the area can then make a free strike against a target (one target per ally)</p>",
+          "after": ""
         }
       }
     },
@@ -444,6 +468,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
+          "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
         }
       }
     },
@@ -468,6 +496,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
+          "after": ""
         }
       }
     },
@@ -492,6 +524,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
+          "after": ""
         }
       }
     }

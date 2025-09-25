@@ -172,6 +172,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -199,6 +203,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The predator assesses their environment or lets loose a threatening roar and gains an edge on their next strike.</p>",
+          "after": ""
         }
       }
     },
@@ -231,6 +239,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The predator makes a free strike against the target. If the predator was hidden from the target, the strike deals an extra [[/damage 3]] damage.</p>",
+          "after": ""
         }
       }
     }

@@ -196,6 +196,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": ""
         }
       }
     },
@@ -311,6 +315,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>This ability gains an edge against a target who has a soul.</p>"
         }
       }
     },
@@ -340,6 +348,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The hag alters their body to become any size 1 creature, from a house cat to a humanoid. If the hag uses this ability while outside of any enemy's line of effect, they can choose to be automatically hidden. The hag can return to their original form as a free maneuver.</p>"
         }
       }
     },
@@ -462,6 +474,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>While restrained this way, a creature who is vertical force moved is suspended in midair. The creature falls when the condition ends.</p>"
         }
       }
     },
@@ -535,6 +551,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "<p>The hag attaches an ornate explosive pastry to each target who has A &lt; 2. At the end of the round, the hag makes one power roll against each creature with a pastry attached to them.</p><p></p>",
+          "after": "<p>Special: A creature wearing a pastry or adjacent to a creature wearing a pastry can attempt an Agility test to remove the pastry as a maneuver.</p><table><tbody><tr><td data-colwidth=\"109\"><p>11 or less</p></td><td><p>The hag makes the power roll for all pastries.</p></td></tr><tr><td data-colwidth=\"109\"><p>12-16</p></td><td><p>The pastry is not removed.</p></td></tr><tr><td data-colwidth=\"109\"><p>17+</p></td><td><p>The pastry is removed and can no longer explode.</p></td></tr></tbody></table>"
         }
       }
     },
@@ -566,6 +586,10 @@
             ]
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>Before using this villain action, the hag shifts up to their speed. They then use Corrosive Claws against each target, push each target up to 2 squares, and shift up to their speed again</p>"
         }
       }
     },
@@ -690,6 +714,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>The hag turns the area into a roiling oven until the end of the encounter. Any creature in area takes an extra [[/damage 5]] damage from the hag's damage-dealing abilities.</p>"
         }
       }
     },
@@ -714,6 +742,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The hag utters terrible words that push each enemy within 2 squares of them up to 3 squares.</p>",
+          "after": ""
         }
       }
     },
@@ -867,6 +899,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>After making the power roll, the hag can choose to replace the damage type and condition with lightning damage and dazed, or cold damage and slowed.</p>"
         }
       }
     },
@@ -891,6 +927,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The hag takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
+          "after": ""
         }
       }
     },
@@ -919,6 +959,10 @@
             "characteristics": []
           },
           "effects": {}
+        },
+        "effect": {
+          "before": "<p>The hag’s hut springs to life. It enters the encounter map within 10 squares of the hag if it isn’t already there and takes its turn. The hut is size 4, has 75 Stamina and damage immunity 3, and has speed 8 from its powerful set of animal legs. This feature can’t be used if the hut is reduced to 0 Stamina. In addition to its move action, the house can take only the Kick main action.</p><p>@UUID[Actor.QN5z25hC9mmXjOXD]{Hag Hut}</p>",
+          "after": ""
         }
       }
     }

@@ -130,6 +130,10 @@
               }
             }
           }
+        },
+        "effect": {
+          "before": "",
+          "after": "<p>After using this ability, the commando can attempt to hide even if observed.</p>"
         }
       }
     }
