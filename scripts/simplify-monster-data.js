@@ -19,8 +19,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // Paths
 const SOURCE_MONSTERS_DIR = path.join(__dirname, '../data/monsters')
-const OUTPUT_MONSTERS_DIR = path.join(__dirname, '../data/simplified-monsters')  
-const OUTPUT_INDEX_FILE = path.join(__dirname, '../data/simplified_monster_index.json')
+const OUTPUT_MONSTERS_DIR = path.join(__dirname, '../data/optimized-monsters')  
+const OUTPUT_INDEX_FILE = path.join(__dirname, '../data/optimized_monster_index.json')
 
 console.log('🔄 Simplifying monster data...')
 

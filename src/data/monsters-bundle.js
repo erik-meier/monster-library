@@ -1,5 +1,6 @@
-// Auto-generated simplified monster data bundle
-// Generated on: 2025-09-25T15:39:04.818Z
+// Auto-generated monster data bundle
+// Generated on: 2025-09-25T16:32:47.783Z
+// Data structure: optimized
 
 export const monsterIndex = {
   "name": {
@@ -93200,7 +93201,8 @@ export function getMonster(monsterId) {
 // Export card data for easy access
 export const monsterCards = monsterIndex.card;
 
-console.log('✅ Simplified monster data bundle loaded:', {
+console.log('✅ Monster data bundle loaded:', {
   totalMonsters: Object.keys(monsters).length,
-  indexVersion: '2025-09-25T15:39:04.833Z'
+  dataStructure: 'optimized',
+  indexVersion: '2025-09-25T16:32:47.797Z'
 });
