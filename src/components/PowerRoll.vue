@@ -191,7 +191,7 @@ export default {
         '@potency.strong': parseInt(this.chr)
       }
       
-      let potencyValue = potencyMap[potency.value] || potency.value
+      const potencyValue = potencyMap[potency.value] || potency.value
       
       // Format as characteristic abbreviation + < + value with bold emphasis
       const charAbbrev = potency.characteristic.charAt(0).toUpperCase()

@@ -65,16 +65,12 @@ export default {
   name: 'Home',
   data() {
     return {
-      recentMonsters: [],
-      monsterIndex: null
+      recentMonsters: []
     }
   },
   async created() {
     // Load recently viewed monsters from localStorage
     this.loadRecentMonsters()
-    
-    // Load monster index for random monster functionality
-    await this.loadMonsterIndex()
   },
   methods: {
     loadRecentMonsters() {
@@ -83,32 +79,13 @@ export default {
         this.recentMonsters = JSON.parse(recent).slice(0, 4) // Show max 4 recent monsters
       }
     },
-    async loadMonsterIndex() {
-      try {
-        // Use bundled data instead of fetch
-        const { getMonsterIndex } = await import('@/data/monsters.js')
-        this.monsterIndex = getMonsterIndex()
-      } catch (error) {
-        console.error('Failed to load monster index:', error)
-      }
-    },
     async viewRandomMonster() {
-      if (!this.monsterIndex || !this.monsterIndex.card) {
-        console.error('Monster index not loaded')
-        return
-      }
-
-      // Get all monster IDs from the card data
-      const monsterIds = Object.keys(this.monsterIndex.card)
+      const { getRandomMonsterId } = await import('@/utils/monsterUtils.js')
+      const randomId = await getRandomMonsterId()
       
-      if (monsterIds.length === 0) {
-        console.error('No monsters found in index')
-        return
+      if (randomId) {
+        this.$router.push(`/monster/${randomId}`)
       }
-
-      // Pick a random monster
-      const randomId = monsterIds[Math.floor(Math.random() * monsterIds.length)]
-      this.$router.push(`/monster/${randomId}`)
     }
   }
 }

@@ -8,7 +8,14 @@
       Error: {{ error }}
     </div>
     
-    <MonsterStatBlock v-else-if="monster" :monster="monster" />
+    <div v-else-if="monster">
+      <div class="monster-actions">
+        <button class="btn btn-secondary" @click="viewRandomMonster" :disabled="loadingRandom">
+          {{ loadingRandom ? 'Loading...' : 'Random Monster' }}
+        </button>
+      </div>
+      <MonsterStatBlock :monster="monster" />
+    </div>
   </div>
 </template>
 
@@ -31,6 +38,7 @@ export default {
       monster: null,
       loading: true,
       error: null,
+      loadingRandom: false,
     }
   },
   async mounted() {
@@ -95,6 +103,27 @@ export default {
 
       // Save back to localStorage
       localStorage.setItem('recentlyViewedMonsters', JSON.stringify(recentMonsters));
+    },
+    async viewRandomMonster() {
+      this.loadingRandom = true
+      
+      try {
+        const { getRandomMonsterId } = await import('@/utils/monsterUtils.js')
+        const randomId = await getRandomMonsterId()
+        
+        if (randomId && randomId !== this.monsterId) {
+          // Navigate to the new random monster
+          this.$router.push(`/monster/${randomId}`)
+        } else if (randomId === this.monsterId) {
+          // If we got the same monster, try again
+          this.viewRandomMonster()
+          return
+        }
+      } catch (error) {
+        console.error('Failed to get random monster:', error)
+      } finally {
+        this.loadingRandom = false
+      }
     }
   }
 }
@@ -105,6 +134,38 @@ export default {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+.monster-actions {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #5a6268;
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .loading, .error {
