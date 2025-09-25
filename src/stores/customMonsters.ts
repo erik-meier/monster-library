@@ -1,6 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { getMonster as getBundledMonster, getAllMonsters as getBundledMonsters } from '@/data/monsters.js'
+import type { MonsterSchema } from '../../tests/helpers/validation-utils'
 
 export interface CustomMonster {
   id: string;
@@ -156,7 +157,7 @@ export const useCustomMonstersStore = defineStore('customMonsters', () => {
   }
 
   // Integration with bundled monsters - get any monster (custom or bundled)
-  function getMonster(id: string): CustomMonster | any | null {
+  function getMonster(id: string): CustomMonster | MonsterSchema | null {
     loadFromStorage()
     
     // First check custom monsters
@@ -170,7 +171,7 @@ export const useCustomMonstersStore = defineStore('customMonsters', () => {
   }
 
   // Get all monsters (custom + bundled) combined
-  function getAllMonsters(): (CustomMonster | any)[] {
+  function getAllMonsters(): (CustomMonster | MonsterSchema)[] {
     loadFromStorage()
     const bundled = getBundledMonsters()
     const custom = allCustomMonsters.value

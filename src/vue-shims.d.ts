@@ -20,7 +20,8 @@ declare module '@/views/*' {
 }
 
 declare module '@/data/monsters.js' {
-  export function getMonster(id: string): any | null
-  export function getAllMonsters(): any[]
-  export function getMonsterIndex(): any
+  import type { MonsterSchema } from '../tests/helpers/validation-utils'
+  export function getMonster(id: string): MonsterSchema | null
+  export function getAllMonsters(): MonsterSchema[]
+  export function getMonsterIndex(): Record<string, unknown>
 }
