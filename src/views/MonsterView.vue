@@ -9,12 +9,12 @@
     </div>
     
     <div v-else-if="monster">
+      <MonsterStatBlock :monster="monster" />
       <div class="monster-actions">
         <button class="btn btn-secondary" @click="viewRandomMonster" :disabled="loadingRandom">
           {{ loadingRandom ? 'Loading...' : 'Random Monster' }}
         </button>
       </div>
-      <MonsterStatBlock :monster="monster" />
     </div>
   </div>
 </template>
@@ -137,30 +137,32 @@ export default {
 }
 
 .monster-actions {
-  margin-bottom: 2rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
   text-decoration: none;
-  border: none;
-  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btn-secondary {
-  background-color: #6c757d;
-  color: white;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border-color: #dee2e6;
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: #5a6268;
-  transform: translateY(-1px);
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+  color: #495057;
 }
 
 .btn:disabled {
