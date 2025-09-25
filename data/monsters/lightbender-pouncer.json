@@ -3,8 +3,8 @@
   "name": "Lightbender Pouncer",
   "level": 3,
   "ev": 20,
-  "role": "harrier",
-  "organization": "elite",
+  "role": "Harrier",
+  "organization": "Elite",
   "keywords": [
     "beast"
   ],
@@ -23,30 +23,8 @@
     "intuition": 1,
     "presence": -1
   },
-  "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "immunities": {},
+  "weaknesses": {},
   "movementTypes": [
     "walk"
   ],

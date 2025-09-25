@@ -3,8 +3,8 @@
   "name": "Angulotl Cleaver",
   "level": 1,
   "ev": 3,
-  "role": "ambusher",
-  "organization": "minion",
+  "role": "Ambusher",
+  "organization": "Minion",
   "keywords": [
     "humanoid"
   ],
@@ -24,29 +24,9 @@
     "presence": 0
   },
   "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 2,
-    "psychic": 0,
-    "sonic": 0
+    "poison": 2
   },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "weaknesses": {},
   "movementTypes": [
     "walk",
     "swim",

@@ -3,8 +3,8 @@
   "name": "Human Death Cultist",
   "level": 2,
   "ev": 8,
-  "role": "support",
-  "organization": "platoon",
+  "role": "Support",
+  "organization": "Platoon",
   "keywords": [
     "humanoid"
   ],
@@ -24,29 +24,10 @@
     "presence": 2
   },
   "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
     "corruption": 2,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 2,
-    "sonic": 0
+    "psychic": 2
   },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "weaknesses": {},
   "movementTypes": [
     "walk"
   ],

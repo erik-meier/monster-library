@@ -4,7 +4,7 @@
   "level": 1,
   "ev": 36,
   "role": "",
-  "organization": "solo",
+  "organization": "Solo",
   "keywords": [
     "beast"
   ],
@@ -23,30 +23,8 @@
     "intuition": 1,
     "presence": -4
   },
-  "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "immunities": {},
+  "weaknesses": {},
   "movementTypes": [
     "walk",
     "burrow"

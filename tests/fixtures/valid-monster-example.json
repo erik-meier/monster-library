@@ -1,0 +1,31 @@
+{
+  "id": "test-monster",
+  "name": "Test Monster",
+  "level": 1,
+  "ev": 2,
+  "role": "Brute",
+  "organization": "Elite",
+  "keywords": [
+    "example",
+    "test"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 10,
+  "stability": 2,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 1,
+    "agility": 0,
+    "reason": -2,
+    "intuition": 0,
+    "presence": -1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "abilities": [],
+  "actions": []
+}

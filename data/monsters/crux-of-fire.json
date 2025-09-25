@@ -1,10 +1,10 @@
 {
   "id": "crux-of-fire",
-  "name": "Crux of Fire",
+  "name": "Crux Of Fire",
   "level": 3,
   "ev": 20,
-  "role": "artillery",
-  "organization": "elite",
+  "role": "Artillery",
+  "organization": "Elite",
   "keywords": [
     "elemental"
   ],
@@ -24,29 +24,9 @@
     "presence": 2
   },
   "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 5,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
+    "fire": 5
   },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "weaknesses": {},
   "movementTypes": [
     "walk"
   ],

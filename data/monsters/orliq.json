@@ -3,8 +3,8 @@
   "name": "Orliq",
   "level": 4,
   "ev": 6,
-  "role": "minion",
-  "organization": "minion",
+  "role": "",
+  "organization": "Minion",
   "keywords": [
     "abyssal"
   ],
@@ -23,29 +23,9 @@
     "intuition": 0,
     "presence": -1
   },
-  "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "immunities": {},
   "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 5,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
+    "holy": 5
   },
   "movementTypes": [
     "walk",

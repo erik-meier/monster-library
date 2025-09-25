@@ -1,10 +1,10 @@
 {
   "id": "essence-of-tides",
-  "name": "Essence of Tides",
+  "name": "Essence Of Tides",
   "level": 3,
   "ev": 20,
-  "role": "controller",
-  "organization": "elite",
+  "role": "Controller",
+  "organization": "Elite",
   "keywords": [
     "elemental"
   ],
@@ -24,29 +24,9 @@
     "presence": 2
   },
   "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 5,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
+    "cold": 5
   },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "weaknesses": {},
   "movementTypes": [
     "walk",
     "swim"

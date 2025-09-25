@@ -3,8 +3,8 @@
   "name": "Orc Razor",
   "level": 1,
   "ev": 3,
-  "role": "brute",
-  "organization": "minion",
+  "role": "Brute",
+  "organization": "Minion",
   "keywords": [
     "humanoid"
   ],
@@ -23,30 +23,8 @@
     "intuition": 0,
     "presence": 0
   },
-  "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "immunities": {},
+  "weaknesses": {},
   "movementTypes": [
     "walk"
   ],

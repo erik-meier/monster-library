@@ -3,8 +3,8 @@
   "name": "Wode Elf Gweiadur",
   "level": 3,
   "ev": 10,
-  "role": "artillery",
-  "organization": "platoon",
+  "role": "Artillery",
+  "organization": "Platoon",
   "keywords": [
     "fey",
     "humanoid"
@@ -24,30 +24,8 @@
     "intuition": 1,
     "presence": 0
   },
-  "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "immunities": {},
+  "weaknesses": {},
   "movementTypes": [
     "climb"
   ],
