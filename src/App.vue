@@ -24,7 +24,7 @@
           <div class="powered-by-text">Powered by Draw Steel</div>
         </div>
         <div class="footer-text">
-          <p class="copyright">&copy; 2025 Steel Cauldron - Draw Steel Monster Brewing</p>
+          <p class="copyright">&copy; 2025 Erik Meier</p>
           <p class="disclaimer">
             Steel Cauldron is an independent product published under the DRAW STEEL Creator License 
             and is not affiliated with MCDM Productions, LLC. DRAW STEEL © 2024 MCDM Productions, LLC.
