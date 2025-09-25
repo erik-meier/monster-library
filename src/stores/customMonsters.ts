@@ -173,7 +173,8 @@ export const useCustomMonstersStore = defineStore('customMonsters', () => {
   // Get all monsters (custom + bundled) combined
   function getAllMonsters(): (CustomMonster | MonsterSchema)[] {
     loadFromStorage()
-    const bundled = getBundledMonsters()
+    const bundledMonstersObj = getBundledMonsters()
+    const bundled = bundledMonstersObj ? Object.values(bundledMonstersObj) : []
     const custom = allCustomMonsters.value
     
     return [...bundled, ...custom]

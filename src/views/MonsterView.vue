@@ -14,6 +14,22 @@
         <button class="btn btn-secondary" @click="viewRandomMonster" :disabled="loadingRandom">
           {{ loadingRandom ? 'Loading...' : 'Random Monster' }}
         </button>
+        
+        <router-link 
+          v-if="canEdit" 
+          :to="`/monster/${monsterId}/edit`" 
+          class="btn btn-primary"
+        >
+          Edit Monster
+        </router-link>
+        
+        <button 
+          v-else-if="!canEdit && !monster.isCustom" 
+          @click="editOfficialMonster" 
+          class="btn btn-outline"
+        >
+          Create Copy to Edit
+        </button>
       </div>
     </div>
   </div>
@@ -44,6 +60,12 @@ export default {
       loading: true,
       error: null,
       loadingRandom: false,
+    }
+  },
+  computed: {
+    canEdit() {
+      // Can edit if it's a custom monster
+      return this.monster && this.monster.isCustom === true
     }
   },
   async mounted() {
@@ -128,6 +150,11 @@ export default {
       } finally {
         this.loadingRandom = false
       }
+    },
+    
+    editOfficialMonster() {
+      // Navigate to the edit page, which will show the copy dialog
+      this.$router.push(`/monster/${this.monsterId}/edit`)
     }
   }
 }
@@ -143,6 +170,10 @@ export default {
 .monster-actions {
   margin-top: 2rem;
   text-align: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -157,6 +188,17 @@ export default {
   transition: all 0.2s ease;
 }
 
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
 .btn-secondary {
   background-color: #f8f9fa;
   color: #6c757d;
@@ -167,6 +209,17 @@ export default {
   background-color: #e9ecef;
   border-color: #adb5bd;
   color: #495057;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: #007bff;
+  color: white;
 }
 
 .btn:disabled {
