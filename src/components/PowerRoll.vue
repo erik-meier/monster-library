@@ -1,17 +1,14 @@
 <template>
   <div class="power-roll">
-    <div v-if="processedEffects.length && processedEffects[0].tiers && Object.keys(processedEffects[0].tiers).length > 0" class="outcomes">
-      <div 
-        v-for="(tierText, tier) in processedEffects[0].tiers" 
-        :key="tier"
-        class="outcome"
-        :class="`tier-${tier}`"
-      >
+    <div
+      v-if="processedEffects.length && processedEffects[0].tiers && Object.keys(processedEffects[0].tiers).length > 0"
+      class="outcomes">
+      <div v-for="(tierText, tier) in processedEffects[0].tiers" :key="tier" class="outcome" :class="`tier-${tier}`">
         <span class="tier-number">{{ formatTierNumber(tier) }}</span>
         <span class="outcome-text" v-html="tierText"></span>
       </div>
     </div>
-    
+
     <div v-if="effect" class="effect">
       <strong>Effect:</strong> <span v-html="effect"></span>
     </div>
@@ -35,12 +32,12 @@ export default {
     processedEffects() {
       // Group all effects by tier instead of processing them individually
       const tierData = { 1: [], 2: [], 3: [] }
-      
+
       // Process each effect and add to appropriate tiers
       if (this.effects && typeof this.effects === 'object') {
-        Object.entries(this.effects).forEach(([_, effect]) => {
+        Object.values(this.effects).forEach((effect) => {
           const processedEffect = this.processEffect(effect)
-          
+
           // Add each tier's text to the appropriate tier array
           Object.entries(processedEffect.tiers).forEach(([tier, text]) => {
             if (text && tierData[tier]) {
@@ -49,7 +46,7 @@ export default {
           })
         })
       }
-      
+
       // Combine all effects for each tier into single strings
       const collatedTiers = {}
       Object.entries(tierData).forEach(([tier, texts]) => {
@@ -57,7 +54,7 @@ export default {
           collatedTiers[tier] = texts.join('; ')
         }
       })
-      
+
       // Return single effect object with collated tiers
       return [{
         _id: 'collated-effects',
@@ -69,25 +66,25 @@ export default {
   methods: {
     processEffect(effect) {
       const tiers = {}
-      
+
       if (effect.type === 'damage' && effect.damage) {
         ['tier1', 'tier2', 'tier3'].forEach((tier, index) => {
           const tierData = effect.damage[tier]
           if (tierData) {
             let description = tierData.value
-            
+
             // Add damage types if specified
             if (tierData.types && tierData.types.length > 0) {
               description += ` ${tierData.types.join('/')} damage`
             } else {
               description += ' damage'
             }
-            
+
             // Add properties (conditions, etc.)
             if (tierData.properties && tierData.properties.length > 0) {
               description += `; ${tierData.properties.join(', ')}`
             }
-            
+
             // Add potency effects (like conditions with save ends)
             if (tierData.potency && tierData.potency.value && tierData.potency.value !== 'none') {
               const potencyText = this.formatPotency(tierData.potency)
@@ -95,10 +92,10 @@ export default {
                 description += `; ${potencyText}`
               }
             }
-            
+
             // Apply description formatting
             description = this.formatDescription(description)
-            
+
             tiers[index + 1] = description
           }
         })
@@ -108,13 +105,13 @@ export default {
           const tierData = effect.forced[tier]
           if (tierData) {
             let description = tierData.display
-            
+
             // If display is {{forced}}, generate the movement description
             if (description === '{{forced}}') {
               const properties = tierData.properties || []
               const movement = tierData.movement || []
               const distance = tierData.distance || ''
-              
+
               // Format as "properties movement distance" (e.g., "vertical push 2")
               description = [
                 ...properties,
@@ -122,7 +119,7 @@ export default {
                 distance
               ].filter(Boolean).join(' ')
             }
-            
+
             if (description) {
               // Apply description formatting
               description = this.formatDescription(description)
@@ -133,21 +130,21 @@ export default {
       } else if (effect.type === 'applied' && effect.applied) {
         // Handle applied effects (conditions, etc.)
         // First check if any tier has a display value
-        const hasAnyDisplay = ['tier1', 'tier2', 'tier3'].some(tier => 
+        const hasAnyDisplay = ['tier1', 'tier2', 'tier3'].some(tier =>
           effect.applied[tier] && effect.applied[tier].display
         );
-        
+
         ['tier1', 'tier2', 'tier3'].forEach((tier, index) => {
           const tierData = effect.applied[tier]
           if (tierData) {
             let description = tierData.display
-            
+
             // If this tier has no display, try tier1 display if hasAnyDisplay
             if (!description && hasAnyDisplay && effect.applied.tier1 && effect.applied.tier1.display) {
               description = effect.applied.tier1.display
             }
 
-            
+
             if (description) {
               // Fall back to tier1 characteristic if not specified
               if (tierData.potency && (!tierData.potency.characteristic || tierData.potency.characteristic === 'none')) {
@@ -161,10 +158,10 @@ export default {
                 const potencyText = this.formatPotency(tierData.potency)
                 description = description.replace('{{potency}}', potencyText)
               }
-              
+
               // Apply description formatting
               description = this.formatDescription(description)
-              
+
               tiers[index + 1] = description
             }
           }
@@ -175,7 +172,7 @@ export default {
         if (effect.tier2) tiers[2] = this.formatGenericTier(effect.tier2)
         if (effect.tier3) tiers[3] = this.formatGenericTier(effect.tier3)
       }
-      
+
       return {
         ...effect,
         tiers
@@ -183,32 +180,32 @@ export default {
     },
     formatPotency(potency) {
       if (!potency.value || !potency.characteristic || potency.characteristic === 'none') return null
-      
+
       // Map common potency patterns to numeric values
       const potencyMap = {
         '@potency.weak': parseInt(this.chr) - 2,
-        '@potency.average': parseInt(this.chr) - 1, 
+        '@potency.average': parseInt(this.chr) - 1,
         '@potency.strong': parseInt(this.chr)
       }
-      
+
       const potencyValue = potencyMap[potency.value] || potency.value
-      
+
       // Format as characteristic abbreviation + < + value with bold emphasis
       const charAbbrev = potency.characteristic.charAt(0).toUpperCase()
       return `<strong class="potency-value">${charAbbrev}&lt;${potencyValue}</strong>`
     },
     formatDescription(description) {
       if (!description) return description
-      
+
       // Parse and replace [[/damage type X]] directives
       description = description.replace(/\[\[\/damage\s+(\d+)(?:\s+(\w+))?\]\]/g, (match, value, type) => {
         const damageClass = type ? `damage-${type.toLowerCase()}` : 'damage-generic'
         return `<span class="damage-value ${damageClass}">${value}${type ? ` ${type}` : ''}</span>`
       })
-      
+
       // Bold any remaining potency patterns that might exist in descriptions
       description = description.replace(/([A-Z]<\d+)/g, '<strong class="potency-value">$1</strong>')
-      
+
       return description
     },
     formatGenericTier(tierData) {
@@ -429,11 +426,11 @@ export default {
   .power-roll {
     padding: 0.75rem;
   }
-  
+
   .outcome {
     padding: 0.4rem;
   }
-  
+
   .tier-number {
     min-width: 2.5rem;
     height: 1.25rem;

@@ -3,8 +3,8 @@
   "name": "Fiktin",
   "level": 5,
   "ev": 7,
-  "role": "ambusher",
-  "organization": "horde",
+  "role": "Ambusher",
+  "organization": "Horde",
   "keywords": [
     "abyssal"
   ],
@@ -23,29 +23,9 @@
     "intuition": 1,
     "presence": 3
   },
-  "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "immunities": {},
   "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 5,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
+    "holy": 5
   },
   "movementTypes": [
     "walk"

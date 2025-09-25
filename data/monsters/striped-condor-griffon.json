@@ -3,8 +3,8 @@
   "name": "Striped Condor Griffon",
   "level": 2,
   "ev": 16,
-  "role": "brute",
-  "organization": "elite",
+  "role": "Brute",
+  "organization": "Elite",
   "keywords": [
     "beast"
   ],
@@ -23,30 +23,8 @@
     "intuition": 2,
     "presence": 1
   },
-  "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "immunities": {},
+  "weaknesses": {},
   "movementTypes": [
     "fly"
   ],

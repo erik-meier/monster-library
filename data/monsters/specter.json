@@ -3,8 +3,8 @@
   "name": "Specter",
   "level": 1,
   "ev": 3,
-  "role": "hexer",
-  "organization": "horde",
+  "role": "Hexer",
+  "organization": "Horde",
   "keywords": [
     "undead"
   ],
@@ -24,29 +24,10 @@
     "presence": 2
   },
   "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
     "corruption": 1,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 1,
-    "psychic": 0,
-    "sonic": 0
+    "poison": 1
   },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "weaknesses": {},
   "movementTypes": [
     "fly"
   ],

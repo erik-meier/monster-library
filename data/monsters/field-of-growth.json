@@ -1,10 +1,10 @@
 {
   "id": "field-of-growth",
-  "name": "Field of Growth",
+  "name": "Field Of Growth",
   "level": 3,
   "ev": 28,
-  "role": "controller",
-  "organization": "elite",
+  "role": "Controller",
+  "organization": "Elite",
   "keywords": [
     "elemental"
   ],
@@ -24,29 +24,9 @@
     "presence": 2
   },
   "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 5,
-    "psychic": 0,
-    "sonic": 0
+    "poison": 5
   },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "weaknesses": {},
   "movementTypes": [
     "climb",
     "walk"

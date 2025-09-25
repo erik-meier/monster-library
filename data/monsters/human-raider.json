@@ -3,8 +3,8 @@
   "name": "Human Raider",
   "level": 1,
   "ev": 3,
-  "role": "harrier",
-  "organization": "minion",
+  "role": "Harrier",
+  "organization": "Minion",
   "keywords": [],
   "size": {
     "value": 1,
@@ -22,29 +22,10 @@
     "presence": 0
   },
   "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
     "corruption": 1,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 1,
-    "sonic": 0
+    "psychic": 1
   },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "weaknesses": {},
   "movementTypes": [
     "walk"
   ],

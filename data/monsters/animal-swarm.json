@@ -3,8 +3,8 @@
   "name": "Animal Swarm",
   "level": 1,
   "ev": 12,
-  "role": "hexer",
-  "organization": "elite",
+  "role": "Hexer",
+  "organization": "Elite",
   "keywords": [
     "animal",
     "swarm"
@@ -24,30 +24,8 @@
     "intuition": 2,
     "presence": -3
   },
-  "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "immunities": {},
+  "weaknesses": {},
   "movementTypes": [
     "walk"
   ],

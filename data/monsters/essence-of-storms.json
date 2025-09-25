@@ -1,10 +1,10 @@
 {
   "id": "essence-of-storms",
-  "name": "Essence of Storms",
+  "name": "Essence Of Storms",
   "level": 3,
   "ev": 20,
-  "role": "harrier",
-  "organization": "elite",
+  "role": "Harrier",
+  "organization": "Elite",
   "keywords": [
     "elemental"
   ],
@@ -24,29 +24,9 @@
     "presence": 2
   },
   "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 5,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
+    "lightning": 5
   },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "weaknesses": {},
   "movementTypes": [
     "walk",
     "fly"

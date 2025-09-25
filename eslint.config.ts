@@ -19,4 +19,11 @@ export default defineConfigWithVueTs(
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
   skipFormatting,
+  
+  // Custom rule overrides
+  {
+    rules: {
+      'vue/block-lang': 'off', // Allow default JavaScript in Vue script blocks
+    },
+  },
 )

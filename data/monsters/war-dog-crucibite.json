@@ -3,8 +3,8 @@
   "name": "War Dog Crucibite",
   "level": 1,
   "ev": 3,
-  "role": "artillery",
-  "organization": "horde",
+  "role": "Artillery",
+  "organization": "Horde",
   "keywords": [
     "humanoid",
     "soulless"
@@ -25,29 +25,9 @@
     "presence": 0
   },
   "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 2,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
+    "fire": 2
   },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "weaknesses": {},
   "movementTypes": [
     "walk"
   ],

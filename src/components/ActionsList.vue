@@ -10,13 +10,14 @@
             <span v-if="action.system.resource" class="malice-cost">{{ action.system.resource }} Malice</span>
           </h4>
           <div class="action-power-info">
-            <span v-if="actionHasPowerRoll(action)" class="action-power-roll">{{ formatPowerRoll(action.system.power.roll.formula, chr) }}</span>
+            <span v-if="actionHasPowerRoll(action)" class="action-power-roll">{{
+              formatPowerRoll(action.system.power.roll.formula, chr) }}</span>
             <span class="action-type-badge" v-if="action.system.type && action.system.type !== 'none'">
               {{ formatActionType(action.system.type) }}
             </span>
           </div>
         </div>
-        
+
         <div class="action-details">
           <div class="action-keywords" v-if="action.system.keywords && action.system.keywords.length">
             {{ action.system.keywords.join(', ') }}
@@ -24,15 +25,15 @@
           <div class="action-mechanics">
             <span v-if="formatActionDistance(action.system.distance)" class="action-distance">
               <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L13.09 8.26L22 9L13.09 15.74L12 22L10.91 15.74L2 9L10.91 8.26L12 2Z"/>
+                <path d="M12 2L13.09 8.26L22 9L13.09 15.74L12 22L10.91 15.74L2 9L10.91 8.26L12 2Z" />
               </svg>
               Range: {{ formatActionDistance(action.system.distance) }}
             </span>
             <span v-if="formatActionTargets(action.system.target)" class="action-target">
               <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="6"/>
-                <circle cx="12" cy="12" r="2"/>
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
               </svg>
               Target: {{ formatActionTargets(action.system.target) }}
             </span>
@@ -129,6 +130,7 @@ export default {
       } else if (target.type === 'enemy') {
         return `${target.value ? target.value : 'Each'} ${target.value && target.value > 1 ? 'enemies' : 'enemy'}`;
       }
+      return target.type
     },
     formatActionType(type) {
       if (!type) return '';
@@ -143,9 +145,9 @@ export default {
       }
     },
     actionHasPowerRoll(action) {
-      if(action.system.power && action.system.power.effects) {
-        for (const [_, effect] of Object.entries(action.system.power.effects)) {
-          if(effect.type === 'damage') {
+      if (action.system.power && action.system.power.effects) {
+        for (const effect of Object.values(action.system.power.effects)) {
+          if (effect.type === 'damage') {
             return true
           }
         }
@@ -154,25 +156,23 @@ export default {
     },
     formatDescription(description) {
       if (!description) return description
-      
+
       // Parse and replace [[/damage type X]] directives, including @monster.freeStrike
       description = description.replace(/\[\[\/damage\s+(@monster\.freeStrike|\d+|\dd\d)(?:\s+(\w+))?\]\]/g, (match, value, type) => {
-        const damageValue = value
-        
         // Handle @monster.freeStrike reference
         if (value === '@monster.freeStrike') {
           const freeStrikeValue = this.monster?.system?.monster?.freeStrike || value
           return `<span class="damage-value damage-generic">${freeStrikeValue}</span> damage free strike`
         }
-        
+
         // Handle regular numeric damage values
         const damageClass = type ? `damage-${type.toLowerCase()}` : 'damage-generic'
         return `<span class="damage-value ${damageClass}">${value}${type ? ` ${type}` : ''}</span>`
       })
-      
+
       // Bold any potency patterns that might exist in descriptions
       description = description.replace(/([A-Z]<\d+)/g, '<strong class="potency-value">$1</strong>')
-      
+
       return description
     }
   }

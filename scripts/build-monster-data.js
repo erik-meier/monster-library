@@ -26,7 +26,7 @@ const monsters = {}
 let successCount = 0
 let errorCount = 0
 
-for (const [monsterId, cardData] of Object.entries(monsterIndex.card)) {
+for (const [monsterId] of Object.entries(monsterIndex.card)) {
   try {
     // Direct file mapping for simplified monster structure
     const fullPath = path.join(MONSTERS_DIR, `${monsterId}.json`)

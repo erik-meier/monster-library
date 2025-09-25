@@ -3,8 +3,8 @@
   "name": "Gnoll Chainflail",
   "level": 2,
   "ev": 4,
-  "role": "artillery",
-  "organization": "minion",
+  "role": "Artillery",
+  "organization": "Minion",
   "keywords": [
     "abyssal"
   ],
@@ -23,30 +23,8 @@
     "intuition": 0,
     "presence": -2
   },
-  "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "immunities": {},
+  "weaknesses": {},
   "movementTypes": [
     "walk"
   ],

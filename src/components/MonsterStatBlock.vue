@@ -61,7 +61,8 @@
     <div class="divider"></div>
 
     <!-- Abilities -->
-    <ActionsList :title="Abilities" :actions="monster.items" :chr="Math.max(...Object.values(monster.characteristics))" :monster="monster" />
+    <ActionsList :title="Abilities" :actions="monster.items" :chr="Math.max(...Object.values(monster.characteristics))"
+      :monster="monster" />
 
     <!-- Source Information -->
     <div v-if="monster.source" class="source-info">
@@ -94,7 +95,7 @@ export default {
   methods: {
     formatKeywords(keywords) {
       if (!keywords || !Array.isArray(keywords)) return '';
-      return keywords.map(keyword => 
+      return keywords.map(keyword =>
         keyword.charAt(0).toUpperCase() + keyword.slice(1).toLowerCase()
       ).join(', ');
     },
@@ -105,7 +106,7 @@ export default {
       let result = null;
       if (typeof immunity === 'object') {
         result = Object.entries(immunity)
-          .filter(([type, value]) => value > 0)
+          .filter(([, value]) => value > 0)
           .map(([type, value]) => `${type} ${value}`)
           .join(', ');
       }
@@ -115,7 +116,7 @@ export default {
       let result = null;
       if (typeof weakness === 'object') {
         result = Object.entries(weakness)
-          .filter(([type, value]) => value > 0)
+          .filter(([, value]) => value > 0)
           .map(([type, value]) => `${type} ${value}`)
           .join(', ');
       }
@@ -289,7 +290,7 @@ export default {
   .stat-block {
     padding: 1rem;
   }
-  
+
   .monster-name {
     font-size: 1.5rem;
   }
@@ -300,7 +301,7 @@ export default {
     text-align: center;
     align-items: center;
   }
-  
+
   .monster-meta-left,
   .monster-meta-center,
   .monster-meta-right {
@@ -309,22 +310,22 @@ export default {
     margin: 0;
     width: auto;
   }
-  
+
   .core-stats {
     margin-bottom: 1.25rem;
   }
-  
+
   .stat-labels,
   .stat-values {
     gap: 0.25rem;
   }
-  
+
   .stat-label,
   .stat-value {
     font-size: 0.9rem;
     min-width: 0;
   }
-  
+
   .secondary-stats {
     flex-direction: column;
     gap: 0.5rem;
@@ -332,12 +333,12 @@ export default {
     text-align: left;
     align-items: flex-start;
   }
-  
+
   .stat-item {
     white-space: normal;
     word-break: break-word;
   }
-  
+
   .stat-separator {
     display: none;
   }
@@ -347,39 +348,39 @@ export default {
   .stat-block {
     padding: 0.75rem;
   }
-  
+
   .monster-name {
     font-size: 1.3rem;
     letter-spacing: 0.5px;
   }
-  
+
   .monster-meta-container {
     gap: 0.4rem;
   }
-  
+
   .monster-meta-left,
   .monster-meta-center,
   .monster-meta-right {
     font-size: 0.9rem;
   }
-  
+
   .core-stats {
     margin-bottom: 1rem;
   }
-  
+
   .stat-labels {
     margin-bottom: 0.4rem;
   }
-  
+
   .stat-label {
     font-size: 0.85rem;
   }
-  
+
   .stat-value {
     font-size: 0.9rem;
     font-weight: 600;
   }
-  
+
   .secondary-stats {
     font-size: 0.8rem;
     gap: 0.4rem;

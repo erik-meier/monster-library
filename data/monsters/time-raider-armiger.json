@@ -3,8 +3,8 @@
   "name": "Time Raider Armiger",
   "level": 3,
   "ev": 10,
-  "role": "defender",
-  "organization": "platoon",
+  "role": "Defender",
+  "organization": "Platoon",
   "keywords": [
     "humanoid"
   ],
@@ -24,29 +24,9 @@
     "presence": 0
   },
   "immunities": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 3,
-    "sonic": 0
+    "psychic": 3
   },
-  "weaknesses": {
-    "all": 0,
-    "acid": 0,
-    "cold": 0,
-    "corruption": 0,
-    "fire": 0,
-    "holy": 0,
-    "lightning": 0,
-    "poison": 0,
-    "psychic": 0,
-    "sonic": 0
-  },
+  "weaknesses": {},
   "movementTypes": [
     "walk"
   ],

@@ -9,9 +9,6 @@
 
 import fs from 'fs'
 import path from 'path'
-import { fileURLToPath } from 'url'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // Get monsters path from command line argument
 const monstersPath = process.argv[2]
@@ -73,7 +70,7 @@ function processMonsterFile(filePath) {
         }
         keywordIndex[keywordLower].push(monsterId)
       })
-    } catch (err) {
+    } catch {
       // Skip if keywords not found
     }
     
@@ -86,7 +83,7 @@ function processMonsterFile(filePath) {
         }
         evIndex[ev].push(monsterId)
       }
-    } catch (err) {
+    } catch {
       // Skip if EV not found
     }
     
@@ -103,7 +100,7 @@ function processMonsterFile(filePath) {
         }
         roleIndex[role].push(monsterId)
       }
-    } catch (err) {
+    } catch {
       // Skip if role not found
     }
     
@@ -117,7 +114,7 @@ function processMonsterFile(filePath) {
         organization: monster.system?.monster?.organization,
         keywords: monster.system?.monster?.keywords || []
       }
-    } catch (err) {
+    } catch {
       // Skip if card data incomplete
     }
     
