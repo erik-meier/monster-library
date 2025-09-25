@@ -1,5 +1,5 @@
 // Auto-generated monster data bundle
-// Generated on: 2025-09-25T20:14:56.462Z
+// Generated on: 2025-09-25T20:22:57.610Z
 
 export const monsterIndex = {
   "name": {
@@ -88152,5 +88152,5 @@ export const monsterCards = monsterIndex.card;
 
 console.log('✅ Monster data bundle loaded:', {
   totalMonsters: Object.keys(monsters).length,
-  indexVersion: '2025-09-25T20:14:56.476Z'
+  indexVersion: '2025-09-25T20:22:57.625Z'
 });
