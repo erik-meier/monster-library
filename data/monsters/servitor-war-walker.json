@@ -94,7 +94,7 @@
             },
             {
               "tier": 3,
-              "display": "12 damage; M<@potency.strong restrained (save ends)"
+              "display": "12 damage; M<2 restrained (save ends)"
             }
           ]
         },
@@ -134,15 +134,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 lightning damage; A<@potency.weak slowed (save ends)"
+              "display": "3 lightning damage; A<0 slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 lightning damage; A<@potency.average slowed (save ends)"
+              "display": "6 lightning damage; A<1 slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "7 lightning damage; A<@potency.strong slowed (save ends)"
+              "display": "7 lightning damage; A<2 slowed (save ends)"
             }
           ]
         },

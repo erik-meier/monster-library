@@ -87,15 +87,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 cold damage; P<@potency.weak slowed (save ends)"
+              "display": "7 cold damage; P<1 slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 cold damage; P<@potency.average slowed (save ends)"
+              "display": "10 cold damage; P<2 slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 cold damage; P<@potency.strong slowed (save ends)"
+              "display": "13 cold damage; P<3 slowed (save ends)"
             }
           ]
         },
@@ -230,15 +230,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "P<@potency.weak WQ3ZqbDJ5jujIlKb"
+              "display": "P<1 WQ3ZqbDJ5jujIlKb"
             },
             {
               "tier": 2,
-              "display": "P<@potency.average WQ3ZqbDJ5jujIlKb"
+              "display": "P<2 WQ3ZqbDJ5jujIlKb"
             },
             {
               "tier": 3,
-              "display": "P<@potency.strong WQ3ZqbDJ5jujIlKb"
+              "display": "P<3 WQ3ZqbDJ5jujIlKb"
             }
           ]
         },

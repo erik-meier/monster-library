@@ -72,15 +72,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; {{forced}}"
+              "display": "5 damage; push 2"
             },
             {
               "tier": 2,
-              "display": "6 damage; {{forced}}"
+              "display": "6 damage; push 2"
             },
             {
               "tier": 3,
-              "display": "8 damage; {{forced}}; M<@potency.strong grabbed (save ends)"
+              "display": "8 damage; push 1; M<2 grabbed (save ends)"
             }
           ]
         },

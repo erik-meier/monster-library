@@ -84,15 +84,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 corruption damage; A<@potency.weak weakened (save ends)"
+              "display": "9 corruption damage; A<1 weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "13 corruption damage; A<@potency.average weakened (save ends)"
+              "display": "13 corruption damage; A<2 weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 corruption damage; A<@potency.strong weakened (save ends)"
+              "display": "16 corruption damage; A<3 weakened (save ends)"
             }
           ]
         },
@@ -214,15 +214,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "{{forced}}"
+              "display": "slide 2; {{potency}} the slide is vertical"
             },
             {
               "tier": 2,
-              "display": "{{forced}}; R<@potency.average restrained"
+              "display": "slide 3; R<2 restrained"
             },
             {
               "tier": 3,
-              "display": "{{forced}}; R<@potency.strong restrained"
+              "display": "vertical slide 5; R<3 restrained"
             }
           ]
         },
@@ -346,15 +346,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 fire damage; A<@potency.weak weakened (save ends)"
+              "display": "6 fire damage; A<1 weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 fire damage; A<@potency.average weakened (save ends)"
+              "display": "10 fire damage; A<2 weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 fire damage; A<@potency.strong weakened (save ends)"
+              "display": "13 fire damage; A<3 weakened (save ends)"
             }
           ]
         },

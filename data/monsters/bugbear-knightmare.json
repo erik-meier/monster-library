@@ -102,11 +102,11 @@
             },
             {
               "tier": 2,
-              "display": "6 corruption damage; P<@potency.average bleeding (save ends)"
+              "display": "6 corruption damage; P<3 bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "8 corruption damage; P<@potency.strong grabbed; P<@potency.strong bleeding (save ends)"
+              "display": "8 corruption damage; P<4 grabbed"
             }
           ]
         },

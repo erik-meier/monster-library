@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "14 damage; A<@potency.strong restrained (save ends)"
+              "display": "14 damage; A<2 restrained (save ends)"
             }
           ]
         },
@@ -123,15 +123,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; R<@potency.weak csX5BwGsGjFAGDpG (save ends)"
+              "display": "4 damage; R<0 csX5BwGsGjFAGDpG (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 damage; R<@potency.average slowed, csX5BwGsGjFAGDpG (save ends)"
+              "display": "6 damage; R<1 slowed, csX5BwGsGjFAGDpG (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; R<@potency.strong slowed, csX5BwGsGjFAGDpG (save ends)"
+              "display": "9 damage; R<2 slowed, csX5BwGsGjFAGDpG (save ends)"
             }
           ]
         },

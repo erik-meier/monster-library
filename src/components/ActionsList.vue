@@ -47,7 +47,8 @@
 
       <PowerRoll v-if="actionHasPowerRoll(action)" :tiers="action.system.power.tiers || []"
         :effect="formatActionEffect(action)" />
-      <div class="action-description" v-html="formatDescription(extractDescription(action))"></div>
+      <div v-if="!actionHasPowerRoll(action)" class="action-description"
+        v-html="formatDescription(extractDescription(action))"></div>
     </div>
   </div>
 </template>

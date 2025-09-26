@@ -343,15 +343,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; M<1 weakened (save ends); M<1 vXLk5HAJ3tyspyll"
+              "display": "7 damage; M<1 weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 damage; M<1 weakened (save ends); M<1 vXLk5HAJ3tyspyll"
+              "display": "10 damage; M<1 weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 damage; M<1 weakened (save ends); M<1 vXLk5HAJ3tyspyll"
+              "display": "13 damage; M<1 weakened (save ends)"
             }
           ]
         },

@@ -112,11 +112,11 @@
             },
             {
               "tier": 2,
-              "display": "4 corruption damage; P<@potency.average slowed (save ends)"
+              "display": "4 corruption damage; P<1 slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "5 corruption damage; P<@potency.strong 1XC4RokOmULqp1LI (save ends)"
+              "display": "5 corruption damage; P<2 1XC4RokOmULqp1LI (save ends)"
             }
           ]
         },

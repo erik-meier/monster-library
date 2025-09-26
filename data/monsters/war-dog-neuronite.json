@@ -75,15 +75,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "1 psychic damage; {{forced}}"
+              "display": "1 psychic damage; vertical slide 1"
             },
             {
               "tier": 2,
-              "display": "2 psychic damage; {{forced}}"
+              "display": "2 psychic damage; vertical slide 2"
             },
             {
               "tier": 3,
-              "display": "3 psychic damage; {{forced}}"
+              "display": "3 psychic damage; vertical slide 3"
             }
           ]
         },

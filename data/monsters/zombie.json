@@ -71,7 +71,7 @@
             },
             {
               "tier": 3,
-              "display": "7 damage; P<@potency.strong grabbed"
+              "display": "7 damage; P<2 grabbed"
             }
           ]
         },
@@ -110,15 +110,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 corruption damage; M<@potency.weak prone"
+              "display": "2 corruption damage"
             },
             {
               "tier": 2,
-              "display": "3 corruption damage; M<1 weakened (save ends); M<@potency.average prone"
+              "display": "3 corruption damage; M<1 weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "4 corruption damage; M<2 dazed (save ends); M<@potency.strong prone"
+              "display": "4 corruption damage; M<2 dazed (save ends)"
             }
           ]
         },

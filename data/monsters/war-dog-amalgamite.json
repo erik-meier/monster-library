@@ -77,11 +77,11 @@
             },
             {
               "tier": 2,
-              "display": "5 damage; A<@potency.average grabbed"
+              "display": "5 damage; A<1 grabbed"
             },
             {
               "tier": 3,
-              "display": "6 damage; A<@potency.strong grabbed"
+              "display": "6 damage; A<2 grabbed"
             }
           ]
         },

@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "3 damage; A<@potency.strong taunted"
+              "display": "3 damage; A<2 taunted"
             }
           ]
         },

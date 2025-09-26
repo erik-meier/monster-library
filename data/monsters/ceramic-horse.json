@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "9 lightning damage; M<@potency.strong prone (save ends)"
+              "display": "9 lightning damage; M<2 prone (save ends)"
             }
           ]
         },

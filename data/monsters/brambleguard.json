@@ -109,11 +109,11 @@
             },
             {
               "tier": 2,
-              "display": "7 damage; {{forced}}"
+              "display": "7 damage; push 3"
             },
             {
               "tier": 3,
-              "display": "10 damage; {{forced}}; A<@potency.strong bleeding (save ends)"
+              "display": "10 damage; push 3; A<2 bleeding (save ends)"
             }
           ]
         },

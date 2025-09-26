@@ -137,7 +137,7 @@
             },
             {
               "tier": 3,
-              "display": "5 damage"
+              "display": "5 damage; grabbed or prone"
             }
           ]
         },

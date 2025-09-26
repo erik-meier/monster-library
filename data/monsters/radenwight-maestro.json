@@ -131,15 +131,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; {{forced}}"
+              "display": "7 damage; push 3"
             },
             {
               "tier": 2,
-              "display": "10 damage; {{forced}}; P<@potency.average taunted"
+              "display": "10 damage; push 3; P<2 taunted"
             },
             {
               "tier": 3,
-              "display": "13 damage; {{forced}}; P<@potency.strong taunted"
+              "display": "13 damage; push 5; P<3 taunted"
             }
           ]
         },
@@ -179,15 +179,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 sonic damage; {{forced}}"
+              "display": "3 sonic damage; slide 1"
             },
             {
               "tier": 2,
-              "display": "6 sonic damage; {{forced}}"
+              "display": "6 sonic damage; slide 3"
             },
             {
               "tier": 3,
-              "display": "8 sonic damage; {{forced}}"
+              "display": "8 sonic damage; slide 5"
             }
           ]
         },
@@ -228,15 +228,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "P<@potency.weak slowed (save ends)"
+              "display": "P<1 slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "P<@potency.average slowed (save ends)"
+              "display": "P<2 slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "P<@potency.strong slowed (save ends)"
+              "display": "P<3 slowed (save ends)"
             }
           ]
         },

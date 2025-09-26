@@ -65,11 +65,11 @@
             },
             {
               "tier": 2,
-              "display": "11 damage; M<@potency.average grabbed (save ends); one target is pushed up to 2 squares"
+              "display": "11 damage; M<1 grabbed (save ends); one target is pushed up to 2 squares"
             },
             {
               "tier": 3,
-              "display": "14 damage; M<@potency.strong grabbed (save ends); one target is vertical pushed up to 3 squares"
+              "display": "14 damage; M<2 grabbed (save ends); one target is vertical pushed up to 3 squares"
             }
           ]
         },
@@ -110,15 +110,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; M<@potency.weak prone (save ends)"
+              "display": "8 damage; M<0 prone (save ends)"
             },
             {
               "tier": 2,
-              "display": "13 damage; M<@potency.average prone (save ends)"
+              "display": "13 damage; M<1 prone (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 damage; M<@potency.strong prone (save ends)"
+              "display": "16 damage; M<2 prone (save ends)"
             }
           ]
         },

@@ -96,7 +96,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; {{forced}}"
+              "display": "7 damage; push 1"
             },
             {
               "tier": 2,
@@ -176,15 +176,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "{{forced}}; {{potency}} the forced movement is vertical"
+              "display": "push 2; {{potency}} the forced movement is vertical"
             },
             {
               "tier": 2,
-              "display": "{{forced}}; {{potency}} the forced movement is vertical"
+              "display": "push 4; {{potency}} the forced movement is vertical"
             },
             {
               "tier": 3,
-              "display": "{{forced}}; {{potency}} the forced movement is vertical"
+              "display": "push 6; {{potency}} the forced movement is vertical"
             }
           ]
         },

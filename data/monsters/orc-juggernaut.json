@@ -76,11 +76,11 @@
             },
             {
               "tier": 2,
-              "display": "11 damage"
+              "display": "11 damage; Prone"
             },
             {
               "tier": 3,
-              "display": "14 damage"
+              "display": "14 damage; Prone; {{potency}} bleeding (save ends)"
             }
           ]
         },

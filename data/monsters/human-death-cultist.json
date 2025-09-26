@@ -158,15 +158,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 corruption damage; P<@potency.weak slowed (save ends)"
+              "display": "4 corruption damage; P<0 slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 corruption damage; P<@potency.average slowed (save ends)"
+              "display": "6 corruption damage"
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; P<@potency.strong restrained (save ends)"
+              "display": "9 corruption damage; P<2 restrained (save ends)"
             }
           ]
         },

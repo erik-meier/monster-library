@@ -112,15 +112,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; I<2 frightened (save ends)"
+              "display": "7 damage"
             },
             {
               "tier": 2,
-              "display": "11 damage; I<2 frightened (save ends)"
+              "display": "11 damage; Prone"
             },
             {
               "tier": 3,
-              "display": "14 damage; I<2 frightened (save ends)"
+              "display": "14 damage; Prone"
             }
           ]
         },
@@ -165,11 +165,11 @@
             },
             {
               "tier": 2,
-              "display": "13 damage"
+              "display": "13 damage; Prone"
             },
             {
               "tier": 3,
-              "display": "16 damage"
+              "display": "16 damage; {{potency}} bleeding (save ends)"
             }
           ]
         },
@@ -211,7 +211,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; 1 sonic damage"
+              "display": "4 damage; 1 sonic damage; {{potency}} dazed (save ends)"
             },
             {
               "tier": 2,

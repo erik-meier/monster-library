@@ -72,15 +72,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; A<@potency.weak restrained (save ends)"
+              "display": "5 damage; A<0 restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 damage; A<@potency.average restrained (save ends)"
+              "display": "7 damage; A<1 restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; A<@potency.strong restrained (save ends)"
+              "display": "9 damage; A<2 restrained (save ends)"
             }
           ]
         },
@@ -121,15 +121,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 acid damage; M<@potency.weak CeHsuaeJBSk9zHLW"
+              "display": "5 acid damage; M<0 CeHsuaeJBSk9zHLW"
             },
             {
               "tier": 2,
-              "display": "7 acid damage; M<@potency.average fsrOwbQJuzkl0P5M"
+              "display": "7 acid damage; M<1 fsrOwbQJuzkl0P5M"
             },
             {
               "tier": 3,
-              "display": "9 acid damage; M<@potency.strong 5foqFKboxvzrPq2M"
+              "display": "9 acid damage; M<2 5foqFKboxvzrPq2M"
             }
           ]
         },

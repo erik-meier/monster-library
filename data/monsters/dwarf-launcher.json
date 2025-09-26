@@ -73,15 +73,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 damage; {{forced}}"
+              "display": "3 damage; push 1"
             },
             {
               "tier": 2,
-              "display": "6 damage; {{forced}}; M<@potency.average slowed (save ends)"
+              "display": "6 damage; push 3; M<1 slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "8 damage; {{forced}}; M<@potency.strong slowed (save ends)"
+              "display": "8 damage; push 3; M<2 slowed (save ends)"
             }
           ]
         },
@@ -122,15 +122,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 poison damage; I<@potency.weak dazed (save ends)"
+              "display": "3 poison damage; I<0 dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 poison damage; I<@potency.average dazed (save ends)"
+              "display": "6 poison damage; I<1 dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "8 poison damage; I<@potency.strong dazed (save ends)"
+              "display": "8 poison damage; I<2 dazed (save ends)"
             }
           ]
         },

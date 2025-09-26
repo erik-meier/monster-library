@@ -85,15 +85,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 poison damage; M<@potency.weak weakened (save ends)"
+              "display": "7 poison damage"
             },
             {
               "tier": 2,
-              "display": "11 poison damage; M<@potency.average weakened (save ends)"
+              "display": "11 poison damage"
             },
             {
               "tier": 3,
-              "display": "14 poison damage; M<@potency.strong weakened (save ends)"
+              "display": "14 poison damage; M<2 weakened (save ends)"
             }
           ]
         },
@@ -211,15 +211,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "A<@potency.weak restrained (save ends)"
+              "display": "A<0 restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "A<@potency.average restrained (save ends)"
+              "display": "A<1 restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "A<@potency.strong restrained (save ends)"
+              "display": "A<2 restrained (save ends)"
             }
           ]
         },

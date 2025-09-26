@@ -74,7 +74,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 acid damage"
+              "display": "7 acid damage; {{potency}} dazed (save ends)"
             },
             {
               "tier": 2,
@@ -82,7 +82,7 @@
             },
             {
               "tier": 3,
-              "display": "14 acid damage"
+              "display": "14 acid damage; {{potency}} restrained (save ends)"
             }
           ]
         },

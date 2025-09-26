@@ -72,15 +72,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; M<@potency.weak slowed (save ends)"
+              "display": "5 damage; M<0 slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 damage; M<@potency.average slowed (save ends)"
+              "display": "7 damage; M<1 slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; M<@potency.strong slowed (save ends)"
+              "display": "9 damage; M<2 slowed (save ends)"
             }
           ]
         },

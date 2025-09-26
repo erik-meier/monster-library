@@ -89,11 +89,11 @@
             },
             {
               "tier": 2,
-              "display": "1 damage; R<@potency.average b9YcbklePj3J8UG0 (save ends)"
+              "display": "1 damage; R<1 b9YcbklePj3J8UG0 (save ends)"
             },
             {
               "tier": 3,
-              "display": "2 damage; R<@potency.strong b9YcbklePj3J8UG0 (save ends)"
+              "display": "2 damage"
             }
           ]
         },

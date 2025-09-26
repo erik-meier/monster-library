@@ -111,15 +111,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; M<@potency.weak bleeding (save ends)"
+              "display": "5 damage; M<0 bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 damage; M<@potency.average bleeding (save ends)"
+              "display": "6 damage; M<1 bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "7 damage; M<@potency.strong+1 bleeding (save ends)"
+              "display": "7 damage; M<2+1 bleeding (save ends)"
             }
           ]
         },

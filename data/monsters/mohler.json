@@ -97,15 +97,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; P<@potency.weak prone"
+              "display": "2 damage"
             },
             {
               "tier": 2,
-              "display": "4 damage; P<@potency.average prone"
+              "display": "4 damage"
             },
             {
               "tier": 3,
-              "display": "5 damage; P<@potency.strong prone"
+              "display": "5 damage"
             }
           ]
         },

@@ -88,11 +88,11 @@
             },
             {
               "tier": 2,
-              "display": "6 damage; {{potency}} {{forced}}"
+              "display": "6 damage; {{potency}}  push 3"
             },
             {
               "tier": 3,
-              "display": "9 damage; {{potency}} {{forced}}"
+              "display": "9 damage; {{potency}}  push 4; prone"
             }
           ]
         },
@@ -133,15 +133,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "{{forced}}"
+              "display": "push 3"
             },
             {
               "tier": 2,
-              "display": "{{forced}}"
+              "display": "push 4"
             },
             {
               "tier": 3,
-              "display": "{{forced}}"
+              "display": "push 5"
             }
           ]
         },

@@ -84,7 +84,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage"
+              "display": "5 damage; {{potency}} the target is hooked (save ends)"
             },
             {
               "tier": 2,
@@ -217,7 +217,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage"
+              "display": "5 damage; {{potency}} slowed (save ends)"
             },
             {
               "tier": 2,
@@ -225,7 +225,7 @@
             },
             {
               "tier": 3,
-              "display": "9 damage"
+              "display": "9 damage; Prone; {{potency}} slowed (save ends)"
             }
           ]
         },

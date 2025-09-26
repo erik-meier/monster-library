@@ -97,15 +97,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 psychic damage; I<@potency.weak slowed (save ends)"
+              "display": "4 psychic damage; I<1 slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 psychic damage; I<@potency.average slowed (save ends)"
+              "display": "7 psychic damage; I<2 slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 psychic damage; I<@potency.strong slowed (save ends)"
+              "display": "10 psychic damage; I<3 slowed (save ends)"
             }
           ]
         },

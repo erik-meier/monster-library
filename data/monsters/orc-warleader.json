@@ -200,7 +200,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage"
+              "display": "7 damage; {{potency}} dazed (save ends)"
             },
             {
               "tier": 2,

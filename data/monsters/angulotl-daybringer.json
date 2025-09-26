@@ -100,7 +100,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 acid damage"
+              "display": "7 acid damage; {{potency}} dazed (save ends)"
             },
             {
               "tier": 2,
@@ -343,20 +343,58 @@
             "formula": "2d10 + 3",
             "characteristics": []
           },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "P<@potency.weak Du8EMyrd7nZQ66Yk"
-            },
-            {
-              "tier": 2,
-              "display": "P<@potency.average Du8EMyrd7nZQ66Yk"
-            },
-            {
-              "tier": 3,
-              "display": "P<@potency.strong Du8EMyrd7nZQ66Yk"
+          "effects": {
+            "g8BNA1tbnI9d59oQ": {
+              "name": "Wet",
+              "img": null,
+              "type": "applied",
+              "_id": "g8BNA1tbnI9d59oQ",
+              "applied": {
+                "tier1": {
+                  "effects": {
+                    "Du8EMyrd7nZQ66Yk": {
+                      "condition": "always",
+                      "end": "encounter",
+                      "properties": []
+                    }
+                  },
+                  "display": "",
+                  "potency": {
+                    "value": "@potency.weak",
+                    "characteristic": "none"
+                  }
+                },
+                "tier2": {
+                  "effects": {
+                    "Du8EMyrd7nZQ66Yk": {
+                      "condition": "always",
+                      "end": "encounter",
+                      "properties": []
+                    }
+                  },
+                  "display": "",
+                  "potency": {
+                    "value": "@potency.average",
+                    "characteristic": ""
+                  }
+                },
+                "tier3": {
+                  "effects": {
+                    "Du8EMyrd7nZQ66Yk": {
+                      "condition": "always",
+                      "end": "encounter",
+                      "properties": []
+                    }
+                  },
+                  "display": "",
+                  "potency": {
+                    "value": "@potency.strong",
+                    "characteristic": ""
+                  }
+                }
+              }
             }
-          ]
+          }
         },
         "effect": {
           "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",

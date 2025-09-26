@@ -100,15 +100,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "10 damage; M<@potency.weak bleeding (save ends); A<@potency.weak grabbed"
+              "display": "10 damage; M<2 bleeding (save ends); A<2 grabbed"
             },
             {
               "tier": 2,
-              "display": "15 damage; M<@potency.average bleeding (save ends); A<@potency.average grabbed"
+              "display": "15 damage; M<3 bleeding (save ends); A<3 grabbed"
             },
             {
               "tier": 3,
-              "display": "18 damage; M<@potency.strong bleeding (save ends); A<@potency.strong grabbed"
+              "display": "18 damage; M<4 bleeding (save ends); A<4 grabbed"
             }
           ]
         },
@@ -150,15 +150,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; A<@potency.weak weakened, JHJutruYIpauxNj7 (save ends)"
+              "display": "4 damage; A<2 weakened, JHJutruYIpauxNj7 (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; A<@potency.average weakened (save ends)"
+              "display": "8 damage; A<3 weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 damage; A<@potency.strong weakened (save ends)"
+              "display": "11 damage; A<4 weakened (save ends)"
             }
           ]
         },
@@ -200,15 +200,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 corruption damage; M<@potency.weak ox9pBhgG6jaEsZxa (save ends)"
+              "display": "6 corruption damage; M<2 ox9pBhgG6jaEsZxa (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 corruption damage; M<@potency.average ox9pBhgG6jaEsZxa (save ends)"
+              "display": "11 corruption damage; M<3 ox9pBhgG6jaEsZxa (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 corruption damage; M<@potency.strong ox9pBhgG6jaEsZxa (save ends)"
+              "display": "14 corruption damage; M<4 ox9pBhgG6jaEsZxa (save ends)"
             }
           ]
         },
@@ -312,15 +312,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage; {{forced}}; P<@potency.weak prone, restrained"
+              "display": "6 damage; vertical push 2"
             },
             {
               "tier": 2,
-              "display": "11 damage; {{forced}}; P<@potency.average prone, restrained"
+              "display": "11 damage; vertical push 2"
             },
             {
               "tier": 3,
-              "display": "14 damage; {{forced}}; P<@potency.strong prone, restrained"
+              "display": "14 damage; vertical push 3"
             }
           ]
         },

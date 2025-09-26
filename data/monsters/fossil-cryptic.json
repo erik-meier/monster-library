@@ -97,15 +97,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; {{forced}}"
+              "display": "8 damage; slide 2"
             },
             {
               "tier": 2,
-              "display": "12 damage; {{forced}}; A<@potency.average prone, restrained"
+              "display": "12 damage; slide 2; A<2 prone, restrained"
             },
             {
               "tier": 3,
-              "display": "15 damage; {{forced}}; A<@potency.strong prone, XwWmi30pg3SdaUpC, restrained"
+              "display": "15 damage; slide 3; A<3 prone, XwWmi30pg3SdaUpC, restrained"
             }
           ]
         },
@@ -146,15 +146,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; {{forced}}"
+              "display": "4 damage; push 2"
             },
             {
               "tier": 2,
-              "display": "7 damage; {{forced}}; M<@potency.average prone (save ends)"
+              "display": "7 damage; push 1"
             },
             {
               "tier": 3,
-              "display": "10 damage; {{forced}}; M<@potency.strong prone (save ends)"
+              "display": "10 damage; push 1"
             }
           ]
         },
@@ -258,15 +258,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; {{forced}}"
+              "display": "4 damage; push 2"
             },
             {
               "tier": 2,
-              "display": "7 damage; {{forced}}; M<@potency.average prone (save ends)"
+              "display": "7 damage; push 3; M<2 prone (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 damage; {{forced}}; M<@potency.strong prone (save ends)"
+              "display": "10 damage; push 4"
             }
           ]
         },
@@ -373,15 +373,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; M<@potency.weak prone; M<@potency.weak restrained (save ends)"
+              "display": "5 damage; M<1 prone; M<1 restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 damage; M<@potency.average prone; M<@potency.average restrained (save ends)"
+              "display": "9 damage; M<2 prone; M<2 restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 damage; M<@potency.strong prone; M<@potency.strong restrained (save ends)"
+              "display": "12 damage; M<3 prone; M<3 restrained (save ends)"
             }
           ]
         },
@@ -418,15 +418,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; {{forced}}"
+              "display": "2 damage; vertical slide 2"
             },
             {
               "tier": 2,
-              "display": "3 damage; {{forced}}"
+              "display": "3 damage; vertical slide 4"
             },
             {
               "tier": 3,
-              "display": "4 damage; {{forced}}; P<@potency.strong restrained (save ends)"
+              "display": "4 damage; vertical slide 6; P<3 restrained (save ends)"
             }
           ]
         },

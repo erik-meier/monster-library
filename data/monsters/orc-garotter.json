@@ -237,11 +237,11 @@
             },
             {
               "tier": 2,
-              "display": "9 damage"
+              "display": "9 damage; {{potency}} dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 damage"
+              "display": "12 damage; grabbed; {{potency}} dazed (save ends)"
             }
           ]
         },

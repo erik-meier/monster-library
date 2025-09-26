@@ -75,15 +75,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; {{forced}}"
+              "display": "8 damage; slide 1"
             },
             {
               "tier": 2,
-              "display": "12 damage; {{forced}}"
+              "display": "12 damage; slide 3"
             },
             {
               "tier": 3,
-              "display": "15 damage; {{forced}}"
+              "display": "15 damage; slide 5"
             }
           ]
         },

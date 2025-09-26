@@ -90,11 +90,11 @@
             },
             {
               "tier": 2,
-              "display": "5 psychic damage; P<@potency.average 1cB1VkgEN5Hg04Cw (save ends)"
+              "display": "5 psychic damage; P<1 1cB1VkgEN5Hg04Cw (save ends)"
             },
             {
               "tier": 3,
-              "display": "7 psychic damage; P<@potency.strong 1cB1VkgEN5Hg04Cw (save ends)"
+              "display": "7 psychic damage"
             }
           ]
         },

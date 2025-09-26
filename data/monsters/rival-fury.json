@@ -122,7 +122,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; P<@potency.weak grabbed"
+              "display": "8 damage; P<0 grabbed"
             },
             {
               "tier": 2,

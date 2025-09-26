@@ -79,11 +79,11 @@
             },
             {
               "tier": 2,
-              "display": "7 psychic damage; I<@potency.average weakened (save ends)"
+              "display": "7 psychic damage; I<1 weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 psychic damage; I<@potency.strong weakened (save ends)"
+              "display": "9 psychic damage"
             }
           ]
         },

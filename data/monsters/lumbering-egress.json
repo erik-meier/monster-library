@@ -74,15 +74,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "11 corruption damage; A<@potency.weak restrained (save ends)"
+              "display": "11 corruption damage; A<2 restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "16 corruption damage; A<@potency.average restrained (save ends)"
+              "display": "16 corruption damage; A<3 restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "19 corruption damage; A<@potency.strong restrained (save ends)"
+              "display": "19 corruption damage; A<4 restrained (save ends)"
             }
           ]
         },
@@ -274,15 +274,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 corruption damage; R<@potency.weak weakened (save ends)"
+              "display": "6 corruption damage; R<2 weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 corruption damage; R<@potency.average weakened (save ends)"
+              "display": "11 corruption damage; R<3 weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 corruption damage; R<@potency.strong weakened (save ends)"
+              "display": "14 corruption damage; R<4 weakened (save ends)"
             }
           ]
         },

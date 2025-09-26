@@ -77,11 +77,11 @@
             },
             {
               "tier": 2,
-              "display": "11 damage; A<@potency.average prone"
+              "display": "11 damage; A<1 prone"
             },
             {
               "tier": 3,
-              "display": "14 damage; A<@potency.strong prone"
+              "display": "14 damage"
             }
           ]
         },
@@ -125,11 +125,11 @@
             },
             {
               "tier": 2,
-              "display": "7 damage; A<@potency.average OeAaVdY3lfQQ1bnz (save ends)"
+              "display": "7 damage; A<1 OeAaVdY3lfQQ1bnz (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 damage; A<@potency.strong OeAaVdY3lfQQ1bnz (save ends)"
+              "display": "10 damage"
             }
           ]
         },
@@ -171,15 +171,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "I<@potency.weak bTDftBPBIxy3kZeB (save ends)"
+              "display": "I<0 bTDftBPBIxy3kZeB (save ends)"
             },
             {
               "tier": 2,
-              "display": "I<@potency.average bTDftBPBIxy3kZeB (save ends)"
+              "display": "I<1 bTDftBPBIxy3kZeB (save ends)"
             },
             {
               "tier": 3,
-              "display": "I<@potency.strong bTDftBPBIxy3kZeB (save ends)"
+              "display": "I<2 bTDftBPBIxy3kZeB (save ends)"
             }
           ]
         },

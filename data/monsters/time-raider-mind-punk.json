@@ -79,11 +79,11 @@
             },
             {
               "tier": 2,
-              "display": "8 damage; M<@potency.average dazed (save ends)"
+              "display": "8 damage; M<1 dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 damage; M<@potency.strong dazed (save ends)"
+              "display": "11 damage"
             }
           ]
         },
@@ -123,15 +123,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 psychic damage; R<@potency.weak prone"
+              "display": "4 psychic damage; R<0 prone"
             },
             {
               "tier": 2,
-              "display": "6 psychic damage; {{forced}}; R<@potency.average prone, JmxKQObaW5KvrNMn"
+              "display": "6 psychic damage; push 1; R<1 prone, JmxKQObaW5KvrNMn"
             },
             {
               "tier": 3,
-              "display": "9 psychic damage; {{forced}}; R<@potency.strong JmxKQObaW5KvrNMn, prone (save ends)"
+              "display": "9 psychic damage; push 2; R<2 JmxKQObaW5KvrNMn, prone (save ends)"
             }
           ]
         },

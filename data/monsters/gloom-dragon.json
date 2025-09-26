@@ -137,15 +137,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "10 psychic damage; {{forced}}"
+              "display": "10 psychic damage; pull 2"
             },
             {
               "tier": 2,
-              "display": "15 psychic damage; {{forced}}"
+              "display": "15 psychic damage; pull 4"
             },
             {
               "tier": 3,
-              "display": "18 psychic damage; {{forced}}"
+              "display": "18 psychic damage; pull 6"
             }
           ]
         },
@@ -251,15 +251,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "{{forced}}; I<@potency.weak frightened"
+              "display": "pull 2; I<2 frightened"
             },
             {
               "tier": 2,
-              "display": "{{forced}}; I<@potency.average frightened (save ends)"
+              "display": "pull 4; I<3 frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "{{forced}}; I<@potency.strong frightened (save ends)"
+              "display": "pull 6"
             }
           ]
         },
@@ -299,15 +299,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 psychic damage; P<@potency.weak dazed (save ends)"
+              "display": "6 psychic damage"
             },
             {
               "tier": 2,
-              "display": "11 psychic damage; P<@potency.average dazed (save ends)"
+              "display": "11 psychic damage"
             },
             {
               "tier": 3,
-              "display": "14 psychic damage; P<@potency.strong dazed (save ends)"
+              "display": "14 psychic damage"
             }
           ]
         },

@@ -94,7 +94,7 @@
             },
             {
               "tier": 3,
-              "display": "11 damage; M<@potency.strong grabbed (save ends)"
+              "display": "11 damage; M<3 grabbed (save ends)"
             }
           ]
         },
@@ -134,15 +134,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 psychic damage; I<@potency.weak dazed (save ends)"
+              "display": "4 psychic damage; I<1 dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 psychic damage; I<@potency.average dazed (save ends)"
+              "display": "6 psychic damage; I<2 dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "8 psychic damage; I<@potency.strong dazed (save ends)"
+              "display": "8 psychic damage; I<3 dazed (save ends)"
             }
           ]
         },

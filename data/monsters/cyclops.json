@@ -156,11 +156,11 @@
             },
             {
               "tier": 2,
-              "display": "6 damage; 4 damage"
+              "display": "6 damage; push 3; 4 damage"
             },
             {
               "tier": 3,
-              "display": "7 damage; P<@potency.strong prone; 5 damage; P<@potency.strong restrained (save ends)"
+              "display": "7 damage; P<5 prone; 5 damage; P<5 restrained (save ends)"
             }
           ]
         },

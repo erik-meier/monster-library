@@ -75,15 +75,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 corruption damage; {{forced}}"
+              "display": "6 corruption damage; push 2"
             },
             {
               "tier": 2,
-              "display": "8 corruption damage; {{forced}}"
+              "display": "8 corruption damage; push 4"
             },
             {
               "tier": 3,
-              "display": "11 corruption damage; {{forced}}; A<@potency.strong prone (save ends)"
+              "display": "11 corruption damage; push 6; A<2 prone (save ends)"
             }
           ]
         },

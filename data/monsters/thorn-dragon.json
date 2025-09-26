@@ -98,20 +98,58 @@
               "agility"
             ]
           },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "P<@potency.weak evd5O1lH9z6bKcPr (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "P<@potency.average evd5O1lH9z6bKcPr (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "P<@potency.strong evd5O1lH9z6bKcPr (save ends)"
+          "effects": {
+            "G0iD5SWwG9OQT27I": {
+              "name": "",
+              "img": null,
+              "type": "applied",
+              "_id": "G0iD5SWwG9OQT27I",
+              "applied": {
+                "tier1": {
+                  "display": "",
+                  "effects": {
+                    "evd5O1lH9z6bKcPr": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  },
+                  "potency": {
+                    "value": "@potency.weak",
+                    "characteristic": "none"
+                  }
+                },
+                "tier2": {
+                  "display": "",
+                  "effects": {
+                    "evd5O1lH9z6bKcPr": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  },
+                  "potency": {
+                    "value": "@potency.average",
+                    "characteristic": ""
+                  }
+                },
+                "tier3": {
+                  "display": "",
+                  "effects": {
+                    "evd5O1lH9z6bKcPr": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  },
+                  "potency": {
+                    "value": "@potency.strong",
+                    "characteristic": ""
+                  }
+                }
+              }
             }
-          ]
+          }
         },
         "effect": {
           "before": "<p><strong>Note:</strong> Targets each Enemy and Object in the area.</p><p>Each target makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">12 poison</span> damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-poison\">9 poison</span> damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage</p></td></tr></tbody></table>",
@@ -151,15 +189,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; {{forced}}; P<@potency.weak bleeding (save ends)"
+              "display": "8 damage; push 2"
             },
             {
               "tier": 2,
-              "display": "12 damage; {{forced}}; P<@potency.average bleeding (save ends)"
+              "display": "12 damage; push 4"
             },
             {
               "tier": 3,
-              "display": "15 damage; {{forced}}; P<@potency.strong bleeding (save ends)"
+              "display": "15 damage; push 8"
             }
           ]
         },
@@ -302,15 +340,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; A<@potency.weak restrained (save ends)"
+              "display": "5 damage; A<1 restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 damage; A<@potency.average restrained (save ends)"
+              "display": "9 damage; A<2 restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 damage; A<@potency.strong restrained (save ends)"
+              "display": "12 damage; A<3 restrained (save ends)"
             }
           ]
         },

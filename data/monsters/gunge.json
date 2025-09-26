@@ -86,15 +86,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 acid damage; M<@potency.weak slowed (save ends)"
+              "display": "5 acid damage; M<1 slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 acid damage; M<@potency.average slowed (save ends)"
+              "display": "7 acid damage"
             },
             {
               "tier": 3,
-              "display": "9 acid damage; M<@potency.strong restrained (save ends)"
+              "display": "9 acid damage; M<3 restrained (save ends)"
             }
           ]
         },

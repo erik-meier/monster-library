@@ -82,7 +82,7 @@
             },
             {
               "tier": 3,
-              "display": "9 sonic damage"
+              "display": "9 sonic damage; {{potency}} weakened (save ends)"
             }
           ]
         },

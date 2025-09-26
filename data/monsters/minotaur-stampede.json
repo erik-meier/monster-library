@@ -79,11 +79,11 @@
             },
             {
               "tier": 2,
-              "display": "7 damage; M<@potency.average prone"
+              "display": "7 damage; M<4 prone"
             },
             {
               "tier": 3,
-              "display": "9 damage; M<@potency.strong prone; M<@potency.strong rNxuHfyKoS44Uqj4 (save ends)"
+              "display": "9 damage; M<5 prone; M<5 rNxuHfyKoS44Uqj4 (save ends)"
             }
           ]
         },

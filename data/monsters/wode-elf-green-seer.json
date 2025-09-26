@@ -77,11 +77,11 @@
             },
             {
               "tier": 2,
-              "display": "7 damage; I<@potency.average restrained (save ends)"
+              "display": "7 damage; I<1 restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; I<@potency.strong restrained (save ends)"
+              "display": "9 damage"
             }
           ]
         },
@@ -126,7 +126,7 @@
             },
             {
               "tier": 2,
-              "display": "4 damage; P<@potency.average weakened (save ends)"
+              "display": "4 damage; P<1 weakened (save ends)"
             },
             {
               "tier": 3,

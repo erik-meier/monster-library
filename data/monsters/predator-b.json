@@ -88,11 +88,11 @@
             },
             {
               "tier": 2,
-              "display": "11 damage; {{forced}}; M<1 prone"
+              "display": "11 damage; push 1; M<1 prone"
             },
             {
               "tier": 3,
-              "display": "14 damage; {{forced}}; M<1 prone"
+              "display": "14 damage; push 2"
             }
           ]
         },
@@ -140,7 +140,7 @@
             },
             {
               "tier": 3,
-              "display": "8 damage; A<@potency.strong bleeding (save ends)"
+              "display": "8 damage; A<2 bleeding (save ends)"
             }
           ]
         },

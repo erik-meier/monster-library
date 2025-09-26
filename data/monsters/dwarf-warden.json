@@ -60,15 +60,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; {{forced}}"
+              "display": "7 damage; push 1"
             },
             {
               "tier": 2,
-              "display": "10 damage; {{forced}}"
+              "display": "10 damage; push 3"
             },
             {
               "tier": 3,
-              "display": "13 damage; {{forced}}; M<@potency.strong restrained (save ends)"
+              "display": "13 damage; push 5; M<2 restrained (save ends)"
             }
           ]
         },
@@ -109,15 +109,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; A<@potency.weak slowed (save ends)"
+              "display": "5 damage; A<0 slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; A<@potency.average slowed (save ends)"
+              "display": "8 damage; A<1 slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 damage; A<@potency.strong slowed (save ends)"
+              "display": "11 damage; A<2 slowed (save ends)"
             }
           ]
         },

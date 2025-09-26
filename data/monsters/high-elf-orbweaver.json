@@ -73,15 +73,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 cold damage; {{potency}} {{forced}}"
+              "display": "4 cold damage; {{potency}}  push 3"
             },
             {
               "tier": 2,
-              "display": "6 cold damage; {{potency}} {{forced}} or prone; M<@potency.average prone"
+              "display": "6 cold damage; {{potency}}  push 5 or prone"
             },
             {
               "tier": 3,
-              "display": "9 cold damage; {{potency}} {{forced}} or prone; M<@potency.strong prone"
+              "display": "9 cold damage; {{potency}}  slide 5 or prone"
             }
           ]
         },
@@ -122,15 +122,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; R<@potency.weak slowed (save ends)"
+              "display": "5 damage; R<0 slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; R<@potency.average slowed (save ends)"
+              "display": "8 damage"
             },
             {
               "tier": 3,
-              "display": "11 damage; R<@potency.strong restrained (save ends)"
+              "display": "11 damage; R<2 restrained (save ends)"
             }
           ]
         },

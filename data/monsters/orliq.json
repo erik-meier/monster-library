@@ -88,15 +88,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 corruption damage; {{forced}}"
+              "display": "2 corruption damage; slide 2"
             },
             {
               "tier": 2,
-              "display": "4 corruption damage; {{forced}}"
+              "display": "4 corruption damage; vertical slide 2"
             },
             {
               "tier": 3,
-              "display": "6 corruption damage; {{forced}}"
+              "display": "6 corruption damage; vertical slide 2"
             }
           ]
         },

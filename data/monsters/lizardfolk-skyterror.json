@@ -93,7 +93,7 @@
             },
             {
               "tier": 3,
-              "display": "9 damage; A<@potency.strong prone"
+              "display": "9 damage; A<2 prone"
             }
           ]
         },
@@ -134,15 +134,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 damage; M<@potency.weak weakened (save ends)"
+              "display": "3 damage; M<0 weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "5 damage; M<@potency.average weakened (save ends)"
+              "display": "5 damage; M<1 weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "7 damage; M<@potency.strong weakened (save ends)"
+              "display": "7 damage; M<2 weakened (save ends)"
             }
           ]
         },

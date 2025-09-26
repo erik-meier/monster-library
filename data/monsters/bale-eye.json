@@ -87,15 +87,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 psychic damage; I<@potency.weak 4DwuSoiqBEFoV7pg; I<2 Q6ud29n1b4LtoEA4 (save ends)"
+              "display": "6 psychic damage"
             },
             {
               "tier": 2,
-              "display": "8 psychic damage; I<@potency.average 4DwuSoiqBEFoV7pg; I<2 Q6ud29n1b4LtoEA4 (save ends)"
+              "display": "8 psychic damage"
             },
             {
               "tier": 3,
-              "display": "9 psychic damage; I<@potency.strong 4DwuSoiqBEFoV7pg; I<2 Q6ud29n1b4LtoEA4 (save ends)"
+              "display": "9 psychic damage"
             }
           ]
         },
@@ -137,15 +137,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 psychic damage; A<@potency.weak WlWQ0LyAVTn8gdCi (save ends)"
+              "display": "3 psychic damage; A<1 WlWQ0LyAVTn8gdCi (save ends)"
             },
             {
               "tier": 2,
-              "display": "5 psychic damage; A<@potency.average WlWQ0LyAVTn8gdCi (save ends)"
+              "display": "5 psychic damage; A<2 WlWQ0LyAVTn8gdCi (save ends)"
             },
             {
               "tier": 3,
-              "display": "6 psychic damage; A<@potency.strong WlWQ0LyAVTn8gdCi (save ends)"
+              "display": "6 psychic damage; A<3 WlWQ0LyAVTn8gdCi (save ends)"
             }
           ]
         },

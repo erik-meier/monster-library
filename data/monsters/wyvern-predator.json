@@ -88,11 +88,11 @@
             },
             {
               "tier": 2,
-              "display": "14 damage; M<@potency.average slowed (save ends)"
+              "display": "14 damage; M<2 slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "17 damage; M<@potency.strong slowed (save ends)"
+              "display": "17 damage"
             }
           ]
         },
@@ -183,15 +183,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; A<@potency.weak grabbed (save ends)"
+              "display": "9 damage; A<1 grabbed (save ends)"
             },
             {
               "tier": 2,
-              "display": "14 damage; A<@potency.average grabbed (save ends)"
+              "display": "14 damage"
             },
             {
               "tier": 3,
-              "display": "17 damage; A<@potency.strong grabbed (save ends)"
+              "display": "17 damage; A<3 grabbed (save ends)"
             }
           ]
         },

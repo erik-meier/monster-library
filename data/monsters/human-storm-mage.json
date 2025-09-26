@@ -136,15 +136,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 corruption damage; P<@potency.weak slowed (save ends)"
+              "display": "4 corruption damage; P<0 slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 corruption damage; P<@potency.average slowed (save ends)"
+              "display": "6 corruption damage"
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; P<@potency.strong restrained (save ends)"
+              "display": "9 corruption damage; P<2 restrained (save ends)"
             }
           ]
         },
@@ -238,70 +238,12 @@
               "reason"
             ]
           },
-          "effects": {
-            "1wkF9BFBG3MDNQJm": {
-              "name": "Slide",
-              "img": null,
-              "type": "forced",
-              "_id": "1wkF9BFBG3MDNQJm",
-              "forced": {
-                "tier1": {
-                  "distance": "2",
-                  "movement": [
-                    "slide"
-                  ]
-                },
-                "tier2": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "4"
-                },
-                "tier3": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "6"
-                }
-              }
-            },
-            "WxfIB9mvSgILPBle": {
-              "name": "Slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "WxfIB9mvSgILPBle",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} slowed (save ends)",
-                  "potency": {
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "{{potency}} slowed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",

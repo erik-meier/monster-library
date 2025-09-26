@@ -89,11 +89,11 @@
             },
             {
               "tier": 2,
-              "display": "9 damage; {{forced}}"
+              "display": "9 damage; pull 1"
             },
             {
               "tier": 3,
-              "display": "12 damage; {{forced}}"
+              "display": "12 damage; pull 2"
             }
           ]
         },

@@ -75,15 +75,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 poison damage; I<@potency.weak frightened (save ends)"
+              "display": "2 poison damage; I<0 frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "4 poison damage; I<@potency.average frightened (save ends)"
+              "display": "4 poison damage; I<1 frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "5 poison damage; I<@potency.strong frightened (save ends)"
+              "display": "5 poison damage; I<2 frightened (save ends)"
             }
           ]
         },

@@ -125,11 +125,11 @@
             },
             {
               "tier": 2,
-              "display": "12 damage; M<@potency.average bleeding (save ends)"
+              "display": "12 damage; M<1 bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "15 damage; M<@potency.strong bleeding (save ends)"
+              "display": "15 damage"
             }
           ]
         },
@@ -169,15 +169,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "I<@potency.weak dazed (save ends)"
+              "display": "I<0 dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "I<@potency.average dazed (save ends)"
+              "display": "I<1 dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "I<@potency.strong dazed (save ends)"
+              "display": "I<2 dazed (save ends)"
             }
           ]
         },

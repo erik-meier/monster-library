@@ -184,7 +184,7 @@
             },
             {
               "tier": 2,
-              "display": "6 damage"
+              "display": "6 damage; {{potency}} restrained (save ends)"
             },
             {
               "tier": 3,

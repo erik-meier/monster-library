@@ -98,15 +98,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; M<@potency.weak restrained (save ends)"
+              "display": "8 damage; M<1 restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "12 damage; M<@potency.average restrained (save ends)"
+              "display": "12 damage; M<2 restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "15 damage; M<@potency.strong restrained (save ends)"
+              "display": "15 damage; M<3 restrained (save ends)"
             }
           ]
         },

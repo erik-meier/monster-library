@@ -73,15 +73,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 damage; P<@potency.weak grabbed"
+              "display": "3 damage"
             },
             {
               "tier": 2,
-              "display": "4 damage; {{forced}}; P<@potency.average grabbed"
+              "display": "4 damage; pull 1"
             },
             {
               "tier": 3,
-              "display": "5 damage; {{forced}}; P<@potency.strong grabbed"
+              "display": "5 damage; pull 2"
             }
           ]
         },

@@ -134,7 +134,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage"
+              "display": "7 damage; {{potency}} slowed (EoT)"
             },
             {
               "tier": 2,
@@ -142,7 +142,7 @@
             },
             {
               "tier": 3,
-              "display": "13 damage; R<@potency.strong gOF7LZWRfW9zXk1w"
+              "display": "13 damage; R<2 gOF7LZWRfW9zXk1w"
             }
           ]
         },

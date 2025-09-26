@@ -110,15 +110,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; P<@potency.weak WgMV5KOjsKOc1aKL; P<@potency.weak kl2pG3kFmmSfU0Vg"
+              "display": "9 damage; P<1 WgMV5KOjsKOc1aKL"
             },
             {
               "tier": 2,
-              "display": "13 damage; P<@potency.average WgMV5KOjsKOc1aKL; P<@potency.average kl2pG3kFmmSfU0Vg"
+              "display": "13 damage; P<2 WgMV5KOjsKOc1aKL"
             },
             {
               "tier": 3,
-              "display": "16 damage; P<@potency.strong WgMV5KOjsKOc1aKL; P<@potency.strong kl2pG3kFmmSfU0Vg"
+              "display": "16 damage; P<3 WgMV5KOjsKOc1aKL"
             }
           ]
         },
@@ -159,15 +159,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; M<@potency.weak bleeding (save ends)"
+              "display": "8 damage; M<1 bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 damage; M<@potency.average bleeding, rDsdlqr0JEElIIyw (save ends)"
+              "display": "11 damage; M<2 bleeding, rDsdlqr0JEElIIyw (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 damage; M<@potency.strong bleeding, rDsdlqr0JEElIIyw (save ends)"
+              "display": "14 damage; M<3 bleeding, rDsdlqr0JEElIIyw (save ends)"
             }
           ]
         },
@@ -207,15 +207,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; {{forced}}"
+              "display": "4 damage; push 2"
             },
             {
               "tier": 2,
-              "display": "6 damage; {{forced}}; P<@potency.average Y5l5EHKEDqQRwyKB"
+              "display": "6 damage; push 3; P<2 Y5l5EHKEDqQRwyKB"
             },
             {
               "tier": 3,
-              "display": "7 damage; {{forced}}; P<@potency.strong Y5l5EHKEDqQRwyKB"
+              "display": "7 damage; slide 3; P<3 Y5l5EHKEDqQRwyKB"
             }
           ]
         },
@@ -369,15 +369,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; M<@potency.weak bleeding, EeHlWpCVsUbyUhpl (save ends)"
+              "display": "5 damage; M<1 bleeding, EeHlWpCVsUbyUhpl (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; M<@potency.average bleeding, EeHlWpCVsUbyUhpl (save ends)"
+              "display": "8 damage; M<2 bleeding, EeHlWpCVsUbyUhpl (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 damage; M<@potency.strong bleeding, EeHlWpCVsUbyUhpl (save ends)"
+              "display": "11 damage; M<3 bleeding, EeHlWpCVsUbyUhpl (save ends)"
             }
           ]
         },

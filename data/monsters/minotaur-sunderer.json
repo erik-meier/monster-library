@@ -74,15 +74,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; {{forced}}"
+              "display": "8 damage; pull 1"
             },
             {
               "tier": 2,
-              "display": "12 damage; {{forced}}"
+              "display": "12 damage; pull 2"
             },
             {
               "tier": 3,
-              "display": "15 damage; {{forced}}"
+              "display": "15 damage; pull 3"
             }
           ]
         },
@@ -121,15 +121,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "I<@potency.weak frightened (save ends)"
+              "display": "I<0 frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "I<@potency.average frightened (save ends)"
+              "display": "I<1 frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "I<@potency.strong frightened (save ends)"
+              "display": "I<2 frightened (save ends)"
             }
           ]
         },
@@ -171,15 +171,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; M<@potency.weak E2gCg4YMnH2by3Gi (save ends)"
+              "display": "5 damage; M<0 E2gCg4YMnH2by3Gi (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; M<@potency.average E2gCg4YMnH2by3Gi (save ends)"
+              "display": "8 damage; M<1 E2gCg4YMnH2by3Gi (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; M<@potency.strong E2gCg4YMnH2by3Gi (save ends)"
+              "display": "9 damage; M<2 E2gCg4YMnH2by3Gi (save ends)"
             }
           ]
         },

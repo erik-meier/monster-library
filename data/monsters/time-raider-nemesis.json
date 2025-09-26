@@ -76,15 +76,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; {{forced}}"
+              "display": "7 damage; pull 1"
             },
             {
               "tier": 2,
-              "display": "10 damage; {{forced}}"
+              "display": "10 damage; pull 2"
             },
             {
               "tier": 3,
-              "display": "13 damage; {{forced}}; A<@potency.strong restrained (save ends)"
+              "display": "13 damage; pull 3; A<2 restrained (save ends)"
             }
           ]
         },
@@ -125,15 +125,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 psychic damage; M<@potency.weak wcRFIIgjuxEiWtuz (save ends)"
+              "display": "7 psychic damage; M<0 wcRFIIgjuxEiWtuz (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 psychic damage; M<@potency.average wcRFIIgjuxEiWtuz (save ends)"
+              "display": "10 psychic damage; M<1 wcRFIIgjuxEiWtuz (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 psychic damage; M<@potency.strong wcRFIIgjuxEiWtuz (save ends)"
+              "display": "13 psychic damage; M<2 wcRFIIgjuxEiWtuz (save ends)"
             }
           ]
         },

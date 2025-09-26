@@ -156,7 +156,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 damage"
+              "display": "3 damage; taunted (EoT)"
             },
             {
               "tier": 2,
@@ -205,7 +205,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage"
+              "display": "2 damage; {{potency}} prone"
             },
             {
               "tier": 2,

@@ -148,15 +148,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; {{forced}}; A<@potency.weak bleeding (save ends)"
+              "display": "2 damage; pull 1; A<1 bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "3 damage; {{forced}}; A<@potency.average bleeding (save ends)"
+              "display": "3 damage; pull 1; A<2 bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "4 damage; {{forced}}; A<@potency.strong bleeding (save ends)"
+              "display": "4 damage; pull 1; A<3 bleeding (save ends)"
             }
           ]
         },

@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "12 damage; A<@potency.strong bleeding (save ends)"
+              "display": "12 damage; A<2 bleeding (save ends)"
             }
           ]
         },
@@ -122,15 +122,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; {{forced}}"
+              "display": "5 damage; slide 1"
             },
             {
               "tier": 2,
-              "display": "8 damage; {{forced}}; M<@potency.average grabbed (save ends)"
+              "display": "8 damage; slide 2; M<1 grabbed (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 damage; {{forced}}; M<@potency.strong grabbed (save ends)"
+              "display": "10 damage; slide 3"
             }
           ]
         },

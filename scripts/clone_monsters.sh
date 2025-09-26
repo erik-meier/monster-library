@@ -7,7 +7,8 @@ OUTPUT_PATH="data/monsters-original"
 echo "🔄 Cloning monster data from draw-steel repository..."
 git clone git@github.com:MetaMorphic-Digital/draw-steel.git
 find draw-steel/src/packs/monsters -name "folders_*.json" -type f -delete
-rm -rf $OUTPUT_PATH/*
+rm -rf $OUTPUT_PATH
+mkdir -p $OUTPUT_PATH
 mv draw-steel/src/packs/monsters/* $OUTPUT_PATH
 rm -rf draw-steel
 

@@ -85,15 +85,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; P<@potency.weak bleeding (save ends)"
+              "display": "7 damage"
             },
             {
               "tier": 2,
-              "display": "10 damage; {{potency}} {{forced}}; P<@potency.average bleeding (save ends)"
+              "display": "10 damage; {{potency}}  vertical push 2"
             },
             {
               "tier": 3,
-              "display": "13 damage; {{potency}} {{forced}}; P<@potency.strong bleeding (save ends)"
+              "display": "13 damage; {{potency}}  vertical slide 3"
             }
           ]
         },
@@ -137,11 +137,11 @@
             },
             {
               "tier": 2,
-              "display": "6 damage; {{forced}}; M<@potency.average prone"
+              "display": "6 damage; push 2; M<1 prone"
             },
             {
               "tier": 3,
-              "display": "9 damage; {{forced}}; M<@potency.strong prone"
+              "display": "9 damage; push 4"
             }
           ]
         },
@@ -180,15 +180,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "I<@potency.weak frightened (save ends)"
+              "display": "I<0 frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "I<@potency.average frightened (save ends)"
+              "display": "I<1 frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "I<@potency.strong frightened (save ends)"
+              "display": "I<2 frightened (save ends)"
             }
           ]
         },

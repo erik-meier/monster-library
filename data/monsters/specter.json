@@ -103,15 +103,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 corruption damage; P<@potency.weak weakened (save ends)"
+              "display": "3 corruption damage; P<0 weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "4 corruption damage; P<@potency.average weakened (save ends)"
+              "display": "4 corruption damage; P<1 weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "5 corruption damage; P<@potency.strong weakened (save ends)"
+              "display": "5 corruption damage; P<2 weakened (save ends)"
             }
           ]
         },

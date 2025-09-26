@@ -96,15 +96,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; A<@potency.weak bleeding (save ends)"
+              "display": "8 damage; A<1 bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 damage; A<@potency.average bleeding (save ends)"
+              "display": "11 damage"
             },
             {
               "tier": 3,
-              "display": "14 damage; A<@potency.strong djensfHmTU8RzHZe (save ends)"
+              "display": "14 damage; A<3 djensfHmTU8RzHZe (save ends)"
             }
           ]
         },

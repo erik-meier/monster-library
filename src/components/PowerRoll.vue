@@ -3,7 +3,7 @@
     <div v-if="tiers && tiers.length > 0" class="outcomes">
       <div v-for="tierData in tiers" :key="tierData.tier" class="outcome" :class="`tier-${tierData.tier}`">
         <span class="tier-number">{{ formatTierNumber(tierData.tier) }}</span>
-        <span class="outcome-text" v-html="processedDisplay(tierData.display)"></span>
+        <span class="outcome-text" v-html="tierData.display"></span>
       </div>
     </div>
 
@@ -27,16 +27,8 @@ export default {
     }
   },
   methods: {
-    processedDisplay(display) {
-      // Handle any remaining @potency patterns in display text
-      if (display && display.includes('@potency')) {
-        // For now, just remove @potency patterns since they should be processed in the pipeline
-        return display.replace(/@potency\.(weak|average|strong)/g, '0');
-      }
-      return display;
-    },
     formatTierNumber(tier) {
-      const tierMap = { 1: '11-', 2: '12-16', 3: '17+' }
+      const tierMap = { 1: '<=11', 2: '12-16', 3: '17+' }
       return tierMap[tier] || tier
     }
   }

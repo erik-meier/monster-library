@@ -78,11 +78,11 @@
             },
             {
               "tier": 2,
-              "display": "12 fire damage; A<@potency.average fAMkcXAH7Fy3kJAq (save ends)"
+              "display": "12 fire damage; A<1 fAMkcXAH7Fy3kJAq (save ends)"
             },
             {
               "tier": 3,
-              "display": "15 fire damage; A<@potency.strong fAMkcXAH7Fy3kJAq (save ends)"
+              "display": "15 fire damage"
             }
           ]
         },

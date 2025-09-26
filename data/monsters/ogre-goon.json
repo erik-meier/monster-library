@@ -72,15 +72,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; {{forced}}"
+              "display": "7 damage; push 2"
             },
             {
               "tier": 2,
-              "display": "11 damage; {{forced}}"
+              "display": "11 damage; push 4"
             },
             {
               "tier": 3,
-              "display": "14 damage; {{forced}}; P<@potency.strong prone"
+              "display": "14 damage; push 6; P<2 prone"
             }
           ]
         },
@@ -125,11 +125,11 @@
             },
             {
               "tier": 2,
-              "display": "11 damage; P<@potency.average grabbed"
+              "display": "11 damage; P<1 grabbed"
             },
             {
               "tier": 3,
-              "display": "14 damage; P<@potency.strong grabbed"
+              "display": "14 damage"
             }
           ]
         },
@@ -180,7 +180,7 @@
             },
             {
               "tier": 3,
-              "display": "12 damage; P<@potency.strong prone"
+              "display": "12 damage; P<2 prone"
             }
           ]
         },

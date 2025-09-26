@@ -96,7 +96,7 @@
             },
             {
               "tier": 3,
-              "display": "14 damage; M<@potency.strong bleeding (save ends)"
+              "display": "14 damage; M<2 bleeding (save ends)"
             }
           ]
         },

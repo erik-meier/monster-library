@@ -72,15 +72,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage; {{forced}}; P<@potency.weak restrained"
+              "display": "6 damage; push 1"
             },
             {
               "tier": 2,
-              "display": "9 damage; {{forced}}; P<@potency.average restrained"
+              "display": "9 damage; push 3"
             },
             {
               "tier": 3,
-              "display": "12 damage; {{forced}}; P<@potency.strong restrained"
+              "display": "12 damage; push 5"
             }
           ]
         },

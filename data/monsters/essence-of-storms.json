@@ -78,11 +78,11 @@
             },
             {
               "tier": 2,
-              "display": "5 damage; 4 lightning damage; {{forced}}"
+              "display": "5 damage; 4 lightning damage; push 1"
             },
             {
               "tier": 3,
-              "display": "5 damage; 7 lightning damage; {{forced}}"
+              "display": "5 damage; 7 lightning damage; push 3"
             }
           ]
         },

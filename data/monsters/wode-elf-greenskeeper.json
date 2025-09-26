@@ -73,15 +73,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; P<@potency.weak taunted"
+              "display": "5 damage"
             },
             {
               "tier": 2,
-              "display": "7 damage; P<@potency.average taunted"
+              "display": "7 damage"
             },
             {
               "tier": 3,
-              "display": "9 damage; P<@potency.strong taunted"
+              "display": "9 damage"
             }
           ]
         },

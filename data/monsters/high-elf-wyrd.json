@@ -73,15 +73,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "{{forced}}"
+              "display": "vertical push 3"
             },
             {
               "tier": 2,
-              "display": "{{forced}}"
+              "display": "vertical push 5"
             },
             {
               "tier": 3,
-              "display": "{{forced}}"
+              "display": "vertical push 6"
             }
           ]
         },

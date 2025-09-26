@@ -97,15 +97,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; P<@potency.weak grabbed"
+              "display": "9 damage; P<1 grabbed"
             },
             {
               "tier": 2,
-              "display": "13 damage; P<@potency.average grabbed"
+              "display": "13 damage; P<2 grabbed"
             },
             {
               "tier": 3,
-              "display": "16 damage; P<@potency.strong grabbed"
+              "display": "16 damage; P<3 grabbed"
             }
           ]
         },
@@ -146,15 +146,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; A<@potency.weak grabbed"
+              "display": "5 damage; A<1 grabbed"
             },
             {
               "tier": 2,
-              "display": "8 damage; A<@potency.average grabbed"
+              "display": "8 damage; A<2 grabbed"
             },
             {
               "tier": 3,
-              "display": "11 damage; A<@potency.strong grabbed"
+              "display": "11 damage; A<3 grabbed"
             }
           ]
         },
@@ -203,7 +203,7 @@
             },
             {
               "tier": 3,
-              "display": "7 acid damage; P<@potency.strong prone"
+              "display": "7 acid damage; P<3 prone"
             }
           ]
         },
@@ -246,11 +246,11 @@
             },
             {
               "tier": 2,
-              "display": "6 damage; {{forced}}"
+              "display": "6 damage; push 2"
             },
             {
               "tier": 3,
-              "display": "7 damage; {{forced}}"
+              "display": "7 damage; push 4"
             }
           ]
         },
@@ -427,15 +427,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 acid damage; M<@potency.weak weakened (save ends)"
+              "display": "5 acid damage; M<1 weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 acid damage; M<@potency.average weakened (save ends)"
+              "display": "8 acid damage; M<2 weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 acid damage; M<@potency.strong weakened (save ends)"
+              "display": "11 acid damage; M<3 weakened (save ends)"
             }
           ]
         },

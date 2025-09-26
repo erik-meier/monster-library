@@ -74,15 +74,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 acid damage; {{forced}}"
+              "display": "8 acid damage; pull 1"
             },
             {
               "tier": 2,
-              "display": "10 acid damage; {{forced}}"
+              "display": "10 acid damage; pull 2"
             },
             {
               "tier": 3,
-              "display": "14 acid damage; {{forced}}"
+              "display": "14 acid damage; pull 3"
             }
           ]
         },
@@ -124,15 +124,11 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "A<@potency.weak restrained (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "A<@potency.average restrained (save ends)"
+              "display": "A<0 restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "M<@potency.strong restrained, slowed (save ends)"
+              "display": "M<2 restrained, slowed (save ends)"
             }
           ]
         },
@@ -174,15 +170,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 corruption damage; R<@potency.weak dazed (save ends)"
+              "display": "8 corruption damage; R<0 dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 corruption damage; R<@potency.average dazed (save ends)"
+              "display": "10 corruption damage"
             },
             {
               "tier": 3,
-              "display": "14 corruption damage; R<@potency.strong flNT7bl6d8W4fw2h"
+              "display": "14 corruption damage; R<2 flNT7bl6d8W4fw2h"
             }
           ]
         },
