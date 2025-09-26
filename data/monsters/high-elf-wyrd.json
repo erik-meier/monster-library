@@ -73,21 +73,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "vertical push 3"
+              "display": " vertical push 3"
             },
             {
               "tier": 2,
-              "display": "vertical push 5"
+              "display": " vertical push 5"
             },
             {
               "tier": 3,
-              "display": "vertical push 6"
+              "display": " vertical push 6"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>For each elemental mote adjacent to the wyrd, the size of the cube increases by 1.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -122,6 +126,10 @@
         "effect": {
           "before": "",
           "after": "<p>The wyrd summons two <strong><span class=\"reference-text\">Elemental Motes</span></strong> or two <strong><span class=\"reference-text\">Soot Crows</span></strong> into unoccupied spaces within distance.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -158,6 +166,10 @@
         "effect": {
           "before": "",
           "after": "<p>The wyrd shapes the land in the area as if it were loose clay, either raising the ground or pushing it down to create a trench. Any creature in the area moves with the terrain to its new higher elevation, or falls if the ground is lowered beneath them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -186,6 +198,10 @@
         "effect": {
           "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -219,21 +235,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
           "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -262,6 +282,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

@@ -102,6 +102,10 @@
         "effect": {
           "before": "<p>Note: targets each Enemy and Object</p><p>Each target makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"91\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-cold\">14 cold</span> damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"91\"><p>12-16</p></td><td><p><span class=\"damage-value damage-cold\">11 cold</span> damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"91\"><p>17+</p></td><td><p><span class=\"damage-value damage-cold\">6 cold</span> damage</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -137,21 +141,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "10 psychic damage; pull 2"
+              "display": "10 psychic damage;  pull 2"
             },
             {
               "tier": 2,
-              "display": "15 psychic damage; pull 4"
+              "display": "15 psychic damage;  pull 4"
             },
             {
               "tier": 3,
-              "display": "18 psychic damage; pull 6"
+              "display": "18 psychic damage;  pull 6"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "The pull becomes a vertical slide.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The pull becomes a vertical slide."
         }
       }
     },
@@ -187,6 +196,10 @@
         "effect": {
           "before": "<p>Each target must be dragonsealed. Each target takes <span class=\"damage-value damage-psychic\">3 psychic</span> damage, and if they have I &lt; 3 they immediately make a free strike against one ally of the dragon's choice.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -218,6 +231,10 @@
         "effect": {
           "before": "<p>The dragon moves two existing cubes of magical darkness they created up to 10 squares each.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -251,21 +268,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "pull 2; I<2 frightened"
+              "display": " pull 2; <strong class=\"potency-value\">I<2</strong> frightened (EoT)"
             },
             {
               "tier": 2,
-              "display": "pull 4; I<3 frightened (save ends)"
+              "display": " pull 4; <strong class=\"potency-value\">I<3</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "pull 6"
+              "display": " pull 6"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -314,6 +335,10 @@
         "effect": {
           "before": "",
           "after": "<p>Each target must be dragonsealed. Any target who has I &lt; 3 is also dazed (save ends).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -347,6 +372,10 @@
         "effect": {
           "before": "",
           "after": "<p>The dragon disappears from the encounter map. The dragon and three hallucinatory illusions of themself then immediately reappear in unoccupied spaces on the encounter map, and the dragon and each illusion uses Breath of Brume. Each illusion is indistinguishable from the dragon except by supernatural means, has 1 Stamina, and has the dragon's speed. An illusion acts on the dragon's turns but can take only move actions. Once per round before or after using an ability, the dragon can trade places with any duplicate.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -375,6 +404,10 @@
         "effect": {
           "before": "<p>The dragon thickens the fog of their Gloaming Wyrmscale Aura trait and the horrors within it. Each creature in the area takes a bane on strikes made against the dragon until the start of the dragon’s next turn.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -403,6 +436,10 @@
         "effect": {
           "before": "<p>The dragon manifests four 2 cubes of nightmarish apparitions anywhere on the encounter map. Each creature in the area when it appears makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Intuition test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">14</span> damage; dazed (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; dazed (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -431,6 +468,10 @@
         "effect": {
           "before": "<p>The dragon takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -459,6 +500,10 @@
         "effect": {
           "before": "<p>The dragon summons macabre, disquieting phantasms in a 10 cube within 1 square that lasts until the end of the encounter. Any enemy who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-psychic\">6 psychic</span> damage, or <span class=\"damage-value damage-psychic\">8 psychic</span> damage if they are dragonsealed by the gloom dragon. Additionally, the enemy’s Intuition score is treated as 1 lower for the purpose of resisting potencies until the end of the encounter.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

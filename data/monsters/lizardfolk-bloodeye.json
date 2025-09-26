@@ -72,21 +72,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; A<0 restrained (save ends)"
+              "display": "5 damage; <strong class=\"potency-value\">A<0</strong> restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 damage; A<1 restrained (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">A<1</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; A<2 restrained (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -121,21 +125,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 acid damage; M<0 CeHsuaeJBSk9zHLW"
+              "display": "5 acid damage; <strong class=\"potency-value\">M<0</strong> the target has line of effect only within 4 squares (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 acid damage; M<1 fsrOwbQJuzkl0P5M"
+              "display": "7 acid damage; <strong class=\"potency-value\">M<1</strong> the target has line of effect only within 3 squares (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 acid damage; M<2 5foqFKboxvzrPq2M"
+              "display": "9 acid damage; <strong class=\"potency-value\">M<2</strong> the target has line of effect only within 2 squares (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

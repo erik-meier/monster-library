@@ -76,21 +76,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; pull 1"
+              "display": "7 damage;  pull 1"
             },
             {
               "tier": 2,
-              "display": "10 damage; pull 2"
+              "display": "10 damage;  pull 2"
             },
             {
               "tier": 3,
-              "display": "13 damage; pull 3; A<2 restrained (save ends)"
+              "display": "13 damage;  pull 3; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>This ability can target creatures on parallel planes of existence and pull them onto the nemesis's plane.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -125,21 +129,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 psychic damage; M<0 wcRFIIgjuxEiWtuz (save ends)"
+              "display": "7 psychic damage; <strong class=\"potency-value\">M<0</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 psychic damage; M<1 wcRFIIgjuxEiWtuz (save ends)"
+              "display": "10 psychic damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 psychic damage; M<2 wcRFIIgjuxEiWtuz (save ends)"
+              "display": "13 psychic damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>Any creature slowed this way takes <span class=\"damage-value damage-damage\">2 damage</span> for each square they move or are force moved until that condition ends.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -175,6 +183,10 @@
         "effect": {
           "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -203,6 +215,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -231,6 +247,10 @@
         "effect": {
           "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

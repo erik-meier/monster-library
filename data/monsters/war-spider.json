@@ -93,13 +93,18 @@
             },
             {
               "tier": 3,
-              "display": "14 poison damage; M<2 weakened (save ends)"
+              "display": "14 poison damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "For any tier outcome, if the target has M < 3, they are  weakened (save ends).",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> For any tier outcome, if the target has M < 3, they are  weakened (save ends)."
         }
       }
     },
@@ -149,6 +154,10 @@
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -177,6 +186,10 @@
         "effect": {
           "before": "<p>The spider shifts up to their speed and uses Leg Blade against each creature who comes adjacent to them during the shift. The spider makes one power roll against all targets.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -211,21 +224,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "A<0 restrained (save ends)"
+              "display": "<strong class=\"potency-value\">A<0</strong> restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "A<1 restrained (save ends)"
+              "display": "<strong class=\"potency-value\">A<1</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "A<2 restrained (save ends)"
+              "display": "<strong class=\"potency-value\">A<2</strong> restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>The area is difficult terrain for enemies.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -254,6 +271,10 @@
         "effect": {
           "before": "<p>The damage is halved, and the spider shifts up to 2 squares after the triggering effect resolves.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

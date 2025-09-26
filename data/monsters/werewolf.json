@@ -110,21 +110,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; P<1 WgMV5KOjsKOc1aKL"
+              "display": "9 damage; the target gains 2 rage"
             },
             {
               "tier": 2,
-              "display": "13 damage; P<2 WgMV5KOjsKOc1aKL"
+              "display": "13 damage; the target gains 4 rage"
             },
             {
               "tier": 3,
-              "display": "16 damage; P<3 WgMV5KOjsKOc1aKL"
+              "display": "16 damage; the target gains 5 rage"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "If the target has P < 0, they are afflicted with lycanthropy. Each time the target is unaffected by the potency effect, the potency increases by 1 the next time the werewolf uses the ability against the same target. A creature afflicted with lycanthropy gains 2 rage at the end of each of their turns whenever they’re in combat. Their rage doesn’t disappear after finishing a respite, and they must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If the target has P < 0, they are afflicted with lycanthropy. Each time the target is unaffected by the potency effect, the potency increases by 1 the next time the werewolf uses the ability against the same target. A creature afflicted with lycanthropy gains 2 rage at the end of each of their turns whenever they’re in combat. Their rage doesn’t disappear after finishing a respite, and they must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect."
         }
       }
     },
@@ -159,21 +164,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; M<1 bleeding (save ends)"
+              "display": "8 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 damage; M<2 bleeding, rDsdlqr0JEElIIyw (save ends)"
+              "display": "11 damage; the target gains 1 rage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 damage; M<3 bleeding, rDsdlqr0JEElIIyw (save ends)"
+              "display": "14 damage; the target gains 3 rage; <strong class=\"potency-value\">M<3</strong> bleeding (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -207,21 +216,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; push 2"
+              "display": "4 damage;  push 2"
             },
             {
               "tier": 2,
-              "display": "6 damage; push 3; P<2 Y5l5EHKEDqQRwyKB"
+              "display": "6 damage;  push 3; the target gains 1 rage"
             },
             {
               "tier": 3,
-              "display": "7 damage; slide 3; P<3 Y5l5EHKEDqQRwyKB"
+              "display": "7 damage;  slide 3; the target gains 3 rage"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -250,6 +263,10 @@
         "effect": {
           "before": "<p>The werewolf jumps up to 4 squares. If they end this jump at a wall, the werewolf jumps off the wall up to 4 squares and can make a melee free strike. If the target of the free strike has m&lt;2, they are knocked prone.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -282,6 +299,10 @@
         "effect": {
           "before": "<p>The target is knocked prone and takes 5 damage before the triggering ability is resolved.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -314,6 +335,10 @@
         "effect": {
           "before": "<p>Each target makes an Intuition test.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The target must move their speed in a straight line away from the werewolf; frightened (save ends)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": "<p>Any enemy in the encounter who has 1 or more rage gains 4 rage and howls along with the werewolf.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -342,6 +367,10 @@
         "effect": {
           "before": "<p>The werewolf transforms into a massive wolf of size 3 until they die or until the end of the encounter. They move to a space that can accommodate their new size and push adjacent creatures out of their way. While in wolf form, they have speed 10 and stability 2, their strikes gain a +2 damage bonus and bestow an additional 1 rage, and the potency of Accursed Bite increases by 1.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -369,21 +398,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; M<1 bleeding, EeHlWpCVsUbyUhpl (save ends)"
+              "display": "5 damage; the target gains 2 rage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; M<2 bleeding, EeHlWpCVsUbyUhpl (save ends)"
+              "display": "8 damage; the target gains 4 rage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 damage; M<3 bleeding, EeHlWpCVsUbyUhpl (save ends)"
+              "display": "11 damage; the target gains 8 rage; <strong class=\"potency-value\">M<3</strong> bleeding (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -412,6 +445,10 @@
         "effect": {
           "before": "<p>The werewolf gains 10 temporary Stamina and a +3 bonus to speed until the end of their turn. The werewolf can’t use this fea ture if they took any holy damage since ending their last turn.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -440,6 +477,10 @@
         "effect": {
           "before": "<p>Until the end of the encounter, the encounter map turns to night and the moon appears impossibly huge in the sky. The werewolf can take an additional move action or maneuver on each of their turns while they have line of effect to the moon. Any creature who ends their turn with line of effect to the moon with 1 or more rage gains 2 rage.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -469,6 +510,10 @@
         "effect": {
           "before": "<p>The werewolf takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

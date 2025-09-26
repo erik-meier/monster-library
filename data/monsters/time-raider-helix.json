@@ -75,21 +75,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 corruption damage; push 2"
+              "display": "6 corruption damage;  push 2"
             },
             {
               "tier": 2,
-              "display": "8 corruption damage; push 4"
+              "display": "8 corruption damage;  push 4"
             },
             {
               "tier": 3,
-              "display": "11 corruption damage; push 6; A<2 prone (save ends)"
+              "display": "11 corruption damage;  push 6; prone"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -128,6 +132,11 @@
         "effect": {
           "before": "",
           "after": "<p>The area is a psionically charged treadmill that pushes creatures and objects at high speed in one direction of the helix's choice. Any creature who enters the area or starts their turn there slides 3 squares toward the end of the area in the chosen direction. Each enemy in the area when it first appears takes <span class=\"damage-value damage-damage\">3 damage</span> before they slide.</p>"
+        },
+        "spend": {
+          "text": "The helix creates a second kinetic lane.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The helix creates a second kinetic lane."
         }
       }
     },
@@ -163,6 +172,10 @@
         "effect": {
           "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -191,6 +204,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -219,6 +236,10 @@
         "effect": {
           "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

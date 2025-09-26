@@ -89,17 +89,21 @@
             },
             {
               "tier": 2,
-              "display": "9 damage; pull 1"
+              "display": "9 damage;  pull 1"
             },
             {
               "tier": 3,
-              "display": "12 damage; pull 2"
+              "display": "12 damage;  pull 2"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>If the target is pulled into the animal swarm, that forced movement deals damage only at the Director's determination.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -134,6 +138,10 @@
         "effect": {
           "before": "",
           "after": "<p>The area is difficult terrain for enemies until the start of the animal swarm's next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

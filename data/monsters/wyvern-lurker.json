@@ -90,7 +90,7 @@
             },
             {
               "tier": 2,
-              "display": "14 damage; M<2 bleeding (save ends)"
+              "display": "14 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
@@ -101,6 +101,11 @@
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "One target hidden from the lurker takes an extra 6 acid damage.",
+          "value": 1,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> One target hidden from the lurker takes an extra 6 acid damage."
         }
       }
     },
@@ -135,21 +140,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "10 acid damage; M<1 weakened (save ends)"
+              "display": "10 acid damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "16 acid damage; M<2 weakened (save ends)"
+              "display": "16 acid damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "20 acid damage; M<3 weakened (save ends)"
+              "display": "20 acid damage; <strong class=\"potency-value\">M<3</strong> weakened (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>A target weakened this way takes <span class=\"damage-value damage-acid\">1d4 acid</span> damage at the start of each of their turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -181,6 +190,10 @@
         "effect": {
           "before": "<p>The lurker flies up to their speed, then can attempt to hide. Each enemy the lurker moves adjacent to during this movement can choose to take <span class=\"damage-value damage-sonic\">3 sonic</span> damage or fall prone.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -215,6 +228,10 @@
         "effect": {
           "before": "<p>The lurker flies adjacent to the target and can make a free strike against them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -243,6 +260,10 @@
         "effect": {
           "before": "<p>One wyvern in the encounter can make a free strike against each enemy adjacent to them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -271,6 +292,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each wyvern in the encounter has a double edge on strikes and can use their signature ability instead of a free strike when making opportunity attacks.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -299,6 +324,10 @@
         "effect": {
           "before": "<p>Every wyvern’s anger fills the encounter map with a thick miasma</p><p>of hatred. Each enemy in the encounter makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Intuition test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target is taunted by the nearest creature or object (save ends). While the target is taunted this way, power rolls against them have a double edge.</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target is taunted by the nearest creature or object (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

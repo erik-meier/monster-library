@@ -66,6 +66,10 @@
         "effect": {
           "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -94,6 +98,10 @@
         "effect": {
           "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -144,6 +152,10 @@
         "effect": {
           "before": "",
           "after": "<p>If the target is restrained, they take an extra <span class=\"damage-value damage-generic\">2</span> damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

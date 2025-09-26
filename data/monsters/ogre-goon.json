@@ -72,21 +72,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; push 2"
+              "display": "7 damage;  push 2"
             },
             {
               "tier": 2,
-              "display": "11 damage; push 4"
+              "display": "11 damage;  push 4"
             },
             {
               "tier": 3,
-              "display": "14 damage; push 6; P<2 prone"
+              "display": "14 damage;  push 6; prone"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>Any target who takes damage from this forced movement takes an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -125,7 +129,7 @@
             },
             {
               "tier": 2,
-              "display": "11 damage; P<1 grabbed"
+              "display": "11 damage; grabbed"
             },
             {
               "tier": 3,
@@ -136,6 +140,10 @@
         "effect": {
           "before": "",
           "after": "<p>A target grabbed this way takes a bane on the Escape Grab maneuver.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -180,13 +188,17 @@
             },
             {
               "tier": 3,
-              "display": "12 damage; P<2 prone"
+              "display": "12 damage; Prone"
             }
           ]
         },
         "effect": {
           "before": "<p>The goon must have a size 1 creature or object grabbed, which they hurl across the area, ending the grab. The hurled creature or object is targeted by the ability, and lands in the last square of the line or the nearest unoccupied square of the goon’s choice.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -219,6 +231,10 @@
         "effect": {
           "before": "<p>The goon slides the target up to 5 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -247,6 +263,10 @@
         "effect": {
           "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -275,6 +295,10 @@
         "effect": {
           "before": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -303,6 +327,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

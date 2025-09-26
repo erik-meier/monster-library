@@ -73,7 +73,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 cold damage; {{potency}}  push 3"
+              "display": "4 cold damage; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;0</strong></strong>  push 3"
             },
             {
               "tier": 2,
@@ -88,6 +88,10 @@
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -122,7 +126,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; R<0 slowed (save ends)"
+              "display": "5 damage; <strong class=\"potency-value\">R<0</strong> slowed (save ends)"
             },
             {
               "tier": 2,
@@ -130,13 +134,17 @@
             },
             {
               "tier": 3,
-              "display": "11 damage; R<2 restrained (save ends)"
+              "display": "11 damage; <strong class=\"potency-value\">R<2</strong> restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>Each enemy within 3 squares of a target suffers the same potency effect as the target unless they are already adjacent to them, or if they immediately shift into an unoccupied space adjacent to the target (no action required).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -165,6 +173,10 @@
         "effect": {
           "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -198,21 +210,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
           "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -241,6 +257,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

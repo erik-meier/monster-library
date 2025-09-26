@@ -75,6 +75,10 @@
         "effect": {
           "after": "<p>The target takes a bane on their next strike.</p>",
           "before": ""
+        },
+        "spend": {
+          "value": null,
+          "text": ""
         }
       }
     }

@@ -87,21 +87,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 cold damage; P<1 slowed (save ends)"
+              "display": "7 cold damage; <strong class=\"potency-value\">P<1</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 cold damage; P<2 slowed (save ends)"
+              "display": "10 cold damage; <strong class=\"potency-value\">P<2</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 cold damage; P<3 slowed (save ends)"
+              "display": "13 cold damage; <strong class=\"potency-value\">P<3</strong> slowed (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>The next strike made against the target gains an edge.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -131,6 +135,11 @@
         "effect": {
           "before": "<p><strong>Note: Self or one ally with a Phasing trait.</strong></p><p>The target shifts up to their speed.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "The ghost chooses one additional target.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ghost chooses one additional target."
         }
       }
     },
@@ -164,6 +173,10 @@
         "effect": {
           "before": "<p>The ghost halves the damage from the strike and the target takes 2 sonic damage.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -197,6 +210,10 @@
         "effect": {
           "before": "<p>Note: Targets Each 3 size or smaller object in the area</p><p>Each target rises 1 square into the air and is vertically pulled up to 5 squares toward the nearest enemy within 3 squares of the target.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -230,21 +247,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "P<1 WQ3ZqbDJ5jujIlKb"
+              "display": "{{potency}} the target is levitated (EoT)"
             },
             {
               "tier": 2,
-              "display": "P<2 WQ3ZqbDJ5jujIlKb"
+              "display": "{{potency}} the target is levitated (EoT)"
             },
             {
               "tier": 3,
-              "display": "P<3 WQ3ZqbDJ5jujIlKb"
+              "display": "{{potency}} the target is levitated until the end of the encounter"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>A levitated target floats 1 square off the ground when first affected, then rises 1 square at the end of each of their turns. If a levitated target can’t already fly, they can fly but are slowed and weakened while flying this way.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -293,6 +314,10 @@
         "effect": {
           "before": "",
           "after": "<p>A target who has p&lt;2 is reduced to 1 Stamina if they are winded after taking this damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -321,6 +346,10 @@
         "effect": {
           "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -349,6 +378,10 @@
         "effect": {
           "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -377,6 +410,10 @@
         "effect": {
           "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -405,6 +442,10 @@
         "effect": {
           "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
           "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

@@ -88,7 +88,11 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>One ally within 10 squares of the monarch can make a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike}.</p>"
+          "after": "<p>One ally within 10 squares of the monarch can make a <span class=\"damage-value damage-generic\">4</span> damage free strike.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -120,6 +124,10 @@
         "effect": {
           "before": "<p>Two goblin runners appear in unoccupied spaces within distance.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -152,6 +160,10 @@
         "effect": {
           "before": "<p>The ally is the target of the triggering strike instead.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -184,6 +196,10 @@
         "effect": {
           "before": "<p>Each target can move up to their speed or make a free strike.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -216,6 +232,10 @@
         "effect": {
           "before": "<p>Note: One enemy or object</p><p>Each ally within 10 squares of the target can move up to their speed toward the target.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -244,6 +264,10 @@
         "effect": {
           "before": "<p>Each enemy in the encounter takes 2 damage for each goblin adjacent to them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -272,6 +296,10 @@
         "effect": {
           "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -302,6 +330,10 @@
         "effect": {
           "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -330,6 +362,10 @@
         "effect": {
           "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

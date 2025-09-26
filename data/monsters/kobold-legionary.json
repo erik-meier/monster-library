@@ -66,6 +66,10 @@
         "effect": {
           "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -94,6 +98,10 @@
         "effect": {
           "before": "<p>Two kobolds take their turns in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -122,6 +130,10 @@
         "effect": {
           "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -160,17 +172,22 @@
             },
             {
               "tier": 2,
-              "display": "4 damage"
+              "display": "4 damage; taunted (EoT)"
             },
             {
               "tier": 3,
-              "display": "5 damage"
+              "display": "5 damage; taunted (EoT)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "If the legionary is acting as a captain, they and each mem ber of their squad shift up to 2 squares before this ability is used.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> If the legionary is acting as a captain, they and each mem ber of their squad shift up to 2 squares before this ability is used."
         }
       }
     },
@@ -209,17 +226,21 @@
             },
             {
               "tier": 2,
-              "display": "3 damage"
+              "display": "3 damage; {{potency}} prone"
             },
             {
               "tier": 3,
-              "display": "4 damage"
+              "display": "4 damage; {{potency}} prone"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

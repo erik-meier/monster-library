@@ -74,21 +74,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; pull 1"
+              "display": "8 damage;  pull 1"
             },
             {
               "tier": 2,
-              "display": "12 damage; pull 2"
+              "display": "12 damage;  pull 2"
             },
             {
               "tier": 3,
-              "display": "15 damage; pull 3"
+              "display": "15 damage;  pull 3"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>A target pulled adjacent to the sunderer is automatically grabbed.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -121,21 +125,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "I<0 frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I<0</strong> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "I<1 frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I<1</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "I<2 frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I<2</strong> frightened (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p>Until the end of their next turn, the minotaur has damage immunity 2 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with strikes.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -171,21 +179,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; M<0 E2gCg4YMnH2by3Gi (save ends)"
+              "display": "5 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; M<1 E2gCg4YMnH2by3Gi (save ends)"
+              "display": "8 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; M<2 E2gCg4YMnH2by3Gi (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>While bleeding this way, the target takes <span class=\"damage-value damage-generic\">1d6</span> damage at the start of each of their turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -220,6 +232,10 @@
         "effect": {
           "before": "",
           "after": "<p>The sunderer uses the Charge main action and Spiked Maul against the target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -248,6 +264,10 @@
         "effect": {
           "before": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -276,6 +296,10 @@
         "effect": {
           "before": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -304,6 +328,10 @@
         "effect": {
           "before": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

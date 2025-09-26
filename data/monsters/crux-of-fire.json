@@ -78,7 +78,7 @@
             },
             {
               "tier": 2,
-              "display": "12 fire damage; A<1 fAMkcXAH7Fy3kJAq (save ends)"
+              "display": "12 fire damage; <strong class=\"potency-value\">A<1</strong> the target is burning (save ends)"
             },
             {
               "tier": 3,
@@ -89,6 +89,10 @@
         "effect": {
           "before": "",
           "after": "<p>A burning creature takes <span class=\"damage-value damage-fire\">1d6 fire</span> damage at the start of each of their turns. A burning object takes <span class=\"damage-value damage-fire\">1d6 fire</span> damage at the end of each round.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -124,6 +128,11 @@
         "effect": {
           "before": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the crux's next turn, the target has fire immunity 5.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "Until the end of the encounter, the ground within 3 squares  of the target is wreathed in fire. Any enemy who enters that area for  the first time in a round or starts their turn there takes 3 fire damage.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the ground within 3 squares  of the target is wreathed in fire. Any enemy who enters that area for  the first time in a round or starts their turn there takes 3 fire damage."
         }
       }
     },
@@ -157,6 +166,10 @@
         "effect": {
           "before": "",
           "after": "<p>The crux ignores any effects associated with the damage and can fly up to their speed. If the crux doesn't end this movement on solid ground, they fall.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -185,6 +198,10 @@
         "effect": {
           "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -213,6 +230,10 @@
         "effect": {
           "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -242,6 +263,10 @@
         "effect": {
           "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

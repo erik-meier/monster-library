@@ -74,21 +74,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 lightning damage; R<1 dazed (save ends)"
+              "display": "9 lightning damage; <strong class=\"potency-value\">R<1</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "14 lightning damage; R<2 dazed (save ends)"
+              "display": "14 lightning damage; <strong class=\"potency-value\">R<2</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "17 lightning damage; R<3 dazed (save ends)"
+              "display": "17 lightning damage; <strong class=\"potency-value\">R<3</strong> dazed (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>Until the start of the ordinator's next turn, each ally high elf in the encounter gains an edge on ability rolls against the target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -124,6 +128,10 @@
         "effect": {
           "before": "<p>Note: Targets Each elemental ally in the area</p><p>Each target can move up to their speed or make a free strike. Elemental mote targets can, instead, use their Spark of Life trait.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -158,6 +166,11 @@
         "effect": {
           "before": "",
           "after": "<p>The ordinator summons four <span class=\"reference-text\">Elemental Motes</span> or four <span class=\"reference-text\">Soot Crows</span> into unoccupied space within distance.</p>"
+        },
+        "spend": {
+          "text": "The ordinator instead summons one ceramic horse or one  winded brambleguard into an unoccupied space within distance.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The ordinator instead summons one ceramic horse or one  winded brambleguard into an unoccupied space within distance."
         }
       }
     },
@@ -192,6 +205,10 @@
         "effect": {
           "before": "<p>The ordinator uses Lightning Rod against the target after the ability is resolved.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -227,6 +244,10 @@
         "effect": {
           "before": "<p>Each target glows briefly, and can end one effect on themself then move up to their speed.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -264,6 +285,10 @@
         "effect": {
           "before": "<p>Each target makes a **Presence test**.</p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-corruption\">12 corruption</span> damage; pull 5 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-corruption\">9 corruption</span> damage; pull 3 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p>Pull 1 toward the center of the cube</p></td></tr></tbody></table>",
           "after": "<p>The area turns dark and distorted, and is difficult terrain for enemies.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -299,6 +324,10 @@
         "effect": {
           "before": "<p>Each target’s free strike now has the Magic keyword and can target two creatures or objects. Additionally, each target glows with magic.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -339,6 +368,10 @@
         "effect": {
           "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -372,21 +405,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
           "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -415,6 +452,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

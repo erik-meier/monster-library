@@ -61,21 +61,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; push 1"
+              "display": "2 damage;  push 1"
             },
             {
               "tier": 2,
-              "display": "4 damage; push 3"
+              "display": "4 damage;  push 3"
             },
             {
               "tier": 3,
-              "display": "5 damage; push 4"
+              "display": "5 damage;  push 4"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -116,6 +120,10 @@
         "effect": {
           "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -144,6 +152,10 @@
         "effect": {
           "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -174,6 +186,10 @@
         "effect": {
           "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

@@ -79,7 +79,7 @@
             },
             {
               "tier": 2,
-              "display": "7 psychic damage; I<1 weakened (save ends)"
+              "display": "7 psychic damage; <strong class=\"potency-value\">I<1</strong> weakened (save ends)"
             },
             {
               "tier": 3,
@@ -90,6 +90,11 @@
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "The potency increases by 1. If the target is weakened this  way at the end of the encounter, they can’t take a respite activity  during their next respite.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The potency increases by 1. If the target is weakened this  way at the end of the encounter, they can’t take a respite activity  during their next respite."
         }
       }
     },
@@ -125,6 +130,10 @@
         "effect": {
           "before": "",
           "after": "<p>Each target can teleport to an unoccupied space adjacent to the palinode. The palinode and each target then gain [[/heal 5 temporary]].</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -153,6 +162,10 @@
         "effect": {
           "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -186,21 +199,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
           "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -229,6 +246,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

@@ -100,6 +100,10 @@
         "effect": {
           "before": "",
           "after": "<p>Special: If the drangolin is size 3, the distance becomes Melee 2.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -128,6 +132,10 @@
         "effect": {
           "before": "<p>The drangolin shifts up to their speed and uses Fiery Claws against each creature who comes adjacent to them during the shift. The drangolin makes one power roll against all targets.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -161,21 +169,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage; push 1; A<0 prone"
+              "display": "6 damage;  push 1; <strong class=\"potency-value\">A<0</strong> prone"
             },
             {
               "tier": 2,
-              "display": "8 damage; push 3; A<0 prone"
+              "display": "8 damage;  push 3; <strong class=\"potency-value\">A<0</strong> prone"
             },
             {
               "tier": 3,
-              "display": "11 damage; push 5; A<0 prone"
+              "display": "11 damage;  push 5; <strong class=\"potency-value\">A<0</strong> prone"
             }
           ]
         },
         "effect": {
           "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra <span class=\"damage-value damage-fire\">2 fire</span> damage.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -204,6 +216,10 @@
         "effect": {
           "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">5</span> damage free strike</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -232,6 +248,10 @@
         "effect": {
           "before": "<p>Two kobolds take their turns in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -260,6 +280,10 @@
         "effect": {
           "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

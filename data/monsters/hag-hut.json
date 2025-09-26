@@ -59,21 +59,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage; push 3; {{potency}} prone"
+              "display": "6 damage;  push 3; {{potency}} prone"
             },
             {
               "tier": 2,
-              "display": "10 damage; push 4"
+              "display": "10 damage;  push 4; {{potency}} prone"
             },
             {
               "tier": 3,
-              "display": "13 damage; push 5"
+              "display": "13 damage;  push 5; {{potency}} prone"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

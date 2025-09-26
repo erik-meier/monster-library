@@ -86,21 +86,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 damage; M<1 slowed (save ends)"
+              "display": "3 damage; <strong class=\"potency-value\">M<1</strong> slowed (saved ends)"
             },
             {
               "tier": 2,
-              "display": "6 damage; M<2 slowed (save ends)"
+              "display": "6 damage; <strong class=\"potency-value\">M<2</strong> slowed (saved ends)"
             },
             {
               "tier": 3,
-              "display": "8 damage; M<3 slowed (save ends)"
+              "display": "8 damage; <strong class=\"potency-value\">M<3</strong> slowed (saved ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>One ally within 10 squares can make a free strike.</p>"
+        },
+        "spend": {
+          "text": "One ally within 10 squares can use their signature ability  instead.",
+          "value": 1,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> One ally within 10 squares can use their signature ability  instead."
         }
       }
     },
@@ -133,6 +138,10 @@
         "effect": {
           "before": "<p>The target is marked until the start of the blackguard’s next turn. The blackguard and each of their allies gain an edge on abilities used against targets marked by the blackguard.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -164,6 +173,10 @@
         "effect": {
           "before": "<p>The damage is halved.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -192,6 +205,10 @@
         "effect": {
           "before": "<p>The blackguard shifts up to their speed. During or after this movement, they can use their Zweihander Swing twice</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -225,6 +242,10 @@
         "effect": {
           "before": "<p>The blackguard slides each target up to 5 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -253,6 +274,10 @@
         "effect": {
           "before": "<p>The blackguard uses their Zweihander Swing against each tar get. Each ally within 5 squares of the area can then make a free strike against a target (one target per ally)</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -286,7 +311,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 corruption damage; P<1 slowed (save ends)"
+              "display": "4 corruption damage; {{potency}}, slowed (save ends)"
             },
             {
               "tier": 2,
@@ -294,13 +319,17 @@
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; P<3 restrained (save ends)"
+              "display": "9 corruption damage; {{potency}}, restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
           "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -329,6 +358,10 @@
         "effect": {
           "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -357,6 +390,10 @@
         "effect": {
           "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

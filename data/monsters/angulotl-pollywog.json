@@ -82,6 +82,10 @@
         "effect": {
           "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -110,6 +114,10 @@
         "effect": {
           "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -148,17 +156,21 @@
             },
             {
               "tier": 2,
-              "display": "2 poison damage"
+              "display": "2 poison damage; the pollywog can shift 1 square"
             },
             {
               "tier": 3,
-              "display": "3 poison damage"
+              "display": "3 poison damage; the pollywog shifts up to 3 squares"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -238,6 +250,10 @@
         "effect": {
           "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },

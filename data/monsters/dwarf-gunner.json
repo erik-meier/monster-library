@@ -72,21 +72,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage; push 1"
+              "display": "6 damage;  push 1"
             },
             {
               "tier": 2,
-              "display": "9 damage; push 3"
+              "display": "9 damage;  push 3"
             },
             {
               "tier": 3,
-              "display": "12 damage; push 5"
+              "display": "12 damage;  push 5"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>If the target is adjacent to an object or a wall after the power roll is resolved, they are restrained until the end of their next turn. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>"
+        },
+        "spend": {
+          "text": "If the target is pushed into another creature, the target and  the creature are each restrained until the end of their next turn.",
+          "value": 5,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> If the target is pushed into another creature, the target and  the creature are each restrained until the end of their next turn."
         }
       }
     },
@@ -120,8 +125,12 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>NOTE: Targets one prone, restrained, or slowed creature</p><p>The gunner makes a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike} against the target, and the prone, restrained, and slowed conditions on the target end. The target is then restrained (save ends).</p>",
+          "before": "<p>NOTE: Targets one prone, restrained, or slowed creature</p><p>The gunner makes a <span class=\"damage-value damage-generic\">4</span> damage free strike against the target, and the prone, restrained, and slowed conditions on the target end. The target is then restrained (save ends).</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -150,6 +159,10 @@
         "effect": {
           "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -178,6 +191,10 @@
         "effect": {
           "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -214,6 +231,10 @@
         "effect": {
           "before": "<p>Each target makes an Agility Test.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>8 damage; restrained (EoT)</p></td></tr><tr><td><p>12-16</p></td><td><p>6 damage; slowed (EoT)</p></td></tr><tr><td><p>17</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": "<p>The snaring line remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability canʼt be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

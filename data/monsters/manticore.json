@@ -85,21 +85,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "12 damage; A<2 bleeding (save ends)"
+              "display": "12 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "17 damage; A<3 bleeding (save ends)"
+              "display": "17 damage; <strong class=\"potency-value\">A<3</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "21 damage; A<4 bleeding (save ends)"
+              "display": "21 damage; <strong class=\"potency-value\">A<4</strong> bleeding (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>If the target is frightened, this ability gains an edge.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -138,7 +142,7 @@
             },
             {
               "tier": 2,
-              "display": "11 damage; 4 poison damage; P<3 axkGj4sdnaVjmUKZ, weakened (save ends)"
+              "display": "11 damage; 4 poison damage; weakened (save ends)"
             },
             {
               "tier": 3,
@@ -149,6 +153,11 @@
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "While weakened this way, a target takes 1d6 poison damage at the start of each of their turns.",
+          "value": 1,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> While weakened this way, a target takes 1d6 poison damage at the start of each of their turns."
         }
       }
     },
@@ -183,6 +192,10 @@
         "effect": {
           "before": "",
           "after": "<p>The manticore shifts up to 5 squares into the air, then can use Tail Spike against the target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -216,21 +229,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "I<2 frightened, mQxRYWakIfo8zKwY"
+              "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I<2</strong> they are instead Frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "I<3 frightened, mQxRYWakIfo8zKwY"
+              "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I<3</strong> they are instead Frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "I<4 frightened, dazed"
+              "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I<4</strong> they are instead dazed (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -264,6 +281,10 @@
         "effect": {
           "before": "",
           "after": "<p>The manticore shifts up to their speed, then can use Tail Spike against each enemy within distance of that ability.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -297,6 +318,10 @@
         "effect": {
           "before": "",
           "after": "<p>The manticore sours their poison with enmity. Until the end of the encounter, the manticore has a double edge on power rolls against weakened creatures. Additionally, any creature weakened by the manticore's Tail Spike ability has their speed halved and takes an extra 3 poison damage at the start of each of their turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -325,6 +350,10 @@
         "effect": {
           "before": "<p>The manticore uses their mimicry in an attempt to unnerve one creature within their line of effect. If the target has <strong class=\"potency-value\">R&lt;4</strong>, they take a bane on power rolls against the manticore (save ends). Each time this feature is used against the same target during the encounter, its potency decreases by 2.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -353,6 +382,10 @@
         "effect": {
           "before": "<p>The manticore takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -381,6 +414,10 @@
         "effect": {
           "before": "<p>The manticore lets out an unnerving cry. Each enemy within the</p><p>manticore’s line of effect makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Intuition test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>Frightened (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -409,6 +446,10 @@
         "effect": {
           "before": "<p>The manticore sprays tail spikes across the ground within 5 squares of them. Each enemy in that area who has <strong class=\"potency-value\">A&lt;3</strong> is bleeding (save ends). Additionally, the area is difficult terrain, and any enemy takes <span class=\"damage-value damage-poison\">3 poison</span> damage for each square of the area they enter. An enemy who takes <span class=\"damage-value damage-poison\">9 poison</span> damage this way on one turn is weakened until the end of the encounter.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -443,21 +484,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "slide 1; 3 damage"
+              "display": " slide 1; 3 damage"
             },
             {
               "tier": 2,
-              "display": "slide 2; 5 damage"
+              "display": " slide 2; 5 damage"
             },
             {
               "tier": 3,
-              "display": "slide 4; 7 damage"
+              "display": " slide 4; 7 damage"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>If the target is frightened, this ability gains an edge.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

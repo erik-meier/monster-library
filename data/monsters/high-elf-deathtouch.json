@@ -81,13 +81,17 @@
             },
             {
               "tier": 3,
-              "display": "13 damage; R<2 bleeding (save ends); I<2 frightened (save ends); P<2 restrained (save ends)"
+              "display": "13 damage; <strong class=\"potency-value\">R<2</strong> bleeding (save ends); <strong class=\"potency-value\">I<2</strong> frightened (save ends); <strong class=\"potency-value\">P<2</strong> restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -123,6 +127,10 @@
         "effect": {
           "before": "",
           "after": "<p>The target has a +5 bonus to speed and automatically obtains a tier 3 outcome on power rolls. They can still roll to determine if they score a critical hit. At the end of their next turn, the target immediately dies.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -151,6 +159,10 @@
         "effect": {
           "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -184,21 +196,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
           "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -227,6 +243,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -270,13 +290,17 @@
             },
             {
               "tier": 3,
-              "display": "13 damage; R<2 bleeding (save ends); I<2 frightened (save ends); P<2 restrained (save ends)"
+              "display": "13 damage; <strong class=\"potency-value\">R<2</strong> bleeding (save ends); <strong class=\"potency-value\">I<2</strong> frightened (save ends); <strong class=\"potency-value\">P<2</strong> restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

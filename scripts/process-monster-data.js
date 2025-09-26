@@ -25,7 +25,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // Paths
 const SOURCE_MONSTERS_DIR = path.join(__dirname, '../data/monsters-original')
-const OUTPUT_MONSTERS_DIR = path.join(__dirname, '../data/monsters')  
+const OUTPUT_MONSTERS_DIR = path.join(__dirname, '../data/monsters')
 const OUTPUT_INDEX_FILE = path.join(__dirname, '../data/monster_index.json')
 
 console.log('🔄 Processing monster data...')
@@ -68,11 +68,11 @@ let errorCount = 0
  */
 function walkDirectory(dir) {
   const items = fs.readdirSync(dir)
-  
+
   for (const item of items) {
     const itemPath = path.join(dir, item)
     const stat = fs.statSync(itemPath)
-    
+
     if (stat.isDirectory()) {
       walkDirectory(itemPath)
     } else if (item.endsWith('.json')) {
@@ -86,7 +86,7 @@ function walkDirectory(dir) {
  */
 function standardizeName(name) {
   if (!name || typeof name !== 'string') return name
-  
+
   return name
     .split(' ')
     .map(word => {
@@ -136,24 +136,24 @@ function cleanDamageValues(obj) {
 function processMonsterFile(filePath) {
   try {
     const rawData = JSON.parse(fs.readFileSync(filePath, 'utf8'))
-    
+
     // Standardize name and generate ID
     const standardizedName = standardizeName(rawData.name)
     const monsterId = generateId(standardizedName)
-    
+
     // Extract and format core data
     const monster = {
       // Basic info
       id: monsterId,
       name: standardizedName,
-      
+
       // Core stats
       level: rawData.system.monster.level,
       ev: rawData.system.monster.ev,
       role: rawData.system.monster.role?.charAt(0).toUpperCase() + (rawData.system.monster.role?.slice(1).toLowerCase() || ''),
       organization: rawData.system.monster.organization?.charAt(0).toUpperCase() + (rawData.system.monster.organization?.slice(1).toLowerCase() || ''),
       keywords: (rawData.system.monster.keywords || []).sort(), // Sort keywords alphabetically
-      
+
       // Combat stats
       size: {
         value: rawData.system.combat.size.value,
@@ -163,7 +163,7 @@ function processMonsterFile(filePath) {
       stamina: rawData.system.stamina.max,
       stability: rawData.system.combat.stability,
       freeStrike: rawData.system.monster.freeStrike,
-      
+
       // Characteristics
       characteristics: {
         might: rawData.system.characteristics.might.value,
@@ -172,12 +172,12 @@ function processMonsterFile(filePath) {
         intuition: rawData.system.characteristics.intuition.value,
         presence: rawData.system.characteristics.presence.value
       },
-      
+
       // Damage/Defense (cleaned of zero values)
       immunities: cleanDamageValues(rawData.system.damage.immunities || {}),
       weaknesses: cleanDamageValues(rawData.system.damage.weaknesses || {}),
       movementTypes: rawData.system.movement.types || [],
-      
+
       // Actions/Abilities
       items: rawData.items.map(item => ({
         name: item.name,
@@ -196,10 +196,11 @@ function processMonsterFile(filePath) {
             tiers: item.system.power.tiers // Include tiers if they exist
           } : null,
           description: item.system?.description,
-          effect: item.system?.effect
+          effect: item.system?.effect,
+          spend: item.system?.spend
         }
       })),
-      
+
       // Source info
       source: rawData.system.source ? {
         book: rawData.system.source.book,
@@ -207,22 +208,22 @@ function processMonsterFile(filePath) {
         license: rawData.system.source.license
       } : null
     }
-    
+
     // Clear role if it's the same as organization (duplicate)
     if (monster.role === monster.organization) {
       monster.role = ''
     }
-    
+
     // Process Foundry VTT text directives
     const processedMonster = processMonsterText(monster)
-    
+
     // Save processed monster
     const outputFilePath = path.join(OUTPUT_MONSTERS_DIR, `${monsterId}.json`)
     fs.writeFileSync(outputFilePath, JSON.stringify(processedMonster, null, 2))
-    
+
     // Update index
     monsterIndex.name[monsterId] = processedMonster.name
-    
+
     // Keyword index
     processedMonster.keywords.forEach(keyword => {
       const keywordLower = keyword.toLowerCase()
@@ -231,20 +232,20 @@ function processMonsterFile(filePath) {
       }
       monsterIndex.keyword[keywordLower].push(monsterId)
     })
-    
+
     // EV index
     if (!monsterIndex.ev[processedMonster.ev]) {
       monsterIndex.ev[processedMonster.ev] = []
     }
     monsterIndex.ev[processedMonster.ev].push(monsterId)
-    
+
     // Role index  
     const role = processedMonster.role?.toLowerCase() || processedMonster.organization?.toLowerCase() || 'unknown'
     if (!monsterIndex.role[role]) {
       monsterIndex.role[role] = []
     }
     monsterIndex.role[role].push(monsterId)
-    
+
     // Card data for list view
     monsterIndex.card[monsterId] = {
       name: processedMonster.name,
@@ -254,12 +255,12 @@ function processMonsterFile(filePath) {
       organization: processedMonster.organization,
       keywords: processedMonster.keywords
     }
-    
+
     processedCount++
     if (processedCount % 50 === 0) {
       console.log(`  Processed ${processedCount} monsters...`)
     }
-    
+
   } catch (error) {
     console.error(`❌ Failed to process ${filePath}:`, error.message)
     errorCount++

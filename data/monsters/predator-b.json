@@ -88,17 +88,21 @@
             },
             {
               "tier": 2,
-              "display": "11 damage; push 1; M<1 prone"
+              "display": "11 damage;  push 1; <strong class=\"potency-value\">M<1</strong> prone"
             },
             {
               "tier": 3,
-              "display": "14 damage; push 2"
+              "display": "14 damage;  push 2"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -140,13 +144,17 @@
             },
             {
               "tier": 3,
-              "display": "8 damage; A<2 bleeding (save ends)"
+              "display": "8 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -181,6 +189,10 @@
         "effect": {
           "before": "",
           "after": "<p>The target is pushed up to 5 squares.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

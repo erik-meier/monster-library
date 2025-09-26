@@ -86,7 +86,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 acid damage; M<1 slowed (save ends)"
+              "display": "5 acid damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
             },
             {
               "tier": 2,
@@ -94,13 +94,17 @@
             },
             {
               "tier": 3,
-              "display": "9 acid damage; M<3 restrained (save ends)"
+              "display": "9 acid damage; <strong class=\"potency-value\">M<3</strong> restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p>Note: range is <strong>1 burst, or 3 cube within 5</strong></p>",
           "after": "<p>The ground and any surfaces in the area pool with slime. The slime is difficult terrain for enemies, and any enemy is bleeding while in the area.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -132,6 +136,10 @@
         "effect": {
           "before": "",
           "after": "<p>The gunge vomits with great force, letting them shift up to their speed and ignore any additional effects from the strike. The space the gunge occupied before the shift is covered in slime that is difficult terrain for enemies. Additionally, any enemy is bleeding while in the slime.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -160,6 +168,10 @@
         "effect": {
           "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -188,6 +200,10 @@
         "effect": {
           "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

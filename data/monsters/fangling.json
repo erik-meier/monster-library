@@ -113,6 +113,10 @@
         "effect": {
           "before": "",
           "after": "<p>Each enemy adjacent to the fangling takes <span class=\"damage-value damage-generic\">2</span> damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -148,21 +152,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; pull 1; A<1 bleeding (save ends)"
+              "display": "2 damage;  pull 1; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "3 damage; pull 1; A<2 bleeding (save ends)"
+              "display": "3 damage;  pull 1; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "4 damage; pull 1; A<3 bleeding (save ends)"
+              "display": "4 damage;  pull 1; <strong class=\"potency-value\">A<3</strong> bleeding (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -191,6 +199,10 @@
         "effect": {
           "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -219,6 +231,10 @@
         "effect": {
           "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

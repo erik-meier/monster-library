@@ -1,5 +1,5 @@
 // Auto-generated monster data bundle
-// Generated on: 2025-09-26T18:52:22.879Z
+// Generated on: 2025-09-26T20:30:26.581Z
 
 export const monsterIndex = {
   "name": {
@@ -3615,6 +3615,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The cleaver jumps up to 4 squares before or after making this strike.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -3643,6 +3647,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -3671,6 +3679,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -3762,6 +3774,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -3856,6 +3872,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -3884,6 +3904,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -3963,6 +3987,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4012,6 +4040,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The dart gains an edge on this ability against any target who has less than full Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -4128,17 +4160,22 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "10 acid damage"
+                "display": "10 acid damage; {{potency}} dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13 acid damage"
+                "display": "13 acid damage; {{potency}} dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The next time the target makes a strike against the daybringer, the target takes <span class=\"damage-value damage-acid\">4 acid</span> damage after the strike is resolved.</p>"
+          },
+          "spend": {
+            "text": "The daybringer jumps up to 3 squares before or after using this ability.",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The daybringer jumps up to 3 squares before or after using this ability."
           }
         }
       },
@@ -4167,6 +4204,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The daybringer expands their throat to make it resemble the sun until the start of their next turn. During that time, each angulotl who starts their turn within 10 squares of the daybringer regains <span class=\"heal-value\">5</span> healing and gains a +3 bonus to speed until the end of their turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4197,6 +4238,11 @@ export const monsters = {
           "effect": {
             "before": "<p>The outcome of the strike’s power roll is reduced by one tier.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "The target is pulled up to 4 squares after the strike resolves.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The target is pulled up to 4 squares after the strike resolves."
           }
         }
       },
@@ -4228,6 +4274,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Four <a href=\"/monster/angulotl-pollywogs\" class=\"monster-link\">angulotl pollywogs</a> erupt from the daybringer’s back and waddle into unoccupied spaces within distance.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4260,6 +4310,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target can jump up to 4 squares. Each non-minion target can make a free strike at the end of the jump.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4288,6 +4342,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map dries up and each enemy and object on it is illuminated until the end of the encounter. An illuminated creature or object can’t hide or become invisible, and any strike made against an illuminated target gains an edge. Additionally, each enemy in the encounter who is wet has that effect end and takes <span class=\"damage-value damage-acid\">6 acid</span> damage. Each angulotl in the encounter has a double edge on their next strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4316,6 +4374,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4344,6 +4406,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4423,6 +4489,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -4538,6 +4608,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "A target who has M < 2 is weakened (save ends). A target  weakened this way takes 2 poison damage at the start of each of  their turns.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> A target who has M < 2 is weakened (save ends). A target  weakened this way takes 2 poison damage at the start of each of  their turns."
           }
         }
       },
@@ -4566,6 +4641,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4594,6 +4673,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4673,6 +4756,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -4767,6 +4854,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4795,6 +4886,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4833,17 +4928,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "2 poison damage"
+                "display": "2 poison damage; the pollywog can shift 1 square"
               },
               {
                 "tier": 3,
-                "display": "3 poison damage"
+                "display": "3 poison damage; the pollywog shifts up to 3 squares"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -4923,6 +5022,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5062,6 +5165,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target is wet (save ends). Any ally targeted by this ability ignores the damage, is wet until the end of the encounter, and is pulled up to 6 squares, ignoring stability.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5090,6 +5197,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The slink jumps up to 3 squares. If they have cover or conceal ment when they land, they can attempt to hide.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5118,6 +5229,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5146,6 +5261,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5225,6 +5344,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -5319,6 +5442,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5347,6 +5474,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5426,6 +5557,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5475,6 +5610,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>An illuminated creature or object can’t hide or become invisible, and any strike made against an illuminated target gains an edge.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5509,6 +5648,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A bubble of toxic gas fills the area, ready to pop. If any creature or object touches the bubble or if the bubble takes damage, it bursts. Each angulotl adjacent to the bubble is wet until the end of the en counter, and each enemy adjacent to the bubble makes a <strong>Might test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">3 poison</span> damage; the target is wet and weakened (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-poison\">2 poison</span> damage; the target is wet (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p><span class=\"damage-value damage-poison\">1 poison</span> damage; the target is wet (EoT)</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -5606,13 +5749,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 damage; P<2 grabbed"
+                "display": "5 damage; grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Any target grabbed this way takes <span class=\"damage-value damage-lightning\">2 lightning</span> damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5641,6 +5788,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5669,6 +5820,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5748,6 +5903,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5859,6 +6018,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The animal shifts up to 2 squares between strikes.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -5892,6 +6055,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The animal moves up to their speed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -5993,17 +6160,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "9 damage; pull 1"
+                "display": "9 damage;  pull 1"
               },
               {
                 "tier": 3,
-                "display": "12 damage; pull 2"
+                "display": "12 damage;  pull 2"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is pulled into the animal swarm, that forced movement deals damage only at the Director's determination.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6038,6 +6209,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The area is difficult terrain for enemies until the start of the animal swarm's next turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -6122,6 +6297,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Special: The target must be the animal's size or smaller.</p><p>The target vertical slides up to 3 squares. If the target is an ally, they can make a free strike at the end of the forced movement, then fall without taking damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6153,6 +6332,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The animal shifts up to 2 squares before the ability resolves.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6200,6 +6383,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -6300,17 +6487,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "10 damage; push 1"
+                "display": "10 damage;  push 1"
               },
               {
                 "tier": 3,
-                "display": "13 damage; push 2"
+                "display": "13 damage;  push 2"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6342,6 +6533,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The animal moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6374,6 +6569,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The animal moves up to their speed. If they end their turn adjacent to the target, they can use the Stand Up maneuver to let the target stand, then get on to ride them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -6462,7 +6661,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "10 damage; M<1 prone"
+                "display": "10 damage; <strong class=\"potency-value\">M<1</strong> prone"
               },
               {
                 "tier": 3,
@@ -6473,6 +6672,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6504,6 +6707,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The predator assesses their environment or lets loose a threatening roar and gains an edge on their next strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6540,6 +6747,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The predator makes a free strike against the target. If the predator was hidden from the target, the strike deals an extra <span class=\"damage-value damage-generic\">3</span> damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -6640,17 +6851,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "11 damage; push 1; M<1 prone"
+                "display": "11 damage;  push 1; <strong class=\"potency-value\">M<1</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "14 damage; push 2"
+                "display": "14 damage;  push 2"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6692,13 +6907,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "8 damage; A<2 bleeding (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6733,6 +6952,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target is pushed up to 5 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -6842,21 +7065,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; P<1 grabbed"
+                "display": "9 damage; grabbed"
               },
               {
                 "tier": 2,
-                "display": "13 damage; P<2 grabbed"
+                "display": "13 damage; grabbed"
               },
               {
                 "tier": 3,
-                "display": "16 damage; P<3 grabbed"
+                "display": "16 damage; grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A size 1 target grabbed this way takes <span class=\"damage-value damage-acid\">3 acid</span> damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6891,21 +7118,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; A<1 grabbed"
+                "display": "5 damage; <strong class=\"potency-value\">A<1</strong> grabbed"
               },
               {
                 "tier": 2,
-                "display": "8 damage; A<2 grabbed"
+                "display": "8 damage; <strong class=\"potency-value\">A<2</strong> grabbed"
               },
               {
                 "tier": 3,
-                "display": "11 damage; A<3 grabbed"
+                "display": "11 damage; <strong class=\"potency-value\">A<3</strong> grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The arixx can vertically slide each grabbed target up to 3 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6948,13 +7179,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 acid damage; P<3 prone"
+                "display": "7 acid damage; prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The ground beneath each target is covered in burning acid until the end of the encounter. Any enemy who enters an affected space for the first time in a round or starts their turn there takes <span class=\"damage-value damage-acid\">2 acid</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -6991,17 +7226,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 damage; push 2"
+                "display": "6 damage;  push 2"
               },
               {
                 "tier": 3,
-                "display": "7 damage; push 4"
+                "display": "7 damage;  push 4"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The arixx flings rocks and debris to fill the area, and has a double edge on the power roll if they started their turn underground. The area is difficult terrain.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7033,6 +7272,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The arixx kicks up dust to fill the area until the start of their next turn, then moves up to their speed. Any enemy in the area or who targets a creature in the area takes a bane on power rolls.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7061,6 +7304,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The arixx halves the damage and shifts up to 3 squares after the triggering effect resolves.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7111,6 +7358,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The ground in the area is covered in a puddle of acid until the end of the encounter. Any enemy who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-acid\">2 acid</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7139,6 +7390,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The arixx shifts up to their speed. If they end this shift above ground and within 2 squares of a creature, they use Bite against the creature and can then use the Dig maneuver.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7172,21 +7427,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 acid damage; M<1 weakened (save ends)"
+                "display": "5 acid damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 acid damage; M<2 weakened (save ends)"
+                "display": "8 acid damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 acid damage; M<3 weakened (save ends)"
+                "display": "11 acid damage; <strong class=\"potency-value\">M<3</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7215,6 +7474,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The arixx dribbles acid over their mandibles, causing the next strike they make to gain an edge and deal an extra 3 acid damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7243,6 +7506,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map suddenly quakes, then begins to sink. Each creature on the ground who has A &lt; 1 is knocked prone. Until the end of the encounter, each creature who starts their turn on the ground and can’t burrow must spend 1 additional square of move ment to leave their starting position, or 2 squares if they start their turn prone or underground. A creature who starts and ends their turn in the same space on the ground and can’t burrow sinks 1 square into the ground.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7273,6 +7540,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The arixx’s underground tunnels swell with pressure, causing a sudden influx of hot gas to burst from a 3-square-by-3-square area anywhere on the surface. Each enemy in the area makes an Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"111\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 5</p></td></tr><tr><td data-colwidth=\"111\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"111\"><p>17+</p></td><td><p>The target shifts to the nearest unoccupied space outside the area.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7301,6 +7572,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The arixx takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -7413,21 +7688,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "10 damage; M<2 bleeding (save ends); A<2 grabbed"
+                "display": "10 damage; if one target has <strong class=\"potency-value\">M<2</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A<2</strong> they are grabbed"
               },
               {
                 "tier": 2,
-                "display": "15 damage; M<3 bleeding (save ends); A<3 grabbed"
+                "display": "15 damage; if one target has <strong class=\"potency-value\">M<3</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A<3</strong> they are grabbed"
               },
               {
                 "tier": 3,
-                "display": "18 damage; M<4 bleeding (save ends); A<4 grabbed"
+                "display": "18 damage; if one target has <strong class=\"potency-value\">M<4</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A<4</strong> they are grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The ashen hoarder can have up to two size 1 creatures grabbed at a time.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7463,21 +7742,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage; A<2 weakened, JHJutruYIpauxNj7 (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">A<2</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; A<3 weakened (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">A<3</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 damage; A<4 weakened (save ends)"
+                "display": "11 damage; <strong class=\"potency-value\">A<4</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p><strong>3 Malice</strong>: The ashen hoarder targets a second 4 cube within distance.</p>"
+          },
+          "spend": {
+            "text": "Any enemy weakened this way is instead slowed and weakened (save ends).",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Any enemy weakened this way is instead slowed and weakened (save ends)."
           }
         }
       },
@@ -7513,21 +7797,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 corruption damage; M<2 ox9pBhgG6jaEsZxa (save ends)"
+                "display": "6 corruption damage; <strong class=\"potency-value\">M<2</strong> the target is impaled (save ends)"
               },
               {
                 "tier": 2,
-                "display": "11 corruption damage; M<3 ox9pBhgG6jaEsZxa (save ends)"
+                "display": "11 corruption damage; <strong class=\"potency-value\">M<3</strong> the target is impaled (save ends)"
               },
               {
                 "tier": 3,
-                "display": "14 corruption damage; M<4 ox9pBhgG6jaEsZxa (save ends)"
+                "display": "14 corruption damage; <strong class=\"potency-value\">M<4</strong> the target is impaled (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>An impaled creature is restrained and bleeding, and moves with the ashen hoarder. The ashen hoarder can have three creatures impaled with this ability at a time.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7559,6 +7847,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ashen hoarder moves up to twice their speed in a straight line. Each creature or object in the path of this movement is either pushed into the nearest unoccupied space outside the path, or if they have M &lt; 3 is pushed forward until the movement ends. Any creature who is force moved forward into an obstacle is dazed (save ends).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7590,6 +7882,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ashen hoarder halves the damage. If the ashen hoarder has one or more creatures impaled, the Malice cost of this feature is reduced by 1 and one impaled creature takes the other half of the damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7625,21 +7921,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; vertical push 2"
+                "display": "6 damage;  vertical push 2"
               },
               {
                 "tier": 2,
-                "display": "11 damage; vertical push 2"
+                "display": "11 damage;  vertical push 2"
               },
               {
                 "tier": 3,
-                "display": "14 damage; vertical push 3"
+                "display": "14 damage;  vertical push 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Each target is force moved straight up, then falls. A target who would normally land prone after falling is instead restrained (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7676,6 +7976,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ashen hoarder sprays out six size 1M zombie mines that appear in unoccupied squares within distance. Any enemy who moves adjacent to a zombie mine for the first time in a round or starts their turn there causes the mine to explode, dealing <span class=\"damage-value damage-corruption\">4 corruption</span> damage to each creature adjacent to the mine. Any other zombie mines adjacent to the exploding mine also explode. At the start of each of the ashen hoarder's turns, each unexploded zombie mine can be moved up to 2 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7711,6 +8015,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ashen hoarder moves up to their speed and uses Claw and Blade with a double edge against one target. On a tier 3 outcome, the ashen hoarder can use Impale without spending Malice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7739,6 +8047,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ashen hoarder moves up to their speed and can make a free strike against two targets.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7767,6 +8079,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ashen hoarder summons a 10 wall of bones and blades into unoccupied squares within 5 squares of them. Each square of the wall has 5 Stamina. An enemy who comes adjacent to the wall for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">3</span> damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7795,6 +8111,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ashen hoarder takes an additional main action on their turn.</p><p>They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7823,6 +8143,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ashen hoarder launches bone lances into the air, raining them</p><p>down on enemies and impaling those unlucky enough to be on</p><p>the receiving end. Each enemy within 20 squares of the ashen</p><p>hoarder makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Agility test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">14</span> damage; restrained and bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -7924,6 +8248,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>This ability gains an edge against targets the basilisk has previously dealt poison damage to.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -7959,17 +8287,21 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "M<0 restrained (save ends)"
+                "display": "<strong class=\"potency-value\">M<0</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "M<2 restrained, slowed (save ends)"
+                "display": "Slowed (save ends); or if <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The area extends from both the basilisk's eyes, and this ability targets the first creature without cover on either side of the area.</p>",
             "after": "<p>If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target’s body, dealing <span class=\"damage-value damage-generic\">8</span> damage to the target that can’t be reduced in any way and ending this effect.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8004,21 +8336,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 poison damage; M<0 weakened (save ends)"
+                "display": "4 poison damage; <strong class=\"potency-value\">M<0</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 poison damage; M<1 ULqhp6MZtwCxkbv3 (save ends)"
+                "display": "6 poison damage; <strong class=\"potency-value\">M<1</strong> weakened and slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 poison damage; M<2 ULqhp6MZtwCxkbv3 (save ends)"
+                "display": "9 poison damage; <strong class=\"potency-value\">M<2</strong> weakened and slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8053,6 +8389,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target takes <span class=\"damage-value damage-generic\">5</span> damage. Any target who has A &lt; 2 is also bleeding (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8081,6 +8421,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A basilisk acting this turn can burrow until the start of their next turn, and moves up to their speed. They have damage immunity 2 while underground. The basilisk can burrow through stone, but can’t drag other creatures underground when they do so. At the start of each of the basilisk’s turns, the Director can spend 1 Malice to let the basilisk continue burrowing.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8111,17 +8455,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 damage; 2 damage; A<1 prone"
+                "display": "4 damage; 2 damage; Prone"
               },
               {
                 "tier": 3,
-                "display": "4 damage; 5 damage; A<2 prone, KtUIFOUuE6sXE8vC"
+                "display": "4 damage; 5 damage; prone and can't stand (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The basilisk spits up a chunk of partly digested stone.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8150,6 +8498,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A basilisk spews reflective spittle across an adjacent vertical surface in a 3-square-by-3-square area. The basilisk can use their Petrifying Eye Beams ability to target a square in the area, causing the area and distance of that ability to become a 20 × 3 line within 1 square of the wall.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8248,21 +8600,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 acid damage; pull 1"
+                "display": "8 acid damage;  pull 1"
               },
               {
                 "tier": 2,
-                "display": "10 acid damage; pull 2"
+                "display": "10 acid damage;  pull 2"
               },
               {
                 "tier": 3,
-                "display": "14 acid damage; pull 3"
+                "display": "14 acid damage;  pull 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>This ability can pull targets restrained by Petrifying Eye Beams, and ignores stability if it does so.</p>"
+          },
+          "spend": {
+            "text": "The tonguesnapper targets two additional creatures or  objects.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The tonguesnapper targets two additional creatures or  objects."
           }
         }
       },
@@ -8298,17 +8655,21 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "A<0 restrained (save ends)"
+                "display": "<strong class=\"potency-value\">A<0</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "M<2 restrained, slowed (save ends)"
+                "display": "Slowed (save ends); or if <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The area extends from both the tonguesnapper's eyes, and this ability targets the first creature without cover on either side of the area.</p>",
             "after": "<p>If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target’s body, dealing <span class=\"damage-value damage-generic\">8</span> damage to the target that can’t be reduced in any way and ending this effect.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8344,7 +8705,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 corruption damage; R<0 dazed (save ends)"
+                "display": "8 corruption damage; <strong class=\"potency-value\">R<0</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
@@ -8352,13 +8713,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 corruption damage; R<2 flNT7bl6d8W4fw2h"
+                "display": "14 corruption damage; <strong class=\"potency-value\">R<2</strong> dazed and slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A creature dazed this way can't benefit from edges or double edges and can't gain or use surges.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8393,6 +8758,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target takes <span class=\"damage-value damage-acid\">4 acid</span> damage. Any target who has M &lt; 2 is also slowed (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8421,6 +8790,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A basilisk acting this turn can burrow until the start of their next turn, and moves up to their speed. They have damage immunity 2 while underground. The basilisk can burrow through stone, but can’t drag other creatures underground when they do so. At the start of each of the basilisk’s turns, the Director can spend 1 Malice to let the basilisk continue burrowing.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8451,17 +8824,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 damage; 2 damage; A<1 prone"
+                "display": "4 damage; 2 damage; Prone"
               },
               {
                 "tier": 3,
-                "display": "4 damage; 5 damage; A<2 prone, KtUIFOUuE6sXE8vC"
+                "display": "4 damage; 5 damage; prone and can't stand (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The basilisk spits up a chunk of partly digested stone.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8490,6 +8867,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A basilisk spews reflective spittle across an adjacent vertical surface in a 3-square-by-3-square area. The basilisk can use their Petrifying Eye Beams ability to target a square in the area, causing the area and distance of that ability to become a 20 × 3 line within 1 square of the wall.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8609,6 +8990,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The bredbeddle uses the same ability against the triggering creature after the triggering strike is resolved, using that creature's bonus to any power rolls they make.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8642,21 +9027,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "P<1 wTVXfKhOmyJmvs1y (save ends)"
+                "display": "<strong class=\"potency-value\">P<1</strong> the target turns green (save ends)"
               },
               {
                 "tier": 2,
-                "display": "P<2 wTVXfKhOmyJmvs1y (save ends)"
+                "display": "<strong class=\"potency-value\">P<2</strong> the target turns green (save ends)"
               },
               {
                 "tier": 3,
-                "display": "P<3 wTVXfKhOmyJmvs1y"
+                "display": "<strong class=\"potency-value\">P<3</strong> the target turns green (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Green shadows crawl out from under the bredbeddle's feet and turn each target green. The bredbeddle has a double edge on power rolls against any target turned green this way.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8691,6 +9080,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bredbeddle points at the target and issues them a challenge. If the target refuses, they turn green until the end of the encounter (see Turn Green). If the target accepts the challenge, the bredbeddle shifts adjacent to the target, who makes a <strong>Might test </strong>with no additional modifiers.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target is beheaded (see <span class=\"reference-text\">Lop</span>)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target makes the test again.</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>The target can choose to deal <span class=\"damage-value damage-generic\">40</span> damage to the bredbeddle or remove the bredbeddle’s head.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8725,21 +9118,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; A<1 bleeding, nxD2WnTYUESaKXhh (save ends)"
+                "display": "6 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">A<1</strong> they are beheaded (see Lop)"
               },
               {
                 "tier": 2,
-                "display": "7 damage; A<2 bleeding, nxD2WnTYUESaKXhh (save ends)"
+                "display": "7 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">A<2</strong> they are beheaded (see Lop)"
               },
               {
                 "tier": 3,
-                "display": "8 damage; A<3 bleeding, nxD2WnTYUESaKXhh (save ends)"
+                "display": "8 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">A<3</strong> they are beheaded (see Lop)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8768,6 +9165,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bredbeddle’s axe lengthens and turns a ghastly green, granting a +1 bonus to the distance of the bredbeddle’s melee strikes and the dimensions of their burst area abilities until the end of their turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8801,21 +9202,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; A<1 bleeding (save ends)"
+                "display": "2 damage; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 damage; A<2 bleeding (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 damage; A<3 bleeding (save ends); M<3 dazed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A<3</strong> bleeding (save ends); <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The bredbeddle shifts up to 2 squares, and can target additional enemies who come within distance of this ability during the shift.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The bredbeddle shifts up to 2 squares, and can target additional enemies who come within distance of this ability during the shift."
           }
         }
       },
@@ -8851,21 +9257,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; M<1 bleeding (save ends); M<1 YNeXGE8nBkueam3O"
+                "display": "9 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<1</strong> they are beheaded"
               },
               {
                 "tier": 2,
-                "display": "13 damage; M<2 bleeding (save ends); M<2 YNeXGE8nBkueam3O"
+                "display": "13 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<2</strong> they are beheaded"
               },
               {
                 "tier": 3,
-                "display": "16 damage; M<3 bleeding (save ends); M<3 YNeXGE8nBkueam3O"
+                "display": "16 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<3</strong> they are beheaded"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A beheaded target has their head fall into an unoccupied square adjacent to the bredbeddle, but they remain alive. While beheaded this way, the target is bleeding and has line of effect only to adjacent squares. The beheaded target can survive without their head for 24 hours, and can reattach their head as a maneuver by entering its square. A target who remains beheaded for 24 hours dies.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8897,6 +9307,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>While the bredbeddle is headless, they shift up to their speed. Each time a creature comes adjacent to the bredbeddle during the shift, the bredbeddle can push that creature 1 square. Each square the bredbeddle exits during the shift is difficult terrain.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8931,21 +9345,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; M<1 dazed (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "13 damage; M<2 dazed, prone (save ends)"
+                "display": "13 damage; prone; <strong class=\"potency-value\">M<2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "16 damage; M<3 dazed, prone (save ends)"
+                "display": "16 damage; prone; <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The bredbeddle must have a head in their possession (attached to them or not), which they throw at the target. If the head was attached, the bredbeddle is left headless.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -8974,6 +9392,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A ghostly size 1L stockade seeps out from under the bredbeddle’s feet to fill an unoccupied square within 10 squares. When a size 1L or smaller enemy enters the stockade’s square, they are restrained (save ends). When a restrained creature is no longer restrained, the stock ade fades away. At the start of each of the bredbeddle’s turns, they can slide an active stockade and any creature in it up to 5 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9003,6 +9425,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bredbeddle takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9032,6 +9458,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A phantom second bredbeddle phases into view, appearing in an unoccupied space anywhere on the encounter map, then vanishing at the end of the round. The phantom bredbeddle shares the original bredbeddle’s statistics but has 24 Stamina, corruption immunity 10, and can fly. The phantom bredbeddle can take one turn and use any of the bredbeddle’s abilities except for villain actions. Only one phantom bredbeddle can be active at a time.</p><p><span class=\"reference-text\">Phantom Bredbeddle</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -9142,21 +9572,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; A<1 bleeding (save ends)"
+                "display": "2 damage; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 damage; A<2 bleeding (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 damage; A<3 bleeding (save ends); M<3 dazed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A<3</strong> bleeding (save ends); <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The phantom bredbeddle shifts up to 2 squares, and can target additional enemies who come within distance of this ability during the shift.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The phantom bredbeddle shifts up to 2 squares, and can target additional enemies who come within distance of this ability during the shift."
           }
         }
       },
@@ -9192,21 +9627,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; M<1 bleeding (save ends); M<1 YNeXGE8nBkueam3O"
+                "display": "9 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<1</strong> they are beheaded"
               },
               {
                 "tier": 2,
-                "display": "13 damage; M<2 bleeding (save ends); M<2 YNeXGE8nBkueam3O"
+                "display": "13 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<2</strong> they are beheaded"
               },
               {
                 "tier": 3,
-                "display": "16 damage; M<3 bleeding (save ends); M<3 YNeXGE8nBkueam3O"
+                "display": "16 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<3</strong> they are beheaded"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A beheaded target has their head fall into an unoccupied square adjacent to the bredbeddle, but they remain alive. While beheaded this way, the target is bleeding and has line of effect only to adjacent squares. The beheaded target can survive without their head for 24 hours, and can reattach their head as a maneuver by entering its square. A target who remains beheaded for 24 hours dies.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9238,6 +9677,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>While the phantom bredbeddle is headless, they shift up to their speed. Each time a creature comes adjacent to the bredbeddle during the shift, the bredbeddle can push that creature 1 square. Each square the bredbeddle exits during the shift is difficult terrain.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9272,21 +9715,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; M<1 dazed (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "13 damage; M<2 dazed, prone (save ends)"
+                "display": "13 damage; prone; <strong class=\"potency-value\">M<2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "16 damage; M<3 dazed, prone (save ends)"
+                "display": "16 damage; prone; <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The phantom bredbeddle must have a head in their possession (attached to them or not), which they throw at the target. If the head was attached, the bredbeddle is left headless.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9320,6 +9767,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The phantom bredbeddle uses the same ability against the triggering creature after the triggering strike is resolved, using that creature's bonus to any power rolls they make.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9348,6 +9799,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bredbeddle’s axe lengthens and turns a ghastly green, granting a +1 bonus to the distance of the bredbeddle’s melee strikes and the dimensions of their burst area abilities until the end of their turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9376,6 +9831,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A ghostly size 1L stockade seeps out from under the bredbeddle’s feet to fill an unoccupied square within 10 squares. When a size 1L or smaller enemy enters the stockade’s square, they are restrained (save ends). When a restrained creature is no longer restrained, the stock ade fades away. At the start of each of the bredbeddle’s turns, they can slide an active stockade and any creature in it up to 5 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9405,6 +9864,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bredbeddle takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9434,6 +9897,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A phantom second bredbeddle phases into view, appearing in an unoccupied space anywhere on the encounter map, then vanishing at the end of the round. The phantom bredbeddle shares the original bredbeddle’s statistics but has 24 Stamina, corruption immunity 10, and can fly. The phantom bredbeddle can take one turn and use any of the bredbeddle’s abilities except for villain actions. Only one phantom bredbeddle can be active at a time.</p><p><span class=\"reference-text\">Phantom Bredbeddle</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -9507,21 +9974,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; pull 2"
+                "display": "7 damage;  pull 2"
               },
               {
                 "tier": 2,
-                "display": "10 damage; pull 3"
+                "display": "10 damage;  pull 3"
               },
               {
                 "tier": 3,
-                "display": "13 damage; pull 4"
+                "display": "13 damage;  pull 4"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Each target must be on the ground, and each square a target is pulled through is difficult terrain for enemies.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9555,21 +10026,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; M<0 bleeding (save ends)"
+                "display": "2 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "3 damage; M<1 bleeding (save ends)"
+                "display": "3 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "4 damage; M<2 bleeding (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The channeler chooses one of the following damage types: acid, cold, corruption, fire, or poison.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9604,21 +10079,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 corruption damage; P<0 slowed (save ends)"
+                "display": "5 corruption damage; <strong class=\"potency-value\">P<0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 corruption damage; P<1 I38SNfnEpqjEgNCH (save ends)"
+                "display": "8 corruption damage; <strong class=\"potency-value\">P<1</strong> the target is shapechanged (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 corruption damage; P<2 I38SNfnEpqjEgNCH (save ends)"
+                "display": "11 corruption damage; <strong class=\"potency-value\">P<2</strong> the target is shapechanged (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A shapechanged creature is slowed and has fire weakness 10 as their limbs stretch and their skin becomes paper thin.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9649,6 +10128,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Special: The target must be grabbed by the channeler.</p><p>Effect: The target is vertical pushed up to 3 squares. An ally doesnʼt take damage from being force moved this way.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9679,6 +10162,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target is grabbed by the channeler.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9709,6 +10196,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target is wrapped in shadow and halves the damage. The target canʼt be targeted by strikes until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9737,6 +10228,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9765,6 +10260,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bugbear activates a Malice Feature available to goblins, spending the required malice to use those features.</p><p><span class=\"reference-text\">Goblin Mode</span></p><p><span class=\"reference-text\">Swamp Stink</span></p><p><span class=\"reference-text\">Tiny Stabs</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9793,6 +10292,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have m&lt;1 they are slowed (save ends).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9821,6 +10324,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have m&lt;1 they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -9913,13 +10420,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "13 damage; P<2 grabbed"
+                "display": "13 damage; one target is grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>One ally within 5 squares of the commander gains an edge on their next strike until the start of the commander’s next turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9952,6 +10463,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target moves up to their speed and uses a signature ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -9984,6 +10499,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target shifts up to their speed, then can use the Throw maneuver.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10014,6 +10533,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Special: The target must be grabbed by the commander.</p><p>The target is vertical pushed up to 4 squares. An ally doesn’t take damage from being force moved this way.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10042,6 +10565,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target is grabbed by the commander.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10070,6 +10597,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bugbear activates a Malice Feature available to goblins, spending the required malice to use those features.</p><p><span class=\"reference-text\">Goblin Mode</span></p><p><span class=\"reference-text\">Swamp Stink</span></p><p><span class=\"reference-text\">Tiny Stabs</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10098,6 +10629,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10126,6 +10661,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have m&lt;1 they are slowed (save ends).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10154,6 +10693,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have m&lt;1 they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -10268,17 +10811,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage; P<3 bleeding (save ends)"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P<3</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "8 corruption damage; P<4 grabbed"
+                "display": "8 corruption damage; grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target grabbed this way or already grabbed by the knightmare can be vertical pushed up to 5 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10307,6 +10854,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bugbear activates a Malice Feature available to goblins, spending the required malice to use those features.</p><p><span class=\"reference-text\">Goblin Mode</span></p><p><span class=\"reference-text\">Swamp Stink</span></p><p><span class=\"reference-text\">Tiny Stabs</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10335,6 +10886,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have m&lt;1 they are slowed (save ends).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10363,6 +10918,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have m&lt;1 they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10391,6 +10950,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -10488,21 +11051,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage; pull 2"
+                "display": "3 damage;  pull 2"
               },
               {
                 "tier": 2,
-                "display": "6 damage; pull 3"
+                "display": "6 damage;  pull 3"
               },
               {
                 "tier": 3,
-                "display": "7 damage; push 4; M<3 grabbed (save ends)"
+                "display": "7 damage;  push 4; grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is pulled into the mob, that forced movement deals damage only at the Director's determination.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10531,6 +11098,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bugbear activates a Malice Feature available to goblins, spending the required malice to use those features.</p><p><span class=\"reference-text\">Goblin Mode</span></p><p><span class=\"reference-text\">Swamp Stink</span></p><p><span class=\"reference-text\">Tiny Stabs</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10559,6 +11130,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have m&lt;1 they are slowed (save ends).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10587,6 +11162,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have m&lt;1 they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10615,6 +11194,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -10692,17 +11275,22 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "11 damage; M<1 grabbed (save ends); one target is pushed up to 2 squares"
+                "display": "11 damage; one target is grabbed; one target is pushed up to 2 squares"
               },
               {
                 "tier": 3,
-                "display": "14 damage; M<2 grabbed (save ends); one target is vertical pushed up to 3 squares"
+                "display": "14 damage; one target is grabbed; one target is vertical pushed up to 3 squares"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The ability takes the Area keyword and loses the Strike keyword, its distance becomes a 1 burst, and it targets each enemy in the area.</p>"
+          },
+          "spend": {
+            "text": "The ability takes the Area keyword and loses the Strike  keyword, its distance becomes a 1 burst, and it targets each enemy in the area.",
+            "value": 5,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> The ability takes the Area keyword and loses the Strike  keyword, its distance becomes a 1 burst, and it targets each enemy in the area."
           }
         }
       },
@@ -10737,21 +11325,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; M<0 prone (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M<0</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "13 damage; M<1 prone (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">M<1</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "16 damage; M<2 prone (save ends)"
+                "display": "16 damage; <strong class=\"potency-value\">M<2</strong> prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The roughneck can jump up to 5 squares to an unoccupied space within distance of the target before making this strike.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10786,6 +11378,10 @@ export const monsters = {
           "effect": {
             "before": "<p><strong>Special:</strong> The target must be grabbed by the roughneck.</p>",
             "after": "<p>The roughneck moves up to their speed across the ground, dragging the target with them. The target takes 2 damage for each square they were dragged through. When this movement ends, the target is no longer grabbed and falls prone. Each square the target was dragged through is difficult terrain for enemies.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10821,6 +11417,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Special: The target must be grabbed by the roughneck.</p>",
             "after": "<p>The target is vertical pushed up to 5 squares. An ally doesn’t take damage from being force moved this way.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10855,6 +11455,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target is grabbed by the roughneck.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10888,6 +11492,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The roughneck uses Haymaker against a creature or object at any point during the forced movement, or after falling as a result of it.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10916,6 +11524,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bugbear activates a Malice Feature available to goblins, spending the required malice to use those features.</p><p><span class=\"reference-text\">Goblin Mode</span></p><p><span class=\"reference-text\">Swamp Stink</span></p><p><span class=\"reference-text\">Tiny Stabs</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10944,6 +11556,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have m&lt;1 they are slowed (save ends).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -10972,6 +11588,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have m&lt;1 they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11000,6 +11620,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -11094,13 +11718,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 damage; A<3 slowed (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">A<3</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the snare started their turn hidden from the target, the target is automatically grabbed. A target grabbed this way or already grabbed by the snare can be vertical pushed up to 4 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11129,6 +11757,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bugbear activates a Malice Feature available to goblins, spending the required malice to use those features.</p><p><span class=\"reference-text\">Goblin Mode</span></p><p><span class=\"reference-text\">Swamp Stink</span></p><p><span class=\"reference-text\">Tiny Stabs</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11157,6 +11789,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have m&lt;1 they are slowed (save ends).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11185,6 +11821,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have m&lt;1 they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11213,6 +11853,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -11286,7 +11930,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; A<0+1 grabbed"
+                "display": "8 damage; {{potency}} grabbed"
               },
               {
                 "tier": 2,
@@ -11294,13 +11938,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "16 damage; A<2 grabbed"
+                "display": "16 damage; grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The target can't use triggered actions until the start of the next round. Additionally, if the sneak started their turn hidden from the target, this ability deals an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11337,17 +11985,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "3 damage"
+                "display": "3 damage; {{potency}} the sneak has concealment from the target (save ends)"
               },
               {
                 "tier": 3,
-                "display": "4 damage"
+                "display": "4 damage; {{potency}} the sneak has concealment from the target (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The sneak shifts up to their speed and can attempt to hide.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11382,21 +12034,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; M<0 bleeding (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "11 damage; M<1 bleeding (save ends)"
+                "display": "11 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "14 damage; M<2 bleeding (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>While bleeding this way, the target can't hide from the sneak or their allies.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11432,6 +12088,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target must be grabbed by the sneak.</p>",
             "after": "<p>The target is vertical pushed up to 4 squares. An ally doesn’t take damage from being force moved this way.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11466,6 +12126,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target is grabbed by the sneak.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11497,6 +12161,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The sneak chooses one enemy within distance of the strike to become the target of the strike.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11525,6 +12193,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bugbear activates a Malice Feature available to goblins, spending the required malice to use those features.</p><p><span class=\"reference-text\">Goblin Mode</span></p><p><span class=\"reference-text\">Swamp Stink</span></p><p><span class=\"reference-text\">Tiny Stabs</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11553,6 +12225,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have m&lt;1 they are slowed (save ends).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11581,6 +12257,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11609,6 +12289,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have m&lt;1 they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -11722,6 +12406,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>This strike deals an extra <span class=\"damage-value damage-generic\">3</span> damage if it gains an edge or has a double edge.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11772,6 +12460,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11809,7 +12501,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "8 psychic damage; I<2 frightened (save ends)"
+                "display": "8 psychic damage; <strong class=\"potency-value\">I<2</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
@@ -11820,6 +12512,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11853,21 +12549,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "push 2"
+                "display": " push 2"
               },
               {
                 "tier": 2,
-                "display": "push 3"
+                "display": " push 3"
               },
               {
                 "tier": 3,
-                "display": "push 5"
+                "display": " push 5"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11902,21 +12602,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; M<1 slowed (save ends)"
+                "display": "6 damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; M<2 slowed, prone (save ends)"
+                "display": "8 damage; prone; <strong class=\"potency-value\">M<2</strong> slowed"
               },
               {
                 "tier": 3,
-                "display": "10 damage; M<3 slowed, prone (save ends)"
+                "display": "10 damage; prone; <strong class=\"potency-value\">M<3</strong> slowed"
               }
             ]
           },
           "effect": {
             "before": "<p>The chimera shifts up to 5 squares. If they end this shift within distance of the target, make a <strong>power roll.</strong></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11951,6 +12655,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The chimera can use Bite and Lion’s Toss against each target</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -11984,6 +12692,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The chimera uses Dragon's Eruption and Roar without spending Malice.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12015,6 +12727,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The chimera uses Roar, then shifts up to their speed and can make a free strike against each enemy who comes adjacent to them during the shift. When the chimera ends this shift, they use Dragon's Eruption. The use of these abilities as part of this villain action costs no Malice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12043,6 +12759,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has <strong class=\"potency-value\">I&lt;2</strong> Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12071,6 +12791,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The chimera takes up a defensive stance. Until the start of their next turn, the chimera can make a free strike against each enemy who comes within 2 squares of them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12099,6 +12823,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The chimera takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12127,6 +12855,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The chimera shakes the ground, causing an eruption of loose rocks and debris that creates three size 2 stone objects anywhere on the encounter map. Each creature adjacent to one or more objects when they appear who has <strong class=\"potency-value\">A&lt;2</strong> takes <span class=\"damage-value damage-generic\">5</span> damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -12229,7 +12961,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "5 psychic damage; P<1 1cB1VkgEN5Hg04Cw (save ends)"
+                "display": "5 psychic damage; <strong class=\"potency-value\">P<1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
@@ -12240,6 +12972,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the target makes a strike while weakened this way, the bendrak can choose a second target within distance for the strike. The first target takes half of any damage from the strike and the second target takes any remaining damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12275,6 +13011,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target is invisible until the start of their next turn. They can then move up to 3 squares and attempt to hide.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12305,6 +13045,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12333,6 +13077,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12361,6 +13109,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -12470,21 +13222,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 psychic damage; I<1 slowed (save ends)"
+                "display": "4 psychic damage; <strong class=\"potency-value\">I<1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "7 psychic damage; I<2 slowed (save ends)"
+                "display": "7 psychic damage; <strong class=\"potency-value\">I<2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "10 psychic damage; I<3 slowed (save ends)"
+                "display": "10 psychic damage; <strong class=\"potency-value\">I<3</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>One ally within 10 squares of the chorogaunt shifts up to their speed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12519,6 +13275,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The chorogaunt slides each target up to 3 squares, ignoring stability.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12552,6 +13312,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Any damage from the strike is halved, and the chorogaunt's abilities deal an extra 3 damage until the end of their next turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12586,6 +13350,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target must choose between taking <span class=\"damage-value damage-psychic\">5 psychic</span> damage, or being frightened (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12621,6 +13389,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The chorogaunt kills the target, and each other ally in the encounter deals an extra <span class=\"damage-value damage-generic\">3</span> damage with strikes until the end of the round. The Director gains Malice equal to the number of heroes in the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12654,6 +13426,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The chorogaunt shifts up to their speed, uses Agonizing Harmony, shifts up to their speed, and then uses Agonizing Harmony again.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12684,6 +13460,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12712,6 +13492,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12740,6 +13524,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -12838,21 +13626,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; pull 1"
+                "display": "2 damage;  pull 1"
               },
               {
                 "tier": 2,
-                "display": "4 damage; pull 2"
+                "display": "4 damage;  pull 2"
               },
               {
                 "tier": 3,
-                "display": "5 damage; pull 3"
+                "display": "5 damage;  pull 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is pulled adjacent to the ensnarer, the ensnarer can make a free strike against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12883,6 +13675,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12911,6 +13707,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -12939,6 +13739,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -13053,6 +13857,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13083,6 +13891,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13111,6 +13923,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13139,6 +13955,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -13237,21 +14057,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; pull 2"
+                "display": "5 damage;  pull 2"
               },
               {
                 "tier": 2,
-                "display": "7 damage; pull 3"
+                "display": "7 damage;  pull 3"
               },
               {
                 "tier": 3,
-                "display": "8 damage; pull 4"
+                "display": "8 damage;  pull 4"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is pulled adjacent to the muceron, the muceron can either make a free strike or use the Grab maneuver against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13288,6 +14112,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The muceron pulls each target up to 5 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13318,6 +14146,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13346,6 +14178,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13374,6 +14210,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -13499,6 +14339,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13529,6 +14373,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13557,6 +14405,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13585,6 +14437,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -13684,21 +14540,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage"
+                "display": "5 damage; the remasch can teleport up to 2 squares"
               },
               {
                 "tier": 2,
-                "display": "6 damage"
+                "display": "6 damage; the remasch can teleport up to 3 squares"
               },
               {
                 "tier": 3,
-                "display": "8 damage"
+                "display": "8 damage; the remasch can teleport up to 3 squares"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The remasch takes an adjacent creature with them when they teleport. The creature appears in an unoccupied space adjacent to the remasch's destination.",
+            "value": 5,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> The remasch takes an adjacent creature with them when they teleport. The creature appears in an unoccupied space adjacent to the remasch's destination."
           }
         }
       },
@@ -13732,6 +14593,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The remasch can teleport up to 2 squares and uses Abyssal Strike.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13762,6 +14627,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13790,6 +14659,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13818,6 +14691,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -13924,13 +14801,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 damage; M<2 bleeding (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -13980,6 +14861,10 @@ export const monsters = {
           "effect": {
             "before": "<p><strong>Special:</strong> Each target must be at less than full Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14010,6 +14895,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14038,6 +14927,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14066,6 +14959,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -14165,21 +15062,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "slide 3"
+                "display": " slide 3"
               },
               {
                 "tier": 2,
-                "display": "slide 4"
+                "display": " slide 4"
               },
               {
                 "tier": 3,
-                "display": "slide 5"
+                "display": " slide 5"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The ground in the area turns into a morass of spongy flesh before the targets are force moved. Until the start of the torlas's next turn, the area is difficult terrain, and each creature who moves in the area takes <span class=\"damage-value damage-generic\">1</span> damage for each square moved.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14215,6 +15116,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The torlas pulls each target up to 3 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14245,6 +15150,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14273,6 +15182,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14301,6 +15214,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -14415,6 +15332,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target has corruption weakness 5 (EoT).</p>"
+          },
+          "spend": {
+            "text": "If the target has i<2, they have corruption weakness 5  (save ends).",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If the target has i<2, they have corruption weakness 5  (save ends)."
           }
         }
       },
@@ -14450,21 +15372,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 psychic damage; A<1 WlWQ0LyAVTn8gdCi (save ends)"
+                "display": "3 psychic damage; <strong class=\"potency-value\">A<1</strong> the target is warped (Save Ends)"
               },
               {
                 "tier": 2,
-                "display": "5 psychic damage; A<2 WlWQ0LyAVTn8gdCi (save ends)"
+                "display": "5 psychic damage; <strong class=\"potency-value\">A<2</strong> the target is warped (Save Ends)"
               },
               {
                 "tier": 3,
-                "display": "6 psychic damage; A<3 WlWQ0LyAVTn8gdCi (save ends)"
+                "display": "6 psychic damage; <strong class=\"potency-value\">A<3</strong> the target is warped (Save Ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><strong>Special:</strong> The bale eye must create the cube beneath themself.</p>",
             "after": "<p>While warped, a creature has a double bane on power rolls using any characteristic higher than 0, and has a double edge on power rolls using any characteristic lower than 0.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14493,6 +15419,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14521,6 +15451,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -14646,6 +15580,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each enemy adjacent to the fangling takes <span class=\"damage-value damage-generic\">2</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14681,21 +15619,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; pull 1; A<1 bleeding (save ends)"
+                "display": "2 damage;  pull 1; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "3 damage; pull 1; A<2 bleeding (save ends)"
+                "display": "3 damage;  pull 1; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "4 damage; pull 1; A<3 bleeding (save ends)"
+                "display": "4 damage;  pull 1; <strong class=\"potency-value\">A<3</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14724,6 +15666,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14752,6 +15698,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -14857,13 +15807,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 corruption damage; I<3 dazed (save ends)"
+                "display": "7 corruption damage; <strong class=\"potency-value\">I<3</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The fiktin violently changes shape, dealing an extra <span class=\"damage-value damage-generic\">6</span> damage to any target they were hidden from with their Aggressive Mimicry ability.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14897,6 +15851,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The fiktin transforms into a mundane object of their size or smaller and is automatically hidden. They can revert to their true form as a free maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14925,6 +15883,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -14953,6 +15915,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -15055,6 +16021,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The grulqin gains an edge on this ability if they previously moved 3 or more squares in a straight line on their turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15083,6 +16053,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15111,6 +16085,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -15209,7 +16187,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 acid damage; M<1 slowed (save ends)"
+                "display": "5 acid damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -15217,13 +16195,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 acid damage; M<3 restrained (save ends)"
+                "display": "9 acid damage; <strong class=\"potency-value\">M<3</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>Note: range is <strong>1 burst, or 3 cube within 5</strong></p>",
             "after": "<p>The ground and any surfaces in the area pool with slime. The slime is difficult terrain for enemies, and any enemy is bleeding while in the area.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15255,6 +16237,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The gunge vomits with great force, letting them shift up to their speed and ignore any additional effects from the strike. The space the gunge occupied before the shift is covered in slime that is difficult terrain for enemies. Additionally, any enemy is bleeding while in the slime.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15283,6 +16269,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15311,6 +16301,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -15397,21 +16391,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "11 corruption damage; A<2 restrained (save ends)"
+                "display": "11 corruption damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "16 corruption damage; A<3 restrained (save ends)"
+                "display": "16 corruption damage; <strong class=\"potency-value\">A<3</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "19 corruption damage; A<4 restrained (save ends)"
+                "display": "19 corruption damage; <strong class=\"potency-value\">A<4</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p><a href=\"/monster/ensnarer\" class=\"monster-link\">Ensnarer</a></p>"
+          },
+          "spend": {
+            "text": "Two ensnarers appear in unoccupied spaces adjacent to each target. On a tier 3 outcome, four ensnarers appear.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Two ensnarers appear in unoccupied spaces adjacent to each target. On a tier 3 outcome, four ensnarers appear."
           }
         }
       },
@@ -15446,6 +16445,11 @@ export const monsters = {
           "effect": {
             "before": "<p>Four level 1 demon minions (most commonly ensnarers, frenzieds, and pitlings) burst forth from the egress and appear in unoccupied spaces in the area.</p><p><a href=\"/monster/ensnarer\" class=\"monster-link\">Ensnarer</a></p><p><a href=\"/monster/frenzied\" class=\"monster-link\">Frenzied</a></p><p><a href=\"/monster/pitling\" class=\"monster-link\">Pitling</a></p>",
             "after": "<p><a href=\"/monster/orliq\" class=\"monster-link\">Orliq</a></p><p><a href=\"/monster/grulqin\" class=\"monster-link\">Grulqin</a></p><p><a href=\"/monster/wobalas\" class=\"monster-link\">Wobalas</a></p>"
+          },
+          "spend": {
+            "text": "Four level 4 demon minions (most commonly orliq, grul qins, and wobalas) appear instead.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Four level 4 demon minions (most commonly orliq, grul qins, and wobalas) appear instead."
           }
         }
       },
@@ -15481,6 +16485,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Eight <a href=\"/monster/ensnarer\" class=\"monster-link\">Ensnarer</a> appear anywhere in the area.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15521,13 +16529,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "15 corruption damage"
+                "display": "15 corruption damage; two frenzieds appear in unoccupied spaces adjacent to each target"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p><a href=\"/monster/frenzied\" class=\"monster-link\">Frenzied</a></p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15562,6 +16574,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The egress folds into their own portal and teleports to an un occupied space within distance. Four level 4 demon minions (most commonly orliq, grulqins, and wobalas) appear in squares in the egress's former space.</p>",
             "after": "<p><a href=\"/monster/orliq\" class=\"monster-link\">Orliq</a></p><p><a href=\"/monster/grulqin\" class=\"monster-link\">Grulqin</a></p><p><a href=\"/monster/wobalas\" class=\"monster-link\">Wobalas</a></p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15597,21 +16613,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 corruption damage; R<2 weakened (save ends)"
+                "display": "6 corruption damage; <strong class=\"potency-value\">R<2</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "11 corruption damage; R<3 weakened (save ends)"
+                "display": "11 corruption damage; <strong class=\"potency-value\">R<3</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "14 corruption damage; R<4 weakened (save ends)"
+                "display": "14 corruption damage; <strong class=\"potency-value\">R<4</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>Note: Targets <strong>Enemy</strong> and Object in the area.</p>",
             "after": "<p>The egress recalls and instantly destroys any minion allies on the encounter map. A torrent of churned-up minion bodies, blood, and ichor erupts from the egress, dealing an extra <span class=\"damage-value damage-damage\">1 damage</span> for each minion destroyed this way.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15640,6 +16660,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15668,6 +16692,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -15768,21 +16796,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 corruption damage; slide 2"
+                "display": "2 corruption damage;  slide 2"
               },
               {
                 "tier": 2,
-                "display": "4 corruption damage; vertical slide 2"
+                "display": "4 corruption damage;  vertical slide 2"
               },
               {
                 "tier": 3,
-                "display": "6 corruption damage; vertical slide 2"
+                "display": "6 corruption damage;  vertical slide 2"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15811,6 +16843,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15839,6 +16875,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -15945,13 +16985,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "11 damage; M<3 grabbed (save ends)"
+                "display": "11 damage; grabbed, and the target takes a bane on the Escape Grab maneuver"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Any target grabbed this way takes <span class=\"damage-value damage-psychic\">4 psychic</span> damage at the start of each of the tormenauk's turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -15985,21 +17029,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 psychic damage; I<1 dazed (save ends)"
+                "display": "4 psychic damage; <strong class=\"potency-value\">I<1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 psychic damage; I<2 dazed (save ends)"
+                "display": "6 psychic damage; <strong class=\"potency-value\">I<2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "8 psychic damage; I<3 dazed (save ends)"
+                "display": "8 psychic damage; <strong class=\"potency-value\">I<3</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The potency increases by 1 if the target is grabbed by the tormenauk.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16028,6 +17076,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16056,6 +17108,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -16146,6 +17202,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target takes a bane on their next strike. If the target is winded, they have a double bane on their next strike instead.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16174,6 +17234,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16202,6 +17266,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -16316,6 +17384,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: targets each Enemy and Object</p><p>Each target makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"91\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-cold\">14 cold</span> damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"91\"><p>12-16</p></td><td><p><span class=\"damage-value damage-cold\">11 cold</span> damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"91\"><p>17+</p></td><td><p><span class=\"damage-value damage-cold\">6 cold</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16351,21 +17423,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "10 psychic damage; pull 2"
+                "display": "10 psychic damage;  pull 2"
               },
               {
                 "tier": 2,
-                "display": "15 psychic damage; pull 4"
+                "display": "15 psychic damage;  pull 4"
               },
               {
                 "tier": 3,
-                "display": "18 psychic damage; pull 6"
+                "display": "18 psychic damage;  pull 6"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The pull becomes a vertical slide.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The pull becomes a vertical slide."
           }
         }
       },
@@ -16401,6 +17478,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target must be dragonsealed. Each target takes <span class=\"damage-value damage-psychic\">3 psychic</span> damage, and if they have I &lt; 3 they immediately make a free strike against one ally of the dragon's choice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16432,6 +17513,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The dragon moves two existing cubes of magical darkness they created up to 10 squares each.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16465,21 +17550,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "pull 2; I<2 frightened"
+                "display": " pull 2; <strong class=\"potency-value\">I<2</strong> frightened (EoT)"
               },
               {
                 "tier": 2,
-                "display": "pull 4; I<3 frightened (save ends)"
+                "display": " pull 4; <strong class=\"potency-value\">I<3</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "pull 6"
+                "display": " pull 6"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16528,6 +17617,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target must be dragonsealed. Any target who has I &lt; 3 is also dazed (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16561,6 +17654,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The dragon disappears from the encounter map. The dragon and three hallucinatory illusions of themself then immediately reappear in unoccupied spaces on the encounter map, and the dragon and each illusion uses Breath of Brume. Each illusion is indistinguishable from the dragon except by supernatural means, has 1 Stamina, and has the dragon's speed. An illusion acts on the dragon's turns but can take only move actions. Once per round before or after using an ability, the dragon can trade places with any duplicate.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16589,6 +17686,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The dragon thickens the fog of their Gloaming Wyrmscale Aura trait and the horrors within it. Each creature in the area takes a bane on strikes made against the dragon until the start of the dragon’s next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16617,6 +17718,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The dragon manifests four 2 cubes of nightmarish apparitions anywhere on the encounter map. Each creature in the area when it appears makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Intuition test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">14</span> damage; dazed (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; dazed (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16645,6 +17750,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The dragon takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16673,6 +17782,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The dragon summons macabre, disquieting phantasms in a 10 cube within 1 square that lasts until the end of the encounter. Any enemy who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-psychic\">6 psychic</span> damage, or <span class=\"damage-value damage-psychic\">8 psychic</span> damage if they are dragonsealed by the gloom dragon. Additionally, the enemy’s Intuition score is treated as 1 lower for the purpose of resisting potencies until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -16839,6 +17952,10 @@ export const monsters = {
           "effect": {
             "before": "<p><strong>Note:</strong> Targets each Enemy and Object in the area.</p><p>Each target makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">12 poison</span> damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-poison\">9 poison</span> damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage</p></td></tr></tbody></table>",
             "after": "<p>A dragonsealed creature has their wounds bound by nettles and thorns, causing them to take an extra <span class=\"damage-value damage-generic\">1d3</span> damage whenever they take damage rolled as a d6 or a d3.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16874,21 +17991,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; push 2"
+                "display": "8 damage;  push 2"
               },
               {
                 "tier": 2,
-                "display": "12 damage; push 4"
+                "display": "12 damage;  push 4"
               },
               {
                 "tier": 3,
-                "display": "15 damage; push 8"
+                "display": "15 damage;  push 8"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "Each target takes an extra 1d3 damage, and if they have A < 2, they are bleeding (save ends).",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target takes an extra 1d3 damage, and if they have A < 2, they are bleeding (save ends)."
           }
         }
       },
@@ -16923,6 +18045,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target must be dragonsealed. Each target is pulled up to 5 squares toward the dragon, who gains 5 temporary Stamina for each target pulled.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16958,6 +18084,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target is pulled up to 5 squares toward the dragon, and if they have A &lt; 2, they are restrained until the end of their next turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -16992,6 +18122,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The dragon makes a free strike against the target, and if the target has M &lt; 2, they are bleeding until the end of their next turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17025,21 +18159,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; A<1 restrained (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A<1</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 damage; A<2 restrained (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 damage; A<3 restrained (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">A<3</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17071,6 +18209,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The thorns upon the dragon's scales grow longer and sharper. Until the end of the encounter, any adjacent creature who targets the dragon with a melee strike takes 3 damage. The dragon then uses their Provoking Nettles ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17102,6 +18244,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Poisonous overgrowth and seeking vines cover all surfaces on the encounter map. The dragon uses their Bramble Barricade Malice feature twice at no cost. Until the end of the encounter, any creature force moved by the dragon takes <span class=\"damage-value damage-poison\">1d3 poison</span> damage, and if they have M &lt; 2, they are weakened (save ends).</p>",
             "after": "<p><strong>Special:</strong> If the Thorn Dragon’s Domain trait is in effect, any creature other than the dragon who starts their turn on the encounter map takes <span class=\"damage-value damage-poison\">1d3 poison</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17130,6 +18276,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A cage of thorns grows around one dragonsealed enemy on the encounter map, making that enemy restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17158,6 +18308,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The dragon grows a 10 wall of briars in unoccupied spaces on the encounter map. The wall blocks line of effect for all creatures except the dragon. Each square of the wall has 5 Stamina and fire weakness 5. The area can be moved through but is difficult terrain. Any creature who is force moved into or within the area takes <span class=\"damage-value damage-generic\">1</span> damage for each square of the area entered and is bleeding until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17186,6 +18340,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The dragon takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17214,6 +18372,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The dragon summons poisonous, biting thorns around their foes. Each enemy on the encounter map makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">12 poison</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p><span class=\"damage-value damage-poison\">9 poison</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; bleeding (EoT)</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -17308,13 +18470,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "3 damage"
+                "display": "3 damage; one ally adjacent to the target can make a free strike"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17343,6 +18509,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17371,6 +18541,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -17449,6 +18623,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17477,6 +18655,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17527,6 +18709,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the target is restrained, they take an extra <span class=\"damage-value damage-generic\">2</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -17614,21 +18800,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 damage; push 1"
+                "display": "1 damage;  push 1"
               },
               {
                 "tier": 2,
-                "display": "2 damage; push 2"
+                "display": "2 damage;  push 2"
               },
               {
                 "tier": 3,
-                "display": "3 damage; push 4"
+                "display": "3 damage;  push 4"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17657,6 +18847,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17685,6 +18879,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -17769,21 +18967,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; push 1"
+                "display": "6 damage;  push 1"
               },
               {
                 "tier": 2,
-                "display": "9 damage; push 3"
+                "display": "9 damage;  push 3"
               },
               {
                 "tier": 3,
-                "display": "12 damage; push 5"
+                "display": "12 damage;  push 5"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is adjacent to an object or a wall after the power roll is resolved, they are restrained until the end of their next turn. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "If the target is pushed into another creature, the target and  the creature are each restrained until the end of their next turn.",
+            "value": 5,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> If the target is pushed into another creature, the target and  the creature are each restrained until the end of their next turn."
           }
         }
       },
@@ -17817,8 +19020,12 @@ export const monsters = {
             "effects": {}
           },
           "effect": {
-            "before": "<p>NOTE: Targets one prone, restrained, or slowed creature</p><p>The gunner makes a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike} against the target, and the prone, restrained, and slowed conditions on the target end. The target is then restrained (save ends).</p>",
+            "before": "<p>NOTE: Targets one prone, restrained, or slowed creature</p><p>The gunner makes a <span class=\"damage-value damage-generic\">4</span> damage free strike against the target, and the prone, restrained, and slowed conditions on the target end. The target is then restrained (save ends).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17847,6 +19054,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17875,6 +19086,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -17911,6 +19126,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an Agility Test.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>8 damage; restrained (EoT)</p></td></tr><tr><td><p>12-16</p></td><td><p>6 damage; slowed (EoT)</p></td></tr><tr><td><p>17</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>The snaring line remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability canʼt be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -17995,21 +19214,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 damage; pull 1"
+                "display": "1 damage;  pull 1"
               },
               {
                 "tier": 2,
-                "display": "2 damage; pull 2"
+                "display": "2 damage;  pull 2"
               },
               {
                 "tier": 3,
-                "display": "3 damage; pull 4"
+                "display": "3 damage;  pull 4"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18038,6 +19261,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18066,6 +19293,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -18151,21 +19382,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage; push 1"
+                "display": "3 damage;  push 1"
               },
               {
                 "tier": 2,
-                "display": "6 damage; push 3; M<1 slowed (save ends)"
+                "display": "6 damage;  push 3; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "8 damage; push 3; M<2 slowed (save ends)"
+                "display": "8 damage;  push 3; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18200,21 +19435,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 poison damage; I<0 dazed (save ends)"
+                "display": "3 poison damage; <strong class=\"potency-value\">I<0</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 poison damage; I<1 dazed (save ends)"
+                "display": "6 poison damage; <strong class=\"potency-value\">I<1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "8 poison damage; I<2 dazed (save ends)"
+                "display": "8 poison damage; <strong class=\"potency-value\">I<2</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target dazed this way treats their characteristic scores as 1 lower for the purpose of resisting potencies.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18243,6 +19482,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18271,6 +19514,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18307,6 +19554,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an Agility Test.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>8 damage; restrained (EoT)</p></td></tr><tr><td><p>12-16</p></td><td><p>6 damage; slowed (EoT)</p></td></tr><tr><td><p>17</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>The snaring line remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability canʼt be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -18394,21 +19645,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; slide 1"
+                "display": "8 damage;  slide 1"
               },
               {
                 "tier": 2,
-                "display": "12 damage; slide 3"
+                "display": "12 damage;  slide 3"
               },
               {
                 "tier": 3,
-                "display": "15 damage; slide 5"
+                "display": "15 damage;  slide 5"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "A target force moved adjacent to an ally of the marauder  lord is restrained until the end of their next turn.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> A target force moved adjacent to an ally of the marauder  lord is restrained until the end of their next turn."
           }
         }
       },
@@ -18444,6 +19700,11 @@ export const monsters = {
           "effect": {
             "before": "<p>The target vertical slides up to 5 squares. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "This ability takes the Area keyword and loses the Ranged  keyword, its distance becomes a 10 burst, and it targets each restrained creature in the area",
+            "value": 5,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> This ability takes the Area keyword and loses the Ranged  keyword, its distance becomes a 10 burst, and it targets each restrained creature in the area"
           }
         }
       },
@@ -18479,6 +19740,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target halves any damage from the strike and the triggering creature takes <span class=\"damage-value damage-generic\">4</span> damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18517,6 +19782,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The marauder lord uses Levitating Axes against each target, making one power roll against all targets.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18551,6 +19820,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target shifts up to their speed. The marauder lord then uses Levitating Axes.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18586,6 +19859,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The marauder lord creates three size 2 metal objects in unoccupied spaces within distance. Whenever the marauder lord uses Magnetomancy, they can additionally target one of these objects.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18614,6 +19891,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18642,6 +19923,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18678,6 +19963,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an Agility Test.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>8 damage; restrained (EoT)</p></td></tr><tr><td><p>12-16</p></td><td><p>6 damage; slowed (EoT)</p></td></tr><tr><td><p>17</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>The snaring line remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability canʼt be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -18762,21 +20051,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; M<0 slowed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M<0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "7 damage; M<1 slowed (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; M<2 slowed (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The target is pulled up to 5 squares. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18812,6 +20105,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target is pulled up to 8 squares. A restrained or slowed target can be pulled an additional 2 squares. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18840,6 +20137,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18868,6 +20169,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -18904,6 +20209,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an Agility Test.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>8 damage; restrained (EoT)</p></td></tr><tr><td><p>12-16</p></td><td><p>6 damage; slowed (EoT)</p></td></tr><tr><td><p>17</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>The snaring line remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability canʼt be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -18988,21 +20297,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; slide 1"
+                "display": "7 damage;  slide 1"
               },
               {
                 "tier": 2,
-                "display": "10 damage; slide 1"
+                "display": "10 damage;  slide 1"
               },
               {
                 "tier": 3,
-                "display": "13 damage; slide 1"
+                "display": "13 damage;  slide 1"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The shieldwall can shift 1 square to remain adjacent to the target. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "This ability targets one additional target.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> This ability targets one additional target."
           }
         }
       },
@@ -19036,6 +20350,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The shieldwall becomes the target of the triggering strike and halves the damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19064,6 +20382,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19092,6 +20414,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19128,6 +20454,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an Agility Test.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>8 damage; restrained (EoT)</p></td></tr><tr><td><p>12-16</p></td><td><p>6 damage; slowed (EoT)</p></td></tr><tr><td><p>17</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>The snaring line remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability canʼt be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -19201,7 +20531,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; M<0 slowed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M<0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -19209,13 +20539,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "11 damage; M<2 restrained (save ends)"
+                "display": "11 damage; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target restrained by a dwarf can be force moved by this ability. This forced movement doesn’t end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19249,21 +20583,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage; push 2; R<1 slowed (save ends)"
+                "display": "4 damage;  push 2; <strong class=\"potency-value\">R<1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 damage; push 3; R<2 slowed (save ends)"
+                "display": "6 damage;  push 3; <strong class=\"potency-value\">R<2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; push 3; R<3 slowed (save ends)"
+                "display": "9 damage;  push 3; <strong class=\"potency-value\">R<3</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The area is difficult terrain for enemies. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn’t end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19304,6 +20642,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19340,6 +20682,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an Agility Test.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>8 damage; restrained (EoT)</p></td></tr><tr><td><p>12-16</p></td><td><p>6 damage; slowed (EoT)</p></td></tr><tr><td><p>17</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>The snaring line remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability canʼt be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19368,6 +20714,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -19443,21 +20793,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; push 2"
+                "display": "5 damage;  push 2"
               },
               {
                 "tier": 2,
-                "display": "7 damage; push 4"
+                "display": "7 damage;  push 4"
               },
               {
                 "tier": 3,
-                "display": "9 damage; push 6"
+                "display": "9 damage;  push 6"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19495,6 +20849,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes a Might test.</p><table><tbody><tr><td data-colwidth=\"108\"><p>11 or less</p></td><td><p>7 damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"108\"><p>12-16</p></td><td><p>5 damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"108\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>The snare remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19523,6 +20881,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19559,6 +20921,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an Agility Test.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>8 damage; restrained (EoT)</p></td></tr><tr><td><p>12-16</p></td><td><p>6 damage; slowed (EoT)</p></td></tr><tr><td><p>17</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>The snaring line remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability canʼt be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19587,6 +20953,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -19659,21 +21029,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; push 1"
+                "display": "7 damage;  push 1"
               },
               {
                 "tier": 2,
-                "display": "10 damage; push 3"
+                "display": "10 damage;  push 3"
               },
               {
                 "tier": 3,
-                "display": "13 damage; push 5; M<2 restrained (save ends)"
+                "display": "13 damage;  push 5; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target restrained by a dwarf can be force moved by this ability. This forced movement doesn’t end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19708,21 +21082,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; A<0 slowed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A<0</strong> Slowed (Save Ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; A<1 slowed (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">A<1</strong> Slowed (Save Ends)"
               },
               {
                 "tier": 3,
-                "display": "11 damage; A<2 slowed (save ends)"
+                "display": "11 damage; <strong class=\"potency-value\">A<2</strong> Slowed (Save Ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target restrained by a dwarf can be force moved by this ability. This forced movement doesn’t end the restrained condition unless the Director determines otherwise</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19763,6 +21141,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19799,6 +21181,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an Agility Test.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>8 damage; restrained (EoT)</p></td></tr><tr><td><p>12-16</p></td><td><p>6 damage; slowed (EoT)</p></td></tr><tr><td><p>17</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>The snaring line remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability canʼt be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19827,6 +21213,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -19933,13 +21323,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; M<2 restrained (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target already restrained or restrained by this ability is pulled up to 3 squares. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -19973,21 +21367,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 lightning damage; A<0 slowed (save ends)"
+                "display": "3 lightning damage; <strong class=\"potency-value\">A<0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 lightning damage; A<1 slowed (save ends)"
+                "display": "6 lightning damage; <strong class=\"potency-value\">A<1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "7 lightning damage; A<2 slowed (save ends)"
+                "display": "7 lightning damage; <strong class=\"potency-value\">A<2</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20016,6 +21414,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20044,6 +21446,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -20134,7 +21540,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "12 fire damage; A<1 fAMkcXAH7Fy3kJAq (save ends)"
+                "display": "12 fire damage; <strong class=\"potency-value\">A<1</strong> the target is burning (save ends)"
               },
               {
                 "tier": 3,
@@ -20145,6 +21551,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>A burning creature takes <span class=\"damage-value damage-fire\">1d6 fire</span> damage at the start of each of their turns. A burning object takes <span class=\"damage-value damage-fire\">1d6 fire</span> damage at the end of each round.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20180,6 +21590,11 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the crux's next turn, the target has fire immunity 5.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "Until the end of the encounter, the ground within 3 squares  of the target is wreathed in fire. Any enemy who enters that area for  the first time in a round or starts their turn there takes 3 fire damage.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the ground within 3 squares  of the target is wreathed in fire. Any enemy who enters that area for  the first time in a round or starts their turn there takes 3 fire damage."
           }
         }
       },
@@ -20213,6 +21628,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The crux ignores any effects associated with the damage and can fly up to their speed. If the crux doesn't end this movement on solid ground, they fall.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20241,6 +21660,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20269,6 +21692,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20298,6 +21725,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -20388,17 +21819,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "5 damage; 4 lightning damage; push 1"
+                "display": "5 damage; 4 lightning damage;  push 1"
               },
               {
                 "tier": 3,
-                "display": "5 damage; 7 lightning damage; push 3"
+                "display": "5 damage; 7 lightning damage;  push 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The essence shifts up to 3 squares before or after using this ability.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20434,6 +21869,11 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the essence’s next turn, the target has light ning immunity 5.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "Until the end of the encounter, a vortex surrounds the tar get in a 3 aura. The area is difficult terrain for enemies. Additionally,  at the end of each of the target’s turns, they can push one creature in  the area up to 5 squares.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, a vortex surrounds the tar get in a 3 aura. The area is difficult terrain for enemies. Additionally,  at the end of each of the target’s turns, they can push one creature in  the area up to 5 squares."
           }
         }
       },
@@ -20469,6 +21909,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target takes <span class=\"damage-value damage-lightning\">5 lightning</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20497,6 +21941,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20525,6 +21973,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20554,6 +22006,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -20653,21 +22109,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; slide 1"
+                "display": "7 damage;  slide 1"
               },
               {
                 "tier": 2,
-                "display": "11 damage; slide 2"
+                "display": "11 damage;  slide 2"
               },
               {
                 "tier": 3,
-                "display": "14 damage; slide 3"
+                "display": "14 damage;  slide 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If a target has P &lt; 2, their stability is reduced to 0 and they move 2 additional squares whenever they are force moved (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20703,6 +22163,11 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the essence's next turn, the target has cold immunity 5.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "Until the end of the encounter, the ground within 1  square of the target is a pool of water that is difficult terrain. This  water extends out behind the target as they move, creating a  stream that lasts until the end of the encounter. Any enemy who  ends their turn in the stream and has M<2 is slowed (save ends).",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the ground within 1  square of the target is a pool of water that is difficult terrain. This  water extends out behind the target as they move, creating a  stream that lasts until the end of the encounter. Any enemy who  ends their turn in the stream and has <strong class=\"potency-value\">M&lt;2</strong> is slowed (save ends)."
           }
         }
       },
@@ -20737,6 +22202,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The essence makes a free strike against the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20765,6 +22234,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20793,6 +22266,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20822,6 +22299,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -20925,7 +22406,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "13 damage; R<1 prone, swNw5lHNUQRxxiID, restrained"
+                "display": "13 damage; <strong class=\"potency-value\">R<1</strong> prone and can't stand (save ends)"
               },
               {
                 "tier": 3,
@@ -20936,6 +22417,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If a target made prone this way is already prone, they are instead restrained (save ends). If the target was also unable to stand, that effect ends when they are no longer restrained this way.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -20971,6 +22456,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target gains [[/heal 15 temporary]] that lasts until the start of the field's next turn.</p>"
+          },
+          "spend": {
+            "text": "Until the end of the encounter, the ground within 1 square  of the target is overgrown with underbrush and vines. Whenever any  enemy makes a strike against the target while within line of effect  of that area, the enemy is pulled 5 squares toward the area after the  strike is resolved. Any enemy who enters the area for the first time in  a round or starts their turn there is knocked prone.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the ground within 1 square  of the target is overgrown with underbrush and vines. Whenever any  enemy makes a strike against the target while within line of effect  of that area, the enemy is pulled 5 squares toward the area after the  strike is resolved. Any enemy who enters the area for the first time in  a round or starts their turn there is knocked prone."
           }
         }
       },
@@ -21006,6 +22496,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target takes <span class=\"damage-value damage-generic\">6</span> damage, and if they have A &lt; 2, they are bleeding (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21034,6 +22528,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21062,6 +22560,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21091,6 +22593,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -21203,17 +22709,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "12 damage; M<1 restrained (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M<1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "15 damage; M<2 restrained (save ends)"
+                "display": "15 damage; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The target's space is difficult terrain.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21249,6 +22759,11 @@ export const monsters = {
           "effect": {
             "before": "<p>Target: Self or one Elemental</p>",
             "after": "<p>Until the start of the force's next turn, any melee strike made against the target takes a bane if it doesn't already have a bane or double bane.</p><p>[[/heal 15 temporary]]</p>"
+          },
+          "spend": {
+            "text": "Until the end of the encounter, the target grows a carapace  of stone. They have a +3 bonus to stability and gain [[/heal 15 temporary]] Stamina.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the target grows a carapace  of stone. They have a +3 bonus to stability and gain [[/heal 15 temporary]] Stamina."
           }
         }
       },
@@ -21282,6 +22797,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The force halves the damage, and has damage weakness 3 and a +3 bonus to speed until the end of the encounter. This damage weakness increases by 3 each time the force uses this ability in the same encounter.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21310,6 +22829,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21338,6 +22861,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21367,6 +22894,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -21451,6 +22982,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Until the start of the brambleguard's next turn, their speed is 0 and they extend themself into a 5 wall. Each ally who starts their turn adjacent to the brambleguard regains <span class=\"heal-value\">5</span> healing and can apply the Magic keyword to their weapon abilities until the end of their turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21488,17 +23023,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage; push 3"
+                "display": "7 damage;  push 3"
               },
               {
                 "tier": 3,
-                "display": "10 damage; push 3; A<2 bleeding (save ends)"
+                "display": "10 damage;  push 3; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21527,6 +23066,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21560,21 +23103,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
             "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21603,6 +23150,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -21696,13 +23247,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 lightning damage; M<2 prone (save ends)"
+                "display": "9 lightning damage; <strong class=\"potency-value\">M<2</strong> prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21751,6 +23306,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Any target who is prone takes an extra <span class=\"damage-value damage-generic\">2</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21782,6 +23341,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets the Horses rider</p><p>The horse vertical slides the target up to 3 squares, ignoring stability. The target can use a ranged ability at any point during this forced movement, and takes no damage if they then fall.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21810,6 +23373,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21843,21 +23410,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
             "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -21886,6 +23457,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -21987,7 +23562,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "1 damage; R<1 b9YcbklePj3J8UG0 (save ends)"
+                "display": "1 damage; <strong class=\"potency-value\">R<1</strong> damage weakness 3 (save ends)"
               },
               {
                 "tier": 3,
@@ -21998,6 +23573,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22026,6 +23605,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22054,6 +23637,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -22147,13 +23734,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; R<2 bleeding (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">R<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The bloodletter and each of their allies has a double edge on abilities targeting a creature bleeding this way.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22189,6 +23780,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Until the end of the next round, a cloud of blood vapor fills the area. The cloud blocks line of effect for enemies, and any enemy has damage weakness 3 while in the area. The bloodletter can then shift up to their speed, and can attempt to hide if they end that shift with concealment.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22217,6 +23812,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22250,21 +23849,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
             "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22293,6 +23896,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -22405,6 +24012,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Until the start of the dawn mage's next turn, the target can't hide.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22433,6 +24044,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22461,6 +24076,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -22554,13 +24173,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "13 damage; R<2 bleeding (save ends); I<2 frightened (save ends); P<2 restrained (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">R<2</strong> bleeding (save ends); <strong class=\"potency-value\">I<2</strong> frightened (save ends); <strong class=\"potency-value\">P<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22596,6 +24219,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target has a +5 bonus to speed and automatically obtains a tier 3 outcome on power rolls. They can still roll to determine if they score a critical hit. At the end of their next turn, the target immediately dies.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22624,6 +24251,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22657,21 +24288,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
             "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22700,6 +24335,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22743,13 +24382,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "13 damage; R<2 bleeding (save ends); I<2 frightened (save ends); P<2 restrained (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">R<2</strong> bleeding (save ends); <strong class=\"potency-value\">I<2</strong> frightened (save ends); <strong class=\"potency-value\">P<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -22835,7 +24478,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 cold damage; {{potency}}  push 3"
+                "display": "4 cold damage; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;0</strong></strong>  push 3"
               },
               {
                 "tier": 2,
@@ -22850,6 +24493,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22884,7 +24531,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; R<0 slowed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">R<0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -22892,13 +24539,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "11 damage; R<2 restrained (save ends)"
+                "display": "11 damage; <strong class=\"potency-value\">R<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Each enemy within 3 squares of a target suffers the same potency effect as the target unless they are already adjacent to them, or if they immediately shift into an unoccupied space adjacent to the target (no action required).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22927,6 +24578,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -22960,21 +24615,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
             "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23003,6 +24662,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -23089,21 +24752,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 lightning damage; R<1 dazed (save ends)"
+                "display": "9 lightning damage; <strong class=\"potency-value\">R<1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "14 lightning damage; R<2 dazed (save ends)"
+                "display": "14 lightning damage; <strong class=\"potency-value\">R<2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "17 lightning damage; R<3 dazed (save ends)"
+                "display": "17 lightning damage; <strong class=\"potency-value\">R<3</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Until the start of the ordinator's next turn, each ally high elf in the encounter gains an edge on ability rolls against the target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23139,6 +24806,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets Each elemental ally in the area</p><p>Each target can move up to their speed or make a free strike. Elemental mote targets can, instead, use their Spark of Life trait.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23173,6 +24844,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The ordinator summons four <span class=\"reference-text\">Elemental Motes</span> or four <span class=\"reference-text\">Soot Crows</span> into unoccupied space within distance.</p>"
+          },
+          "spend": {
+            "text": "The ordinator instead summons one ceramic horse or one  winded brambleguard into an unoccupied space within distance.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The ordinator instead summons one ceramic horse or one  winded brambleguard into an unoccupied space within distance."
           }
         }
       },
@@ -23207,6 +24883,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ordinator uses Lightning Rod against the target after the ability is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23242,6 +24922,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target glows briefly, and can end one effect on themself then move up to their speed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23279,6 +24963,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes a **Presence test**.</p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-corruption\">12 corruption</span> damage; pull 5 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-corruption\">9 corruption</span> damage; pull 3 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p>Pull 1 toward the center of the cube</p></td></tr></tbody></table>",
             "after": "<p>The area turns dark and distorted, and is difficult terrain for enemies.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23314,6 +25002,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target’s free strike now has the Magic keyword and can target two creatures or objects. Additionally, each target glows with magic.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23354,6 +25046,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23387,21 +25083,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
             "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23430,6 +25130,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -23521,7 +25225,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 psychic damage; I<1 weakened (save ends)"
+                "display": "7 psychic damage; <strong class=\"potency-value\">I<1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
@@ -23532,6 +25236,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The potency increases by 1. If the target is weakened this  way at the end of the encounter, they can’t take a respite activity  during their next respite.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The potency increases by 1. If the target is weakened this  way at the end of the encounter, they can’t take a respite activity  during their next respite."
           }
         }
       },
@@ -23567,6 +25276,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target can teleport to an unoccupied space adjacent to the palinode. The palinode and each target then gain [[/heal 5 temporary]].</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23595,6 +25308,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23628,21 +25345,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
             "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23671,6 +25392,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -23783,6 +25508,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each ally adjacent to the target shifts up to 2 squares</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23811,6 +25540,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23839,6 +25572,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -23924,21 +25661,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "vertical push 3"
+                "display": " vertical push 3"
               },
               {
                 "tier": 2,
-                "display": "vertical push 5"
+                "display": " vertical push 5"
               },
               {
                 "tier": 3,
-                "display": "vertical push 6"
+                "display": " vertical push 6"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>For each elemental mote adjacent to the wyrd, the size of the cube increases by 1.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -23973,6 +25714,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The wyrd summons two <strong><span class=\"reference-text\">Elemental Motes</span></strong> or two <strong><span class=\"reference-text\">Soot Crows</span></strong> into unoccupied spaces within distance.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24009,6 +25754,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The wyrd shapes the land in the area as if it were loose clay, either raising the ground or pushing it down to create a trench. Any creature in the area moves with the terrain to its new higher elevation, or falls if the ground is lowered beneath them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24037,6 +25786,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24070,21 +25823,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
             "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24113,6 +25870,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -24225,6 +25986,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>On a tier 3 outcome, the zephyr can make a free strike against a creature adjacent to the target. If they do so and that creature and the target both have A &lt; 2, the creature and the target are both prone. On any tier outcome, the zephyr can then shift up to 2 squares</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24258,6 +26023,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The zephyr flies up to their speed. If they don't end this movment on solid ground, they are prone.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24286,6 +26055,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24319,21 +26092,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
             "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24362,6 +26139,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -24455,13 +26236,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "3 damage; A<2 taunted"
+                "display": "3 damage; taunted (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Until the end of their turn, the soot crow ignores opportunity attacks from the target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24490,6 +26275,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24518,6 +26307,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -24607,21 +26400,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; push 1"
+                "display": "6 damage;  push 1"
               },
               {
                 "tier": 2,
-                "display": "9 damage; push 3"
+                "display": "9 damage;  push 3"
               },
               {
                 "tier": 3,
-                "display": "12 damage; push 5"
+                "display": "12 damage;  push 5"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The chirurgeon can make a ranged free strike before using this ability.</p>"
+          },
+          "spend": {
+            "text": "The chirurgeon uses this ability again.",
+            "value": 5,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> The chirurgeon uses this ability again."
           }
         }
       },
@@ -24657,6 +26455,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target can teleport up to 10 squares to a space that has cover or concealment.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24685,6 +26487,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24713,6 +26519,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24741,6 +26551,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -24828,21 +26642,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; pull 1"
+                "display": "5 damage;  pull 1"
               },
               {
                 "tier": 2,
-                "display": "8 damage; pull 3; M<1 slowed (save ends)"
+                "display": "8 damage;  pull 3; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "10 damage; pull 5"
+                "display": "10 damage;  pull 5"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>While slowed this way, a target can't search for hidden creatures.</p>"
+          },
+          "spend": {
+            "text": "The size of the cube and the potency both increase by 1.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The size of the cube and the potency both increase by 1."
           }
         }
       },
@@ -24878,6 +26697,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target can teleport up to 10 squares to a space that has cover or concealment.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24906,6 +26729,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24934,6 +26761,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -24962,6 +26793,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -25051,7 +26886,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage; I<1 restrained (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">I<1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
@@ -25062,6 +26897,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>While restrained this way, a target can't search for hidden creatures.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25100,17 +26939,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 damage; P<1 weakened (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">P<1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "6 damage; P<1 bleeding, 3K2d0h2983KZE3av (save ends)"
+                "display": "6 damage; <strong class=\"potency-value\">P<1</strong> bleeding (save ends); the target has a double bane on strikes (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>While bleeding or weakened this way, a target is covered in lichen.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25145,6 +26988,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The green seer makes a free strike against the target after the target’s triggered action is resolved.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25173,6 +27020,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25201,6 +27052,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25229,6 +27084,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -25329,6 +27188,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target is taunted until the end of their next turn, and the greenskeeper shifts up to 3 squares</p>"
+          },
+          "spend": {
+            "text": "The distance increases to Melee 5.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The distance increases to Melee 5."
           }
         }
       },
@@ -25365,6 +27229,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The area is overgrown with heavy brush and brambles until the end of the encounter, providing cover and concealment for the greenskeeper and their allies. The area is difficult terrain for enemies and any enemy who starts their turn in the area takes <span class=\"damage-value damage-generic\">3</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25393,6 +27261,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25421,6 +27293,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25449,6 +27325,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -25557,13 +27437,18 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage; M<2 bleeding (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The guerrilla can teleport up to 3 squares.</p>"
+          },
+          "spend": {
+            "text": "This ability targets one additional target, and deals an addi tional 3 damage if both targets are adjacent to each other.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> This ability targets one additional target, and deals an addi tional 3 damage if both targets are adjacent to each other."
           }
         }
       },
@@ -25598,6 +27483,10 @@ export const monsters = {
           "effect": {
             "before": "<p><strong>Special:</strong> The guerrilla must be acting as a captain.</p><p>The targets take their turn immediately. Each target gains an edge on abilities until the end of their turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25626,6 +27515,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25654,6 +27547,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25682,6 +27579,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -25775,13 +27676,18 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage; A<2 restrained (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The gweiadur shifts up to 3 squares</p>"
+          },
+          "spend": {
+            "text": "If this ability restrains the target, one enemy adjacent to the  target is also restrained (save ends).",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> If this ability restrains the target, one enemy adjacent to the  target is also restrained (save ends)."
           }
         }
       },
@@ -25817,21 +27723,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage; R<0 csX5BwGsGjFAGDpG (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">R<0</strong> the target is marked (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 damage; R<1 slowed, csX5BwGsGjFAGDpG (save ends)"
+                "display": "6 damage; <strong class=\"potency-value\">R<1</strong> slowed and the target is marked (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; R<2 slowed, csX5BwGsGjFAGDpG (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">R<2</strong> slowed and the target is marked (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Allies gain an edge on abilities against a target marked by any wode elf.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25860,6 +27770,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25888,6 +27802,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -25916,6 +27834,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -26041,6 +27963,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26069,6 +27995,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26097,6 +28027,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26125,6 +28059,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -26239,6 +28177,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If this ability is used as part of the Charge main action, the runner shifts up to 2 squares first</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26267,6 +28209,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26295,6 +28241,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26323,6 +28273,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -26449,6 +28403,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26477,6 +28435,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26505,6 +28467,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26533,6 +28499,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -26626,13 +28596,18 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 damage; P<2 kTG7AnIxOzdGaTgI (save ends)"
+                "display": "9 damage; the target is marked (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Allies gain an edge on abilities against a target marked by any wode elf.</p>"
+          },
+          "spend": {
+            "text": "The sentry targets two additional creatures or objects.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The sentry targets two additional creatures or objects."
           }
         }
       },
@@ -26668,6 +28643,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets each marked enemy.</p><p>Each target takes <span class=\"damage-value damage-generic\">3</span> damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26696,6 +28675,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26724,6 +28707,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26752,6 +28739,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -26862,21 +28853,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; M<1 restrained (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "12 damage; M<2 restrained (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "15 damage; M<3 restrained (save ends)"
+                "display": "15 damage; <strong class=\"potency-value\">M<3</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
-            "after": "<p>The warleader can teleport up to 3 squares between each strike.</p><p><br /><span class=\"damage-value damage-generic\">3</span>{3 extra restrained damage}</p>"
+            "after": "<p>The warleader can teleport up to 3 squares between each strike.</p><p><br /><span class=\"damage-value damage-generic\">3</span></p>"
+          },
+          "spend": {
+            "text": "A target restrained by this ability takes an extra 3 damage.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> A target restrained by this ability takes an extra 3 damage."
           }
         }
       },
@@ -26911,6 +28907,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each non-minion target can make a free strike, then each target shifts up to 3 squares. A target who has cover or concealment at the end of this shift can attempt to hide at the end of the warleader's turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26945,6 +28945,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target must not have taken their turn this round. The target takes their turn immediately, and if they have P &lt; 2 they are bleeding and take a bane on strikes until the end of their turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -26979,6 +28983,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The warleader uses Wodeblade against each target and gains an edge on the power roll.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27013,6 +29021,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The warleader can use Wodeblade. Each target can then make a free strike.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27047,6 +29059,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target is invisible until the start of the next round. The warleader then uses Wodeblade.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27075,6 +29091,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27103,6 +29123,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27131,6 +29155,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -27228,21 +29256,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; push 1"
+                "display": "2 damage;  push 1"
               },
               {
                 "tier": 2,
-                "display": "4 damage; push 2"
+                "display": "4 damage;  push 2"
               },
               {
                 "tier": 3,
-                "display": "5 damage; push 3"
+                "display": "5 damage;  push 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27271,6 +29303,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27299,6 +29335,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27327,6 +29367,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -27451,6 +29495,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The wodenelg's rider can make a free strike at any point during the charge.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27482,6 +29530,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The wodenelg and their rider become invisible until the start of the wodenelg's next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27510,6 +29562,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27538,6 +29594,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27566,6 +29626,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -27675,21 +29739,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; slide 2"
+                "display": "8 damage;  slide 2"
               },
               {
                 "tier": 2,
-                "display": "12 damage; slide 2; A<2 prone, restrained"
+                "display": "12 damage;  slide 2; prone"
               },
               {
                 "tier": 3,
-                "display": "15 damage; slide 3; A<3 prone, XwWmi30pg3SdaUpC, restrained"
+                "display": "15 damage;  slide 3; prone and can't stand (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If a target made prone this way is already prone, they are instead restrained (EoT).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27724,21 +29792,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage; push 2"
+                "display": "4 damage;  push 2"
               },
               {
                 "tier": 2,
-                "display": "7 damage; push 1"
+                "display": "7 damage;  push 1"
               },
               {
                 "tier": 3,
-                "display": "10 damage; push 1"
+                "display": "10 damage;  push 1"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The cryptic reforms their body and appears in an unoccupied space in the area.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27773,6 +29845,11 @@ export const monsters = {
           "effect": {
             "before": "<p>The cryptic slides the target up to 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "The ability targets one additional target.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ability targets one additional target."
           }
         }
       },
@@ -27804,6 +29881,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The cryptic halves the damage, ignores any nondamaging effects associated with it, and shifts up to 3 squares</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27836,21 +29917,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage; push 2"
+                "display": "4 damage;  push 2"
               },
               {
                 "tier": 2,
-                "display": "7 damage; push 3; M<2 prone (save ends)"
+                "display": "7 damage;  push 3; prone"
               },
               {
                 "tier": 3,
-                "display": "10 damage; push 4"
+                "display": "10 damage;  push 4"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Before using the Dig maneuver, the cryptic moves up to their speed. They then create the burst when they breach the surface.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27885,6 +29970,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Special: A target must be on the ground.</p><p>Each target makes a Might test.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>Prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>Prone</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27919,6 +30008,10 @@ export const monsters = {
           "effect": {
             "before": "<p><strong>Special</strong>: A target must be on the ground.</p><p>The area drops 2 squares and is difficult terrain. Each target enemy falls, while each target ally drops safely. Additionally, each target enemy makes an <strong>Agility test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"91\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">9</span> damage; prone</p></td></tr><tr><td data-colwidth=\"91\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage</p></td></tr><tr><td data-colwidth=\"91\"><p>17+</p></td><td><p>The target moves to the nearest unoccupied space outside the area.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27951,21 +30044,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; M<1 prone; M<1 restrained (save ends)"
+                "display": "5 damage; prone; <strong class=\"potency-value\">M<1</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 damage; M<2 prone; M<2 restrained (save ends)"
+                "display": "9 damage; prone; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 damage; M<3 prone; M<3 restrained (save ends)"
+                "display": "12 damage; prone; <strong class=\"potency-value\">M<3</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The cryptic makes an initial power roll that calls down stone pillars from the ceiling.</p>",
             "after": "<p>The cryptic then makes a second power roll that raises stone pillars from the floor.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -27996,21 +30093,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; vertical slide 2"
+                "display": "2 damage;  vertical slide 2"
               },
               {
                 "tier": 2,
-                "display": "3 damage; vertical slide 4"
+                "display": "3 damage;  vertical slide 4"
               },
               {
                 "tier": 3,
-                "display": "4 damage; vertical slide 6; P<3 restrained (save ends)"
+                "display": "4 damage;  vertical slide 6; if this movement brings the target  into contact with the ceiling, they are restrained (save ends)."
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28039,6 +30140,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two pillars of stone 1 square wide either thrust up out of the ground or jut down from the ceiling anywhere on the encounter map, to a height of up to 5 squares. A creature in the area of a pillar before it appears is knocked prone on its surface. If the creature comes into contact with the ceiling above or the floor beneath the pillar and has <strong class=\"potency-value\">M&lt;2</strong> they are restrained (save ends).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28067,6 +30172,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The fossil cryptic takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28095,6 +30204,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The fossil cryptic slides one creature on the ground up to 5 squares. If the creature is prone, this forced movement ignores stability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28123,6 +30236,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The air across the encounter map is thick with dust until the end of the encounter. Each enemy in the dust is suffocating. Additionally, at the end of each round, each enemy in the dust makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"94\"><p>11 or less</p></td><td><p>Until the end of the enemy’s next turn, their stability is reduced to 0, and any forced movement effects targeting them gain a +2 bonus to the distance moved.</p></td></tr><tr><td data-colwidth=\"94\"><p>12-16</p></td><td><p>The enemy’s stability is halved (EoT).</p></td></tr><tr><td data-colwidth=\"94\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -28228,13 +30345,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "6 damage; M<2 grabbed (save ends)"
+                "display": "6 damage; grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28263,6 +30384,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28291,6 +30416,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28325,6 +30454,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -28429,13 +30562,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "8 corruption damage; M<2 slowed (save ends)"
+                "display": "8 corruption damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>This ability gains an edge against any target not at full Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28470,6 +30607,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Until the end of their next turn, each target gains an edge on their next strike. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28498,6 +30639,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28526,6 +30671,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28560,6 +30709,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -28652,13 +30805,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 fire damage; I<2 tmnFcC8Lgm4HV9VA (save ends)"
+                "display": "7 fire damage; <strong class=\"potency-value\">I<2</strong> the target is burning (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A burning creature takes <span class=\"damage-value damage-fire\">1d6 fire</span> damage at the start of each of their turns. A burning object takes 1d6 fire damage at the end of each round.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28693,6 +30850,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Two abyssal hyenas claw up from the ground in unoccupied spaces within distance.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28727,6 +30888,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>One abyssal hyena target turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28755,6 +30920,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28783,6 +30952,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28817,6 +30990,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -28901,21 +31078,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; push 2"
+                "display": "5 damage;  push 2"
               },
               {
                 "tier": 2,
-                "display": "6 damage; push 2"
+                "display": "6 damage;  push 2"
               },
               {
                 "tier": 3,
-                "display": "8 damage; push 1; M<2 grabbed (save ends)"
+                "display": "8 damage;  push 1; grabbed; <strong class=\"potency-value\">M<2</strong> the target takes a bane on the Escape Grab maneuver."
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>While the bonesplitter has a target grabbed, they can't use Three-Tail Flail against another target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28950,6 +31131,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Up to three targets can make a free strike. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -28978,6 +31163,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29006,6 +31195,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29040,6 +31233,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -29124,21 +31321,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 psychic damage"
+                "display": "4 psychic damage; {{potency}} the target makes a free strike against a  creature of the cackler’s choice"
               },
               {
                 "tier": 2,
-                "display": "5 psychic damage"
+                "display": "5 psychic damage; {{potency}} the target makes a free strike against a  creature of the cackler’s choice"
               },
               {
                 "tier": 3,
-                "display": "7 psychic damage"
+                "display": "7 psychic damage; {{potency}} the target uses a signature ability  against a creature of the cackler’s choice"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>An ally targeted by this ability ignores the damage and can make a free strike.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29174,6 +31375,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy target makes an <strong>Intuition test</strong>. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p><p></p><table><tbody><tr><td data-colwidth=\"129\"><p>11 or less</p></td><td><p>Frightened (save ends)</p></td></tr><tr><td data-colwidth=\"129\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"129\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29202,6 +31407,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29230,6 +31439,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29264,6 +31477,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -29372,7 +31589,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; A<1 bleeding (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
@@ -29380,13 +31597,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage; A<3 djensfHmTU8RzHZe (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">A<3</strong> bleeding and dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>An ally targeted by this ability ignores the damage and can make a free strike.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29421,6 +31642,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target deals an extra 3 damage with their next strike until the start of the carnage's next turn. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29456,6 +31681,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The carnage summons four abyssal hyenas into unoccupied spaces within distance.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29490,6 +31719,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target moves up to their speed and can make a free strike. Any creature damaged by one of these free strikes who has M &lt; 2 is knocked prone.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29525,6 +31758,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The carnage's eyes and all exposed blood within distance glow bright red. Each target makes a <strong>Presence test.</strong></p><table><tbody><tr><td data-colwidth=\"113\"><p>11 or less</p></td><td><p>The target can’t regain Stamina until the end of the encounter.</p></td></tr><tr><td data-colwidth=\"113\"><p>12-16</p></td><td><p>The target can’t regain Stamina (save ends).</p></td></tr><tr><td data-colwidth=\"113\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>Until the end of the encounter, all gnolls have a double edge on power rolls that target a winded enemy.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29553,6 +31790,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29581,6 +31822,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29615,6 +31860,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -29715,17 +31964,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 damage; push 1"
+                "display": "4 damage;  push 1"
               },
               {
                 "tier": 3,
-                "display": "6 damage; push 3"
+                "display": "6 damage;  push 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29754,6 +32007,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29782,6 +32039,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29816,6 +32077,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -29920,13 +32185,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 lightning damage; P<2 GWVAR7xguYtCw0az"
+                "display": "5 lightning damage; the target can’t use magic abilities (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The target takes a bane on their next power roll.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29955,6 +32224,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -29983,6 +32256,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30017,6 +32294,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -30107,13 +32388,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 damage; M<1 prone; A<2 bleeding (save ends)"
+                "display": "7 damage; Prone; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>This ability targets one additional target for each 2 Malice spent.</p>"
+          },
+          "spend": {
+            "text": "This ability targets one additional target for each 2 Malice spent.",
+            "value": null
           }
         }
       },
@@ -30148,6 +32433,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target shifts up to their speed. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -30252,13 +32541,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 damage"
+                "display": "5 damage; the wildling can make a free strike against a creature  adjacent to the target"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30287,6 +32580,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30315,6 +32612,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30349,6 +32650,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -30446,21 +32751,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; push 1"
+                "display": "7 damage;  push 1"
               },
               {
                 "tier": 2,
-                "display": "11 damage; push 2"
+                "display": "11 damage;  push 2"
               },
               {
                 "tier": 3,
-                "display": "14 damage; push 3; M<2 prone"
+                "display": "14 damage;  push 3; prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If this ability is used as part of the Charge main action, it deals an extra 4 damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30495,6 +32804,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The tusker demon uses the Charge main action and Gore against the target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30523,6 +32836,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30551,6 +32868,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30585,6 +32906,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -30673,6 +32998,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If this ability gains an edge or has a double edge, it deals an extra 2 damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30731,21 +33060,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 corruption damage; A<0 restrained (save ends)"
+                "display": "2 corruption damage; <strong class=\"potency-value\">A<0</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 corruption damage; A<1 restrained (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">A<1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 corruption damage; A<2 restrained (save ends)"
+                "display": "5 corruption damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30774,6 +33107,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30802,6 +33139,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30832,6 +33173,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -30917,21 +33262,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 corruption damage; I<0 weakened (save ends)"
+                "display": "3 corruption damage; <strong class=\"potency-value\">I<0</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 corruption damage; I<1 weakened (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">I<1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 corruption damage; I<2 weakened (save ends)"
+                "display": "5 corruption damage; <strong class=\"potency-value\">I<2</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -30966,21 +33315,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "I<0 prone"
+                "display": "<strong class=\"potency-value\">I<0</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "I<1 prone"
+                "display": "<strong class=\"potency-value\">I<1</strong> prone and can't stand (EoT)"
               },
               {
                 "tier": 3,
-                "display": "I<2 prone (save ends)"
+                "display": "prone, <strong class=\"potency-value\">I<2</strong> can't stand (Save Ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31009,6 +33362,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31039,6 +33396,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31067,6 +33428,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -31167,7 +33532,11 @@ export const monsters = {
           },
           "effect": {
             "before": "",
-            "after": "<p>One ally within 10 squares of the monarch can make a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike}.</p>"
+            "after": "<p>One ally within 10 squares of the monarch can make a <span class=\"damage-value damage-generic\">4</span> damage free strike.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31199,6 +33568,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two goblin runners appear in unoccupied spaces within distance.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31231,6 +33604,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ally is the target of the triggering strike instead.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31263,6 +33640,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target can move up to their speed or make a free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31295,6 +33676,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: One enemy or object</p><p>Each ally within 10 squares of the target can move up to their speed toward the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31323,6 +33708,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy in the encounter takes 2 damage for each goblin adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31351,6 +33740,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31381,6 +33774,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31409,6 +33806,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -31508,6 +33909,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31536,6 +33941,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31566,6 +33975,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31594,6 +34007,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -31682,6 +34099,10 @@ export const monsters = {
           "effect": {
             "before": "<p>With Captain: +5 bonus to ranged distance</p>",
             "after": "<p>If the sniper doesn't use a move action this turn, this ability gains an edge.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31722,6 +34143,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31750,6 +34175,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31780,6 +34209,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -31853,21 +34286,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; push 1"
+                "display": "2 damage;  push 1"
               },
               {
                 "tier": 2,
-                "display": "4 damage; push 3"
+                "display": "4 damage;  push 3"
               },
               {
                 "tier": 3,
-                "display": "5 damage; push 4"
+                "display": "5 damage;  push 4"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31908,6 +34345,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31936,6 +34377,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -31966,6 +34411,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -32052,21 +34501,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 poison damage; slide 1"
+                "display": "1 poison damage;  slide 1"
               },
               {
                 "tier": 2,
-                "display": "2 poison damage; slide 2"
+                "display": "2 poison damage;  slide 2"
               },
               {
                 "tier": 3,
-                "display": "3 poison damage; slide 3"
+                "display": "3 poison damage;  slide 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "For each Malice spent, one target can be force moved 1  additional square.",
+            "value": null
           }
         }
       },
@@ -32101,6 +34554,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The area is filled with a green haze that lasts until the start of the stinker’s next turn or until the stinker is reduced to 0 Stamina, and which can’t be dispersed by wind. The area is difficult terrain for non-goblins, and each non-goblin who moves in the area takes <span class=\"damage-value damage-poison\">2 poison</span> damage for each square moved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32129,6 +34586,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32157,6 +34618,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32187,6 +34652,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -32286,7 +34755,11 @@ export const monsters = {
           },
           "effect": {
             "before": "",
-            "after": "<p>One ally adjacent to the target can make a <span class=\"damage-value damage-generic\">1</span> damage free strike{Free Strike}. against them.</p>"
+            "after": "<p>One ally adjacent to the target can make a <span class=\"damage-value damage-generic\">1</span> damage free strike. against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32317,6 +34790,11 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the start of the underboss’s next turn, each target gains an edge on strikes, and any strike made against a target gains an edge.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "Strikes made against targets no longer gain an edge.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Strikes made against targets no longer gain an edge."
           }
         }
       },
@@ -32345,6 +34823,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32375,6 +34857,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32403,6 +34889,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -32492,6 +34982,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32526,21 +35020,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; M<0 bleeding (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 damage; M<1 bleeding (save ends)"
+                "display": "6 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "7 damage; M<2+1 bleeding (save ends)"
+                "display": "7 damage; {{potency}} bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32581,6 +35079,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32609,6 +35111,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32639,6 +35145,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -32726,6 +35236,10 @@ export const monsters = {
           "effect": {
             "after": "<p>The target takes a bane on their next strike.</p>",
             "before": ""
+          },
+          "spend": {
+            "value": null,
+            "text": ""
           }
         }
       }
@@ -32831,13 +35345,18 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 poison damage; M<2 weakened (save ends)"
+                "display": "14 poison damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "For any tier outcome, if the target has M < 3, they are  weakened (save ends).",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> For any tier outcome, if the target has M < 3, they are  weakened (save ends)."
           }
         }
       },
@@ -32887,6 +35406,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32915,6 +35438,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The spider shifts up to their speed and uses Leg Blade against each creature who comes adjacent to them during the shift. The spider makes one power roll against all targets.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32949,21 +35476,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "A<0 restrained (save ends)"
+                "display": "<strong class=\"potency-value\">A<0</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "A<1 restrained (save ends)"
+                "display": "<strong class=\"potency-value\">A<1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "A<2 restrained (save ends)"
+                "display": "<strong class=\"potency-value\">A<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The area is difficult terrain for enemies.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -32992,6 +35523,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The damage is halved, and the spider shifts up to 2 squares after the triggering effect resolves.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -33104,6 +35639,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33132,6 +35671,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The worg moves up to their speed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -33232,17 +35775,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 damage; {{potency}}  push 3"
+                "display": "6 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;1</strong></strong>  push 3"
               },
               {
                 "tier": 3,
-                "display": "9 damage; {{potency}}  push 4; prone"
+                "display": "9 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;2</strong></strong>  push 4; prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The griffon must be flying and must have a creature or object grabbed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33277,21 +35824,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "push 3"
+                "display": " push 3"
               },
               {
                 "tier": 2,
-                "display": "push 4"
+                "display": " push 4"
               },
               {
                 "tier": 3,
-                "display": "push 5"
+                "display": " push 5"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target object must be size 2 or smaller.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33323,6 +35874,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The griffon halves the damage, ignores any nondamaging effects associated with it, and shifts up to 2 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33351,6 +35906,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The griffon flies up to their speed, and can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33379,6 +35938,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A griffon acting this turn unleashes a hideous screech at one enemy within 5 squares of them, forcing that creature to make an <strong>Intuition test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p>Frightened (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33407,6 +35970,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Winds bluster and blow across the encounter map. Until the end of the encounter, each creature who can’t fly or isn’t mounted on a fly ing creature takes a −3 penalty to stability, and any forced movement effect targeting such a creature moves them an additional 5 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33442,21 +36009,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage"
+                "display": "7 damage; the griffon can shift 1 square"
               },
               {
                 "tier": 2,
-                "display": "10 damage"
+                "display": "10 damage; the griffon shifts up to 2 squares"
               },
               {
                 "tier": 3,
-                "display": "13 damage"
+                "display": "13 damage; the griffon shifts up to 3 squares"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If this ability is used as part of the Charge main action, the griffon can grab one of the targets.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -33565,7 +36136,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; push 1"
+                "display": "7 damage;  push 1"
               },
               {
                 "tier": 2,
@@ -33580,6 +36151,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33611,6 +36186,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The griffon shifts up to their speed along the ground in straight line. Each enemy who comes adjacent to the griffon during this shift can choose to either take 5 damage or be knocked prone</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33645,21 +36224,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "push 2; {{potency}} the forced movement is vertical"
+                "display": " push 2; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;0</strong></strong> the forced movement is vertical"
               },
               {
                 "tier": 2,
-                "display": "push 4; {{potency}} the forced movement is vertical"
+                "display": " push 4; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;1</strong></strong> the forced movement is vertical"
               },
               {
                 "tier": 3,
-                "display": "push 6; {{potency}} the forced movement is vertical"
+                "display": " push 6; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;2</strong></strong> the forced movement is vertical"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33694,6 +36277,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The griffon dives down onto the target, taking no damage from falling if they reach the ground. The target takes <span class=\"damage-value damage-generic\">3</span> damage for each square the griffon dove, and if they have <strong class=\"potency-value\">A&lt;2</strong> they are grabbed or knocked prone.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33722,6 +36309,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The griffon flies up to their speed, and can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33750,6 +36341,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A griffon acting this turn unleashes a hideous screech at one enemy within 5 squares of them, forcing that creature to make an <strong>Intuition test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p>Frightened (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -33778,6 +36373,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Winds bluster and blow across the encounter map. Until the end of the encounter, each creature who can’t fly or isn’t mounted on a fly ing creature takes a −3 penalty to stability, and any forced movement effect targeting such a creature moves them an additional 5 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -33849,21 +36448,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; push 3; {{potency}} prone"
+                "display": "6 damage;  push 3; {{potency}} prone"
               },
               {
                 "tier": 2,
-                "display": "10 damage; push 4"
+                "display": "10 damage;  push 4; {{potency}} prone"
               },
               {
                 "tier": 3,
-                "display": "13 damage; push 5"
+                "display": "13 damage;  push 5; {{potency}} prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -33960,21 +36563,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 corruption damage; A<1 weakened (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">A<1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "13 corruption damage; A<2 weakened (save ends)"
+                "display": "13 corruption damage; <strong class=\"potency-value\">A<2</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "16 corruption damage; A<3 weakened (save ends)"
+                "display": "16 corruption damage; <strong class=\"potency-value\">A<3</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34024,6 +36631,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>This ability gains an edge against a target who has a soul.</p>"
+          },
+          "spend": {
+            "text": "The hag regains Stamina equal to half the damage dealt.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The hag regains Stamina equal to half the damage dealt."
           }
         }
       },
@@ -34057,6 +36669,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The hag alters their body to become any size 1 creature, from a house cat to a humanoid. If the hag uses this ability while outside of any enemy's line of effect, they can choose to be automatically hidden. The hag can return to their original form as a free maneuver.</p>"
+          },
+          "spend": {
+            "text": "The hag becomes a size 2 creature instead, from a bear to an ogre. While in this form, the hag’s melee abilities gain a +1 bonus to distance and deal an extra 4 damage.",
+            "value": 5,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> The hag becomes a size 2 creature instead, from a bear to an ogre. While in this form, the hag’s melee abilities gain a +1 bonus to distance and deal an extra 4 damage."
           }
         }
       },
@@ -34090,21 +36707,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "slide 2; {{potency}} the slide is vertical"
+                "display": " slide 2; {{potency}} the slide is vertical"
               },
               {
                 "tier": 2,
-                "display": "slide 3; R<2 restrained"
+                "display": " slide 3; <strong class=\"potency-value\">R<2</strong> the slide is vertical, and the target is restrained (EoT)"
               },
               {
                 "tier": 3,
-                "display": "vertical slide 5; R<3 restrained"
+                "display": " vertical slide 5; <strong class=\"potency-value\">R<3</strong> restrained (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>While restrained this way, a creature who is vertical force moved is suspended in midair. The creature falls when the condition ends.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34153,6 +36774,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The hag attaches an ornate explosive pastry to each target who has A &lt; 2. At the end of the round, the hag makes one power roll against each creature with a pastry attached to them.</p><p></p>",
             "after": "<p>Special: A creature wearing a pastry or adjacent to a creature wearing a pastry can attempt an Agility test to remove the pastry as a maneuver.</p><table><tbody><tr><td data-colwidth=\"109\"><p>11 or less</p></td><td><p>The hag makes the power roll for all pastries.</p></td></tr><tr><td data-colwidth=\"109\"><p>12-16</p></td><td><p>The pastry is not removed.</p></td></tr><tr><td data-colwidth=\"109\"><p>17+</p></td><td><p>The pastry is removed and can no longer explode.</p></td></tr></tbody></table>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34188,6 +36813,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Before using this villain action, the hag shifts up to their speed. They then use Corrosive Claws against each target, push each target up to 2 squares, and shift up to their speed again</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34222,21 +36851,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 fire damage; A<1 weakened (save ends)"
+                "display": "6 fire damage; <strong class=\"potency-value\">A<1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 fire damage; A<2 weakened (save ends)"
+                "display": "10 fire damage; <strong class=\"potency-value\">A<2</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13 fire damage; A<3 weakened (save ends)"
+                "display": "13 fire damage; <strong class=\"potency-value\">A<3</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The hag turns the area into a roiling oven until the end of the encounter. Any creature in area takes an extra <span class=\"damage-value damage-generic\">5</span> damage from the hag's damage-dealing abilities.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34265,6 +36898,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The hag utters terrible words that push each enemy within 2 squares of them up to 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34298,21 +36935,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/fire/lightning damage; R<1 frightened, dazed, slowed (save ends)"
+                "display": "5 cold/fire/lightning damage; <strong class=\"potency-value\">R<1</strong> frightened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 cold/fire/lightning damage; R<2 frightened, dazed, slowed (save ends)"
+                "display": "8 cold/fire/lightning damage; <strong class=\"potency-value\">R<2</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 cold/fire/lightning damage; R<3 frightened, dazed, slowed (save ends)"
+                "display": "11 cold/fire/lightning damage; <strong class=\"potency-value\">R<3</strong> frightened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>After making the power roll, the hag can choose to replace the damage type and condition with lightning damage and dazed, or cold damage and slowed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34341,6 +36982,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The hag takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34373,6 +37018,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The hag’s hut springs to life. It enters the encounter map within 10 squares of the hag if it isn’t already there and takes its turn. The hut is size 4, has 75 Stamina and damage immunity 3, and has speed 8 from its powerful set of animal legs. This feature can’t be used if the hut is reduced to 0 Stamina. In addition to its move action, the house can take only the Kick main action.</p><p><span class=\"reference-text\">Hag Hut</span></p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -34524,6 +37173,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "If this ability gains an edge or has a double edge, it deals an  extra 2 damage.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If this ability gains an edge or has a double edge, it deals an  extra 2 damage."
           }
         }
       },
@@ -34557,7 +37211,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; P<0 slowed (save ends)"
+                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -34565,13 +37219,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; P<2 restrained (save ends)"
+                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
             "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34600,6 +37258,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34628,6 +37290,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34656,6 +37322,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The hawk moves up to their speed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -34770,6 +37440,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the apprentice mage doesn’t use a maneuver or a move action this turn, the target is also slowed (EoT).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34798,6 +37472,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34826,6 +37504,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -34940,6 +37622,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34968,6 +37654,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -34996,6 +37686,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -35096,21 +37790,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; pull 1"
+                "display": "8 damage;  pull 1"
               },
               {
                 "tier": 2,
-                "display": "12 damage; pull 2"
+                "display": "12 damage;  pull 2"
               },
               {
                 "tier": 3,
-                "display": "15 damage; pull 3"
+                "display": "15 damage;  pull 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Any target who is adjacent to the bandit chief after the power roll is resolved takes <span class=\"damage-value damage-generic\">3</span> corruption damage.</p>"
+          },
+          "spend": {
+            "text": "This ability targets one additional target.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> This ability targets one additional target."
           }
         }
       },
@@ -35143,21 +37842,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "push 1; M<1 prone"
+                "display": " push 1; <strong class=\"potency-value\">M<1</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "push 2; M<2 prone"
+                "display": " push 2; <strong class=\"potency-value\">M<2</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "push 4; M<3 prone"
+                "display": " push 4; <strong class=\"potency-value\">M<3</strong> prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The ability takes the Area keyword, loses the Melee key word, and is a 1 burst that targets each enemy in the area.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ability takes the Area keyword, loses the Melee key word, and is a 1 burst that targets each enemy in the area."
           }
         }
       },
@@ -35188,6 +37892,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bandit chief takes <span class=\"damage-value damage-corruption\">5 corruption</span> damage and increases the outcome of the power roll by one tier. This damage can’t be reduced in any way.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35220,6 +37928,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Each artillery ally in the area.</p><p>Each target makes a ranged free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35252,6 +37964,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target shifts up to their speed. Additionally, until the end of the encounter, while the bandit chief or any ally is adjacent to a target, they have damage immunity 2.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35280,6 +37996,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bandit chief shifts up to 10 squares. During or after this movement, they can use their Whip and Magic Longsword against up to four targets. Additionally, one ally adjacent to each target can make a free strike against that target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35313,7 +38033,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; P<1 slowed (save ends)"
+                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -35321,13 +38041,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; P<3 restrained (save ends)"
+                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
             "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35356,6 +38080,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -35454,21 +38182,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage; M<1 slowed (save ends)"
+                "display": "3 damage; <strong class=\"potency-value\">M<1</strong> slowed (saved ends)"
               },
               {
                 "tier": 2,
-                "display": "6 damage; M<2 slowed (save ends)"
+                "display": "6 damage; <strong class=\"potency-value\">M<2</strong> slowed (saved ends)"
               },
               {
                 "tier": 3,
-                "display": "8 damage; M<3 slowed (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M<3</strong> slowed (saved ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>One ally within 10 squares can make a free strike.</p>"
+          },
+          "spend": {
+            "text": "One ally within 10 squares can use their signature ability  instead.",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> One ally within 10 squares can use their signature ability  instead."
           }
         }
       },
@@ -35501,6 +38234,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target is marked until the start of the blackguard’s next turn. The blackguard and each of their allies gain an edge on abilities used against targets marked by the blackguard.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35532,6 +38269,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The damage is halved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35560,6 +38301,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The blackguard shifts up to their speed. During or after this movement, they can use their Zweihander Swing twice</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35593,6 +38338,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The blackguard slides each target up to 5 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35621,6 +38370,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The blackguard uses their Zweihander Swing against each tar get. Each ally within 5 squares of the area can then make a free strike against a target (one target per ally)</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35654,7 +38407,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; P<1 slowed (save ends)"
+                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -35662,13 +38415,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; P<3 restrained (save ends)"
+                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
             "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35697,6 +38454,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35725,6 +38486,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -35808,13 +38573,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; M<2 grabbed"
+                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> grabbed and the target takes a bane on the Escape Grab maneuver"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target who is already grabbed takes an extra 2 damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35847,6 +38616,10 @@ export const monsters = {
           "effect": {
             "before": "<p><strong>Note:</strong> One creature grabbed by the brawler</p><p>The brawler pushes the target up to 5 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35875,6 +38648,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The brawler halves the damage from any strike if they have a creature or object grabbed of size 1S or larger. The grabbed creature or object takes the remaining damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35920,7 +38697,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; P<0 slowed (save ends)"
+                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -35928,13 +38705,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; P<2 restrained (save ends)"
+                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
             "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35963,6 +38744,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -35991,6 +38776,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -36072,6 +38861,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36100,6 +38893,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36147,6 +38944,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>One creature within 5 squares regains <span class=\"heal-value\">1</span> healing</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -36245,13 +39046,18 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 corruption damage; I<2 weakened (save ends)"
+                "display": "12 corruption damage; <strong class=\"potency-value\">I<2</strong> weakened"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The death cultist regains Stamina equal to half the damage  dealt.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The death cultist regains Stamina equal to half the damage  dealt."
           }
         }
       },
@@ -36284,6 +39090,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Target: Each dead minion in the area, costs 1 Malice PER minion.</p><p>Each target who died during this encounter revives with full Stamina. They immediately die at the end of the encounter or if the death cultist is killed. A target can be revived multiple times by this ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36317,7 +39127,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; P<0 slowed (save ends)"
+                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -36325,13 +39135,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; P<2 restrained (save ends)"
+                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
             "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36360,6 +39174,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36388,6 +39206,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -36490,6 +39312,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the guard is flanked, they can make a free strike against a different target adjacent to them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36530,6 +39356,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36558,6 +39388,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -36679,13 +39513,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; M<2 taunted"
+                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> the target has a double bane on their next  power roll"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The target is taunted (EoT).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36719,7 +39557,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; P<0 slowed (save ends)"
+                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -36727,13 +39565,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; P<2 restrained (save ends)"
+                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
             "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36762,6 +39604,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36790,6 +39636,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -36903,6 +39753,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If this ability is used as part of a charge, the raider can make a ranged free strike before using the ability.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36931,6 +39785,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -36959,6 +39817,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -37075,6 +39937,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the rogue is disguised or hidden when they use this ability, it deals an extra <span class=\"damage-value damage-generic\">3</span> damage</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37103,6 +39969,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37131,6 +40001,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -37233,6 +40107,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "If this ability gains an edge or has a double edge, it deals an extra 2 damage.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If this ability gains an edge or has a double edge, it deals an extra 2 damage."
           }
         }
       },
@@ -37261,6 +40140,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The scoundrel uses Rapier and Dagger against up to three targets. They shift up to 2 squares before or after each strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37294,7 +40177,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; P<0 slowed (save ends)"
+                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -37302,13 +40185,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; P<2 restrained (save ends)"
+                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
             "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37337,6 +40224,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37365,6 +40256,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -37480,6 +40375,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The ability loses the Ranged and Strike keywords, takes the  Area keyword, and is a 10 × 1 line within 15 that targets each enemy  and object in the area.",
+            "value": 5,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> The ability loses the Ranged and Strike keywords, takes the  Area keyword, and is a 10 × 1 line within 15 that targets each enemy  and object in the area."
           }
         }
       },
@@ -37513,7 +40413,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; P<0 slowed (save ends)"
+                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -37521,13 +40421,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; P<2 restrained (save ends)"
+                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
             "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37556,6 +40460,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37584,6 +40492,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37619,12 +40531,24 @@ export const monsters = {
               {
                 "tier": 1,
                 "display": "{{potency}} slowed (save ends)"
+              },
+              {
+                "tier": 2,
+                "display": "{{potency}} slowed (save ends)"
+              },
+              {
+                "tier": 3,
+                "display": "{{potency}} slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The gust of wind disperses gas or vapor and extinguishes any flames, including supernatural effects.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -37729,6 +40653,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>This ability ignores cover and concealment.</p>"
+          },
+          "spend": {
+            "text": "This ability targets one additional target.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> This ability targets one additional target."
           }
         }
       },
@@ -37762,7 +40691,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; P<0 slowed (save ends)"
+                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
               },
               {
                 "tier": 2,
@@ -37770,13 +40699,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; P<2 restrained (save ends)"
+                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
             "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37805,6 +40738,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37833,6 +40770,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -37911,6 +40852,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37939,6 +40884,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -37967,6 +40916,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38016,6 +40969,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>While the target is adjacent to any enemy, the adeptus gains an edge on this ability. Each enemy adjacent to the target takes <span class=\"damage-value damage-lighting\">2 lighting</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38065,6 +41022,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -38147,6 +41108,11 @@ export const monsters = {
           "effect": {
             "before": "<p>NOTE: Targets \"One Trap or Other Terrain Object\"</p><p>The trap or terrain object instantly triggers.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "The artifex places a new trap in the encounter and can  instantly trigger it. The artifex prefers working with angry beehives, flammable oil, snare traps, and spike traps.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The artifex places a new trap in the encounter and can  instantly trigger it. The artifex prefers working with angry beehives, flammable oil, snare traps, and spike traps."
           }
         }
       },
@@ -38196,6 +41162,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If this forced movement triggers a trap that uses a power roll, that roll has a double edge.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38224,6 +41194,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38252,6 +41226,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38280,6 +41258,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -38370,6 +41352,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38398,6 +41384,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38426,6 +41416,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38460,6 +41454,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The centurion uses Pilum against each target and has a double edge. Each target is then pushed up to 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38488,21 +41486,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7+5 damage; M<1 7j7mrAssAYhW4Cpc (save ends)"
+                "display": "7+5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10+5 damage; M<1 7j7mrAssAYhW4Cpc (save ends)"
+                "display": "10+5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13+5 damage; M<1 7j7mrAssAYhW4Cpc (save ends)"
+                "display": "13+5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>The centurion moves up to their speed, ignoring difficult terrain, and uses Pilum against each creature whose space they move through. They make one power roll against all targets, and the ability deals an extra <span class=\"damage-value damage-generic\">5</span> damage. While weakened by that ability, each target takes <span class=\"damage-value damage-fire\">2 fire</span> damage at the start of each of their turns.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38533,8 +41535,12 @@ export const monsters = {
             "effects": {}
           },
           "effect": {
-            "before": "<p>A target who has P &lt; 2 is taunted (save ends). Each ally within distance can make a <span class=\"damage-value damage-generic\">2</span> damage free strike{Free Strike}. Additionally, until the end of the encounter, the centurion has damage immunity 2.</p>",
+            "before": "<p>A target who has P &lt; 2 is taunted (save ends). Each ally within distance can make a <span class=\"damage-value damage-generic\">2</span> damage free strike. Additionally, until the end of the encounter, the centurion has damage immunity 2.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38567,6 +41573,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target shifts up to 2 squares before the damage is resolved. Each kobold with the Shield? Shield! trait gains damage immunity 2 against the triggering ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38599,6 +41609,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the start of the centurion’s next turn, the centurion and their allies gain an edge on power rolls against the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "This ability targets one additional target for each 3 Malice spent.",
+            "value": null
           }
         }
       },
@@ -38635,21 +41649,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; M<1 weakened (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 damage; M<1 weakened (save ends)"
+                "display": "10 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13 damage; M<1 weakened (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Each ally adjacent to a target can make a free strike against that target.</p>"
+          },
+          "spend": {
+            "text": "While weakened this way, a target is also restrained",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> While weakened this way, a target is also restrained"
           }
         }
       }
@@ -38728,6 +41747,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38756,6 +41779,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38784,6 +41811,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -38822,17 +41853,22 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 damage"
+                "display": "4 damage; taunted (EoT)"
               },
               {
                 "tier": 3,
-                "display": "5 damage"
+                "display": "5 damage; taunted (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "If the legionary is acting as a captain, they and each mem ber of their squad shift up to 2 squares before this ability is used.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> If the legionary is acting as a captain, they and each mem ber of their squad shift up to 2 squares before this ability is used."
           }
         }
       },
@@ -38871,17 +41907,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "3 damage"
+                "display": "3 damage; {{potency}} prone"
               },
               {
                 "tier": 3,
-                "display": "4 damage"
+                "display": "4 damage; {{potency}} prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -38981,6 +42021,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>One ally within 3 squares of the princeps shifts up to 2 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39021,6 +42065,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39049,6 +42097,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39077,6 +42129,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -39188,6 +42244,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>While adjacent to any ally, the sagittarion gains an edge on this ability.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39216,6 +42276,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39244,6 +42308,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39272,6 +42340,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -39383,6 +42455,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>One ally within 10 squares of the signifer can shift up to their speed if they end that shift adjacent to an ally.</p>"
+          },
+          "spend": {
+            "text": "One additional ally can shift for each 2 Malice spent.",
+            "value": null
           }
         }
       },
@@ -39411,6 +42487,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39439,6 +42519,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39467,6 +42551,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39499,6 +42587,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target regains <span class=\"heal-value\">5</span> healing</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -39587,17 +42679,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "2 damage"
+                "display": "2 damage; the tiro can shift 1 square"
               },
               {
                 "tier": 3,
-                "display": "3 damage"
+                "display": "3 damage; the tiro can shift 2 squares"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The target can’t shift until the start of the tiro’s next turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39638,6 +42734,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39666,6 +42766,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39694,6 +42798,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -39784,6 +42892,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39812,6 +42924,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39840,6 +42956,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -39891,6 +43011,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Until the start of the veles’s next turn, the target can’t make opportunity attacks against any kobold.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -39993,6 +43117,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40021,6 +43149,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40049,6 +43181,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40098,6 +43234,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The venator lights their net on fire, and a target restrained  this way takes 2 fire damage at the start of each of their turns.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The venator lights their net on fire, and a target restrained  this way takes 2 fire damage at the start of each of their turns."
           }
         }
       }
@@ -40210,6 +43351,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Special: If the drangolin is size 3, the distance becomes Melee 2.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40238,6 +43383,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The drangolin shifts up to their speed and uses Fiery Claws against each creature who comes adjacent to them during the shift. The drangolin makes one power roll against all targets.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40271,21 +43420,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; push 1; A<0 prone"
+                "display": "6 damage;  push 1; <strong class=\"potency-value\">A<0</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "8 damage; push 3; A<0 prone"
+                "display": "8 damage;  push 3; <strong class=\"potency-value\">A<0</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "11 damage; push 5; A<0 prone"
+                "display": "11 damage;  push 5; <strong class=\"potency-value\">A<0</strong> prone"
               }
             ]
           },
           "effect": {
             "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra <span class=\"damage-value damage-fire\">2 fire</span> damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40314,6 +43467,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">5</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40342,6 +43499,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40370,6 +43531,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -40461,6 +43626,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">5</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40489,6 +43658,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40517,6 +43690,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40566,6 +43743,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Special: If the drangolin is size 3, the distance becomes Melee 2.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40594,6 +43775,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The drangolin shifts up to their speed and uses Fiery Claws against each creature who comes adjacent to them during the shift. The drangolin makes one power roll against all targets.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40627,21 +43812,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; A<0 prone"
+                "display": "6 damage; <strong class=\"potency-value\">A<0</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "8 damage; A<0 prone"
+                "display": "8 damage; <strong class=\"potency-value\">A<0</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "11 damage; A<0 prone"
+                "display": "11 damage; <strong class=\"potency-value\">A<0</strong> prone"
               }
             ]
           },
           "effect": {
             "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra <span class=\"damage-value damage-fire\">2 fire</span> damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -40743,6 +43932,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>A size 2 or smaller creature restrained this way is pulled into the brick’s space, moves with the brick, and takes <span class=\"damage-value damage-acid\">4 acid</span> damage at the start of each of their turns. An engulfed creature who is no longer restrained moves to the nearest unoccupied space adtjacent to the brick. The brick can have as many creatures or objects engulfed as will fit within their space.</p>"
+          },
+          "spend": {
+            "text": "This ability targets one additional target.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> This ability targets one additional target."
           }
         }
       },
@@ -40772,6 +43966,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The brick uses Engulf against the triggering creature and has a double edge.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40800,6 +43998,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">4</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40828,6 +44030,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Two kobolds take their turns in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40856,6 +44062,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -40945,7 +44155,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "11 damage; A<1 prone"
+                "display": "11 damage; <strong class=\"potency-value\">A<1</strong> prone"
               },
               {
                 "tier": 3,
@@ -40956,6 +44166,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The pouncer can make a free strike against each target they knock prone.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -40993,7 +44207,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage; A<1 OeAaVdY3lfQQ1bnz (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">A<1</strong> the target is dazzled (save ends)"
               },
               {
                 "tier": 3,
@@ -41004,6 +44218,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Target is Enemy and Object in the area.</p>",
             "after": "<p>A dazzled target takes a bane on strikes and has line of effect only within 1 square.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41039,21 +44257,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "I<0 bTDftBPBIxy3kZeB (save ends)"
+                "display": "<strong class=\"potency-value\">I<0</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "I<1 bTDftBPBIxy3kZeB (save ends)"
+                "display": "<strong class=\"potency-value\">I<1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "I<2 bTDftBPBIxy3kZeB (save ends)"
+                "display": "<strong class=\"potency-value\">I<2</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>While dazed this way, a target has speed 0. If a target takes damage, or if someone else uses a main action to shake the target out of their stupor, the dazed condition ends.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41087,6 +44309,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The pouncer halves the damage, ignores any nondamaging effects associated with it, and can teleport up to 5 squares. If they teleport into concealment or cover, the pouncer can immediately attempt to hide as a free maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41115,6 +44341,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each lightbender acting this turn can teleport up to their speed as a move action and attempt to hide as a free maneuver, all until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41143,6 +44373,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each lightbender in the encounter shines radiantly, distorting the senses of any enemy within 5 squares of them. Each affected enemy makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Reason test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target doesn’t have line of effect to any lightbender (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target doesn’t have line of effect to any lightbender (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41171,6 +44405,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each lightbender acting this turn can create a duplicate lightbender in an unoccupied space adjacent to them. The duplicate is indistinguishable from the lightbender except by supernatural means, has 1 Stamina, and has the lightbender’s speed. A duplicate acts on the lightbender’s turn but can take only move actions. Once per round before or after using an ability, a lightbender can trade places with any lightbender duplicate.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -41270,6 +44508,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If this ability gains an edge or has a double edge, it deals an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41308,7 +44550,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "12 damage; M<1 bleeding (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
@@ -41319,6 +44561,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>While bleeding this way, the target takes a bane on tests to search for the lightbender while they are hidden.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41352,21 +44598,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "I<0 dazed (save ends)"
+                "display": "<strong class=\"potency-value\">I<0</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "I<1 dazed (save ends)"
+                "display": "<strong class=\"potency-value\">I<1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "I<2 dazed (save ends)"
+                "display": "<strong class=\"potency-value\">I<2</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>While dazed this way, a target has speed 0. If a target takes damage, or if someone else uses a main action to shake the target out of their stupor, the dazed condition ends.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41400,6 +44650,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The lightbender halves the damage, ignores any nondamaging effects associated with it, and can teleport up to 5 squares. If they teleport into concealment or cover, the lightbender can immediately attempt to hide as a free maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41428,6 +44682,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each lightbender acting this turn can teleport up to their speed as a move action and attempt to hide as a free maneuver, all until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41456,6 +44714,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each lightbender acting this turn can create a duplicate lightbender in an unoccupied space adjacent to them. The duplicate is indistinguishable from the lightbender except by supernatural means, has 1 Stamina, and has the lightbender’s speed. A duplicate acts on the lightbender’s turn but can take only move actions. Once per round before or after using an ability, a lightbender can trade places with any lightbender duplicate.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41484,6 +44746,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each lightbender in the encounter shines radiantly, distorting the senses of any enemy within 5 squares of them. Each affected enemy makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Reason test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target doesn’t have line of effect to any lightbender (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target doesn’t have line of effect to any lightbender (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -41568,21 +44834,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; A<0 restrained (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A<0</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "7 damage; A<1 restrained (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">A<1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; A<2 restrained (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41617,21 +44887,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 acid damage; M<0 CeHsuaeJBSk9zHLW"
+                "display": "5 acid damage; <strong class=\"potency-value\">M<0</strong> the target has line of effect only within 4 squares (save ends)"
               },
               {
                 "tier": 2,
-                "display": "7 acid damage; M<1 fsrOwbQJuzkl0P5M"
+                "display": "7 acid damage; <strong class=\"potency-value\">M<1</strong> the target has line of effect only within 3 squares (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 acid damage; M<2 5foqFKboxvzrPq2M"
+                "display": "9 acid damage; <strong class=\"potency-value\">M<2</strong> the target has line of effect only within 2 squares (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -41718,21 +44992,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; pull 1; A<1 bleeding (save ends)"
+                "display": "7 damage;  pull 1; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 damage; pull 1; A<2 bleeding (save ends)"
+                "display": "10 damage;  pull 1; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 damage; pull 2; A<3 bleeding (save ends)"
+                "display": "12 damage;  pull 2; <strong class=\"potency-value\">A<3</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "One target adjacent to the deathrex is grabbed in the deathrex's mouth.",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> One target adjacent to the deathrex is grabbed in the deathrex's mouth."
           }
         }
       },
@@ -41767,21 +45046,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; M<1 dazed (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "12 damage; M<2 dazed (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "15 damage; M<3 dazed (save ends)"
+                "display": "15 damage; <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The target is no longer grabbed by the deathrex, and the deathrex slides them up to 5 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41813,6 +45096,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The deathrex moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41847,6 +45134,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The deathrex slides the target up to 5 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41881,6 +45172,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table>",
             "after": "<p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41909,6 +45204,10 @@ export const monsters = {
           "effect": {
             "before": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains [[/heal 10 temporary]], regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -41937,6 +45236,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -42023,21 +45326,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; pull 1; A<1 bleeding (save ends)"
+                "display": "7 damage;  pull 1; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 damage; pull 1; A<2 bleeding (save ends)"
+                "display": "10 damage;  pull 1; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 damage; pull 2; A<3 bleeding (save ends)"
+                "display": "12 damage;  pull 2; <strong class=\"potency-value\">A<3</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "One target adjacent to the deathrex is grabbed in the deathrex's mouth.",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> One target adjacent to the deathrex is grabbed in the deathrex's mouth."
           }
         }
       },
@@ -42072,21 +45380,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; M<1 dazed (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "12 damage; M<2 dazed (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "15 damage; M<3 dazed (save ends)"
+                "display": "15 damage; <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The target is no longer grabbed by the deathrex, and the deathrex slides them up to 5 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42118,6 +45430,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The deathrex moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42152,6 +45468,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The deathrex slides the target up to 5 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42186,6 +45506,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target moves up to their speed and can make a free strike. Each target gains temporary Stamina equal to the damage they deal.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42217,6 +45541,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The deathrex shifts up to their speed, leaving behind a shed skin duplicate in the space they started in. The duplicate acts on the deathrex's turn and has the deathrex's characteristics, but has 10 Stamina and no villain actions.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42251,6 +45579,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table>",
             "after": "<p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42279,6 +45611,10 @@ export const monsters = {
           "effect": {
             "before": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains [[/heal 10 temporary]], regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42307,6 +45643,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42337,6 +45677,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target moves up to their speed. Until the end of the encounter, whenever a creature comes adjacent to a target or starts their turn there, the target can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -42426,17 +45770,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "2 damage; slide 2"
+                "display": "2 damage;  slide 2"
               },
               {
                 "tier": 3,
-                "display": "3 damage; slide 2"
+                "display": "3 damage;  slide 2"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42465,6 +45813,10 @@ export const monsters = {
           "effect": {
             "before": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains [[/heal 10 temporary]], regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42493,6 +45845,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42527,6 +45883,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table>",
             "after": "<p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -42620,13 +45980,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; A<2 bleeding (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the scaletooth has the target grabbed, the potency of this ability increases by 1.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42661,21 +46025,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; slide 1"
+                "display": "5 damage;  slide 1"
               },
               {
                 "tier": 2,
-                "display": "8 damage; slide 2; M<1 grabbed (save ends)"
+                "display": "8 damage;  slide 2; <strong class=\"potency-value\">M<1</strong> grabbed if within 2 squares of the scaletooth"
               },
               {
                 "tier": 3,
-                "display": "10 damage; slide 3"
+                "display": "10 damage;  slide 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42710,6 +46078,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table>",
             "after": "<p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42738,6 +46110,10 @@ export const monsters = {
           "effect": {
             "before": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains [[/heal 10 temporary]], regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42766,6 +46142,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -42878,6 +46258,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The target takes a bane on their next strike.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42912,6 +46296,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table>",
             "after": "<p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42940,6 +46328,10 @@ export const monsters = {
           "effect": {
             "before": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains [[/heal 10 temporary]], regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -42968,6 +46360,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -43073,13 +46469,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 damage; A<2 prone"
+                "display": "9 damage; Prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the skyterror is flying, they shift up to 4 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43114,21 +46514,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage; M<0 weakened (save ends)"
+                "display": "3 damage; <strong class=\"potency-value\">M<0</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "5 damage; M<1 weakened (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "7 damage; M<2 weakened (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Any creature who ends their turn adjacent to a target weakened this way is weakened until the end of their next turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43163,6 +46567,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table>",
             "after": "<p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43191,6 +46599,10 @@ export const monsters = {
           "effect": {
             "before": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains [[/heal 10 temporary]], regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43219,6 +46631,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -43304,21 +46720,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; pull 1"
+                "display": "2 damage;  pull 1; or the tonguer can shift 1 square toward the target"
               },
               {
                 "tier": 2,
-                "display": "4 damage; pull 2"
+                "display": "4 damage;  pull 2; or the tonguer shifts up to 2 squares toward the target"
               },
               {
                 "tier": 3,
-                "display": "5 damage; pull 3"
+                "display": "5 damage;  pull 3; or the tonguer shifts up to 3 squares toward the target"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the forced movement or the shift leaves the target adjacent to the tonguer, the target is also grabbed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43353,6 +46773,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table>",
             "after": "<p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43381,6 +46805,10 @@ export const monsters = {
           "effect": {
             "before": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains [[/heal 10 temporary]], regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43409,6 +46837,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -43506,21 +46938,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "12 damage; A<2 bleeding (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "17 damage; A<3 bleeding (save ends)"
+                "display": "17 damage; <strong class=\"potency-value\">A<3</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "21 damage; A<4 bleeding (save ends)"
+                "display": "21 damage; <strong class=\"potency-value\">A<4</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is frightened, this ability gains an edge.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43559,7 +46995,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "11 damage; 4 poison damage; P<3 axkGj4sdnaVjmUKZ, weakened (save ends)"
+                "display": "11 damage; 4 poison damage; weakened (save ends)"
               },
               {
                 "tier": 3,
@@ -43570,6 +47006,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "While weakened this way, a target takes 1d6 poison damage at the start of each of their turns.",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> While weakened this way, a target takes 1d6 poison damage at the start of each of their turns."
           }
         }
       },
@@ -43604,6 +47045,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The manticore shifts up to 5 squares into the air, then can use Tail Spike against the target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43637,21 +47082,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "I<2 frightened, mQxRYWakIfo8zKwY"
+                "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I<2</strong> they are instead Frightened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "I<3 frightened, mQxRYWakIfo8zKwY"
+                "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I<3</strong> they are instead Frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "I<4 frightened, dazed"
+                "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I<4</strong> they are instead dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43685,6 +47134,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The manticore shifts up to their speed, then can use Tail Spike against each enemy within distance of that ability.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43718,6 +47171,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The manticore sours their poison with enmity. Until the end of the encounter, the manticore has a double edge on power rolls against weakened creatures. Additionally, any creature weakened by the manticore's Tail Spike ability has their speed halved and takes an extra 3 poison damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43746,6 +47203,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The manticore uses their mimicry in an attempt to unnerve one creature within their line of effect. If the target has <strong class=\"potency-value\">R&lt;4</strong>, they take a bane on power rolls against the manticore (save ends). Each time this feature is used against the same target during the encounter, its potency decreases by 2.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43774,6 +47235,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The manticore takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43802,6 +47267,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The manticore lets out an unnerving cry. Each enemy within the</p><p>manticore’s line of effect makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Intuition test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>Frightened (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43830,6 +47299,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The manticore sprays tail spikes across the ground within 5 squares of them. Each enemy in that area who has <strong class=\"potency-value\">A&lt;3</strong> is bleeding (save ends). Additionally, the area is difficult terrain, and any enemy takes <span class=\"damage-value damage-poison\">3 poison</span> damage for each square of the area they enter. An enemy who takes <span class=\"damage-value damage-poison\">9 poison</span> damage this way on one turn is weakened until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -43864,21 +47337,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "slide 1; 3 damage"
+                "display": " slide 1; 3 damage"
               },
               {
                 "tier": 2,
-                "display": "slide 2; 5 damage"
+                "display": " slide 2; 5 damage"
               },
               {
                 "tier": 3,
-                "display": "slide 4; 7 damage"
+                "display": " slide 4; 7 damage"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is frightened, this ability gains an edge.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -43965,21 +47442,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; push 1"
+                "display": "7 damage;  push 1"
               },
               {
                 "tier": 2,
-                "display": "11 damage; push 2"
+                "display": "11 damage;  push 2"
               },
               {
                 "tier": 3,
-                "display": "14 damage; push 3"
+                "display": "14 damage;  push 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The minotaur shifts up to 3 squares</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44011,6 +47492,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of their next turn, the minotaur has damage immunity 2 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with strikes. On their next turn, the minotaur can use one additional maneuver.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44046,21 +47531,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; I<0 dazed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">I<0</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; I<1 dazed (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">I<1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; I<2 dazed (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">I<2</strong> dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If this ability is used as part of the Charge main action, its potency increases by 1.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44095,6 +47584,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The minotaur uses the Charge main action and either Flail and Blade or Goring Horns against the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44123,6 +47616,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44151,6 +47648,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44179,6 +47680,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -44275,13 +47780,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 damage; I<4 frightened, taunted (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">I<4</strong> taunted (EoT) or frightened of all minotaurs (Save Ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44310,6 +47819,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44338,6 +47851,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44366,6 +47883,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -44456,17 +47977,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 damage; slide 1"
+                "display": "6 damage;  slide 1"
               },
               {
                 "tier": 3,
-                "display": "8 damage; slide 3"
+                "display": "8 damage;  slide 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target who is force moved into an obstacle and has M &lt; 3 is bleeding (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44495,6 +48020,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44523,6 +48052,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44551,6 +48084,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -44642,17 +48179,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage; M<4 prone"
+                "display": "7 damage; prone"
               },
               {
                 "tier": 3,
-                "display": "9 damage; M<5 prone; M<5 rNxuHfyKoS44Uqj4 (save ends)"
+                "display": "9 damage; prone; <strong class=\"potency-value\">M<5</strong> can’t stand (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If this ability is used as part of the Charge main action, each creature the stampede moves through who has M &lt; 4 is knocked prone.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44681,6 +48222,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44709,6 +48254,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44737,6 +48286,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -44823,21 +48376,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; pull 1"
+                "display": "8 damage;  pull 1"
               },
               {
                 "tier": 2,
-                "display": "12 damage; pull 2"
+                "display": "12 damage;  pull 2"
               },
               {
                 "tier": 3,
-                "display": "15 damage; pull 3"
+                "display": "15 damage;  pull 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target pulled adjacent to the sunderer is automatically grabbed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44870,21 +48427,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "I<0 frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I<0</strong> frightened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "I<1 frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I<1</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "I<2 frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I<2</strong> frightened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>Until the end of their next turn, the minotaur has damage immunity 2 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with strikes.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44920,21 +48481,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; M<0 E2gCg4YMnH2by3Gi (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; M<1 E2gCg4YMnH2by3Gi (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; M<2 E2gCg4YMnH2by3Gi (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>While bleeding this way, the target takes <span class=\"damage-value damage-generic\">1d6</span> damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44969,6 +48534,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The sunderer uses the Charge main action and Spiked Maul against the target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -44997,6 +48566,10 @@ export const monsters = {
           "effect": {
             "before": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45025,6 +48598,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45053,6 +48630,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -45131,6 +48712,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45159,6 +48744,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45187,6 +48776,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45225,13 +48818,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 damage; P<5 prone; 5 damage; P<5 restrained (save ends)"
+                "display": "7 damage; prone; 5 damage; and restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p>Note: targets Each enemy and object in the area.</p>",
             "after": "<p>The cyclops automatically treats their initial power roll as a 17. They can still roll to determine if they score a critical hit.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -45332,17 +48929,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage; M<3 prone"
+                "display": "7 damage; <strong class=\"potency-value\">M<3</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "8 damage; M<4 prone"
+                "display": "8 damage; prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target who is already prone takes an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45371,6 +48972,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45399,6 +49004,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45427,6 +49036,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -45511,21 +49124,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; push 2"
+                "display": "7 damage;  push 2"
               },
               {
                 "tier": 2,
-                "display": "11 damage; push 4"
+                "display": "11 damage;  push 4"
               },
               {
                 "tier": 3,
-                "display": "14 damage; push 6; P<2 prone"
+                "display": "14 damage;  push 6; prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Any target who takes damage from this forced movement takes an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45564,7 +49181,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "11 damage; P<1 grabbed"
+                "display": "11 damage; grabbed"
               },
               {
                 "tier": 3,
@@ -45575,6 +49192,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>A target grabbed this way takes a bane on the Escape Grab maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45619,13 +49240,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; P<2 prone"
+                "display": "12 damage; Prone"
               }
             ]
           },
           "effect": {
             "before": "<p>The goon must have a size 1 creature or object grabbed, which they hurl across the area, ending the grab. The hurled creature or object is targeted by the ability, and lands in the last square of the line or the nearest unoccupied square of the goon’s choice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45658,6 +49283,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The goon slides the target up to 5 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45686,6 +49315,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45714,6 +49347,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45742,6 +49379,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -45843,17 +49484,22 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "10 damage; {{potency}}  vertical push 2"
+                "display": "10 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">A&lt;1</strong></strong>  vertical push 2"
               },
               {
                 "tier": 3,
-                "display": "13 damage; {{potency}}  vertical slide 3"
+                "display": "13 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">A&lt;2</strong></strong>  vertical slide 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "Each target who has m<1 is bleeding (save ends).",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> Each target who has m<1 is bleeding (save ends)."
           }
         }
       },
@@ -45891,17 +49537,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 damage; push 2; M<1 prone"
+                "display": "6 damage;  push 2; <strong class=\"potency-value\">M<1</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "9 damage; push 4"
+                "display": "9 damage;  push 4"
               }
             ]
           },
           "effect": {
             "before": "<p>The juggernaut jumps up to 6 squares before using this ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45934,21 +49584,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "I<0 frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I<0</strong> frightened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "I<1 frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I<1</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "I<2 frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I<2</strong> frightened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>While a target is frightened this way, any ogre gains an edge on strikes against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -45975,8 +49629,12 @@ export const monsters = {
             "effects": {}
           },
           "effect": {
-            "before": "<p>The juggernaut moves up to their speed and can make a <span class=\"damage-value damage-generic\">5</span> damage free strike{Free Strike}.</p>",
+            "before": "<p>The juggernaut moves up to their speed and can make a <span class=\"damage-value damage-generic\">5</span> damage free strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46005,6 +49663,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46033,6 +49695,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46061,6 +49727,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -46145,21 +49815,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage"
+                "display": "4 damage; "
               },
               {
                 "tier": 2,
-                "display": "7 damage; push 2"
+                "display": "7 damage;  push 2"
               },
               {
                 "tier": 3,
-                "display": "8 damage; push 4"
+                "display": "8 damage;  push 4"
               }
             ]
           },
           "effect": {
             "before": "<p>The tantrum unearths a rock or a hunk of terrain and tosses it. If a size 1L, 1M, or 1S creature or object adjacent to the tantrum has A &lt; 3 the tantrum can grab them to use as the projectile for this ability.</p>",
             "after": "<p>A creature or object used as a projectile is vertically pushed 8 (or 13 with a captain), ignoring stability.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46188,6 +49862,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46216,6 +49894,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46244,6 +49926,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -46368,6 +50054,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The distance increases to melee 2. If the mohler is 1 or more squares beneath the target before they use this ability, a target who has [[m&lt;1]] is also knocked prone.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46396,6 +50086,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46424,6 +50118,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46452,6 +50150,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -46539,6 +50241,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>A target who starts their next turn adjacent to three or more blitzers takes <span class=\"damage-value damage-generic\">3</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46549,7 +50255,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the blitzer is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">1</span> damage free strike{Free Strike} before dying.</p>",
+            "value": "<p>If the blitzer is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">1</span> damage free strike before dying.</p>",
             "director": ""
           }
         }
@@ -46591,6 +50297,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46619,6 +50329,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46647,6 +50361,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -46707,7 +50425,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the bloodrunner is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">5</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the bloodrunner is reduced to 1 Stamina instead.</p>",
+            "value": "<p>If the bloodrunner is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">5</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the bloodrunner is reduced to 1 Stamina instead.</p>",
             "director": ""
           }
         }
@@ -46737,6 +50455,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46765,6 +50487,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46793,6 +50519,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46827,21 +50557,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage"
+                "display": "7 damage; push special"
               },
               {
                 "tier": 2,
-                "display": "10 damage"
+                "display": "10 damage; push special"
               },
               {
                 "tier": 3,
-                "display": "13 damage"
+                "display": "13 damage; push special or prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The forced movement distance is equal to the number of squares the bloodrunner moved on their turn before using this abili ty. An ally targeted by this ability ignores the damage and can move up to that same distance.</p>"
+          },
+          "spend": {
+            "text": "An ally targeted by this ability can make a free strike after  the forced movement is resolved.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> An ally targeted by this ability can make a free strike after  the forced movement is resolved."
           }
         }
       }
@@ -46926,21 +50661,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage"
+                "display": "2 damage; or the bloodspark can shift 1 square away from the target."
               },
               {
                 "tier": 2,
-                "display": "4 damage"
+                "display": "4 damage; or the bloodspark can shift 2 square away from the target."
               },
               {
                 "tier": 3,
-                "display": "5 damage"
+                "display": "5 damage; or the bloodspark can shift 4 square away from the target."
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -46951,7 +50690,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the bloodspark is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">2</span> damage free strike{Free Strike} before dying.</p>",
+            "value": "<p>If the bloodspark is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">2</span> damage free strike before dying.</p>",
             "director": ""
           }
         }
@@ -47013,7 +50752,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the chainlock is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">3</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the chainlock is reduced to 1 Stamina instead.</p>",
+            "value": "<p>If the chainlock is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">3</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the chainlock is reduced to 1 Stamina instead.</p>",
             "director": ""
           }
         }
@@ -47053,17 +50792,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage"
+                "display": "7 damage; {{potency}} the target is hooked (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage"
+                "display": "9 damage; {{potency}} the target is hooked (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A hooked target can’t move more than 3 squares away from the chainlock’s position when this ability is used.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47092,6 +50835,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47120,6 +50867,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47148,6 +50899,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47197,6 +50952,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -47245,7 +51004,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the eye is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the eye is reduced to 1 Stamina instead.</p>",
+            "value": "<p>If the eye is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the eye is reduced to 1 Stamina instead.</p>",
             "director": ""
           }
         }
@@ -47287,6 +51046,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47315,6 +51078,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47343,6 +51110,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47381,17 +51152,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "9 cold/fire/lightning damage; slide 4, or the eye shifts up to 4 squares away from the target"
+                "display": "9 cold/fire/lightning damage;  slide 4, or the eye shifts up to 4 squares away from the target"
               },
               {
                 "tier": 3,
-                "display": "12 cold/fire/lightning damage; slide 6, or the eye shifts up to 6 squares away from the target"
+                "display": "12 cold/fire/lightning damage;  slide 6, or the eye shifts up to 6 squares away from the target"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>This ability deals cold, fire, or lightning damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47442,6 +51217,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>This ability deals cold, fire, or lightning damage, and any enemy targeted by the ability has damage weakness 3 to the same damage type (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -47490,7 +51269,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the garroter is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the garroter is reduced to 1 Stamina instead.</p>",
+            "value": "<p>If the garroter is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the garroter is reduced to 1 Stamina instead.</p>",
             "director": ""
           }
         }
@@ -47520,6 +51299,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47548,6 +51331,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47576,6 +51363,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47604,6 +51395,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The garroter turns invisible until the end of their turn. This invisibility ends early if they take damage or use an ability.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47638,21 +51433,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage"
+                "display": "6 damage; the garroter can shift 1 square"
               },
               {
                 "tier": 2,
-                "display": "9 damage"
+                "display": "9 damage; the garroter shifts up to 2 squares"
               },
               {
                 "tier": 3,
-                "display": "12 damage"
+                "display": "12 damage; the garroter shifts up to 3 squares"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If this ability gains an edge or has a double edge, it deals an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47702,6 +51501,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>While grabbed this way, a target can’t communicate or use magic abilities.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -47762,7 +51565,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the glorifier is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">1</span> damage free strike{Free Strike} before dying.</p>",
+            "value": "<p>If the glorifier is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">1</span> damage free strike before dying.</p>",
             "director": ""
           }
         }
@@ -47792,6 +51595,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47820,6 +51627,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47848,6 +51659,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -47899,6 +51714,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Allies gain an edge on melee strikes against the target until the glorifier and each other glorifier in their squad are killed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -47947,7 +51766,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the godcaller is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">3</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the godcaller is reduced to 1 Stamina instead.</p>",
+            "value": "<p>If the godcaller is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">3</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the godcaller is reduced to 1 Stamina instead.</p>",
             "director": ""
           }
         }
@@ -48000,6 +51819,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48033,6 +51856,11 @@ export const monsters = {
           "effect": {
             "before": "<p>The target moves up to their speed and can use a main action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "The godcaller targets a second ally.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The godcaller targets a second ally."
           }
         }
       },
@@ -48066,6 +51894,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target regains <span class=\"heal-value\">15</span> healing and ignores difficult terrain until the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -48114,7 +51946,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the juggernaut is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">5</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the juggernaut is reduced to 1 Stamina instead.</p>",
+            "value": "<p>If the juggernaut is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">5</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the juggernaut is reduced to 1 Stamina instead.</p>",
             "director": ""
           }
         }
@@ -48165,6 +51997,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48203,8 +52039,12 @@ export const monsters = {
             "effects": {}
           },
           "effect": {
-            "before": "<p>The juggernaut moves up to their speed and can make a <span class=\"damage-value damage-generic\">5</span> damage free strike{Free Strike}</p>",
+            "before": "<p>The juggernaut moves up to their speed and can make a <span class=\"damage-value damage-generic\">5</span> damage free strike</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48233,6 +52073,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48261,6 +52105,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48289,6 +52137,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -48337,7 +52189,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the rampart is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the rampart is reduced to 1 Stamina instead.</p>",
+            "value": "<p>If the rampart is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the rampart is reduced to 1 Stamina instead.</p>",
             "director": ""
           }
         }
@@ -48367,6 +52219,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The rampart becomes the target of the triggering ability instead.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48396,6 +52252,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The rampart moves or shifts up to their speed adjacent to the target, then can swap places with the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48424,6 +52284,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48452,6 +52316,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48480,6 +52348,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48529,6 +52401,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>This ability has a double edge against any target who dealt damage to the rampart this round.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -48589,7 +52465,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the razor is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">2</span> damage free strike{Free Strike} before dying.</p>",
+            "value": "<p>If the razor is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">2</span> damage free strike before dying.</p>",
             "director": ""
           }
         }
@@ -48619,6 +52495,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48647,6 +52527,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48675,6 +52559,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48717,13 +52605,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 damage; or prone"
+                "display": "5 damage;  or prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The razor gains an edge against any target affected by a condi tion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -48773,7 +52665,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the terranova is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the terranova is reduced to 1 Stamina instead.</p>",
+            "value": "<p>If the terranova is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the terranova is reduced to 1 Stamina instead.</p>",
             "director": ""
           }
         }
@@ -48825,17 +52717,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "9 damage"
+                "display": "9 damage; {{potency}} prone and can’t stand (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 damage"
+                "display": "12 damage; {{potency}} prone and can’t stand (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Each target must be on the ground, and the ground in each target’s space rises 1 square.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48864,6 +52760,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48892,6 +52792,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48920,6 +52824,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -48957,17 +52865,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage"
+                "display": "7 damage; {{potency}} restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "10 damage"
+                "display": "10 damage; {{potency}} restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The area is difficult terrain.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -49034,6 +52946,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49062,6 +52978,10 @@ export const monsters = {
           "effect": {
             "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49090,6 +53010,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49100,7 +53024,7 @@ export const monsters = {
           "keywords": [],
           "power": null,
           "description": {
-            "value": "<p>If the warleader is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">5</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the warleader is reduced to 1 Stamina instead.</p>",
+            "value": "<p>If the warleader is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">5</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the warleader is reduced to 1 Stamina instead.</p>",
             "director": ""
           }
         }
@@ -49146,6 +53070,11 @@ export const monsters = {
           "effect": {
             "before": "<p>The target moves up to their speed and can use a main action.</p>",
             "after": "<p><strong>3 Malice:</strong> The warleader targets one ally and a minion squad.</p>"
+          },
+          "spend": {
+            "text": "The warleader targets two allies.",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The warleader targets two allies."
           }
         }
       },
@@ -49184,17 +53113,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "10 damage"
+                "display": "10 damage; {{potency}} dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13 damage"
+                "display": "13 damage; {{potency}} dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49227,6 +53160,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target moves up to their speed and can use the Grab maneuver, which gains an edge.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49259,6 +53196,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target has a double edge on their next power roll before the end of the encounter.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49291,6 +53232,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target moves up to their speed. Each enemy adjacent to a target after this move makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p>Frightened of the warleader (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p>Frightened of the warleader (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49322,6 +53267,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The warleader shifts up to their speed, and four orc blitzers appear in unoccupied spaces within distance.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49350,6 +53299,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Three times in succession, the warleader shifts up to their speed and can use Mace Lariat.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -49438,8 +53391,12 @@ export const monsters = {
             "effects": {}
           },
           "effect": {
-            "before": "<p>Any damage dealt by the triggering ability is halved. If the creature or object who used the ability is within 3 squares of the scyza, the scyza can make a <span class=\"damage-value damage-generic\">5</span> damage free strike{Free Strike} against them.</p>",
+            "before": "<p>Any damage dealt by the triggering ability is halved. If the creature or object who used the ability is within 3 squares of the scyza, the scyza can make a <span class=\"damage-value damage-generic\">5</span> damage free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49489,6 +53446,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The scyza roars, and if the target has i&lt;2 they are frightened (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49538,6 +53499,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Against a target on top of the scyza, this ability gains an edge, and the target is pushed into an unoccupied adjacent square and knocked prone.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49577,17 +53542,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage; 2 sonic damage"
+                "display": "7 damage; 2 sonic damage; {{potency}} dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; 3 sonic damage"
+                "display": "9 damage; 3 sonic damage; {{potency}} dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49619,6 +53588,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The scyza kicks up a sandstorm, granting concealment to themself and any ally in the area until the end of the scyza’s next turn. Each enemy in the area makes an <strong>Intuition test.</strong></p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> damage; prone; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -49712,13 +53685,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; M<2 grabbed"
+                "display": "12 damage; grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target grabbed this way takes <span class=\"damage-value damage-generic\">2</span> damage at the start of each of the bruxer's turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49752,21 +53729,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage; A<0 bleeding (save ends)"
+                "display": "3 damage; <strong class=\"potency-value\">A<0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "5 damage; A<1 bleeding (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "8 damage; A<2 bleeding (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49802,6 +53783,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The bruxer makes a free strike against the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49835,21 +53820,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; push 3"
+                "display": "7 damage;  push 3"
               },
               {
                 "tier": 2,
-                "display": "10 damage; push 3; P<1 taunted"
+                "display": "10 damage;  push 3; taunted (EoT)"
               },
               {
                 "tier": 3,
-                "display": "13 damage; push 5; P<2 taunted"
+                "display": "13 damage;  push 5; taunted (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is wearing clothing covering the lower half of their body, they must use a maneuver once to pull that clothing up before they can move.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49879,6 +53868,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -49907,6 +53900,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">7 sonic</span> damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -49988,6 +53985,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The maestro makes a free strike against the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50017,6 +54018,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50050,21 +54055,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; push 3"
+                "display": "7 damage;  push 3"
               },
               {
                 "tier": 2,
-                "display": "10 damage; push 3; P<2 taunted"
+                "display": "10 damage;  push 3; taunted (EoT)"
               },
               {
                 "tier": 3,
-                "display": "13 damage; push 5; P<3 taunted"
+                "display": "13 damage;  push 5; taunted (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is wearing clothing covering the lower half of their body, they must use a maneuver once to pull that clothing up before they can move.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50098,21 +54107,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 sonic damage; slide 1"
+                "display": "3 sonic damage;  slide 1; the maestro can shift 1 square"
               },
               {
                 "tier": 2,
-                "display": "6 sonic damage; slide 3"
+                "display": "6 sonic damage;  slide 3; the maestro can shift up to 3 squares"
               },
               {
                 "tier": 3,
-                "display": "8 sonic damage; slide 5"
+                "display": "8 sonic damage;  slide 5; the maestro can shift up to 5 squares"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Each ally within distance can use Ready Rodent as a free triggered action once before the end of the round.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50147,21 +54160,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "P<1 slowed (save ends)"
+                "display": "<strong class=\"potency-value\">P<1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "P<2 slowed (save ends)"
+                "display": "<strong class=\"potency-value\">P<2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "P<3 slowed (save ends)"
+                "display": "<strong class=\"potency-value\">P<3</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "Each ally within 3 squares of any target has a +2 bonus to  speed until the end of their next turn.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Each ally within 3 squares of any target has a +2 bonus to  speed until the end of their next turn."
           }
         }
       },
@@ -50194,6 +54212,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target can shift up to their speed or take the Defend action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50226,6 +54248,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of their next turn, the target halves any damage they take, gains a +4 damage bonus to strikes, and has their speed doubled.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50258,6 +54284,10 @@ export const monsters = {
           "effect": {
             "before": "<p><strong>Note:</strong> Targets each dead ally in the area.</p><p></p>",
             "after": "<p>Each target stands, makes a free strike, then falls dead again. Any ally of the targets can use Ready Rodent as a free triggered action once in conjunction with these free strikes.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50286,6 +54316,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">7 sonic</span> damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -50355,6 +54389,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The Mischiever makes a free strike against the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50384,6 +54422,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50435,6 +54477,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the mischiever is hidden when they use this ability, they can target two creatures.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50463,6 +54509,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">7 sonic</span> damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -50549,21 +54599,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 sonic damage; push 1"
+                "display": "5 sonic damage;  push 1"
               },
               {
                 "tier": 2,
-                "display": "7 sonic damage; push 3"
+                "display": "7 sonic damage;  push 3"
               },
               {
                 "tier": 3,
-                "display": "9 sonic damage; push 4"
+                "display": "9 sonic damage;  push 4"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The piper or one ally within distance regains Stamina equal to the damage dealt.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50599,6 +54653,11 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target who has used their Ready Rodent ability this round regains the use of their triggered action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "The area increases to a 6 burst.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The area increases to a 6 burst."
           }
         }
       },
@@ -50634,6 +54693,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The piper makes a free strike against the target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50662,6 +54725,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">7 sonic</span> damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50691,6 +54758,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50724,21 +54795,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; push 3"
+                "display": "7 damage;  push 3"
               },
               {
                 "tier": 2,
-                "display": "10 damage; push 3; P<1 taunted"
+                "display": "10 damage;  push 3; taunted (EoT)"
               },
               {
                 "tier": 3,
-                "display": "13 damage; push 5; P<2 taunted"
+                "display": "13 damage;  push 5; taunted (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is wearing clothing covering the lower half of their body, they must use a maneuver once to pull that clothing up before they can move.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -50839,6 +54914,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The ratcrobat shifts up to 2 squares after striking the first target, then can shift 1 square after striking the second target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50873,6 +54952,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The ratcrobat slides the target up to 3 squares, then can shift into any square the target left</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50908,6 +54991,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ratcrobat makes a free strike against the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50936,6 +55023,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">7 sonic</span> damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50965,6 +55056,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -50998,21 +55093,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; push 3"
+                "display": "7 damage;  push 3"
               },
               {
                 "tier": 2,
-                "display": "10 damage; push 3; P<1 taunted"
+                "display": "10 damage;  push 3; taunted (EoT)"
               },
               {
                 "tier": 3,
-                "display": "13 damage; push 5; P<2 taunted"
+                "display": "13 damage;  push 5; taunted (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>If the target is wearing clothing covering the lower half of their body, they must use a maneuver once to pull that clothing up before they can move.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -51100,6 +55199,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>One ally of the redeye within 2 squares of the target shifts up to 2 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51130,6 +55233,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The redeye makes a free strike against the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51159,6 +55266,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51187,6 +55298,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">7 sonic</span> damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -51264,17 +55379,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "2 damage; P<1 taunted"
+                "display": "2 damage; taunted (EoT)"
               },
               {
                 "tier": 3,
-                "display": "3 damage; P<2 taunted"
+                "display": "3 damage; taunted (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51310,6 +55429,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The scrapper makes a free strike against the target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51339,6 +55462,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51367,6 +55494,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">7 sonic</span> damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -51435,6 +55566,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51465,6 +55600,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The Swiftpaw makes a free strike against the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51499,21 +55638,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 damage; slide 1"
+                "display": "1 damage;  slide 1; the swiftpaw can shift 1 square"
               },
               {
                 "tier": 2,
-                "display": "2 damage; slide 2"
+                "display": "2 damage;  slide 2; the swiftpaw can shift up to 2 squares"
               },
               {
                 "tier": 3,
-                "display": "3 damage; slide 3"
+                "display": "3 damage;  slide 3; the swiftpaw can shift up to 3 squares"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51542,6 +55685,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">7 sonic</span> damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -51631,6 +55778,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51664,6 +55815,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target gains an edge on their next strike.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51716,6 +55871,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51744,6 +55903,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51772,6 +55935,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51800,6 +55967,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51828,6 +55999,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>[[/damage 11 sonic poison fire]] damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p>[[/damage 8 sonic poison fire]]  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p>[[/damage 5 sonic poison fire]]  damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -51902,21 +56077,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; slide 1"
+                "display": "7 damage;  slide 1"
               },
               {
                 "tier": 2,
-                "display": "10 damage; slide 2"
+                "display": "10 damage;  slide 2"
               },
               {
                 "tier": 3,
-                "display": "13 damage; slide 3"
+                "display": "13 damage;  slide 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -51969,17 +56148,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "5 damage; P<1 restrained"
+                "display": "5 damage; restrained (EoT)"
               },
               {
                 "tier": 3,
-                "display": "8 damage; P<2 restrained (save ends)"
+                "display": "8 damage; restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The area is difficult terrain for enemies until the end of the encounter. Any enemy in the area has acid weakness 2.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52011,6 +56194,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The elementalist can teleport up to 2 squares. Each creature adjacent to the space they leave takes 2 corruption damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52039,6 +56226,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52067,6 +56258,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52095,6 +56290,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52123,6 +56322,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52151,6 +56354,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>[[/damage 11 sonic poison fire]] damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p>[[/damage 8 sonic poison fire]]  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p>[[/damage 5 sonic poison fire]]  damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -52239,6 +56446,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "Each target who has m<1 is slowed (save ends).",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target who has m<1 is slowed (save ends)."
           }
         }
       },
@@ -52285,21 +56497,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; P<0 grabbed"
+                "display": "8 damage; {{potency}} grabbed"
               },
               {
                 "tier": 2,
-                "display": "13 damage"
+                "display": "13 damage; {{potency}} grabbed"
               },
               {
                 "tier": 3,
-                "display": "16 damage"
+                "display": "16 damage; {{potency}} grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The target must be the fury’s size or smaller. While the target is grabbed this way, the fury gains an edge on strikes against them.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52340,6 +56556,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52368,6 +56588,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52396,6 +56620,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52424,6 +56652,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52452,6 +56684,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>[[/damage 11 sonic poison fire]] damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p>[[/damage 8 sonic poison fire]]  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p>[[/damage 5 sonic poison fire]]  damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -52548,21 +56784,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage"
+                "display": "7 damage; the null shifts up to 2 squares"
               },
               {
                 "tier": 2,
-                "display": "10 damage"
+                "display": "10 damage; the null shifts up to 3 squares"
               },
               {
                 "tier": 3,
-                "display": "13 damage"
+                "display": "13 damage; the null shifts up to 4 squares"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52606,13 +56846,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "13 damage; R<2 gOF7LZWRfW9zXk1w"
+                "display": "13 damage; <strong class=\"potency-value\">R<2</strong> dazed and slowed (EoT)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52641,6 +56885,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52669,6 +56917,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>[[/damage 11 sonic poison fire]] damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p>[[/damage 8 sonic poison fire]]  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p>[[/damage 5 sonic poison fire]]  damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52697,6 +56949,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52725,6 +56981,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52753,6 +57013,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -52857,13 +57121,18 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage; A<2 bleeding (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The shadow can teleport up to 5 squares, then can attempt to hide.</p>"
+          },
+          "spend": {
+            "text": "The shadow can teleport up to 5 squares, then can attempt to hide.",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The shadow can teleport up to 5 squares, then can attempt to hide."
           }
         }
       },
@@ -52897,6 +57166,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The shadow coats their weapon with poison. They gain an edge on their next strike, and any potency for that strike increases by 1.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52925,6 +57198,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52953,6 +57230,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>[[/damage 11 sonic poison fire]] damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p>[[/damage 8 sonic poison fire]]  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p>[[/damage 5 sonic poison fire]]  damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -52981,6 +57262,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53009,6 +57294,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53037,6 +57326,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -53136,6 +57429,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "Two allies within distance can make a free strike against  one of the targets.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Two allies within distance can make a free strike against  one of the targets."
           }
         }
       },
@@ -53170,21 +57468,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; P<0 weakened (save ends)"
+                "display": "8 damage; {{potency}} weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "13 damage; P<1 weakened (save ends)"
+                "display": "13 damage; {{potency}} weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "16 damage; P<2 weakened (save ends)"
+                "display": "16 damage; {{potency}} weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>One ally adjacent to the target regains 5 Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53217,6 +57519,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At any point during the movement, the tactician makes a free strike against the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53245,6 +57551,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53273,6 +57583,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53301,6 +57615,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53329,6 +57647,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53357,6 +57679,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>[[/damage 11 sonic poison fire]] damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p>[[/damage 8 sonic poison fire]]  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p>[[/damage 5 sonic poison fire]]  damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -53442,21 +57768,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 psychic damage; M<0 prone"
+                "display": "7 psychic damage; <strong class=\"potency-value\">M<0</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "10 psychic damage; push 2; M<1 prone"
+                "display": "10 psychic damage;  push 2; <strong class=\"potency-value\">M<1</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "13 psychic damage; push 3; M<2 prone"
+                "display": "13 psychic damage;  push 3; <strong class=\"potency-value\">M<2</strong> prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53491,21 +57821,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "R<0 slowed (save ends)"
+                "display": "<strong class=\"potency-value\">R<0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "R<1 dazed (save ends)"
+                "display": "<strong class=\"potency-value\">R<1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "R<2 9EnCQ5K6JLmZL18E (save ends)"
+                "display": "<strong class=\"potency-value\">R<2</strong> dazed and slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53539,6 +57873,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The talent halves the damage and shifts up to 2 squares</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53567,6 +57905,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53595,6 +57937,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>[[/damage 11 sonic poison fire]] damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p>[[/damage 8 sonic poison fire]]  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p>[[/damage 5 sonic poison fire]]  damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53623,6 +57969,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53651,6 +58001,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53679,6 +58033,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -53824,13 +58182,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 damage"
+                "display": "5 damage; one ally can make a free strike against the target"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53866,6 +58228,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53894,6 +58260,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -53922,6 +58292,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -54029,13 +58403,18 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "13 damage; R<2 weakened, bleeding (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">R<2</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "A creature weakened this way is also bleeding.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> A creature weakened this way is also bleeding."
           }
         }
       },
@@ -54084,6 +58463,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54119,6 +58502,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54147,6 +58534,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54175,6 +58566,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -54271,13 +58666,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "10 sonic damage; A<2 prone (save ends); M<2 slowed (save ends)"
+                "display": "10 sonic damage; prone; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A layer of ground beneath the area that is 1 square deep is destroyed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54313,6 +58712,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The damage is halved for the cannonfall and each target also affected by the triggering ability</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54348,6 +58751,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54376,6 +58783,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54404,6 +58815,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -54491,21 +58906,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 corruption damage; push 2"
+                "display": "6 corruption damage;  push 2"
               },
               {
                 "tier": 2,
-                "display": "8 corruption damage; push 4"
+                "display": "8 corruption damage;  push 4"
               },
               {
                 "tier": 3,
-                "display": "11 corruption damage; push 6; A<2 prone (save ends)"
+                "display": "11 corruption damage;  push 6; prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54544,6 +58963,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The area is a psionically charged treadmill that pushes creatures and objects at high speed in one direction of the helix's choice. Any creature who enters the area or starts their turn there slides 3 squares toward the end of the area in the chosen direction. Each enemy in the area when it first appears takes <span class=\"damage-value damage-damage\">3 damage</span> before they slide.</p>"
+          },
+          "spend": {
+            "text": "The helix creates a second kinetic lane.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The helix creates a second kinetic lane."
           }
         }
       },
@@ -54579,6 +59003,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54607,6 +59035,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54635,6 +59067,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -54730,13 +59166,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage; A<2 bleeding (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The hijack is hidden from any creature who is bleeding from this ability until that condition ends.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54773,6 +59213,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The hijack psychically latches their sickle onto the target and closes the distance between them. If the target is larger than the hijack, the hijack moves adjacent to the target. Otherwise, the target is pulled up to 4 squares toward the hijack.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54808,6 +59252,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54836,6 +59284,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54864,6 +59316,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -54955,7 +59411,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "8 damage; M<1 dazed (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
@@ -54966,6 +59422,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>A target who ends their next turn adjacent to the other target falls prone.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -54999,21 +59459,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 psychic damage; R<0 prone"
+                "display": "4 psychic damage; prone"
               },
               {
                 "tier": 2,
-                "display": "6 psychic damage; push 1; R<1 prone, JmxKQObaW5KvrNMn"
+                "display": "6 psychic damage;  push 1; prone and can't stand (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 psychic damage; push 2; R<2 JmxKQObaW5KvrNMn, prone (save ends)"
+                "display": "9 psychic damage;  push 2; prone and can't stand (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55049,6 +59513,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55077,6 +59545,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55105,6 +59577,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -55192,21 +59668,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage; slide 1"
+                "display": "3 damage;  slide 1"
               },
               {
                 "tier": 2,
-                "display": "5 damage; slide 2"
+                "display": "5 damage;  slide 2"
               },
               {
                 "tier": 3,
-                "display": "6 damage; slide 3; M<2 prone"
+                "display": "6 damage;  slide 3; prone"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55242,6 +59722,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55270,6 +59754,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55298,6 +59786,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -55386,21 +59878,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; pull 1"
+                "display": "7 damage;  pull 1"
               },
               {
                 "tier": 2,
-                "display": "10 damage; pull 2"
+                "display": "10 damage;  pull 2"
               },
               {
                 "tier": 3,
-                "display": "13 damage; pull 3; A<2 restrained (save ends)"
+                "display": "13 damage;  pull 3; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>This ability can target creatures on parallel planes of existence and pull them onto the nemesis's plane.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55435,21 +59931,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 psychic damage; M<0 wcRFIIgjuxEiWtuz (save ends)"
+                "display": "7 psychic damage; <strong class=\"potency-value\">M<0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 psychic damage; M<1 wcRFIIgjuxEiWtuz (save ends)"
+                "display": "10 psychic damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13 psychic damage; M<2 wcRFIIgjuxEiWtuz (save ends)"
+                "display": "13 psychic damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Any creature slowed this way takes <span class=\"damage-value damage-damage\">2 damage</span> for each square they move or are force moved until that condition ends.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55485,6 +59985,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55513,6 +60017,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55541,6 +60049,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -55655,6 +60167,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target takes a −2 penalty to speed until the start of the tyrannis's next turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55690,6 +60206,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets three time raiders.</p>",
             "after": "<p>Each target can fly up to their speed and make a free strike. If a target doesn't land in an unoccupied space, they fall.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55725,6 +60245,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The strike takes a bane. After the strike resolves, the tyrannis can make a free strike against the target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55760,6 +60284,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target gains [[/heal 15 temporary]] Stamina, and has their speed doubled until the end of their next turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55794,6 +60322,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target can end one effect on them or can move up to their speed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55828,6 +60360,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The tyrannis fires a sensor mine into each unoccupied square in the area, and creates a gravity well whose area contains one or more squares of the tyrannis's space (see Gravity Well). Whenever an enemy enters a square with a sensor mine in it, the mine explodes, dealing <span class=\"damage-value damage-damage\">3 damage</span> to the enemy.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55863,6 +60399,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55891,6 +60431,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -55919,6 +60463,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -56021,6 +60569,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Any power roll made against the target gains an edge until the start of the vertex's next turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56058,6 +60610,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>A portal fills the area, connecting to a location the vertex has experienced on any plane of existence, in person or otherwise. Any creature who enters the portal for the first time in a round or starts their turn there is instantly teleported to any unoccupied space in the portal at the chosen location. The portal lasts until the vertex uses this ability again, dismisses the portal (no action required), or is transported by the portal.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56093,6 +60649,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target shifts up to half their speed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56128,6 +60688,10 @@ export const monsters = {
           "effect": {
             "before": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56156,6 +60720,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56184,6 +60752,10 @@ export const monsters = {
           "effect": {
             "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -56297,6 +60869,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The crawling claw shifts up to a number of squares equal to the damage dealt.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56325,6 +60901,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56353,6 +60933,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56381,6 +60965,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56409,6 +60997,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -56523,6 +61115,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56551,6 +61147,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56579,6 +61179,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56607,6 +61211,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56635,6 +61243,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -56734,21 +61346,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 cold damage; P<1 slowed (save ends)"
+                "display": "7 cold damage; <strong class=\"potency-value\">P<1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 cold damage; P<2 slowed (save ends)"
+                "display": "10 cold damage; <strong class=\"potency-value\">P<2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13 cold damage; P<3 slowed (save ends)"
+                "display": "13 cold damage; <strong class=\"potency-value\">P<3</strong> slowed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The next strike made against the target gains an edge.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56778,6 +61394,11 @@ export const monsters = {
           "effect": {
             "before": "<p><strong>Note: Self or one ally with a Phasing trait.</strong></p><p>The target shifts up to their speed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "The ghost chooses one additional target.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ghost chooses one additional target."
           }
         }
       },
@@ -56811,6 +61432,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ghost halves the damage from the strike and the target takes 2 sonic damage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56844,6 +61469,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets Each 3 size or smaller object in the area</p><p>Each target rises 1 square into the air and is vertically pulled up to 5 squares toward the nearest enemy within 3 squares of the target.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56877,21 +61506,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "P<1 WQ3ZqbDJ5jujIlKb"
+                "display": "{{potency}} the target is levitated (EoT)"
               },
               {
                 "tier": 2,
-                "display": "P<2 WQ3ZqbDJ5jujIlKb"
+                "display": "{{potency}} the target is levitated (EoT)"
               },
               {
                 "tier": 3,
-                "display": "P<3 WQ3ZqbDJ5jujIlKb"
+                "display": "{{potency}} the target is levitated until the end of the encounter"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A levitated target floats 1 square off the ground when first affected, then rises 1 square at the end of each of their turns. If a levitated target can’t already fly, they can fly but are slowed and weakened while flying this way.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56940,6 +61573,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>A target who has p&lt;2 is reduced to 1 Stamina if they are winded after taking this damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56968,6 +61605,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -56996,6 +61637,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57024,6 +61669,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57052,6 +61701,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -57136,13 +61789,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 damage; M<2 bleeding (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "<p><strong>Hunger: </strong>When the ghoul uses the Charge main action, they gain a +2 bonus to speed until the end of their turn</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57171,6 +61828,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The ghoul jumps up to 3 squares. If they land on a size 1 enemy, that enemy is knocked prone and the ghoul can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57223,6 +61884,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57251,6 +61916,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57279,6 +61948,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57307,6 +61980,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -57412,13 +62089,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 damage; M<2 prone, slowed"
+                "display": "5 damage; prone if size 1, or slowed (save ends) otherwise"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57447,6 +62128,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57475,6 +62160,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57503,6 +62192,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57531,6 +62224,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -57645,6 +62342,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57673,6 +62374,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57701,6 +62406,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57729,6 +62438,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57757,6 +62470,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -57849,6 +62566,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Until the start of the skeletonʼs next turn, the target takes 2 damage the first time they willingly move on their turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57882,21 +62603,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 damage; M<0 bleeding (save ends)"
+                "display": "1 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "2 damage; M<1 bleeding (save ends)"
+                "display": "2 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "3 damage; M<2 bleeding (save ends)"
+                "display": "3 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Each target takes a bane on their next strike.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57937,6 +62662,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57965,6 +62694,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -57993,6 +62726,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58021,6 +62758,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -58107,6 +62848,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target regains <span class=\"heal-value\">10</span> healing. The soulwight can’t use this maneuver again until after they strike a creature with their Soulstealer Longsword.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58145,17 +62890,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 corruption damage; P<1 slowed (save ends)"
+                "display": "4 corruption damage; {{potency}} slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 corruption damage; P<2 1XC4RokOmULqp1LI (save ends)"
+                "display": "5 corruption damage; {{potency}} slowed and weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The target appears to rapidly age each time they take damage from this ability. The target regains their former appearance when the soulwight is destroyed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58184,6 +62933,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58212,6 +62965,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58240,6 +62997,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58268,6 +63029,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -58349,6 +63114,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The specter turns invisible, moves up to their speed, and is visible again.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58383,21 +63152,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 corruption damage; P<0 weakened (save ends)"
+                "display": "3 corruption damage; <strong class=\"potency-value\">P<0</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 corruption damage; P<1 weakened (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P<1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 corruption damage; P<2 weakened (save ends)"
+                "display": "5 corruption damage; <strong class=\"potency-value\">P<2</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The potency increases by 1. Any living creature who dies  from this damage rises at the start of the next round in the target’s  space as a specter under the Director’s control.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The potency increases by 1. Any living creature who dies  from this damage rises at the start of the next round in the target’s  space as a specter under the Director’s control."
           }
         }
       },
@@ -58426,6 +63200,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58454,6 +63232,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58482,6 +63264,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58510,6 +63296,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -58613,6 +63403,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Until the end of the stalker's next turn, the area provides concealment, and blocks line of effect for enemies</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58644,6 +63438,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The umbral stalker teleports to an unoccupied space in an area of concealment within 10 squares.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58682,17 +63480,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 cold damage"
+                "display": "6 cold damage; the stalker can shift 1 square"
               },
               {
                 "tier": 3,
-                "display": "7 cold damage"
+                "display": "7 cold damage; the stalker shifts up to 2 squares"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58721,6 +63523,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58749,6 +63555,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58777,6 +63587,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58805,6 +63619,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -58888,13 +63706,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 damage; P<2 grabbed"
+                "display": "7 damage; grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target who starts their turn grabbed by the zombie takes 2 corruption damage. A creature who takes 5 or more corruption damage this way becomes insatiably hungry for flesh, and must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58931,17 +63753,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "3 corruption damage; M<1 weakened (save ends)"
+                "display": "3 corruption damage; <strong class=\"potency-value\">M<1</strong> Weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "4 corruption damage; M<2 dazed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">M<2</strong> Dazed (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -58982,6 +63808,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59010,6 +63840,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59038,6 +63872,10 @@ export const monsters = {
           "effect": {
             "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59066,6 +63904,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
             "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -59155,17 +63997,22 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "5 damage; A<1 grabbed"
+                "display": "5 damage; <strong class=\"potency-value\">A<1</strong> grabbed"
               },
               {
                 "tier": 3,
-                "display": "6 damage; A<2 grabbed"
+                "display": "6 damage; <strong class=\"potency-value\">A<2</strong> grabbed"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The amalgamite can have up to four targets grabbed at once.</p><p><span class=\"damage-value damage-damage\">3 damage</span></p>"
+          },
+          "spend": {
+            "text": "The amalgamite deals 3 damage to each creature grabbed this way or who they already have grabbed, and regains Stamina equal to the damage dealt.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The amalgamite deals 3 damage to each creature grabbed this way or who they already have grabbed, and regains Stamina equal to the damage dealt."
           }
         }
       },
@@ -59201,6 +64048,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59236,6 +64087,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59264,6 +64119,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59292,6 +64151,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -59393,6 +64256,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>After using this ability, the commando can attempt to hide even if observed.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -59496,6 +64363,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If used with the Charge main action, this ability gains an edge.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59531,6 +64402,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59559,6 +64434,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59587,6 +64466,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -59690,6 +64573,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The area is covered in sticky fire until the start of the crucibite's next turn. Any creature who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-fire\">2 fire</span> damage</p><p><span class=\"damage-value damage-generic\">2</span></p>"
+          },
+          "spend": {
+            "text": "The area becomes a 10 × 1 line, and if any ally of the crucibite is in the area when it is created, the ability deals an extra 2 damage to each target.",
+            "value": 3,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The area becomes a 10 × 1 line, and if any ally of the crucibite is in the area when it is created, the ability deals an extra 2 damage to each target."
           }
         }
       },
@@ -59725,6 +64613,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59760,6 +64652,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59788,6 +64684,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59816,6 +64716,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -59905,17 +64809,21 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 damage; pull 1"
+                "display": "4 damage;  pull 1"
               },
               {
                 "tier": 3,
-                "display": "5 damage; pull 2"
+                "display": "5 damage;  pull 2"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The eviscerite can automatically grab a target pulled adjacent to them this way.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59951,6 +64859,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -59986,6 +64898,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60014,6 +64930,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60042,6 +64962,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -60140,21 +65064,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; pull 1"
+                "display": "8 damage;  pull 1"
               },
               {
                 "tier": 2,
-                "display": "12 damage; pull 2"
+                "display": "12 damage;  pull 2"
               },
               {
                 "tier": 3,
-                "display": "15 damage; pull 3"
+                "display": "15 damage;  pull 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>One ally within 10 squares of the ground commander can make a free strike.</p>"
+          },
+          "spend": {
+            "text": "A target who has i<2 and who is adjacent to the ground commander after this ability is resolved is grabbed (save ends). This grab can’t be escaped using the Escape Grab maneuver. The ground commander can grab up to two creatures at a time.",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> A target who has i<2 and who is adjacent to the ground commander after this ability is resolved is grabbed (save ends). This grab can’t be escaped using the Escape Grab maneuver. The ground commander can grab up to two creatures at a time."
           }
         }
       },
@@ -60190,6 +65119,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Any target who has a loyalty collar is reduced to 0 Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60225,6 +65158,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Even if reduced to 0 Stamina, the target moves up to their speed and can make a free strike after the triggering effect is resolved The target then immediately dies.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60259,6 +65196,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target can make a ranged free strike, then immediately use the Charge main action.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60294,6 +65235,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each ally within 5 squares of the target moves up to their speed and can make a free strike against the target. If the target has I &lt; 2, they are frightened of the ground commander (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60329,6 +65274,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>Each target ally shifts up to 2 squares and can use the Grab maneuver. Until the end of the encounter, each target enemy takes a bane on the Escape Grab maneuver.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60364,6 +65313,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60392,6 +65345,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60420,6 +65377,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -60507,21 +65468,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 psychic damage; vertical slide 1"
+                "display": "1 psychic damage;  vertical slide 1"
               },
               {
                 "tier": 2,
-                "display": "2 psychic damage; vertical slide 2"
+                "display": "2 psychic damage;  vertical slide 2"
               },
               {
                 "tier": 3,
-                "display": "3 psychic damage; vertical slide 3"
+                "display": "3 psychic damage;  vertical slide 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60557,6 +65522,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60592,6 +65561,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The neuronite chooses one ally within 10 squares. Each target is either taunted by the ally, or the ally has damage immunity 3 whenever any target makes a strike against them (the neuronite's choice). Either effect lasts until the start of the neuronite's next turn</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60627,6 +65600,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60655,6 +65632,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60683,6 +65664,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -60770,21 +65755,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 poison damage; I<0 frightened (save ends)"
+                "display": "2 poison damage; <strong class=\"potency-value\">I<0</strong> frightened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 poison damage; I<1 frightened (save ends)"
+                "display": "4 poison damage; <strong class=\"potency-value\">I<1</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 poison damage; I<2 frightened (save ends)"
+                "display": "5 poison damage; <strong class=\"potency-value\">I<2</strong> frightened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The area is filled with a cloud of pestilence that lasts until the start of the pestilite's next turn. Any creature who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-poison\">2 poison</span> damage.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60820,6 +65809,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Note: Targets One War Dog</p>",
             "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60855,6 +65848,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60883,6 +65880,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -60911,6 +65912,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -60997,21 +66002,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 acid damage; M<0 bleeding (save ends)"
+                "display": "4 acid damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 acid damage; M<1 bleeding (save ends)"
+                "display": "6 acid damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "10 acid damage; M<2 bleeding (save ends)"
+                "display": "10 acid damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>Special: A creature adjacent to the target can attempt an <strong>Agility test</strong> as a maneuver to remove the detonator.</p><p></p><table><tbody><tr><td data-colwidth=\"113\"><p>11 or less</p></td><td><p>No effect.</p></td></tr><tr><td data-colwidth=\"113\"><p>12-16</p></td><td><p>The detonator is disarmed and destroyed.</p></td></tr><tr><td data-colwidth=\"113\"><p>17+</p></td><td><p>The creature can attach the detonator to another creature or object within 5 squares of them.</p></td></tr></tbody></table>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61047,6 +66056,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61082,6 +66095,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61110,6 +66127,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61138,6 +66159,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -61238,6 +66263,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>This ability ignores cover and concealment.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61273,6 +66302,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61301,6 +66334,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61329,6 +66366,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -61441,6 +66482,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>One ally within 5 squares of the subcommander can make a free strike against the target.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61476,6 +66521,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61511,6 +66560,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61539,6 +66592,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61567,6 +66624,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -61654,21 +66715,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage; slide 1"
+                "display": "4 damage;  slide 1"
               },
               {
                 "tier": 2,
-                "display": "6 damage; slide 2"
+                "display": "6 damage;  slide 2"
               },
               {
                 "tier": 3,
-                "display": "7 damage; slide 3"
+                "display": "7 damage;  slide 3"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>The teletalite gains an edge on this ability if any ally is adjacent to the target.</p>"
+          },
+          "spend": {
+            "text": "The teletalite teleports the target 3 squares before sliding them.",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The teletalite teleports the target 3 squares before sliding them."
           }
         }
       },
@@ -61704,6 +66770,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61737,6 +66807,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>The teletalite can teleport up to 5 squares and gains an edge on strikes until the end of their turn.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61772,6 +66846,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61800,6 +66878,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61828,6 +66910,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -61940,6 +67026,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -61975,6 +67065,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62003,6 +67097,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62031,6 +67129,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -62153,21 +67255,26 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; P<1 WgMV5KOjsKOc1aKL"
+                "display": "9 damage; the target gains 2 rage"
               },
               {
                 "tier": 2,
-                "display": "13 damage; P<2 WgMV5KOjsKOc1aKL"
+                "display": "13 damage; the target gains 4 rage"
               },
               {
                 "tier": 3,
-                "display": "16 damage; P<3 WgMV5KOjsKOc1aKL"
+                "display": "16 damage; the target gains 5 rage"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "If the target has P < 0, they are afflicted with lycanthropy. Each time the target is unaffected by the potency effect, the potency increases by 1 the next time the werewolf uses the ability against the same target. A creature afflicted with lycanthropy gains 2 rage at the end of each of their turns whenever they’re in combat. Their rage doesn’t disappear after finishing a respite, and they must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect.",
+            "value": 2,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If the target has P < 0, they are afflicted with lycanthropy. Each time the target is unaffected by the potency effect, the potency increases by 1 the next time the werewolf uses the ability against the same target. A creature afflicted with lycanthropy gains 2 rage at the end of each of their turns whenever they’re in combat. Their rage doesn’t disappear after finishing a respite, and they must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect."
           }
         }
       },
@@ -62202,21 +67309,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; M<1 bleeding (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "11 damage; M<2 bleeding, rDsdlqr0JEElIIyw (save ends)"
+                "display": "11 damage; the target gains 1 rage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "14 damage; M<3 bleeding, rDsdlqr0JEElIIyw (save ends)"
+                "display": "14 damage; the target gains 3 rage; <strong class=\"potency-value\">M<3</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62250,21 +67361,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage; push 2"
+                "display": "4 damage;  push 2"
               },
               {
                 "tier": 2,
-                "display": "6 damage; push 3; P<2 Y5l5EHKEDqQRwyKB"
+                "display": "6 damage;  push 3; the target gains 1 rage"
               },
               {
                 "tier": 3,
-                "display": "7 damage; slide 3; P<3 Y5l5EHKEDqQRwyKB"
+                "display": "7 damage;  slide 3; the target gains 3 rage"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62293,6 +67408,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The werewolf jumps up to 4 squares. If they end this jump at a wall, the werewolf jumps off the wall up to 4 squares and can make a melee free strike. If the target of the free strike has m&lt;2, they are knocked prone.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62325,6 +67444,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The target is knocked prone and takes 5 damage before the triggering ability is resolved.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62357,6 +67480,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Each target makes an Intuition test.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The target must move their speed in a straight line away from the werewolf; frightened (save ends)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": "<p>Any enemy in the encounter who has 1 or more rage gains 4 rage and howls along with the werewolf.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62385,6 +67512,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The werewolf transforms into a massive wolf of size 3 until they die or until the end of the encounter. They move to a space that can accommodate their new size and push adjacent creatures out of their way. While in wolf form, they have speed 10 and stability 2, their strikes gain a +2 damage bonus and bestow an additional 1 rage, and the potency of Accursed Bite increases by 1.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62412,21 +67543,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; M<1 bleeding, EeHlWpCVsUbyUhpl (save ends)"
+                "display": "5 damage; the target gains 2 rage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; M<2 bleeding, EeHlWpCVsUbyUhpl (save ends)"
+                "display": "8 damage; the target gains 4 rage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 damage; M<3 bleeding, EeHlWpCVsUbyUhpl (save ends)"
+                "display": "11 damage; the target gains 8 rage; <strong class=\"potency-value\">M<3</strong> bleeding (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62455,6 +67590,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The werewolf gains 10 temporary Stamina and a +3 bonus to speed until the end of their turn. The werewolf can’t use this fea ture if they took any holy damage since ending their last turn.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62483,6 +67622,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the encounter, the encounter map turns to night and the moon appears impossibly huge in the sky. The werewolf can take an additional move action or maneuver on each of their turns while they have line of effect to the moon. Any creature who ends their turn with line of effect to the moon with 1 or more rage gains 2 rage.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62512,6 +67655,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The werewolf takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -62614,7 +67761,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "14 damage; M<2 bleeding (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
@@ -62625,6 +67772,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "One target hidden from the lurker takes an extra 6 acid damage.",
+            "value": 1,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> One target hidden from the lurker takes an extra 6 acid damage."
           }
         }
       },
@@ -62659,21 +67811,25 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "10 acid damage; M<1 weakened (save ends)"
+                "display": "10 acid damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "16 acid damage; M<2 weakened (save ends)"
+                "display": "16 acid damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "20 acid damage; M<3 weakened (save ends)"
+                "display": "20 acid damage; <strong class=\"potency-value\">M<3</strong> weakened (save ends)"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": "<p>A target weakened this way takes <span class=\"damage-value damage-acid\">1d4 acid</span> damage at the start of each of their turns.</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62705,6 +67861,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The lurker flies up to their speed, then can attempt to hide. Each enemy the lurker moves adjacent to during this movement can choose to take <span class=\"damage-value damage-sonic\">3 sonic</span> damage or fall prone.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62739,6 +67899,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The lurker flies adjacent to the target and can make a free strike against them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62767,6 +67931,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One wyvern in the encounter can make a free strike against each enemy adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62795,6 +67963,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wyvern in the encounter has a double edge on strikes and can use their signature ability instead of a free strike when making opportunity attacks.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62823,6 +67995,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Every wyvern’s anger fills the encounter map with a thick miasma</p><p>of hatred. Each enemy in the encounter makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Intuition test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target is taunted by the nearest creature or object (save ends). While the target is taunted this way, power rolls against them have a double edge.</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target is taunted by the nearest creature or object (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -62923,7 +68099,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "14 damage; M<2 slowed (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
@@ -62934,6 +68110,10 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": "<p>If a target slowed this way is already slowed, they are instead restrained (save ends).</p>"
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -62984,6 +68164,11 @@ export const monsters = {
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "The predator uses this ability a second time, either recreating the same line or creating a new line.",
+            "value": 5,
+            "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> The predator uses this ability a second time, either recreating the same line or creating a new line."
           }
         }
       },
@@ -63018,7 +68203,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; A<1 grabbed (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">A<1</strong> grabbed"
               },
               {
                 "tier": 2,
@@ -63026,13 +68211,17 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "17 damage; A<3 grabbed (save ends)"
+                "display": "17 damage; <strong class=\"potency-value\">A<3</strong> grabbed and the target takes a bane on the Escape Maneuver"
               }
             ]
           },
           "effect": {
             "before": "",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -63067,6 +68256,10 @@ export const monsters = {
           "effect": {
             "before": "<p>The predator uses Sedating Stinger against the target, then shifts up to 3 squares.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -63095,6 +68288,10 @@ export const monsters = {
           "effect": {
             "before": "<p>One wyvern in the encounter can make a free strike against each enemy adjacent to them.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -63123,6 +68320,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Until the end of the round, each wyvern in the encounter has a double edge on strikes and can use their signature ability instead of a free strike when making opportunity attacks.</p>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       },
@@ -63151,6 +68352,10 @@ export const monsters = {
           "effect": {
             "before": "<p>Every wyvern’s anger fills the encounter map with a thick miasma</p><p>of hatred. Each enemy in the encounter makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target is taunted by the nearest creature or object (save ends). While the target is taunted this way, power rolls against them have a double edge.</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target is taunted by the nearest creature or object (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
             "after": ""
+          },
+          "spend": {
+            "text": "",
+            "value": null
           }
         }
       }
@@ -63180,5 +68385,5 @@ export const monsterCards = monsterIndex.card;
 
 console.log('✅ Monster data bundle loaded:', {
   totalMonsters: Object.keys(monsters).length,
-  indexVersion: '2025-09-26T18:52:22.888Z'
+  indexVersion: '2025-09-26T20:30:26.589Z'
 });

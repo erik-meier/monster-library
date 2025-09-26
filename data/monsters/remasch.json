@@ -87,21 +87,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage"
+              "display": "5 damage; the remasch can teleport up to 2 squares"
             },
             {
               "tier": 2,
-              "display": "6 damage"
+              "display": "6 damage; the remasch can teleport up to 3 squares"
             },
             {
               "tier": 3,
-              "display": "8 damage"
+              "display": "8 damage; the remasch can teleport up to 3 squares"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "The remasch takes an adjacent creature with them when they teleport. The creature appears in an unoccupied space adjacent to the remasch's destination.",
+          "value": 5,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> The remasch takes an adjacent creature with them when they teleport. The creature appears in an unoccupied space adjacent to the remasch's destination."
         }
       }
     },
@@ -135,6 +140,10 @@
         "effect": {
           "before": "",
           "after": "<p>The remasch can teleport up to 2 squares and uses Abyssal Strike.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -165,6 +174,10 @@
         "effect": {
           "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -193,6 +206,10 @@
         "effect": {
           "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -221,6 +238,10 @@
         "effect": {
           "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

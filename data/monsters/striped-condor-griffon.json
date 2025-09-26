@@ -96,7 +96,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; push 1"
+              "display": "7 damage;  push 1"
             },
             {
               "tier": 2,
@@ -111,6 +111,10 @@
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -142,6 +146,10 @@
         "effect": {
           "before": "",
           "after": "<p>The griffon shifts up to their speed along the ground in straight line. Each enemy who comes adjacent to the griffon during this shift can choose to either take 5 damage or be knocked prone</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -176,21 +184,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "push 2; {{potency}} the forced movement is vertical"
+              "display": " push 2; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;0</strong></strong> the forced movement is vertical"
             },
             {
               "tier": 2,
-              "display": "push 4; {{potency}} the forced movement is vertical"
+              "display": " push 4; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;1</strong></strong> the forced movement is vertical"
             },
             {
               "tier": 3,
-              "display": "push 6; {{potency}} the forced movement is vertical"
+              "display": " push 6; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;2</strong></strong> the forced movement is vertical"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -225,6 +237,10 @@
         "effect": {
           "before": "<p>The griffon dives down onto the target, taking no damage from falling if they reach the ground. The target takes <span class=\"damage-value damage-generic\">3</span> damage for each square the griffon dove, and if they have <strong class=\"potency-value\">A&lt;2</strong> they are grabbed or knocked prone.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -253,6 +269,10 @@
         "effect": {
           "before": "<p>The griffon flies up to their speed, and can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -281,6 +301,10 @@
         "effect": {
           "before": "<p>A griffon acting this turn unleashes a hideous screech at one enemy within 5 squares of them, forcing that creature to make an <strong>Intuition test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p>Frightened (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -309,6 +333,10 @@
         "effect": {
           "before": "<p>Winds bluster and blow across the encounter map. Until the end of the encounter, each creature who can’t fly or isn’t mounted on a fly ing creature takes a −3 penalty to stability, and any forced movement effect targeting such a creature moves them an additional 5 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

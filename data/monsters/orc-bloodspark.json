@@ -72,21 +72,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage"
+              "display": "2 damage; or the bloodspark can shift 1 square away from the target."
             },
             {
               "tier": 2,
-              "display": "4 damage"
+              "display": "4 damage; or the bloodspark can shift 2 square away from the target."
             },
             {
               "tier": 3,
-              "display": "5 damage"
+              "display": "5 damage; or the bloodspark can shift 4 square away from the target."
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -97,7 +101,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>If the bloodspark is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">2</span> damage free strike{Free Strike} before dying.</p>",
+          "value": "<p>If the bloodspark is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">2</span> damage free strike before dying.</p>",
           "director": ""
         }
       }

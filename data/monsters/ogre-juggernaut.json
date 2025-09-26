@@ -89,17 +89,22 @@
             },
             {
               "tier": 2,
-              "display": "10 damage; {{potency}}  vertical push 2"
+              "display": "10 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">A&lt;1</strong></strong>  vertical push 2"
             },
             {
               "tier": 3,
-              "display": "13 damage; {{potency}}  vertical slide 3"
+              "display": "13 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">A&lt;2</strong></strong>  vertical slide 3"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "Each target who has m<1 is bleeding (save ends).",
+          "value": 1,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> Each target who has m<1 is bleeding (save ends)."
         }
       }
     },
@@ -137,17 +142,21 @@
             },
             {
               "tier": 2,
-              "display": "6 damage; push 2; M<1 prone"
+              "display": "6 damage;  push 2; <strong class=\"potency-value\">M<1</strong> prone"
             },
             {
               "tier": 3,
-              "display": "9 damage; push 4"
+              "display": "9 damage;  push 4"
             }
           ]
         },
         "effect": {
           "before": "<p>The juggernaut jumps up to 6 squares before using this ability.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -180,21 +189,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "I<0 frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I<0</strong> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "I<1 frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I<1</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "I<2 frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I<2</strong> frightened (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>While a target is frightened this way, any ogre gains an edge on strikes against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -221,8 +234,12 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The juggernaut moves up to their speed and can make a <span class=\"damage-value damage-generic\">5</span> damage free strike{Free Strike}.</p>",
+          "before": "<p>The juggernaut moves up to their speed and can make a <span class=\"damage-value damage-generic\">5</span> damage free strike.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -251,6 +268,10 @@
         "effect": {
           "before": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -279,6 +300,10 @@
         "effect": {
           "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -307,6 +332,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

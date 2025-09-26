@@ -77,7 +77,7 @@
             },
             {
               "tier": 2,
-              "display": "11 damage; A<1 prone"
+              "display": "11 damage; <strong class=\"potency-value\">A<1</strong> prone"
             },
             {
               "tier": 3,
@@ -88,6 +88,10 @@
         "effect": {
           "before": "",
           "after": "<p>The pouncer can make a free strike against each target they knock prone.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -125,7 +129,7 @@
             },
             {
               "tier": 2,
-              "display": "7 damage; A<1 OeAaVdY3lfQQ1bnz (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">A<1</strong> the target is dazzled (save ends)"
             },
             {
               "tier": 3,
@@ -136,6 +140,10 @@
         "effect": {
           "before": "<p>Note: Target is Enemy and Object in the area.</p>",
           "after": "<p>A dazzled target takes a bane on strikes and has line of effect only within 1 square.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -171,21 +179,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "I<0 bTDftBPBIxy3kZeB (save ends)"
+              "display": "<strong class=\"potency-value\">I<0</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "I<1 bTDftBPBIxy3kZeB (save ends)"
+              "display": "<strong class=\"potency-value\">I<1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "I<2 bTDftBPBIxy3kZeB (save ends)"
+              "display": "<strong class=\"potency-value\">I<2</strong> dazed (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>While dazed this way, a target has speed 0. If a target takes damage, or if someone else uses a main action to shake the target out of their stupor, the dazed condition ends.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -219,6 +231,10 @@
         "effect": {
           "before": "",
           "after": "<p>The pouncer halves the damage, ignores any nondamaging effects associated with it, and can teleport up to 5 squares. If they teleport into concealment or cover, the pouncer can immediately attempt to hide as a free maneuver.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -247,6 +263,10 @@
         "effect": {
           "before": "<p>Each lightbender acting this turn can teleport up to their speed as a move action and attempt to hide as a free maneuver, all until the start of their next turn.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -275,6 +295,10 @@
         "effect": {
           "before": "<p>Each lightbender in the encounter shines radiantly, distorting the senses of any enemy within 5 squares of them. Each affected enemy makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Reason test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target doesn’t have line of effect to any lightbender (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target doesn’t have line of effect to any lightbender (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -303,6 +327,10 @@
         "effect": {
           "before": "<p>Each lightbender acting this turn can create a duplicate lightbender in an unoccupied space adjacent to them. The duplicate is indistinguishable from the lightbender except by supernatural means, has 1 Stamina, and has the lightbender’s speed. A duplicate acts on the lightbender’s turn but can take only move actions. Once per round before or after using an ability, a lightbender can trade places with any lightbender duplicate.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

@@ -90,6 +90,10 @@
         "effect": {
           "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -118,6 +122,10 @@
         "effect": {
           "before": "<p>Two kobolds take their turns in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -146,6 +154,10 @@
         "effect": {
           "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -195,6 +207,11 @@
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "The venator lights their net on fire, and a target restrained  this way takes 2 fire damage at the start of each of their turns.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The venator lights their net on fire, and a target restrained  this way takes 2 fire damage at the start of each of their turns."
         }
       }
     }

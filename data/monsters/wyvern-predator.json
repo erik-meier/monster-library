@@ -88,7 +88,7 @@
             },
             {
               "tier": 2,
-              "display": "14 damage; M<2 slowed (save ends)"
+              "display": "14 damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
             },
             {
               "tier": 3,
@@ -99,6 +99,10 @@
         "effect": {
           "before": "",
           "after": "<p>If a target slowed this way is already slowed, they are instead restrained (save ends).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -149,6 +153,11 @@
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "The predator uses this ability a second time, either recreating the same line or creating a new line.",
+          "value": 5,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> The predator uses this ability a second time, either recreating the same line or creating a new line."
         }
       }
     },
@@ -183,7 +192,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; A<1 grabbed (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">A<1</strong> grabbed"
             },
             {
               "tier": 2,
@@ -191,13 +200,17 @@
             },
             {
               "tier": 3,
-              "display": "17 damage; A<3 grabbed (save ends)"
+              "display": "17 damage; <strong class=\"potency-value\">A<3</strong> grabbed and the target takes a bane on the Escape Maneuver"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -232,6 +245,10 @@
         "effect": {
           "before": "<p>The predator uses Sedating Stinger against the target, then shifts up to 3 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -260,6 +277,10 @@
         "effect": {
           "before": "<p>One wyvern in the encounter can make a free strike against each enemy adjacent to them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -288,6 +309,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each wyvern in the encounter has a double edge on strikes and can use their signature ability instead of a free strike when making opportunity attacks.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -316,6 +341,10 @@
         "effect": {
           "before": "<p>Every wyvern’s anger fills the encounter map with a thick miasma</p><p>of hatred. Each enemy in the encounter makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target is taunted by the nearest creature or object (save ends). While the target is taunted this way, power rolls against them have a double edge.</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target is taunted by the nearest creature or object (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

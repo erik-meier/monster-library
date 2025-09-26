@@ -36,7 +36,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>If the garroter is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the garroter is reduced to 1 Stamina instead.</p>",
+          "value": "<p>If the garroter is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the garroter is reduced to 1 Stamina instead.</p>",
           "director": ""
         }
       }
@@ -66,6 +66,10 @@
         "effect": {
           "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -94,6 +98,10 @@
         "effect": {
           "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -122,6 +130,10 @@
         "effect": {
           "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -150,6 +162,10 @@
         "effect": {
           "before": "<p>The garroter turns invisible until the end of their turn. This invisibility ends early if they take damage or use an ability.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -184,21 +200,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage"
+              "display": "6 damage; the garroter can shift 1 square"
             },
             {
               "tier": 2,
-              "display": "9 damage"
+              "display": "9 damage; the garroter shifts up to 2 squares"
             },
             {
               "tier": 3,
-              "display": "12 damage"
+              "display": "12 damage; the garroter shifts up to 3 squares"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>If this ability gains an edge or has a double edge, it deals an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -248,6 +268,10 @@
         "effect": {
           "before": "",
           "after": "<p>While grabbed this way, a target can’t communicate or use magic abilities.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

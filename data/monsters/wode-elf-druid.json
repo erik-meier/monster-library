@@ -75,21 +75,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; pull 1"
+              "display": "5 damage;  pull 1"
             },
             {
               "tier": 2,
-              "display": "8 damage; pull 3; M<1 slowed (save ends)"
+              "display": "8 damage;  pull 3; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 damage; pull 5"
+              "display": "10 damage;  pull 5"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>While slowed this way, a target can't search for hidden creatures.</p>"
+        },
+        "spend": {
+          "text": "The size of the cube and the potency both increase by 1.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The size of the cube and the potency both increase by 1."
         }
       }
     },
@@ -125,6 +130,10 @@
         "effect": {
           "before": "",
           "after": "<p>Each target can teleport up to 10 squares to a space that has cover or concealment.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -153,6 +162,10 @@
         "effect": {
           "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -181,6 +194,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -209,6 +226,10 @@
         "effect": {
           "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

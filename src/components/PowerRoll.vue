@@ -7,8 +7,8 @@
       </div>
     </div>
 
-    <div v-if="effect" class="effect">
-      <strong>Effect:</strong> <span v-html="effect"></span>
+    <div v-if="effect">
+      <strong>Effect:</strong><span class="effect-text" v-html="effect"></span>
     </div>
   </div>
 </template>
@@ -106,39 +106,31 @@ export default {
   color: #374151;
 }
 
-.effect {
-  background: #e0e7ff;
-  border: 1px solid #c7d2fe;
-  border-radius: 4px;
-  padding: 0.75rem;
-  margin: 0.75rem 0;
+.effect-text {
   color: #374151;
   line-height: 1.4;
-}
-
-.effect strong {
-  color: #4338ca;
+  margin-top: 0.5rem;
 }
 
 /* Handle HTML formatting in descriptions */
 .outcome-text :deep(strong),
-.effect :deep(strong) {
+.effect-text :deep(strong) {
   font-weight: bold;
 }
 
 .outcome-text :deep(em),
-.effect :deep(em) {
+.effect-text :deep(em) {
   font-style: italic;
 }
 
 .outcome-text :deep(br),
-.effect :deep(br) {
+.effect-text :deep(br) {
   margin-bottom: 0.25rem;
 }
 
 /* Potency value styling */
 .outcome-text :deep(.potency-value),
-.effect :deep(.potency-value) {
+.effect-text :deep(.potency-value) {
   font-weight: bold;
   color: #2563eb;
   background: #dbeafe;
@@ -149,14 +141,14 @@ export default {
 
 /* Damage type styling */
 .outcome-text :deep(.damage-value),
-.effect :deep(.damage-value) {
+.effect-text :deep(.damage-value) {
   font-weight: bold;
   font-size: 0.9rem;
 }
 
 /* Specific damage type colors */
 .outcome-text :deep(.damage-value.damage-acid),
-.effect :deep(.damage-value.damage-acid) {
+.effect-text :deep(.damage-value.damage-acid) {
   color: #059669;
   background: #d1fae5;
   padding: 0.1rem 0.3rem;
@@ -164,7 +156,7 @@ export default {
 }
 
 .outcome-text :deep(.damage-value.damage-cold),
-.effect :deep(.damage-value.damage-cold) {
+.effect-text :deep(.damage-value.damage-cold) {
   color: #0891b2;
   background: #cffafe;
   padding: 0.1rem 0.3rem;
@@ -172,7 +164,7 @@ export default {
 }
 
 .outcome-text :deep(.damage-value.damage-corruption),
-.effect :deep(.damage-value.damage-corruption) {
+.effect-text :deep(.damage-value.damage-corruption) {
   color: #7c2d12;
   background: #fef3c7;
   padding: 0.1rem 0.3rem;
@@ -180,7 +172,7 @@ export default {
 }
 
 .outcome-text :deep(.damage-value.damage-fire),
-.effect :deep(.damage-value.damage-fire) {
+.effect-text :deep(.damage-value.damage-fire) {
   color: #dc2626;
   background: #fee2e2;
   padding: 0.1rem 0.3rem;
@@ -188,7 +180,7 @@ export default {
 }
 
 .outcome-text :deep(.damage-value.damage-holy),
-.effect :deep(.damage-value.damage-holy) {
+.effect-text :deep(.damage-value.damage-holy) {
   color: #ca8a04;
   background: #fef9c3;
   padding: 0.1rem 0.3rem;
@@ -196,7 +188,7 @@ export default {
 }
 
 .outcome-text :deep(.damage-value.damage-lightning),
-.effect :deep(.damage-value.damage-lightning) {
+.effect-text :deep(.damage-value.damage-lightning) {
   color: #7c3aed;
   background: #ede9fe;
   padding: 0.1rem 0.3rem;
@@ -204,7 +196,7 @@ export default {
 }
 
 .outcome-text :deep(.damage-value.damage-poison),
-.effect :deep(.damage-value.damage-poison) {
+.effect-text :deep(.damage-value.damage-poison) {
   color: #16a34a;
   background: #dcfce7;
   padding: 0.1rem 0.3rem;
@@ -212,7 +204,7 @@ export default {
 }
 
 .outcome-text :deep(.damage-value.damage-psychic),
-.effect :deep(.damage-value.damage-psychic) {
+.effect-text :deep(.damage-value.damage-psychic) {
   color: #be185d;
   background: #fce7f3;
   padding: 0.1rem 0.3rem;
@@ -220,7 +212,7 @@ export default {
 }
 
 .outcome-text :deep(.damage-value.damage-sonic),
-.effect :deep(.damage-value.damage-sonic) {
+.effect-text :deep(.damage-value.damage-sonic) {
   color: #8b5cf6;
   background: #f3e8ff;
   padding: 0.1rem 0.3rem;
@@ -229,7 +221,7 @@ export default {
 
 /* Untyped damage - just bold, no background */
 .outcome-text :deep(.damage-value.damage-generic),
-.effect :deep(.damage-value.damage-generic) {
+.effect-text :deep(.damage-value.damage-generic) {
   color: inherit;
 }
 

@@ -98,21 +98,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; A<1 bleeding (save ends)"
+              "display": "2 damage; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "4 damage; A<2 bleeding (save ends)"
+              "display": "4 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "5 damage; A<3 bleeding (save ends); M<3 dazed (save ends)"
+              "display": "5 damage; <strong class=\"potency-value\">A<3</strong> bleeding (save ends); <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "The phantom bredbeddle shifts up to 2 squares, and can target additional enemies who come within distance of this ability during the shift.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The phantom bredbeddle shifts up to 2 squares, and can target additional enemies who come within distance of this ability during the shift."
         }
       }
     },
@@ -148,21 +153,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; M<1 bleeding (save ends); M<1 YNeXGE8nBkueam3O"
+              "display": "9 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<1</strong> they are beheaded"
             },
             {
               "tier": 2,
-              "display": "13 damage; M<2 bleeding (save ends); M<2 YNeXGE8nBkueam3O"
+              "display": "13 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<2</strong> they are beheaded"
             },
             {
               "tier": 3,
-              "display": "16 damage; M<3 bleeding (save ends); M<3 YNeXGE8nBkueam3O"
+              "display": "16 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<3</strong> they are beheaded"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>A beheaded target has their head fall into an unoccupied square adjacent to the bredbeddle, but they remain alive. While beheaded this way, the target is bleeding and has line of effect only to adjacent squares. The beheaded target can survive without their head for 24 hours, and can reattach their head as a maneuver by entering its square. A target who remains beheaded for 24 hours dies.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -194,6 +203,10 @@
         "effect": {
           "before": "",
           "after": "<p>While the phantom bredbeddle is headless, they shift up to their speed. Each time a creature comes adjacent to the bredbeddle during the shift, the bredbeddle can push that creature 1 square. Each square the bredbeddle exits during the shift is difficult terrain.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -228,21 +241,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; M<1 dazed (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "13 damage; M<2 dazed, prone (save ends)"
+              "display": "13 damage; prone; <strong class=\"potency-value\">M<2</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 damage; M<3 dazed, prone (save ends)"
+              "display": "16 damage; prone; <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>The phantom bredbeddle must have a head in their possession (attached to them or not), which they throw at the target. If the head was attached, the bredbeddle is left headless.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -276,6 +293,10 @@
         "effect": {
           "before": "",
           "after": "<p>The phantom bredbeddle uses the same ability against the triggering creature after the triggering strike is resolved, using that creature's bonus to any power rolls they make.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -304,6 +325,10 @@
         "effect": {
           "before": "<p>The bredbeddle’s axe lengthens and turns a ghastly green, granting a +1 bonus to the distance of the bredbeddle’s melee strikes and the dimensions of their burst area abilities until the end of their turn.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -332,6 +357,10 @@
         "effect": {
           "before": "<p>A ghostly size 1L stockade seeps out from under the bredbeddle’s feet to fill an unoccupied square within 10 squares. When a size 1L or smaller enemy enters the stockade’s square, they are restrained (save ends). When a restrained creature is no longer restrained, the stock ade fades away. At the start of each of the bredbeddle’s turns, they can slide an active stockade and any creature in it up to 5 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -361,6 +390,10 @@
         "effect": {
           "before": "<p>The bredbeddle takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -390,6 +423,10 @@
         "effect": {
           "before": "<p>A phantom second bredbeddle phases into view, appearing in an unoccupied space anywhere on the encounter map, then vanishing at the end of the round. The phantom bredbeddle shares the original bredbeddle’s statistics but has 24 Stamina, corruption immunity 10, and can fly. The phantom bredbeddle can take one turn and use any of the bredbeddle’s abilities except for villain actions. Only one phantom bredbeddle can be active at a time.</p><p><span class=\"reference-text\">Phantom Bredbeddle</span></p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

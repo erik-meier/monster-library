@@ -61,21 +61,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; pull 2"
+              "display": "7 damage;  pull 2"
             },
             {
               "tier": 2,
-              "display": "10 damage; pull 3"
+              "display": "10 damage;  pull 3"
             },
             {
               "tier": 3,
-              "display": "13 damage; pull 4"
+              "display": "13 damage;  pull 4"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>Each target must be on the ground, and each square a target is pulled through is difficult terrain for enemies.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -109,21 +113,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; M<0 bleeding (save ends)"
+              "display": "2 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "3 damage; M<1 bleeding (save ends)"
+              "display": "3 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "4 damage; M<2 bleeding (save ends)"
+              "display": "4 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p>The channeler chooses one of the following damage types: acid, cold, corruption, fire, or poison.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -158,21 +166,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 corruption damage; P<0 slowed (save ends)"
+              "display": "5 corruption damage; <strong class=\"potency-value\">P<0</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 corruption damage; P<1 I38SNfnEpqjEgNCH (save ends)"
+              "display": "8 corruption damage; <strong class=\"potency-value\">P<1</strong> the target is shapechanged (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 corruption damage; P<2 I38SNfnEpqjEgNCH (save ends)"
+              "display": "11 corruption damage; <strong class=\"potency-value\">P<2</strong> the target is shapechanged (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>A shapechanged creature is slowed and has fire weakness 10 as their limbs stretch and their skin becomes paper thin.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -203,6 +215,10 @@
         "effect": {
           "before": "<p>Special: The target must be grabbed by the channeler.</p><p>Effect: The target is vertical pushed up to 3 squares. An ally doesnʼt take damage from being force moved this way.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -233,6 +249,10 @@
         "effect": {
           "before": "<p>The target is grabbed by the channeler.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -263,6 +283,10 @@
         "effect": {
           "before": "<p>The target is wrapped in shadow and halves the damage. The target canʼt be targeted by strikes until the start of their next turn.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -291,6 +315,10 @@
         "effect": {
           "before": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -319,6 +347,10 @@
         "effect": {
           "before": "<p>The bugbear activates a Malice Feature available to goblins, spending the required malice to use those features.</p><p><span class=\"reference-text\">Goblin Mode</span></p><p><span class=\"reference-text\">Swamp Stink</span></p><p><span class=\"reference-text\">Tiny Stabs</span></p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -347,6 +379,10 @@
         "effect": {
           "before": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have m&lt;1 they are slowed (save ends).</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -375,6 +411,10 @@
         "effect": {
           "before": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have m&lt;1 they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

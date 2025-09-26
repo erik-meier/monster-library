@@ -12,7 +12,7 @@
 function processDamageDirectives(text, monster) {
   if (!text) return text;
 
-  return text.replace(/\[\[\/damage\s+(@monster\.freeStrike|\d+|\dd\d+)(?:\s+(\w+))?\]\]/g, (match, value, type) => {
+  return text.replace(/\[\[\/damage\s+(@monster\.freeStrike|\d+|\dd\d+)(?:\s+(\w+))?\]\](\{.+\})?/g, (match, value, type) => {
     // Handle @monster.freeStrike reference
     if (value === '@monster.freeStrike') {
       const freeStrikeValue = monster?.freeStrike || value;
@@ -43,7 +43,7 @@ function processUuidReferences(text) {
         return `<a href="/monster/${simplifiedId}" class="monster-link">${displayName}</a>`;
       }
     }
-    
+
     // For other types (features, items, etc.), just return the display name
     return `<span class="reference-text">${displayName}</span>`;
   });
@@ -100,44 +100,38 @@ function processCharacteristicReferences(text, monster) {
  * Process potency references like @potency.weak, @potency.average, @potency.strong
  */
 function processPotencyReferences(value, characteristic, monster) {
-  if (!value || !value.startsWith('@potency') || !monster?.characteristics) {
+  if (!value || !monster?.characteristics) {
     return null;
   }
 
   const characteristics = monster.characteristics;
-  
-  // If no valid characteristic specified, use the highest characteristic
+
+  // Always use the highest characteristic for calculating potency
   let charValue;
   let charAbbrev;
-  
-  if (!characteristic || characteristic === 'none' || characteristic === '') {
-    // Use highest characteristic
-    charValue = Math.max(
-      characteristics.might || 0,
-      characteristics.agility || 0,
-      characteristics.reason || 0,
-      characteristics.intuition || 0,
-      characteristics.presence || 0
-    );
-    // Find which characteristic has the highest value for abbreviation
-    const maxChar = Object.entries(characteristics).reduce((max, [key, val]) => 
-      (val || 0) > (max.value || 0) ? { key, value: val } : max, 
-      { key: 'presence', value: -Infinity }
-    );
-    charAbbrev = maxChar.key.charAt(0).toUpperCase();
-  } else {
-    charValue = characteristics[characteristic] || 0;
-    charAbbrev = characteristic.charAt(0).toUpperCase();
-  }
+
+  // Use highest characteristic
+  charValue = Math.max(
+    characteristics.might || 0,
+    characteristics.agility || 0,
+    characteristics.reason || 0,
+    characteristics.intuition || 0,
+    characteristics.presence || 0
+  );
+  // Use provided characteristic for abbreviation
+  charAbbrev = characteristic.charAt(0).toUpperCase();
 
   // Map potency patterns to numeric values relative to the characteristic
   const potencyMap = {
     '@potency.weak': charValue - 2,
-    '@potency.average': charValue - 1, 
+    '@potency.average': charValue - 1,
     '@potency.strong': charValue
   };
 
-  const potencyValue = potencyMap[value];
+  let potencyValue = value;
+  if (value.startsWith('@potency.')) {
+    potencyValue = potencyMap[value];
+  }
   if (potencyValue === undefined) {
     return null;
   }
@@ -154,21 +148,21 @@ function processForcedPlaceholders(text, forcedData) {
 
   // Generate forced movement description
   let forcedText = '';
-  
+
   if (forcedData.movement && forcedData.movement.length > 0) {
     const movement = forcedData.movement[0]; // Use first movement type
     const distance = forcedData.distance || '1';
-    
+
     // Add properties if they exist
     const properties = forcedData.properties || [];
     let propertiesText = '';
     if (properties.length > 0) {
       propertiesText = ` ${properties.join(', ')}`;
     }
-    
+
     forcedText = `${propertiesText} ${movement} ${distance}`;
   }
-  
+
   return text.replace(/\{\{forced\}\}/g, forcedText);
 }
 
@@ -206,14 +200,14 @@ function processPotencyPatterns(text) {
  */
 function processTextPotencyReferences(text, monster) {
   if (!text) return text;
-  
+
   // Handle @potency.* that's already inside HTML - replace with proper numeric values
   return text.replace(/@potency\.(weak|average|strong)/g, (match, type) => {
     // Use highest characteristic since we don't have context for specific characteristic
     if (!monster?.characteristics) {
       return match; // Return original if no characteristics
     }
-    
+
     const characteristics = monster.characteristics;
     const charValue = Math.max(
       characteristics.might || 0,
@@ -222,15 +216,15 @@ function processTextPotencyReferences(text, monster) {
       characteristics.intuition || 0,
       characteristics.presence || 0
     );
-    
+
     const potencyMap = {
       'weak': charValue - 2,
-      'average': charValue - 1, 
+      'average': charValue - 1,
       'strong': charValue
     };
-    
+
     const potencyValue = potencyMap[type];
-    
+
     return potencyValue.toString();
   });
 }
@@ -286,34 +280,6 @@ function flattenPowerEffects(item, monster) {
     return item;
   }
 
-  // // If we already have a tiers array, process the display strings for @potency patterns
-  // if (item.system.power.tiers) {
-  //   const processedTiers = item.system.power.tiers.map(tierData => {
-  //     let processedDisplay = tierData.display;
-      
-  //     // Process @potency patterns in the display string
-  //     if (processedDisplay && processedDisplay.includes('@potency')) {
-  //       processedDisplay = processTextPotencyReferences(processedDisplay, monster);
-  //     }
-      
-  //     return {
-  //       ...tierData,
-  //       display: processedDisplay
-  //     };
-  //   });
-    
-  //   return {
-  //     ...item,
-  //     system: {
-  //       ...item.system,
-  //       power: {
-  //         ...item.system.power,
-  //         tiers: processedTiers
-  //       }
-  //     }
-  //   };
-  // }
-
   // Build tiers from effects structure
   const effects = item.system.power.effects;
   const tiers = [];
@@ -322,23 +288,23 @@ function flattenPowerEffects(item, monster) {
   // and check which tiers have display templates
   let primaryCharacteristic = null;
   const appliedEffectDisplays = {};
-  
+
   Object.values(effects).forEach(effect => {
     if (effect.type === 'applied') {
       // Look for the first tier that has a characteristic defined
       ['tier1', 'tier2', 'tier3'].forEach(tierKey => {
-        if (effect.applied?.[tierKey]?.potency?.characteristic && 
-            effect.applied[tierKey].potency.characteristic !== 'none' && 
-            effect.applied[tierKey].potency.characteristic !== '' &&
-            !primaryCharacteristic) {
+        if (effect.applied?.[tierKey]?.potency?.characteristic &&
+          effect.applied[tierKey].potency.characteristic !== 'none' &&
+          effect.applied[tierKey].potency.characteristic !== '' &&
+          !primaryCharacteristic) {
           primaryCharacteristic = effect.applied[tierKey].potency.characteristic;
         }
-        
+
         // Track which tiers have display text for this effect
         if (!appliedEffectDisplays[effect._id]) {
           appliedEffectDisplays[effect._id] = {};
         }
-        
+
         const hasDisplay = effect.applied?.[tierKey]?.display && effect.applied[tierKey].display.trim();
         appliedEffectDisplays[effect._id][tierKey] = hasDisplay;
       });
@@ -361,76 +327,95 @@ function flattenPowerEffects(item, monster) {
         damageText += ' damage';
         tierParts.push(damageText);
       }
-      
+
       if (effect.type === 'applied' && effect.applied?.[tierKey]) {
         const applied = effect.applied[tierKey];
         let appliedText = '';
-        
+
         // Check if this effect has any display text across all tiers
         const effectDisplayInfo = appliedEffectDisplays[effect._id] || {};
         const hasAnyDisplay = Object.values(effectDisplayInfo).some(hasDisplay => hasDisplay);
-        
+
         // Check if only tier1 has display text (common pattern)
         const onlyTier1HasDisplay = effectDisplayInfo.tier1 && !effectDisplayInfo.tier2 && !effectDisplayInfo.tier3;
-        
+
         // Only process if there's display text for this tier, or if only tier1 has display (use as template)
         const shouldProcess = effectDisplayInfo[tierKey] || (onlyTier1HasDisplay && hasAnyDisplay);
-        
+
         if (shouldProcess) {
           const effectNames = Object.keys(applied.effects || {});
-          
+          const hasDisplayTemplate = applied.display && applied.display.trim();
+
+          // If this tier doesn't have display but tier1 does (and only tier1), use tier1's display as template
+          let displayTemplate = null;
+          if (hasDisplayTemplate) {
+            displayTemplate = applied.display.trim();
+          } else if (onlyTier1HasDisplay && hasAnyDisplay) {
+            // Find tier1 display text to use as template
+            const tier1Applied = effect.applied?.tier1;
+            if (tier1Applied?.display && tier1Applied.display.trim()) {
+              displayTemplate = tier1Applied.display.trim();
+            }
+          }
+
           if (effectNames.length > 0 && applied.potency?.value !== undefined) {
             let charAbbrev = 'P'; // Default abbreviation
-            
+
             // Use the tier's specific characteristic, or fall back to primary characteristic
             let effectCharacteristic = applied.potency.characteristic;
             if (!effectCharacteristic || effectCharacteristic === 'none' || effectCharacteristic === '') {
               effectCharacteristic = primaryCharacteristic;
             }
-            
+
             if (effectCharacteristic) {
               charAbbrev = effectCharacteristic.charAt(0).toUpperCase();
             }
-            
+
             // Process @potency patterns in the value
             let potencyValue = applied.potency.value;
             if (typeof potencyValue === 'string' && potencyValue.startsWith('@potency')) {
               potencyValue = processTextPotencyReferences(potencyValue, monster);
             }
-            
-            appliedText = `${charAbbrev}<${potencyValue} ${effectNames.join(', ')}`;
-            
-            // Add condition details if available
-            const firstEffect = applied.effects[effectNames[0]];
-            if (firstEffect?.end === 'save') {
-              appliedText += ' (save ends)';
-            } else if (firstEffect?.end === 'EoT') {
-              appliedText += ' (EoT)';
+
+            // Process the display template with potency data
+            if (displayTemplate) {
+              let displayText = displayTemplate;
+              displayText = processPotencyPlaceholders(displayText, {
+                value: applied.potency.value,
+                characteristic: effectCharacteristic
+              }, monster);
+              appliedText = displayText;
             }
           }
-          // Use explicit display text if available
-          else if (applied.display && applied.display.trim()) {
-            appliedText = applied.display.trim();
+          // Use explicit display text if available but no potency/effects
+          else if (displayTemplate) {
+            appliedText = displayTemplate;
           }
         }
-        
+
         if (appliedText) {
           tierParts.push(appliedText);
         }
       }
-      
+
       // Add support for other effect types as needed (forced movement, etc.)
       if (effect.type === 'forced' && effect.forced?.[tierKey]) {
         const forced = effect.forced[tierKey];
         if (forced.display) {
           // Process {{forced}} placeholders first
           let processedDisplay = processForcedPlaceholders(forced.display, forced);
-          
-          // Clean up any existing HTML tags for consistency
-          const cleanDisplay = processedDisplay.replace(/<[^>]*>/g, '').trim();
-          if (cleanDisplay) {
-            tierParts.push(cleanDisplay);
-          }
+          // Then process {{potency}} if applicable
+          processedDisplay = processPotencyPlaceholders(processedDisplay, forced.potency, monster);
+          processedDisplay = processPotencyPatterns(processedDisplay);
+
+          tierParts.push(processedDisplay);
+        }
+      }
+
+      if (effect.type === 'other' && effect.other?.[tierKey]) {
+        const other = effect.other[tierKey];
+        if (other.display) {
+          tierParts.push(other.display);
         }
       }
     });
@@ -499,6 +484,15 @@ function processMonsterText(monster) {
         processedItem.system.power.roll.formula,
         monster
       );
+    }
+
+    // Process spend effects (Malice costs)
+    if (processedItem.system?.spend?.text && processedItem.system?.spend?.value) {
+      const spendText = processFoundryText(
+        processedItem.system.spend.text,
+        monster
+      );
+      processedItem.system.spend.formattedText = `<strong class="malice-cost-emphasis">${processedItem.system.spend.value} Malice:</strong> ${spendText}`;
     }
 
     return processedItem;

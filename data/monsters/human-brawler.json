@@ -71,13 +71,17 @@
             },
             {
               "tier": 3,
-              "display": "12 damage; M<2 grabbed"
+              "display": "12 damage; <strong class=\"potency-value\">M<2</strong> grabbed and the target takes a bane on the Escape Grab maneuver"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>A target who is already grabbed takes an extra 2 damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -110,6 +114,10 @@
         "effect": {
           "before": "<p><strong>Note:</strong> One creature grabbed by the brawler</p><p>The brawler pushes the target up to 5 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -138,6 +146,10 @@
         "effect": {
           "before": "<p>The brawler halves the damage from any strike if they have a creature or object grabbed of size 1S or larger. The grabbed creature or object takes the remaining damage.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -183,7 +195,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 corruption damage; P<0 slowed (save ends)"
+              "display": "4 corruption damage; {{potency}}, slowed (save ends)"
             },
             {
               "tier": 2,
@@ -191,13 +203,17 @@
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; P<2 restrained (save ends)"
+              "display": "9 corruption damage; {{potency}}, restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
           "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -226,6 +242,10 @@
         "effect": {
           "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -254,6 +274,10 @@
         "effect": {
           "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

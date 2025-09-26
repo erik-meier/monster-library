@@ -102,6 +102,11 @@
         "effect": {
           "before": "",
           "after": "<p>The target has corruption weakness 5 (EoT).</p>"
+        },
+        "spend": {
+          "text": "If the target has i<2, they have corruption weakness 5  (save ends).",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If the target has i<2, they have corruption weakness 5  (save ends)."
         }
       }
     },
@@ -137,21 +142,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 psychic damage; A<1 WlWQ0LyAVTn8gdCi (save ends)"
+              "display": "3 psychic damage; <strong class=\"potency-value\">A<1</strong> the target is warped (Save Ends)"
             },
             {
               "tier": 2,
-              "display": "5 psychic damage; A<2 WlWQ0LyAVTn8gdCi (save ends)"
+              "display": "5 psychic damage; <strong class=\"potency-value\">A<2</strong> the target is warped (Save Ends)"
             },
             {
               "tier": 3,
-              "display": "6 psychic damage; A<3 WlWQ0LyAVTn8gdCi (save ends)"
+              "display": "6 psychic damage; <strong class=\"potency-value\">A<3</strong> the target is warped (Save Ends)"
             }
           ]
         },
         "effect": {
           "before": "<p><strong>Special:</strong> The bale eye must create the cube beneath themself.</p>",
           "after": "<p>While warped, a creature has a double bane on power rolls using any characteristic higher than 0, and has a double edge on power rolls using any characteristic lower than 0.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -180,6 +189,10 @@
         "effect": {
           "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -208,6 +221,10 @@
         "effect": {
           "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

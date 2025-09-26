@@ -74,21 +74,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 acid damage; pull 1"
+              "display": "8 acid damage;  pull 1"
             },
             {
               "tier": 2,
-              "display": "10 acid damage; pull 2"
+              "display": "10 acid damage;  pull 2"
             },
             {
               "tier": 3,
-              "display": "14 acid damage; pull 3"
+              "display": "14 acid damage;  pull 3"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>This ability can pull targets restrained by Petrifying Eye Beams, and ignores stability if it does so.</p>"
+        },
+        "spend": {
+          "text": "The tonguesnapper targets two additional creatures or  objects.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The tonguesnapper targets two additional creatures or  objects."
         }
       }
     },
@@ -124,17 +129,21 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "A<0 restrained (save ends)"
+              "display": "<strong class=\"potency-value\">A<0</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "M<2 restrained, slowed (save ends)"
+              "display": "Slowed (save ends); or if <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p>The area extends from both the tonguesnapper's eyes, and this ability targets the first creature without cover on either side of the area.</p>",
           "after": "<p>If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target’s body, dealing <span class=\"damage-value damage-generic\">8</span> damage to the target that can’t be reduced in any way and ending this effect.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -170,7 +179,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 corruption damage; R<0 dazed (save ends)"
+              "display": "8 corruption damage; <strong class=\"potency-value\">R<0</strong> dazed (save ends)"
             },
             {
               "tier": 2,
@@ -178,13 +187,17 @@
             },
             {
               "tier": 3,
-              "display": "14 corruption damage; R<2 flNT7bl6d8W4fw2h"
+              "display": "14 corruption damage; <strong class=\"potency-value\">R<2</strong> dazed and slowed (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>A creature dazed this way can't benefit from edges or double edges and can't gain or use surges.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -219,6 +232,10 @@
         "effect": {
           "before": "",
           "after": "<p>Each target takes <span class=\"damage-value damage-acid\">4 acid</span> damage. Any target who has M &lt; 2 is also slowed (save ends).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -247,6 +264,10 @@
         "effect": {
           "before": "<p>A basilisk acting this turn can burrow until the start of their next turn, and moves up to their speed. They have damage immunity 2 while underground. The basilisk can burrow through stone, but can’t drag other creatures underground when they do so. At the start of each of the basilisk’s turns, the Director can spend 1 Malice to let the basilisk continue burrowing.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -277,17 +298,21 @@
             },
             {
               "tier": 2,
-              "display": "4 damage; 2 damage; A<1 prone"
+              "display": "4 damage; 2 damage; Prone"
             },
             {
               "tier": 3,
-              "display": "4 damage; 5 damage; A<2 prone, KtUIFOUuE6sXE8vC"
+              "display": "4 damage; 5 damage; prone and can't stand (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p>The basilisk spits up a chunk of partly digested stone.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -316,6 +341,10 @@
         "effect": {
           "before": "<p>A basilisk spews reflective spittle across an adjacent vertical surface in a 3-square-by-3-square area. The basilisk can use their Petrifying Eye Beams ability to target a square in the area, causing the area and distance of that ability to become a 20 × 3 line within 1 square of the wall.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },

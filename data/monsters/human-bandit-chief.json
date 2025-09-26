@@ -88,21 +88,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; pull 1"
+              "display": "8 damage;  pull 1"
             },
             {
               "tier": 2,
-              "display": "12 damage; pull 2"
+              "display": "12 damage;  pull 2"
             },
             {
               "tier": 3,
-              "display": "15 damage; pull 3"
+              "display": "15 damage;  pull 3"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>Any target who is adjacent to the bandit chief after the power roll is resolved takes <span class=\"damage-value damage-generic\">3</span> corruption damage.</p>"
+        },
+        "spend": {
+          "text": "This ability targets one additional target.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> This ability targets one additional target."
         }
       }
     },
@@ -135,21 +140,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "push 1; M<1 prone"
+              "display": " push 1; <strong class=\"potency-value\">M<1</strong> prone"
             },
             {
               "tier": 2,
-              "display": "push 2; M<2 prone"
+              "display": " push 2; <strong class=\"potency-value\">M<2</strong> prone"
             },
             {
               "tier": 3,
-              "display": "push 4; M<3 prone"
+              "display": " push 4; <strong class=\"potency-value\">M<3</strong> prone"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "The ability takes the Area keyword, loses the Melee key word, and is a 1 burst that targets each enemy in the area.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ability takes the Area keyword, loses the Melee key word, and is a 1 burst that targets each enemy in the area."
         }
       }
     },
@@ -180,6 +190,10 @@
         "effect": {
           "before": "<p>The bandit chief takes <span class=\"damage-value damage-corruption\">5 corruption</span> damage and increases the outcome of the power roll by one tier. This damage can’t be reduced in any way.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -212,6 +226,10 @@
         "effect": {
           "before": "<p>Note: Each artillery ally in the area.</p><p>Each target makes a ranged free strike.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -244,6 +262,10 @@
         "effect": {
           "before": "<p>Each target shifts up to their speed. Additionally, until the end of the encounter, while the bandit chief or any ally is adjacent to a target, they have damage immunity 2.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -272,6 +294,10 @@
         "effect": {
           "before": "<p>The bandit chief shifts up to 10 squares. During or after this movement, they can use their Whip and Magic Longsword against up to four targets. Additionally, one ally adjacent to each target can make a free strike against that target.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -305,7 +331,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 corruption damage; P<1 slowed (save ends)"
+              "display": "4 corruption damage; {{potency}}, slowed (save ends)"
             },
             {
               "tier": 2,
@@ -313,13 +339,17 @@
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; P<3 restrained (save ends)"
+              "display": "9 corruption damage; {{potency}}, restrained (save ends)"
             }
           ]
         },
         "effect": {
           "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
           "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -348,6 +378,10 @@
         "effect": {
           "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

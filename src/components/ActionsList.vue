@@ -49,6 +49,10 @@
         :effect="formatActionEffect(action)" />
       <div v-if="!actionHasPowerRoll(action)" class="action-description"
         v-html="formatDescription(extractDescription(action))"></div>
+
+      <div v-if="action.system.spend && action.system.spend.formattedText" class="action-spend">
+        <span v-html="action.system.spend.formattedText"></span>
+      </div>
     </div>
   </div>
 </template>
@@ -119,6 +123,9 @@ export default {
       if (!distance) return '';
       if (distance.type === 'melee' || distance.type === 'ranged') {
         return `${distance.type.charAt(0).toUpperCase() + distance.type.slice(1)} ${distance.primary}`;
+      }
+      if (distance.type === 'meleeRanged') {
+        return `Melee ${distance.primary} or ranged ${distance.secondary}`;
       }
       if (distance.type === 'line') {
         return `${distance.primary} x ${distance.secondary} line within ${distance.tertiary}`
@@ -336,6 +343,26 @@ export default {
   margin: 0;
   color: #333;
   line-height: 1.5;
+}
+
+.action-spend {
+  margin: 0.75rem 0;
+  padding: 0.5rem;
+  background: #f8fafc;
+  border-left: 4px solid #0284c7;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.action-spend span {
+  color: #0f172a;
+  font-weight: 400;
+}
+
+.action-spend :deep(.malice-cost-emphasis) {
+  color: #0284c7;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .action-description :deep(em) {

@@ -93,13 +93,17 @@
             },
             {
               "tier": 3,
-              "display": "7 corruption damage; I<3 dazed (save ends)"
+              "display": "7 corruption damage; <strong class=\"potency-value\">I<3</strong> dazed (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>The fiktin violently changes shape, dealing an extra <span class=\"damage-value damage-generic\">6</span> damage to any target they were hidden from with their Aggressive Mimicry ability.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -133,6 +137,10 @@
         "effect": {
           "before": "",
           "after": "<p>The fiktin transforms into a mundane object of their size or smaller and is automatically hidden. They can revert to their true form as a free maneuver.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -161,6 +169,10 @@
         "effect": {
           "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -189,6 +201,10 @@
         "effect": {
           "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

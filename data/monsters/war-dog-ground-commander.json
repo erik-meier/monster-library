@@ -86,21 +86,26 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; pull 1"
+              "display": "8 damage;  pull 1"
             },
             {
               "tier": 2,
-              "display": "12 damage; pull 2"
+              "display": "12 damage;  pull 2"
             },
             {
               "tier": 3,
-              "display": "15 damage; pull 3"
+              "display": "15 damage;  pull 3"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>One ally within 10 squares of the ground commander can make a free strike.</p>"
+        },
+        "spend": {
+          "text": "A target who has i<2 and who is adjacent to the ground commander after this ability is resolved is grabbed (save ends). This grab can’t be escaped using the Escape Grab maneuver. The ground commander can grab up to two creatures at a time.",
+          "value": 1,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> A target who has i<2 and who is adjacent to the ground commander after this ability is resolved is grabbed (save ends). This grab can’t be escaped using the Escape Grab maneuver. The ground commander can grab up to two creatures at a time."
         }
       }
     },
@@ -136,6 +141,10 @@
         "effect": {
           "before": "",
           "after": "<p>Any target who has a loyalty collar is reduced to 0 Stamina.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -171,6 +180,10 @@
         "effect": {
           "before": "",
           "after": "<p>Even if reduced to 0 Stamina, the target moves up to their speed and can make a free strike after the triggering effect is resolved The target then immediately dies.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -205,6 +218,10 @@
         "effect": {
           "before": "",
           "after": "<p>Each target can make a ranged free strike, then immediately use the Charge main action.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -240,6 +257,10 @@
         "effect": {
           "before": "",
           "after": "<p>Each ally within 5 squares of the target moves up to their speed and can make a free strike against the target. If the target has I &lt; 2, they are frightened of the ground commander (save ends).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -275,6 +296,10 @@
         "effect": {
           "before": "",
           "after": "<p>Each target ally shifts up to 2 squares and can use the Grab maneuver. Until the end of the encounter, each target enemy takes a bane on the Escape Grab maneuver.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -310,6 +335,10 @@
         "effect": {
           "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -338,6 +367,10 @@
         "effect": {
           "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -366,6 +399,10 @@
         "effect": {
           "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

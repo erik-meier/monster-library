@@ -75,21 +75,25 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 poison damage; I<0 frightened (save ends)"
+              "display": "2 poison damage; <strong class=\"potency-value\">I<0</strong> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "4 poison damage; I<1 frightened (save ends)"
+              "display": "4 poison damage; <strong class=\"potency-value\">I<1</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "5 poison damage; I<2 frightened (save ends)"
+              "display": "5 poison damage; <strong class=\"potency-value\">I<2</strong> frightened (save ends)"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>The area is filled with a cloud of pestilence that lasts until the start of the pestilite's next turn. Any creature who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-poison\">2 poison</span> damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -125,6 +129,10 @@
         "effect": {
           "before": "<p>Note: Targets One War Dog</p>",
           "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -160,6 +168,10 @@
         "effect": {
           "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -188,6 +200,10 @@
         "effect": {
           "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -216,6 +232,10 @@
         "effect": {
           "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

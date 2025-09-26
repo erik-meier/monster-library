@@ -91,6 +91,11 @@
         "effect": {
           "before": "",
           "after": "<p>The area is covered in sticky fire until the start of the crucibite's next turn. Any creature who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-fire\">2 fire</span> damage</p><p><span class=\"damage-value damage-generic\">2</span></p>"
+        },
+        "spend": {
+          "text": "The area becomes a 10 × 1 line, and if any ally of the crucibite is in the area when it is created, the ability deals an extra 2 damage to each target.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The area becomes a 10 × 1 line, and if any ally of the crucibite is in the area when it is created, the ability deals an extra 2 damage to each target."
         }
       }
     },
@@ -126,6 +131,10 @@
         "effect": {
           "before": "",
           "after": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -161,6 +170,10 @@
         "effect": {
           "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -189,6 +202,10 @@
         "effect": {
           "before": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -217,6 +234,10 @@
         "effect": {
           "before": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

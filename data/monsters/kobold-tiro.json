@@ -76,17 +76,21 @@
             },
             {
               "tier": 2,
-              "display": "2 damage"
+              "display": "2 damage; the tiro can shift 1 square"
             },
             {
               "tier": 3,
-              "display": "3 damage"
+              "display": "3 damage; the tiro can shift 2 squares"
             }
           ]
         },
         "effect": {
           "before": "",
           "after": "<p>The target can’t shift until the start of the tiro’s next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -127,6 +131,10 @@
         "effect": {
           "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -155,6 +163,10 @@
         "effect": {
           "before": "<p>Two kobolds take their turns in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -183,6 +195,10 @@
         "effect": {
           "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }
