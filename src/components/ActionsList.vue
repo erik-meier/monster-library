@@ -41,12 +41,18 @@
         </div>
       </div>
 
-      <div v-if="action.system.type == 'triggered'" class="action-trigger">
+      <div v-if="action.system.type == 'triggered' || action.system.type == 'freeTriggered'" class="action-trigger">
         <strong>Trigger:</strong> {{ action.system.trigger }}
       </div>
 
-      <PowerRoll v-if="actionHasPowerRoll(action)" :effects="action.system.power.effects" :chr="chr" />
-      <div class="action-description" v-html="formatDescription(extractDescription(action))"></div>
+      <PowerRoll v-if="actionHasPowerRoll(action)" :tiers="action.system.power.tiers || []"
+        :effect="formatActionEffect(action)" />
+      <div v-if="!actionHasPowerRoll(action)" class="action-description"
+        v-html="formatDescription(extractDescription(action))"></div>
+
+      <div v-if="action.system.spend && action.system.spend.formattedText" class="action-spend">
+        <span v-html="action.system.spend.formattedText"></span>
+      </div>
     </div>
   </div>
 </template>
@@ -105,10 +111,21 @@ export default {
       }
       return ''
     },
+    formatActionEffect(action) {
+      // For the new flattened structure, effects are usually handled in tier display text
+      // Only return effect text if it's different from tier display
+      if (action.system.effect) {
+        return action.system.effect.before || action.system.effect.after || '';
+      }
+      return '';
+    },
     formatActionDistance(distance) {
       if (!distance) return '';
       if (distance.type === 'melee' || distance.type === 'ranged') {
         return `${distance.type.charAt(0).toUpperCase() + distance.type.slice(1)} ${distance.primary}`;
+      }
+      if (distance.type === 'meleeRanged') {
+        return `Melee ${distance.primary} or ranged ${distance.secondary}`;
       }
       if (distance.type === 'line') {
         return `${distance.primary} x ${distance.secondary} line within ${distance.tertiary}`
@@ -130,21 +147,31 @@ export default {
       } else if (target.type === 'enemy') {
         return `${target.value ? target.value : 'Each'} ${target.value && target.value > 1 ? 'enemies' : 'enemy'}`;
       }
+      else if (target.type === 'ally') {
+        return `${target.value ? target.value : 'Each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`;
+      } else if (target.type === 'selfAlly') {
+        return 'Self and ' + `${target.value ? target.value : 'each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`;
+      }
       return target.type
     },
     formatActionType(type) {
       if (!type) return '';
       if (type.toLowerCase() === 'none') return '';
       if (type.toLowerCase() === 'maneuver') return type;
+      if (type.toLowerCase() === 'freetriggered') type = 'free triggered';
       return type + ' action';
     },
     formatPowerRoll(formula, chr) {
-      if (!formula) return '';
-      if (formula === '@chr') {
-        return '2d10 + ' + chr;
-      }
+      // Power roll formulas are now pre-processed in the data pipeline
+      return formula || '';
     },
     actionHasPowerRoll(action) {
+      // Check for tiers array in the new flattened structure
+      if (action.system.power && action.system.power.tiers && action.system.power.tiers.length > 0) {
+        return true;
+      }
+
+      // Fallback check for old effects structure (if any remain)
       if (action.system.power && action.system.power.effects) {
         for (const effect of Object.values(action.system.power.effects)) {
           if (effect.type === 'damage') {
@@ -155,25 +182,8 @@ export default {
       return false
     },
     formatDescription(description) {
-      if (!description) return description
-
-      // Parse and replace [[/damage type X]] directives, including @monster.freeStrike
-      description = description.replace(/\[\[\/damage\s+(@monster\.freeStrike|\d+|\dd\d)(?:\s+(\w+))?\]\]/g, (match, value, type) => {
-        // Handle @monster.freeStrike reference
-        if (value === '@monster.freeStrike') {
-          const freeStrikeValue = this.monster?.system?.monster?.freeStrike || value
-          return `<span class="damage-value damage-generic">${freeStrikeValue}</span> damage free strike`
-        }
-
-        // Handle regular numeric damage values
-        const damageClass = type ? `damage-${type.toLowerCase()}` : 'damage-generic'
-        return `<span class="damage-value ${damageClass}">${value}${type ? ` ${type}` : ''}</span>`
-      })
-
-      // Bold any potency patterns that might exist in descriptions
-      description = description.replace(/([A-Z]<\d+)/g, '<strong class="potency-value">$1</strong>')
-
-      return description
+      // Text is now pre-processed in the data pipeline, so just return as-is
+      return description;
     }
   }
 }
@@ -336,6 +346,26 @@ export default {
   line-height: 1.5;
 }
 
+.action-spend {
+  margin: 0.75rem 0;
+  padding: 0.5rem;
+  background: #f8fafc;
+  border-left: 4px solid #0284c7;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.action-spend span {
+  color: #0f172a;
+  font-weight: 400;
+}
+
+.action-spend :deep(.malice-cost-emphasis) {
+  color: #0284c7;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 .action-description :deep(em) {
   font-style: italic;
 }
@@ -431,6 +461,23 @@ export default {
 /* Untyped damage - just bold, no background */
 .action-description :deep(.damage-value.damage-generic) {
   color: inherit;
+}
+
+/* UUID reference styling */
+.action-description :deep(.monster-link) {
+  color: #8b4513;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.action-description :deep(.monster-link:hover) {
+  color: #a0522d;
+  text-decoration: none;
+}
+
+.action-description :deep(.reference-text) {
+  font-style: italic;
+  color: #6c757d;
 }
 
 @media (max-width: 768px) {

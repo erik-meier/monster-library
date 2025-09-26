@@ -77,94 +77,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "Yw6HrF3nr4VlnJbj": {
-              "_id": "Yw6HrF3nr4VlnJbj",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage"
             },
-            "4i0fGtwVEegepJro": {
-              "_id": "4i0fGtwVEegepJro",
-              "type": "forced",
-              "name": "pull",
-              "img": null,
-              "forced": {
-                "tier2": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "1",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "intuition"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "intuition"
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "movement": [],
-                  "distance": "",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "9 damage; pull 1"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage; pull 2"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>If the target is pulled into the animal swarm, that forced movement deals damage only at the Director's determination.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -189,7 +128,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
@@ -199,6 +138,10 @@
         "effect": {
           "before": "",
           "after": "<p>The area is difficult terrain for enemies until the start of the animal swarm's next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

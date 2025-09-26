@@ -51,7 +51,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the bandit chief can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
+          "value": "<p>At the end of each of their turns, the bandit chief can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
           "director": ""
         }
       }
@@ -80,96 +80,34 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "3YfCJEZjmvlPUly5": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "3YfCJEZjmvlPUly5",
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "15",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; pull 1"
             },
-            "xBm6TF2HWLIP15Gh": {
-              "name": "pull",
-              "img": null,
-              "type": "forced",
-              "_id": "xBm6TF2HWLIP15Gh",
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "display": "{{forced}}",
-                  "distance": "1",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "12 damage; pull 2"
+            },
+            {
+              "tier": 3,
+              "display": "15 damage; pull 3"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>Any target who is adjacent to the bandit chief after the power roll is resolved takes [[/damage 3]] corruption damage.</p>"
+          "after": "<p>Any target who is adjacent to the bandit chief after the power roll is resolved takes <span class=\"damage-value damage-generic\">3</span> corruption damage.</p>"
+        },
+        "spend": {
+          "text": "This ability targets one additional target.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> This ability targets one additional target."
         }
       }
     },
@@ -194,111 +132,34 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "WVRfyc2hoPNEGS8T": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "WVRfyc2hoPNEGS8T",
-              "forced": {
-                "tier2": {
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "distance": "4",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "1",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "push 1; <strong class=\"potency-value\">M&lt;1</strong> prone"
             },
-            "fLCpuzqBdRLuekcq": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "fLCpuzqBdRLuekcq",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "@potency.strong"
-                  },
-                  "display": ""
-                }
-              }
+            {
+              "tier": 2,
+              "display": "push 2; <strong class=\"potency-value\">M&lt;2</strong> prone"
+            },
+            {
+              "tier": 3,
+              "display": "push 4; <strong class=\"potency-value\">M&lt;3</strong> prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "The ability takes the Area keyword, loses the Melee key word, and is a 1 burst that targets each enemy in the area.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ability takes the Area keyword, loses the Melee key word, and is a 1 burst that targets each enemy in the area."
         }
       }
     },
@@ -321,14 +182,18 @@
         "trigger": "The bandit chief makes a power roll.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The bandit chief takes [[/damage 5 corruption]] damage and increases the outcome of the power roll by one tier. This damage can’t be reduced in any way.</p>",
+          "before": "<p>The bandit chief takes <span class=\"damage-value damage-generic\">5</span> corruption damage and increases the outcome of the power roll by one tier. This damage can’t be reduced in any way.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -353,7 +218,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -361,6 +226,10 @@
         "effect": {
           "before": "<p>Note: Each artillery ally in the area.</p><p>Each target makes a ranged free strike.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -385,7 +254,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -393,6 +262,10 @@
         "effect": {
           "before": "<p>Each target shifts up to their speed. Additionally, until the end of the encounter, while the bandit chief or any ally is adjacent to a target, they have damage immunity 2.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -413,7 +286,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -421,6 +294,10 @@
         "effect": {
           "before": "<p>The bandit chief shifts up to 10 squares. During or after this movement, they can use their Whip and Magic Longsword against up to four targets. Additionally, one ally adjacent to each target can make a free strike against that target.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -451,103 +328,28 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "MhQwsOqVGfNaQFua": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "MhQwsOqVGfNaQFua",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
             },
-            "WoQ1Q8BcxmPBSXXN": {
-              "name": "Slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "WoQ1Q8BcxmPBSXXN",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}}, slowed (save ends)",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}}, restrained (save ends)",
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;3</strong>, restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
           "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -568,7 +370,7 @@
         "trigger": "A human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -576,6 +378,10 @@
         "effect": {
           "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

@@ -40,7 +40,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Whenever an adjacent enemy grabs the wave or uses a melee ability against them, that enemy takes [[/damage 2 poison]] damage.</p>",
+          "value": "<p>Whenever an adjacent enemy grabs the wave or uses a melee ability against them, that enemy takes <span class=\"damage-value damage-generic\">2</span> poison damage.</p>",
           "director": ""
         }
       }
@@ -74,7 +74,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -82,6 +82,10 @@
         "effect": {
           "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -102,14 +106,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p>[[/damage 5 sonic]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p>[[/damage 4 sonic]] damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> sonic damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -130,7 +138,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {
@@ -189,6 +197,10 @@
         "effect": {
           "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -215,74 +227,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "tScpB8OyCBYOsPVq": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "tScpB8OyCBYOsPVq",
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [
-                    "holy"
-                  ]
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [
-                    "holy"
-                  ]
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [
-                    "holy"
-                  ]
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 holy damage"
             },
-            "9lYUcmo6rUpqvnaJ": {
-              "name": "",
-              "img": null,
-              "type": "applied",
-              "_id": "9lYUcmo6rUpqvnaJ",
-              "applied": {
-                "tier2": {
-                  "potency": {
-                    "characteristic": "reason"
-                  },
-                  "display": "{{potency}} the target is illuminated (save ends)",
-                  "effects": {
-                    "jpfOMlhwfuLYMY0c": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "potency": {
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "jpfOMlhwfuLYMY0c": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 holy damage; {{potency}} the target is illuminated (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "5 holy damage; {{potency}} the target is illuminated (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>An illuminated creature or object can’t hide or become invisible, and any strike made against an illuminated target gains an edge.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -309,14 +280,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A bubble of toxic gas fills the area, ready to pop. If any creature or object touches the bubble or if the bubble takes damage, it bursts. Each angulotl adjacent to the bubble is wet until the end of the en counter, and each enemy adjacent to the bubble makes a <strong>Might test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 3 poison]] damage; the target is wet and weakened (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>[[/damage 2 poison]] damage; the target is wet (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>[[/damage 1 poison]] damage; the target is wet (EoT)</p></td></tr></tbody></table>",
+          "before": "<p>A bubble of toxic gas fills the area, ready to pop. If any creature or object touches the bubble or if the bubble takes damage, it bursts. Each angulotl adjacent to the bubble is wet until the end of the en counter, and each enemy adjacent to the bubble makes a <strong>Might test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">3</span> poison damage; the target is wet and weakened (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">2</span> poison damage; the target is wet (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">1</span> poison damage; the target is wet (EoT)</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

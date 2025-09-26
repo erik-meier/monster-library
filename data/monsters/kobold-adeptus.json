@@ -58,14 +58,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -86,7 +90,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -94,6 +98,10 @@
         "effect": {
           "before": "<p>Two kobolds take their turns in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -114,7 +122,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -122,6 +130,10 @@
         "effect": {
           "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -148,43 +160,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
           },
-          "effects": {
-            "N0Rv7a6jPAB4pvgR": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "N0Rv7a6jPAB4pvgR",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "lightning"
-                  ]
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [
-                    "lightning"
-                  ]
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [
-                    "lightning"
-                  ]
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 lightning damage"
+            },
+            {
+              "tier": 2,
+              "display": "6 lightning damage"
+            },
+            {
+              "tier": 3,
+              "display": "7 lightning damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>While the target is adjacent to any enemy, the adeptus gains an edge on this ability. Each enemy adjacent to the target takes [[/damage 2 lighting]] damage.</p>"
+          "after": "<p>While the target is adjacent to any enemy, the adeptus gains an edge on this ability. Each enemy adjacent to the target takes <span class=\"damage-value damage-generic\">2</span> lighting damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -211,34 +213,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
           },
-          "effects": {
-            "aY4FhByfhE51TRjE": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "aY4FhByfhE51TRjE",
-              "damage": {
-                "tier1": {
-                  "value": "3"
-                },
-                "tier2": {
-                  "value": "5"
-                },
-                "tier3": {
-                  "value": "6"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage"
+            },
+            {
+              "tier": 2,
+              "display": "5 damage"
+            },
+            {
+              "tier": 3,
+              "display": "6 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

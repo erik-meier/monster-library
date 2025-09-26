@@ -79,75 +79,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "edaSJy3ESyeSt7Pb": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "edaSJy3ESyeSt7Pb",
-              "damage": {
-                "tier1": {
-                  "value": "2",
-                  "types": [
-                    "lightning"
-                  ]
-                },
-                "tier2": {
-                  "value": "3",
-                  "types": [
-                    "lightning"
-                  ]
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [
-                    "lightning"
-                  ]
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 lightning damage"
             },
-            "J6nkFAcQPfzqLeuF": {
-              "name": "Slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "J6nkFAcQPfzqLeuF",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "turn"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "turn"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "turn"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "3 lightning damage"
+            },
+            {
+              "tier": 3,
+              "display": "5 lightning damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>If the apprentice mage doesn’t use a maneuver or a move action this turn, the target is also slowed (EoT).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -168,7 +126,7 @@
         "trigger": "A human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -176,6 +134,10 @@
         "effect": {
           "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -196,7 +158,7 @@
         "trigger": "a human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -204,6 +166,10 @@
         "effect": {
           "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

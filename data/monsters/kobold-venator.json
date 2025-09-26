@@ -82,14 +82,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -110,7 +114,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -118,6 +122,10 @@
         "effect": {
           "before": "<p>Two kobolds take their turns in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -138,7 +146,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -146,6 +154,10 @@
         "effect": {
           "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -172,93 +184,34 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "Tg5XooGjdn2ro0Bi": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "Tg5XooGjdn2ro0Bi",
-              "damage": {
-                "tier1": {
-                  "value": "4"
-                },
-                "tier2": {
-                  "value": "6"
-                },
-                "tier3": {
-                  "value": "7"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
             },
-            "irQH57nWJKmT1Jv2": {
-              "name": "Restrained",
-              "img": null,
-              "type": "applied",
-              "_id": "irQH57nWJKmT1Jv2",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "display": "{{potency}} restrained (save ends)",
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 damage; {{potency}} restrained (save ends)"
             },
-            "EcdGEmXjpbLWBe5B": {
-              "name": "Burning Net",
-              "img": null,
-              "type": "applied",
-              "_id": "EcdGEmXjpbLWBe5B",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "tmUSRrDTxrqaDmi3": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "tmUSRrDTxrqaDmi3": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "7 damage; {{potency}} restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "The venator lights their net on fire, and a target restrained  this way takes 2 fire damage at the start of each of their turns.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The venator lights their net on fire, and a target restrained  this way takes 2 fire damage at the start of each of their turns."
         }
       }
     }

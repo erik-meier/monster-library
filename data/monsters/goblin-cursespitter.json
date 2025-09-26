@@ -65,108 +65,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "NHt7rSqui3Sg2M37": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "NHt7rSqui3Sg2M37",
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 corruption damage; <strong class=\"potency-value\">I&lt;0</strong> weakened (save ends)"
             },
-            "MD6KnbfFb59tv7Bm": {
-              "name": "Weakened",
-              "img": null,
-              "type": "applied",
-              "_id": "MD6KnbfFb59tv7Bm",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} weakened (save ends)",
-                  "potency": {
-                    "characteristic": "intuition",
-                    "value": "@potency.weak"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 corruption damage; <strong class=\"potency-value\">I&lt;1</strong> weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "5 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> weakened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -193,67 +118,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "HRLB37z1dHuXzeoB": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "HRLB37z1dHuXzeoB",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "intuition",
-                    "value": "@potency.weak"
-                  },
-                  "display": "{{potency}} prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "{{potency}} prone and can't stand (EoT)",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "prone, {{potency}} can't stand (Save Ends)",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "<strong class=\"potency-value\">I&lt;0</strong> prone"
+            },
+            {
+              "tier": 2,
+              "display": "<strong class=\"potency-value\">I&lt;1</strong> prone and can't stand (EoT)"
+            },
+            {
+              "tier": 3,
+              "display": "prone, <strong class=\"potency-value\">I&lt;2</strong> can't stand (Save Ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -274,7 +165,7 @@
         "trigger": "A goblin starts its turn.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -282,6 +173,10 @@
         "effect": {
           "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -310,8 +205,12 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>[[/damage 5 poison]] damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
+          "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -332,7 +231,7 @@
         "trigger": "A goblin starts its turn.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -340,6 +239,10 @@
         "effect": {
           "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

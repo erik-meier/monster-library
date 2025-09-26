@@ -56,123 +56,28 @@
             "formula": "3",
             "characteristics": []
           },
-          "effects": {
-            "QA3P3jfgUfSzwgky": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "QA3P3jfgUfSzwgky",
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage; push 3; <strong class=\"potency-value\">M&lt;1</strong> prone"
             },
-            "VmEj6jAuWJOKubzs": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "VmEj6jAuWJOKubzs",
-              "forced": {
-                "tier1": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "3",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "4",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "5",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 damage; push 4; <strong class=\"potency-value\">M&lt;2</strong> prone"
             },
-            "GfQM1PTl100EJHhT": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "GfQM1PTl100EJHhT",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} prone",
-                  "effects": {},
-                  "potency": {
-                    "value": "1",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "3",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "13 damage; push 5; <strong class=\"potency-value\">M&lt;3</strong> prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

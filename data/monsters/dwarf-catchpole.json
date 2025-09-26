@@ -58,14 +58,18 @@
         "trigger": "A dwarf starts their turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage ([[/damage 3]] for wood, [[/damage 6]] for stone, or [[/damage 9]] for metal).</p>",
+          "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -86,7 +90,7 @@
         "trigger": "A dwarf starts their turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -94,6 +98,10 @@
         "effect": {
           "before": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -121,55 +129,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "01JUXE6Fd411laBJ": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "01JUXE6Fd411laBJ",
-              "damage": {
-                "tier1": {
-                  "value": "2"
-                },
-                "tier2": {
-                  "value": "4"
-                },
-                "tier3": {
-                  "value": "5"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 damage"
             },
-            "jimNOrsRFJd0KNzv": {
-              "name": "",
-              "img": null,
-              "type": "applied",
-              "_id": "jimNOrsRFJd0KNzv",
-              "applied": {
-                "tier3": {
-                  "display": "grabbed or prone",
-                  "effects": {
-                    "grabbed": {
-                      "condition": "always",
-                      "end": ""
-                    },
-                    "prone": {
-                      "condition": "always",
-                      "end": ""
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 damage"
+            },
+            {
+              "tier": 3,
+              "display": "5 damage; grabbed or prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>If the target is restrained, they take an extra [[/damage 2]] damage.</p>"
+          "after": "<p>If the target is restrained, they take an extra <span class=\"damage-value damage-generic\">2</span> damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

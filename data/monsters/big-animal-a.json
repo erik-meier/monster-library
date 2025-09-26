@@ -62,7 +62,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
@@ -72,6 +72,10 @@
         "effect": {
           "before": "<p>Special: The target must be the animal's size or smaller.</p><p>The target vertical slides up to 3 squares. If the target is an ally, they can make a free strike at the end of the forced movement, then fall without taking damage.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -93,7 +97,7 @@
         "trigger": "The animal is targeted by an area ability.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
@@ -103,6 +107,10 @@
         "effect": {
           "before": "<p>The animal shifts up to 2 squares before the ability resolves.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -129,85 +137,31 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
-          "effects": {
-            "aaeiUH2NIgrCsOuk": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "aaeiUH2NIgrCsOuk",
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage; 0 damage"
             },
-            "dUlj9tqap5a01dlM": {
-              "name": "Agility Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "dUlj9tqap5a01dlM",
-              "damage": {
-                "tier1": {
-                  "value": "0",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "potency": {
-                    "characteristic": "agility",
-                    "value": "1"
-                  },
-                  "value": "3",
-                  "types": [],
-                  "properties": []
-                },
-                "tier3": {
-                  "potency": {
-                    "characteristic": "agility",
-                    "value": "2"
-                  },
-                  "value": "3",
-                  "types": [],
-                  "properties": []
-                }
-              }
+            {
+              "tier": 2,
+              "display": "9 damage; 3 damage"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage; 3 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

@@ -53,96 +53,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "wlZGIzO2aF0SOuc7": {
-              "type": "damage",
-              "_id": "wlZGIzO2aF0SOuc7",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              },
-              "name": "",
-              "img": null
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; pull 2"
             },
-            "UT7Ll64zdpaswbyH": {
-              "type": "forced",
-              "_id": "UT7Ll64zdpaswbyH",
-              "name": "Pull",
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "2",
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "0"
-                  },
-                  "display": "{{forced}}",
-                  "properties": []
-                },
-                "tier2": {
-                  "distance": "3",
-                  "potency": {
-                    "value": "1",
-                    "characteristic": ""
-                  },
-                  "display": "{{forced}}",
-                  "movement": [
-                    "pull"
-                  ],
-                  "properties": []
-                },
-                "tier3": {
-                  "distance": "4",
-                  "movement": [
-                    "pull"
-                  ],
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  },
-                  "display": "{{forced}}",
-                  "properties": []
-                }
-              },
-              "img": null
+            {
+              "tier": 2,
+              "display": "10 damage; pull 3"
+            },
+            {
+              "tier": 3,
+              "display": "13 damage; pull 4"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>Each target must be on the ground, and each square a target is pulled through is difficult terrain for enemies.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -168,102 +105,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "uXkvkUpIJm0zYlep": {
-              "type": "damage",
-              "_id": "uXkvkUpIJm0zYlep",
-              "damage": {
-                "tier1": {
-                  "value": "2",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "3",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              },
-              "name": "",
-              "img": null
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
             },
-            "awbNXjg2aYwT5JgQ": {
-              "type": "applied",
-              "_id": "awbNXjg2aYwT5JgQ",
-              "name": "Bleeding",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "0",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "potency": {
-                    "value": "1",
-                    "characteristic": ""
-                  },
-                  "display": "",
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  },
-                  "display": "",
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              },
-              "img": null
+            {
+              "tier": 2,
+              "display": "3 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "4 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The channeler chooses one of the following damage types: acid, cold, corruption, fire, or poison.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -290,112 +158,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "mTwybvptKE8bgCk9": {
-              "type": "damage",
-              "_id": "mTwybvptKE8bgCk9",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "11",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              },
-              "name": "",
-              "img": null
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 corruption damage; <strong class=\"potency-value\">P&lt;0</strong> slowed (save ends)"
             },
-            "LDvvnDFOHNDsx65w": {
-              "type": "applied",
-              "_id": "LDvvnDFOHNDsx65w",
-              "name": "Shapechange",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "presence",
-                    "value": "0"
-                  },
-                  "display": "{{potency}} slowed (save ends)",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "potency": {
-                    "value": "1",
-                    "characteristic": ""
-                  },
-                  "display": "{{potency}} the target is shapechanged (save ends)",
-                  "effects": {
-                    "I38SNfnEpqjEgNCH": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  }
-                },
-                "tier3": {
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  },
-                  "display": "{{potency}} the target is shapechanged (save ends)",
-                  "effects": {
-                    "I38SNfnEpqjEgNCH": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  }
-                }
-              },
-              "img": null
+            {
+              "tier": 2,
+              "display": "8 corruption damage; <strong class=\"potency-value\">P&lt;1</strong> the target is shapechanged (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "11 corruption damage; <strong class=\"potency-value\">P&lt;2</strong> the target is shapechanged (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>A shapechanged creature is slowed and has fire weakness 10 as their limbs stretch and their skin becomes paper thin.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -418,7 +207,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -426,6 +215,10 @@
         "effect": {
           "before": "<p>Special: The target must be grabbed by the channeler.</p><p>Effect: The target is vertical pushed up to 3 squares. An ally doesnʼt take damage from being force moved this way.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -448,7 +241,7 @@
         "trigger": "A size 1 creature or object is force moved within distance, or a size 1 ally willingly moves within distance.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -456,6 +249,10 @@
         "effect": {
           "before": "<p>The target is grabbed by the channeler.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -478,7 +275,7 @@
         "trigger": "An ally within distance takes damage.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -486,6 +283,10 @@
         "effect": {
           "before": "<p>The target is wrapped in shadow and halves the damage. The target canʼt be targeted by strikes until the start of their next turn.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -506,14 +307,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has I&lt;1 the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>",
+          "before": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -534,14 +339,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The bugbear activates a Malice Feature available to goblins, spending the required malice to use those features.</p><p>@UUID[Compendium.draw-steel.monster-features.Item.4IYmvaux8p8vaWR6]{Goblin Mode}</p><p>@UUID[Compendium.draw-steel.monster-features.Item.vZMdicLidQzWMkgm]{Swamp Stink}</p><p>@UUID[Compendium.draw-steel.monster-features.Item.Oa0MhwS1yeyeJ5qG]{Tiny Stabs}</p>",
+          "before": "<p>The bugbear activates a Malice Feature available to goblins, spending the required malice to use those features.</p><p><span class=\"reference-text\">Goblin Mode</span></p><p><span class=\"reference-text\">Swamp Stink</span></p><p><span class=\"reference-text\">Tiny Stabs</span></p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -562,7 +371,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -570,6 +379,10 @@
         "effect": {
           "before": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have m&lt;1 they are slowed (save ends).</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -590,7 +403,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -598,6 +411,10 @@
         "effect": {
           "before": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have m&lt;1 they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

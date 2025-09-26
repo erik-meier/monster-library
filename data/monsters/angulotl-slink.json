@@ -40,7 +40,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Whenever an adjacent enemy grabs the slink or uses a melee ability against them, that enemy takes [[/damage 2 poison]] damage.</p>",
+          "value": "<p>Whenever an adjacent enemy grabs the slink or uses a melee ability against them, that enemy takes <span class=\"damage-value damage-generic\">2</span> poison damage.</p>",
           "director": ""
         }
       }
@@ -92,83 +92,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "aYtUr6FBZIE10wN5": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "aYtUr6FBZIE10wN5",
-              "damage": {
-                "tier1": {
-                  "value": "4"
-                },
-                "tier2": {
-                  "value": "6"
-                },
-                "tier3": {
-                  "value": "7"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
             },
-            "I304itMTQ54ASC6v": {
-              "name": "Pull",
-              "img": null,
-              "type": "forced",
-              "_id": "I304itMTQ54ASC6v",
-              "forced": {
-                "tier1": {
-                  "distance": "2"
-                },
-                "tier2": {
-                  "distance": "4"
-                },
-                "tier3": {
-                  "distance": "6"
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 damage"
             },
-            "vpTxX9VE7KMomhrJ": {
-              "name": "Wet",
-              "img": null,
-              "type": "applied",
-              "_id": "vpTxX9VE7KMomhrJ",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "gBZAIbszWx79Ksao": {
-                      "condition": "always",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "gBZAIbszWx79Ksao": {
-                      "condition": "always",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "gBZAIbszWx79Ksao": {
-                      "condition": "always",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "7 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>The target is wet (save ends). Any ally targeted by this ability ignores the damage, is wet until the end of the encounter, and is pulled up to 6 squares, ignoring stability.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -189,7 +139,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -197,6 +147,10 @@
         "effect": {
           "before": "<p>The slink jumps up to 3 squares. If they have cover or conceal ment when they land, they can attempt to hide.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -217,7 +171,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -225,6 +179,10 @@
         "effect": {
           "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -245,14 +203,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p>[[/damage 5 sonic]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p>[[/damage 4 sonic]] damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> sonic damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -273,7 +235,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {
@@ -332,6 +294,10 @@
         "effect": {
           "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

@@ -62,7 +62,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -70,6 +70,11 @@
         "effect": {
           "before": "<p>NOTE: Targets \"One Trap or Other Terrain Object\"</p><p>The trap or terrain object instantly triggers.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "The artifex places a new trap in the encounter and can  instantly trigger it. The artifex prefers working with angry beehives, flammable oil, snare traps, and spike traps.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The artifex places a new trap in the encounter and can  instantly trigger it. The artifex prefers working with angry beehives, flammable oil, snare traps, and spike traps."
         }
       }
     },
@@ -96,48 +101,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "9qaGNYdYlz2Nipvx": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "9qaGNYdYlz2Nipvx",
-              "damage": {
-                "tier1": {
-                  "value": "3"
-                },
-                "tier2": {
-                  "value": "4"
-                },
-                "tier3": {
-                  "value": "5"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage"
             },
-            "MPfnvHWxi3JwjuNX": {
-              "name": "Pull",
-              "img": null,
-              "type": "forced",
-              "_id": "MPfnvHWxi3JwjuNX",
-              "forced": {
-                "tier2": {
-                  "distance": "2"
-                },
-                "tier3": {
-                  "distance": "3"
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 damage"
+            },
+            {
+              "tier": 3,
+              "display": "5 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>If this forced movement triggers a trap that uses a power roll, that roll has a double edge.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -158,14 +148,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -186,7 +180,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -194,6 +188,10 @@
         "effect": {
           "before": "<p>Two kobolds take their turns in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -214,7 +212,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -222,6 +220,10 @@
         "effect": {
           "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

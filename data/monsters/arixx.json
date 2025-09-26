@@ -89,102 +89,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "qlxQsW7Ugo2RXyWl": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "qlxQsW7Ugo2RXyWl",
-              "damage": {
-                "tier1": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "16",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 damage; grabbed"
             },
-            "kECmSiezWawP7ilr": {
-              "name": "grabbed",
-              "img": null,
-              "type": "applied",
-              "_id": "kECmSiezWawP7ilr",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "grabbed": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "display": "grabbed",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "grabbed": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "display": "grabbed",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "grabbed": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "display": "grabbed",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "13 damage; grabbed"
+            },
+            {
+              "tier": 3,
+              "display": "16 damage; grabbed"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>A size 1 target grabbed this way takes [[/damage 3 acid]] damage at the start of each of their turns.</p>"
+          "after": "<p>A size 1 target grabbed this way takes <span class=\"damage-value damage-generic\">3</span> acid damage at the start of each of their turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -211,101 +142,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "e5VCyPBXvSZpRF6Y": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "e5VCyPBXvSZpRF6Y",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> grabbed"
             },
-            "Vo7wvPg9WS88qIxp": {
-              "name": "Grabbed",
-              "img": null,
-              "type": "applied",
-              "_id": "Vo7wvPg9WS88qIxp",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "agility",
-                    "value": "@potency.weak"
-                  },
-                  "display": "{{potency}} grabbed",
-                  "effects": {
-                    "grabbed": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "grabbed": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "grabbed": {
-                      "condition": "failure",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
+            },
+            {
+              "tier": 3,
+              "display": "11 damage; <strong class=\"potency-value\">A&lt;3</strong> grabbed"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>The arixx can vertically slide each grabbed target up to 3 squares.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -332,96 +195,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "lOTc5Tvk7bYQjRGK": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "lOTc5Tvk7bYQjRGK",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 acid damage"
             },
-            "ZOlBZ0Mi3YQ6tVzj": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "ZOlBZ0Mi3YQ6tVzj",
-              "applied": {
-                "tier3": {
-                  "display": "prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 acid damage"
+            },
+            {
+              "tier": 3,
+              "display": "7 acid damage; prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>The ground beneath each target is covered in burning acid until the end of the encounter. Any enemy who enters an affected space for the first time in a round or starts their turn there takes [[/damage 2 acid]] damage.</p>"
+          "after": "<p>The ground beneath each target is covered in burning acid until the end of the encounter. Any enemy who enters an affected space for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">2</span> acid damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -446,94 +246,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "ONUuIay8CgfZOetP": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "ONUuIay8CgfZOetP",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
             },
-            "EkC7MCFxqf62sdq8": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "EkC7MCFxqf62sdq8",
-              "forced": {
-                "tier1": {
-                  "display": "",
-                  "distance": "",
-                  "movement": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "distance": "4",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 damage; push 2"
+            },
+            {
+              "tier": 3,
+              "display": "7 damage; push 4"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>The arixx flings rocks and debris to fill the area, and has a double edge on the power roll if they started their turn underground. The area is difficult terrain.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -557,7 +296,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -565,6 +304,10 @@
         "effect": {
           "before": "<p>The arixx kicks up dust to fill the area until the start of their next turn, then moves up to their speed. Any enemy in the area or who targets a creature in the area takes a bane on power rolls.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -585,7 +328,7 @@
         "trigger": "The arixx takes damage.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -593,6 +336,10 @@
         "effect": {
           "before": "<p>The arixx halves the damage and shifts up to 3 squares after the triggering effect resolves.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -620,58 +367,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "9qNPFmeV9F3VBdLz": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "9qNPFmeV9F3VBdLz",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "11",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 acid damage"
+            },
+            {
+              "tier": 2,
+              "display": "8 acid damage"
+            },
+            {
+              "tier": 3,
+              "display": "11 acid damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>The ground in the area is covered in a puddle of acid until the end of the encounter. Any enemy who enters the area for the first time in a round or starts their turn there takes [[/damage 2 acid]] damage.</p>"
+          "after": "<p>The ground in the area is covered in a puddle of acid until the end of the encounter. Any enemy who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">2</span> acid damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -692,7 +414,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -700,6 +422,10 @@
         "effect": {
           "before": "<p>The arixx shifts up to their speed. If they end this shift above ground and within 2 squares of a creature, they use Bite against the creature and can then use the Dig maneuver.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -725,108 +451,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "OHy71vSNfwt9IIhX": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "OHy71vSNfwt9IIhX",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "11",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 acid damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
             },
-            "LzCjDU9VM7eDgKQh": {
-              "name": "Weakened",
-              "img": null,
-              "type": "applied",
-              "_id": "LzCjDU9VM7eDgKQh",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "@potency.weak"
-                  },
-                  "display": "{{potency}} weakened (save ends)",
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 acid damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "11 acid damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -847,7 +498,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -855,6 +506,10 @@
         "effect": {
           "before": "<p>The arixx dribbles acid over their mandibles, causing the next strike they make to gain an edge and deal an extra 3 acid damage.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -875,7 +530,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -883,6 +538,10 @@
         "effect": {
           "before": "<p>The encounter map suddenly quakes, then begins to sink. Each creature on the ground who has A &lt; 1 is knocked prone. Until the end of the encounter, each creature who starts their turn on the ground and can’t burrow must spend 1 additional square of move ment to leave their starting position, or 2 squares if they start their turn prone or underground. A creature who starts and ends their turn in the same space on the ground and can’t burrow sinks 1 square into the ground.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -905,14 +564,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The arixx’s underground tunnels swell with pressure, causing a sudden influx of hot gas to burst from a 3-square-by-3-square area anywhere on the surface. Each enemy in the area makes an Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"111\"><p>11 or less</p></td><td><p>[[/damage 4]] damage; vertical push 5</p></td></tr><tr><td data-colwidth=\"111\"><p>12-16</p></td><td><p>[[/damage 4]] damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"111\"><p>17+</p></td><td><p>The target shifts to the nearest unoccupied space outside the area.</p></td></tr></tbody></table>",
+          "before": "<p>The arixx’s underground tunnels swell with pressure, causing a sudden influx of hot gas to burst from a 3-square-by-3-square area anywhere on the surface. Each enemy in the area makes an Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"111\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 5</p></td></tr><tr><td data-colwidth=\"111\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"111\"><p>17+</p></td><td><p>The target shifts to the nearest unoccupied space outside the area.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -933,7 +596,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -941,6 +604,10 @@
         "effect": {
           "before": "<p>The arixx takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

@@ -36,7 +36,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The scyza deals an extra [[/damage 6]] damage with abilities used against objects.</p>",
+          "value": "<p>The scyza deals an extra <span class=\"damage-value damage-generic\">6</span> damage with abilities used against objects.</p>",
           "director": ""
         }
       }
@@ -70,14 +70,18 @@
         "trigger": "The scyza or an ally riding the scyza is targeted by an ability.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Any damage dealt by the triggering ability is halved. If the creature or object who used the ability is within 3 squares of the scyza, the scyza can make a [[/damage @monster.freeStrike]]{Free Strike} against them.</p>",
+          "before": "<p>Any damage dealt by the triggering ability is halved. If the creature or object who used the ability is within 3 squares of the scyza, the scyza can make a <span class=\"damage-value damage-generic\">5</span> damage free strike against them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -104,102 +108,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "HcD91j970RkJIiR5": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "HcD91j970RkJIiR5",
-              "damage": {
-                "tier1": {
-                  "value": "7"
-                },
-                "tier2": {
-                  "value": "11"
-                },
-                "tier3": {
-                  "value": "14"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
             },
-            "piQRLP7X7Z49rkaB": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "piQRLP7X7Z49rkaB",
-              "applied": {
-                "tier2": {
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": ""
-                    }
-                  },
-                  "display": "Prone"
-                },
-                "tier3": {
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": ""
-                    }
-                  },
-                  "display": "Prone"
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage; Prone"
             },
-            "zNOa86yEYaEC8Tyv": {
-              "name": "Frightened",
-              "img": null,
-              "type": "applied",
-              "_id": "zNOa86yEYaEC8Tyv",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "intuition",
-                    "value": "2"
-                  },
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "potency": {
-                    "value": "2"
-                  },
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "potency": {
-                    "value": "2"
-                  },
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "14 damage; Prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>The scyza roars, and if the target has i&lt;2 they are frightened (save ends).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -226,63 +161,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "oFTjik1ZPTvjx3JU": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "oFTjik1ZPTvjx3JU",
-              "damage": {
-                "tier1": {
-                  "value": "8"
-                },
-                "tier2": {
-                  "value": "13"
-                },
-                "tier3": {
-                  "value": "16"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage"
             },
-            "YdkpjsrawHxqEiwB": {
-              "name": "",
-              "img": null,
-              "type": "applied",
-              "_id": "YdkpjsrawHxqEiwB",
-              "applied": {
-                "tier2": {
-                  "display": "Prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": ""
-                    }
-                  }
-                },
-                "tier3": {
-                  "potency": {
-                    "characteristic": "agility"
-                  },
-                  "display": "{{potency}} bleeding (save ends)",
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "13 damage; Prone"
+            },
+            {
+              "tier": 3,
+              "display": "16 damage; {{potency}} bleeding (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>Against a target on top of the scyza, this ability gains an edge, and the target is pushed into an unoccupied adjacent square and knocked prone.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -310,93 +215,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "PejAPPcDU5C5uaM0": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "PejAPPcDU5C5uaM0",
-              "damage": {
-                "tier1": {
-                  "value": "4"
-                },
-                "tier2": {
-                  "value": "7"
-                },
-                "tier3": {
-                  "value": "9"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage; 1 sonic damage; {{potency}} dazed (save ends)"
             },
-            "LUkwqo2uUTzB8g3P": {
-              "name": "Sonic Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "LUkwqo2uUTzB8g3P",
-              "damage": {
-                "tier1": {
-                  "types": [
-                    "sonic"
-                  ],
-                  "value": "1"
-                },
-                "tier2": {
-                  "value": "2",
-                  "types": [
-                    "sonic"
-                  ]
-                },
-                "tier3": {
-                  "value": "3",
-                  "types": [
-                    "sonic"
-                  ]
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 damage; 2 sonic damage; {{potency}} dazed (save ends)"
             },
-            "k3j0lVe6lE0ixxCg": {
-              "name": "Dazed",
-              "img": null,
-              "type": "applied",
-              "_id": "k3j0lVe6lE0ixxCg",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} dazed (save ends)",
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "9 damage; 3 sonic damage; {{potency}} dazed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -420,14 +265,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The scyza kicks up a sandstorm, granting concealment to themself and any ally in the area until the end of the scyza’s next turn. Each enemy in the area makes an <strong>Intuition test.</strong></p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>[[/damage 10]] damage; prone; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>[[/damage 7]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>[[/damage 4]] damage</p></td></tr></tbody></table>",
+          "before": "<p>The scyza kicks up a sandstorm, granting concealment to themself and any ally in the area until the end of the scyza’s next turn. Each enemy in the area makes an <strong>Intuition test.</strong></p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> damage; prone; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

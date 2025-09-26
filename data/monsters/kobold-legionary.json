@@ -58,14 +58,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -86,7 +90,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -94,6 +98,10 @@
         "effect": {
           "before": "<p>Two kobolds take their turns in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -114,7 +122,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -122,6 +130,10 @@
         "effect": {
           "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -148,67 +160,34 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "ts5bBsRsOZ4iqQ5G": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "ts5bBsRsOZ4iqQ5G",
-              "damage": {
-                "tier1": {
-                  "value": "3"
-                },
-                "tier2": {
-                  "value": "4"
-                },
-                "tier3": {
-                  "value": "5"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage; taunted (EoT)"
             },
-            "ALCmI1LoqwebRnsm": {
-              "name": "Taunted",
-              "img": null,
-              "type": "applied",
-              "_id": "ALCmI1LoqwebRnsm",
-              "applied": {
-                "tier1": {
-                  "display": "taunted (EoT)",
-                  "effects": {
-                    "taunted": {
-                      "condition": "always",
-                      "end": "turn"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "taunted": {
-                      "condition": "always",
-                      "end": "turn"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "taunted": {
-                      "condition": "always",
-                      "end": "turn"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 damage; taunted (EoT)"
+            },
+            {
+              "tier": 3,
+              "display": "5 damage; taunted (EoT)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "If the legionary is acting as a captain, they and each mem ber of their squad shift up to 2 squares before this ability is used.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> If the legionary is acting as a captain, they and each mem ber of their squad shift up to 2 squares before this ability is used."
         }
       }
     },
@@ -235,75 +214,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "2ZjlDcrEoz2gzFzu": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "2ZjlDcrEoz2gzFzu",
-              "damage": {
-                "tier1": {
-                  "value": "2"
-                },
-                "tier2": {
-                  "value": "3"
-                },
-                "tier3": {
-                  "value": "4"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 damage; {{potency}} prone"
             },
-            "FWRSIF51y02dbOtY": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "FWRSIF51y02dbOtY"
+            {
+              "tier": 2,
+              "display": "3 damage; {{potency}} prone"
             },
-            "V6oxqEJnKgQfHMPX": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "V6oxqEJnKgQfHMPX",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} prone",
-                  "potency": {
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": ""
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": ""
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "prone": {
-                      "condition": "failure"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "4 damage; {{potency}} prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

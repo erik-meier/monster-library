@@ -66,58 +66,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "2zbjEF3LsDPSQ9zO": {
-              "_id": "2zbjEF3LsDPSQ9zO",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 poison damage"
+            },
+            {
+              "tier": 2,
+              "display": "10 poison damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 poison damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>This ability gains an edge against targets the basilisk has previously dealt poison damage to.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -145,72 +120,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "ZVW2lkikzSK9AjsX": {
-              "_id": "ZVW2lkikzSK9AjsX",
-              "type": "applied",
-              "name": "Restrained",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} restrained (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "Slowed (save ends); or if {{potency}} restrained (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "slowed": {
-                      "condition": "success",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "<strong class=\"potency-value\">M&lt;0</strong> restrained (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "<strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "Slowed (save ends); or if <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The area extends from both the basilisk's eyes, and this ability targets the first creature without cover on either side of the area.</p>",
-          "after": "<p>If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target’s body, dealing [[/damage 8]] damage to the target that can’t be reduced in any way and ending this effect.</p>"
+          "after": "<p>If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target’s body, dealing <span class=\"damage-value damage-generic\">8</span> damage to the target that can’t be reduced in any way and ending this effect.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -237,108 +173,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "9sTa2vqEOR6wwqiF": {
-              "_id": "9sTa2vqEOR6wwqiF",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 poison damage; <strong class=\"potency-value\">M&lt;0</strong> weakened (save ends)"
             },
-            "KXnTl6XSGVW2G0Us": {
-              "_id": "KXnTl6XSGVW2G0Us",
-              "type": "applied",
-              "name": "",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} weakened (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "{{potency}} weakened and slowed (save ends)",
-                  "effects": {
-                    "ULqhp6MZtwCxkbv3": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} weakened and slowed (save ends)",
-                  "effects": {
-                    "ULqhp6MZtwCxkbv3": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 poison damage; <strong class=\"potency-value\">M&lt;1</strong> weakened and slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 poison damage; <strong class=\"potency-value\">M&lt;2</strong> weakened and slowed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -363,7 +224,7 @@
         "trigger": "The basilisk takes damage from a melee ability.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -372,7 +233,11 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>Each target takes [[/damage 5]] damage. Any target who has A &lt; 2 is also bleeding (save ends).</p>"
+          "after": "<p>Each target takes <span class=\"damage-value damage-generic\">5</span> damage. Any target who has A &lt; 2 is also bleeding (save ends).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -393,7 +258,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -401,6 +266,10 @@
         "effect": {
           "before": "<p>A basilisk acting this turn can burrow until the start of their next turn, and moves up to their speed. They have damage immunity 2 while underground. The basilisk can burrow through stone, but can’t drag other creatures underground when they do so. At the start of each of the basilisk’s turns, the Director can spend 1 Malice to let the basilisk continue burrowing.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -424,131 +293,28 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "LWfCzXMwGX0NJNos": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "LWfCzXMwGX0NJNos",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage; 0 damage"
             },
-            "4CyD3EuQhZZ3XBS3": {
-              "name": "Agility Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "4CyD3EuQhZZ3XBS3",
-              "damage": {
-                "tier1": {
-                  "value": "0",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "2",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "1",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "2",
-                    "characteristic": "agility"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 damage; 2 damage; Prone"
             },
-            "vhv2fx9be2mvJo3W": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "vhv2fx9be2mvJo3W",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "Prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "1",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier3": {
-                  "display": "prone and can't stand (save ends)",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    },
-                    "KtUIFOUuE6sXE8vC": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "4 damage; 5 damage; prone and can't stand (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The basilisk spits up a chunk of partly digested stone.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -569,7 +335,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -577,6 +343,10 @@
         "effect": {
           "before": "<p>A basilisk spews reflective spittle across an adjacent vertical surface in a 3-square-by-3-square area. The basilisk can use their Petrifying Eye Beams ability to target a square in the area, causing the area and distance of that ability to become a 20 × 3 line within 1 square of the wall.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },

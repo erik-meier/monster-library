@@ -67,123 +67,28 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "lyT6UopNk3mSJmvY": {
-              "_id": "lyT6UopNk3mSJmvY",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
             },
-            "BKeg4i0AdSS0mcJQ": {
-              "_id": "BKeg4i0AdSS0mcJQ",
-              "type": "applied",
-              "name": "Prone",
-              "img": null,
-              "applied": {
-                "tier3": {
-                  "display": "Prone",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "5 damage"
             },
-            "74L7SmMP2aT3fBUR": {
-              "_id": "74L7SmMP2aT3fBUR",
-              "type": "applied",
-              "name": "Bleeding",
-              "img": null,
-              "applied": {
-                "tier3": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "2",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "7 damage; Prone; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>This ability targets one additional target for each 2 Malice spent.</p>"
+        },
+        "spend": {
+          "text": "This ability targets one additional target for each 2 Malice spent.",
+          "value": null
         }
       }
     },
@@ -208,7 +113,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 1",
             "characteristics": [
               "might"
             ]
@@ -218,6 +123,10 @@
         "effect": {
           "before": "",
           "after": "<p>Each target shifts up to their speed. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

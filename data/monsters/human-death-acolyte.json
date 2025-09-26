@@ -61,7 +61,7 @@
         "trigger": "A human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -69,6 +69,10 @@
         "effect": {
           "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -89,7 +93,7 @@
         "trigger": "a human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -97,6 +101,10 @@
         "effect": {
           "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -121,43 +129,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "oQzmdXBA4YSfgE5j": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "oQzmdXBA4YSfgE5j",
-              "damage": {
-                "tier1": {
-                  "value": "1",
-                  "types": [
-                    "corruption"
-                  ]
-                },
-                "tier2": {
-                  "value": "2",
-                  "types": [
-                    "corruption"
-                  ]
-                },
-                "tier3": {
-                  "value": "3",
-                  "types": [
-                    "corruption"
-                  ]
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "1 corruption damage"
+            },
+            {
+              "tier": 2,
+              "display": "2 corruption damage"
+            },
+            {
+              "tier": 3,
+              "display": "3 corruption damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>One creature within 5 squares regains [[/heal 1]]</p>"
+          "after": "<p>One creature within 5 squares regains <span class=\"heal-value\">1</span> healing</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

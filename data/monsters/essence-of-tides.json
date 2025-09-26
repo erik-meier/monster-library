@@ -79,146 +79,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "mhQSWHP6mH5d1pL9": {
-              "_id": "mhQSWHP6mH5d1pL9",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; slide 1"
             },
-            "WZveJN9azsNHN5WZ": {
-              "_id": "WZveJN9azsNHN5WZ",
-              "type": "forced",
-              "name": "slide",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "1",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage; slide 2"
             },
-            "ZqZsEwY2xuxSjkSw": {
-              "name": "Instability",
-              "img": null,
-              "type": "applied",
-              "_id": "ZqZsEwY2xuxSjkSw",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {
-                    "iRUC9yMrO2ySVWf4": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": "presence"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "iRUC9yMrO2ySVWf4": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "iRUC9yMrO2ySVWf4": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "14 damage; slide 3"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>If a target has P &lt; 2, their stability is reduced to 0 and they move 2 additional squares whenever they are force moved (save ends).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -244,7 +131,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -254,6 +141,11 @@
         "effect": {
           "before": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the essence's next turn, the target has cold immunity 5.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "Until the end of the encounter, the ground within 1  square of the target is a pool of water that is difficult terrain. This  water extends out behind the target as they move, creating a  stream that lasts until the end of the encounter. Any enemy who  ends their turn in the stream and has M<2 is slowed (save ends).",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the ground within 1  square of the target is a pool of water that is difficult terrain. This  water extends out behind the target as they move, creating a  stream that lasts until the end of the encounter. Any enemy who  ends their turn in the stream and has <strong class=\"potency-value\">M&lt;2</strong> is slowed (save ends)."
         }
       }
     },
@@ -278,7 +170,7 @@
         "trigger": "An ally deals rolled damage to the target.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -288,6 +180,10 @@
         "effect": {
           "before": "<p>The essence makes a free strike against the target.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -308,7 +204,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -316,6 +212,10 @@
         "effect": {
           "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -336,7 +236,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -344,6 +244,10 @@
         "effect": {
           "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -365,7 +269,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -373,6 +277,10 @@
         "effect": {
           "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

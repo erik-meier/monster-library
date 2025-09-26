@@ -64,102 +64,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "9SDYkrDvnRWKosjp": {
-              "_id": "9SDYkrDvnRWKosjp",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; <strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
             },
-            "Jp0fAMyvMGrDHcQC": {
-              "_id": "Jp0fAMyvMGrDHcQC",
-              "type": "applied",
-              "name": "Restrained",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} restrained (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 damage; <strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -186,102 +117,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "gqTZcKiW2MumEkYw": {
-              "_id": "gqTZcKiW2MumEkYw",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "7",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 acid damage; <strong class=\"potency-value\">M&lt;0</strong> the target has line of effect only within 4 squares (save ends)"
             },
-            "jjDb1yvmsx0azqxW": {
-              "name": "Line of Effect",
-              "img": null,
-              "type": "applied",
-              "_id": "jjDb1yvmsx0azqxW",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} the target has line of effect only within 4 squares (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "CeHsuaeJBSk9zHLW": {
-                      "condition": "failure"
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "{{potency}} the target has line of effect only within 3 squares (save ends)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  },
-                  "effects": {
-                    "fsrOwbQJuzkl0P5M": {
-                      "condition": "failure"
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} the target has line of effect only within 2 squares (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  },
-                  "effects": {
-                    "5foqFKboxvzrPq2M": {
-                      "condition": "failure"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 acid damage; <strong class=\"potency-value\">M&lt;1</strong> the target has line of effect only within 3 squares (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 acid damage; <strong class=\"potency-value\">M&lt;2</strong> the target has line of effect only within 2 squares (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

@@ -65,67 +65,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
           },
-          "effects": {
-            "AttoFZAzQQ1nyjma": {
-              "_id": "AttoFZAzQQ1nyjma",
-              "type": "forced",
-              "name": "push",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [
-                    "vertical"
-                  ],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "reason"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "5",
-                  "display": "{{forced}}",
-                  "properties": [
-                    "vertical"
-                  ],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "reason"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "6",
-                  "display": "{{forced}}",
-                  "properties": [
-                    "vertical"
-                  ],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "reason"
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "vertical push 3"
+            },
+            {
+              "tier": 2,
+              "display": "vertical push 5"
+            },
+            {
+              "tier": 3,
+              "display": "vertical push 6"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>For each elemental mote adjacent to the wyrd, the size of the cube increases by 1.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -150,7 +116,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
@@ -159,7 +125,11 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>The wyrd summons two <strong>@UUID[Actor.yYTmi4JwOnyA0w1s]{Elemental Motes}</strong> or two <strong>@UUID[Actor.a44HNNYHX0iwwarq]{Soot Crows}</strong> into unoccupied spaces within distance.</p>"
+          "after": "<p>The wyrd summons two <strong><span class=\"reference-text\">Elemental Motes</span></strong> or two <strong><span class=\"reference-text\">Soot Crows</span></strong> into unoccupied spaces within distance.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -186,7 +156,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
@@ -196,6 +166,10 @@
         "effect": {
           "before": "",
           "after": "<p>The wyrd shapes the land in the area as if it were loose clay, either raising the ground or pushing it down to create a trench. Any creature in the area moves with the terrain to its new higher elevation, or falls if the ground is lowered beneath them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -216,7 +190,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -224,6 +198,10 @@
         "effect": {
           "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -254,139 +232,28 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "MHZRMgetPqMBjeRG": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "MHZRMgetPqMBjeRG",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [
-                    "cold",
-                    "corruption",
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "9",
-                  "types": [
-                    "cold",
-                    "corruption",
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "12",
-                  "types": [
-                    "cold",
-                    "corruption",
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
             },
-            "7wFlAnp9aHcFYTRq": {
-              "name": "chosen condition",
-              "img": null,
-              "type": "applied",
-              "_id": "7wFlAnp9aHcFYTRq",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} chosen condition (save ends)",
-                  "potency": {
-                    "characteristic": "reason",
-                    "value": "1"
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": ""
-                },
-                "tier3": {
-                  "potency": {
-                    "value": "3",
-                    "characteristic": ""
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": ""
-                }
-              }
+            {
+              "tier": 2,
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
           "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -407,7 +274,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -415,6 +282,10 @@
         "effect": {
           "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

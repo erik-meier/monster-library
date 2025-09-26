@@ -88,100 +88,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "kEN2KR7aBZ1FqLZL": {
-              "_id": "kEN2KR7aBZ1FqLZL",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; push 1"
             },
-            "cD24mxVwrOtA4gKt": {
-              "_id": "cD24mxVwrOtA4gKt",
-              "type": "forced",
-              "name": "push",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "1",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "display": "one target is pushed up to 2 squares; the other target is vertical pushed up to 2 squares",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "2",
-                  "properties": [
-                    "vertical"
-                  ],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "one target is pushed up to 2 squares and knocked  prone; the other target is vertical pushed up to 3 squares",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "3",
-                  "properties": [
-                    "vertical"
-                  ],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage; one target is pushed up to 2 squares; the other target is vertical pushed up to 2 squares"
+            },
+            {
+              "tier": 3,
+              "display": "14 damage; one target is pushed up to 2 squares and knocked  prone; the other target is vertical pushed up to 3 squares"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -203,7 +136,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -213,6 +146,10 @@
         "effect": {
           "before": "",
           "after": "<p>The griffon shifts up to their speed along the ground in straight line. Each enemy who comes adjacent to the griffon during this shift can choose to either take 5 damage or be knocked prone</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -239,61 +176,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "0ovZQzixH1noXITs": {
-              "_id": "0ovZQzixH1noXITs",
-              "type": "forced",
-              "name": "push",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}; {{potency}} the forced movement is vertical",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "4",
-                  "display": "{{forced}}; {{potency}} the forced movement is vertical",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "6",
-                  "display": "{{forced}}; {{potency}} the forced movement is vertical",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "push 2; <strong class=\"potency-value\">M&lt;0</strong> the forced movement is vertical"
+            },
+            {
+              "tier": 2,
+              "display": "push 4; <strong class=\"potency-value\">M&lt;1</strong> the forced movement is vertical"
+            },
+            {
+              "tier": 3,
+              "display": "push 6; <strong class=\"potency-value\">M&lt;2</strong> the forced movement is vertical"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -318,7 +227,7 @@
         "trigger": "The griffon flies directly above a creature within distance",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -326,8 +235,12 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The griffon dives down onto the target, taking no damage from falling if they reach the ground. The target takes [[/damage 3]] damage for each square the griffon dove, and if they have A&lt;2 they are grabbed or knocked prone.</p>",
+          "before": "<p>The griffon dives down onto the target, taking no damage from falling if they reach the ground. The target takes <span class=\"damage-value damage-generic\">3</span> damage for each square the griffon dove, and if they have <strong class=\"potency-value\">A&lt;2</strong> they are grabbed or knocked prone.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -348,7 +261,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -356,6 +269,10 @@
         "effect": {
           "before": "<p>The griffon flies up to their speed, and can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -376,7 +293,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -384,6 +301,10 @@
         "effect": {
           "before": "<p>A griffon acting this turn unleashes a hideous screech at one enemy within 5 squares of them, forcing that creature to make an <strong>Intuition test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p>Frightened (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -404,7 +325,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -412,6 +333,10 @@
         "effect": {
           "before": "<p>Winds bluster and blow across the encounter map. Until the end of the encounter, each creature who can’t fly or isn’t mounted on a fly ing creature takes a −3 penalty to stability, and any forced movement effect targeting such a creature moves them an additional 5 squares.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

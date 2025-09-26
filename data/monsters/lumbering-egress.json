@@ -38,7 +38,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the egress can take [[/damage 10]] damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
+          "value": "<p>At the end of each of their turns, the egress can take <span class=\"damage-value damage-generic\">10</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
           "director": ""
         }
       }
@@ -66,108 +66,34 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "S7qqfAiPySJ7sVPk": {
-              "_id": "S7qqfAiPySJ7sVPk",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "11",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "16",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "19",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "11 corruption damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
             },
-            "f4j7YddAKEtlHwvd": {
-              "_id": "f4j7YddAKEtlHwvd",
-              "type": "applied",
-              "name": "Restrained",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} restrained (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "16 corruption damage; <strong class=\"potency-value\">A&lt;3</strong> restrained (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "19 corruption damage; <strong class=\"potency-value\">A&lt;4</strong> restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>@UUID[Compendium.draw-steel.monsters.Actor.UhfOrqouXnHoIS8h]{Ensnarer}</p>"
+          "after": "<p><a href=\"/monster/ensnarer\" class=\"monster-link\">Ensnarer</a></p>"
+        },
+        "spend": {
+          "text": "Two ensnarers appear in unoccupied spaces adjacent to each target. On a tier 3 outcome, four ensnarers appear.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Two ensnarers appear in unoccupied spaces adjacent to each target. On a tier 3 outcome, four ensnarers appear."
         }
       }
     },
@@ -192,7 +118,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
@@ -200,8 +126,13 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Four level 1 demon minions (most commonly ensnarers, frenzieds, and pitlings) burst forth from the egress and appear in unoccupied spaces in the area.</p><p>@UUID[Compendium.draw-steel.monsters.Actor.UhfOrqouXnHoIS8h]{Ensnarer}</p><p>@UUID[Compendium.draw-steel.monsters.Actor.LObGOqAbCzceqLsZ]{Frenzied}</p><p>@UUID[Compendium.draw-steel.monsters.Actor.mk2BTfD8Mv9ffTLT]{Pitling}</p>",
-          "after": "<p>@UUID[Compendium.draw-steel.monsters.Actor.tE6gzFGlFDdSV0nT]{Orliq}</p><p>@UUID[Compendium.draw-steel.monsters.Actor.WwVzCeCSmWxzavYt]{Grulqin}</p><p>@UUID[Compendium.draw-steel.monsters.Actor.FlhenZoGvBLM5GOu]{Wobalas}</p>"
+          "before": "<p>Four level 1 demon minions (most commonly ensnarers, frenzieds, and pitlings) burst forth from the egress and appear in unoccupied spaces in the area.</p><p><a href=\"/monster/ensnarer\" class=\"monster-link\">Ensnarer</a></p><p><a href=\"/monster/frenzied\" class=\"monster-link\">Frenzied</a></p><p><a href=\"/monster/pitling\" class=\"monster-link\">Pitling</a></p>",
+          "after": "<p><a href=\"/monster/orliq\" class=\"monster-link\">Orliq</a></p><p><a href=\"/monster/grulqin\" class=\"monster-link\">Grulqin</a></p><p><a href=\"/monster/wobalas\" class=\"monster-link\">Wobalas</a></p>"
+        },
+        "spend": {
+          "text": "Four level 4 demon minions (most commonly orliq, grul qins, and wobalas) appear instead.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Four level 4 demon minions (most commonly orliq, grul qins, and wobalas) appear instead."
         }
       }
     },
@@ -227,7 +158,7 @@
         "trigger": "The last ally minion on the encounter map dies, or the egress is reduced below 25 Stamina.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
@@ -236,7 +167,11 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>Eight @UUID[Compendium.draw-steel.monsters.Actor.UhfOrqouXnHoIS8h]{Ensnarer} appear anywhere in the area.</p>"
+          "after": "<p>Eight <a href=\"/monster/ensnarer\" class=\"monster-link\">Ensnarer</a> appear anywhere in the area.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -261,102 +196,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "N5fgGQsaihlXSjQg": {
-              "_id": "N5fgGQsaihlXSjQg",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "12",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "15",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 corruption damage"
             },
-            "eFmau5SsmG300ftV": {
-              "_id": "eFmau5SsmG300ftV",
-              "type": "special",
-              "name": "Special",
-              "img": null,
-              "special": {
-                "tier3": {
-                  "display": "two frenzieds appear in unoccupied spaces adjacent to each target",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "12 corruption damage"
             },
-            "Gt5VXFkf2t11dM6w": {
-              "name": "",
-              "img": null,
-              "type": "other",
-              "_id": "Gt5VXFkf2t11dM6w",
-              "other": {
-                "tier1": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "two frenzieds appear in unoccupied spaces adjacent to each target",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "15 corruption damage; two frenzieds appear in unoccupied spaces adjacent to each target"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>@UUID[Compendium.draw-steel.monsters.Actor.LObGOqAbCzceqLsZ]{Frenzied}</p>"
+          "after": "<p><a href=\"/monster/frenzied\" class=\"monster-link\">Frenzied</a></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -381,7 +247,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
@@ -390,7 +256,11 @@
         },
         "effect": {
           "before": "<p>The egress folds into their own portal and teleports to an un occupied space within distance. Four level 4 demon minions (most commonly orliq, grulqins, and wobalas) appear in squares in the egress's former space.</p>",
-          "after": "<p>@UUID[Compendium.draw-steel.monsters.Actor.tE6gzFGlFDdSV0nT]{Orliq}</p><p>@UUID[Compendium.draw-steel.monsters.Actor.WwVzCeCSmWxzavYt]{Grulqin}</p><p>@UUID[Compendium.draw-steel.monsters.Actor.FlhenZoGvBLM5GOu]{Wobalas}</p>"
+          "after": "<p><a href=\"/monster/orliq\" class=\"monster-link\">Orliq</a></p><p><a href=\"/monster/grulqin\" class=\"monster-link\">Grulqin</a></p><p><a href=\"/monster/wobalas\" class=\"monster-link\">Wobalas</a></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -418,108 +288,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "zIkE342EOQt3cwuL": {
-              "_id": "zIkE342EOQt3cwuL",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 corruption damage; <strong class=\"potency-value\">R&lt;2</strong> weakened (save ends)"
             },
-            "UAQ3PsIC6r1no1hl": {
-              "_id": "UAQ3PsIC6r1no1hl",
-              "type": "applied",
-              "name": "Weakened",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} weakened (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 corruption damage; <strong class=\"potency-value\">R&lt;3</strong> weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "14 corruption damage; <strong class=\"potency-value\">R&lt;4</strong> weakened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>Note: Targets <strong>Enemy</strong> and Object in the area.</p>",
-          "after": "<p>The egress recalls and instantly destroys any minion allies on the encounter map. A torrent of churned-up minion bodies, blood, and ichor erupts from the egress, dealing an extra [[/damage 1 damage]] for each minion destroyed this way.</p>"
+          "after": "<p>The egress recalls and instantly destroys any minion allies on the encounter map. A torrent of churned-up minion bodies, blood, and ichor erupts from the egress, dealing an extra <span class=\"damage-value damage-generic\">1</span> damage for each minion destroyed this way.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -540,14 +335,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p>@UUID[Compendium.draw-steel.monster-features.Item.G1VEc1g9pr75VU0O]{Abyssal Rift}</p><p>@UUID[Compendium.draw-steel.monster-features.Item.RXLSjlORw6A3YBHN]{Soulburn}</p><p>@UUID[Compendium.draw-steel.monster-features.Item.koF8i0TPdYrfcm4F]{Abyssal Evolution}</p>",
+          "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -568,7 +367,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": []
           },
           "effects": {}
@@ -576,6 +375,10 @@
         "effect": {
           "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

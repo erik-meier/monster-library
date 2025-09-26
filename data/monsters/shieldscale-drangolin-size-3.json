@@ -71,14 +71,18 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">5</span> damage free strike</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -99,7 +103,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -107,6 +111,10 @@
         "effect": {
           "before": "<p>Two kobolds take their turns in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -127,7 +135,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -135,6 +143,10 @@
         "effect": {
           "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -161,43 +173,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "GRvW6HMmtz7bgqAH": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "GRvW6HMmtz7bgqAH",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [
-                    "fire"
-                  ]
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "fire"
-                  ]
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [
-                    "fire"
-                  ]
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 fire damage"
+            },
+            {
+              "tier": 2,
+              "display": "10 fire damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 fire damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>Special: If the drangolin is size 3, the distance becomes Melee 2.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -218,7 +220,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -226,6 +228,10 @@
         "effect": {
           "before": "<p>The drangolin shifts up to their speed and uses Fiery Claws against each creature who comes adjacent to them during the shift. The drangolin makes one power roll against all targets.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -251,93 +257,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "65MY29NDl5E3WeXo": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "65MY29NDl5E3WeXo",
-              "damage": {
-                "tier1": {
-                  "value": "6"
-                },
-                "tier2": {
-                  "value": "8"
-                },
-                "tier3": {
-                  "value": "11"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage; <strong class=\"potency-value\">A&lt;0</strong> prone"
             },
-            "ToGnUiDWtiFk8zHJ": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "ToGnUiDWtiFk8zHJ",
-              "forced": {
-                "tier2": {
-                  "distance": "3"
-                },
-                "tier3": {
-                  "distance": "5"
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 damage; <strong class=\"potency-value\">A&lt;0</strong> prone"
             },
-            "7GEheZyQEACpCNgL": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "7GEheZyQEACpCNgL",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "agility",
-                    "value": "0"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": ""
-                    }
-                  },
-                  "display": "{{potency}} prone"
-                },
-                "tier2": {
-                  "potency": {
-                    "characteristic": "agility",
-                    "value": "0"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": ""
-                    }
-                  }
-                },
-                "tier3": {
-                  "potency": {
-                    "characteristic": "agility",
-                    "value": "0"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": ""
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "11 damage; <strong class=\"potency-value\">A&lt;0</strong> prone"
             }
-          }
+          ]
         },
         "effect": {
-          "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra [[/damage 2 fire]] damage.</p>",
+          "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra <span class=\"damage-value damage-generic\">2</span> fire damage.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }

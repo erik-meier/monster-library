@@ -79,108 +79,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "PmEXJxwWOIXO9MgW": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "PmEXJxwWOIXO9MgW",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [
-                    "cold"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "cold"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [
-                    "cold"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 cold damage; <strong class=\"potency-value\">P&lt;1</strong> slowed (save ends)"
             },
-            "KbM1jp9SKI4VIhPI": {
-              "name": "slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "KbM1jp9SKI4VIhPI",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} slowed (save ends)",
-                  "potency": {
-                    "characteristic": "presence",
-                    "value": "@potency.weak"
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 cold damage; <strong class=\"potency-value\">P&lt;2</strong> slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "13 cold damage; <strong class=\"potency-value\">P&lt;3</strong> slowed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>The next strike made against the target gains an edge.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -202,7 +127,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -210,6 +135,11 @@
         "effect": {
           "before": "<p><strong>Note: Self or one ally with a Phasing trait.</strong></p><p>The target shifts up to their speed.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "The ghost chooses one additional target.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ghost chooses one additional target."
         }
       }
     },
@@ -235,7 +165,7 @@
         "trigger": "A creature within distance targets the ghost with a strike.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -243,6 +173,10 @@
         "effect": {
           "before": "<p>The ghost halves the damage from the strike and the target takes 2 sonic damage.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -268,7 +202,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -276,6 +210,10 @@
         "effect": {
           "before": "<p>Note: Targets Each 3 size or smaller object in the area</p><p>Each target rises 1 square into the air and is vertically pulled up to 5 squares toward the nearest enemy within 3 squares of the target.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -301,67 +239,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "7ugBCKN4ylSTKnVV": {
-              "name": "Levitated",
-              "img": null,
-              "type": "applied",
-              "_id": "7ugBCKN4ylSTKnVV",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} the target is levitated (EoT)",
-                  "effects": {
-                    "WQ3ZqbDJ5jujIlKb": {
-                      "condition": "failure",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "{{potency}} the target is levitated (EoT)",
-                  "effects": {
-                    "WQ3ZqbDJ5jujIlKb": {
-                      "condition": "failure",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} the target is levitated until the end of the encounter",
-                  "effects": {
-                    "WQ3ZqbDJ5jujIlKb": {
-                      "condition": "failure",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "<strong class=\"potency-value\">P&lt;1</strong> the target is levitated (EoT)"
+            },
+            {
+              "tier": 2,
+              "display": "<strong class=\"potency-value\">P&lt;2</strong> the target is levitated (EoT)"
+            },
+            {
+              "tier": 3,
+              "display": "<strong class=\"potency-value\">P&lt;3</strong> the target is levitated until the end of the encounter"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>A levitated target floats 1 square off the ground when first affected, then rises 1 square at the end of each of their turns. If a levitated target can’t already fly, they can fly but are slowed and weakened while flying this way.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -387,58 +291,33 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "txs3yq3vULjpkn1F": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "txs3yq3vULjpkn1F",
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [
-                    "sonic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [
-                    "sonic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "8",
-                  "types": [
-                    "sonic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 sonic damage"
+            },
+            {
+              "tier": 2,
+              "display": "5 sonic damage"
+            },
+            {
+              "tier": 3,
+              "display": "8 sonic damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
           "after": "<p>A target who has p&lt;2 is reduced to 1 Stamina if they are winded after taking this damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -459,7 +338,7 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -467,6 +346,10 @@
         "effect": {
           "before": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -487,7 +370,7 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -495,6 +378,10 @@
         "effect": {
           "before": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -515,7 +402,7 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -523,6 +410,10 @@
         "effect": {
           "before": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>",
           "after": ""
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     },
@@ -543,14 +434,18 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p>[[/damage 5]] damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p>[[/damage 5]] damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p>[[/damage 5]] damage.</p></td></tr></tbody></table>",
+          "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
           "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
         }
       }
     }
