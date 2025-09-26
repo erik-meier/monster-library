@@ -15,11 +15,17 @@
           <input 
             type="text" 
             id="name" 
+            ref="nameInput"
             v-model="form.name" 
             required 
             class="form-control"
             placeholder="Enter monster name"
+            aria-describedby="name-help"
+            @keydown.enter.prevent="focusNext"
           >
+          <span id="name-help" class="form-help" aria-live="polite">
+            Enter a unique name for your custom monster
+          </span>
         </div>
 
         <div class="form-row">
@@ -28,17 +34,30 @@
             <input 
               type="number" 
               id="level" 
+              ref="levelInput"
               v-model.number="form.level" 
               required 
               min="1" 
               max="20"
               class="form-control"
+              aria-describedby="level-help"
+              @keydown.tab="handleTabNavigation"
             >
+            <span id="level-help" class="form-help">
+              Monster level (1-20)
+            </span>
           </div>
 
           <div class="form-group">
             <label for="role">Role</label>
-            <select id="role" v-model="form.role" class="form-control">
+            <select 
+              id="role" 
+              ref="roleSelect"
+              v-model="form.role" 
+              class="form-control"
+              aria-describedby="role-help"
+              @keydown.enter.prevent="focusNext"
+            >
               <option value="">Select role...</option>
               <option value="Ambusher">Ambusher</option>
               <option value="Artillery">Artillery</option>
@@ -50,11 +69,22 @@
               <option value="Mount">Mount</option>
               <option value="Support">Support</option>
             </select>
+            <span id="role-help" class="form-help">
+              Optional combat role specialization
+            </span>
           </div>
 
           <div class="form-group">
             <label for="organization">Organization *</label>
-            <select id="organization" v-model="form.organization" required class="form-control">
+            <select 
+              id="organization" 
+              ref="organizationSelect"
+              v-model="form.organization" 
+              required 
+              class="form-control"
+              aria-describedby="organization-help"
+              @keydown.enter.prevent="focusNext"
+            >
               <option value="">Select organization...</option>
               <option value="Minion">Minion</option>
               <option value="Horde">Horde</option>
@@ -63,6 +93,9 @@
               <option value="Solo">Solo</option>
               <option value="Leader">Leader</option>
             </select>
+            <span id="organization-help" class="form-help">
+              Required monster organization type
+            </span>
           </div>
         </div>
       </div>
@@ -232,8 +265,21 @@
 
       <!-- Form Actions -->
       <div class="form-actions">
-        <button type="button" @click="goBack" class="btn btn-secondary">Cancel</button>
-        <button type="submit" class="btn btn-primary" :disabled="submitting">
+        <button 
+          type="button" 
+          @click="goBack" 
+          class="btn btn-secondary"
+          @keydown.escape="goBack"
+        >
+          Cancel
+        </button>
+        <button 
+          type="submit" 
+          ref="submitButton"
+          class="btn btn-primary" 
+          :disabled="submitting"
+          @keydown.enter.prevent="handleSubmit"
+        >
           {{ submitting ? 'Creating...' : 'Create Monster' }}
         </button>
       </div>
@@ -280,6 +326,14 @@ export default {
       }
     }
   },
+  mounted() {
+    // Auto-focus on the first input when the component mounts
+    this.$nextTick(() => {
+      if (this.$refs.nameInput) {
+        this.$refs.nameInput.focus()
+      }
+    })
+  },
   methods: {
     async handleSubmit() {
       this.submitting = true
@@ -299,6 +353,28 @@ export default {
     },
     goBack() {
       this.$router.go(-1)
+    },
+    focusNext(event) {
+      // Find the next focusable element
+      const form = event.target.closest('form')
+      const focusableElements = form.querySelectorAll(
+        'input, select, textarea, button:not([disabled])'
+      )
+      const currentIndex = Array.from(focusableElements).indexOf(event.target)
+      const nextElement = focusableElements[currentIndex + 1]
+      
+      if (nextElement) {
+        nextElement.focus()
+      }
+    },
+    handleTabNavigation(event) {
+      // Allow natural tab behavior, but ensure proper focus flow
+      if (!event.shiftKey) {
+        // Tab forward - let browser handle it naturally
+        return
+      }
+      // Shift+Tab backward - let browser handle it naturally
+      return
     }
   }
 }
@@ -382,6 +458,14 @@ export default {
   outline: 0;
   border-color: #80bdff;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-help {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+  line-height: 1.4;
 }
 
 .form-actions {

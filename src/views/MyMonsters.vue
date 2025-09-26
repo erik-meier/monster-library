@@ -115,13 +115,33 @@
     </div>
     
     <!-- Delete Confirmation Dialog -->
-    <div v-if="showDeleteDialog" class="dialog-overlay">
-      <div class="dialog">
-        <h3>Delete Monster</h3>
-        <p>Are you sure you want to delete "{{ monsterToDelete?.name }}"? This action cannot be undone.</p>
+    <div v-if="showDeleteDialog" class="dialog-overlay" @click.self="cancelDelete">
+      <div 
+        class="dialog" 
+        role="dialog"
+        aria-labelledby="delete-dialog-title"
+        aria-describedby="delete-dialog-desc"
+        @keydown.escape="cancelDelete"
+        ref="deleteDialog"
+      >
+        <h3 id="delete-dialog-title">Delete Monster</h3>
+        <p id="delete-dialog-desc">Are you sure you want to delete "{{ monsterToDelete?.name }}"? This action cannot be undone.</p>
         <div class="dialog-actions">
-          <button @click="cancelDelete" class="btn btn-secondary">Cancel</button>
-          <button @click="confirmDelete" class="btn btn-danger">Delete</button>
+          <button 
+            @click="cancelDelete" 
+            class="btn btn-secondary"
+            @keydown.escape="cancelDelete"
+          >
+            Cancel
+          </button>
+          <button 
+            @click="confirmDelete" 
+            class="btn btn-danger"
+            ref="deleteButton"
+            @keydown.enter.prevent="confirmDelete"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>
@@ -191,6 +211,13 @@ export default {
     deleteMonster(monster) {
       this.monsterToDelete = monster
       this.showDeleteDialog = true
+      
+      // Focus the delete button when the dialog opens
+      this.$nextTick(() => {
+        if (this.$refs.deleteButton) {
+          this.$refs.deleteButton.focus()
+        }
+      })
     },
     
     cancelDelete() {
