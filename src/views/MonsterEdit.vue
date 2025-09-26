@@ -9,13 +9,33 @@
     </div>
     
     <!-- Copy Dialog for Official Monsters -->
-    <div v-else-if="showCopyDialog" class="copy-dialog-overlay">
-      <div class="copy-dialog">
-        <h2>Edit Official Monster</h2>
-        <p>You cannot edit official monsters directly. Would you like to create a custom copy instead?</p>
+    <div v-else-if="showCopyDialog" class="copy-dialog-overlay" @click.self="goBack">
+      <div 
+        class="copy-dialog" 
+        role="dialog" 
+        aria-labelledby="copy-dialog-title"
+        aria-describedby="copy-dialog-desc"
+        @keydown.escape="goBack"
+        ref="copyDialog"
+      >
+        <h2 id="copy-dialog-title">Edit Official Monster</h2>
+        <p id="copy-dialog-desc">You cannot edit official monsters directly. Would you like to create a custom copy instead?</p>
         <div class="dialog-actions">
-          <button @click="goBack" class="btn btn-secondary">Cancel</button>
-          <button @click="createCopy" class="btn btn-primary">Create Copy</button>
+          <button 
+            @click="goBack" 
+            class="btn btn-secondary"
+            @keydown.escape="goBack"
+          >
+            Cancel
+          </button>
+          <button 
+            @click="createCopy" 
+            class="btn btn-primary"
+            ref="copyButton"
+            @keydown.enter.prevent="createCopy"
+          >
+            Create Copy
+          </button>
         </div>
       </div>
     </div>
@@ -36,11 +56,17 @@
             <input 
               type="text" 
               id="name" 
+              ref="nameInput"
               v-model="form.name" 
               required 
               class="form-control"
               placeholder="Enter monster name"
+              aria-describedby="name-help"
+              @keydown.enter.prevent="focusNext"
             >
+            <span id="name-help" class="form-help" aria-live="polite">
+              Enter a unique name for your custom monster
+            </span>
           </div>
 
           <div class="form-row">
@@ -295,6 +321,15 @@ export default {
   },
   async mounted() {
     await this.loadMonster()
+    
+    // Set up focus management
+    this.$nextTick(() => {
+      if (this.showCopyDialog && this.$refs.copyButton) {
+        this.$refs.copyButton.focus()
+      } else if (this.$refs.nameInput) {
+        this.$refs.nameInput.focus()
+      }
+    })
   },
   methods: {
     async loadMonster() {
@@ -415,6 +450,20 @@ export default {
     
     goBack() {
       this.$router.go(-1)
+    },
+    
+    focusNext(event) {
+      // Find the next focusable element
+      const form = event.target.closest('form')
+      const focusableElements = form.querySelectorAll(
+        'input, select, textarea, button:not([disabled])'
+      )
+      const currentIndex = Array.from(focusableElements).indexOf(event.target)
+      const nextElement = focusableElements[currentIndex + 1]
+      
+      if (nextElement) {
+        nextElement.focus()
+      }
     }
   }
 }
@@ -537,6 +586,14 @@ export default {
   outline: 0;
   border-color: #80bdff;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-help {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+  line-height: 1.4;
 }
 
 .form-actions {
