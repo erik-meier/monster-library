@@ -41,8 +41,8 @@
           <label for="role-filter">Role:</label>
           <select id="role-filter" v-model="selectedRole" class="filter-select">
             <option value="">All Roles</option>
-            <option v-for="role in availableRoles" :key="role" :value="role">
-              {{ role }}
+            <option v-for="role in availableRoles" :key="role.value" :value="role.value">
+              {{ role.label }}
             </option>
           </select>
         </div>
@@ -51,8 +51,8 @@
           <label for="organization-filter">Organization:</label>
           <select id="organization-filter" v-model="selectedOrganization" class="filter-select">
             <option value="">All Organizations</option>
-            <option v-for="org in availableOrganizations" :key="org" :value="org">
-              {{ org }}
+            <option v-for="org in availableOrganizations" :key="org.value" :value="org.value">
+              {{ org.label }}
             </option>
           </select>
         </div>
@@ -95,7 +95,7 @@
         <div class="monster-card-header">
           <h3 class="monster-name">{{ monster.name }}</h3>
           <div class="monster-role">Level {{ monster.level }}{{ monster.organization ? ` ${monster.organization}` : ''
-            }}{{ monster.role ? ` ${monster.role}` : '' }}</div>
+          }}{{ monster.role ? ` ${monster.role}` : '' }}</div>
         </div>
 
         <div class="monster-stats">
@@ -106,6 +106,11 @@
           <span v-for="keyword in monster.keywords" :key="keyword" class="keyword-tag">
             {{ keyword }}
           </span>
+        </div>
+
+        <div class="monster-card-footer">
+          <div class="monster-role">Level {{ monster.level }}{{ formatRoleOrganization(monster) ? `
+            ${formatRoleOrganization(monster) }` : '' }}</div>
         </div>
       </div>
     </div>
@@ -152,11 +157,17 @@ export default {
     },
     availableRoles() {
       const roles = [...new Set(this.monsters.map(m => m.role).filter(r => r))];
-      return roles.sort();
+      return roles.sort().map(role => ({
+        value: role,
+        label: role.charAt(0).toUpperCase() + role.slice(1)
+      }));
     },
     availableOrganizations() {
       const orgs = [...new Set(this.monsters.map(m => m.organization).filter(o => o))];
-      return orgs.sort();
+      return orgs.sort().map(org => ({
+        value: org,
+        label: org.charAt(0).toUpperCase() + org.slice(1)
+      }));
     },
     filteredMonsters() {
       let filtered = this.monsters
@@ -181,8 +192,8 @@ export default {
       }
 
       // Level filter
-      if (this.selectedLevel) {
-        filtered = filtered.filter(monster => monster.level === this.selectedLevel)
+      if (this.selectedLevel !== '') {
+        filtered = filtered.filter(monster => monster.level === parseInt(this.selectedLevel))
       }
 
       // EV filter
@@ -288,6 +299,13 @@ export default {
       this.selectedOrganization = ''
       this.sortBy = 'name'
       this.sortOrder = 'asc'
+    },
+    formatRoleOrganization(monster) {
+      if (!monster.role && !monster.organization) return '';
+      if (!monster.role) return monster.organization;
+      if (!monster.organization) return monster.role;
+      if (monster.role === monster.organization) return monster.role;
+      return `${monster.organization} ${monster.role}`;
     },
     truncateText(text, maxLength) {
       if (!text) return ''
@@ -409,19 +427,12 @@ export default {
   background: #c82333;
 }
 
-.monster-stats {
+.monster-keywords {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.monster-ev {
-  background: #007bff;
-  color: white;
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: bold;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .loading,
@@ -444,48 +455,6 @@ export default {
   gap: 1.5rem;
 }
 
-.monster-card {
-  background: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border-left: 4px solid #8b4513;
-}
-
-.monster-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.monster-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-}
-
-.monster-name {
-  color: #8b4513;
-  font-size: 1.3rem;
-  margin: 0;
-  font-weight: bold;
-  flex: 1;
-}
-
-.monster-role {
-  background-color: #8b4513;
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  white-space: nowrap;
-  margin-left: 0.5rem;
-  text-transform: capitalize;
-}
-
 .monster-info {
   margin-bottom: 1rem;
 }
@@ -494,13 +463,6 @@ export default {
   color: #6c757d;
   font-style: italic;
   font-size: 0.9rem;
-}
-
-.monster-keywords {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
 }
 
 .keyword-tag {
