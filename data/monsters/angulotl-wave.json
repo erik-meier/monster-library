@@ -243,7 +243,7 @@
             },
             {
               "tier": 3,
-              "display": "5 holy damage"
+              "display": "5 holy damage; {{potency}} the target is illuminated (save ends)"
             }
           ]
         },

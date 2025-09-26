@@ -84,7 +84,7 @@
             },
             {
               "tier": 3,
-              "display": "9 damage; <strong class=\"potency-value\">I<4</strong> taunted (EoT) or frightened of all minotaurs (Save Ends)"
+              "display": "9 damage; <strong class=\"potency-value\">I&lt;4</strong> taunted (EoT) or frightened of all minotaurs (Save Ends)"
             }
           ]
         },

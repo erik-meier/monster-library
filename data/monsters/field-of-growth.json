@@ -91,11 +91,11 @@
             },
             {
               "tier": 2,
-              "display": "13 damage; <strong class=\"potency-value\">R<1</strong> prone and can't stand (save ends)"
+              "display": "13 damage; <strong class=\"potency-value\">R&lt;1</strong> prone and can't stand (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 damage"
+              "display": "16 damage; <strong class=\"potency-value\">R&lt;2</strong> prone and can't stand (save ends)"
             }
           ]
         },

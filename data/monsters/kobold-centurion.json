@@ -212,15 +212,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7+5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+              "display": "7+5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "10+5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+              "display": "10+5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "13+5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+              "display": "13+5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
             }
           ]
         },
@@ -375,15 +375,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+              "display": "10 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+              "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
             }
           ]
         },

@@ -73,15 +73,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage;  pull 1; or the tonguer can shift 1 square toward the target"
+              "display": "2 damage; pull 1; or the tonguer can shift 1 square toward the target"
             },
             {
               "tier": 2,
-              "display": "4 damage;  pull 2; or the tonguer shifts up to 2 squares toward the target"
+              "display": "4 damage; pull 2; or the tonguer shifts up to 2 squares toward the target"
             },
             {
               "tier": 3,
-              "display": "5 damage;  pull 3; or the tonguer shifts up to 3 squares toward the target"
+              "display": "5 damage; pull 3; or the tonguer shifts up to 3 squares toward the target"
             }
           ]
         },

@@ -98,15 +98,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
+              "display": "2 damage; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "4 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+              "display": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "5 damage; <strong class=\"potency-value\">A<3</strong> bleeding (save ends); <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
+              "display": "5 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends); <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
             }
           ]
         },
@@ -153,15 +153,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<1</strong> they are beheaded"
+              "display": "9 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;1</strong> they are beheaded"
             },
             {
               "tier": 2,
-              "display": "13 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<2</strong> they are beheaded"
+              "display": "13 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;2</strong> they are beheaded"
             },
             {
               "tier": 3,
-              "display": "16 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<3</strong> they are beheaded"
+              "display": "16 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;3</strong> they are beheaded"
             }
           ]
         },
@@ -241,15 +241,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "13 damage; prone; <strong class=\"potency-value\">M<2</strong> dazed (save ends)"
+              "display": "13 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 damage; prone; <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
+              "display": "16 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
             }
           ]
         },

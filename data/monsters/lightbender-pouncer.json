@@ -77,11 +77,11 @@
             },
             {
               "tier": 2,
-              "display": "11 damage; <strong class=\"potency-value\">A<1</strong> prone"
+              "display": "11 damage; <strong class=\"potency-value\">A&lt;1</strong> prone"
             },
             {
               "tier": 3,
-              "display": "14 damage"
+              "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> prone"
             }
           ]
         },
@@ -129,11 +129,11 @@
             },
             {
               "tier": 2,
-              "display": "7 damage; <strong class=\"potency-value\">A<1</strong> the target is dazzled (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">A&lt;1</strong> the target is dazzled (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 damage"
+              "display": "10 damage; <strong class=\"potency-value\">A&lt;2</strong> the target is dazzled (save ends)"
             }
           ]
         },
@@ -179,15 +179,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">I<0</strong> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;0</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">I<1</strong> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "<strong class=\"potency-value\">I<2</strong> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
             }
           ]
         },

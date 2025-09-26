@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "14 damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
+              "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
             }
           ]
         },
@@ -128,15 +128,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; <strong class=\"potency-value\">R<0</strong> the target is marked (save ends)"
+              "display": "4 damage; <strong class=\"potency-value\">R&lt;0</strong> the target is marked (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 damage; <strong class=\"potency-value\">R<1</strong> slowed and the target is marked (save ends)"
+              "display": "6 damage; <strong class=\"potency-value\">R&lt;1</strong> slowed and the target is marked (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; <strong class=\"potency-value\">R<2</strong> slowed and the target is marked (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">R&lt;2</strong> slowed and the target is marked (save ends)"
             }
           ]
         },

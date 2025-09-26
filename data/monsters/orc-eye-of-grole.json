@@ -184,11 +184,11 @@
             },
             {
               "tier": 2,
-              "display": "9 cold/fire/lightning damage;  slide 4, or the eye shifts up to 4 squares away from the target"
+              "display": "9 cold/fire/lightning damage; slide 4, or the eye shifts up to 4 squares away from the target"
             },
             {
               "tier": 3,
-              "display": "12 cold/fire/lightning damage;  slide 6, or the eye shifts up to 6 squares away from the target"
+              "display": "12 cold/fire/lightning damage; slide 6, or the eye shifts up to 6 squares away from the target"
             }
           ]
         },

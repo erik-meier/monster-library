@@ -77,11 +77,11 @@
             },
             {
               "tier": 2,
-              "display": "4 damage;  pull 1"
+              "display": "4 damage; pull 1"
             },
             {
               "tier": 3,
-              "display": "5 damage;  pull 2"
+              "display": "5 damage; pull 2"
             }
           ]
         },

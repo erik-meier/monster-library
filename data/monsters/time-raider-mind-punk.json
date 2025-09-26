@@ -79,11 +79,11 @@
             },
             {
               "tier": 2,
-              "display": "8 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 damage"
+              "display": "11 damage; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
             }
           ]
         },
@@ -131,11 +131,11 @@
             },
             {
               "tier": 2,
-              "display": "6 psychic damage;  push 1; prone and can't stand (save ends)"
+              "display": "6 psychic damage; push 1; prone and can't stand (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 psychic damage;  push 2; prone and can't stand (save ends)"
+              "display": "9 psychic damage; push 2; prone and can't stand (save ends)"
             }
           ]
         },

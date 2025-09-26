@@ -196,11 +196,11 @@
             },
             {
               "tier": 2,
-              "display": "8 psychic damage; <strong class=\"potency-value\">I<2</strong> frightened (save ends)"
+              "display": "8 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 psychic damage"
+              "display": "10 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
             }
           ]
         },
@@ -244,15 +244,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": " push 2"
+              "display": "push 2"
             },
             {
               "tier": 2,
-              "display": " push 3"
+              "display": "push 3"
             },
             {
               "tier": 3,
-              "display": " push 5"
+              "display": "push 5"
             }
           ]
         },
@@ -297,15 +297,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
+              "display": "6 damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; prone; <strong class=\"potency-value\">M<2</strong> slowed"
+              "display": "8 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> slowed"
             },
             {
               "tier": 3,
-              "display": "10 damage; prone; <strong class=\"potency-value\">M<3</strong> slowed"
+              "display": "10 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> slowed"
             }
           ]
         },

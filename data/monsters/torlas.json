@@ -87,15 +87,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": " slide 3"
+              "display": "slide 3"
             },
             {
               "tier": 2,
-              "display": " slide 4"
+              "display": "slide 4"
             },
             {
               "tier": 3,
-              "display": " slide 5"
+              "display": "slide 5"
             }
           ]
         },

@@ -88,11 +88,11 @@
             },
             {
               "tier": 2,
-              "display": "14 damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
+              "display": "14 damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "17 damage"
+              "display": "17 damage; <strong class=\"potency-value\">M&lt;3</strong> slowed (save ends)"
             }
           ]
         },
@@ -192,15 +192,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; <strong class=\"potency-value\">A<1</strong> grabbed"
+              "display": "9 damage; <strong class=\"potency-value\">A&lt;1</strong> grabbed"
             },
             {
               "tier": 2,
-              "display": "14 damage"
+              "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
             },
             {
               "tier": 3,
-              "display": "17 damage; <strong class=\"potency-value\">A<3</strong> grabbed and the target takes a bane on the Escape Maneuver"
+              "display": "17 damage; <strong class=\"potency-value\">A&lt;3</strong> grabbed and the target takes a bane on the Escape Maneuver"
             }
           ]
         },

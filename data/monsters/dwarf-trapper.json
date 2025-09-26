@@ -63,15 +63,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage;  push 2"
+              "display": "5 damage; push 2"
             },
             {
               "tier": 2,
-              "display": "7 damage;  push 4"
+              "display": "7 damage; push 4"
             },
             {
               "tier": 3,
-              "display": "9 damage;  push 6"
+              "display": "9 damage; push 6"
             }
           ]
         },

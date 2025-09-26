@@ -90,11 +90,11 @@
             },
             {
               "tier": 2,
-              "display": "14 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+              "display": "14 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "17 damage"
+              "display": "17 damage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)"
             }
           ]
         },
@@ -140,15 +140,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "10 acid damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+              "display": "10 acid damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "16 acid damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
+              "display": "16 acid damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "20 acid damage; <strong class=\"potency-value\">M<3</strong> weakened (save ends)"
+              "display": "20 acid damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
             }
           ]
         },

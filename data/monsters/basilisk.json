@@ -128,11 +128,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">M<0</strong> restrained (save ends)"
+              "display": "<strong class=\"potency-value\">M&lt;0</strong> restrained (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "<strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "Slowed (save ends); or if <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+              "display": "Slowed (save ends); or if <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
             }
           ]
         },
@@ -177,15 +181,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 poison damage; <strong class=\"potency-value\">M<0</strong> weakened (save ends)"
+              "display": "4 poison damage; <strong class=\"potency-value\">M&lt;0</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 poison damage; <strong class=\"potency-value\">M<1</strong> weakened and slowed (save ends)"
+              "display": "6 poison damage; <strong class=\"potency-value\">M&lt;1</strong> weakened and slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 poison damage; <strong class=\"potency-value\">M<2</strong> weakened and slowed (save ends)"
+              "display": "9 poison damage; <strong class=\"potency-value\">M&lt;2</strong> weakened and slowed (save ends)"
             }
           ]
         },

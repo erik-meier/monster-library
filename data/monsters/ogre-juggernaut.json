@@ -89,11 +89,11 @@
             },
             {
               "tier": 2,
-              "display": "10 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">A&lt;1</strong></strong>  vertical push 2"
+              "display": "10 damage; <strong class=\"potency-value\">A&lt;1</strong> vertical push 2"
             },
             {
               "tier": 3,
-              "display": "13 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">A&lt;2</strong></strong>  vertical slide 3"
+              "display": "13 damage; <strong class=\"potency-value\">A&lt;2</strong> vertical slide 3"
             }
           ]
         },
@@ -142,11 +142,11 @@
             },
             {
               "tier": 2,
-              "display": "6 damage;  push 2; <strong class=\"potency-value\">M<1</strong> prone"
+              "display": "6 damage; push 2; <strong class=\"potency-value\">M&lt;1</strong> prone"
             },
             {
               "tier": 3,
-              "display": "9 damage;  push 4"
+              "display": "9 damage; push 4; <strong class=\"potency-value\">M&lt;2</strong> prone"
             }
           ]
         },
@@ -189,15 +189,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">I<0</strong> frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;0</strong> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">I<1</strong> frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;1</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "<strong class=\"potency-value\">I<2</strong> frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
             }
           ]
         },

@@ -77,11 +77,11 @@
             },
             {
               "tier": 2,
-              "display": "5 damage; <strong class=\"potency-value\">A<1</strong> grabbed"
+              "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> grabbed"
             },
             {
               "tier": 3,
-              "display": "6 damage; <strong class=\"potency-value\">A<2</strong> grabbed"
+              "display": "6 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
             }
           ]
         },

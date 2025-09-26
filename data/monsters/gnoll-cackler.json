@@ -72,15 +72,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 psychic damage; {{potency}} the target makes a free strike against a  creature of the cackler’s choice"
+              "display": "4 psychic damage; <strong class=\"potency-value\">I&lt;0</strong> the target makes a free strike against a  creature of the cackler’s choice"
             },
             {
               "tier": 2,
-              "display": "5 psychic damage; {{potency}} the target makes a free strike against a  creature of the cackler’s choice"
+              "display": "5 psychic damage; <strong class=\"potency-value\">I&lt;1</strong> the target makes a free strike against a  creature of the cackler’s choice"
             },
             {
               "tier": 3,
-              "display": "7 psychic damage; {{potency}} the target uses a signature ability  against a creature of the cackler’s choice"
+              "display": "7 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> the target uses a signature ability  against a creature of the cackler’s choice"
             }
           ]
         },

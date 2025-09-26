@@ -84,15 +84,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 corruption damage; <strong class=\"potency-value\">A<1</strong> weakened (save ends)"
+              "display": "9 corruption damage; <strong class=\"potency-value\">A&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "13 corruption damage; <strong class=\"potency-value\">A<2</strong> weakened (save ends)"
+              "display": "13 corruption damage; <strong class=\"potency-value\">A&lt;2</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 corruption damage; <strong class=\"potency-value\">A<3</strong> weakened (save ends)"
+              "display": "16 corruption damage; <strong class=\"potency-value\">A&lt;3</strong> weakened (save ends)"
             }
           ]
         },
@@ -228,15 +228,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": " slide 2; {{potency}} the slide is vertical"
+              "display": "slide 2; <strong class=\"potency-value\">I&lt;1</strong> the slide is vertical"
             },
             {
               "tier": 2,
-              "display": " slide 3; <strong class=\"potency-value\">R<2</strong> the slide is vertical, and the target is restrained (EoT)"
+              "display": "slide 3; <strong class=\"potency-value\">R&lt;2</strong> the slide is vertical, and the target is restrained (EoT)"
             },
             {
               "tier": 3,
-              "display": " vertical slide 5; <strong class=\"potency-value\">R<3</strong> restrained (EoT)"
+              "display": "vertical slide 5; <strong class=\"potency-value\">R&lt;3</strong> restrained (EoT)"
             }
           ]
         },
@@ -372,15 +372,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 fire damage; <strong class=\"potency-value\">A<1</strong> weakened (save ends)"
+              "display": "6 fire damage; <strong class=\"potency-value\">A&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 fire damage; <strong class=\"potency-value\">A<2</strong> weakened (save ends)"
+              "display": "10 fire damage; <strong class=\"potency-value\">A&lt;2</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 fire damage; <strong class=\"potency-value\">A<3</strong> weakened (save ends)"
+              "display": "13 fire damage; <strong class=\"potency-value\">A&lt;3</strong> weakened (save ends)"
             }
           ]
         },
@@ -456,15 +456,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/fire/lightning damage; <strong class=\"potency-value\">R<1</strong> frightened (save ends)"
+              "display": "5 cold/fire/lightning damage; <strong class=\"potency-value\">R&lt;1</strong> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 cold/fire/lightning damage; <strong class=\"potency-value\">R<2</strong> frightened (save ends)"
+              "display": "8 cold/fire/lightning damage; <strong class=\"potency-value\">R&lt;2</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 cold/fire/lightning damage; <strong class=\"potency-value\">R<3</strong> frightened (save ends)"
+              "display": "11 cold/fire/lightning damage; <strong class=\"potency-value\">R&lt;3</strong> frightened (save ends)"
             }
           ]
         },

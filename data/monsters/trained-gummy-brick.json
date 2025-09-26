@@ -78,7 +78,7 @@
             },
             {
               "tier": 2,
-              "display": "10 acid damage"
+              "display": "10 acid damage; {{potency}} dazed (save ends)"
             },
             {
               "tier": 3,

@@ -78,11 +78,11 @@
             },
             {
               "tier": 2,
-              "display": "12 fire damage; <strong class=\"potency-value\">A<1</strong> the target is burning (save ends)"
+              "display": "12 fire damage; <strong class=\"potency-value\">A&lt;1</strong> the target is burning (save ends)"
             },
             {
               "tier": 3,
-              "display": "15 fire damage"
+              "display": "15 fire damage; <strong class=\"potency-value\">A&lt;2</strong> the target is burning (save ends)"
             }
           ]
         },

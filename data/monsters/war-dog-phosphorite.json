@@ -74,15 +74,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 acid damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
+              "display": "4 acid damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 acid damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+              "display": "6 acid damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 acid damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+              "display": "10 acid damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             }
           ]
         },

@@ -92,7 +92,7 @@
             },
             {
               "tier": 3,
-              "display": "8 corruption damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
+              "display": "8 corruption damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
             }
           ]
         },

@@ -127,15 +127,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; {{potency}} grabbed"
+              "display": "8 damage; <strong class=\"potency-value\">P&lt;0</strong> grabbed"
             },
             {
               "tier": 2,
-              "display": "13 damage; {{potency}} grabbed"
+              "display": "13 damage; <strong class=\"potency-value\">P&lt;1</strong> grabbed"
             },
             {
               "tier": 3,
-              "display": "16 damage; {{potency}} grabbed"
+              "display": "16 damage; <strong class=\"potency-value\">P&lt;2</strong> grabbed"
             }
           ]
         },

@@ -141,15 +141,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "10 psychic damage;  pull 2"
+              "display": "10 psychic damage; pull 2"
             },
             {
               "tier": 2,
-              "display": "15 psychic damage;  pull 4"
+              "display": "15 psychic damage; pull 4"
             },
             {
               "tier": 3,
-              "display": "18 psychic damage;  pull 6"
+              "display": "18 psychic damage; pull 6"
             }
           ]
         },
@@ -268,15 +268,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": " pull 2; <strong class=\"potency-value\">I<2</strong> frightened (EoT)"
+              "display": "pull 2; <strong class=\"potency-value\">I&lt;2</strong> frightened (EoT)"
             },
             {
               "tier": 2,
-              "display": " pull 4; <strong class=\"potency-value\">I<3</strong> frightened (save ends)"
+              "display": "pull 4; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": " pull 6"
+              "display": "pull 6; <strong class=\"potency-value\">I&lt;4</strong> frightened (save ends)"
             }
           ]
         },

@@ -150,15 +150,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; <strong class=\"potency-value\">A<1</strong> grabbed"
+              "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> grabbed"
             },
             {
               "tier": 2,
-              "display": "8 damage; <strong class=\"potency-value\">A<2</strong> grabbed"
+              "display": "8 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
             },
             {
               "tier": 3,
-              "display": "11 damage; <strong class=\"potency-value\">A<3</strong> grabbed"
+              "display": "11 damage; <strong class=\"potency-value\">A&lt;3</strong> grabbed"
             }
           ]
         },
@@ -258,11 +258,11 @@
             },
             {
               "tier": 2,
-              "display": "6 damage;  push 2"
+              "display": "6 damage; push 2"
             },
             {
               "tier": 3,
-              "display": "7 damage;  push 4"
+              "display": "7 damage; push 4"
             }
           ]
         },
@@ -459,15 +459,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 acid damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+              "display": "5 acid damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 acid damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
+              "display": "8 acid damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 acid damage; <strong class=\"potency-value\">M<3</strong> weakened (save ends)"
+              "display": "11 acid damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
             }
           ]
         },

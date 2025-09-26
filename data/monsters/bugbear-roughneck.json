@@ -115,15 +115,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; <strong class=\"potency-value\">M<0</strong> prone"
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;0</strong> prone"
             },
             {
               "tier": 2,
-              "display": "13 damage; <strong class=\"potency-value\">M<1</strong> prone"
+              "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> prone"
             },
             {
               "tier": 3,
-              "display": "16 damage; <strong class=\"potency-value\">M<2</strong> prone"
+              "display": "16 damage; <strong class=\"potency-value\">M&lt;2</strong> prone"
             }
           ]
         },

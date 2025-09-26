@@ -90,11 +90,11 @@
             },
             {
               "tier": 2,
-              "display": "5 psychic damage; <strong class=\"potency-value\">P<1</strong> weakened (save ends)"
+              "display": "5 psychic damage; <strong class=\"potency-value\">P&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "7 psychic damage"
+              "display": "7 psychic damage; <strong class=\"potency-value\">P&lt;2</strong> weakened (save ends)"
             }
           ]
         },

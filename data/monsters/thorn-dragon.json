@@ -193,15 +193,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage;  push 2"
+              "display": "8 damage; push 2"
             },
             {
               "tier": 2,
-              "display": "12 damage;  push 4"
+              "display": "12 damage; push 4"
             },
             {
               "tier": 3,
-              "display": "15 damage;  push 8"
+              "display": "15 damage; push 8"
             }
           ]
         },
@@ -361,15 +361,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; <strong class=\"potency-value\">A<1</strong> restrained (save ends)"
+              "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 damage; <strong class=\"potency-value\">A<3</strong> restrained (save ends)"
+              "display": "12 damage; <strong class=\"potency-value\">A&lt;3</strong> restrained (save ends)"
             }
           ]
         },

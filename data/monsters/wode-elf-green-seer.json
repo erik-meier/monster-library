@@ -77,11 +77,11 @@
             },
             {
               "tier": 2,
-              "display": "7 damage; <strong class=\"potency-value\">I<1</strong> restrained (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">I&lt;1</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage"
+              "display": "9 damage; <strong class=\"potency-value\">I&lt;2</strong> restrained (save ends)"
             }
           ]
         },
@@ -130,11 +130,11 @@
             },
             {
               "tier": 2,
-              "display": "4 damage; <strong class=\"potency-value\">P<1</strong> weakened (save ends)"
+              "display": "4 damage; <strong class=\"potency-value\">P&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "6 damage; <strong class=\"potency-value\">P<1</strong> bleeding (save ends); the target has a double bane on strikes (save ends)"
+              "display": "6 damage; <strong class=\"potency-value\">P&lt;1</strong> bleeding (save ends); the target has a double bane on strikes (save ends)"
             }
           ]
         },

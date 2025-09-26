@@ -1,5 +1,5 @@
 // Auto-generated monster data bundle
-// Generated on: 2025-09-26T20:30:26.581Z
+// Generated on: 2025-09-26T21:27:01.679Z
 
 export const monsterIndex = {
   "name": {
@@ -5603,7 +5603,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 holy damage"
+                "display": "5 holy damage; {{potency}} the target is illuminated (save ends)"
               }
             ]
           },
@@ -6160,11 +6160,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "9 damage;  pull 1"
+                "display": "9 damage; pull 1"
               },
               {
                 "tier": 3,
-                "display": "12 damage;  pull 2"
+                "display": "12 damage; pull 2"
               }
             ]
           },
@@ -6487,11 +6487,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "10 damage;  push 1"
+                "display": "10 damage; push 1"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  push 2"
+                "display": "13 damage; push 2"
               }
             ]
           },
@@ -6661,11 +6661,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "10 damage; <strong class=\"potency-value\">M<1</strong> prone"
+                "display": "10 damage; <strong class=\"potency-value\">M&lt;1</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "13 damage"
+                "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> prone"
               }
             ]
           },
@@ -6851,11 +6851,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "11 damage;  push 1; <strong class=\"potency-value\">M<1</strong> prone"
+                "display": "11 damage; push 1; <strong class=\"potency-value\">M&lt;1</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "14 damage;  push 2"
+                "display": "14 damage; push 2; <strong class=\"potency-value\">M&lt;1</strong> prone"
               }
             ]
           },
@@ -6907,7 +6907,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "8 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -7118,15 +7118,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; <strong class=\"potency-value\">A<1</strong> grabbed"
+                "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> grabbed"
               },
               {
                 "tier": 2,
-                "display": "8 damage; <strong class=\"potency-value\">A<2</strong> grabbed"
+                "display": "8 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
               },
               {
                 "tier": 3,
-                "display": "11 damage; <strong class=\"potency-value\">A<3</strong> grabbed"
+                "display": "11 damage; <strong class=\"potency-value\">A&lt;3</strong> grabbed"
               }
             ]
           },
@@ -7226,11 +7226,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 damage;  push 2"
+                "display": "6 damage; push 2"
               },
               {
                 "tier": 3,
-                "display": "7 damage;  push 4"
+                "display": "7 damage; push 4"
               }
             ]
           },
@@ -7427,15 +7427,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 acid damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+                "display": "5 acid damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 acid damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
+                "display": "8 acid damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 acid damage; <strong class=\"potency-value\">M<3</strong> weakened (save ends)"
+                "display": "11 acid damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
               }
             ]
           },
@@ -7688,15 +7688,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "10 damage; if one target has <strong class=\"potency-value\">M<2</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A<2</strong> they are grabbed"
+                "display": "10 damage; if one target has <strong class=\"potency-value\">M&lt;2</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A&lt;2</strong> they are grabbed"
               },
               {
                 "tier": 2,
-                "display": "15 damage; if one target has <strong class=\"potency-value\">M<3</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A<3</strong> they are grabbed"
+                "display": "15 damage; if one target has <strong class=\"potency-value\">M&lt;3</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A&lt;3</strong> they are grabbed"
               },
               {
                 "tier": 3,
-                "display": "18 damage; if one target has <strong class=\"potency-value\">M<4</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A<4</strong> they are grabbed"
+                "display": "18 damage; if one target has <strong class=\"potency-value\">M&lt;4</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A&lt;4</strong> they are grabbed"
               }
             ]
           },
@@ -7742,15 +7742,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage; <strong class=\"potency-value\">A<2</strong> weakened (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; <strong class=\"potency-value\">A<3</strong> weakened (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">A&lt;3</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 damage; <strong class=\"potency-value\">A<4</strong> weakened (save ends)"
+                "display": "11 damage; <strong class=\"potency-value\">A&lt;4</strong> weakened (save ends)"
               }
             ]
           },
@@ -7797,15 +7797,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 corruption damage; <strong class=\"potency-value\">M<2</strong> the target is impaled (save ends)"
+                "display": "6 corruption damage; <strong class=\"potency-value\">M&lt;2</strong> the target is impaled (save ends)"
               },
               {
                 "tier": 2,
-                "display": "11 corruption damage; <strong class=\"potency-value\">M<3</strong> the target is impaled (save ends)"
+                "display": "11 corruption damage; <strong class=\"potency-value\">M&lt;3</strong> the target is impaled (save ends)"
               },
               {
                 "tier": 3,
-                "display": "14 corruption damage; <strong class=\"potency-value\">M<4</strong> the target is impaled (save ends)"
+                "display": "14 corruption damage; <strong class=\"potency-value\">M&lt;4</strong> the target is impaled (save ends)"
               }
             ]
           },
@@ -7921,15 +7921,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage;  vertical push 2"
+                "display": "6 damage; vertical push 2"
               },
               {
                 "tier": 2,
-                "display": "11 damage;  vertical push 2"
+                "display": "11 damage; vertical push 2"
               },
               {
                 "tier": 3,
-                "display": "14 damage;  vertical push 3"
+                "display": "14 damage; vertical push 3"
               }
             ]
           },
@@ -8287,11 +8287,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">M<0</strong> restrained (save ends)"
+                "display": "<strong class=\"potency-value\">M&lt;0</strong> restrained (save ends)"
+              },
+              {
+                "tier": 2,
+                "display": "<strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "Slowed (save ends); or if <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+                "display": "Slowed (save ends); or if <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -8336,15 +8340,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 poison damage; <strong class=\"potency-value\">M<0</strong> weakened (save ends)"
+                "display": "4 poison damage; <strong class=\"potency-value\">M&lt;0</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 poison damage; <strong class=\"potency-value\">M<1</strong> weakened and slowed (save ends)"
+                "display": "6 poison damage; <strong class=\"potency-value\">M&lt;1</strong> weakened and slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 poison damage; <strong class=\"potency-value\">M<2</strong> weakened and slowed (save ends)"
+                "display": "9 poison damage; <strong class=\"potency-value\">M&lt;2</strong> weakened and slowed (save ends)"
               }
             ]
           },
@@ -8600,15 +8604,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 acid damage;  pull 1"
+                "display": "8 acid damage; pull 1"
               },
               {
                 "tier": 2,
-                "display": "10 acid damage;  pull 2"
+                "display": "10 acid damage; pull 2"
               },
               {
                 "tier": 3,
-                "display": "14 acid damage;  pull 3"
+                "display": "14 acid damage; pull 3"
               }
             ]
           },
@@ -8655,11 +8659,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">A<0</strong> restrained (save ends)"
+                "display": "<strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
+              },
+              {
+                "tier": 2,
+                "display": "<strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "Slowed (save ends); or if <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+                "display": "Slowed (save ends); or if <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -8705,15 +8713,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 corruption damage; <strong class=\"potency-value\">R<0</strong> dazed (save ends)"
+                "display": "8 corruption damage; <strong class=\"potency-value\">R&lt;0</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 corruption damage"
+                "display": "10 corruption damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "14 corruption damage; <strong class=\"potency-value\">R<2</strong> dazed and slowed (save ends)"
+                "display": "14 corruption damage; <strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (save ends)"
               }
             ]
           },
@@ -9027,15 +9035,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">P<1</strong> the target turns green (save ends)"
+                "display": "<strong class=\"potency-value\">P&lt;1</strong> the target turns green (save ends)"
               },
               {
                 "tier": 2,
-                "display": "<strong class=\"potency-value\">P<2</strong> the target turns green (save ends)"
+                "display": "<strong class=\"potency-value\">P&lt;2</strong> the target turns green (save ends)"
               },
               {
                 "tier": 3,
-                "display": "<strong class=\"potency-value\">P<3</strong> the target turns green (save ends)"
+                "display": "<strong class=\"potency-value\">P&lt;3</strong> the target turns green (save ends)"
               }
             ]
           },
@@ -9118,15 +9126,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">A<1</strong> they are beheaded (see Lop)"
+                "display": "6 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">A&lt;1</strong> they are beheaded (see Lop)"
               },
               {
                 "tier": 2,
-                "display": "7 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">A<2</strong> they are beheaded (see Lop)"
+                "display": "7 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">A&lt;2</strong> they are beheaded (see Lop)"
               },
               {
                 "tier": 3,
-                "display": "8 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">A<3</strong> they are beheaded (see Lop)"
+                "display": "8 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">A&lt;3</strong> they are beheaded (see Lop)"
               }
             ]
           },
@@ -9202,15 +9210,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
+                "display": "2 damage; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 damage; <strong class=\"potency-value\">A<3</strong> bleeding (save ends); <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends); <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
               }
             ]
           },
@@ -9257,15 +9265,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<1</strong> they are beheaded"
+                "display": "9 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;1</strong> they are beheaded"
               },
               {
                 "tier": 2,
-                "display": "13 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<2</strong> they are beheaded"
+                "display": "13 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;2</strong> they are beheaded"
               },
               {
                 "tier": 3,
-                "display": "16 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<3</strong> they are beheaded"
+                "display": "16 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;3</strong> they are beheaded"
               }
             ]
           },
@@ -9345,15 +9353,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "13 damage; prone; <strong class=\"potency-value\">M<2</strong> dazed (save ends)"
+                "display": "13 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "16 damage; prone; <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
+                "display": "16 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
               }
             ]
           },
@@ -9572,15 +9580,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
+                "display": "2 damage; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 damage; <strong class=\"potency-value\">A<3</strong> bleeding (save ends); <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends); <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
               }
             ]
           },
@@ -9627,15 +9635,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<1</strong> they are beheaded"
+                "display": "9 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;1</strong> they are beheaded"
               },
               {
                 "tier": 2,
-                "display": "13 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<2</strong> they are beheaded"
+                "display": "13 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;2</strong> they are beheaded"
               },
               {
                 "tier": 3,
-                "display": "16 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M<3</strong> they are beheaded"
+                "display": "16 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;3</strong> they are beheaded"
               }
             ]
           },
@@ -9715,15 +9723,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "13 damage; prone; <strong class=\"potency-value\">M<2</strong> dazed (save ends)"
+                "display": "13 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "16 damage; prone; <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
+                "display": "16 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
               }
             ]
           },
@@ -9974,15 +9982,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  pull 2"
+                "display": "7 damage; pull 2"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  pull 3"
+                "display": "10 damage; pull 3"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  pull 4"
+                "display": "13 damage; pull 4"
               }
             ]
           },
@@ -10026,15 +10034,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
+                "display": "2 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "3 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+                "display": "3 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "4 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -10079,15 +10087,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 corruption damage; <strong class=\"potency-value\">P<0</strong> slowed (save ends)"
+                "display": "5 corruption damage; <strong class=\"potency-value\">P&lt;0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 corruption damage; <strong class=\"potency-value\">P<1</strong> the target is shapechanged (save ends)"
+                "display": "8 corruption damage; <strong class=\"potency-value\">P&lt;1</strong> the target is shapechanged (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 corruption damage; <strong class=\"potency-value\">P<2</strong> the target is shapechanged (save ends)"
+                "display": "11 corruption damage; <strong class=\"potency-value\">P&lt;2</strong> the target is shapechanged (save ends)"
               }
             ]
           },
@@ -10811,11 +10819,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage; <strong class=\"potency-value\">P<3</strong> bleeding (save ends)"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;3</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "8 corruption damage; grabbed"
+                "display": "8 corruption damage; grabbed; <strong class=\"potency-value\">P&lt;4</strong> bleeding (save ends)"
               }
             ]
           },
@@ -11051,15 +11059,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage;  pull 2"
+                "display": "3 damage; pull 2"
               },
               {
                 "tier": 2,
-                "display": "6 damage;  pull 3"
+                "display": "6 damage; pull 3"
               },
               {
                 "tier": 3,
-                "display": "7 damage;  push 4; grabbed"
+                "display": "7 damage; push 4; grabbed"
               }
             ]
           },
@@ -11325,15 +11333,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; <strong class=\"potency-value\">M<0</strong> prone"
+                "display": "8 damage; <strong class=\"potency-value\">M&lt;0</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "13 damage; <strong class=\"potency-value\">M<1</strong> prone"
+                "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "16 damage; <strong class=\"potency-value\">M<2</strong> prone"
+                "display": "16 damage; <strong class=\"potency-value\">M&lt;2</strong> prone"
               }
             ]
           },
@@ -11718,7 +11726,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 damage; <strong class=\"potency-value\">A<3</strong> slowed (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">A&lt;3</strong> slowed (save ends)"
               }
             ]
           },
@@ -11930,11 +11938,11 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; {{potency}} grabbed"
+                "display": "8 damage; <strong class=\"potency-value\">A&lt;0+1</strong> grabbed"
               },
               {
                 "tier": 2,
-                "display": "13 damage"
+                "display": "13 damage; <strong class=\"potency-value\">A&lt;1+1</strong> grabbed"
               },
               {
                 "tier": 3,
@@ -12034,15 +12042,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "11 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+                "display": "11 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "14 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -12501,11 +12509,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "8 psychic damage; <strong class=\"potency-value\">I<2</strong> frightened (save ends)"
+                "display": "8 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "10 psychic damage"
+                "display": "10 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
               }
             ]
           },
@@ -12549,15 +12557,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": " push 2"
+                "display": "push 2"
               },
               {
                 "tier": 2,
-                "display": " push 3"
+                "display": "push 3"
               },
               {
                 "tier": 3,
-                "display": " push 5"
+                "display": "push 5"
               }
             ]
           },
@@ -12602,15 +12610,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
+                "display": "6 damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; prone; <strong class=\"potency-value\">M<2</strong> slowed"
+                "display": "8 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> slowed"
               },
               {
                 "tier": 3,
-                "display": "10 damage; prone; <strong class=\"potency-value\">M<3</strong> slowed"
+                "display": "10 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> slowed"
               }
             ]
           },
@@ -12961,11 +12969,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "5 psychic damage; <strong class=\"potency-value\">P<1</strong> weakened (save ends)"
+                "display": "5 psychic damage; <strong class=\"potency-value\">P&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "7 psychic damage"
+                "display": "7 psychic damage; <strong class=\"potency-value\">P&lt;2</strong> weakened (save ends)"
               }
             ]
           },
@@ -13222,15 +13230,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 psychic damage; <strong class=\"potency-value\">I<1</strong> slowed (save ends)"
+                "display": "4 psychic damage; <strong class=\"potency-value\">I&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "7 psychic damage; <strong class=\"potency-value\">I<2</strong> slowed (save ends)"
+                "display": "7 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "10 psychic damage; <strong class=\"potency-value\">I<3</strong> slowed (save ends)"
+                "display": "10 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> slowed (save ends)"
               }
             ]
           },
@@ -13626,15 +13634,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage;  pull 1"
+                "display": "2 damage; pull 1"
               },
               {
                 "tier": 2,
-                "display": "4 damage;  pull 2"
+                "display": "4 damage; pull 2"
               },
               {
                 "tier": 3,
-                "display": "5 damage;  pull 3"
+                "display": "5 damage; pull 3"
               }
             ]
           },
@@ -14057,15 +14065,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage;  pull 2"
+                "display": "5 damage; pull 2"
               },
               {
                 "tier": 2,
-                "display": "7 damage;  pull 3"
+                "display": "7 damage; pull 3"
               },
               {
                 "tier": 3,
-                "display": "8 damage;  pull 4"
+                "display": "8 damage; pull 4"
               }
             ]
           },
@@ -14801,7 +14809,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -15062,15 +15070,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": " slide 3"
+                "display": "slide 3"
               },
               {
                 "tier": 2,
-                "display": " slide 4"
+                "display": "slide 4"
               },
               {
                 "tier": 3,
-                "display": " slide 5"
+                "display": "slide 5"
               }
             ]
           },
@@ -15372,15 +15380,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 psychic damage; <strong class=\"potency-value\">A<1</strong> the target is warped (Save Ends)"
+                "display": "3 psychic damage; <strong class=\"potency-value\">A&lt;1</strong> the target is warped (Save Ends)"
               },
               {
                 "tier": 2,
-                "display": "5 psychic damage; <strong class=\"potency-value\">A<2</strong> the target is warped (Save Ends)"
+                "display": "5 psychic damage; <strong class=\"potency-value\">A&lt;2</strong> the target is warped (Save Ends)"
               },
               {
                 "tier": 3,
-                "display": "6 psychic damage; <strong class=\"potency-value\">A<3</strong> the target is warped (Save Ends)"
+                "display": "6 psychic damage; <strong class=\"potency-value\">A&lt;3</strong> the target is warped (Save Ends)"
               }
             ]
           },
@@ -15619,15 +15627,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage;  pull 1; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
+                "display": "2 damage; pull 1; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "3 damage;  pull 1; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "3 damage; pull 1; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "4 damage;  pull 1; <strong class=\"potency-value\">A<3</strong> bleeding (save ends)"
+                "display": "4 damage; pull 1; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
               }
             ]
           },
@@ -15807,7 +15815,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 corruption damage; <strong class=\"potency-value\">I<3</strong> dazed (save ends)"
+                "display": "7 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> dazed (save ends)"
               }
             ]
           },
@@ -16187,15 +16195,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 acid damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
+                "display": "5 acid damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "7 acid damage"
+                "display": "7 acid damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 acid damage; <strong class=\"potency-value\">M<3</strong> restrained (save ends)"
+                "display": "9 acid damage; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
               }
             ]
           },
@@ -16391,15 +16399,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "11 corruption damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
+                "display": "11 corruption damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "16 corruption damage; <strong class=\"potency-value\">A<3</strong> restrained (save ends)"
+                "display": "16 corruption damage; <strong class=\"potency-value\">A&lt;3</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "19 corruption damage; <strong class=\"potency-value\">A<4</strong> restrained (save ends)"
+                "display": "19 corruption damage; <strong class=\"potency-value\">A&lt;4</strong> restrained (save ends)"
               }
             ]
           },
@@ -16613,15 +16621,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 corruption damage; <strong class=\"potency-value\">R<2</strong> weakened (save ends)"
+                "display": "6 corruption damage; <strong class=\"potency-value\">R&lt;2</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "11 corruption damage; <strong class=\"potency-value\">R<3</strong> weakened (save ends)"
+                "display": "11 corruption damage; <strong class=\"potency-value\">R&lt;3</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "14 corruption damage; <strong class=\"potency-value\">R<4</strong> weakened (save ends)"
+                "display": "14 corruption damage; <strong class=\"potency-value\">R&lt;4</strong> weakened (save ends)"
               }
             ]
           },
@@ -16796,15 +16804,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 corruption damage;  slide 2"
+                "display": "2 corruption damage; slide 2"
               },
               {
                 "tier": 2,
-                "display": "4 corruption damage;  vertical slide 2"
+                "display": "4 corruption damage; vertical slide 2"
               },
               {
                 "tier": 3,
-                "display": "6 corruption damage;  vertical slide 2"
+                "display": "6 corruption damage; vertical slide 2"
               }
             ]
           },
@@ -17029,15 +17037,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 psychic damage; <strong class=\"potency-value\">I<1</strong> dazed (save ends)"
+                "display": "4 psychic damage; <strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 psychic damage; <strong class=\"potency-value\">I<2</strong> dazed (save ends)"
+                "display": "6 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "8 psychic damage; <strong class=\"potency-value\">I<3</strong> dazed (save ends)"
+                "display": "8 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> dazed (save ends)"
               }
             ]
           },
@@ -17423,15 +17431,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "10 psychic damage;  pull 2"
+                "display": "10 psychic damage; pull 2"
               },
               {
                 "tier": 2,
-                "display": "15 psychic damage;  pull 4"
+                "display": "15 psychic damage; pull 4"
               },
               {
                 "tier": 3,
-                "display": "18 psychic damage;  pull 6"
+                "display": "18 psychic damage; pull 6"
               }
             ]
           },
@@ -17550,15 +17558,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": " pull 2; <strong class=\"potency-value\">I<2</strong> frightened (EoT)"
+                "display": "pull 2; <strong class=\"potency-value\">I&lt;2</strong> frightened (EoT)"
               },
               {
                 "tier": 2,
-                "display": " pull 4; <strong class=\"potency-value\">I<3</strong> frightened (save ends)"
+                "display": "pull 4; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": " pull 6"
+                "display": "pull 6; <strong class=\"potency-value\">I&lt;4</strong> frightened (save ends)"
               }
             ]
           },
@@ -17991,15 +17999,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage;  push 2"
+                "display": "8 damage; push 2"
               },
               {
                 "tier": 2,
-                "display": "12 damage;  push 4"
+                "display": "12 damage; push 4"
               },
               {
                 "tier": 3,
-                "display": "15 damage;  push 8"
+                "display": "15 damage; push 8"
               }
             ]
           },
@@ -18159,15 +18167,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; <strong class=\"potency-value\">A<1</strong> restrained (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 damage; <strong class=\"potency-value\">A<3</strong> restrained (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">A&lt;3</strong> restrained (save ends)"
               }
             ]
           },
@@ -18800,15 +18808,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 damage;  push 1"
+                "display": "1 damage; push 1"
               },
               {
                 "tier": 2,
-                "display": "2 damage;  push 2"
+                "display": "2 damage; push 2"
               },
               {
                 "tier": 3,
-                "display": "3 damage;  push 4"
+                "display": "3 damage; push 4"
               }
             ]
           },
@@ -18967,15 +18975,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage;  push 1"
+                "display": "6 damage; push 1"
               },
               {
                 "tier": 2,
-                "display": "9 damage;  push 3"
+                "display": "9 damage; push 3"
               },
               {
                 "tier": 3,
-                "display": "12 damage;  push 5"
+                "display": "12 damage; push 5"
               }
             ]
           },
@@ -19214,15 +19222,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 damage;  pull 1"
+                "display": "1 damage; pull 1"
               },
               {
                 "tier": 2,
-                "display": "2 damage;  pull 2"
+                "display": "2 damage; pull 2"
               },
               {
                 "tier": 3,
-                "display": "3 damage;  pull 4"
+                "display": "3 damage; pull 4"
               }
             ]
           },
@@ -19382,15 +19390,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage;  push 1"
+                "display": "3 damage; push 1"
               },
               {
                 "tier": 2,
-                "display": "6 damage;  push 3; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
+                "display": "6 damage; push 3; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "8 damage;  push 3; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
+                "display": "8 damage; push 3; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
               }
             ]
           },
@@ -19435,15 +19443,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 poison damage; <strong class=\"potency-value\">I<0</strong> dazed (save ends)"
+                "display": "3 poison damage; <strong class=\"potency-value\">I&lt;0</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 poison damage; <strong class=\"potency-value\">I<1</strong> dazed (save ends)"
+                "display": "6 poison damage; <strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "8 poison damage; <strong class=\"potency-value\">I<2</strong> dazed (save ends)"
+                "display": "8 poison damage; <strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
               }
             ]
           },
@@ -19645,15 +19653,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage;  slide 1"
+                "display": "8 damage; slide 1"
               },
               {
                 "tier": 2,
-                "display": "12 damage;  slide 3"
+                "display": "12 damage; slide 3"
               },
               {
                 "tier": 3,
-                "display": "15 damage;  slide 5"
+                "display": "15 damage; slide 5"
               }
             ]
           },
@@ -20051,15 +20059,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; <strong class=\"potency-value\">M<0</strong> slowed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "7 damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
               }
             ]
           },
@@ -20297,15 +20305,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  slide 1"
+                "display": "7 damage; slide 1"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  slide 1"
+                "display": "10 damage; slide 1"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  slide 1"
+                "display": "13 damage; slide 1"
               }
             ]
           },
@@ -20531,15 +20539,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; <strong class=\"potency-value\">M<0</strong> slowed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage"
+                "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 damage; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+                "display": "11 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -20583,15 +20591,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage;  push 2; <strong class=\"potency-value\">R<1</strong> slowed (save ends)"
+                "display": "4 damage; push 2; <strong class=\"potency-value\">R&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 damage;  push 3; <strong class=\"potency-value\">R<2</strong> slowed (save ends)"
+                "display": "6 damage; push 3; <strong class=\"potency-value\">R&lt;2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage;  push 3; <strong class=\"potency-value\">R<3</strong> slowed (save ends)"
+                "display": "9 damage; push 3; <strong class=\"potency-value\">R&lt;3</strong> slowed (save ends)"
               }
             ]
           },
@@ -20793,15 +20801,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage;  push 2"
+                "display": "5 damage; push 2"
               },
               {
                 "tier": 2,
-                "display": "7 damage;  push 4"
+                "display": "7 damage; push 4"
               },
               {
                 "tier": 3,
-                "display": "9 damage;  push 6"
+                "display": "9 damage; push 6"
               }
             ]
           },
@@ -21029,15 +21037,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  push 1"
+                "display": "7 damage; push 1"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  push 3"
+                "display": "10 damage; push 3"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  push 5; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+                "display": "13 damage; push 5; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -21082,15 +21090,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; <strong class=\"potency-value\">A<0</strong> Slowed (Save Ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A&lt;0</strong> Slowed (Save Ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; <strong class=\"potency-value\">A<1</strong> Slowed (Save Ends)"
+                "display": "8 damage; <strong class=\"potency-value\">A&lt;1</strong> Slowed (Save Ends)"
               },
               {
                 "tier": 3,
-                "display": "11 damage; <strong class=\"potency-value\">A<2</strong> Slowed (Save Ends)"
+                "display": "11 damage; <strong class=\"potency-value\">A&lt;2</strong> Slowed (Save Ends)"
               }
             ]
           },
@@ -21323,7 +21331,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -21367,15 +21375,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 lightning damage; <strong class=\"potency-value\">A<0</strong> slowed (save ends)"
+                "display": "3 lightning damage; <strong class=\"potency-value\">A&lt;0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 lightning damage; <strong class=\"potency-value\">A<1</strong> slowed (save ends)"
+                "display": "6 lightning damage; <strong class=\"potency-value\">A&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "7 lightning damage; <strong class=\"potency-value\">A<2</strong> slowed (save ends)"
+                "display": "7 lightning damage; <strong class=\"potency-value\">A&lt;2</strong> slowed (save ends)"
               }
             ]
           },
@@ -21540,11 +21548,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "12 fire damage; <strong class=\"potency-value\">A<1</strong> the target is burning (save ends)"
+                "display": "12 fire damage; <strong class=\"potency-value\">A&lt;1</strong> the target is burning (save ends)"
               },
               {
                 "tier": 3,
-                "display": "15 fire damage"
+                "display": "15 fire damage; <strong class=\"potency-value\">A&lt;2</strong> the target is burning (save ends)"
               }
             ]
           },
@@ -21819,11 +21827,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "5 damage; 4 lightning damage;  push 1"
+                "display": "5 damage; 4 lightning damage; push 1"
               },
               {
                 "tier": 3,
-                "display": "5 damage; 7 lightning damage;  push 3"
+                "display": "5 damage; 7 lightning damage; push 3"
               }
             ]
           },
@@ -22109,15 +22117,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  slide 1"
+                "display": "7 damage; slide 1"
               },
               {
                 "tier": 2,
-                "display": "11 damage;  slide 2"
+                "display": "11 damage; slide 2"
               },
               {
                 "tier": 3,
-                "display": "14 damage;  slide 3"
+                "display": "14 damage; slide 3"
               }
             ]
           },
@@ -22406,11 +22414,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "13 damage; <strong class=\"potency-value\">R<1</strong> prone and can't stand (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">R&lt;1</strong> prone and can't stand (save ends)"
               },
               {
                 "tier": 3,
-                "display": "16 damage"
+                "display": "16 damage; <strong class=\"potency-value\">R&lt;2</strong> prone and can't stand (save ends)"
               }
             ]
           },
@@ -22709,11 +22717,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "12 damage; <strong class=\"potency-value\">M<1</strong> restrained (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "15 damage; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+                "display": "15 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -23023,11 +23031,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage;  push 3"
+                "display": "7 damage; push 3"
               },
               {
                 "tier": 3,
-                "display": "10 damage;  push 3; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "10 damage; push 3; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -23103,15 +23111,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
               }
             ]
           },
@@ -23247,7 +23255,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 lightning damage; <strong class=\"potency-value\">M<2</strong> prone"
+                "display": "9 lightning damage; <strong class=\"potency-value\">M&lt;2</strong> prone"
               }
             ]
           },
@@ -23410,15 +23418,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
               }
             ]
           },
@@ -23562,11 +23570,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "1 damage; <strong class=\"potency-value\">R<1</strong> damage weakness 3 (save ends)"
+                "display": "1 damage; <strong class=\"potency-value\">R&lt;1</strong> damage weakness 3 (save ends)"
               },
               {
                 "tier": 3,
-                "display": "2 damage"
+                "display": "2 damage; <strong class=\"potency-value\">R&lt;2</strong> damage weakness 3 (save ends)"
               }
             ]
           },
@@ -23734,7 +23742,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; <strong class=\"potency-value\">R<2</strong> bleeding (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">R&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -23849,15 +23857,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
               }
             ]
           },
@@ -24173,7 +24181,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "13 damage; <strong class=\"potency-value\">R<2</strong> bleeding (save ends); <strong class=\"potency-value\">I<2</strong> frightened (save ends); <strong class=\"potency-value\">P<2</strong> restrained (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> bleeding (save ends); <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends); <strong class=\"potency-value\">P&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -24288,15 +24296,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
               }
             ]
           },
@@ -24382,7 +24390,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "13 damage; <strong class=\"potency-value\">R<2</strong> bleeding (save ends); <strong class=\"potency-value\">I<2</strong> frightened (save ends); <strong class=\"potency-value\">P<2</strong> restrained (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> bleeding (save ends); <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends); <strong class=\"potency-value\">P&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -24478,15 +24486,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 cold damage; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;0</strong></strong>  push 3"
+                "display": "4 cold damage; <strong class=\"potency-value\">M&lt;0</strong> push 3"
               },
               {
                 "tier": 2,
-                "display": "6 cold damage; {{potency}}  push 5 or prone"
+                "display": "6 cold damage; <strong class=\"potency-value\">M&lt;1</strong> push 5 or prone"
               },
               {
                 "tier": 3,
-                "display": "9 cold damage; {{potency}}  slide 5 or prone"
+                "display": "9 cold damage; <strong class=\"potency-value\">M&lt;2</strong> slide 5 or prone"
               }
             ]
           },
@@ -24531,15 +24539,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; <strong class=\"potency-value\">R<0</strong> slowed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">R&lt;0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage"
+                "display": "8 damage; <strong class=\"potency-value\">R&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 damage; <strong class=\"potency-value\">R<2</strong> restrained (save ends)"
+                "display": "11 damage; <strong class=\"potency-value\">R&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -24615,15 +24623,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
               }
             ]
           },
@@ -24752,15 +24760,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 lightning damage; <strong class=\"potency-value\">R<1</strong> dazed (save ends)"
+                "display": "9 lightning damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "14 lightning damage; <strong class=\"potency-value\">R<2</strong> dazed (save ends)"
+                "display": "14 lightning damage; <strong class=\"potency-value\">R&lt;2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "17 lightning damage; <strong class=\"potency-value\">R<3</strong> dazed (save ends)"
+                "display": "17 lightning damage; <strong class=\"potency-value\">R&lt;3</strong> dazed (save ends)"
               }
             ]
           },
@@ -25083,15 +25091,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
               }
             ]
           },
@@ -25225,11 +25233,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 psychic damage; <strong class=\"potency-value\">I<1</strong> weakened (save ends)"
+                "display": "7 psychic damage; <strong class=\"potency-value\">I&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 psychic damage"
+                "display": "9 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> weakened (save ends)"
               }
             ]
           },
@@ -25345,15 +25353,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
               }
             ]
           },
@@ -25661,15 +25669,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": " vertical push 3"
+                "display": "vertical push 3"
               },
               {
                 "tier": 2,
-                "display": " vertical push 5"
+                "display": "vertical push 5"
               },
               {
                 "tier": 3,
-                "display": " vertical push 6"
+                "display": "vertical push 6"
               }
             ]
           },
@@ -25823,15 +25831,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
               }
             ]
           },
@@ -26092,15 +26100,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+                "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+                "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+                "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
               }
             ]
           },
@@ -26400,15 +26408,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage;  push 1"
+                "display": "6 damage; push 1"
               },
               {
                 "tier": 2,
-                "display": "9 damage;  push 3"
+                "display": "9 damage; push 3"
               },
               {
                 "tier": 3,
-                "display": "12 damage;  push 5"
+                "display": "12 damage; push 5"
               }
             ]
           },
@@ -26642,15 +26650,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage;  pull 1"
+                "display": "5 damage; pull 1"
               },
               {
                 "tier": 2,
-                "display": "8 damage;  pull 3; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
+                "display": "8 damage; pull 3; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "10 damage;  pull 5"
+                "display": "10 damage; pull 5; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
               }
             ]
           },
@@ -26886,11 +26894,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage; <strong class=\"potency-value\">I<1</strong> restrained (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">I&lt;1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage"
+                "display": "9 damage; <strong class=\"potency-value\">I&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -26939,11 +26947,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 damage; <strong class=\"potency-value\">P<1</strong> weakened (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">P&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "6 damage; <strong class=\"potency-value\">P<1</strong> bleeding (save ends); the target has a double bane on strikes (save ends)"
+                "display": "6 damage; <strong class=\"potency-value\">P&lt;1</strong> bleeding (save ends); the target has a double bane on strikes (save ends)"
               }
             ]
           },
@@ -27437,7 +27445,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -27676,7 +27684,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -27723,15 +27731,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage; <strong class=\"potency-value\">R<0</strong> the target is marked (save ends)"
+                "display": "4 damage; <strong class=\"potency-value\">R&lt;0</strong> the target is marked (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 damage; <strong class=\"potency-value\">R<1</strong> slowed and the target is marked (save ends)"
+                "display": "6 damage; <strong class=\"potency-value\">R&lt;1</strong> slowed and the target is marked (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; <strong class=\"potency-value\">R<2</strong> slowed and the target is marked (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">R&lt;2</strong> slowed and the target is marked (save ends)"
               }
             ]
           },
@@ -28853,15 +28861,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> restrained (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "15 damage; <strong class=\"potency-value\">M<3</strong> restrained (save ends)"
+                "display": "15 damage; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
               }
             ]
           },
@@ -29256,15 +29264,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage;  push 1"
+                "display": "2 damage; push 1"
               },
               {
                 "tier": 2,
-                "display": "4 damage;  push 2"
+                "display": "4 damage; push 2"
               },
               {
                 "tier": 3,
-                "display": "5 damage;  push 3"
+                "display": "5 damage; push 3"
               }
             ]
           },
@@ -29739,15 +29747,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage;  slide 2"
+                "display": "8 damage; slide 2"
               },
               {
                 "tier": 2,
-                "display": "12 damage;  slide 2; prone"
+                "display": "12 damage; slide 2; prone"
               },
               {
                 "tier": 3,
-                "display": "15 damage;  slide 3; prone and can't stand (EoT)"
+                "display": "15 damage; slide 3; prone and can't stand (EoT)"
               }
             ]
           },
@@ -29792,15 +29800,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage;  push 2"
+                "display": "4 damage; push 2"
               },
               {
                 "tier": 2,
-                "display": "7 damage;  push 1"
+                "display": "7 damage; push 1"
               },
               {
                 "tier": 3,
-                "display": "10 damage;  push 1"
+                "display": "10 damage; push 1"
               }
             ]
           },
@@ -29917,15 +29925,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage;  push 2"
+                "display": "4 damage; push 2"
               },
               {
                 "tier": 2,
-                "display": "7 damage;  push 3; prone"
+                "display": "7 damage; push 3; prone"
               },
               {
                 "tier": 3,
-                "display": "10 damage;  push 4"
+                "display": "10 damage; push 4; prone"
               }
             ]
           },
@@ -30044,15 +30052,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; prone; <strong class=\"potency-value\">M<1</strong> restrained (save ends)"
+                "display": "5 damage; prone; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "9 damage; prone; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+                "display": "9 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 damage; prone; <strong class=\"potency-value\">M<3</strong> restrained (save ends)"
+                "display": "12 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
               }
             ]
           },
@@ -30093,15 +30101,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage;  vertical slide 2"
+                "display": "2 damage; vertical slide 2"
               },
               {
                 "tier": 2,
-                "display": "3 damage;  vertical slide 4"
+                "display": "3 damage; vertical slide 4"
               },
               {
                 "tier": 3,
-                "display": "4 damage;  vertical slide 6; if this movement brings the target  into contact with the ceiling, they are restrained (save ends)."
+                "display": "4 damage; vertical slide 6; if this movement brings the target  into contact with the ceiling, they are restrained (save ends)."
               }
             ]
           },
@@ -30562,7 +30570,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "8 corruption damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
+                "display": "8 corruption damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
               }
             ]
           },
@@ -30805,7 +30813,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 fire damage; <strong class=\"potency-value\">I<2</strong> the target is burning (save ends)"
+                "display": "7 fire damage; <strong class=\"potency-value\">I&lt;2</strong> the target is burning (save ends)"
               }
             ]
           },
@@ -31078,15 +31086,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage;  push 2"
+                "display": "5 damage; push 2"
               },
               {
                 "tier": 2,
-                "display": "6 damage;  push 2"
+                "display": "6 damage; push 2"
               },
               {
                 "tier": 3,
-                "display": "8 damage;  push 1; grabbed; <strong class=\"potency-value\">M<2</strong> the target takes a bane on the Escape Grab maneuver."
+                "display": "8 damage; push 1; grabbed; <strong class=\"potency-value\">M&lt;2</strong> the target takes a bane on the Escape Grab maneuver."
               }
             ]
           },
@@ -31321,15 +31329,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 psychic damage; {{potency}} the target makes a free strike against a  creature of the cackler’s choice"
+                "display": "4 psychic damage; <strong class=\"potency-value\">I&lt;0</strong> the target makes a free strike against a  creature of the cackler’s choice"
               },
               {
                 "tier": 2,
-                "display": "5 psychic damage; {{potency}} the target makes a free strike against a  creature of the cackler’s choice"
+                "display": "5 psychic damage; <strong class=\"potency-value\">I&lt;1</strong> the target makes a free strike against a  creature of the cackler’s choice"
               },
               {
                 "tier": 3,
-                "display": "7 psychic damage; {{potency}} the target uses a signature ability  against a creature of the cackler’s choice"
+                "display": "7 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> the target uses a signature ability  against a creature of the cackler’s choice"
               }
             ]
           },
@@ -31589,15 +31597,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "11 damage"
+                "display": "11 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "14 damage; <strong class=\"potency-value\">A<3</strong> bleeding and dazed (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding and dazed (save ends)"
               }
             ]
           },
@@ -31964,11 +31972,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 damage;  push 1"
+                "display": "4 damage; push 1"
               },
               {
                 "tier": 3,
-                "display": "6 damage;  push 3"
+                "display": "6 damage; push 3"
               }
             ]
           },
@@ -32388,7 +32396,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 damage; Prone; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "7 damage; Prone; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -32751,15 +32759,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  push 1"
+                "display": "7 damage; push 1"
               },
               {
                 "tier": 2,
-                "display": "11 damage;  push 2"
+                "display": "11 damage; push 2"
               },
               {
                 "tier": 3,
-                "display": "14 damage;  push 3; prone"
+                "display": "14 damage; push 3; prone"
               }
             ]
           },
@@ -33060,15 +33068,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 corruption damage; <strong class=\"potency-value\">A<0</strong> restrained (save ends)"
+                "display": "2 corruption damage; <strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 corruption damage; <strong class=\"potency-value\">A<1</strong> restrained (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 corruption damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
+                "display": "5 corruption damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -33262,15 +33270,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 corruption damage; <strong class=\"potency-value\">I<0</strong> weakened (save ends)"
+                "display": "3 corruption damage; <strong class=\"potency-value\">I&lt;0</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 corruption damage; <strong class=\"potency-value\">I<1</strong> weakened (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">I&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 corruption damage; <strong class=\"potency-value\">I<2</strong> weakened (save ends)"
+                "display": "5 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> weakened (save ends)"
               }
             ]
           },
@@ -33315,15 +33323,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">I<0</strong> prone"
+                "display": "<strong class=\"potency-value\">I&lt;0</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "<strong class=\"potency-value\">I<1</strong> prone and can't stand (EoT)"
+                "display": "<strong class=\"potency-value\">I&lt;1</strong> prone and can't stand (EoT)"
               },
               {
                 "tier": 3,
-                "display": "prone, <strong class=\"potency-value\">I<2</strong> can't stand (Save Ends)"
+                "display": "prone, <strong class=\"potency-value\">I&lt;2</strong> can't stand (Save Ends)"
               }
             ]
           },
@@ -34286,15 +34294,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage;  push 1"
+                "display": "2 damage; push 1"
               },
               {
                 "tier": 2,
-                "display": "4 damage;  push 3"
+                "display": "4 damage; push 3"
               },
               {
                 "tier": 3,
-                "display": "5 damage;  push 4"
+                "display": "5 damage; push 4"
               }
             ]
           },
@@ -34501,15 +34509,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 poison damage;  slide 1"
+                "display": "1 poison damage; slide 1"
               },
               {
                 "tier": 2,
-                "display": "2 poison damage;  slide 2"
+                "display": "2 poison damage; slide 2"
               },
               {
                 "tier": 3,
-                "display": "3 poison damage;  slide 3"
+                "display": "3 poison damage; slide 3"
               }
             ]
           },
@@ -35020,15 +35028,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+                "display": "6 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "7 damage; {{potency}} bleeding (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">M&lt;2+1</strong> bleeding (save ends)"
               }
             ]
           },
@@ -35345,7 +35353,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 poison damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
+                "display": "14 poison damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
               }
             ]
           },
@@ -35476,15 +35484,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">A<0</strong> restrained (save ends)"
+                "display": "<strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "<strong class=\"potency-value\">A<1</strong> restrained (save ends)"
+                "display": "<strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "<strong class=\"potency-value\">A<2</strong> restrained (save ends)"
+                "display": "<strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -35775,11 +35783,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;1</strong></strong>  push 3"
+                "display": "6 damage; <strong class=\"potency-value\">M&lt;1</strong> push 3"
               },
               {
                 "tier": 3,
-                "display": "9 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;2</strong></strong>  push 4; prone"
+                "display": "9 damage; <strong class=\"potency-value\">M&lt;2</strong> push 4; prone"
               }
             ]
           },
@@ -35824,15 +35832,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": " push 3"
+                "display": "push 3"
               },
               {
                 "tier": 2,
-                "display": " push 4"
+                "display": "push 4"
               },
               {
                 "tier": 3,
-                "display": " push 5"
+                "display": "push 5"
               }
             ]
           },
@@ -36136,7 +36144,7 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  push 1"
+                "display": "7 damage; push 1"
               },
               {
                 "tier": 2,
@@ -36224,15 +36232,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": " push 2; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;0</strong></strong> the forced movement is vertical"
+                "display": "push 2; <strong class=\"potency-value\">M&lt;0</strong> the forced movement is vertical"
               },
               {
                 "tier": 2,
-                "display": " push 4; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;1</strong></strong> the forced movement is vertical"
+                "display": "push 4; <strong class=\"potency-value\">M&lt;1</strong> the forced movement is vertical"
               },
               {
                 "tier": 3,
-                "display": " push 6; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;2</strong></strong> the forced movement is vertical"
+                "display": "push 6; <strong class=\"potency-value\">M&lt;2</strong> the forced movement is vertical"
               }
             ]
           },
@@ -36448,15 +36456,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage;  push 3; {{potency}} prone"
+                "display": "6 damage; push 3; <strong class=\"potency-value\">M&lt;1</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  push 4; {{potency}} prone"
+                "display": "10 damage; push 4; <strong class=\"potency-value\">M&lt;2</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  push 5; {{potency}} prone"
+                "display": "13 damage; push 5; <strong class=\"potency-value\">M&lt;3</strong> prone"
               }
             ]
           },
@@ -36563,15 +36571,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 corruption damage; <strong class=\"potency-value\">A<1</strong> weakened (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">A&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "13 corruption damage; <strong class=\"potency-value\">A<2</strong> weakened (save ends)"
+                "display": "13 corruption damage; <strong class=\"potency-value\">A&lt;2</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "16 corruption damage; <strong class=\"potency-value\">A<3</strong> weakened (save ends)"
+                "display": "16 corruption damage; <strong class=\"potency-value\">A&lt;3</strong> weakened (save ends)"
               }
             ]
           },
@@ -36707,15 +36715,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": " slide 2; {{potency}} the slide is vertical"
+                "display": "slide 2; <strong class=\"potency-value\">I&lt;1</strong> the slide is vertical"
               },
               {
                 "tier": 2,
-                "display": " slide 3; <strong class=\"potency-value\">R<2</strong> the slide is vertical, and the target is restrained (EoT)"
+                "display": "slide 3; <strong class=\"potency-value\">R&lt;2</strong> the slide is vertical, and the target is restrained (EoT)"
               },
               {
                 "tier": 3,
-                "display": " vertical slide 5; <strong class=\"potency-value\">R<3</strong> restrained (EoT)"
+                "display": "vertical slide 5; <strong class=\"potency-value\">R&lt;3</strong> restrained (EoT)"
               }
             ]
           },
@@ -36851,15 +36859,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 fire damage; <strong class=\"potency-value\">A<1</strong> weakened (save ends)"
+                "display": "6 fire damage; <strong class=\"potency-value\">A&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 fire damage; <strong class=\"potency-value\">A<2</strong> weakened (save ends)"
+                "display": "10 fire damage; <strong class=\"potency-value\">A&lt;2</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13 fire damage; <strong class=\"potency-value\">A<3</strong> weakened (save ends)"
+                "display": "13 fire damage; <strong class=\"potency-value\">A&lt;3</strong> weakened (save ends)"
               }
             ]
           },
@@ -36935,15 +36943,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 cold/fire/lightning damage; <strong class=\"potency-value\">R<1</strong> frightened (save ends)"
+                "display": "5 cold/fire/lightning damage; <strong class=\"potency-value\">R&lt;1</strong> frightened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 cold/fire/lightning damage; <strong class=\"potency-value\">R<2</strong> frightened (save ends)"
+                "display": "8 cold/fire/lightning damage; <strong class=\"potency-value\">R&lt;2</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 cold/fire/lightning damage; <strong class=\"potency-value\">R<3</strong> frightened (save ends)"
+                "display": "11 cold/fire/lightning damage; <strong class=\"potency-value\">R&lt;3</strong> frightened (save ends)"
               }
             ]
           },
@@ -37211,15 +37219,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;0</strong>, slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, restrained (save ends)"
               }
             ]
           },
@@ -37790,15 +37798,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage;  pull 1"
+                "display": "8 damage; pull 1"
               },
               {
                 "tier": 2,
-                "display": "12 damage;  pull 2"
+                "display": "12 damage; pull 2"
               },
               {
                 "tier": 3,
-                "display": "15 damage;  pull 3"
+                "display": "15 damage; pull 3"
               }
             ]
           },
@@ -37842,15 +37850,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": " push 1; <strong class=\"potency-value\">M<1</strong> prone"
+                "display": "push 1; <strong class=\"potency-value\">M&lt;1</strong> prone"
               },
               {
                 "tier": 2,
-                "display": " push 2; <strong class=\"potency-value\">M<2</strong> prone"
+                "display": "push 2; <strong class=\"potency-value\">M&lt;2</strong> prone"
               },
               {
                 "tier": 3,
-                "display": " push 4; <strong class=\"potency-value\">M<3</strong> prone"
+                "display": "push 4; <strong class=\"potency-value\">M&lt;3</strong> prone"
               }
             ]
           },
@@ -38033,15 +38041,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;3</strong>, restrained (save ends)"
               }
             ]
           },
@@ -38182,15 +38190,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage; <strong class=\"potency-value\">M<1</strong> slowed (saved ends)"
+                "display": "3 damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (saved ends)"
               },
               {
                 "tier": 2,
-                "display": "6 damage; <strong class=\"potency-value\">M<2</strong> slowed (saved ends)"
+                "display": "6 damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (saved ends)"
               },
               {
                 "tier": 3,
-                "display": "8 damage; <strong class=\"potency-value\">M<3</strong> slowed (saved ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M&lt;3</strong> slowed (saved ends)"
               }
             ]
           },
@@ -38407,15 +38415,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;3</strong>, restrained (save ends)"
               }
             ]
           },
@@ -38573,7 +38581,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> grabbed and the target takes a bane on the Escape Grab maneuver"
+                "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed and the target takes a bane on the Escape Grab maneuver"
               }
             ]
           },
@@ -38697,15 +38705,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;0</strong>, slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, restrained (save ends)"
               }
             ]
           },
@@ -39046,7 +39054,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 corruption damage; <strong class=\"potency-value\">I<2</strong> weakened"
+                "display": "12 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> weakened"
               }
             ]
           },
@@ -39127,15 +39135,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;0</strong>, slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, restrained (save ends)"
               }
             ]
           },
@@ -39513,7 +39521,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> the target has a double bane on their next  power roll"
+                "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> the target has a double bane on their next  power roll"
               }
             ]
           },
@@ -39557,15 +39565,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;0</strong>, slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, restrained (save ends)"
               }
             ]
           },
@@ -40177,15 +40185,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;0</strong>, slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, restrained (save ends)"
               }
             ]
           },
@@ -40413,15 +40421,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;0</strong>, slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, restrained (save ends)"
               }
             ]
           },
@@ -40691,15 +40699,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 corruption damage; {{potency}}, slowed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;0</strong>, slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 corruption damage"
+                "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 corruption damage; {{potency}}, restrained (save ends)"
+                "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, restrained (save ends)"
               }
             ]
           },
@@ -41486,15 +41494,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7+5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+                "display": "7+5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10+5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+                "display": "10+5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13+5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+                "display": "13+5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
               }
             ]
           },
@@ -41649,15 +41657,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+                "display": "10 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
               }
             ]
           },
@@ -43227,7 +43235,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "7 damage"
+                "display": "7 damage; {{potency}} restrained (save ends)"
               }
             ]
           },
@@ -43420,15 +43428,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage;  push 1; <strong class=\"potency-value\">A<0</strong> prone"
+                "display": "6 damage; push 1; <strong class=\"potency-value\">A&lt;0</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "8 damage;  push 3; <strong class=\"potency-value\">A<0</strong> prone"
+                "display": "8 damage; push 3; <strong class=\"potency-value\">A&lt;0</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "11 damage;  push 5; <strong class=\"potency-value\">A<0</strong> prone"
+                "display": "11 damage; push 5; <strong class=\"potency-value\">A&lt;0</strong> prone"
               }
             ]
           },
@@ -43812,15 +43820,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 damage; <strong class=\"potency-value\">A<0</strong> prone"
+                "display": "6 damage; <strong class=\"potency-value\">A&lt;0</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "8 damage; <strong class=\"potency-value\">A<0</strong> prone"
+                "display": "8 damage; <strong class=\"potency-value\">A&lt;0</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "11 damage; <strong class=\"potency-value\">A<0</strong> prone"
+                "display": "11 damage; <strong class=\"potency-value\">A&lt;0</strong> prone"
               }
             ]
           },
@@ -43921,7 +43929,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "10 acid damage"
+                "display": "10 acid damage; {{potency}} dazed (save ends)"
               },
               {
                 "tier": 3,
@@ -44155,11 +44163,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "11 damage; <strong class=\"potency-value\">A<1</strong> prone"
+                "display": "11 damage; <strong class=\"potency-value\">A&lt;1</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "14 damage"
+                "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> prone"
               }
             ]
           },
@@ -44207,11 +44215,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage; <strong class=\"potency-value\">A<1</strong> the target is dazzled (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">A&lt;1</strong> the target is dazzled (save ends)"
               },
               {
                 "tier": 3,
-                "display": "10 damage"
+                "display": "10 damage; <strong class=\"potency-value\">A&lt;2</strong> the target is dazzled (save ends)"
               }
             ]
           },
@@ -44257,15 +44265,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">I<0</strong> dazed (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;0</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "<strong class=\"potency-value\">I<1</strong> dazed (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "<strong class=\"potency-value\">I<2</strong> dazed (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
               }
             ]
           },
@@ -44550,11 +44558,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "12 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "15 damage"
+                "display": "15 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -44598,15 +44606,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">I<0</strong> dazed (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;0</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "<strong class=\"potency-value\">I<1</strong> dazed (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "<strong class=\"potency-value\">I<2</strong> dazed (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
               }
             ]
           },
@@ -44834,15 +44842,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; <strong class=\"potency-value\">A<0</strong> restrained (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
               },
               {
                 "tier": 2,
-                "display": "7 damage; <strong class=\"potency-value\">A<1</strong> restrained (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -44887,15 +44895,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 acid damage; <strong class=\"potency-value\">M<0</strong> the target has line of effect only within 4 squares (save ends)"
+                "display": "5 acid damage; <strong class=\"potency-value\">M&lt;0</strong> the target has line of effect only within 4 squares (save ends)"
               },
               {
                 "tier": 2,
-                "display": "7 acid damage; <strong class=\"potency-value\">M<1</strong> the target has line of effect only within 3 squares (save ends)"
+                "display": "7 acid damage; <strong class=\"potency-value\">M&lt;1</strong> the target has line of effect only within 3 squares (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 acid damage; <strong class=\"potency-value\">M<2</strong> the target has line of effect only within 2 squares (save ends)"
+                "display": "9 acid damage; <strong class=\"potency-value\">M&lt;2</strong> the target has line of effect only within 2 squares (save ends)"
               }
             ]
           },
@@ -44992,15 +45000,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  pull 1; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
+                "display": "7 damage; pull 1; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  pull 1; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "10 damage; pull 1; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 damage;  pull 2; <strong class=\"potency-value\">A<3</strong> bleeding (save ends)"
+                "display": "12 damage; pull 2; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
               }
             ]
           },
@@ -45046,15 +45054,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> dazed (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "15 damage; <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
+                "display": "15 damage; <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
               }
             ]
           },
@@ -45326,15 +45334,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  pull 1; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
+                "display": "7 damage; pull 1; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  pull 1; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "10 damage; pull 1; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "12 damage;  pull 2; <strong class=\"potency-value\">A<3</strong> bleeding (save ends)"
+                "display": "12 damage; pull 2; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
               }
             ]
           },
@@ -45380,15 +45388,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "12 damage; <strong class=\"potency-value\">M<2</strong> dazed (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "15 damage; <strong class=\"potency-value\">M<3</strong> dazed (save ends)"
+                "display": "15 damage; <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
               }
             ]
           },
@@ -45770,11 +45778,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "2 damage;  slide 2"
+                "display": "2 damage; slide 2"
               },
               {
                 "tier": 3,
-                "display": "3 damage;  slide 2"
+                "display": "3 damage; slide 2"
               }
             ]
           },
@@ -45980,7 +45988,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -46025,15 +46033,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage;  slide 1"
+                "display": "5 damage; slide 1"
               },
               {
                 "tier": 2,
-                "display": "8 damage;  slide 2; <strong class=\"potency-value\">M<1</strong> grabbed if within 2 squares of the scaletooth"
+                "display": "8 damage; slide 2; <strong class=\"potency-value\">M&lt;1</strong> grabbed if within 2 squares of the scaletooth"
               },
               {
                 "tier": 3,
-                "display": "10 damage;  slide 3"
+                "display": "10 damage; slide 3; <strong class=\"potency-value\">M&lt;2</strong> grabbed if within 2 squares of the scaletooth"
               }
             ]
           },
@@ -46514,15 +46522,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage; <strong class=\"potency-value\">M<0</strong> weakened (save ends)"
+                "display": "3 damage; <strong class=\"potency-value\">M&lt;0</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "5 damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "7 damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
+                "display": "7 damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
               }
             ]
           },
@@ -46720,15 +46728,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 damage;  pull 1; or the tonguer can shift 1 square toward the target"
+                "display": "2 damage; pull 1; or the tonguer can shift 1 square toward the target"
               },
               {
                 "tier": 2,
-                "display": "4 damage;  pull 2; or the tonguer shifts up to 2 squares toward the target"
+                "display": "4 damage; pull 2; or the tonguer shifts up to 2 squares toward the target"
               },
               {
                 "tier": 3,
-                "display": "5 damage;  pull 3; or the tonguer shifts up to 3 squares toward the target"
+                "display": "5 damage; pull 3; or the tonguer shifts up to 3 squares toward the target"
               }
             ]
           },
@@ -46938,15 +46946,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "12 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "12 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "17 damage; <strong class=\"potency-value\">A<3</strong> bleeding (save ends)"
+                "display": "17 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "21 damage; <strong class=\"potency-value\">A<4</strong> bleeding (save ends)"
+                "display": "21 damage; <strong class=\"potency-value\">A&lt;4</strong> bleeding (save ends)"
               }
             ]
           },
@@ -46999,7 +47007,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage; 8 poison damage"
+                "display": "14 damage; 8 poison damage; weakened (save ends)"
               }
             ]
           },
@@ -47082,15 +47090,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I<2</strong> they are instead Frightened (save ends)"
+                "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I&lt;2</strong> they are instead Frightened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I<3</strong> they are instead Frightened (save ends)"
+                "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I&lt;3</strong> they are instead Frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I<4</strong> they are instead dazed (save ends)"
+                "display": "frightened (EoT); if the target has <strong class=\"potency-value\">I&lt;4</strong> they are instead dazed (save ends)"
               }
             ]
           },
@@ -47337,15 +47345,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": " slide 1; 3 damage"
+                "display": "slide 1; 3 damage"
               },
               {
                 "tier": 2,
-                "display": " slide 2; 5 damage"
+                "display": "slide 2; 5 damage"
               },
               {
                 "tier": 3,
-                "display": " slide 4; 7 damage"
+                "display": "slide 4; 7 damage"
               }
             ]
           },
@@ -47442,15 +47450,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  push 1"
+                "display": "7 damage; push 1"
               },
               {
                 "tier": 2,
-                "display": "11 damage;  push 2"
+                "display": "11 damage; push 2"
               },
               {
                 "tier": 3,
-                "display": "14 damage;  push 3"
+                "display": "14 damage; push 3"
               }
             ]
           },
@@ -47531,15 +47539,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; <strong class=\"potency-value\">I<0</strong> dazed (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">I&lt;0</strong> dazed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; <strong class=\"potency-value\">I<1</strong> dazed (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; <strong class=\"potency-value\">I<2</strong> dazed (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
               }
             ]
           },
@@ -47780,7 +47788,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 damage; <strong class=\"potency-value\">I<4</strong> taunted (EoT) or frightened of all minotaurs (Save Ends)"
+                "display": "9 damage; <strong class=\"potency-value\">I&lt;4</strong> taunted (EoT) or frightened of all minotaurs (Save Ends)"
               }
             ]
           },
@@ -47977,11 +47985,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 damage;  slide 1"
+                "display": "6 damage; slide 1"
               },
               {
                 "tier": 3,
-                "display": "8 damage;  slide 3"
+                "display": "8 damage; slide 3"
               }
             ]
           },
@@ -48183,7 +48191,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "9 damage; prone; <strong class=\"potency-value\">M<5</strong> can’t stand (save ends)"
+                "display": "9 damage; prone; <strong class=\"potency-value\">M&lt;5</strong> can’t stand (save ends)"
               }
             ]
           },
@@ -48376,15 +48384,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage;  pull 1"
+                "display": "8 damage; pull 1"
               },
               {
                 "tier": 2,
-                "display": "12 damage;  pull 2"
+                "display": "12 damage; pull 2"
               },
               {
                 "tier": 3,
-                "display": "15 damage;  pull 3"
+                "display": "15 damage; pull 3"
               }
             ]
           },
@@ -48427,15 +48435,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">I<0</strong> frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;0</strong> frightened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "<strong class=\"potency-value\">I<1</strong> frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;1</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "<strong class=\"potency-value\">I<2</strong> frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
               }
             ]
           },
@@ -48481,15 +48489,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "9 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -48929,7 +48937,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage; <strong class=\"potency-value\">M<3</strong> prone"
+                "display": "7 damage; <strong class=\"potency-value\">M&lt;3</strong> prone"
               },
               {
                 "tier": 3,
@@ -49124,15 +49132,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  push 2"
+                "display": "7 damage; push 2"
               },
               {
                 "tier": 2,
-                "display": "11 damage;  push 4"
+                "display": "11 damage; push 4"
               },
               {
                 "tier": 3,
-                "display": "14 damage;  push 6; prone"
+                "display": "14 damage; push 6; prone"
               }
             ]
           },
@@ -49185,7 +49193,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage"
+                "display": "14 damage; grabbed"
               }
             ]
           },
@@ -49484,11 +49492,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "10 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">A&lt;1</strong></strong>  vertical push 2"
+                "display": "10 damage; <strong class=\"potency-value\">A&lt;1</strong> vertical push 2"
               },
               {
                 "tier": 3,
-                "display": "13 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">A&lt;2</strong></strong>  vertical slide 3"
+                "display": "13 damage; <strong class=\"potency-value\">A&lt;2</strong> vertical slide 3"
               }
             ]
           },
@@ -49537,11 +49545,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 damage;  push 2; <strong class=\"potency-value\">M<1</strong> prone"
+                "display": "6 damage; push 2; <strong class=\"potency-value\">M&lt;1</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "9 damage;  push 4"
+                "display": "9 damage; push 4; <strong class=\"potency-value\">M&lt;2</strong> prone"
               }
             ]
           },
@@ -49584,15 +49592,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">I<0</strong> frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;0</strong> frightened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "<strong class=\"potency-value\">I<1</strong> frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;1</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "<strong class=\"potency-value\">I<2</strong> frightened (save ends)"
+                "display": "<strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
               }
             ]
           },
@@ -49819,11 +49827,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage;  push 2"
+                "display": "7 damage; push 2"
               },
               {
                 "tier": 3,
-                "display": "8 damage;  push 4"
+                "display": "8 damage; push 4"
               }
             ]
           },
@@ -50941,7 +50949,7 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "7 damage"
+                "display": "7 damage; {{potency}} slowed (save ends)"
               },
               {
                 "tier": 3,
@@ -51152,11 +51160,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "9 cold/fire/lightning damage;  slide 4, or the eye shifts up to 4 squares away from the target"
+                "display": "9 cold/fire/lightning damage; slide 4, or the eye shifts up to 4 squares away from the target"
               },
               {
                 "tier": 3,
-                "display": "12 cold/fire/lightning damage;  slide 6, or the eye shifts up to 6 squares away from the target"
+                "display": "12 cold/fire/lightning damage; slide 6, or the eye shifts up to 6 squares away from the target"
               }
             ]
           },
@@ -51707,7 +51715,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "3 sonic damage"
+                "display": "3 sonic damage; {{potency}} slowed (save ends)"
               }
             ]
           },
@@ -52394,7 +52402,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "12 damage"
+                "display": "12 damage; taunted (Eot)"
               }
             ]
           },
@@ -53729,15 +53737,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage; <strong class=\"potency-value\">A<0</strong> bleeding (save ends)"
+                "display": "3 damage; <strong class=\"potency-value\">A&lt;0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "5 damage; <strong class=\"potency-value\">A<1</strong> bleeding (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "8 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -53820,15 +53828,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  push 3"
+                "display": "7 damage; push 3"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  push 3; taunted (EoT)"
+                "display": "10 damage; push 3; taunted (EoT)"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  push 5; taunted (EoT)"
+                "display": "13 damage; push 5; taunted (EoT)"
               }
             ]
           },
@@ -54055,15 +54063,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  push 3"
+                "display": "7 damage; push 3"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  push 3; taunted (EoT)"
+                "display": "10 damage; push 3; taunted (EoT)"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  push 5; taunted (EoT)"
+                "display": "13 damage; push 5; taunted (EoT)"
               }
             ]
           },
@@ -54107,15 +54115,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 sonic damage;  slide 1; the maestro can shift 1 square"
+                "display": "3 sonic damage; slide 1; the maestro can shift 1 square"
               },
               {
                 "tier": 2,
-                "display": "6 sonic damage;  slide 3; the maestro can shift up to 3 squares"
+                "display": "6 sonic damage; slide 3; the maestro can shift up to 3 squares"
               },
               {
                 "tier": 3,
-                "display": "8 sonic damage;  slide 5; the maestro can shift up to 5 squares"
+                "display": "8 sonic damage; slide 5; the maestro can shift up to 5 squares"
               }
             ]
           },
@@ -54160,15 +54168,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">P<1</strong> slowed (save ends)"
+                "display": "<strong class=\"potency-value\">P&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "<strong class=\"potency-value\">P<2</strong> slowed (save ends)"
+                "display": "<strong class=\"potency-value\">P&lt;2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "<strong class=\"potency-value\">P<3</strong> slowed (save ends)"
+                "display": "<strong class=\"potency-value\">P&lt;3</strong> slowed (save ends)"
               }
             ]
           },
@@ -54599,15 +54607,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 sonic damage;  push 1"
+                "display": "5 sonic damage; push 1"
               },
               {
                 "tier": 2,
-                "display": "7 sonic damage;  push 3"
+                "display": "7 sonic damage; push 3"
               },
               {
                 "tier": 3,
-                "display": "9 sonic damage;  push 4"
+                "display": "9 sonic damage; push 4"
               }
             ]
           },
@@ -54795,15 +54803,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  push 3"
+                "display": "7 damage; push 3"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  push 3; taunted (EoT)"
+                "display": "10 damage; push 3; taunted (EoT)"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  push 5; taunted (EoT)"
+                "display": "13 damage; push 5; taunted (EoT)"
               }
             ]
           },
@@ -55093,15 +55101,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  push 3"
+                "display": "7 damage; push 3"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  push 3; taunted (EoT)"
+                "display": "10 damage; push 3; taunted (EoT)"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  push 5; taunted (EoT)"
+                "display": "13 damage; push 5; taunted (EoT)"
               }
             ]
           },
@@ -55638,15 +55646,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 damage;  slide 1; the swiftpaw can shift 1 square"
+                "display": "1 damage; slide 1; the swiftpaw can shift 1 square"
               },
               {
                 "tier": 2,
-                "display": "2 damage;  slide 2; the swiftpaw can shift up to 2 squares"
+                "display": "2 damage; slide 2; the swiftpaw can shift up to 2 squares"
               },
               {
                 "tier": 3,
-                "display": "3 damage;  slide 3; the swiftpaw can shift up to 3 squares"
+                "display": "3 damage; slide 3; the swiftpaw can shift up to 3 squares"
               }
             ]
           },
@@ -56077,15 +56085,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  slide 1"
+                "display": "7 damage; slide 1"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  slide 2"
+                "display": "10 damage; slide 2"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  slide 3"
+                "display": "13 damage; slide 3"
               }
             ]
           },
@@ -56497,15 +56505,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; {{potency}} grabbed"
+                "display": "8 damage; <strong class=\"potency-value\">P&lt;0</strong> grabbed"
               },
               {
                 "tier": 2,
-                "display": "13 damage; {{potency}} grabbed"
+                "display": "13 damage; <strong class=\"potency-value\">P&lt;1</strong> grabbed"
               },
               {
                 "tier": 3,
-                "display": "16 damage; {{potency}} grabbed"
+                "display": "16 damage; <strong class=\"potency-value\">P&lt;2</strong> grabbed"
               }
             ]
           },
@@ -56838,15 +56846,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage; {{potency}} slowed (EoT)"
+                "display": "7 damage; <strong class=\"potency-value\">R&lt;0</strong> slowed (EoT)"
               },
               {
                 "tier": 2,
-                "display": "10 damage"
+                "display": "10 damage; <strong class=\"potency-value\">R&lt;1</strong> slowed (EoT)"
               },
               {
                 "tier": 3,
-                "display": "13 damage; <strong class=\"potency-value\">R<2</strong> dazed and slowed (EoT)"
+                "display": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (EoT)"
               }
             ]
           },
@@ -57121,7 +57129,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -57468,15 +57476,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; {{potency}} weakened (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">P&lt;0</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "13 damage; {{potency}} weakened (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">P&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "16 damage; {{potency}} weakened (save ends)"
+                "display": "16 damage; <strong class=\"potency-value\">P&lt;2</strong> weakened (save ends)"
               }
             ]
           },
@@ -57768,15 +57776,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 psychic damage; <strong class=\"potency-value\">M<0</strong> prone"
+                "display": "7 psychic damage; <strong class=\"potency-value\">M&lt;0</strong> prone"
               },
               {
                 "tier": 2,
-                "display": "10 psychic damage;  push 2; <strong class=\"potency-value\">M<1</strong> prone"
+                "display": "10 psychic damage; push 2; <strong class=\"potency-value\">M&lt;1</strong> prone"
               },
               {
                 "tier": 3,
-                "display": "13 psychic damage;  push 3; <strong class=\"potency-value\">M<2</strong> prone"
+                "display": "13 psychic damage; push 3; <strong class=\"potency-value\">M&lt;2</strong> prone"
               }
             ]
           },
@@ -57821,15 +57829,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "<strong class=\"potency-value\">R<0</strong> slowed (save ends)"
+                "display": "<strong class=\"potency-value\">R&lt;0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "<strong class=\"potency-value\">R<1</strong> dazed (save ends)"
+                "display": "<strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "<strong class=\"potency-value\">R<2</strong> dazed and slowed (save ends)"
+                "display": "<strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (save ends)"
               }
             ]
           },
@@ -58403,7 +58411,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "13 damage; <strong class=\"potency-value\">R<2</strong> weakened (save ends)"
+                "display": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> weakened (save ends)"
               }
             ]
           },
@@ -58666,7 +58674,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "10 sonic damage; prone; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
+                "display": "10 sonic damage; prone; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
               }
             ]
           },
@@ -58906,15 +58914,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "6 corruption damage;  push 2"
+                "display": "6 corruption damage; push 2"
               },
               {
                 "tier": 2,
-                "display": "8 corruption damage;  push 4"
+                "display": "8 corruption damage; push 4"
               },
               {
                 "tier": 3,
-                "display": "11 corruption damage;  push 6; prone"
+                "display": "11 corruption damage; push 6; prone"
               }
             ]
           },
@@ -59166,7 +59174,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "14 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -59411,11 +59419,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> dazed (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 damage"
+                "display": "11 damage; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
               }
             ]
           },
@@ -59463,11 +59471,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "6 psychic damage;  push 1; prone and can't stand (save ends)"
+                "display": "6 psychic damage; push 1; prone and can't stand (save ends)"
               },
               {
                 "tier": 3,
-                "display": "9 psychic damage;  push 2; prone and can't stand (save ends)"
+                "display": "9 psychic damage; push 2; prone and can't stand (save ends)"
               }
             ]
           },
@@ -59668,15 +59676,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 damage;  slide 1"
+                "display": "3 damage; slide 1"
               },
               {
                 "tier": 2,
-                "display": "5 damage;  slide 2"
+                "display": "5 damage; slide 2"
               },
               {
                 "tier": 3,
-                "display": "6 damage;  slide 3; prone"
+                "display": "6 damage; slide 3; prone"
               }
             ]
           },
@@ -59878,15 +59886,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 damage;  pull 1"
+                "display": "7 damage; pull 1"
               },
               {
                 "tier": 2,
-                "display": "10 damage;  pull 2"
+                "display": "10 damage; pull 2"
               },
               {
                 "tier": 3,
-                "display": "13 damage;  pull 3; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
+                "display": "13 damage; pull 3; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
               }
             ]
           },
@@ -59931,15 +59939,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 psychic damage; <strong class=\"potency-value\">M<0</strong> slowed (save ends)"
+                "display": "7 psychic damage; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 psychic damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
+                "display": "10 psychic damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13 psychic damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
+                "display": "13 psychic damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
               }
             ]
           },
@@ -61346,15 +61354,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "7 cold damage; <strong class=\"potency-value\">P<1</strong> slowed (save ends)"
+                "display": "7 cold damage; <strong class=\"potency-value\">P&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 2,
-                "display": "10 cold damage; <strong class=\"potency-value\">P<2</strong> slowed (save ends)"
+                "display": "10 cold damage; <strong class=\"potency-value\">P&lt;2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "13 cold damage; <strong class=\"potency-value\">P<3</strong> slowed (save ends)"
+                "display": "13 cold damage; <strong class=\"potency-value\">P&lt;3</strong> slowed (save ends)"
               }
             ]
           },
@@ -61506,15 +61514,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "{{potency}} the target is levitated (EoT)"
+                "display": "<strong class=\"potency-value\">P&lt;1</strong> the target is levitated (EoT)"
               },
               {
                 "tier": 2,
-                "display": "{{potency}} the target is levitated (EoT)"
+                "display": "<strong class=\"potency-value\">P&lt;2</strong> the target is levitated (EoT)"
               },
               {
                 "tier": 3,
-                "display": "{{potency}} the target is levitated until the end of the encounter"
+                "display": "<strong class=\"potency-value\">P&lt;3</strong> the target is levitated until the end of the encounter"
               }
             ]
           },
@@ -61789,7 +61797,7 @@ export const monsters = {
               },
               {
                 "tier": 3,
-                "display": "5 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "5 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -62603,15 +62611,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
+                "display": "1 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "2 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+                "display": "2 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "3 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "3 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -62890,11 +62898,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 corruption damage; {{potency}} slowed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;1</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 corruption damage; {{potency}} slowed and weakened (save ends)"
+                "display": "5 corruption damage; <strong class=\"potency-value\">P&lt;2</strong> slowed and weakened (save ends)"
               }
             ]
           },
@@ -63152,15 +63160,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "3 corruption damage; <strong class=\"potency-value\">P<0</strong> weakened (save ends)"
+                "display": "3 corruption damage; <strong class=\"potency-value\">P&lt;0</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 corruption damage; <strong class=\"potency-value\">P<1</strong> weakened (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 corruption damage; <strong class=\"potency-value\">P<2</strong> weakened (save ends)"
+                "display": "5 corruption damage; <strong class=\"potency-value\">P&lt;2</strong> weakened (save ends)"
               }
             ]
           },
@@ -63753,11 +63761,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "3 corruption damage; <strong class=\"potency-value\">M<1</strong> Weakened (save ends)"
+                "display": "3 corruption damage; <strong class=\"potency-value\">M&lt;1</strong> Weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "4 corruption damage; <strong class=\"potency-value\">M<2</strong> Dazed (save ends)"
+                "display": "4 corruption damage; <strong class=\"potency-value\">M&lt;2</strong> Dazed (save ends)"
               }
             ]
           },
@@ -63997,11 +64005,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "5 damage; <strong class=\"potency-value\">A<1</strong> grabbed"
+                "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> grabbed"
               },
               {
                 "tier": 3,
-                "display": "6 damage; <strong class=\"potency-value\">A<2</strong> grabbed"
+                "display": "6 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
               }
             ]
           },
@@ -64809,11 +64817,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "4 damage;  pull 1"
+                "display": "4 damage; pull 1"
               },
               {
                 "tier": 3,
-                "display": "5 damage;  pull 2"
+                "display": "5 damage; pull 2"
               }
             ]
           },
@@ -65064,15 +65072,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage;  pull 1"
+                "display": "8 damage; pull 1"
               },
               {
                 "tier": 2,
-                "display": "12 damage;  pull 2"
+                "display": "12 damage; pull 2"
               },
               {
                 "tier": 3,
-                "display": "15 damage;  pull 3"
+                "display": "15 damage; pull 3"
               }
             ]
           },
@@ -65468,15 +65476,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "1 psychic damage;  vertical slide 1"
+                "display": "1 psychic damage; vertical slide 1"
               },
               {
                 "tier": 2,
-                "display": "2 psychic damage;  vertical slide 2"
+                "display": "2 psychic damage; vertical slide 2"
               },
               {
                 "tier": 3,
-                "display": "3 psychic damage;  vertical slide 3"
+                "display": "3 psychic damage; vertical slide 3"
               }
             ]
           },
@@ -65755,15 +65763,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "2 poison damage; <strong class=\"potency-value\">I<0</strong> frightened (save ends)"
+                "display": "2 poison damage; <strong class=\"potency-value\">I&lt;0</strong> frightened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "4 poison damage; <strong class=\"potency-value\">I<1</strong> frightened (save ends)"
+                "display": "4 poison damage; <strong class=\"potency-value\">I&lt;1</strong> frightened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "5 poison damage; <strong class=\"potency-value\">I<2</strong> frightened (save ends)"
+                "display": "5 poison damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
               }
             ]
           },
@@ -66002,15 +66010,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 acid damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
+                "display": "4 acid damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "6 acid damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+                "display": "6 acid damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "10 acid damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "10 acid damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               }
             ]
           },
@@ -66715,15 +66723,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage;  slide 1"
+                "display": "4 damage; slide 1"
               },
               {
                 "tier": 2,
-                "display": "6 damage;  slide 2"
+                "display": "6 damage; slide 2"
               },
               {
                 "tier": 3,
-                "display": "7 damage;  slide 3"
+                "display": "7 damage; slide 3"
               }
             ]
           },
@@ -67309,15 +67317,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "8 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+                "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "11 damage; the target gains 1 rage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "11 damage; the target gains 1 rage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "14 damage; the target gains 3 rage; <strong class=\"potency-value\">M<3</strong> bleeding (save ends)"
+                "display": "14 damage; the target gains 3 rage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)"
               }
             ]
           },
@@ -67361,15 +67369,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "4 damage;  push 2"
+                "display": "4 damage; push 2"
               },
               {
                 "tier": 2,
-                "display": "6 damage;  push 3; the target gains 1 rage"
+                "display": "6 damage; push 3; the target gains 1 rage"
               },
               {
                 "tier": 3,
-                "display": "7 damage;  slide 3; the target gains 3 rage"
+                "display": "7 damage; slide 3; the target gains 3 rage"
               }
             ]
           },
@@ -67543,15 +67551,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "5 damage; the target gains 2 rage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+                "display": "5 damage; the target gains 2 rage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
               },
               {
                 "tier": 2,
-                "display": "8 damage; the target gains 4 rage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "8 damage; the target gains 4 rage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "11 damage; the target gains 8 rage; <strong class=\"potency-value\">M<3</strong> bleeding (save ends)"
+                "display": "11 damage; the target gains 8 rage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)"
               }
             ]
           },
@@ -67761,11 +67769,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "14 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
               },
               {
                 "tier": 3,
-                "display": "17 damage"
+                "display": "17 damage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)"
               }
             ]
           },
@@ -67811,15 +67819,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "10 acid damage; <strong class=\"potency-value\">M<1</strong> weakened (save ends)"
+                "display": "10 acid damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
               },
               {
                 "tier": 2,
-                "display": "16 acid damage; <strong class=\"potency-value\">M<2</strong> weakened (save ends)"
+                "display": "16 acid damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
               },
               {
                 "tier": 3,
-                "display": "20 acid damage; <strong class=\"potency-value\">M<3</strong> weakened (save ends)"
+                "display": "20 acid damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
               }
             ]
           },
@@ -68099,11 +68107,11 @@ export const monsters = {
               },
               {
                 "tier": 2,
-                "display": "14 damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
+                "display": "14 damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
               },
               {
                 "tier": 3,
-                "display": "17 damage"
+                "display": "17 damage; <strong class=\"potency-value\">M&lt;3</strong> slowed (save ends)"
               }
             ]
           },
@@ -68203,15 +68211,15 @@ export const monsters = {
             "tiers": [
               {
                 "tier": 1,
-                "display": "9 damage; <strong class=\"potency-value\">A<1</strong> grabbed"
+                "display": "9 damage; <strong class=\"potency-value\">A&lt;1</strong> grabbed"
               },
               {
                 "tier": 2,
-                "display": "14 damage"
+                "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
               },
               {
                 "tier": 3,
-                "display": "17 damage; <strong class=\"potency-value\">A<3</strong> grabbed and the target takes a bane on the Escape Maneuver"
+                "display": "17 damage; <strong class=\"potency-value\">A&lt;3</strong> grabbed and the target takes a bane on the Escape Maneuver"
               }
             ]
           },
@@ -68385,5 +68393,5 @@ export const monsterCards = monsterIndex.card;
 
 console.log('✅ Monster data bundle loaded:', {
   totalMonsters: Object.keys(monsters).length,
-  indexVersion: '2025-09-26T20:30:26.589Z'
+  indexVersion: '2025-09-26T21:27:01.687Z'
 });

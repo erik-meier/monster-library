@@ -74,15 +74,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 lightning damage; <strong class=\"potency-value\">R<1</strong> dazed (save ends)"
+              "display": "9 lightning damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "14 lightning damage; <strong class=\"potency-value\">R<2</strong> dazed (save ends)"
+              "display": "14 lightning damage; <strong class=\"potency-value\">R&lt;2</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "17 lightning damage; <strong class=\"potency-value\">R<3</strong> dazed (save ends)"
+              "display": "17 lightning damage; <strong class=\"potency-value\">R&lt;3</strong> dazed (save ends)"
             }
           ]
         },
@@ -405,15 +405,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
             }
           ]
         },

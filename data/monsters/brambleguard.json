@@ -113,11 +113,11 @@
             },
             {
               "tier": 2,
-              "display": "7 damage;  push 3"
+              "display": "7 damage; push 3"
             },
             {
               "tier": 3,
-              "display": "10 damage;  push 3; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+              "display": "10 damage; push 3; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
             }
           ]
         },
@@ -193,15 +193,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
             }
           ]
         },

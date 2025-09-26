@@ -237,7 +237,7 @@
             },
             {
               "tier": 2,
-              "display": "7 damage"
+              "display": "7 damage; {{potency}} slowed (save ends)"
             },
             {
               "tier": 3,

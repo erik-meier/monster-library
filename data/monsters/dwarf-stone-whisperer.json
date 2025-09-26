@@ -61,15 +61,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; <strong class=\"potency-value\">M<0</strong> slowed (save ends)"
+              "display": "5 damage; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage"
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 damage; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+              "display": "11 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
             }
           ]
         },
@@ -113,15 +113,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage;  push 2; <strong class=\"potency-value\">R<1</strong> slowed (save ends)"
+              "display": "4 damage; push 2; <strong class=\"potency-value\">R&lt;1</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 damage;  push 3; <strong class=\"potency-value\">R<2</strong> slowed (save ends)"
+              "display": "6 damage; push 3; <strong class=\"potency-value\">R&lt;2</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage;  push 3; <strong class=\"potency-value\">R<3</strong> slowed (save ends)"
+              "display": "9 damage; push 3; <strong class=\"potency-value\">R&lt;3</strong> slowed (save ends)"
             }
           ]
         },

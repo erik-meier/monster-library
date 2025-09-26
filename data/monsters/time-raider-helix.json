@@ -75,15 +75,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 corruption damage;  push 2"
+              "display": "6 corruption damage; push 2"
             },
             {
               "tier": 2,
-              "display": "8 corruption damage;  push 4"
+              "display": "8 corruption damage; push 4"
             },
             {
               "tier": 3,
-              "display": "11 corruption damage;  push 6; prone"
+              "display": "11 corruption damage; push 6; prone"
             }
           ]
         },

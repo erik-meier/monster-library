@@ -74,15 +74,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage;  pull 1"
+              "display": "8 damage; pull 1"
             },
             {
               "tier": 2,
-              "display": "12 damage;  pull 2"
+              "display": "12 damage; pull 2"
             },
             {
               "tier": 3,
-              "display": "15 damage;  pull 3"
+              "display": "15 damage; pull 3"
             }
           ]
         },
@@ -125,15 +125,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">I<0</strong> frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;0</strong> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">I<1</strong> frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;1</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "<strong class=\"potency-value\">I<2</strong> frightened (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
             }
           ]
         },
@@ -179,15 +179,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
+              "display": "5 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             }
           ]
         },

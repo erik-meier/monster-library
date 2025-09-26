@@ -97,15 +97,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage;  slide 2"
+              "display": "8 damage; slide 2"
             },
             {
               "tier": 2,
-              "display": "12 damage;  slide 2; prone"
+              "display": "12 damage; slide 2; prone"
             },
             {
               "tier": 3,
-              "display": "15 damage;  slide 3; prone and can't stand (EoT)"
+              "display": "15 damage; slide 3; prone and can't stand (EoT)"
             }
           ]
         },
@@ -150,15 +150,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage;  push 2"
+              "display": "4 damage; push 2"
             },
             {
               "tier": 2,
-              "display": "7 damage;  push 1"
+              "display": "7 damage; push 1"
             },
             {
               "tier": 3,
-              "display": "10 damage;  push 1"
+              "display": "10 damage; push 1"
             }
           ]
         },
@@ -275,15 +275,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage;  push 2"
+              "display": "4 damage; push 2"
             },
             {
               "tier": 2,
-              "display": "7 damage;  push 3; prone"
+              "display": "7 damage; push 3; prone"
             },
             {
               "tier": 3,
-              "display": "10 damage;  push 4"
+              "display": "10 damage; push 4; prone"
             }
           ]
         },
@@ -402,15 +402,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; prone; <strong class=\"potency-value\">M<1</strong> restrained (save ends)"
+              "display": "5 damage; prone; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 damage; prone; <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+              "display": "9 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 damage; prone; <strong class=\"potency-value\">M<3</strong> restrained (save ends)"
+              "display": "12 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
             }
           ]
         },
@@ -451,15 +451,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage;  vertical slide 2"
+              "display": "2 damage; vertical slide 2"
             },
             {
               "tier": 2,
-              "display": "3 damage;  vertical slide 4"
+              "display": "3 damage; vertical slide 4"
             },
             {
               "tier": 3,
-              "display": "4 damage;  vertical slide 6; if this movement brings the target  into contact with the ceiling, they are restrained (save ends)."
+              "display": "4 damage; vertical slide 6; if this movement brings the target  into contact with the ceiling, they are restrained (save ends)."
             }
           ]
         },

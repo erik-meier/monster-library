@@ -73,15 +73,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 corruption damage; <strong class=\"potency-value\">I<0</strong> weakened (save ends)"
+              "display": "3 corruption damage; <strong class=\"potency-value\">I&lt;0</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "4 corruption damage; <strong class=\"potency-value\">I<1</strong> weakened (save ends)"
+              "display": "4 corruption damage; <strong class=\"potency-value\">I&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "5 corruption damage; <strong class=\"potency-value\">I<2</strong> weakened (save ends)"
+              "display": "5 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> weakened (save ends)"
             }
           ]
         },
@@ -126,15 +126,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">I<0</strong> prone"
+              "display": "<strong class=\"potency-value\">I&lt;0</strong> prone"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">I<1</strong> prone and can't stand (EoT)"
+              "display": "<strong class=\"potency-value\">I&lt;1</strong> prone and can't stand (EoT)"
             },
             {
               "tier": 3,
-              "display": "prone, <strong class=\"potency-value\">I<2</strong> can't stand (Save Ends)"
+              "display": "prone, <strong class=\"potency-value\">I&lt;2</strong> can't stand (Save Ends)"
             }
           ]
         },

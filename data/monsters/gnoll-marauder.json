@@ -78,7 +78,7 @@
             },
             {
               "tier": 3,
-              "display": "7 damage; Prone; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+              "display": "7 damage; Prone; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
             }
           ]
         },

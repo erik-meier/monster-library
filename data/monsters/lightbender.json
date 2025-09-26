@@ -129,11 +129,11 @@
             },
             {
               "tier": 2,
-              "display": "12 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+              "display": "12 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "15 damage"
+              "display": "15 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             }
           ]
         },
@@ -177,15 +177,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">I<0</strong> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;0</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">I<1</strong> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "<strong class=\"potency-value\">I<2</strong> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
             }
           ]
         },

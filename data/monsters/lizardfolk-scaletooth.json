@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "12 damage; <strong class=\"potency-value\">A<2</strong> bleeding (save ends)"
+              "display": "12 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
             }
           ]
         },
@@ -126,15 +126,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage;  slide 1"
+              "display": "5 damage; slide 1"
             },
             {
               "tier": 2,
-              "display": "8 damage;  slide 2; <strong class=\"potency-value\">M<1</strong> grabbed if within 2 squares of the scaletooth"
+              "display": "8 damage; slide 2; <strong class=\"potency-value\">M&lt;1</strong> grabbed if within 2 squares of the scaletooth"
             },
             {
               "tier": 3,
-              "display": "10 damage;  slide 3"
+              "display": "10 damage; slide 3; <strong class=\"potency-value\">M&lt;2</strong> grabbed if within 2 squares of the scaletooth"
             }
           ]
         },

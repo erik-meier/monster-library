@@ -74,15 +74,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 acid damage;  pull 1"
+              "display": "8 acid damage; pull 1"
             },
             {
               "tier": 2,
-              "display": "10 acid damage;  pull 2"
+              "display": "10 acid damage; pull 2"
             },
             {
               "tier": 3,
-              "display": "14 acid damage;  pull 3"
+              "display": "14 acid damage; pull 3"
             }
           ]
         },
@@ -129,11 +129,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">A<0</strong> restrained (save ends)"
+              "display": "<strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "<strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "Slowed (save ends); or if <strong class=\"potency-value\">M<2</strong> restrained (save ends)"
+              "display": "Slowed (save ends); or if <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
             }
           ]
         },
@@ -179,15 +183,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 corruption damage; <strong class=\"potency-value\">R<0</strong> dazed (save ends)"
+              "display": "8 corruption damage; <strong class=\"potency-value\">R&lt;0</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 corruption damage"
+              "display": "10 corruption damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 corruption damage; <strong class=\"potency-value\">R<2</strong> dazed and slowed (save ends)"
+              "display": "14 corruption damage; <strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (save ends)"
             }
           ]
         },

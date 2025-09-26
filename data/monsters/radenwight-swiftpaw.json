@@ -128,15 +128,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "1 damage;  slide 1; the swiftpaw can shift 1 square"
+              "display": "1 damage; slide 1; the swiftpaw can shift 1 square"
             },
             {
               "tier": 2,
-              "display": "2 damage;  slide 2; the swiftpaw can shift up to 2 squares"
+              "display": "2 damage; slide 2; the swiftpaw can shift up to 2 squares"
             },
             {
               "tier": 3,
-              "display": "3 damage;  slide 3; the swiftpaw can shift up to 3 squares"
+              "display": "3 damage; slide 3; the swiftpaw can shift up to 3 squares"
             }
           ]
         },

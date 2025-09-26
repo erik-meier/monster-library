@@ -96,7 +96,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage;  push 1"
+              "display": "7 damage; push 1"
             },
             {
               "tier": 2,
@@ -184,15 +184,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": " push 2; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;0</strong></strong> the forced movement is vertical"
+              "display": "push 2; <strong class=\"potency-value\">M&lt;0</strong> the forced movement is vertical"
             },
             {
               "tier": 2,
-              "display": " push 4; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;1</strong></strong> the forced movement is vertical"
+              "display": "push 4; <strong class=\"potency-value\">M&lt;1</strong> the forced movement is vertical"
             },
             {
               "tier": 3,
-              "display": " push 6; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;2</strong></strong> the forced movement is vertical"
+              "display": "push 6; <strong class=\"potency-value\">M&lt;2</strong> the forced movement is vertical"
             }
           ]
         },

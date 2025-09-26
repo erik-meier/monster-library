@@ -97,47 +97,70 @@ function processCharacteristicReferences(text, monster) {
 }
 
 /**
- * Process potency references like @potency.weak, @potency.average, @potency.strong
+ * Comprehensive potency processing function
+ * Handles @potency.* values, {{potency}} placeholders, and formats potency patterns
  */
-function processPotencyReferences(value, characteristic, monster) {
-  if (!value || !monster?.characteristics) {
-    return null;
-  }
+function processPotencyText(text, potencyValue, characteristic, monster) {
+  if (!text || !monster?.characteristics) return text;
 
+  let processed = text;
+
+  // Get highest characteristic value for calculations
   const characteristics = monster.characteristics;
-
-  // Always use the highest characteristic for calculating potency
-  let charValue;
-  let charAbbrev;
-
-  // Use highest characteristic
-  charValue = Math.max(
+  const highestCharValue = Math.max(
     characteristics.might || 0,
     characteristics.agility || 0,
     characteristics.reason || 0,
     characteristics.intuition || 0,
     characteristics.presence || 0
   );
-  // Use provided characteristic for abbreviation
-  charAbbrev = characteristic.charAt(0).toUpperCase();
 
-  // Map potency patterns to numeric values relative to the characteristic
-  const potencyMap = {
-    '@potency.weak': charValue - 2,
-    '@potency.average': charValue - 1,
-    '@potency.strong': charValue
-  };
-
-  let potencyValue = value;
-  if (value.startsWith('@potency.')) {
-    potencyValue = potencyMap[value];
-  }
-  if (potencyValue === undefined) {
-    return null;
+  // Get characteristic abbreviation 
+  let charAbbrev = 'P'; // Default fallback
+  if (characteristic && characteristic !== 'none' && characteristic !== '') {
+    charAbbrev = characteristic.charAt(0).toUpperCase();
   }
 
-  // Format as characteristic abbreviation + < + value with bold emphasis
-  return `<strong class="potency-value">${charAbbrev}<${potencyValue}</strong>`;
+  // Step 1: Replace {{potency}} placeholders with actual potency patterns
+  if (processed.includes('{{potency}}') && potencyValue !== undefined) {
+    let numericValue = potencyValue;
+
+    // Convert @potency.* patterns to numeric values
+    if (typeof potencyValue === 'string' && potencyValue.startsWith('@potency.')) {
+      const potencyMap = {
+        '@potency.weak': highestCharValue - 2,
+        '@potency.average': highestCharValue - 1,
+        '@potency.strong': highestCharValue
+      };
+      numericValue = potencyMap[potencyValue] || potencyValue;
+    }
+
+    // Create formatted potency pattern
+    const potencyPattern = `<strong class="potency-value">${charAbbrev}&lt;${numericValue}</strong>`;
+    processed = processed.replace(/\{\{potency\}\}/g, potencyPattern);
+  }
+
+  // Step 2: Replace any remaining @potency.* patterns with numeric values
+  processed = processed.replace(/@potency\.(weak|average|strong)/g, (match, type) => {
+    const potencyMap = {
+      'weak': highestCharValue - 2,
+      'average': highestCharValue - 1,
+      'strong': highestCharValue
+    };
+    return potencyMap[type].toString();
+  });
+
+  // Step 3: Format standalone potency patterns like "M<5" with proper styling
+  // Avoid double-wrapping by checking if already formatted
+  if (!processed.includes('<strong class="potency-value">')) {
+    processed = processed.replace(/([A-Z]&lt;\d+|[A-Z]<\d+)/g, (match) => {
+      // Ensure consistent &lt; encoding
+      const normalized = match.replace('<', '&lt;');
+      return `<strong class="potency-value">${normalized}</strong>`;
+    });
+  }
+
+  return processed;
 }
 
 /**
@@ -157,77 +180,15 @@ function processForcedPlaceholders(text, forcedData) {
     const properties = forcedData.properties || [];
     let propertiesText = '';
     if (properties.length > 0) {
-      propertiesText = ` ${properties.join(', ')}`;
+      propertiesText = properties.join(', ') + ' ';
     }
 
-    forcedText = `${propertiesText} ${movement} ${distance}`;
+    forcedText = `${propertiesText}${movement} ${distance}`;
   }
 
   return text.replace(/\{\{forced\}\}/g, forcedText);
 }
 
-/**
- * Process {{potency}} placeholders in text
- */
-function processPotencyPlaceholders(text, potencyData, monster) {
-  if (!text || !text.includes('{{potency}}')) return text;
-
-  if (potencyData && potencyData.value && potencyData.characteristic) {
-    const potencyText = processPotencyReferences(potencyData.value, potencyData.characteristic, monster);
-    if (potencyText) {
-      return text.replace(/\{\{potency\}\}/g, potencyText);
-    }
-  }
-
-  return text;
-}
-
-/**
- * Process standalone potency patterns like "M<5" that appear in descriptions
- */
-function processPotencyPatterns(text) {
-  if (!text) return text;
-
-  return text.replace(/([A-Z]&lt;\d+|[A-Z]<\d+)/g, (match) => {
-    // Ensure consistent &lt; encoding
-    const normalized = match.replace('<', '&lt;');
-    return `<strong class="potency-value">${normalized}</strong>`;
-  });
-}
-
-/**
- * Process @potency.* patterns in text
- */
-function processTextPotencyReferences(text, monster) {
-  if (!text) return text;
-
-  // Handle @potency.* that's already inside HTML - replace with proper numeric values
-  return text.replace(/@potency\.(weak|average|strong)/g, (match, type) => {
-    // Use highest characteristic since we don't have context for specific characteristic
-    if (!monster?.characteristics) {
-      return match; // Return original if no characteristics
-    }
-
-    const characteristics = monster.characteristics;
-    const charValue = Math.max(
-      characteristics.might || 0,
-      characteristics.agility || 0,
-      characteristics.reason || 0,
-      characteristics.intuition || 0,
-      characteristics.presence || 0
-    );
-
-    const potencyMap = {
-      'weak': charValue - 2,
-      'average': charValue - 1,
-      'strong': charValue
-    };
-
-    const potencyValue = potencyMap[type];
-
-    return potencyValue.toString();
-  });
-}
 
 /**
  * Comprehensive text processing function that applies all transformations
@@ -246,21 +207,18 @@ function processFoundryText(text, monster, options = {}) {
   // Process heal directives  
   processed = processHealDirectives(processed);
 
-  // Process potency placeholders if potency data provided
+  // Process potency placeholders and patterns (consolidated)
   if (options.potencyData) {
-    processed = processPotencyPlaceholders(processed, options.potencyData, monster);
+    processed = processPotencyText(processed, options.potencyData.value, options.potencyData.characteristic, monster);
+  } else {
+    // Process any standalone @potency.* patterns or existing potency patterns
+    processed = processPotencyText(processed, null, null, monster);
   }
 
   // Process forced movement placeholders if forced data provided
   if (options.forcedData) {
     processed = processForcedPlaceholders(processed, options.forcedData);
   }
-
-  // Process @potency.* patterns in text
-  processed = processTextPotencyReferences(processed, monster);
-
-  // Process standalone potency patterns
-  processed = processPotencyPatterns(processed);
 
   return processed;
 }
@@ -280,35 +238,26 @@ function flattenPowerEffects(item, monster) {
     return item;
   }
 
-  // Build tiers from effects structure
+  // If already has tiers (already processed), return as is
+  if (item.system.power.tiers && !item.system.power.effects) {
+    return item;
+  }
+
   const effects = item.system.power.effects;
   const tiers = [];
 
-  // First pass: collect all applied effects with potency to determine the primary characteristic
-  // and check which tiers have display templates
+  // Find the primary characteristic by looking at all effect tiers
   let primaryCharacteristic = null;
-  const appliedEffectDisplays = {};
-
   Object.values(effects).forEach(effect => {
-    if (effect.type === 'applied') {
-      // Look for the first tier that has a characteristic defined
-      ['tier1', 'tier2', 'tier3'].forEach(tierKey => {
-        if (effect.applied?.[tierKey]?.potency?.characteristic &&
-          effect.applied[tierKey].potency.characteristic !== 'none' &&
-          effect.applied[tierKey].potency.characteristic !== '' &&
-          !primaryCharacteristic) {
-          primaryCharacteristic = effect.applied[tierKey].potency.characteristic;
-        }
-
-        // Track which tiers have display text for this effect
-        if (!appliedEffectDisplays[effect._id]) {
-          appliedEffectDisplays[effect._id] = {};
-        }
-
-        const hasDisplay = effect.applied?.[tierKey]?.display && effect.applied[tierKey].display.trim();
-        appliedEffectDisplays[effect._id][tierKey] = hasDisplay;
-      });
-    }
+    ['tier1', 'tier2', 'tier3'].forEach(tierKey => {
+      const tierData = effect[effect.type]?.[tierKey];
+      if (tierData?.potency?.characteristic &&
+        tierData.potency.characteristic !== 'none' &&
+        tierData.potency.characteristic !== '' &&
+        !primaryCharacteristic) {
+        primaryCharacteristic = tierData.potency.characteristic;
+      }
+    });
   });
 
   // Process each tier (1, 2, 3)
@@ -316,106 +265,70 @@ function flattenPowerEffects(item, monster) {
     const tierKey = `tier${tierNum}`;
     const tierParts = [];
 
-    // Collect all effects for this tier
     Object.values(effects).forEach(effect => {
-      if (effect.type === 'damage' && effect.damage?.[tierKey]) {
-        const dmg = effect.damage[tierKey];
-        let damageText = `${dmg.value}`;
-        if (dmg.types?.length > 0) {
-          damageText += ` ${dmg.types.join('/')}`;
+      const effectType = effect.type;
+      const tierData = effect[effectType]?.[tierKey];
+
+      if (!tierData) return;
+
+      if (effectType === 'damage') {
+        // Handle damage effects
+        let damageText = `${tierData.value}`;
+        if (tierData.types?.length > 0) {
+          damageText += ` ${tierData.types.join('/')}`;
         }
         damageText += ' damage';
         tierParts.push(damageText);
-      }
+      } else if (effectType === 'applied' || effectType === 'forced' || effectType === 'other') {
+        // Handle effects with display templates
+        let displayTemplate = tierData.display;
 
-      if (effect.type === 'applied' && effect.applied?.[tierKey]) {
-        const applied = effect.applied[tierKey];
-        let appliedText = '';
-
-        // Check if this effect has any display text across all tiers
-        const effectDisplayInfo = appliedEffectDisplays[effect._id] || {};
-        const hasAnyDisplay = Object.values(effectDisplayInfo).some(hasDisplay => hasDisplay);
-
-        // Check if only tier1 has display text (common pattern)
-        const onlyTier1HasDisplay = effectDisplayInfo.tier1 && !effectDisplayInfo.tier2 && !effectDisplayInfo.tier3;
-
-        // Only process if there's display text for this tier, or if only tier1 has display (use as template)
-        const shouldProcess = effectDisplayInfo[tierKey] || (onlyTier1HasDisplay && hasAnyDisplay);
-
-        if (shouldProcess) {
-          const effectNames = Object.keys(applied.effects || {});
-          const hasDisplayTemplate = applied.display && applied.display.trim();
-
-          // If this tier doesn't have display but tier1 does (and only tier1), use tier1's display as template
-          let displayTemplate = null;
-          if (hasDisplayTemplate) {
-            displayTemplate = applied.display.trim();
-          } else if (onlyTier1HasDisplay && hasAnyDisplay) {
-            // Find tier1 display text to use as template
-            const tier1Applied = effect.applied?.tier1;
-            if (tier1Applied?.display && tier1Applied.display.trim()) {
-              displayTemplate = tier1Applied.display.trim();
+        // Find template to use - check current tier, then inherit from earlier tiers
+        if (!displayTemplate || !displayTemplate.trim()) {
+          // Look for template in earlier tiers for this effect
+          for (let inheritTierNum = tierNum - 1; inheritTierNum >= 1; inheritTierNum--) {
+            const inheritTierKey = `tier${inheritTierNum}`;
+            const inheritTierData = effect[effectType]?.[inheritTierKey];
+            if (inheritTierData?.display && inheritTierData.display.trim()) {
+              displayTemplate = inheritTierData.display;
+              break;
             }
-          }
-
-          if (effectNames.length > 0 && applied.potency?.value !== undefined) {
-            let charAbbrev = 'P'; // Default abbreviation
-
-            // Use the tier's specific characteristic, or fall back to primary characteristic
-            let effectCharacteristic = applied.potency.characteristic;
-            if (!effectCharacteristic || effectCharacteristic === 'none' || effectCharacteristic === '') {
-              effectCharacteristic = primaryCharacteristic;
-            }
-
-            if (effectCharacteristic) {
-              charAbbrev = effectCharacteristic.charAt(0).toUpperCase();
-            }
-
-            // Process @potency patterns in the value
-            let potencyValue = applied.potency.value;
-            if (typeof potencyValue === 'string' && potencyValue.startsWith('@potency')) {
-              potencyValue = processTextPotencyReferences(potencyValue, monster);
-            }
-
-            // Process the display template with potency data
-            if (displayTemplate) {
-              let displayText = displayTemplate;
-              displayText = processPotencyPlaceholders(displayText, {
-                value: applied.potency.value,
-                characteristic: effectCharacteristic
-              }, monster);
-              appliedText = displayText;
-            }
-          }
-          // Use explicit display text if available but no potency/effects
-          else if (displayTemplate) {
-            appliedText = displayTemplate;
           }
         }
 
-        if (appliedText) {
-          tierParts.push(appliedText);
-        }
-      }
+        // Only process if we have a display template
+        if (displayTemplate && displayTemplate.trim()) {
+          let processedDisplay = displayTemplate;
 
-      // Add support for other effect types as needed (forced movement, etc.)
-      if (effect.type === 'forced' && effect.forced?.[tierKey]) {
-        const forced = effect.forced[tierKey];
-        if (forced.display) {
-          // Process {{forced}} placeholders first
-          let processedDisplay = processForcedPlaceholders(forced.display, forced);
-          // Then process {{potency}} if applicable
-          processedDisplay = processPotencyPlaceholders(processedDisplay, forced.potency, monster);
-          processedDisplay = processPotencyPatterns(processedDisplay);
+          // Determine characteristic for this tier, inheriting if needed
+          let characteristic = tierData.potency?.characteristic;
+          if (!characteristic || characteristic === 'none' || characteristic === '') {
+            // Inherit from earlier tiers in this effect
+            for (let inheritTierNum = tierNum - 1; inheritTierNum >= 1; inheritTierNum--) {
+              const inheritTierKey = `tier${inheritTierNum}`;
+              const inheritTierData = effect[effectType]?.[inheritTierKey];
+              if (inheritTierData?.potency?.characteristic &&
+                inheritTierData.potency.characteristic !== 'none' &&
+                inheritTierData.potency.characteristic !== '') {
+                characteristic = inheritTierData.potency.characteristic;
+                break;
+              }
+            }
+            // Fall back to primary characteristic
+            if (!characteristic || characteristic === 'none' || characteristic === '') {
+              characteristic = primaryCharacteristic;
+            }
+          }
+
+          // Process all potency-related content ({{potency}}, @potency.*, patterns)
+          processedDisplay = processPotencyText(processedDisplay, tierData.potency?.value, characteristic, monster);
+
+          // Process {{forced}} placeholders for forced movement
+          if (processedDisplay.includes('{{forced}}') && effectType === 'forced') {
+            processedDisplay = processForcedPlaceholders(processedDisplay, tierData);
+          }
 
           tierParts.push(processedDisplay);
-        }
-      }
-
-      if (effect.type === 'other' && effect.other?.[tierKey]) {
-        const other = effect.other[tierKey];
-        if (other.display) {
-          tierParts.push(other.display);
         }
       }
     });
@@ -506,11 +419,8 @@ export {
   processHealDirectives,
   processUuidReferences,
   processCharacteristicReferences,
-  processPotencyReferences,
-  processPotencyPlaceholders,
+  processPotencyText,
   processForcedPlaceholders,
-  processPotencyPatterns,
-  processTextPotencyReferences,
   processFoundryText,
   processPowerRollFormula,
   flattenPowerEffects,

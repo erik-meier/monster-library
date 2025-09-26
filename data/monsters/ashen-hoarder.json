@@ -100,15 +100,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "10 damage; if one target has <strong class=\"potency-value\">M<2</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A<2</strong> they are grabbed"
+              "display": "10 damage; if one target has <strong class=\"potency-value\">M&lt;2</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A&lt;2</strong> they are grabbed"
             },
             {
               "tier": 2,
-              "display": "15 damage; if one target has <strong class=\"potency-value\">M<3</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A<3</strong> they are grabbed"
+              "display": "15 damage; if one target has <strong class=\"potency-value\">M&lt;3</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A&lt;3</strong> they are grabbed"
             },
             {
               "tier": 3,
-              "display": "18 damage; if one target has <strong class=\"potency-value\">M<4</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A<4</strong> they are grabbed"
+              "display": "18 damage; if one target has <strong class=\"potency-value\">M&lt;4</strong> they are bleeding (save ends); if the other target <strong class=\"potency-value\">A&lt;4</strong> they are grabbed"
             }
           ]
         },
@@ -154,15 +154,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; <strong class=\"potency-value\">A<2</strong> weakened (save ends)"
+              "display": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; <strong class=\"potency-value\">A<3</strong> weakened (save ends)"
+              "display": "8 damage; <strong class=\"potency-value\">A&lt;3</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 damage; <strong class=\"potency-value\">A<4</strong> weakened (save ends)"
+              "display": "11 damage; <strong class=\"potency-value\">A&lt;4</strong> weakened (save ends)"
             }
           ]
         },
@@ -209,15 +209,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 corruption damage; <strong class=\"potency-value\">M<2</strong> the target is impaled (save ends)"
+              "display": "6 corruption damage; <strong class=\"potency-value\">M&lt;2</strong> the target is impaled (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 corruption damage; <strong class=\"potency-value\">M<3</strong> the target is impaled (save ends)"
+              "display": "11 corruption damage; <strong class=\"potency-value\">M&lt;3</strong> the target is impaled (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 corruption damage; <strong class=\"potency-value\">M<4</strong> the target is impaled (save ends)"
+              "display": "14 corruption damage; <strong class=\"potency-value\">M&lt;4</strong> the target is impaled (save ends)"
             }
           ]
         },
@@ -333,15 +333,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage;  vertical push 2"
+              "display": "6 damage; vertical push 2"
             },
             {
               "tier": 2,
-              "display": "11 damage;  vertical push 2"
+              "display": "11 damage; vertical push 2"
             },
             {
               "tier": 3,
-              "display": "14 damage;  vertical push 3"
+              "display": "14 damage; vertical push 3"
             }
           ]
         },

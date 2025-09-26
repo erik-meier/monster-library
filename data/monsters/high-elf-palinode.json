@@ -79,11 +79,11 @@
             },
             {
               "tier": 2,
-              "display": "7 psychic damage; <strong class=\"potency-value\">I<1</strong> weakened (save ends)"
+              "display": "7 psychic damage; <strong class=\"potency-value\">I&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 psychic damage"
+              "display": "9 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> weakened (save ends)"
             }
           ]
         },
@@ -199,15 +199,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
             }
           ]
         },

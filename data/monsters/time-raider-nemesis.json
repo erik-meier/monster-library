@@ -76,15 +76,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage;  pull 1"
+              "display": "7 damage; pull 1"
             },
             {
               "tier": 2,
-              "display": "10 damage;  pull 2"
+              "display": "10 damage; pull 2"
             },
             {
               "tier": 3,
-              "display": "13 damage;  pull 3; <strong class=\"potency-value\">A<2</strong> restrained (save ends)"
+              "display": "13 damage; pull 3; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
             }
           ]
         },
@@ -129,15 +129,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 psychic damage; <strong class=\"potency-value\">M<0</strong> slowed (save ends)"
+              "display": "7 psychic damage; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 psychic damage; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
+              "display": "10 psychic damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 psychic damage; <strong class=\"potency-value\">M<2</strong> slowed (save ends)"
+              "display": "13 psychic damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
             }
           ]
         },

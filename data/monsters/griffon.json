@@ -88,11 +88,11 @@
             },
             {
               "tier": 2,
-              "display": "6 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;1</strong></strong>  push 3"
+              "display": "6 damage; <strong class=\"potency-value\">M&lt;1</strong> push 3"
             },
             {
               "tier": 3,
-              "display": "9 damage; <strong class=\"potency-value\"><strong class=\"potency-value\">M&lt;2</strong></strong>  push 4; prone"
+              "display": "9 damage; <strong class=\"potency-value\">M&lt;2</strong> push 4; prone"
             }
           ]
         },
@@ -137,15 +137,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": " push 3"
+              "display": "push 3"
             },
             {
               "tier": 2,
-              "display": " push 4"
+              "display": "push 4"
             },
             {
               "tier": 3,
-              "display": " push 5"
+              "display": "push 5"
             }
           ]
         },

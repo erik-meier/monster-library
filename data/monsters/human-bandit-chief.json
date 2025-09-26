@@ -88,15 +88,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage;  pull 1"
+              "display": "8 damage; pull 1"
             },
             {
               "tier": 2,
-              "display": "12 damage;  pull 2"
+              "display": "12 damage; pull 2"
             },
             {
               "tier": 3,
-              "display": "15 damage;  pull 3"
+              "display": "15 damage; pull 3"
             }
           ]
         },
@@ -140,15 +140,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": " push 1; <strong class=\"potency-value\">M<1</strong> prone"
+              "display": "push 1; <strong class=\"potency-value\">M&lt;1</strong> prone"
             },
             {
               "tier": 2,
-              "display": " push 2; <strong class=\"potency-value\">M<2</strong> prone"
+              "display": "push 2; <strong class=\"potency-value\">M&lt;2</strong> prone"
             },
             {
               "tier": 3,
-              "display": " push 4; <strong class=\"potency-value\">M<3</strong> prone"
+              "display": "push 4; <strong class=\"potency-value\">M&lt;3</strong> prone"
             }
           ]
         },
@@ -331,15 +331,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 corruption damage; {{potency}}, slowed (save ends)"
+              "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 corruption damage"
+              "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; {{potency}}, restrained (save ends)"
+              "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;3</strong>, restrained (save ends)"
             }
           ]
         },

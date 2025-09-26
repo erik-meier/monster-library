@@ -138,15 +138,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; {{potency}} slowed (EoT)"
+              "display": "7 damage; <strong class=\"potency-value\">R&lt;0</strong> slowed (EoT)"
             },
             {
               "tier": 2,
-              "display": "10 damage"
+              "display": "10 damage; <strong class=\"potency-value\">R&lt;1</strong> slowed (EoT)"
             },
             {
               "tier": 3,
-              "display": "13 damage; <strong class=\"potency-value\">R<2</strong> dazed and slowed (EoT)"
+              "display": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (EoT)"
             }
           ]
         },

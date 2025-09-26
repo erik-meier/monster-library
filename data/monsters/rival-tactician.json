@@ -126,15 +126,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; {{potency}} weakened (save ends)"
+              "display": "8 damage; <strong class=\"potency-value\">P&lt;0</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "13 damage; {{potency}} weakened (save ends)"
+              "display": "13 damage; <strong class=\"potency-value\">P&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 damage; {{potency}} weakened (save ends)"
+              "display": "16 damage; <strong class=\"potency-value\">P&lt;2</strong> weakened (save ends)"
             }
           ]
         },

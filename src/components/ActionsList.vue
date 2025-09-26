@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div v-if="action.system.type == 'triggered'" class="action-trigger">
+      <div v-if="action.system.type == 'triggered' || action.system.type == 'freeTriggered'" class="action-trigger">
         <strong>Trigger:</strong> {{ action.system.trigger }}
       </div>
 
@@ -158,6 +158,7 @@ export default {
       if (!type) return '';
       if (type.toLowerCase() === 'none') return '';
       if (type.toLowerCase() === 'maneuver') return type;
+      if (type.toLowerCase() === 'freetriggered') type = 'free triggered';
       return type + ' action';
     },
     formatPowerRoll(formula, chr) {

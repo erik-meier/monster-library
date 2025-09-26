@@ -82,7 +82,7 @@
             },
             {
               "tier": 3,
-              "display": "7 damage; <strong class=\"potency-value\">A<3</strong> slowed (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">A&lt;3</strong> slowed (save ends)"
             }
           ]
         },

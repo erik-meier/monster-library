@@ -190,7 +190,7 @@
             },
             {
               "tier": 3,
-              "display": "3 sonic damage"
+              "display": "3 sonic damage; {{potency}} slowed (save ends)"
             }
           ]
         },

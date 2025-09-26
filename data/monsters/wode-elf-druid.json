@@ -75,15 +75,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage;  pull 1"
+              "display": "5 damage; pull 1"
             },
             {
               "tier": 2,
-              "display": "8 damage;  pull 3; <strong class=\"potency-value\">M<1</strong> slowed (save ends)"
+              "display": "8 damage; pull 3; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 damage;  pull 5"
+              "display": "10 damage; pull 5; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
             }
           ]
         },

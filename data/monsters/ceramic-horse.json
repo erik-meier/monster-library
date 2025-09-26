@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "9 lightning damage; <strong class=\"potency-value\">M<2</strong> prone"
+              "display": "9 lightning damage; <strong class=\"potency-value\">M&lt;2</strong> prone"
             }
           ]
         },
@@ -244,15 +244,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R<1</strong> chosen condition (save ends)"
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R<2</strong> chosen condition (save ends)"
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R<3</strong> chosen condition (save ends)"
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
             }
           ]
         },

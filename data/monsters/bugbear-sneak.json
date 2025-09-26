@@ -61,11 +61,11 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; {{potency}} grabbed"
+              "display": "8 damage; <strong class=\"potency-value\">A&lt;0+1</strong> grabbed"
             },
             {
               "tier": 2,
-              "display": "13 damage"
+              "display": "13 damage; <strong class=\"potency-value\">A&lt;1+1</strong> grabbed"
             },
             {
               "tier": 3,
@@ -165,15 +165,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+              "display": "11 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+              "display": "14 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             }
           ]
         },

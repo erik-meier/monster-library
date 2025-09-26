@@ -73,15 +73,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 psychic damage; <strong class=\"potency-value\">M<0</strong> prone"
+              "display": "7 psychic damage; <strong class=\"potency-value\">M&lt;0</strong> prone"
             },
             {
               "tier": 2,
-              "display": "10 psychic damage;  push 2; <strong class=\"potency-value\">M<1</strong> prone"
+              "display": "10 psychic damage; push 2; <strong class=\"potency-value\">M&lt;1</strong> prone"
             },
             {
               "tier": 3,
-              "display": "13 psychic damage;  push 3; <strong class=\"potency-value\">M<2</strong> prone"
+              "display": "13 psychic damage; push 3; <strong class=\"potency-value\">M&lt;2</strong> prone"
             }
           ]
         },
@@ -126,15 +126,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">R<0</strong> slowed (save ends)"
+              "display": "<strong class=\"potency-value\">R&lt;0</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">R<1</strong> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "<strong class=\"potency-value\">R<2</strong> dazed and slowed (save ends)"
+              "display": "<strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (save ends)"
             }
           ]
         },

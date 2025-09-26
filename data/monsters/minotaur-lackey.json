@@ -78,11 +78,11 @@
             },
             {
               "tier": 2,
-              "display": "6 damage;  slide 1"
+              "display": "6 damage; slide 1"
             },
             {
               "tier": 3,
-              "display": "8 damage;  slide 3"
+              "display": "8 damage; slide 3"
             }
           ]
         },

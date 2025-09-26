@@ -139,15 +139,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage;  push 3"
+              "display": "7 damage; push 3"
             },
             {
               "tier": 2,
-              "display": "10 damage;  push 3; taunted (EoT)"
+              "display": "10 damage; push 3; taunted (EoT)"
             },
             {
               "tier": 3,
-              "display": "13 damage;  push 5; taunted (EoT)"
+              "display": "13 damage; push 5; taunted (EoT)"
             }
           ]
         },
@@ -191,15 +191,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 sonic damage;  slide 1; the maestro can shift 1 square"
+              "display": "3 sonic damage; slide 1; the maestro can shift 1 square"
             },
             {
               "tier": 2,
-              "display": "6 sonic damage;  slide 3; the maestro can shift up to 3 squares"
+              "display": "6 sonic damage; slide 3; the maestro can shift up to 3 squares"
             },
             {
               "tier": 3,
-              "display": "8 sonic damage;  slide 5; the maestro can shift up to 5 squares"
+              "display": "8 sonic damage; slide 5; the maestro can shift up to 5 squares"
             }
           ]
         },
@@ -244,15 +244,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">P<1</strong> slowed (save ends)"
+              "display": "<strong class=\"potency-value\">P&lt;1</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">P<2</strong> slowed (save ends)"
+              "display": "<strong class=\"potency-value\">P&lt;2</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "<strong class=\"potency-value\">P<3</strong> slowed (save ends)"
+              "display": "<strong class=\"potency-value\">P&lt;3</strong> slowed (save ends)"
             }
           ]
         },

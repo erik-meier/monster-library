@@ -61,15 +61,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage;  pull 2"
+              "display": "7 damage; pull 2"
             },
             {
               "tier": 2,
-              "display": "10 damage;  pull 3"
+              "display": "10 damage; pull 3"
             },
             {
               "tier": 3,
-              "display": "13 damage;  pull 4"
+              "display": "13 damage; pull 4"
             }
           ]
         },
@@ -113,15 +113,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; <strong class=\"potency-value\">M<0</strong> bleeding (save ends)"
+              "display": "2 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "3 damage; <strong class=\"potency-value\">M<1</strong> bleeding (save ends)"
+              "display": "3 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "4 damage; <strong class=\"potency-value\">M<2</strong> bleeding (save ends)"
+              "display": "4 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             }
           ]
         },
@@ -166,15 +166,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 corruption damage; <strong class=\"potency-value\">P<0</strong> slowed (save ends)"
+              "display": "5 corruption damage; <strong class=\"potency-value\">P&lt;0</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 corruption damage; <strong class=\"potency-value\">P<1</strong> the target is shapechanged (save ends)"
+              "display": "8 corruption damage; <strong class=\"potency-value\">P&lt;1</strong> the target is shapechanged (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 corruption damage; <strong class=\"potency-value\">P<2</strong> the target is shapechanged (save ends)"
+              "display": "11 corruption damage; <strong class=\"potency-value\">P&lt;2</strong> the target is shapechanged (save ends)"
             }
           ]
         },
