@@ -67,92 +67,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "bJO9dqfRClz69Hk1": {
-              "_id": "bJO9dqfRClz69Hk1",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage"
             },
-            "cxzAeT2mtvlyK6RN": {
-              "_id": "cxzAeT2mtvlyK6RN",
-              "type": "applied",
-              "name": "Dazed",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "{{potency}} dazed (save ends)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 damage; M<@potency.average dazed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "11 damage; M<@potency.strong dazed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -182,156 +115,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "uNis5AQFfkJaGIKN": {
-              "_id": "uNis5AQFfkJaGIKN",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 psychic damage; R<@potency.weak prone"
             },
-            "0qyVm8PUBh7JVS1r": {
-              "_id": "0qyVm8PUBh7JVS1r",
-              "type": "forced",
-              "name": "push",
-              "img": null,
-              "forced": {
-                "tier2": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "1",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "movement": [],
-                  "distance": "",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 psychic damage; {{forced}}; R<@potency.average prone, JmxKQObaW5KvrNMn"
             },
-            "3VkvRS3r6WyzFGDX": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "3VkvRS3r6WyzFGDX",
-              "applied": {
-                "tier1": {
-                  "display": "prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "reason"
-                  }
-                },
-                "tier2": {
-                  "display": "prone and can't stand (save ends)",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    },
-                    "JmxKQObaW5KvrNMn": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "prone and can't stand (save ends)",
-                  "effects": {
-                    "JmxKQObaW5KvrNMn": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "9 psychic damage; {{forced}}; R<@potency.strong JmxKQObaW5KvrNMn, prone (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -363,7 +165,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -391,7 +193,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -419,13 +221,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>[[/damage 10 psychic]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>[[/damage 7 psychic]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
         }
       }

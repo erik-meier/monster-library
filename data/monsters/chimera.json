@@ -38,7 +38,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p><strong>End Effect:</strong> At the end of each of their turns, the chimera can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p><strong>Solo Turns: </strong>The chimera can take two turns each round. They can't take turns consecutively.</p>",
+          "value": "<p><strong>End Effect:</strong> At the end of each of their turns, the chimera can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p><strong>Solo Turns: </strong>The chimera can take two turns each round. They can't take turns consecutively.</p>",
           "director": ""
         }
       }
@@ -78,52 +78,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "t0WsZAzqkipTnwg1": {
-              "_id": "t0WsZAzqkipTnwg1",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "16",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 damage"
+            },
+            {
+              "tier": 2,
+              "display": "13 damage"
+            },
+            {
+              "tier": 3,
+              "display": "16 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>This strike deals an extra [[/damage 3]] damage if it gains an edge or has a double edge.</p>"
+          "after": "<p>This strike deals an extra <span class=\"damage-value damage-generic\">3</span> damage if it gains an edge or has a double edge.</p>"
         }
       }
     },
@@ -151,95 +128,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "hBsQDRE7Pui5SGVf": {
-              "_id": "hBsQDRE7Pui5SGVf",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 fire damage; 3 fire damage"
             },
-            "vheSZ7z48h1HfDqe": {
-              "name": "Agility Fire Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "vheSZ7z48h1HfDqe",
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "5 fire damage; 5 fire damage"
+            },
+            {
+              "tier": 3,
+              "display": "7 fire damage; 7 fire damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -269,98 +176,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "Z3nSlGobxtPogPWx": {
-              "_id": "Z3nSlGobxtPogPWx",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "10",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 psychic damage"
             },
-            "oKysjt9f2iQmPweE": {
-              "_id": "oKysjt9f2iQmPweE",
-              "type": "applied",
-              "name": "Frightened",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "{{potency}} frightened (save ends)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 psychic damage; I<@potency.average frightened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "10 psychic damage; I<@potency.strong frightened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -390,57 +224,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "ot07J0VaH8AwqA9w": {
-              "_id": "ot07J0VaH8AwqA9w",
-              "type": "forced",
-              "name": "push",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "5",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "{{forced}}"
+            },
+            {
+              "tier": 2,
+              "display": "{{forced}}"
+            },
+            {
+              "tier": 3,
+              "display": "{{forced}}"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -471,107 +273,25 @@
         "trigger": "A creature makes a strike against the chimera and obtains a tier 1 outcome.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "ITM88itmOJa4KOOs": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "ITM88itmOJa4KOOs",
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "10",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage; M<@potency.weak slowed (save ends)"
             },
-            "sRRxO8563L8ppk5U": {
-              "name": "slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "sRRxO8563L8ppk5U",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} slowed (save ends)",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "display": "prone; {{potency}} slowed",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "prone; {{potency}} slowed",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "prone": {
-                      "condition": "failure",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 damage; M<@potency.average slowed, prone (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "10 damage; M<@potency.strong slowed, prone (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The chimera shifts up to 5 squares. If they end this shift within distance of the target, make a <strong>power roll.</strong></p>",
@@ -600,7 +320,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -633,7 +353,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -664,7 +384,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -694,13 +414,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has I&lt;2 Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has</p>",
+          "before": "<p>Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has <strong class=\"potency-value\">I&lt;2</strong> Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has</p>",
           "after": ""
         }
       }
@@ -722,7 +442,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -750,7 +470,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -778,13 +498,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The chimera shakes the ground, causing an eruption of loose rocks and debris that creates three size 2 stone objects anywhere on the encounter map. Each creature adjacent to one or more objects when they appear who has A&lt;2 takes [[/damage 5]] damage.</p>",
+          "before": "<p>The chimera shakes the ground, causing an eruption of loose rocks and debris that creates three size 2 stone objects anywhere on the encounter map. Each creature adjacent to one or more objects when they appear who has <strong class=\"potency-value\">A&lt;2</strong> takes <span class=\"damage-value damage-generic\">5</span> damage.</p>",
           "after": ""
         }
       }

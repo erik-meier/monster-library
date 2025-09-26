@@ -57,49 +57,20 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "ogX4ddhzto0xrzvu": {
-              "type": "damage",
-              "_id": "ogX4ddhzto0xrzvu",
-              "damage": {
-                "tier1": {
-                  "value": "1",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "2",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "3",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              },
-              "name": "",
-              "img": null
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "1 poison damage"
+            },
+            {
+              "tier": 2,
+              "display": "2 poison damage"
+            },
+            {
+              "tier": 3,
+              "display": "3 poison damage"
             }
-          }
+          ]
         },
         "effect": {
           "after": "<p>The target takes a bane on their next strike.</p>",

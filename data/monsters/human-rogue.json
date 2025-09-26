@@ -81,52 +81,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "kA9aLIibOqU6l5j8": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "kA9aLIibOqU6l5j8",
-              "damage": {
-                "tier1": {
-                  "value": "1",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "2",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "3",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "1 damage"
+            },
+            {
+              "tier": 2,
+              "display": "2 damage"
+            },
+            {
+              "tier": 3,
+              "display": "3 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>If the rogue is disguised or hidden when they use this ability, it deals an extra [[/damage 3]] damage</p>"
+          "after": "<p>If the rogue is disguised or hidden when they use this ability, it deals an extra <span class=\"damage-value damage-generic\">3</span> damage</p>"
         }
       }
     },
@@ -147,7 +124,7 @@
         "trigger": "A human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -175,7 +152,7 @@
         "trigger": "a human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

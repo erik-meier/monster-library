@@ -79,142 +79,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "mhQSWHP6mH5d1pL9": {
-              "_id": "mhQSWHP6mH5d1pL9",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; {{forced}}; P<2 iRUC9yMrO2ySVWf4 (save ends)"
             },
-            "WZveJN9azsNHN5WZ": {
-              "_id": "WZveJN9azsNHN5WZ",
-              "type": "forced",
-              "name": "slide",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "1",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage; {{forced}}; P<2 iRUC9yMrO2ySVWf4 (save ends)"
             },
-            "ZqZsEwY2xuxSjkSw": {
-              "name": "Instability",
-              "img": null,
-              "type": "applied",
-              "_id": "ZqZsEwY2xuxSjkSw",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {
-                    "iRUC9yMrO2ySVWf4": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": "presence"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "iRUC9yMrO2ySVWf4": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "iRUC9yMrO2ySVWf4": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "14 damage; {{forced}}; P<2 iRUC9yMrO2ySVWf4 (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -244,7 +127,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -278,7 +161,7 @@
         "trigger": "An ally deals rolled damage to the target.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -308,7 +191,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -336,7 +219,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -365,7 +248,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

@@ -65,90 +65,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "WpHbp54dAIDUrJfQ": {
-              "_id": "WpHbp54dAIDUrJfQ",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage"
             },
-            "rU7yJVp7cglIWMIw": {
-              "_id": "rU7yJVp7cglIWMIw",
-              "type": "applied",
-              "name": "Grabbed",
-              "img": null,
-              "applied": {
-                "tier3": {
-                  "display": "grabbed",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "grabbed": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "9 damage"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage; M<@potency.strong grabbed"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>A target grabbed this way takes [[/damage 2]] damage at the start of each of the bruxer's turns.</p>"
+          "after": "<p>A target grabbed this way takes <span class=\"damage-value damage-generic\">2</span> damage at the start of each of the bruxer's turns.</p>"
         }
       }
     },
@@ -174,98 +113,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "YwHh0dSHo0L0rJfD": {
-              "_id": "YwHh0dSHo0L0rJfD",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage; A<@potency.weak bleeding (save ends)"
             },
-            "f2HqGhpTAaGQRtac": {
-              "_id": "f2HqGhpTAaGQRtac",
-              "type": "applied",
-              "name": "Bleeding",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "5 damage; A<@potency.average bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "8 damage; A<@potency.strong bleeding (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -295,7 +161,7 @@
         "trigger": "An ally deals damage to the target.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -335,131 +201,20 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "J8ZyFtvUeh7fUU06": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "J8ZyFtvUeh7fUU06",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; {{forced}}"
             },
-            "UZvfj8gwWwSlTK6s": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "UZvfj8gwWwSlTK6s",
-              "forced": {
-                "tier1": {
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "distance": "5",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 damage; {{forced}}; P<@potency.average taunted"
             },
-            "zQHVPeyhyCj2ux4J": {
-              "name": "Taunted",
-              "img": null,
-              "type": "applied",
-              "_id": "zQHVPeyhyCj2ux4J",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier3": {
-                  "display": "taunted (EoT)",
-                  "effects": {
-                    "taunted": {
-                      "condition": "always",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "taunted": {
-                      "condition": "always",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "display": "taunted (EoT)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "13 damage; {{forced}}; P<@potency.strong taunted"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -485,7 +240,7 @@
         "trigger": "A Radenwight's turn starts.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -513,13 +268,13 @@
         "trigger": "A Radenwight's turn starts.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p>[[/damage 7 sonic]] damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p>[[/damage 5 sonic]] damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">7 sonic</span> damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
         }
       }

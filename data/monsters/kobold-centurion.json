@@ -48,7 +48,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the centurion can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
+          "value": "<p>At the end of each of their turns, the centurion can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
           "director": ""
         }
       }
@@ -70,13 +70,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>",
           "after": ""
         }
       }
@@ -98,7 +98,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -126,7 +126,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -160,7 +160,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -188,76 +188,28 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "PYzKSnbLXLxxzZqu": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "PYzKSnbLXLxxzZqu",
-              "damage": {
-                "tier1": {
-                  "value": "7+5"
-                },
-                "tier2": {
-                  "value": "10+5"
-                },
-                "tier3": {
-                  "value": "13+5"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7+5 damage; M<1 7j7mrAssAYhW4Cpc (save ends)"
             },
-            "SxQ67eqUxWyJ0Hs5": {
-              "name": "Firetail Weakened",
-              "img": null,
-              "type": "applied",
-              "_id": "SxQ67eqUxWyJ0Hs5",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "1"
-                  },
-                  "display": "{{potency}} weakened (save ends)",
-                  "effects": {
-                    "7j7mrAssAYhW4Cpc": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "potency": {
-                    "value": "1"
-                  },
-                  "effects": {
-                    "7j7mrAssAYhW4Cpc": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "potency": {
-                    "value": "1"
-                  },
-                  "effects": {
-                    "7j7mrAssAYhW4Cpc": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10+5 damage; M<1 7j7mrAssAYhW4Cpc (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "13+5 damage; M<1 7j7mrAssAYhW4Cpc (save ends)"
             }
-          }
+          ]
         },
         "effect": {
-          "before": "<p>The centurion moves up to their speed, ignoring difficult terrain, and uses Pilum against each creature whose space they move through. They make one power roll against all targets, and the ability deals an extra [[/damage 5]] damage. While weakened by that ability, each target takes [[/damage 2 fire]] damage at the start of each of their turns.</p>",
+          "before": "<p>The centurion moves up to their speed, ignoring difficult terrain, and uses Pilum against each creature whose space they move through. They make one power roll against all targets, and the ability deals an extra <span class=\"damage-value damage-generic\">5</span> damage. While weakened by that ability, each target takes <span class=\"damage-value damage-fire\">2 fire</span> damage at the start of each of their turns.</p>",
           "after": ""
         }
       }
@@ -283,13 +235,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A target who has P &lt; 2 is taunted (save ends). Each ally within distance can make a [[/damage @monster.freeStrike]]{Free Strike}. Additionally, until the end of the encounter, the centurion has damage immunity 2.</p>",
+          "before": "<p>A target who has P &lt; 2 is taunted (save ends). Each ally within distance can make a <span class=\"damage-value damage-generic\">2</span> damage free strike{Free Strike}. Additionally, until the end of the encounter, the centurion has damage immunity 2.</p>",
           "after": ""
         }
       }
@@ -315,7 +267,7 @@
         "trigger": "A creature uses an ability that targets the centurion or an ally  of the centurion within distance.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -347,7 +299,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -383,113 +335,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "ZQnM7lGGZB3n3w0r": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "ZQnM7lGGZB3n3w0r",
-              "damage": {
-                "tier1": {
-                  "value": "7"
-                },
-                "tier2": {
-                  "value": "10"
-                },
-                "tier3": {
-                  "value": "13"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; M<1 weakened (save ends); M<1 vXLk5HAJ3tyspyll"
             },
-            "0hwqoy9hPVSwCdVa": {
-              "name": "Weakened",
-              "img": null,
-              "type": "applied",
-              "_id": "0hwqoy9hPVSwCdVa",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} weakened (save ends)",
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "1"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "potency": {
-                    "value": "1"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "potency": {
-                    "value": "1"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 damage; M<1 weakened (save ends); M<1 vXLk5HAJ3tyspyll"
             },
-            "bjRwxYHZ0fG26hfw": {
-              "name": "Weakened + Restrained",
-              "img": null,
-              "type": "applied",
-              "_id": "bjRwxYHZ0fG26hfw",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "vXLk5HAJ3tyspyll": {
-                      "condition": "failure",
-                      "end": ""
-                    }
-                  },
-                  "potency": {
-                    "value": "1"
-                  }
-                },
-                "tier2": {
-                  "potency": {
-                    "value": "1"
-                  },
-                  "effects": {
-                    "vXLk5HAJ3tyspyll": {
-                      "condition": "failure",
-                      "end": ""
-                    }
-                  }
-                },
-                "tier3": {
-                  "potency": {
-                    "value": "1"
-                  },
-                  "effects": {
-                    "vXLk5HAJ3tyspyll": {
-                      "condition": "failure"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "13 damage; M<1 weakened (save ends); M<1 vXLk5HAJ3tyspyll"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",

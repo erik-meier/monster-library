@@ -66,92 +66,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "iLb5qKVKXRKZ30xa": {
-              "_id": "iLb5qKVKXRKZ30xa",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; {{forced}}"
             },
-            "OjOIVRJhK0MIkJnc": {
-              "_id": "OjOIVRJhK0MIkJnc",
-              "type": "forced",
-              "name": "push",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "1",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage; {{forced}}"
+            },
+            {
+              "tier": 3,
+              "display": "14 damage; {{forced}}"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -177,7 +110,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -185,7 +118,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of their next turn, the minotaur has damage immunity 2 and deals an extra [[/damage 5]] damage with strikes. On their next turn, the minotaur can use one additional maneuver.</p>",
+          "before": "<p>Until the end of their next turn, the minotaur has damage immunity 2 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with strikes. On their next turn, the minotaur can use one additional maneuver.</p>",
           "after": ""
         }
       }
@@ -214,98 +147,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "uSl2IKcuMU577io0": {
-              "_id": "uSl2IKcuMU577io0",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; I<@potency.weak dazed (save ends)"
             },
-            "xYwxm83E3xnwrAAH": {
-              "_id": "xYwxm83E3xnwrAAH",
-              "type": "applied",
-              "name": "Dazed",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} dazed (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 damage; I<@potency.average dazed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 damage; I<@potency.strong dazed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -334,7 +194,7 @@
         "trigger": "A creature within distance deals damage to the minotaur.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]

@@ -36,7 +36,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the tyrannis can take [[/damage 5 damage]] to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
+          "value": "<p>At the end of each of their turns, the tyrannis can take <span class=\"damage-value damage-damage\">5 damage</span> to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
           "director": ""
         }
       }
@@ -79,54 +79,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "rTvBADsOvCWsudGb": {
-              "_id": "rTvBADsOvCWsudGb",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "12",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "15",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 corruption damage"
+            },
+            {
+              "tier": 2,
+              "display": "12 corruption damage"
+            },
+            {
+              "tier": 3,
+              "display": "15 corruption damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -156,7 +127,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -191,7 +162,7 @@
         "trigger": "A creature within distance makes a strike against the tyrannis.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -226,7 +197,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -260,7 +231,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -294,7 +265,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -303,7 +274,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>The tyrannis fires a sensor mine into each unoccupied square in the area, and creates a gravity well whose area contains one or more squares of the tyrannis's space (see Gravity Well). Whenever an enemy enters a square with a sensor mine in it, the mine explodes, dealing [[/damage 3 damage]] to the enemy.</p>"
+          "after": "<p>The tyrannis fires a sensor mine into each unoccupied square in the area, and creates a gravity well whose area contains one or more squares of the tyrannis's space (see Gravity Well). Whenever an enemy enters a square with a sensor mine in it, the mine explodes, dealing <span class=\"damage-value damage-damage\">3 damage</span> to the enemy.</p>"
         }
       }
     },
@@ -331,7 +302,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -359,7 +330,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -387,13 +358,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>[[/damage 10 psychic]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>[[/damage 7 psychic]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-psychic\">10 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-psychic\">7 psychic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
         }
       }

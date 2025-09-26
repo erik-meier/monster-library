@@ -38,7 +38,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the chorogaunt can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
+          "value": "<p>At the end of each of their turns, the chorogaunt can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
           "director": ""
         }
       }
@@ -89,104 +89,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "16cvjyhnf22s78AZ": {
-              "_id": "16cvjyhnf22s78AZ",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "7",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "10",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 psychic damage; I<@potency.weak slowed (save ends)"
             },
-            "vf0PFZgh81jupyeK": {
-              "_id": "vf0PFZgh81jupyeK",
-              "type": "applied",
-              "name": "Slowed",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} slowed (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 psychic damage; I<@potency.average slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "10 psychic damage; I<@potency.strong slowed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -215,7 +136,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "presence"
             ]
@@ -248,7 +169,7 @@
         "trigger": "The chorogaunt is targeted by a strike.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "presence"
             ]
@@ -282,7 +203,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "presence"
             ]
@@ -291,7 +212,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>Each target must choose between taking [[/damage 5 psychic]] damage, or being frightened (save ends).</p>"
+          "after": "<p>Each target must choose between taking <span class=\"damage-value damage-psychic\">5 psychic</span> damage, or being frightened (save ends).</p>"
         }
       }
     },
@@ -317,7 +238,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "presence"
             ]
@@ -325,7 +246,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The chorogaunt kills the target, and each other ally in the encounter deals an extra [[/damage 3]] damage with strikes until the end of the round. The Director gains Malice equal to the number of heroes in the encounter.</p>",
+          "before": "<p>The chorogaunt kills the target, and each other ally in the encounter deals an extra <span class=\"damage-value damage-generic\">3</span> damage with strikes until the end of the round. The Director gains Malice equal to the number of heroes in the encounter.</p>",
           "after": ""
         }
       }
@@ -350,7 +271,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "presence"
             ]
@@ -382,7 +303,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -410,7 +331,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -438,13 +359,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains [[/heal 5]] Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
+          "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
           "after": ""
         }
       }

@@ -64,134 +64,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "VBFyZmxEB13gQDv3": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "VBFyZmxEB13gQDv3",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; {{forced}}"
             },
-            "TkIF5QdY51waqdeM": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "TkIF5QdY51waqdeM",
-              "forced": {
-                "tier1": {
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "distance": "4",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "distance": "6",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage; {{forced}}"
             },
-            "0DWnxna0LTJTyc3x": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "0DWnxna0LTJTyc3x",
-              "applied": {
-                "tier3": {
-                  "display": "prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "14 damage; {{forced}}; P<@potency.strong prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>Any target who takes damage from this forced movement takes an extra [[/damage 4]] damage.</p>"
+          "after": "<p>Any target who takes damage from this forced movement takes an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
         }
       }
     },
@@ -218,92 +113,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "aT78cZ0Yv8zizitF": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "aT78cZ0Yv8zizitF",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
             },
-            "DiICQ71H0xNTA1oY": {
-              "name": "Grabbed",
-              "img": null,
-              "type": "applied",
-              "_id": "DiICQ71H0xNTA1oY",
-              "applied": {
-                "tier2": {
-                  "display": "grabbed",
-                  "effects": {
-                    "grabbed": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "grabbed": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage; P<@potency.average grabbed"
+            },
+            {
+              "tier": 3,
+              "display": "14 damage; P<@potency.strong grabbed"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -336,86 +164,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "IrvQljXvyFtH3JlZ": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "IrvQljXvyFtH3JlZ",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage"
             },
-            "L3dWY4a8YTAL0Dwj": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "L3dWY4a8YTAL0Dwj",
-              "applied": {
-                "tier3": {
-                  "display": "Prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "success",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "9 damage"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage; P<@potency.strong prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The goon must have a size 1 creature or object grabbed, which they hurl across the area, ending the grab. The hurled creature or object is targeted by the ability, and lands in the last square of the line or the nearest unoccupied square of the goon’s choice.</p>",
@@ -444,7 +211,7 @@
         "trigger": "A creature or object within distance moves or shifts away  from the goon.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -472,13 +239,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 5]] damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>[[/damage 4]] damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
+          "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -500,7 +267,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -528,13 +295,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra [[/damage 5]] damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
+          "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
           "after": ""
         }
       }

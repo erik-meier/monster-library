@@ -37,7 +37,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the warleader can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
+          "value": "<p>At the end of each of their turns, the warleader can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
           "director": ""
         }
       }
@@ -90,102 +90,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "jxPbbbPpyS2qNyWs": {
-              "_id": "jxPbbbPpyS2qNyWs",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "15",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; M<@potency.weak restrained (save ends)"
             },
-            "gAuU4H2SGASwXrzx": {
-              "_id": "gAuU4H2SGASwXrzx",
-              "type": "applied",
-              "name": "Restrained",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} restrained (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "12 damage; M<@potency.average restrained (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "15 damage; M<@potency.strong restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>The warleader can teleport up to 3 squares between each strike.</p><p><br />[[/damage 3]]{3 extra restrained damage}</p>"
+          "after": "<p>The warleader can teleport up to 3 squares between each strike.</p><p><br /><span class=\"damage-value damage-generic\">3</span>{3 extra restrained damage}</p>"
         }
       }
     },
@@ -210,7 +137,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -244,7 +171,7 @@
         "trigger": "An ally ends their turn.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -278,7 +205,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -312,7 +239,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -346,7 +273,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -376,7 +303,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -404,7 +331,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -432,13 +359,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 8]] damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
         }
       }

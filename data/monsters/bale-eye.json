@@ -79,154 +79,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "reason"
             ]
           },
-          "effects": {
-            "ykeDrKkZhlLvxKbJ": {
-              "_id": "ykeDrKkZhlLvxKbJ",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 psychic damage; I<@potency.weak 4DwuSoiqBEFoV7pg; I<2 Q6ud29n1b4LtoEA4 (save ends)"
             },
-            "47fy0B9VAJjs8hni": {
-              "name": "Corruption Weakness 5",
-              "img": null,
-              "type": "applied",
-              "_id": "47fy0B9VAJjs8hni",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {
-                    "4DwuSoiqBEFoV7pg": {
-                      "condition": "always",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "4DwuSoiqBEFoV7pg": {
-                      "condition": "always",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "4DwuSoiqBEFoV7pg": {
-                      "condition": "always",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 psychic damage; I<@potency.average 4DwuSoiqBEFoV7pg; I<2 Q6ud29n1b4LtoEA4 (save ends)"
             },
-            "MyLx05xNoRoUrG1V": {
-              "name": "Corruption Weakness Save Ends",
-              "img": null,
-              "type": "applied",
-              "_id": "MyLx05xNoRoUrG1V",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {
-                    "Q6ud29n1b4LtoEA4": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": "intuition"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "Q6ud29n1b4LtoEA4": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": "intuition"
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "Q6ud29n1b4LtoEA4": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": "intuition"
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "9 psychic damage; I<@potency.strong 4DwuSoiqBEFoV7pg; I<2 Q6ud29n1b4LtoEA4 (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -258,133 +129,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "reason"
             ]
           },
-          "effects": {
-            "9b1WNV0MLKDhg0nx": {
-              "_id": "9b1WNV0MLKDhg0nx",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "6",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 psychic damage; A<@potency.weak WlWQ0LyAVTn8gdCi (save ends)"
             },
-            "46Qh1waDdbco9Dae": {
-              "_id": "46Qh1waDdbco9Dae",
-              "type": "special",
-              "name": "Special",
-              "img": null,
-              "special": {
-                "tier1": {
-                  "display": "A < 1 the target is warped (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "reason"
-                  }
-                },
-                "tier2": {
-                  "display": "A < 2 the target is warped (save ends)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "reason"
-                  }
-                },
-                "tier3": {
-                  "display": "A < 3 the target is warped (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "reason"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "5 psychic damage; A<@potency.average WlWQ0LyAVTn8gdCi (save ends)"
             },
-            "whCpgmVG94hwnisr": {
-              "name": "Warped",
-              "img": null,
-              "type": "applied",
-              "_id": "whCpgmVG94hwnisr",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} the target is warped (Save Ends)",
-                  "effects": {
-                    "WlWQ0LyAVTn8gdCi": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "WlWQ0LyAVTn8gdCi": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "WlWQ0LyAVTn8gdCi": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "6 psychic damage; A<@potency.strong WlWQ0LyAVTn8gdCi (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p><strong>Special:</strong> The bale eye must create the cube beneath themself.</p>",
@@ -409,13 +172,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p>@UUID[Compendium.draw-steel.monster-features.Item.G1VEc1g9pr75VU0O]{Abyssal Rift}</p><p>@UUID[Compendium.draw-steel.monster-features.Item.RXLSjlORw6A3YBHN]{Soulburn}</p><p>@UUID[Compendium.draw-steel.monster-features.Item.koF8i0TPdYrfcm4F]{Abyssal Evolution}</p>",
+          "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
           "after": ""
         }
       }
@@ -437,7 +200,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}

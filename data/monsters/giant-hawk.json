@@ -65,47 +65,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "KAQsMUcG8kSDHdEp": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "KAQsMUcG8kSDHdEp",
-              "damage": {
-                "tier1": {
-                  "value": "5"
-                },
-                "tier2": {
-                  "value": "7"
-                },
-                "tier3": {
-                  "value": "9"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage"
             },
-            "iRoJGiz3Dq9OFHg6": {
-              "name": "Grabbed",
-              "img": null,
-              "type": "applied",
-              "_id": "iRoJGiz3Dq9OFHg6",
-              "applied": {
-                "tier3": {
-                  "display": "grabbed",
-                  "effects": {
-                    "grabbed": {
-                      "condition": "always",
-                      "end": ""
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 damage"
+            },
+            {
+              "tier": 3,
+              "display": "9 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -140,99 +118,20 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "MhQwsOqVGfNaQFua": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "MhQwsOqVGfNaQFua",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 corruption damage; P<@potency.weak slowed (save ends)"
             },
-            "WoQ1Q8BcxmPBSXXN": {
-              "name": "Slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "WoQ1Q8BcxmPBSXXN",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}}, slowed (save ends)",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}}, restrained (save ends)",
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 corruption damage; P<@potency.average slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 corruption damage; P<@potency.strong restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
@@ -257,7 +156,7 @@
         "trigger": "A human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -285,7 +184,7 @@
         "trigger": "a human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -313,7 +212,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

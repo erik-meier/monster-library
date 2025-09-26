@@ -64,92 +64,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "MgzQBtn6JPi6s37r": {
-              "_id": "MgzQBtn6JPi6s37r",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
             },
-            "xAwNIU96aqa4sGUt": {
-              "_id": "xAwNIU96aqa4sGUt",
-              "type": "applied",
-              "name": "Prone",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "{{potency}} prone",
-                  "potency": {
-                    "value": "1",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "1",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 damage; M<1 prone"
+            },
+            {
+              "tier": 3,
+              "display": "13 damage; M<1 prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -175,7 +108,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
@@ -211,7 +144,7 @@
         "trigger": "A creature or object comes within distance.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
@@ -219,7 +152,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The predator makes a free strike against the target. If the predator was hidden from the target, the strike deals an extra [[/damage 3]] damage.</p>",
+          "before": "<p>The predator makes a free strike against the target. If the predator was hidden from the target, the strike deals an extra <span class=\"damage-value damage-generic\">3</span> damage.</p>",
           "after": ""
         }
       }

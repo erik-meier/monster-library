@@ -55,92 +55,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "xeub4baM7rhH9jm5": {
-              "type": "damage",
-              "_id": "xeub4baM7rhH9jm5",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              },
-              "name": "",
-              "img": null
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; {{forced}}"
             },
-            "y9TvTaVKxHrPu9Ri": {
-              "type": "forced",
-              "_id": "y9TvTaVKxHrPu9Ri",
-              "name": "Push",
-              "forced": {
-                "tier1": {
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "distance": "4",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "distance": "6",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              },
-              "img": null
+            {
+              "tier": 2,
+              "display": "7 damage; {{forced}}"
+            },
+            {
+              "tier": 3,
+              "display": "9 damage; {{forced}}"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -202,7 +135,7 @@
         "trigger": "A dwarf starts their turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -266,13 +199,13 @@
         "trigger": "A dwarf starts their turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage ([[/damage 3]] for wood, [[/damage 6]] for stone, or [[/damage 9]] for metal).</p>",
+          "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
           "after": ""
         }
       }

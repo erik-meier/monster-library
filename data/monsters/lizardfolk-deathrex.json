@@ -66,142 +66,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "d8t0q2hFc8Q7KZmT": {
-              "_id": "d8t0q2hFc8Q7KZmT",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; {{forced}}; A<@potency.weak bleeding (save ends)"
             },
-            "30dT8WQ1IkS5rivh": {
-              "_id": "30dT8WQ1IkS5rivh",
-              "type": "forced",
-              "name": "pull",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "1",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "1",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 damage; {{forced}}; A<@potency.average bleeding (save ends)"
             },
-            "JJjhUuPFo10vi9GH": {
-              "_id": "JJjhUuPFo10vi9GH",
-              "type": "applied",
-              "name": "Bleeding",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "12 damage; {{forced}}; A<@potency.strong bleeding (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -232,98 +115,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "s01CqQsxzXSelTs0": {
-              "_id": "s01CqQsxzXSelTs0",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "15",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; M<@potency.weak dazed (save ends)"
             },
-            "9JbrMoGiCW8z5KoZ": {
-              "_id": "9JbrMoGiCW8z5KoZ",
-              "type": "applied",
-              "name": "Dazed",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} dazed (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "12 damage; M<@potency.average dazed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "15 damage; M<@potency.strong dazed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -349,7 +159,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -383,7 +193,7 @@
         "trigger": "A creature or object within distance moves or shifts away from the deathrex.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -417,7 +227,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -448,7 +258,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -484,7 +294,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -512,7 +322,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -540,7 +350,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -570,7 +380,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}

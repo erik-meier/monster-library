@@ -36,7 +36,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The bloodrunner can end their movement in a prone creature’s space. The first time on a turn that a bloodrunner enters any crea ture’s space, that creature takes [[/damage 3]] damage.</p>",
+          "value": "<p>The bloodrunner can end their movement in a prone creature’s space. The first time on a turn that a bloodrunner enters any crea ture’s space, that creature takes <span class=\"damage-value damage-generic\">3</span> damage.</p>",
           "director": ""
         }
       }
@@ -48,7 +48,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>If the bloodrunner is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the bloodrunner is reduced to 1 Stamina instead.</p>",
+          "value": "<p>If the bloodrunner is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">5</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the bloodrunner is reduced to 1 Stamina instead.</p>",
           "director": ""
         }
       }
@@ -70,13 +70,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p>[[/damage 6]] damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p>[[/damage 4]] damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
+          "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -98,7 +98,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -126,13 +126,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 4]] damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>[[/damage 4]] damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
+          "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -160,63 +160,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "rrzMNzhEiKPxd4mY": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "rrzMNzhEiKPxd4mY",
-              "damage": {
-                "tier1": {
-                  "value": "7"
-                },
-                "tier2": {
-                  "value": "10"
-                },
-                "tier3": {
-                  "value": "13"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
             },
-            "dCRdz0mv8qqjLPYv": {
-              "name": "Push",
-              "img": null,
-              "type": "other",
-              "_id": "dCRdz0mv8qqjLPYv",
-              "other": {
-                "tier1": {
-                  "display": "push special"
-                },
-                "tier2": {
-                  "display": "push special"
-                },
-                "tier3": {
-                  "display": "push special or prone"
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 damage"
             },
-            "ExZ2oVSAODIpPBim": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "ExZ2oVSAODIpPBim",
-              "applied": {
-                "tier3": {
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": ""
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "13 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",

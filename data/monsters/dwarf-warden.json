@@ -52,130 +52,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "iibhyLhPqmrYtPIc": {
-              "type": "damage",
-              "_id": "iibhyLhPqmrYtPIc",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              },
-              "name": "",
-              "img": null
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; {{forced}}"
             },
-            "FDfDBVu1Vn6vQv5i": {
-              "type": "forced",
-              "_id": "FDfDBVu1Vn6vQv5i",
-              "name": "Push",
-              "forced": {
-                "tier2": {
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "distance": "5",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "1",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              },
-              "img": null
+            {
+              "tier": 2,
+              "display": "10 damage; {{forced}}"
             },
-            "ApeAm2ISrAZCGlRt": {
-              "type": "applied",
-              "_id": "ApeAm2ISrAZCGlRt",
-              "name": "Restrained",
-              "applied": {
-                "tier3": {
-                  "display": "{{potency}} restrained (save ends)",
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "@potency.strong"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  },
-                  "effects": {}
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  },
-                  "effects": {}
-                }
-              },
-              "img": null
+            {
+              "tier": 3,
+              "display": "13 damage; {{forced}}; M<@potency.strong restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -211,93 +106,20 @@
               "might"
             ]
           },
-          "effects": {
-            "8L3pFRYgDxUxOX9D": {
-              "type": "damage",
-              "_id": "8L3pFRYgDxUxOX9D",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              },
-              "name": "",
-              "img": null
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; A<@potency.weak slowed (save ends)"
             },
-            "kNicEjWjIRI37Hvh": {
-              "type": "applied",
-              "_id": "kNicEjWjIRI37Hvh",
-              "name": "Slowed",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} Slowed (Save Ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              },
-              "img": null
+            {
+              "tier": 2,
+              "display": "8 damage; A<@potency.average slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "11 damage; A<@potency.strong slowed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -334,7 +156,7 @@
         "trigger": "A dwarf starts their turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -398,13 +220,13 @@
         "trigger": "A dwarf starts their turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage ([[/damage 3]] for wood, [[/damage 6]] for stone, or [[/damage 9]] for metal).</p>",
+          "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
           "after": ""
         }
       }

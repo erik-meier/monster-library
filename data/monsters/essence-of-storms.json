@@ -66,131 +66,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "x5TA0FOuvhtdyF2G": {
-              "_id": "x5TA0FOuvhtdyF2G",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; 0 lightning damage"
             },
-            "intXFh7y5IE79SmB": {
-              "name": "Lightning Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "intXFh7y5IE79SmB",
-              "damage": {
-                "tier1": {
-                  "value": "0",
-                  "types": [
-                    "lightning"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [
-                    "lightning"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [
-                    "lightning"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "5 damage; 4 lightning damage; {{forced}}"
             },
-            "hr0K7nVHBpKeI7xA": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "hr0K7nVHBpKeI7xA",
-              "forced": {
-                "tier1": {
-                  "display": "",
-                  "movement": [],
-                  "distance": "",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "1",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "3",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "5 damage; 7 lightning damage; {{forced}}"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -220,7 +114,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
@@ -255,7 +149,7 @@
         "trigger": "A creature within distance deals damage to the essence.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
@@ -264,7 +158,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>The target takes [[/damage 5 lightning]] damage.</p>"
+          "after": "<p>The target takes <span class=\"damage-value damage-lightning\">5 lightning</span> damage.</p>"
         }
       }
     },
@@ -285,7 +179,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -313,7 +207,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -342,7 +236,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

@@ -49,7 +49,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>On their turn, the mote can leave the encounter in a flash of light to revive one adjacent dead soot crow, brambleguard, or ceramic horse. The revived creature returns with [[/heal 3]].</p>",
+          "value": "<p>On their turn, the mote can leave the encounter in a flash of light to revive one adjacent dead soot crow, brambleguard, or ceramic horse. The revived creature returns with <span class=\"heal-value\">3</span> healing.</p>",
           "director": ""
         }
       }
@@ -77,92 +77,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "pz06i6X7X9ZOK4dr": {
-              "_id": "pz06i6X7X9ZOK4dr",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "1",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "1",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "2",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "1 damage"
             },
-            "feFoFQa7agT7SGGp": {
-              "name": "Weakness",
-              "img": null,
-              "type": "applied",
-              "_id": "feFoFQa7agT7SGGp",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "{{potency}} damage weakness 3 (save ends)",
-                  "effects": {
-                    "b9YcbklePj3J8UG0": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "reason"
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "b9YcbklePj3J8UG0": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "reason"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "1 damage; R<@potency.average b9YcbklePj3J8UG0 (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "2 damage; R<@potency.strong b9YcbklePj3J8UG0 (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -187,7 +120,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -215,7 +148,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

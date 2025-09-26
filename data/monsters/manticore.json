@@ -37,7 +37,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the manticore can take [[/damage 10]] damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p>The manticore can take two turns each round. They can't take turns consecutively.</p>",
+          "value": "<p>At the end of each of their turns, the manticore can take <span class=\"damage-value damage-generic\">10</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p>The manticore can take two turns each round. They can't take turns consecutively.</p>",
           "director": ""
         }
       }
@@ -77,98 +77,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "qcGWiWMIsVzOio06": {
-              "_id": "qcGWiWMIsVzOio06",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "17",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "21",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "12 damage; A<@potency.weak bleeding (save ends)"
             },
-            "PZ6GPr0VxJIFRxl8": {
-              "_id": "PZ6GPr0VxJIFRxl8",
-              "type": "applied",
-              "name": "Bleeding",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "17 damage; A<@potency.average bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "21 damage; A<@potency.strong bleeding (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -199,143 +126,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "6zPfgy1t016OKScq": {
-              "_id": "6zPfgy1t016OKScq",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage; 4 poison damage"
             },
-            "hyXuDIRj0csYe6oN": {
-              "_id": "hyXuDIRj0csYe6oN",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "8",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage; 4 poison damage; P<@potency.average axkGj4sdnaVjmUKZ, weakened (save ends)"
             },
-            "0jPGcPtO9SY2kZsD": {
-              "name": "Weakened",
-              "img": null,
-              "type": "applied",
-              "_id": "0jPGcPtO9SY2kZsD",
-              "applied": {
-                "tier2": {
-                  "display": "weakened (save ends)",
-                  "effects": {
-                    "axkGj4sdnaVjmUKZ": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "axkGj4sdnaVjmUKZ": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "14 damage; 8 poison damage; P<@potency.strong weakened, axkGj4sdnaVjmUKZ (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -364,7 +173,7 @@
         "trigger": "A creature within distance deals damage to the manticore.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
@@ -399,78 +208,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "SVDOdvRLuHpwYV5d": {
-              "_id": "SVDOdvRLuHpwYV5d",
-              "type": "applied",
-              "name": "Frightened",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "frightened (EoT); if the target has {{potency}} they are instead Frightened (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "frightened": {
-                      "condition": "success",
-                      "end": "turn",
-                      "properties": []
-                    },
-                    "mQxRYWakIfo8zKwY": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "frightened (EoT); if the target has {{potency}} they are instead Frightened (save ends)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "frightened": {
-                      "condition": "success",
-                      "end": "turn",
-                      "properties": []
-                    },
-                    "mQxRYWakIfo8zKwY": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "frightened (EoT); if the target has {{potency}} they are instead dazed (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "intuition"
-                  },
-                  "effects": {
-                    "frightened": {
-                      "condition": "success",
-                      "end": "turn",
-                      "properties": []
-                    },
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "I<@potency.weak frightened, mQxRYWakIfo8zKwY"
+            },
+            {
+              "tier": 2,
+              "display": "I<@potency.average frightened, mQxRYWakIfo8zKwY"
+            },
+            {
+              "tier": 3,
+              "display": "I<@potency.strong frightened, dazed"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -498,7 +254,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
@@ -531,7 +287,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
@@ -567,7 +323,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The manticore uses their mimicry in an attempt to unnerve one creature within their line of effect. If the target has R&lt;4, they take a bane on power rolls against the manticore (save ends). Each time this feature is used against the same target during the encounter, its potency decreases by 2.</p>",
+          "before": "<p>The manticore uses their mimicry in an attempt to unnerve one creature within their line of effect. If the target has <strong class=\"potency-value\">R&lt;4</strong>, they take a bane on power rolls against the manticore (save ends). Each time this feature is used against the same target during the encounter, its potency decreases by 2.</p>",
           "after": ""
         }
       }
@@ -651,7 +407,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The manticore sprays tail spikes across the ground within 5 squares of them. Each enemy in that area who has A&lt;3 is bleeding (save ends). Additionally, the area is difficult terrain, and any enemy takes [[/damage 3 poison]] damage for each square of the area they enter. An enemy who takes [[/damage 9 poison]] damage this way on one turn is weakened until the end of the encounter.</p>",
+          "before": "<p>The manticore sprays tail spikes across the ground within 5 squares of them. Each enemy in that area who has <strong class=\"potency-value\">A&lt;3</strong> is bleeding (save ends). Additionally, the area is difficult terrain, and any enemy takes <span class=\"damage-value damage-poison\">3 poison</span> damage for each square of the area they enter. An enemy who takes <span class=\"damage-value damage-poison\">9 poison</span> damage this way on one turn is weakened until the end of the encounter.</p>",
           "after": ""
         }
       }
@@ -679,92 +435,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 4",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "uA0QEhITQZTo0Bl7": {
-              "name": "Slide",
-              "img": null,
-              "type": "forced",
-              "_id": "uA0QEhITQZTo0Bl7",
-              "forced": {
-                "tier1": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "1",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "2",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "4",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "{{forced}}; 3 damage"
             },
-            "2yQgPQskCzUFrLZC": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "2yQgPQskCzUFrLZC",
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "{{forced}}; 5 damage"
+            },
+            {
+              "tier": 3,
+              "display": "{{forced}}; 7 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",

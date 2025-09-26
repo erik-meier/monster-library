@@ -65,145 +65,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
           },
-          "effects": {
-            "jopkQk7ERXcMyKUk": {
-              "_id": "jopkQk7ERXcMyKUk",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [
-                    "psychic"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 psychic damage; M<@potency.weak prone"
             },
-            "c3GNwsO4hRSDZ2KN": {
-              "_id": "c3GNwsO4hRSDZ2KN",
-              "type": "forced",
-              "name": "push",
-              "img": null,
-              "forced": {
-                "tier2": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "reason"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "reason"
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "movement": [],
-                  "distance": "",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 psychic damage; {{forced}}; M<@potency.average prone"
             },
-            "kuUe5Qt8KoH3pJ6u": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "kuUe5Qt8KoH3pJ6u",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "13 psychic damage; {{forced}}; M<@potency.strong prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -234,63 +114,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
           },
-          "effects": {
-            "ikkfA63sbJnOGGp6": {
-              "_id": "ikkfA63sbJnOGGp6",
-              "type": "applied",
-              "name": "Slowed and Dazed",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} slowed (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "{{potency}} dazed (save ends)",
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} dazed and slowed (save ends)",
-                  "effects": {
-                    "9EnCQ5K6JLmZL18E": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "R<@potency.weak slowed (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "R<@potency.average dazed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "R<@potency.strong 9EnCQ5K6JLmZL18E (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -318,7 +160,7 @@
         "trigger": "A creature deals damage to the talent.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
@@ -348,13 +190,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each rival regains [[/heal 10]] Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
+          "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
           "after": ""
         }
       }
@@ -376,7 +218,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -404,7 +246,7 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -432,7 +274,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -460,7 +302,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

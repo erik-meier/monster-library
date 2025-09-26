@@ -37,7 +37,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>When the amalgamite is reduced to 0 Stamina, their loyalty collar explodes, dealing [[/damage 1d6]] damage to each adjacent enemy and object.</p>",
+          "value": "<p>When the amalgamite is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">1d6</span> damage to each adjacent enemy and object.</p>",
           "director": ""
         }
       }
@@ -65,96 +65,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "XiK0WJgS5i7vh1YX": {
-              "_id": "XiK0WJgS5i7vh1YX",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
             },
-            "kPptsAhR3h7xINwg": {
-              "_id": "kPptsAhR3h7xINwg",
-              "type": "applied",
-              "name": "Grabbed",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "{{potency}} grabbed",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "grabbed": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} grabbed",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "grabbed": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "5 damage; A<@potency.average grabbed"
+            },
+            {
+              "tier": 3,
+              "display": "6 damage; A<@potency.strong grabbed"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>The amalgamite can have up to four targets grabbed at once.</p><p>[[/damage 3 damage]]</p>"
+          "after": "<p>The amalgamite can have up to four targets grabbed at once.</p><p><span class=\"damage-value damage-damage\">3 damage</span></p>"
         }
       }
     },
@@ -180,7 +113,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -217,13 +150,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p>[[/damage 5 fire]] damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p>[[/damage 5 fire]] damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p>[[/damage 5 fire]] damage</p></td></tr></tbody></table>",
+          "before": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-fire\">5 fire</span> damage</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -245,7 +178,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -273,7 +206,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

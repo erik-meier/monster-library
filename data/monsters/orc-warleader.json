@@ -46,13 +46,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p>[[/damage 6]] damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p>[[/damage 4]] damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
+          "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -74,7 +74,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -102,13 +102,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 4]] damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>[[/damage 4]] damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
+          "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -120,7 +120,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>If the warleader is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the warleader is reduced to 1 Stamina instead.</p>",
+          "value": "<p>If the warleader is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">5</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the warleader is reduced to 1 Stamina instead.</p>",
           "director": ""
         }
       }
@@ -132,7 +132,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the warleader can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
+          "value": "<p>At the end of each of their turns, the warleader can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
           "director": ""
         }
       }
@@ -158,7 +158,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -192,80 +192,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "JaR8KqzpZujoOcGO": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "JaR8KqzpZujoOcGO",
-              "damage": {
-                "tier1": {
-                  "value": "7"
-                },
-                "tier2": {
-                  "value": "10"
-                },
-                "tier3": {
-                  "value": "13"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
             },
-            "RuY9XCBu6mpvjLxT": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "RuY9XCBu6mpvjLxT",
-              "forced": {
-                "tier2": {
-                  "distance": "3"
-                },
-                "tier3": {
-                  "distance": "5"
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 damage"
             },
-            "lDiD52L7qDdFUt0y": {
-              "name": "Dazed",
-              "img": null,
-              "type": "applied",
-              "_id": "lDiD52L7qDdFUt0y",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "might"
-                  },
-                  "display": "{{potency}} dazed (save ends)",
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "13 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -294,7 +239,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -326,7 +271,7 @@
         "trigger": "The target obtains a tier 1 outcome on one power roll.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -358,7 +303,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -389,7 +334,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -417,7 +362,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}

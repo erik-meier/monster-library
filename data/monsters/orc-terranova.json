@@ -37,7 +37,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>If the terranova is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the terranova is reduced to 1 Stamina instead.</p>",
+          "value": "<p>If the terranova is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the terranova is reduced to 1 Stamina instead.</p>",
           "director": ""
         }
       }
@@ -77,78 +77,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "Wgs0vYsos6HdSjI4": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "Wgs0vYsos6HdSjI4",
-              "damage": {
-                "tier1": {
-                  "value": "6"
-                },
-                "tier2": {
-                  "value": "9"
-                },
-                "tier3": {
-                  "value": "12"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage"
             },
-            "ZIGVROTYUGsE8uxf": {
-              "name": "prone",
-              "img": null,
-              "type": "applied",
-              "_id": "ZIGVROTYUGsE8uxf",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "agility"
-                  },
-                  "display": "{{potency}} prone and can’t stand (save ends)",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": ""
-                    },
-                    "A45TKyRHuWHnNj7M": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": ""
-                    },
-                    "A45TKyRHuWHnNj7M": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": ""
-                    },
-                    "A45TKyRHuWHnNj7M": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "9 damage"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -173,7 +120,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -201,13 +148,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 4]] damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>[[/damage 4]] damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
+          "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -229,13 +176,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p>[[/damage 6]] damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p>[[/damage 4]] damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
+          "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -262,66 +209,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "ZP2R2qA3pKhQ2Q87": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "ZP2R2qA3pKhQ2Q87",
-              "damage": {
-                "tier1": {
-                  "value": "4"
-                },
-                "tier2": {
-                  "value": "7"
-                },
-                "tier3": {
-                  "value": "10"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
             },
-            "5KzPrLlNBlOhyQWw": {
-              "name": "Restrained",
-              "img": null,
-              "type": "applied",
-              "_id": "5KzPrLlNBlOhyQWw",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} restrained (save ends)",
-                  "potency": {
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 damage"
+            },
+            {
+              "tier": 3,
+              "display": "10 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",

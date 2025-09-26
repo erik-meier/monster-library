@@ -66,98 +66,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "zvckUZELwOOHegPo": {
-              "_id": "zvckUZELwOOHegPo",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 acid damage; {{forced}}"
             },
-            "uvVbmdkKW0AUcYA2": {
-              "_id": "uvVbmdkKW0AUcYA2",
-              "type": "forced",
-              "name": "pull",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "1",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "pull"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 acid damage; {{forced}}"
+            },
+            {
+              "tier": 3,
+              "display": "14 acid damage; {{forced}}"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -189,72 +116,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "uFLpPtAvfPK6Yk4a": {
-              "_id": "uFLpPtAvfPK6Yk4a",
-              "type": "applied",
-              "name": "Restrained",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} restrained (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "Slowed (save ends); or if {{potency}} restrained (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "slowed": {
-                      "condition": "success",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "A<@potency.weak restrained (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "A<@potency.average restrained (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "M<@potency.strong restrained, slowed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The area extends from both the tonguesnapper's eyes, and this ability targets the first creature without cover on either side of the area.</p>",
-          "after": "<p>If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target’s body, dealing [[/damage 8]] damage to the target that can’t be reduced in any way and ending this effect.</p>"
+          "after": "<p>If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target’s body, dealing <span class=\"damage-value damage-generic\">8</span> damage to the target that can’t be reduced in any way and ending this effect.</p>"
         }
       }
     },
@@ -282,103 +166,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "00G7OSpbLNOd32ai": {
-              "_id": "00G7OSpbLNOd32ai",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 corruption damage; R<@potency.weak dazed (save ends)"
             },
-            "wYEhEcePdSglkCel": {
-              "_id": "wYEhEcePdSglkCel",
-              "type": "applied",
-              "name": "Dazed",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} dazed (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} dazed and slowed (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "flNT7bl6d8W4fw2h": {
-                      "condition": "failure",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 corruption damage; R<@potency.average dazed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "14 corruption damage; R<@potency.strong flNT7bl6d8W4fw2h"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -407,7 +213,7 @@
         "trigger": "The tonguesnapper takes damage from a melee ability.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
@@ -416,7 +222,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>Each target takes [[/damage 4 acid]] damage. Any target who has M &lt; 2 is also slowed (save ends).</p>"
+          "after": "<p>Each target takes <span class=\"damage-value damage-acid\">4 acid</span> damage. Any target who has M &lt; 2 is also slowed (save ends).</p>"
         }
       }
     },
@@ -437,7 +243,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -468,127 +274,20 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "LWfCzXMwGX0NJNos": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "LWfCzXMwGX0NJNos",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage; 0 damage"
             },
-            "4CyD3EuQhZZ3XBS3": {
-              "name": "Agility Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "4CyD3EuQhZZ3XBS3",
-              "damage": {
-                "tier1": {
-                  "value": "0",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "2",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "1",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "2",
-                    "characteristic": "agility"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 damage; 2 damage; A<1 prone"
             },
-            "vhv2fx9be2mvJo3W": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "vhv2fx9be2mvJo3W",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "Prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "1",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier3": {
-                  "display": "prone and can't stand (save ends)",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    },
-                    "KtUIFOUuE6sXE8vC": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "4 damage; 5 damage; A<2 prone, KtUIFOUuE6sXE8vC"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The basilisk spits up a chunk of partly digested stone.</p>",
@@ -613,7 +312,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

@@ -54,54 +54,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "rt0uXwE7aQACHFZN": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "rt0uXwE7aQACHFZN",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [
-                    "holy"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "holy"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [
-                    "holy"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 holy damage"
+            },
+            {
+              "tier": 2,
+              "display": "10 holy damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 holy damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -131,7 +102,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -183,13 +154,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each rival regains [[/heal 10]] Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
+          "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
           "after": ""
         }
       }
@@ -211,7 +182,7 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -239,7 +210,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -267,7 +238,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -295,7 +266,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

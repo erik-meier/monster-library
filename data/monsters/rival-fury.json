@@ -53,93 +53,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "rt0uXwE7aQACHFZN": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "rt0uXwE7aQACHFZN",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
             },
-            "smuXsLN43WJjOgyP": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "smuXsLN43WJjOgyP",
-              "forced": {
-                "tier2": {
-                  "distance": "2"
-                },
-                "tier3": {
-                  "distance": "3"
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage"
             },
-            "9zBpmWpDVZDE3atd": {
-              "name": "Slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "9zBpmWpDVZDE3atd",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "14 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -182,85 +114,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "gygFwEgqw0eQwsrf": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "gygFwEgqw0eQwsrf",
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "16",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; P<@potency.weak grabbed"
             },
-            "PRKPnOiId48gwUIp": {
-              "name": "grabbed",
-              "img": null,
-              "type": "applied",
-              "_id": "PRKPnOiId48gwUIp",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} grabbed",
-                  "effects": {
-                    "grabbed": {
-                      "condition": "failure",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "13 damage"
+            },
+            {
+              "tier": 3,
+              "display": "16 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -297,13 +169,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each rival regains [[/heal 10]] Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
+          "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
           "after": ""
         }
       }
@@ -325,7 +197,7 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -353,7 +225,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -381,7 +253,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -409,7 +281,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

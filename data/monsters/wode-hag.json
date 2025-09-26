@@ -36,7 +36,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the hag can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p>The hag can take two turns each round. They can't take turns consecutively.</p>",
+          "value": "<p>At the end of each of their turns, the hag can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p>The hag can take two turns each round. They can't take turns consecutively.</p>",
           "director": ""
         }
       }
@@ -76,104 +76,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "ROqXjJAFg8pnbUPh": {
-              "_id": "ROqXjJAFg8pnbUPh",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "9",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "13",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "16",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 corruption damage; A<@potency.weak weakened (save ends)"
             },
-            "6AzdaaTeanlnXvDD": {
-              "_id": "6AzdaaTeanlnXvDD",
-              "type": "applied",
-              "name": "Weakened",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} weakened (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "13 corruption damage; A<@potency.average weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "16 corruption damage; A<@potency.strong weakened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -204,95 +125,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "CmnKt3Td593njFLf": {
-              "_id": "CmnKt3Td593njFLf",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "10",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 corruption damage; 4 corruption damage"
             },
-            "vEXDtzz2oPBhcvbH": {
-              "name": "Presence Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "vEXDtzz2oPBhcvbH",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "presence"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "6",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 corruption damage; 5 corruption damage"
+            },
+            {
+              "tier": 3,
+              "display": "10 corruption damage; 6 corruption damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -320,7 +171,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "intuition"
             ]
@@ -355,103 +206,25 @@
         "trigger": "A creature targets the hag with a melee strike.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "iBt081tHUrkyE4f9": {
-              "_id": "iBt081tHUrkyE4f9",
-              "type": "forced",
-              "name": "slide",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "intuition"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "intuition"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "5",
-                  "display": "{{forced}}",
-                  "properties": [
-                    "vertical"
-                  ],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "intuition"
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "{{forced}}"
             },
-            "U4vZIP1cKCJt0PGe": {
-              "_id": "U4vZIP1cKCJt0PGe",
-              "type": "applied",
-              "name": "Restrained",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "{{potency}} the slide is vertical, and the target is restrained (EoT)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} restrained (EoT)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "{{potency}} the slide is vertical",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "{{forced}}; R<@potency.average restrained"
+            },
+            {
+              "tier": 3,
+              "display": "{{forced}}; R<@potency.strong restrained"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -481,54 +254,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "5GxBs0mOYqoqM6Jh": {
-              "_id": "5GxBs0mOYqoqM6Jh",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 poison damage"
+            },
+            {
+              "tier": 2,
+              "display": "10 poison damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 poison damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The hag attaches an ornate explosive pastry to each target who has A &lt; 2. At the end of the round, the hag makes one power roll against each creature with a pastry attached to them.</p><p></p>",
@@ -558,7 +302,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "intuition"
             ]
@@ -594,108 +338,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "y6esK91qDHYxbgfp": {
-              "_id": "y6esK91qDHYxbgfp",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 fire damage; A<@potency.weak weakened (save ends)"
             },
-            "r53tbVFnf64irjLX": {
-              "_id": "r53tbVFnf64irjLX",
-              "type": "applied",
-              "name": "Weakened",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} weakened (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 fire damage; A<@potency.average weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "13 fire damage; A<@potency.strong weakened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>The hag turns the area into a roiling oven until the end of the encounter. Any creature in area takes an extra [[/damage 5]] damage from the hag's damage-dealing abilities.</p>"
+          "after": "<p>The hag turns the area into a roiling oven until the end of the encounter. Any creature in area takes an extra <span class=\"damage-value damage-generic\">5</span> damage from the hag's damage-dealing abilities.</p>"
         }
       }
     },
@@ -716,7 +381,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -754,129 +419,20 @@
             "formula": "3",
             "characteristics": []
           },
-          "effects": {
-            "AHQJOeeWUwhVYNaQ": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "AHQJOeeWUwhVYNaQ",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [
-                    "cold",
-                    "fire",
-                    "lightning"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [
-                    "cold",
-                    "fire",
-                    "lightning"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "11",
-                  "types": [
-                    "cold",
-                    "fire",
-                    "lightning"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 cold/fire/lightning damage; R<1 frightened, dazed, slowed (save ends)"
             },
-            "EeYEO4u7ex2EywNz": {
-              "name": "Condition",
-              "img": null,
-              "type": "applied",
-              "_id": "EeYEO4u7ex2EywNz",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "value": "1",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    },
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  },
-                  "display": "{{potency}} frightened (save ends)"
-                },
-                "tier2": {
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  },
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    },
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  },
-                  "display": ""
-                },
-                "tier3": {
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    },
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  },
-                  "potency": {
-                    "value": "3",
-                    "characteristic": ""
-                  },
-                  "display": ""
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 cold/fire/lightning damage; R<2 frightened, dazed, slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "11 cold/fire/lightning damage; R<3 frightened, dazed, slowed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -901,7 +457,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -933,13 +489,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The hag’s hut springs to life. It enters the encounter map within 10 squares of the hag if it isn’t already there and takes its turn. The hut is size 4, has 75 Stamina and damage immunity 3, and has speed 8 from its powerful set of animal legs. This feature can’t be used if the hut is reduced to 0 Stamina. In addition to its move action, the house can take only the Kick main action.</p><p>@UUID[Actor.QN5z25hC9mmXjOXD]{Hag Hut}</p>",
+          "before": "<p>The hag’s hut springs to life. It enters the encounter map within 10 squares of the hag if it isn’t already there and takes its turn. The hut is size 4, has 75 Stamina and damage immunity 3, and has speed 8 from its powerful set of animal legs. This feature can’t be used if the hut is reduced to 0 Stamina. In addition to its move action, the house can take only the Kick main action.</p><p><span class=\"reference-text\">Hag Hut</span></p>",
           "after": ""
         }
       }

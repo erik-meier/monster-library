@@ -61,7 +61,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -95,104 +95,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "uqaVSwE97TZFgQS3": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "uqaVSwE97TZFgQS3",
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 corruption damage; P<@potency.weak weakened (save ends)"
             },
-            "pos2evZzwWF6Bv9I": {
-              "name": "weakened",
-              "img": null,
-              "type": "applied",
-              "_id": "pos2evZzwWF6Bv9I",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "presence",
-                    "value": "@potency.weak"
-                  },
-                  "display": "{{potency}} weakened (save ends)",
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 corruption damage; P<@potency.average weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "5 corruption damage; P<@potency.strong weakened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -217,7 +138,7 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -245,7 +166,7 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -273,7 +194,7 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -301,13 +222,13 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p>[[/damage 5]] damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p>[[/damage 5]] damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p>[[/damage 5]] damage.</p></td></tr></tbody></table>",
+          "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
           "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
         }
       }

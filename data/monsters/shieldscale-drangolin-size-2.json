@@ -77,54 +77,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "GRvW6HMmtz7bgqAH": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "GRvW6HMmtz7bgqAH",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 fire damage"
+            },
+            {
+              "tier": 2,
+              "display": "10 fire damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 fire damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -149,7 +120,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -182,145 +153,28 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "65MY29NDl5E3WeXo": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "65MY29NDl5E3WeXo",
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage; {{forced}}; A<0 prone"
             },
-            "ToGnUiDWtiFk8zHJ": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "ToGnUiDWtiFk8zHJ",
-              "forced": {
-                "tier1": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "1",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "3",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "5",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 damage; {{forced}}; A<0 prone"
             },
-            "7GEheZyQEACpCNgL": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "7GEheZyQEACpCNgL",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "0",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "0",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "0",
-                    "characteristic": "agility"
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "11 damage; {{forced}}; A<0 prone"
             }
-          }
+          ]
         },
         "effect": {
-          "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra [[/damage 2 fire]] damage.</p>",
+          "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra <span class=\"damage-value damage-fire\">2 fire</span> damage.</p>",
           "after": ""
         }
       }
@@ -342,13 +196,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">5</span> damage free strike</p>",
           "after": ""
         }
       }
@@ -370,7 +224,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -398,7 +252,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

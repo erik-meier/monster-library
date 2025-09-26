@@ -39,7 +39,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the blackguard can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
+          "value": "<p>At the end of each of their turns, the blackguard can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
           "director": ""
         }
       }
@@ -78,98 +78,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "pMtEEPshaikus7Hx": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "pMtEEPshaikus7Hx",
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage; M<@potency.weak slowed (save ends)"
             },
-            "9lmNDN6gXa0X2dCt": {
-              "name": "slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "9lmNDN6gXa0X2dCt",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} slowed (saved ends)",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 damage; M<@potency.average slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "8 damage; M<@potency.strong slowed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -198,7 +125,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -229,7 +156,7 @@
         "trigger": "A creature makes a strike against the blackguard or an ally  adjacent to them.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -257,7 +184,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -290,7 +217,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -318,7 +245,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -356,99 +283,20 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "MhQwsOqVGfNaQFua": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "MhQwsOqVGfNaQFua",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 corruption damage; P<@potency.weak slowed (save ends)"
             },
-            "WoQ1Q8BcxmPBSXXN": {
-              "name": "Slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "WoQ1Q8BcxmPBSXXN",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}}, slowed (save ends)",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}}, restrained (save ends)",
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 corruption damage; P<@potency.average slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 corruption damage; P<@potency.strong restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
@@ -473,7 +321,7 @@
         "trigger": "A human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -501,7 +349,7 @@
         "trigger": "a human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}

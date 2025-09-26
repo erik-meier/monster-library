@@ -77,104 +77,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "GvP5Y3s11aNaCe4R": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "GvP5Y3s11aNaCe4R",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 poison damage; M<@potency.weak weakened (save ends)"
             },
-            "LV2Lrl2C5uVCyiDZ": {
-              "name": "weakened",
-              "img": null,
-              "type": "applied",
-              "_id": "LV2Lrl2C5uVCyiDZ",
-              "applied": {
-                "tier3": {
-                  "display": "{{potency}} weakened (save ends)",
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "@potency.weak"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": ""
-                },
-                "tier2": {
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 poison damage; M<@potency.average weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "14 poison damage; M<@potency.strong weakened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -205,48 +126,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "7JvXfvl75Zn3Wc7c": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "7JvXfvl75Zn3Wc7c",
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage"
+            },
+            {
+              "tier": 2,
+              "display": "9 damage"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -271,7 +169,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -305,63 +203,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "S2rIGpiJo0b7vJz7": {
-              "name": "Restrained",
-              "img": null,
-              "type": "applied",
-              "_id": "S2rIGpiJo0b7vJz7",
-              "applied": {
-                "tier1": {
-                  "potency": {
-                    "characteristic": "agility",
-                    "value": "@potency.weak"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "{{potency}} restrained (save ends)"
-                },
-                "tier2": {
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "A<@potency.weak restrained (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "A<@potency.average restrained (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "A<@potency.strong restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -386,7 +246,7 @@
         "trigger": "The spider or any ally riding the spider takes damage.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

@@ -48,7 +48,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the carnage can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
+          "value": "<p>At the end of each of their turns, the carnage can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
           "director": ""
         }
       }
@@ -88,97 +88,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "PuME1DRm1neg8ZTK": {
-              "_id": "PuME1DRm1neg8ZTK",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; A<@potency.weak bleeding (save ends)"
             },
-            "YWyyQEF38cTSMhay": {
-              "_id": "YWyyQEF38cTSMhay",
-              "type": "applied",
-              "name": "Bleeding and dazed",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} bleeding and dazed (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "djensfHmTU8RzHZe": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage; A<@potency.average bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "14 damage; A<@potency.strong djensfHmTU8RzHZe (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -207,7 +135,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -242,7 +170,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -276,7 +204,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -311,7 +239,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -341,13 +269,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra [[/damage 5]] damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a @UUID[Compendium.draw-steel.monsters.Actor.NWOCoxzsguUP85Bk]{gnoll marauder}, keeping their current Stamina</p>",
+          "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
           "after": ""
         }
       }
@@ -369,7 +297,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -403,13 +331,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>[[/damage 6]] damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>[[/damage 4]] damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
         }
       }

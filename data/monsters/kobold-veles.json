@@ -70,13 +70,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
           "after": ""
         }
       }
@@ -98,7 +98,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -126,7 +126,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -162,30 +162,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "93Mxc2gZKqJ2E9ns": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "93Mxc2gZKqJ2E9ns",
-              "damage": {
-                "tier1": {
-                  "value": "1"
-                },
-                "tier2": {
-                  "value": "2"
-                },
-                "tier3": {
-                  "value": "3"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "1 damage"
+            },
+            {
+              "tier": 2,
+              "display": "2 damage"
+            },
+            {
+              "tier": 3,
+              "display": "3 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",

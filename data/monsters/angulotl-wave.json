@@ -40,7 +40,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Whenever an adjacent enemy grabs the wave or uses a melee ability against them, that enemy takes [[/damage 2 poison]] damage.</p>",
+          "value": "<p>Whenever an adjacent enemy grabs the wave or uses a melee ability against them, that enemy takes <span class=\"damage-value damage-poison\">2 poison</span> damage.</p>",
           "director": ""
         }
       }
@@ -74,7 +74,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -102,13 +102,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p>[[/damage 5 sonic]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p>[[/damage 4 sonic]] damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -130,61 +130,23 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
-          "effects": {
-            "g8BNA1tbnI9d59oQ": {
-              "name": "Wet",
-              "img": null,
-              "type": "applied",
-              "_id": "g8BNA1tbnI9d59oQ",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "P<@potency.weak Du8EMyrd7nZQ66Yk"
+            },
+            {
+              "tier": 2,
+              "display": "P<@potency.average Du8EMyrd7nZQ66Yk"
+            },
+            {
+              "tier": 3,
+              "display": "P<@potency.strong Du8EMyrd7nZQ66Yk"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
@@ -215,70 +177,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "tScpB8OyCBYOsPVq": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "tScpB8OyCBYOsPVq",
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [
-                    "holy"
-                  ]
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [
-                    "holy"
-                  ]
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [
-                    "holy"
-                  ]
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 holy damage"
             },
-            "9lYUcmo6rUpqvnaJ": {
-              "name": "",
-              "img": null,
-              "type": "applied",
-              "_id": "9lYUcmo6rUpqvnaJ",
-              "applied": {
-                "tier2": {
-                  "potency": {
-                    "characteristic": "reason"
-                  },
-                  "display": "{{potency}} the target is illuminated (save ends)",
-                  "effects": {
-                    "jpfOMlhwfuLYMY0c": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "potency": {
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "jpfOMlhwfuLYMY0c": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 holy damage"
+            },
+            {
+              "tier": 3,
+              "display": "5 holy damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -309,13 +226,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A bubble of toxic gas fills the area, ready to pop. If any creature or object touches the bubble or if the bubble takes damage, it bursts. Each angulotl adjacent to the bubble is wet until the end of the en counter, and each enemy adjacent to the bubble makes a <strong>Might test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 3 poison]] damage; the target is wet and weakened (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>[[/damage 2 poison]] damage; the target is wet (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>[[/damage 1 poison]] damage; the target is wet (EoT)</p></td></tr></tbody></table>",
+          "before": "<p>A bubble of toxic gas fills the area, ready to pop. If any creature or object touches the bubble or if the bubble takes damage, it bursts. Each angulotl adjacent to the bubble is wet until the end of the en counter, and each enemy adjacent to the bubble makes a <strong>Might test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">3 poison</span> damage; the target is wet and weakened (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-poison\">2 poison</span> damage; the target is wet (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p><span class=\"damage-value damage-poison\">1 poison</span> damage; the target is wet (EoT)</p></td></tr></tbody></table>",
           "after": ""
         }
       }

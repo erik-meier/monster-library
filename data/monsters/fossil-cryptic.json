@@ -37,7 +37,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of their turns, the cryptic can take [[/damage 5]] damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p>The cryptic can take two turns each round. They can't take turns consecutively.</p>",
+          "value": "<p>At the end of each of their turns, the cryptic can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p>The cryptic can take two turns each round. They can't take turns consecutively.</p>",
           "director": ""
         }
       }
@@ -49,7 +49,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The cryptic is constantly surrounded by a 1 aura of swirling debris that obscures their form. Ranged abilities that target the cryptic take a bane. Additionally, any enemy who enters the aura for the first time in a round or starts their turn there takes [[/damage 5]] damage</p>",
+          "value": "<p>The cryptic is constantly surrounded by a 1 aura of swirling debris that obscures their form. Ranged abilities that target the cryptic take a bane. Additionally, any enemy who enters the aura for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">5</span> damage</p>",
           "director": ""
         }
       }
@@ -89,151 +89,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "hqYKaLendaqfV3S8": {
-              "_id": "hqYKaLendaqfV3S8",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "15",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; {{forced}}"
             },
-            "gDcnCzMpJEfxR3Si": {
-              "_id": "gDcnCzMpJEfxR3Si",
-              "type": "forced",
-              "name": "slide",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "2",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "3",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "12 damage; {{forced}}; A<@potency.average prone, restrained"
             },
-            "BlAoiepUlvyNU7Li": {
-              "_id": "BlAoiepUlvyNU7Li",
-              "type": "applied",
-              "name": "Prone or Restrained",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "prone",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    },
-                    "restrained": {
-                      "condition": "always",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "prone and can't stand (EoT)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    },
-                    "XwWmi30pg3SdaUpC": {
-                      "condition": "always",
-                      "end": "turn",
-                      "properties": []
-                    },
-                    "restrained": {
-                      "condition": "always",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "15 damage; {{forced}}; A<@potency.strong prone, XwWmi30pg3SdaUpC, restrained"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -264,136 +138,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "HDH1Vqlr1H8SDNYk": {
-              "_id": "HDH1Vqlr1H8SDNYk",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "10",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage; {{forced}}"
             },
-            "GQoYnjpo3UySZ54s": {
-              "_id": "GQoYnjpo3UySZ54s",
-              "type": "forced",
-              "name": "push",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "1",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "1",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 damage; {{forced}}; M<@potency.average prone (save ends)"
             },
-            "JmUitd6mEgSrI1Ac": {
-              "_id": "JmUitd6mEgSrI1Ac",
-              "type": "applied",
-              "name": "Prone",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "10 damage; {{forced}}; M<@potency.strong prone (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -422,7 +185,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -453,7 +216,7 @@
         "trigger": "The cryptic takes damage.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -487,136 +250,25 @@
         "trigger": "The cryptic uses the Dig maneuver to resurface.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "5pSxHWyG3oUvXxYS": {
-              "_id": "5pSxHWyG3oUvXxYS",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "10",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage; {{forced}}"
             },
-            "dHQRz1x6g2R7X61d": {
-              "_id": "dHQRz1x6g2R7X61d",
-              "type": "forced",
-              "name": "push",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "3",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "4",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 damage; {{forced}}; M<@potency.average prone (save ends)"
             },
-            "xcNJLK6Qw5m3ojQ2": {
-              "_id": "xcNJLK6Qw5m3ojQ2",
-              "type": "applied",
-              "name": "Prone",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "prone",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "10 damage; {{forced}}; M<@potency.strong prone (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -645,7 +297,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -679,7 +331,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -687,7 +339,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p><strong>Special</strong>: A target must be on the ground.</p><p>The area drops 2 squares and is difficult terrain. Each target enemy falls, while each target ally drops safely. Additionally, each target enemy makes an <strong>Agility test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"91\"><p>11 or less</p></td><td><p>[[/damage 9]] damage; prone</p></td></tr><tr><td data-colwidth=\"91\"><p>12-16</p></td><td><p>[[/damage 5]] damage</p></td></tr><tr><td data-colwidth=\"91\"><p>17+</p></td><td><p>The target moves to the nearest unoccupied space outside the area.</p></td></tr></tbody></table>",
+          "before": "<p><strong>Special</strong>: A target must be on the ground.</p><p>The area drops 2 squares and is difficult terrain. Each target enemy falls, while each target ally drops safely. Additionally, each target enemy makes an <strong>Agility test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"91\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">9</span> damage; prone</p></td></tr><tr><td data-colwidth=\"91\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage</p></td></tr><tr><td data-colwidth=\"91\"><p>17+</p></td><td><p>The target moves to the nearest unoccupied space outside the area.</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -713,148 +365,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "6LFpNREUenvtMzWt": {
-              "_id": "6LFpNREUenvtMzWt",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; M<@potency.weak prone; M<@potency.weak restrained (save ends)"
             },
-            "65x6fLmSNS9kXx5S": {
-              "_id": "65x6fLmSNS9kXx5S",
-              "type": "applied",
-              "name": "Prone",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "prone",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "9 damage; M<@potency.average prone; M<@potency.average restrained (save ends)"
             },
-            "H3OaYyso7ToMVFiy": {
-              "_id": "H3OaYyso7ToMVFiy",
-              "type": "applied",
-              "name": "Restrained",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} restrained (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "12 damage; M<@potency.strong prone; M<@potency.strong restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The cryptic makes an initial power roll that calls down stone pillars from the ceiling.</p>",
@@ -881,136 +410,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "mU85qYgYHwET2pqi": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "mU85qYgYHwET2pqi",
-              "damage": {
-                "tier1": {
-                  "value": "2",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "3",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 damage; {{forced}}"
             },
-            "zmyvjFgLlj7AlTxM": {
-              "name": "Slide",
-              "img": null,
-              "type": "forced",
-              "_id": "zmyvjFgLlj7AlTxM",
-              "forced": {
-                "tier1": {
-                  "properties": [
-                    "vertical"
-                  ],
-                  "distance": "2",
-                  "movement": [
-                    "slide"
-                  ],
-                  "display": "{{forced}}",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "4",
-                  "properties": [
-                    "vertical"
-                  ],
-                  "display": "{{forced}}",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "6",
-                  "properties": [
-                    "vertical"
-                  ],
-                  "display": "{{forced}}",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "3 damage; {{forced}}"
             },
-            "bnR1Gv8xBeepOApl": {
-              "name": "Restrained",
-              "img": null,
-              "type": "applied",
-              "_id": "bnR1Gv8xBeepOApl",
-              "applied": {
-                "tier3": {
-                  "display": "if this movement brings the target  into contact with the ceiling, they are restrained (save ends).",
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "4 damage; {{forced}}; P<@potency.strong restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -1035,13 +453,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two pillars of stone 1 square wide either thrust up out of the ground or jut down from the ceiling anywhere on the encounter map, to a height of up to 5 squares. A creature in the area of a pillar before it appears is knocked prone on its surface. If the creature comes into contact with the ceiling above or the floor beneath the pillar and has M&lt;2 they are restrained (save ends).</p>",
+          "before": "<p>Two pillars of stone 1 square wide either thrust up out of the ground or jut down from the ceiling anywhere on the encounter map, to a height of up to 5 squares. A creature in the area of a pillar before it appears is knocked prone on its surface. If the creature comes into contact with the ceiling above or the floor beneath the pillar and has <strong class=\"potency-value\">M&lt;2</strong> they are restrained (save ends).</p>",
           "after": ""
         }
       }
@@ -1063,7 +481,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -1091,7 +509,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -1119,7 +537,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}

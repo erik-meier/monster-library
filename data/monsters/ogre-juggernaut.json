@@ -77,144 +77,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "keMu39vBGf2YtsEf": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "keMu39vBGf2YtsEf",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; P<@potency.weak bleeding (save ends)"
             },
-            "x1C7gPfjJCPVipx3": {
-              "name": "",
-              "img": null,
-              "type": "forced",
-              "_id": "x1C7gPfjJCPVipx3",
-              "forced": {
-                "tier1": {
-                  "display": "",
-                  "movement": [],
-                  "distance": "",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "distance": "2",
-                  "properties": [
-                    "vertical"
-                  ],
-                  "potency": {
-                    "characteristic": "agility",
-                    "value": "@potency.average"
-                  },
-                  "display": "{{potency}} {{forced}}",
-                  "movement": [
-                    "push"
-                  ]
-                },
-                "tier3": {
-                  "properties": [
-                    "vertical"
-                  ],
-                  "distance": "3",
-                  "movement": [
-                    "slide"
-                  ],
-                  "potency": {
-                    "characteristic": "agility",
-                    "value": "@potency.strong"
-                  },
-                  "display": "{{potency}} {{forced}}"
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 damage; {{potency}} {{forced}}; P<@potency.average bleeding (save ends)"
             },
-            "i5uABjUX2v6jxXhu": {
-              "name": "Bleeding",
-              "img": null,
-              "type": "applied",
-              "_id": "i5uABjUX2v6jxXhu",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "13 damage; {{potency}} {{forced}}; P<@potency.strong bleeding (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -244,133 +125,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "8RXsupfhfT98yYqB": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "8RXsupfhfT98yYqB",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
             },
-            "VBXHHOnEAq1eueC8": {
-              "name": "",
-              "img": null,
-              "type": "forced",
-              "_id": "VBXHHOnEAq1eueC8",
-              "forced": {
-                "tier1": {
-                  "display": "",
-                  "movement": [],
-                  "distance": "",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "distance": "4",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 damage; {{forced}}; M<@potency.average prone"
             },
-            "85CpWHadNFf5Gi4d": {
-              "name": "Prone",
-              "img": null,
-              "type": "applied",
-              "_id": "85CpWHadNFf5Gi4d",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "@potency.weak"
-                  },
-                  "effects": {}
-                },
-                "tier2": {
-                  "display": "{{potency}} prone",
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "9 damage; {{forced}}; M<@potency.strong prone"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The juggernaut jumps up to 6 squares before using this ability.</p>",
@@ -399,63 +172,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "Hxowkzn5D9dfosqm": {
-              "name": "",
-              "img": null,
-              "type": "applied",
-              "_id": "Hxowkzn5D9dfosqm",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} frightened (save ends)",
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "characteristic": "intuition",
-                    "value": "@potency.weak"
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "I<@potency.weak frightened (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "I<@potency.average frightened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "I<@potency.strong frightened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -480,13 +215,13 @@
         "trigger": "The juggernaut takes damage.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The juggernaut moves up to their speed and can make a [[/damage @monster.freeStrike]]{Free Strike}.</p>",
+          "before": "<p>The juggernaut moves up to their speed and can make a <span class=\"damage-value damage-generic\">5</span> damage free strike{Free Strike}.</p>",
           "after": ""
         }
       }
@@ -508,7 +243,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -536,13 +271,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p>[[/damage 5]] damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>[[/damage 4]] damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
+          "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -564,13 +299,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra [[/damage 5]] damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
+          "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
           "after": ""
         }
       }

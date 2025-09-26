@@ -65,90 +65,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "MnJRRWeu8VYBqgFK": {
-              "_id": "MnJRRWeu8VYBqgFK",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "7",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [
-                    "lightning"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage"
             },
-            "yIwNDUr88z2sZatH": {
-              "_id": "yIwNDUr88z2sZatH",
-              "type": "applied",
-              "name": "Prone",
-              "img": null,
-              "applied": {
-                "tier3": {
-                  "display": "{{potency}} prone",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 fire damage"
+            },
+            {
+              "tier": 3,
+              "display": "9 lightning damage; M<@potency.strong prone (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -178,52 +113,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "mR8ht6ctHhIp1GL2": {
-              "_id": "mR8ht6ctHhIp1GL2",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage"
+            },
+            {
+              "tier": 2,
+              "display": "5 damage"
+            },
+            {
+              "tier": 3,
+              "display": "7 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>Any target who is prone takes an extra [[/damage 2]] damage.</p>"
+          "after": "<p>Any target who is prone takes an extra <span class=\"damage-value damage-generic\">2</span> damage.</p>"
         }
       }
     },
@@ -245,7 +157,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -275,7 +187,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -313,135 +225,20 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "MHZRMgetPqMBjeRG": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "MHZRMgetPqMBjeRG",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [
-                    "cold",
-                    "corruption",
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "9",
-                  "types": [
-                    "cold",
-                    "corruption",
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "12",
-                  "types": [
-                    "cold",
-                    "corruption",
-                    "poison"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 cold/corruption/poison damage; R<1 slowed, weakened, frightened (save ends)"
             },
-            "7wFlAnp9aHcFYTRq": {
-              "name": "chosen condition",
-              "img": null,
-              "type": "applied",
-              "_id": "7wFlAnp9aHcFYTRq",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} chosen condition (save ends)",
-                  "potency": {
-                    "characteristic": "reason",
-                    "value": "1"
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "potency": {
-                    "value": "2",
-                    "characteristic": ""
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": ""
-                },
-                "tier3": {
-                  "potency": {
-                    "value": "3",
-                    "characteristic": ""
-                  },
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "frightened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "display": ""
-                }
-              }
+            {
+              "tier": 2,
+              "display": "9 cold/corruption/poison damage; R<2 slowed, weakened, frightened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "12 cold/corruption/poison damage; R<3 slowed, weakened, frightened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
@@ -466,7 +263,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

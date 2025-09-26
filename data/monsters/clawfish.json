@@ -41,7 +41,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the start of each of their turns, the clawfish deals [[/damage 2 lightning]] damage to each wet enemy within 2 squares.</p>",
+          "value": "<p>At the start of each of their turns, the clawfish deals <span class=\"damage-value damage-lightning\">2 lightning</span> damage to each wet enemy within 2 squares.</p>",
           "director": ""
         }
       }
@@ -69,90 +69,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "U7AMA9XrFJepnKcv": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "U7AMA9XrFJepnKcv",
-              "damage": {
-                "tier1": {
-                  "value": "2",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 damage"
             },
-            "Tewr8ZcB9FpBzNdV": {
-              "name": "Grabbed",
-              "img": null,
-              "type": "applied",
-              "_id": "Tewr8ZcB9FpBzNdV",
-              "applied": {
-                "tier3": {
-                  "display": "grabbed",
-                  "effects": {
-                    "grabbed": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 damage"
+            },
+            {
+              "tier": 3,
+              "display": "5 damage; P<@potency.strong grabbed"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>Any target grabbed this way takes [[/damage 2 lightning]] damage at the start of each of their turns.</p>"
+          "after": "<p>Any target grabbed this way takes <span class=\"damage-value damage-lightning\">2 lightning</span> damage at the start of each of their turns.</p>"
         }
       }
     },
@@ -173,7 +112,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -201,13 +140,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p>[[/damage 5 sonic]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p>[[/damage 4 sonic]] damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -229,61 +168,23 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
-          "effects": {
-            "g8BNA1tbnI9d59oQ": {
-              "name": "Wet",
-              "img": null,
-              "type": "applied",
-              "_id": "g8BNA1tbnI9d59oQ",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "P<@potency.weak Du8EMyrd7nZQ66Yk"
+            },
+            {
+              "tier": 2,
+              "display": "P<@potency.average Du8EMyrd7nZQ66Yk"
+            },
+            {
+              "tier": 3,
+              "display": "P<@potency.strong Du8EMyrd7nZQ66Yk"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",

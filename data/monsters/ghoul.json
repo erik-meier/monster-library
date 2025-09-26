@@ -56,86 +56,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "4CQjGvtYKZpe08U1": {
-              "type": "damage",
-              "_id": "4CQjGvtYKZpe08U1",
-              "damage": {
-                "tier1": {
-                  "value": "3",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              },
-              "name": "",
-              "img": null
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage"
             },
-            "uzc7ZBgbPsmznKxB": {
-              "type": "applied",
-              "_id": "uzc7ZBgbPsmznKxB",
-              "applied": {
-                "tier3": {
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "2"
-                  },
-                  "display": "{{potency}} bleeding (save ends)",
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "potency": {
-                    "characteristic": "none",
-                    "value": "@potency.average"
-                  },
-                  "display": "",
-                  "effects": {}
-                },
-                "tier1": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  },
-                  "effects": {}
-                }
-              },
-              "name": "",
-              "img": null
+            {
+              "tier": 2,
+              "display": "4 damage"
+            },
+            {
+              "tier": 3,
+              "display": "5 damage; M<2 bleeding (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p><strong>Hunger: </strong>When the ghoul uses the Charge main action, they gain a +2 bonus to speed until the end of their turn</p>",
@@ -160,7 +99,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -212,7 +151,7 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -240,7 +179,7 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -268,7 +207,7 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -296,13 +235,13 @@
         "trigger": "An undead starts its turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p>[[/damage 5]] damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p>[[/damage 5]] damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p>[[/damage 5]] damage.</p></td></tr></tbody></table>",
+          "before": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table>",
           "after": "<p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
         }
       }

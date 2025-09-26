@@ -67,130 +67,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 5",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "ZdIfLYInVAlQs2fC": {
-              "_id": "ZdIfLYInVAlQs2fC",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
             },
-            "VtemYQ3POonuGHGQ": {
-              "_id": "VtemYQ3POonuGHGQ",
-              "type": "applied",
-              "name": "Prone",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "prone",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "prone",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 damage; M<@potency.average prone"
             },
-            "zVSARUj5imtPM8XA": {
-              "name": "Can't Stand (Save Ends)",
-              "img": null,
-              "type": "applied",
-              "_id": "zVSARUj5imtPM8XA",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} can’t stand (save ends)",
-                  "effects": {
-                    "rNxuHfyKoS44Uqj4": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "9 damage; M<@potency.strong prone; M<@potency.strong rNxuHfyKoS44Uqj4 (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",

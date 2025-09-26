@@ -64,96 +64,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
           },
-          "effects": {
-            "DD6NDAXd8sTY9kt7": {
-              "_id": "DD6NDAXd8sTY9kt7",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "5",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [
-                    "fire"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 fire damage"
             },
-            "rYxVdjrua2a9f9Dv": {
-              "name": "Burning",
-              "img": null,
-              "type": "applied",
-              "_id": "rYxVdjrua2a9f9Dv",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} the target is burning (save ends)",
-                  "effects": {
-                    "tmnFcC8Lgm4HV9VA": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "intuition"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "5 fire damage"
+            },
+            {
+              "tier": 3,
+              "display": "7 fire damage; I<@potency.strong tmnFcC8Lgm4HV9VA (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>A burning creature takes [[/damage 1d6 fire]] damage at the start of each of their turns. A burning object takes 1d6 fire damage at the end of each round.</p>"
+          "after": "<p>A burning creature takes <span class=\"damage-value damage-fire\">1d6 fire</span> damage at the start of each of their turns. A burning object takes 1d6 fire damage at the end of each round.</p>"
         }
       }
     },
@@ -178,7 +111,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
@@ -212,7 +145,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "intuition"
             ]
@@ -221,7 +154,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>One abyssal hyena target turns into a @UUID[Compendium.draw-steel.monsters.Actor.NWOCoxzsguUP85Bk]{gnoll marauder}, keeping their current Stamina. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
+          "after": "<p>One abyssal hyena target turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
         }
       }
     },
@@ -242,13 +175,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra [[/damage 5]] damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a @UUID[Compendium.draw-steel.monsters.Actor.NWOCoxzsguUP85Bk]{gnoll marauder}, keeping their current Stamina</p>",
+          "before": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>",
           "after": ""
         }
       }
@@ -270,7 +203,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -304,13 +237,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>[[/damage 6]] damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>[[/damage 4]] damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": "<p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
         }
       }

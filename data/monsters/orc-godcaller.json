@@ -36,7 +36,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>If the godcaller is reduced to 0 Stamina, they can make a [[/damage @monster.freeStrike]]{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the godcaller is reduced to 1 Stamina instead.</p>",
+          "value": "<p>If the godcaller is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">3</span> damage free strike{Free Strike} before dying. If the target of the free strike is reduced to 0 Stamina, the godcaller is reduced to 1 Stamina instead.</p>",
           "director": ""
         }
       }
@@ -66,61 +66,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "q3dz0RPDzCknhPqz": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "q3dz0RPDzCknhPqz",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [
-                    "sonic"
-                  ]
-                },
-                "tier2": {
-                  "value": "7",
-                  "types": [
-                    "sonic"
-                  ]
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [
-                    "sonic"
-                  ]
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 sonic damage"
             },
-            "E9GctMb0SzxD2lTs": {
-              "name": "weakened",
-              "img": null,
-              "type": "applied",
-              "_id": "E9GctMb0SzxD2lTs",
-              "applied": {
-                "tier3": {
-                  "display": "{{potency}} weakened (save ends)",
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier1": {
-                  "potency": {
-                    "characteristic": "presence"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 sonic damage"
+            },
+            {
+              "tier": 3,
+              "display": "9 sonic damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -150,7 +114,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -183,13 +147,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each target regains [[/heal 15]] and ignores difficult terrain until the end of the encounter.</p>",
+          "before": "<p>Each target regains <span class=\"heal-value\">15</span> healing and ignores difficult terrain until the end of the encounter.</p>",
           "after": ""
         }
       }

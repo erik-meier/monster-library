@@ -53,48 +53,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "J3lQoL7CipGhqKaQ": {
-              "type": "damage",
-              "_id": "J3lQoL7CipGhqKaQ",
-              "damage": {
-                "tier1": {
-                  "value": "2",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              },
-              "name": "",
-              "img": null
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 damage"
+            },
+            {
+              "tier": 2,
+              "display": "4 damage"
+            },
+            {
+              "tier": 3,
+              "display": "5 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>With Captain: +5 bonus to ranged distance</p>",
@@ -131,7 +108,7 @@
         "trigger": "A goblin starts its turn.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -159,7 +136,7 @@
         "trigger": "A goblin starts its turn.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -195,7 +172,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>[[/damage 5 poison]] damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
+          "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
           "after": ""
         }
       }

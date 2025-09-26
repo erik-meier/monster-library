@@ -40,7 +40,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Whenever an adjacent enemy grabs the daybringer or uses a melee ability against them, that enemy takes [[/damage 3 poison]] damage.</p>",
+          "value": "<p>Whenever an adjacent enemy grabs the daybringer or uses a melee ability against them, that enemy takes <span class=\"damage-value damage-poison\">3 poison</span> damage.</p>",
           "director": ""
         }
       }
@@ -64,7 +64,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the end of each of the daybringer’s turns, they can either take [[/damage 5]] damage or end the wet effect on an adjacent creature in order to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
+          "value": "<p>At the end of each of the daybringer’s turns, they can either take <span class=\"damage-value damage-generic\">5</span> damage or end the wet effect on an adjacent creature in order to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
           "director": ""
         }
       }
@@ -92,79 +92,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "URvSzomCQF4HtSZy": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "URvSzomCQF4HtSZy",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [
-                    "acid"
-                  ]
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "acid"
-                  ]
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [
-                    "acid"
-                  ]
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 acid damage"
             },
-            "TZLvFGfyJrXspJic": {
-              "name": "Dazed",
-              "img": null,
-              "type": "applied",
-              "_id": "TZLvFGfyJrXspJic",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} dazed (save ends)",
-                  "potency": {
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "10 acid damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 acid damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>The next time the target makes a strike against the daybringer, the target takes [[/damage 4 acid]] damage after the strike is resolved.</p>"
+          "after": "<p>The next time the target makes a strike against the daybringer, the target takes <span class=\"damage-value damage-acid\">4 acid</span> damage after the strike is resolved.</p>"
         }
       }
     },
@@ -185,13 +135,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The daybringer expands their throat to make it resemble the sun until the start of their next turn. During that time, each angulotl who starts their turn within 10 squares of the daybringer regains [[/heal 5]] and gains a +3 bonus to speed until the end of their turn.</p>",
+          "before": "<p>The daybringer expands their throat to make it resemble the sun until the start of their next turn. During that time, each angulotl who starts their turn within 10 squares of the daybringer regains <span class=\"heal-value\">5</span> healing and gains a +3 bonus to speed until the end of their turn.</p>",
           "after": ""
         }
       }
@@ -215,7 +165,7 @@
         "trigger": "The target makes a strike against the daybringer or an ally that isn’t a critical hit.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -246,13 +196,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Four @UUID[Compendium.draw-steel.monsters.Actor.UIerVsSyMb36Bm4D]{angulotl pollywogs} erupt from the daybringer’s back and waddle into unoccupied spaces within distance.</p>",
+          "before": "<p>Four <a href=\"/monster/angulotl-pollywogs\" class=\"monster-link\">angulotl pollywogs</a> erupt from the daybringer’s back and waddle into unoccupied spaces within distance.</p>",
           "after": ""
         }
       }
@@ -278,7 +228,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -306,13 +256,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>The encounter map dries up and each enemy and object on it is illuminated until the end of the encounter. An illuminated creature or object can’t hide or become invisible, and any strike made against an illuminated target gains an edge. Additionally, each enemy in the encounter who is wet has that effect end and takes [[/damage 6 acid]] damage. Each angulotl in the encounter has a double edge on their next strike.</p>",
+          "before": "<p>The encounter map dries up and each enemy and object on it is illuminated until the end of the encounter. An illuminated creature or object can’t hide or become invisible, and any strike made against an illuminated target gains an edge. Additionally, each enemy in the encounter who is wet has that effect end and takes <span class=\"damage-value damage-acid\">6 acid</span> damage. Each angulotl in the encounter has a double edge on their next strike.</p>",
           "after": ""
         }
       }
@@ -334,7 +284,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -362,13 +312,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p>[[/damage 5 sonic]] damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p>[[/damage 4 sonic]] damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -390,61 +340,23 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
-          "effects": {
-            "g8BNA1tbnI9d59oQ": {
-              "name": "Wet",
-              "img": null,
-              "type": "applied",
-              "_id": "g8BNA1tbnI9d59oQ",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "P<@potency.weak Du8EMyrd7nZQ66Yk"
+            },
+            {
+              "tier": 2,
+              "display": "P<@potency.average Du8EMyrd7nZQ66Yk"
+            },
+            {
+              "tier": 3,
+              "display": "P<@potency.strong Du8EMyrd7nZQ66Yk"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",

@@ -45,7 +45,8 @@
         <strong>Trigger:</strong> {{ action.system.trigger }}
       </div>
 
-      <PowerRoll v-if="actionHasPowerRoll(action)" :effects="action.system.power.effects" :chr="chr" />
+      <PowerRoll v-if="actionHasPowerRoll(action)" :tiers="action.system.power.tiers || []"
+        :effect="formatActionEffect(action)" />
       <div class="action-description" v-html="formatDescription(extractDescription(action))"></div>
     </div>
   </div>
@@ -105,6 +106,14 @@ export default {
       }
       return ''
     },
+    formatActionEffect(action) {
+      // For the new flattened structure, effects are usually handled in tier display text
+      // Only return effect text if it's different from tier display
+      if (action.system.effect) {
+        return action.system.effect.before || action.system.effect.after || '';
+      }
+      return '';
+    },
     formatActionDistance(distance) {
       if (!distance) return '';
       if (distance.type === 'melee' || distance.type === 'ranged') {
@@ -130,6 +139,11 @@ export default {
       } else if (target.type === 'enemy') {
         return `${target.value ? target.value : 'Each'} ${target.value && target.value > 1 ? 'enemies' : 'enemy'}`;
       }
+      else if (target.type === 'ally') {
+        return `${target.value ? target.value : 'Each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`;
+      } else if (target.type === 'selfAlly') {
+        return 'Self and ' + `${target.value ? target.value : 'each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`;
+      }
       return target.type
     },
     formatActionType(type) {
@@ -139,12 +153,16 @@ export default {
       return type + ' action';
     },
     formatPowerRoll(formula, chr) {
-      if (!formula) return '';
-      if (formula === '@chr') {
-        return '2d10 + ' + chr;
-      }
+      // Power roll formulas are now pre-processed in the data pipeline
+      return formula || '';
     },
     actionHasPowerRoll(action) {
+      // Check for tiers array in the new flattened structure
+      if (action.system.power && action.system.power.tiers && action.system.power.tiers.length > 0) {
+        return true;
+      }
+
+      // Fallback check for old effects structure (if any remain)
       if (action.system.power && action.system.power.effects) {
         for (const effect of Object.values(action.system.power.effects)) {
           if (effect.type === 'damage') {
@@ -155,25 +173,8 @@ export default {
       return false
     },
     formatDescription(description) {
-      if (!description) return description
-
-      // Parse and replace [[/damage type X]] directives, including @monster.freeStrike
-      description = description.replace(/\[\[\/damage\s+(@monster\.freeStrike|\d+|\dd\d)(?:\s+(\w+))?\]\]/g, (match, value, type) => {
-        // Handle @monster.freeStrike reference
-        if (value === '@monster.freeStrike') {
-          const freeStrikeValue = this.monster?.system?.monster?.freeStrike || value
-          return `<span class="damage-value damage-generic">${freeStrikeValue}</span> damage free strike`
-        }
-
-        // Handle regular numeric damage values
-        const damageClass = type ? `damage-${type.toLowerCase()}` : 'damage-generic'
-        return `<span class="damage-value ${damageClass}">${value}${type ? ` ${type}` : ''}</span>`
-      })
-
-      // Bold any potency patterns that might exist in descriptions
-      description = description.replace(/([A-Z]<\d+)/g, '<strong class="potency-value">$1</strong>')
-
-      return description
+      // Text is now pre-processed in the data pipeline, so just return as-is
+      return description;
     }
   }
 }
@@ -431,6 +432,23 @@ export default {
 /* Untyped damage - just bold, no background */
 .action-description :deep(.damage-value.damage-generic) {
   color: inherit;
+}
+
+/* UUID reference styling */
+.action-description :deep(.monster-link) {
+  color: #8b4513;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.action-description :deep(.monster-link:hover) {
+  color: #a0522d;
+  text-decoration: none;
+}
+
+.action-description :deep(.reference-text) {
+  font-style: italic;
+  color: #6c757d;
 }
 
 @media (max-width: 768px) {

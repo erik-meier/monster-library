@@ -36,7 +36,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Whenever the gunner deals rolled damage to a target, one creature or object adjacent to the target takes [[/damage 3]] damage.</p>",
+          "value": "<p>Whenever the gunner deals rolled damage to a target, one creature or object adjacent to the target takes <span class=\"damage-value damage-generic\">3</span> damage.</p>",
           "director": ""
         }
       }
@@ -64,142 +64,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "ekzOmNkpsQorABD6": {
-              "_id": "ekzOmNkpsQorABD6",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "12",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage; {{forced}}; P<@potency.weak restrained"
             },
-            "XWaEDmPzNquySULq": {
-              "_id": "XWaEDmPzNquySULq",
-              "type": "forced",
-              "name": "push",
-              "img": null,
-              "forced": {
-                "tier1": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "1",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier2": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "push"
-                  ],
-                  "distance": "5",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "9 damage; {{forced}}; P<@potency.average restrained"
             },
-            "EeiO0s52152Sw7PY": {
-              "name": "Restrained",
-              "img": null,
-              "type": "applied",
-              "_id": "EeiO0s52152Sw7PY",
-              "applied": {
-                "tier1": {
-                  "display": "",
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "turn",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "12 damage; {{forced}}; P<@potency.strong restrained"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -229,7 +112,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
@@ -237,7 +120,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>NOTE: Targets one prone, restrained, or slowed creature</p><p>The gunner makes a [[/damage @monster.freeStrike]]{Free Strike} against the target, and the prone, restrained, and slowed conditions on the target end. The target is then restrained (save ends).</p>",
+          "before": "<p>NOTE: Targets one prone, restrained, or slowed creature</p><p>The gunner makes a <span class=\"damage-value damage-generic\">4</span> damage free strike{Free Strike} against the target, and the prone, restrained, and slowed conditions on the target end. The target is then restrained (save ends).</p>",
           "after": ""
         }
       }
@@ -259,13 +142,13 @@
         "trigger": "A dwarf starts their turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage ([[/damage 3]] for wood, [[/damage 6]] for stone, or [[/damage 9]] for metal).</p>",
+          "before": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>",
           "after": ""
         }
       }
@@ -287,7 +170,7 @@
         "trigger": "A dwarf starts their turn",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

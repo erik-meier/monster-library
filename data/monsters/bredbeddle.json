@@ -85,7 +85,7 @@
         "trigger": "A creature targets the bredbeddle with a ranged strike.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -120,63 +120,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "zeEbkmuFv8A4erGa": {
-              "name": "Turn Green",
-              "img": null,
-              "type": "applied",
-              "_id": "zeEbkmuFv8A4erGa",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} the target turns green (save ends)",
-                  "effects": {
-                    "wTVXfKhOmyJmvs1y": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "presence"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "wTVXfKhOmyJmvs1y": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "wTVXfKhOmyJmvs1y": {
-                      "condition": "failure",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "P<@potency.weak wTVXfKhOmyJmvs1y (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "P<@potency.average wTVXfKhOmyJmvs1y (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "P<@potency.strong wTVXfKhOmyJmvs1y"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -205,7 +167,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -213,7 +175,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The bredbeddle points at the target and issues them a challenge. If the target refuses, they turn green until the end of the encounter (see Turn Green). If the target accepts the challenge, the bredbeddle shifts adjacent to the target, who makes a <strong>Might test </strong>with no additional modifiers.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target is beheaded (see @UUID[Actor.vbfCKIDeENjugbBx.Item.WUqmC7FuqZnmfenM]{Lop})</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target makes the test again.</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>The target can choose to deal [[/damage 40]] damage to the bredbeddle or remove the bredbeddle’s head.</p></td></tr></tbody></table>",
+          "before": "<p>The bredbeddle points at the target and issues them a challenge. If the target refuses, they turn green until the end of the encounter (see Turn Green). If the target accepts the challenge, the bredbeddle shifts adjacent to the target, who makes a <strong>Might test </strong>with no additional modifiers.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target is beheaded (see <span class=\"reference-text\">Lop</span>)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target makes the test again.</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>The target can choose to deal <span class=\"damage-value damage-generic\">40</span> damage to the bredbeddle or remove the bredbeddle’s head.</p></td></tr></tbody></table>",
           "after": ""
         }
       }
@@ -241,112 +203,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "pFIUC8iXsxern6hc": {
-              "_id": "pFIUC8iXsxern6hc",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage; A<@potency.weak bleeding, nxD2WnTYUESaKXhh (save ends)"
             },
-            "rXabCjtNCuFntGzp": {
-              "_id": "rXabCjtNCuFntGzp",
-              "type": "applied",
-              "name": "Bleeding and Beheaded",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "bleeding (save ends); or if the target has {{potency}} they are beheaded (see Lop)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "always",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "nxD2WnTYUESaKXhh": {
-                      "condition": "failure",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "always",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "nxD2WnTYUESaKXhh": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "always",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "nxD2WnTYUESaKXhh": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "7 damage; A<@potency.average bleeding, nxD2WnTYUESaKXhh (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "8 damage; A<@potency.strong bleeding, nxD2WnTYUESaKXhh (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -371,7 +246,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -404,136 +279,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "cfVH06xmJy7SA7s0": {
-              "_id": "cfVH06xmJy7SA7s0",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "2",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 damage; A<@potency.weak bleeding (save ends)"
             },
-            "Fva9qS7fdEiZsKmt": {
-              "_id": "Fva9qS7fdEiZsKmt",
-              "type": "applied",
-              "name": "Bleeding",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "agility"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "4 damage; A<@potency.average bleeding (save ends)"
             },
-            "JAz8q50V7TqsYkyj": {
-              "_id": "JAz8q50V7TqsYkyj",
-              "type": "applied",
-              "name": "Dazed",
-              "img": null,
-              "applied": {
-                "tier3": {
-                  "display": "{{potency}} dazed (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "5 damage; A<@potency.strong bleeding (save ends); M<@potency.strong dazed (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -565,147 +329,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "bCI0vu7AzMtEv755": {
-              "_id": "bCI0vu7AzMtEv755",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "16",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 damage; M<@potency.weak bleeding (save ends); M<@potency.weak YNeXGE8nBkueam3O"
             },
-            "qOEeJOhjxeWraCPR": {
-              "_id": "qOEeJOhjxeWraCPR",
-              "type": "applied",
-              "name": "Bleeding",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "bleeding (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "always",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "always",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "always",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "13 damage; M<@potency.average bleeding (save ends); M<@potency.average YNeXGE8nBkueam3O"
             },
-            "TX1W43IlFKbZhAWp": {
-              "name": "Beheaded",
-              "img": null,
-              "type": "applied",
-              "_id": "TX1W43IlFKbZhAWp",
-              "applied": {
-                "tier1": {
-                  "display": "or if the target has {{potency}} they are beheaded",
-                  "effects": {
-                    "YNeXGE8nBkueam3O": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "YNeXGE8nBkueam3O": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "effects": {
-                    "YNeXGE8nBkueam3O": {
-                      "condition": "failure",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "16 damage; M<@potency.strong bleeding (save ends); M<@potency.strong YNeXGE8nBkueam3O"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -731,7 +373,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
@@ -767,108 +409,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "q13uUdW3Or0Ja41c": {
-              "_id": "q13uUdW3Or0Ja41c",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "16",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 damage; M<@potency.weak dazed (save ends)"
             },
-            "pU6GLLTZhfzztSeH": {
-              "_id": "pU6GLLTZhfzztSeH",
-              "type": "applied",
-              "name": "Prone and Dazed",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} dazed (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "prone; {{potency}} dazed (save ends)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "prone": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "prone; {{potency}} dazed (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "dazed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "prone": {
-                      "condition": "always",
-                      "end": "",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "13 damage; M<@potency.average dazed, prone (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "16 damage; M<@potency.strong dazed, prone (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -893,7 +452,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -922,7 +481,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -951,13 +510,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>A phantom second bredbeddle phases into view, appearing in an unoccupied space anywhere on the encounter map, then vanishing at the end of the round. The phantom bredbeddle shares the original bredbeddle’s statistics but has 24 Stamina, corruption immunity 10, and can fly. The phantom bredbeddle can take one turn and use any of the bredbeddle’s abilities except for villain actions. Only one phantom bredbeddle can be active at a time.</p><p>@UUID[Compendium.draw-steel.monsters.gYUnLS5eDPZZtcGA]{Phantom Bredbeddle}</p>",
+          "before": "<p>A phantom second bredbeddle phases into view, appearing in an unoccupied space anywhere on the encounter map, then vanishing at the end of the round. The phantom bredbeddle shares the original bredbeddle’s statistics but has 24 Stamina, corruption immunity 10, and can fly. The phantom bredbeddle can take one turn and use any of the bredbeddle’s abilities except for villain actions. Only one phantom bredbeddle can be active at a time.</p><p><span class=\"reference-text\">Phantom Bredbeddle</span></p>",
           "after": ""
         }
       }

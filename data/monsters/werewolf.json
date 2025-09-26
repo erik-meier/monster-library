@@ -102,154 +102,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "KMDZf8d0J1b0e429": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "KMDZf8d0J1b0e429",
-              "damage": {
-                "tier1": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "16",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 damage; P<@potency.weak WgMV5KOjsKOc1aKL; P<@potency.weak kl2pG3kFmmSfU0Vg"
             },
-            "gURFEXxK8JuyFDc6": {
-              "name": "Rage",
-              "img": null,
-              "type": "applied",
-              "_id": "gURFEXxK8JuyFDc6",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "WgMV5KOjsKOc1aKL": {
-                      "condition": "always",
-                      "end": "respite",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  },
-                  "display": "the target gains 2 rage",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "the target gains 4 rage",
-                  "effects": {
-                    "WgMV5KOjsKOc1aKL": {
-                      "condition": "always",
-                      "end": "respite",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "the target gains 5 rage",
-                  "effects": {
-                    "WgMV5KOjsKOc1aKL": {
-                      "condition": "always",
-                      "end": "respite",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "13 damage; P<@potency.average WgMV5KOjsKOc1aKL; P<@potency.average kl2pG3kFmmSfU0Vg"
             },
-            "2rh9wpPUsC1GmYRO": {
-              "name": "Lycanthropy",
-              "img": null,
-              "type": "applied",
-              "_id": "2rh9wpPUsC1GmYRO",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "kl2pG3kFmmSfU0Vg": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "kl2pG3kFmmSfU0Vg": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "kl2pG3kFmmSfU0Vg": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "16 damage; P<@potency.strong WgMV5KOjsKOc1aKL; P<@potency.strong kl2pG3kFmmSfU0Vg"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -280,112 +151,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "z1UM66yDv9rWmh2P": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "z1UM66yDv9rWmh2P",
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; M<@potency.weak bleeding (save ends)"
             },
-            "n7CJP9k0zX7WOyqn": {
-              "name": "Bleeding",
-              "img": null,
-              "type": "applied",
-              "_id": "n7CJP9k0zX7WOyqn",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "@potency.weak"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "the target gains 1 rage; {{potency}} bleeding (save ends)",
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "rDsdlqr0JEElIIyw": {
-                      "condition": "always",
-                      "end": "respite",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "rDsdlqr0JEElIIyw": {
-                      "condition": "always",
-                      "end": "respite",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  },
-                  "display": "the target gains 3 rage; {{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "11 damage; M<@potency.average bleeding, rDsdlqr0JEElIIyw (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "14 damage; M<@potency.strong bleeding, rDsdlqr0JEElIIyw (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -415,138 +199,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "VMfTY6Cme3aV1o38": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "VMfTY6Cme3aV1o38",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "7",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage; {{forced}}"
             },
-            "CTXcJJwKWlsWZXPw": {
-              "name": "Push",
-              "img": null,
-              "type": "forced",
-              "_id": "CTXcJJwKWlsWZXPw",
-              "forced": {
-                "tier1": {
-                  "distance": "2",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "movement": [
-                    "push"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "movement": [
-                    "slide"
-                  ],
-                  "distance": "3",
-                  "display": "{{forced}}",
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 damage; {{forced}}; P<@potency.average Y5l5EHKEDqQRwyKB"
             },
-            "fADcJbULp7D6CB4D": {
-              "name": "",
-              "img": null,
-              "type": "applied",
-              "_id": "fADcJbULp7D6CB4D",
-              "applied": {
-                "tier2": {
-                  "display": "the target gains 1 rage",
-                  "effects": {
-                    "Y5l5EHKEDqQRwyKB": {
-                      "condition": "always",
-                      "end": "respite",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "the target gains 3 rage",
-                  "effects": {
-                    "Y5l5EHKEDqQRwyKB": {
-                      "condition": "always",
-                      "end": "respite",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "7 damage; {{forced}}; P<@potency.strong Y5l5EHKEDqQRwyKB"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -571,7 +242,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -603,7 +274,7 @@
         "trigger": "A creature within distance targets the werewolf with a melee ability after charging or moving 2 or more squares in a straight line toward them.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -635,7 +306,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -663,7 +334,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -692,117 +363,23 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
-          "effects": {
-            "RIoeKyoX1OPOpfGj": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "RIoeKyoX1OPOpfGj",
-              "damage": {
-                "tier1": {
-                  "value": "5",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "11",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; M<@potency.weak bleeding, EeHlWpCVsUbyUhpl (save ends)"
             },
-            "WuBA9vA1OmOr3ERU": {
-              "name": "Bleeding",
-              "img": null,
-              "type": "applied",
-              "_id": "WuBA9vA1OmOr3ERU",
-              "applied": {
-                "tier1": {
-                  "display": "the target gains 2 rage; {{potency}} bleeding (save ends)",
-                  "potency": {
-                    "characteristic": "might",
-                    "value": "@potency.weak"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "EeHlWpCVsUbyUhpl": {
-                      "condition": "always",
-                      "end": "respite",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "the target gains 4 rage; {{potency}} bleeding (save ends)",
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "EeHlWpCVsUbyUhpl": {
-                      "condition": "always",
-                      "end": "respite",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "the target gains 8 rage; {{potency}} bleeding (save ends)",
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "EeHlWpCVsUbyUhpl": {
-                      "condition": "always",
-                      "end": "respite",
-                      "properties": [
-                        "stacking"
-                      ]
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "8 damage; M<@potency.average bleeding, EeHlWpCVsUbyUhpl (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "11 damage; M<@potency.strong bleeding, EeHlWpCVsUbyUhpl (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -827,7 +404,7 @@
         "trigger": "A werewolf's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -855,7 +432,7 @@
         "trigger": "A werewolf's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -884,7 +461,7 @@
         "trigger": "A werewolf's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}

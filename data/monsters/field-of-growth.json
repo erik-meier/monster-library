@@ -79,112 +79,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
           },
-          "effects": {
-            "lM0twKPSBU0TChmq": {
-              "_id": "lM0twKPSBU0TChmq",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "8",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "13",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "16",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage"
             },
-            "lOftshz1FFG8H5fS": {
-              "_id": "lOftshz1FFG8H5fS",
-              "type": "applied",
-              "name": "Prone",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "{{potency}} prone and can't stand (save ends)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "",
-                      "properties": []
-                    },
-                    "swNw5lHNUQRxxiID": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "reason"
-                  },
-                  "effects": {
-                    "prone": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "swNw5lHNUQRxxiID": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    },
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "13 damage; R<@potency.average prone, swNw5lHNUQRxxiID, restrained"
+            },
+            {
+              "tier": 3,
+              "display": "16 damage; R<@potency.strong prone, swNw5lHNUQRxxiID, restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -214,7 +127,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -249,7 +162,7 @@
         "trigger": "A creature or object within distance deals damage to the field.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -258,7 +171,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>The target takes [[/damage 6]] damage, and if they have A &lt; 2, they are bleeding (save ends).</p>"
+          "after": "<p>The target takes <span class=\"damage-value damage-generic\">6</span> damage, and if they have A &lt; 2, they are bleeding (save ends).</p>"
         }
       }
     },
@@ -279,7 +192,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -307,7 +220,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -336,7 +249,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

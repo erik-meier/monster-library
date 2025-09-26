@@ -79,71 +79,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "presence"
             ]
           },
-          "effects": {
-            "edaSJy3ESyeSt7Pb": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "edaSJy3ESyeSt7Pb",
-              "damage": {
-                "tier1": {
-                  "value": "2",
-                  "types": [
-                    "lightning"
-                  ]
-                },
-                "tier2": {
-                  "value": "3",
-                  "types": [
-                    "lightning"
-                  ]
-                },
-                "tier3": {
-                  "value": "5",
-                  "types": [
-                    "lightning"
-                  ]
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 lightning damage"
             },
-            "J6nkFAcQPfzqLeuF": {
-              "name": "Slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "J6nkFAcQPfzqLeuF",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "turn"
-                    }
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "turn"
-                    }
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "turn"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "3 lightning damage"
+            },
+            {
+              "tier": 3,
+              "display": "5 lightning damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -168,7 +122,7 @@
         "trigger": "A human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -196,7 +150,7 @@
         "trigger": "a human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

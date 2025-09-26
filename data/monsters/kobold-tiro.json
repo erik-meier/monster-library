@@ -64,59 +64,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "s8y65C1ynyw33Pr0": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "s8y65C1ynyw33Pr0",
-              "damage": {
-                "tier1": {
-                  "value": "1"
-                },
-                "tier2": {
-                  "value": "2"
-                },
-                "tier3": {
-                  "value": "3"
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "1 damage"
             },
-            "G22rxl2OG1t1fL3J": {
-              "name": "",
-              "img": null,
-              "type": "other",
-              "_id": "G22rxl2OG1t1fL3J",
-              "other": {
-                "tier2": {
-                  "display": "the tiro can shift 1 square"
-                },
-                "tier3": {
-                  "display": "the tiro can shift 2 squares"
-                }
-              }
+            {
+              "tier": 2,
+              "display": "2 damage"
             },
-            "H8TkS7gCUo85xALg": {
-              "name": "Can't shift",
-              "img": null,
-              "type": "applied",
-              "_id": "H8TkS7gCUo85xALg",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "Ib78clUVwMPg7pKx": {
-                      "condition": "failure"
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 3,
+              "display": "3 damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -153,13 +119,13 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a [[/damage @monster.freeStrike]]</p>",
+          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
           "after": ""
         }
       }
@@ -181,7 +147,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -209,7 +175,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}

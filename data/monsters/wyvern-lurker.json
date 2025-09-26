@@ -38,7 +38,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>While within 10 squares of another wyvern, the lurker deals an extra [[/damage 3]] damage with strikes.</p>",
+          "value": "<p>While within 10 squares of another wyvern, the lurker deals an extra <span class=\"damage-value damage-generic\">3</span> damage with strikes.</p>",
           "director": ""
         }
       }
@@ -78,92 +78,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "RPzXjZv5CcnZLyom": {
-              "_id": "RPzXjZv5CcnZLyom",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "9",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "14",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "17",
-                  "types": [],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 damage"
             },
-            "iWv9A8prXJnev2XI": {
-              "_id": "iWv9A8prXJnev2XI",
-              "type": "applied",
-              "name": "Bleeding",
-              "img": null,
-              "applied": {
-                "tier2": {
-                  "display": "{{potency}} bleeding (save ends)",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "bleeding": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier1": {
-                  "display": "",
-                  "effects": {},
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "14 damage; M<@potency.average bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "17 damage; M<@potency.strong bleeding (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -194,108 +127,29 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
           },
-          "effects": {
-            "5HzJNsm3QHZsyLv0": {
-              "_id": "5HzJNsm3QHZsyLv0",
-              "type": "damage",
-              "name": "",
-              "img": null,
-              "damage": {
-                "tier1": {
-                  "value": "10",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "16",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "20",
-                  "types": [
-                    "acid"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "10 acid damage; M<@potency.weak weakened (save ends)"
             },
-            "7BjMLflJ9tAmIHSI": {
-              "_id": "7BjMLflJ9tAmIHSI",
-              "type": "applied",
-              "name": "Weakened",
-              "img": null,
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}} weakened (save ends)",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                },
-                "tier3": {
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": "might"
-                  },
-                  "effects": {
-                    "weakened": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "16 acid damage; M<@potency.average weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "20 acid damage; M<@potency.strong weakened (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
-          "after": "<p>A target weakened this way takes [[/damage 1d4 acid]] damage at the start of each of their turns.</p>"
+          "after": "<p>A target weakened this way takes <span class=\"damage-value damage-acid\">1d4 acid</span> damage at the start of each of their turns.</p>"
         }
       }
     },
@@ -317,7 +171,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]
@@ -325,7 +179,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The lurker flies up to their speed, then can attempt to hide. Each enemy the lurker moves adjacent to during this movement can choose to take [[/damage 3 sonic]] damage or fall prone.</p>",
+          "before": "<p>The lurker flies up to their speed, then can attempt to hide. Each enemy the lurker moves adjacent to during this movement can choose to take <span class=\"damage-value damage-sonic\">3 sonic</span> damage or fall prone.</p>",
           "after": ""
         }
       }
@@ -351,7 +205,7 @@
         "trigger": "A creature within distance deals damage to the lurker with a ranged ability.",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 3",
             "characteristics": [
               "agility"
             ]

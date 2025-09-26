@@ -44,60 +44,58 @@ The application uses monster data from the Draw Steel Foundry VTT module.
 ```
 data/
 ├── monster_index.json          # Index with all monster metadata
-└── monsters/                   # Monster files in simplified format
-    ├── angulotl-cleaver.json
-    ├── arixx.json
-    └── ...
+├── monsters/                   # Processed monster files for app consumption
+│   ├── angulotl-cleaver.json
+│   ├── arixx.json
+│   └── ...
+└── monsters-original/          # Raw Foundry VTT data (backup)
 
 scripts/
 ├── clone_monsters.sh           # Clone raw data from draw-steel repository
-├── create-monster-index.js     # Create index from raw Foundry VTT data
-├── simplify-monster-data.js    # Convert raw data to simplified format
-└── build-monster-data.js       # Bundle simplified data for app consumption
+├── process-monster-data.js     # Process raw data for app consumption
+├── build-monster-data.js       # Bundle processed data for app
+└── text-processors.js          # Foundry VTT directive processing utilities
 ```
 
-### Workflow Steps
+### Pipeline
+
+The data processing pipeline consists of 3 streamlined steps:
 
 #### 1. Clone Raw Monster Data
 ```bash
 npm run clone-monsters
 ```
-- Clones latest monster data from draw-steel Foundry module
-- Creates initial `monster_index.json` from raw Foundry VTT data
-- Removes Foundry folder files that aren't monsters
+- Clones latest monster data from draw-steel Foundry module to `data/monsters-original/`
 
-#### 2. Simplify Monster Data
+#### 2. Process Monster Data  
 ```bash
-npm run simplify-monsters
+npm run process-monsters
 ```
-- Converts complex Foundry VTT monster files to simplified format
-- Extracts only the fields actually used by the Vue components
-- Replaces raw monsters with simplified versions (backs up originals)
-- Updates `monster_index.json` for simplified structure
+- Converts complex Foundry VTT files to simplified format
+- Processes Foundry text directives into HTML  
+- Applies consistent formatting and validation
+- Creates monster index for application
+- Outputs processed files to `data/monsters/`
 
 #### 3. Build Bundle for App
 ```bash
 npm run build-data
 ```
-- Creates JavaScript bundle from simplified monsters
+- Creates JavaScript bundle from processed monsters
 - Generates `src/data/monsters-bundle.js` for app consumption
-- Used automatically during `npm run build`
 
-#### 4. Full Refresh (All Steps)
+#### 4. Full Refresh
 ```bash
 npm run refresh-all
 ```
-- Runs all three steps in sequence
-- Complete refresh from upstream draw-steel data
+- Runs all three steps in sequence for complete data refresh
 
 ### Available Scripts
 
 - `npm run clone-monsters` - Fetch latest monster data from upstream
-- `npm run simplify-monsters` - Process raw data for the application
+- `npm run process-monsters` - Process raw data for the application  
 - `npm run build-data` - Bundle data for production (runs automatically during build)
 - `npm run refresh-all` - Complete data refresh from upstream
-- `npm run format-monsters` - Apply formatting fixes to monster data
-- `npm run format-monsters:dry-run` - Preview formatting changes without applying
 - `npm test` - Run validation tests in watch mode
 - `npm run test:run` - Run validation tests once (used in CI)
 
@@ -158,7 +156,7 @@ To update with new monster releases:
 npm run refresh-all
 ```
 
-This will fetch the latest data, process it for the application, and prepare it for use.
+This will fetch the latest data from the Draw Steel Foundry module, process it for the application, and create the bundle for production use.
 
 ## Recommended IDE Setup
 

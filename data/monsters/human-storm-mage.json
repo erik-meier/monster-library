@@ -51,7 +51,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Any melee ability targeting the storm mage takes a bane. Additionally, whenever the mage takes damage from an adjacent enemy, the enemy takes 2 lightning damage, and if they have R&lt;1 they are pushed up to 2 squares.</p>",
+          "value": "<p>Any melee ability targeting the storm mage takes a bane. Additionally, whenever the mage takes damage from an adjacent enemy, the enemy takes 2 lightning damage, and if they have <strong class=\"potency-value\">R&lt;1</strong> they are pushed up to 2 squares.</p>",
           "director": ""
         }
       }
@@ -80,39 +80,25 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
           },
-          "effects": {
-            "Ug2iXzEaEmczKA6Y": {
-              "name": "",
-              "img": null,
-              "type": "damage",
-              "_id": "Ug2iXzEaEmczKA6Y",
-              "damage": {
-                "tier1": {
-                  "value": "7",
-                  "types": [
-                    "lightning"
-                  ]
-                },
-                "tier2": {
-                  "value": "10",
-                  "types": [
-                    "lightning"
-                  ]
-                },
-                "tier3": {
-                  "value": "13",
-                  "types": [
-                    "lightning"
-                  ]
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 lightning damage"
+            },
+            {
+              "tier": 2,
+              "display": "10 lightning damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 lightning damage"
             }
-          }
+          ]
         },
         "effect": {
           "before": "",
@@ -147,99 +133,20 @@
             "formula": "2",
             "characteristics": []
           },
-          "effects": {
-            "MhQwsOqVGfNaQFua": {
-              "name": "Damage",
-              "img": null,
-              "type": "damage",
-              "_id": "MhQwsOqVGfNaQFua",
-              "damage": {
-                "tier1": {
-                  "value": "4",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "value": "6",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "value": "9",
-                  "types": [
-                    "corruption"
-                  ],
-                  "properties": [],
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 corruption damage; P<@potency.weak slowed (save ends)"
             },
-            "WoQ1Q8BcxmPBSXXN": {
-              "name": "Slowed",
-              "img": null,
-              "type": "applied",
-              "_id": "WoQ1Q8BcxmPBSXXN",
-              "applied": {
-                "tier1": {
-                  "display": "{{potency}}, slowed (save ends)",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "display": "",
-                  "effects": {
-                    "slowed": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "display": "{{potency}}, restrained (save ends)",
-                  "effects": {
-                    "restrained": {
-                      "condition": "failure",
-                      "end": "save",
-                      "properties": []
-                    }
-                  },
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
+            {
+              "tier": 2,
+              "display": "6 corruption damage; P<@potency.average slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 corruption damage; P<@potency.strong restrained (save ends)"
             }
-          }
+          ]
         },
         "effect": {
           "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
@@ -264,7 +171,7 @@
         "trigger": "A human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -292,7 +199,7 @@
         "trigger": "a human's turn starts",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -326,7 +233,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "@chr",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
