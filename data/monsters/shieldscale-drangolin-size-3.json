@@ -278,7 +278,7 @@
           ]
         },
         "effect": {
-          "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra <span class=\"damage-value damage-fire\">2 fire</span> damage.</p>",
+          "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra <span class=\"damage-value damage-generic\">2</span> fire damage.</p>",
           "after": ""
         },
         "spend": {

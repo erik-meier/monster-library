@@ -88,7 +88,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>A burning creature takes <span class=\"damage-value damage-fire\">1d6 fire</span> damage at the start of each of their turns. A burning object takes <span class=\"damage-value damage-fire\">1d6 fire</span> damage at the end of each round.</p>"
+          "after": "<p>A burning creature takes <span class=\"damage-value damage-generic\">1d6</span> fire damage at the start of each of their turns. A burning object takes <span class=\"damage-value damage-generic\">1d6</span> fire damage at the end of each round.</p>"
         },
         "spend": {
           "text": "",

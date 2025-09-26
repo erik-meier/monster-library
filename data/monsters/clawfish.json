@@ -41,7 +41,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the start of each of their turns, the clawfish deals <span class=\"damage-value damage-lightning\">2 lightning</span> damage to each wet enemy within 2 squares.</p>",
+          "value": "<p>At the start of each of their turns, the clawfish deals <span class=\"damage-value damage-generic\">2</span> lightning damage to each wet enemy within 2 squares.</p>",
           "director": ""
         }
       }
@@ -91,7 +91,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>Any target grabbed this way takes <span class=\"damage-value damage-lightning\">2 lightning</span> damage at the start of each of their turns.</p>"
+          "after": "<p>Any target grabbed this way takes <span class=\"damage-value damage-generic\">2</span> lightning damage at the start of each of their turns.</p>"
         },
         "spend": {
           "text": "",
@@ -154,7 +154,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> sonic damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
         },
         "spend": {

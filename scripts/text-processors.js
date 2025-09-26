@@ -7,12 +7,12 @@
  */
 
 /**
- * Process damage directives like [[/damage 5 fire]] or [[/damage @monster.freeStrike]]
+ * Process damage directives like [[/damage 5 fire]] or [[/damage @monster.freeStrike]] or [[/damage 11 sonic poison fire]]
  */
 function processDamageDirectives(text, monster) {
   if (!text) return text;
 
-  return text.replace(/\[\[\/damage\s+(@monster\.freeStrike|\d+|\dd\d+)(?:\s+(\w+))?\]\](\{.+\})?/g, (match, value, type) => {
+  return text.replace(/\[\[\/damage\s+(@monster\.freeStrike|\d+|\dd\d+)(?:\s+([\w\s]+?))?\]\](\{.+\})?/g, (match, value, typeString) => {
     // Handle @monster.freeStrike reference
     if (value === '@monster.freeStrike') {
       const freeStrikeValue = monster?.freeStrike || value;
@@ -20,8 +20,17 @@ function processDamageDirectives(text, monster) {
     }
 
     // Handle regular numeric damage values
-    const damageClass = type ? `damage-${type.toLowerCase()}` : 'damage-generic';
-    return `<span class="damage-value ${damageClass}">${value}${type ? ` ${type}` : ''}</span>`;
+    let damageText = `<span class="damage-value damage-generic">${value}</span>`;
+
+    if (typeString && typeString.trim()) {
+      // For muiltiple types show as untyped
+      const types = typeString.trim().split(/\s+/);
+      if (types.length == 1) {
+        damageText += ` ${types[0]}`;
+      }
+    }
+
+    return damageText;
   });
 }
 

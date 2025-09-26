@@ -310,7 +310,7 @@
         },
         "effect": {
           "before": "<p>Note: Targets <strong>Enemy</strong> and Object in the area.</p>",
-          "after": "<p>The egress recalls and instantly destroys any minion allies on the encounter map. A torrent of churned-up minion bodies, blood, and ichor erupts from the egress, dealing an extra <span class=\"damage-value damage-damage\">1 damage</span> for each minion destroyed this way.</p>"
+          "after": "<p>The egress recalls and instantly destroys any minion allies on the encounter map. A torrent of churned-up minion bodies, blood, and ichor erupts from the egress, dealing an extra <span class=\"damage-value damage-generic\">1</span> damage for each minion destroyed this way.</p>"
         },
         "spend": {
           "text": "",

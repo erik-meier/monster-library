@@ -283,7 +283,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each target makes a **Presence test**.</p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-corruption\">12 corruption</span> damage; pull 5 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-corruption\">9 corruption</span> damage; pull 3 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p>Pull 1 toward the center of the cube</p></td></tr></tbody></table>",
+          "before": "<p>Each target makes a **Presence test**.</p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> corruption damage; pull 5 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> corruption damage; pull 3 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p>Pull 1 toward the center of the cube</p></td></tr></tbody></table>",
           "after": "<p>The area turns dark and distorted, and is difficult terrain for enemies.</p>"
         },
         "spend": {

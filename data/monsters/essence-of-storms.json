@@ -167,7 +167,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>The target takes <span class=\"damage-value damage-lightning\">5 lightning</span> damage.</p>"
+          "after": "<p>The target takes <span class=\"damage-value damage-generic\">5</span> lightning damage.</p>"
         },
         "spend": {
           "text": "",

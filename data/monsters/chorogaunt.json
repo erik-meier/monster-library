@@ -224,7 +224,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>Each target must choose between taking <span class=\"damage-value damage-psychic\">5 psychic</span> damage, or being frightened (save ends).</p>"
+          "after": "<p>Each target must choose between taking <span class=\"damage-value damage-generic\">5</span> psychic damage, or being frightened (save ends).</p>"
         },
         "spend": {
           "text": "",

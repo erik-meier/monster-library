@@ -225,7 +225,7 @@
           ]
         },
         "effect": {
-          "before": "<p>The centurion moves up to their speed, ignoring difficult terrain, and uses Pilum against each creature whose space they move through. They make one power roll against all targets, and the ability deals an extra <span class=\"damage-value damage-generic\">5</span> damage. While weakened by that ability, each target takes <span class=\"damage-value damage-fire\">2 fire</span> damage at the start of each of their turns.</p>",
+          "before": "<p>The centurion moves up to their speed, ignoring difficult terrain, and uses Pilum against each creature whose space they move through. They make one power roll against all targets, and the ability deals an extra <span class=\"damage-value damage-generic\">5</span> damage. While weakened by that ability, each target takes <span class=\"damage-value damage-generic\">2</span> fire damage at the start of each of their turns.</p>",
           "after": ""
         },
         "spend": {

@@ -235,7 +235,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>Each target takes <span class=\"damage-value damage-acid\">4 acid</span> damage. Any target who has M &lt; 2 is also slowed (save ends).</p>"
+          "after": "<p>Each target takes <span class=\"damage-value damage-generic\">4</span> acid damage. Any target who has M &lt; 2 is also slowed (save ends).</p>"
         },
         "spend": {
           "text": "",

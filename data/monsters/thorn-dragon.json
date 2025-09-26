@@ -52,7 +52,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The dragon's scales create a 2 aura of withering green magic around them. Any creature other than the dragon who regains Stamina in the area regains only half the expected amount. Any winded creature who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-corruption\">1d3 corruption</span> damage.</p>",
+          "value": "<p>The dragon's scales create a 2 aura of withering green magic around them. Any creature other than the dragon who regains Stamina in the area regains only half the expected amount. Any winded creature who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">1d3</span> corruption damage.</p>",
           "director": ""
         }
       }
@@ -152,7 +152,7 @@
           }
         },
         "effect": {
-          "before": "<p><strong>Note:</strong> Targets each Enemy and Object in the area.</p><p>Each target makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">12 poison</span> damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-poison\">9 poison</span> damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage</p></td></tr></tbody></table>",
+          "before": "<p><strong>Note:</strong> Targets each Enemy and Object in the area.</p><p>Each target makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> poison damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> poison damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage</p></td></tr></tbody></table>",
           "after": "<p>A dragonsealed creature has their wounds bound by nettles and thorns, causing them to take an extra <span class=\"damage-value damage-generic\">1d3</span> damage whenever they take damage rolled as a d6 or a d3.</p>"
         },
         "spend": {
@@ -444,8 +444,8 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Poisonous overgrowth and seeking vines cover all surfaces on the encounter map. The dragon uses their Bramble Barricade Malice feature twice at no cost. Until the end of the encounter, any creature force moved by the dragon takes <span class=\"damage-value damage-poison\">1d3 poison</span> damage, and if they have M &lt; 2, they are weakened (save ends).</p>",
-          "after": "<p><strong>Special:</strong> If the Thorn Dragon’s Domain trait is in effect, any creature other than the dragon who starts their turn on the encounter map takes <span class=\"damage-value damage-poison\">1d3 poison</span> damage.</p>"
+          "before": "<p>Poisonous overgrowth and seeking vines cover all surfaces on the encounter map. The dragon uses their Bramble Barricade Malice feature twice at no cost. Until the end of the encounter, any creature force moved by the dragon takes <span class=\"damage-value damage-generic\">1d3</span> poison damage, and if they have M &lt; 2, they are weakened (save ends).</p>",
+          "after": "<p><strong>Special:</strong> If the Thorn Dragon’s Domain trait is in effect, any creature other than the dragon who starts their turn on the encounter map takes <span class=\"damage-value damage-generic\">1d3</span> poison damage.</p>"
         },
         "spend": {
           "text": "",
@@ -572,7 +572,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The dragon summons poisonous, biting thorns around their foes. Each enemy on the encounter map makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-poison\">12 poison</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p><span class=\"damage-value damage-poison\">9 poison</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p><span class=\"damage-value damage-poison\">5 poison</span> damage; bleeding (EoT)</p></td></tr></tbody></table>",
+          "before": "<p>The dragon summons poisonous, biting thorns around their foes. Each enemy on the encounter map makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> poison damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> poison damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage; bleeding (EoT)</p></td></tr></tbody></table>",
           "after": ""
         },
         "spend": {

@@ -444,7 +444,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The manticore sprays tail spikes across the ground within 5 squares of them. Each enemy in that area who has <strong class=\"potency-value\">A&lt;3</strong> is bleeding (save ends). Additionally, the area is difficult terrain, and any enemy takes <span class=\"damage-value damage-poison\">3 poison</span> damage for each square of the area they enter. An enemy who takes <span class=\"damage-value damage-poison\">9 poison</span> damage this way on one turn is weakened until the end of the encounter.</p>",
+          "before": "<p>The manticore sprays tail spikes across the ground within 5 squares of them. Each enemy in that area who has <strong class=\"potency-value\">A&lt;3</strong> is bleeding (save ends). Additionally, the area is difficult terrain, and any enemy takes <span class=\"damage-value damage-generic\">3</span> poison damage for each square of the area they enter. An enemy who takes <span class=\"damage-value damage-generic\">9</span> poison damage this way on one turn is weakened until the end of the encounter.</p>",
           "after": ""
         },
         "spend": {

@@ -182,7 +182,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>While the target is adjacent to any enemy, the adeptus gains an edge on this ability. Each enemy adjacent to the target takes <span class=\"damage-value damage-lighting\">2 lighting</span> damage.</p>"
+          "after": "<p>While the target is adjacent to any enemy, the adeptus gains an edge on this ability. Each enemy adjacent to the target takes <span class=\"damage-value damage-generic\">2</span> lighting damage.</p>"
         },
         "spend": {
           "text": "",

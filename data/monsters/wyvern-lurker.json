@@ -154,7 +154,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>A target weakened this way takes <span class=\"damage-value damage-acid\">1d4 acid</span> damage at the start of each of their turns.</p>"
+          "after": "<p>A target weakened this way takes <span class=\"damage-value damage-generic\">1d4</span> acid damage at the start of each of their turns.</p>"
         },
         "spend": {
           "text": "",
@@ -188,7 +188,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The lurker flies up to their speed, then can attempt to hide. Each enemy the lurker moves adjacent to during this movement can choose to take <span class=\"damage-value damage-sonic\">3 sonic</span> damage or fall prone.</p>",
+          "before": "<p>The lurker flies up to their speed, then can attempt to hide. Each enemy the lurker moves adjacent to during this movement can choose to take <span class=\"damage-value damage-generic\">3</span> sonic damage or fall prone.</p>",
           "after": ""
         },
         "spend": {

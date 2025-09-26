@@ -40,7 +40,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Whenever an adjacent enemy grabs the cleaver or uses a melee ability against them, that enemy takes <span class=\"damage-value damage-poison\">1 poison</span> damage.</p>",
+          "value": "<p>Whenever an adjacent enemy grabs the cleaver or uses a melee ability against them, that enemy takes <span class=\"damage-value damage-generic\">1</span> poison damage.</p>",
           "director": ""
         }
       }
@@ -153,7 +153,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-sonic\">5 sonic</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-sonic\">4 sonic</span> damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
+          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> sonic damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
           "after": ""
         },
         "spend": {

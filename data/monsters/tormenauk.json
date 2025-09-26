@@ -100,7 +100,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>Any target grabbed this way takes <span class=\"damage-value damage-psychic\">4 psychic</span> damage at the start of each of the tormenauk's turns.</p>"
+          "after": "<p>Any target grabbed this way takes <span class=\"damage-value damage-generic\">4</span> psychic damage at the start of each of the tormenauk's turns.</p>"
         },
         "spend": {
           "text": "",

@@ -111,7 +111,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>A size 1 target grabbed this way takes <span class=\"damage-value damage-acid\">3 acid</span> damage at the start of each of their turns.</p>"
+          "after": "<p>A size 1 target grabbed this way takes <span class=\"damage-value damage-generic\">3</span> acid damage at the start of each of their turns.</p>"
         },
         "spend": {
           "text": "",
@@ -217,7 +217,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>The ground beneath each target is covered in burning acid until the end of the encounter. Any enemy who enters an affected space for the first time in a round or starts their turn there takes <span class=\"damage-value damage-acid\">2 acid</span> damage.</p>"
+          "after": "<p>The ground beneath each target is covered in burning acid until the end of the encounter. Any enemy who enters an affected space for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">2</span> acid damage.</p>"
         },
         "spend": {
           "text": "",
@@ -389,7 +389,7 @@
         },
         "effect": {
           "before": "",
-          "after": "<p>The ground in the area is covered in a puddle of acid until the end of the encounter. Any enemy who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-acid\">2 acid</span> damage.</p>"
+          "after": "<p>The ground in the area is covered in a puddle of acid until the end of the encounter. Any enemy who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">2</span> acid damage.</p>"
         },
         "spend": {
           "text": "",

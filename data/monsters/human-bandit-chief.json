@@ -188,7 +188,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The bandit chief takes <span class=\"damage-value damage-corruption\">5 corruption</span> damage and increases the outcome of the power roll by one tier. This damage can’t be reduced in any way.</p>",
+          "before": "<p>The bandit chief takes <span class=\"damage-value damage-generic\">5</span> corruption damage and increases the outcome of the power roll by one tier. This damage can’t be reduced in any way.</p>",
           "after": ""
         },
         "spend": {

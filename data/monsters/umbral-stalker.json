@@ -40,7 +40,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The umbral stalker can move through creatures and objects at their usual speed, but can't end their turn inside a creature or object. The first time in a round that the umbral stalker moves through a creature, that creature takes <span class=\"damage-value damage-corruption\">2 corruption</span> damage. The umbral stalker doesn't take damage from being force moved into objects.</p>",
+          "value": "<p>The umbral stalker can move through creatures and objects at their usual speed, but can't end their turn inside a creature or object. The first time in a round that the umbral stalker moves through a creature, that creature takes <span class=\"damage-value damage-generic\">2</span> corruption damage. The umbral stalker doesn't take damage from being force moved into objects.</p>",
           "director": ""
         }
       }
