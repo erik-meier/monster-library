@@ -25,7 +25,7 @@
         
         <button 
           v-else-if="!canEdit && !monster.isCustom" 
-          @click="editOfficialMonster" 
+          @click="createCopyAndEdit" 
           class="btn btn-outline"
         >
           Create Copy to Edit
@@ -152,9 +152,43 @@ export default {
       }
     },
     
-    editOfficialMonster() {
-      // Navigate to the edit page, which will show the copy dialog
-      this.$router.push(`/monster/${this.monsterId}/edit`)
+    async createCopyAndEdit() {
+      try {
+        // Create a copy of the official monster as a custom monster
+        const copyData = {
+          name: `${this.monster.name} (Copy)`,
+          level: this.monster.level,
+          ev: this.monster.ev,
+          role: this.monster.role || '',
+          organization: this.monster.organization,
+          speed: this.monster.speed,
+          stamina: this.monster.stamina,
+          stability: this.monster.stability,
+          freeStrike: this.monster.freeStrike,
+          size: {
+            value: this.monster.size?.value || 1,
+            letter: this.monster.size?.letter || 'M'
+          },
+          characteristics: {
+            might: this.monster.characteristics.might,
+            agility: this.monster.characteristics.agility,
+            reason: this.monster.characteristics.reason,
+            intuition: this.monster.characteristics.intuition,
+            presence: this.monster.characteristics.presence
+          },
+          keywords: this.monster.keywords || [],
+          abilities: this.monster.abilities || [],
+          actions: this.monster.actions || []
+        }
+        
+        const newMonsterId = this.customMonstersStore.createMonster(copyData)
+        
+        // Navigate directly to edit the copy
+        this.$router.push(`/monster/${newMonsterId}/edit`)
+      } catch (error) {
+        console.error('Failed to create copy:', error)
+        alert('Failed to create copy. Please try again.')
+      }
     }
   }
 }

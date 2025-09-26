@@ -150,7 +150,6 @@
               id="stability" 
               v-model.number="form.stability" 
               required 
-              min="0"
               class="form-control"
             >
           </div>
@@ -188,15 +187,22 @@
 
           <div class="form-group">
             <label for="sizeLetter">Size Category *</label>
-            <select id="sizeLetter" v-model="form.size.letter" required class="form-control">
+            <select 
+              id="sizeLetter" 
+              v-model="form.size.letter" 
+              required 
+              class="form-control"
+              :disabled="form.size.value > 1"
+            >
               <option value="">Select size...</option>
               <option value="T">Tiny (T)</option>
               <option value="S">Small (S)</option>
               <option value="M">Medium (M)</option>
               <option value="L">Large (L)</option>
-              <option value="H">Huge (H)</option>
-              <option value="G">Gargantuan (G)</option>
             </select>
+            <span v-if="form.size.value > 1" class="form-help">
+              Sizes above 1 don't use letters - just the number (e.g., 2, 3, 4...)
+            </span>
           </div>
         </div>
       </div>
@@ -323,6 +329,19 @@ export default {
         keywords: [],
         abilities: [],
         actions: []
+      }
+    }
+  },
+  watch: {
+    'form.size.value': {
+      handler(newValue) {
+        // If size value is greater than 1, clear the letter
+        if (newValue > 1) {
+          this.form.size.letter = ''
+        } else if (newValue === 1 && !this.form.size.letter) {
+          // Default to Medium for size 1 if no letter is set
+          this.form.size.letter = 'M'
+        }
       }
     }
   },
