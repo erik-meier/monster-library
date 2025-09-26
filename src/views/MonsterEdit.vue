@@ -331,6 +331,17 @@ export default {
       }
     })
   },
+  watch: {
+    '$route.params.monsterId': {
+      handler(newId, oldId) {
+        if (newId !== oldId) {
+          this.showCopyDialog = false
+          this.loadMonster()
+        }
+      },
+      immediate: false
+    }
+  },
   methods: {
     async loadMonster() {
       this.loading = true

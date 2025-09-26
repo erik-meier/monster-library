@@ -1,52 +1,62 @@
 <template>
-  <div class="actions-list">
-    <div v-for="action in sortedActions" :key="action.name" class="action">
-      <div class="action-header">
-        <div class="action-title-row">
-          <h4 class="action-name">
-            {{ action.name }}
-            <span v-if="action.type === 'feature'" class="feature-badge">★</span>
-            <span v-if="action.system.category === 'signature'" class="signature-badge">SIGNATURE</span>
-            <span v-if="action.system.resource" class="malice-cost">{{ action.system.resource }} Malice</span>
-          </h4>
-          <div class="action-power-info">
-            <span v-if="actionHasPowerRoll(action)" class="action-power-roll">{{
-              formatPowerRoll(action.system.power.roll.formula, chr) }}</span>
-            <span class="action-type-badge" v-if="action.system.type && action.system.type !== 'none'">
-              {{ formatActionType(action.system.type) }}
-            </span>
+  <div class="actions-list" v-if="sortedActions.length > 0">
+    <div v-for="action in sortedActions" :key="action.name || action.id || Math.random()" class="action">
+      <!-- Handle custom monster actions (simple structure) -->
+      <div v-if="!action.system" class="simple-action">
+        <h4 class="action-name">{{ action.name || action.title || 'Unnamed Action' }}</h4>
+        <div class="action-description" v-if="action.description">{{ action.description }}</div>
+        <div class="action-description" v-else-if="action.effect">{{ action.effect }}</div>
+      </div>
+      
+      <!-- Handle official monster actions (complex structure) -->
+      <div v-else class="complex-action">
+        <div class="action-header">
+          <div class="action-title-row">
+            <h4 class="action-name">
+              {{ action.name }}
+              <span v-if="action.type === 'feature'" class="feature-badge">★</span>
+              <span v-if="action.system.category === 'signature'" class="signature-badge">SIGNATURE</span>
+              <span v-if="action.system.resource" class="malice-cost">{{ action.system.resource }} Malice</span>
+            </h4>
+            <div class="action-power-info">
+              <span v-if="actionHasPowerRoll(action)" class="action-power-roll">{{
+                formatPowerRoll(action.system.power.roll.formula, chr) }}</span>
+              <span class="action-type-badge" v-if="action.system.type && action.system.type !== 'none'">
+                {{ formatActionType(action.system.type) }}
+              </span>
+            </div>
+          </div>
+
+          <div class="action-details">
+            <div class="action-keywords" v-if="action.system.keywords && action.system.keywords.length">
+              {{ action.system.keywords.join(', ') }}
+            </div>
+            <div class="action-mechanics">
+              <span v-if="formatActionDistance(action.system.distance)" class="action-distance">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L13.09 8.26L22 9L13.09 15.74L12 22L10.91 15.74L2 9L10.91 8.26L12 2Z" />
+                </svg>
+                Range: {{ formatActionDistance(action.system.distance) }}
+              </span>
+              <span v-if="formatActionTargets(action.system.target)" class="action-target">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+                Target: {{ formatActionTargets(action.system.target) }}
+              </span>
+            </div>
           </div>
         </div>
 
-        <div class="action-details">
-          <div class="action-keywords" v-if="action.system.keywords && action.system.keywords.length">
-            {{ action.system.keywords.join(', ') }}
-          </div>
-          <div class="action-mechanics">
-            <span v-if="formatActionDistance(action.system.distance)" class="action-distance">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L13.09 8.26L22 9L13.09 15.74L12 22L10.91 15.74L2 9L10.91 8.26L12 2Z" />
-              </svg>
-              Range: {{ formatActionDistance(action.system.distance) }}
-            </span>
-            <span v-if="formatActionTargets(action.system.target)" class="action-target">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="10" />
-                <circle cx="12" cy="12" r="6" />
-                <circle cx="12" cy="12" r="2" />
-              </svg>
-              Target: {{ formatActionTargets(action.system.target) }}
-            </span>
-          </div>
+        <div v-if="action.system.type == 'triggered'" class="action-trigger">
+          <strong>Trigger:</strong> {{ action.system.trigger }}
         </div>
-      </div>
 
-      <div v-if="action.system.type == 'triggered'" class="action-trigger">
-        <strong>Trigger:</strong> {{ action.system.trigger }}
+        <PowerRoll v-if="actionHasPowerRoll(action)" :effects="action.system.power.effects" :chr="chr" />
+        <div class="action-description" v-html="formatDescription(extractDescription(action))"></div>
       </div>
-
-      <PowerRoll v-if="actionHasPowerRoll(action)" :effects="action.system.power.effects" :chr="chr" />
-      <div class="action-description" v-html="formatDescription(extractDescription(action))"></div>
     </div>
   </div>
 </template>
@@ -79,7 +89,14 @@ export default {
   },
   computed: {
     sortedActions() {
+      if (!this.actions || this.actions.length === 0) return [];
+      
       return this.actions.slice().sort((a, b) => {
+        // Handle simple custom monster actions that don't have system property
+        if (!a.system && !b.system) return 0;
+        if (!a.system) return 1;
+        if (!b.system) return -1;
+        
         if (a.system.category === 'signature' && b.system.category !== 'signature') return -1;
         if (a.system.category !== 'signature' && b.system.category === 'signature') return 1;
 
@@ -97,6 +114,7 @@ export default {
   },
   methods: {
     extractDescription(action) {
+      if (!action.system) return action.description || action.effect || '';
       if (action.system.description && action.system.description.value) {
         return action.system.description.value;
       }
@@ -145,11 +163,12 @@ export default {
       }
     },
     actionHasPowerRoll(action) {
-      if (action.system.power && action.system.power.effects) {
-        for (const effect of Object.values(action.system.power.effects)) {
-          if (effect.type === 'damage') {
-            return true
-          }
+      if (!action.system || !action.system.power || !action.system.power.effects) {
+        return false;
+      }
+      for (const effect of Object.values(action.system.power.effects)) {
+        if (effect.type === 'damage') {
+          return true
         }
       }
       return false
