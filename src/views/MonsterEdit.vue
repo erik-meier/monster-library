@@ -8,38 +8,6 @@
       Error: {{ error }}
     </div>
     
-    <!-- Copy Dialog for Official Monsters -->
-    <div v-else-if="showCopyDialog" class="copy-dialog-overlay" @click.self="goBack">
-      <div 
-        class="copy-dialog" 
-        role="dialog" 
-        aria-labelledby="copy-dialog-title"
-        aria-describedby="copy-dialog-desc"
-        @keydown.escape="goBack"
-        ref="copyDialog"
-      >
-        <h2 id="copy-dialog-title">Edit Official Monster</h2>
-        <p id="copy-dialog-desc">You cannot edit official monsters directly. Would you like to create a custom copy instead?</p>
-        <div class="dialog-actions">
-          <button 
-            @click="goBack" 
-            class="btn btn-secondary"
-            @keydown.escape="goBack"
-          >
-            Cancel
-          </button>
-          <button 
-            @click="createCopy" 
-            class="btn btn-primary"
-            ref="copyButton"
-            @keydown.enter.prevent="createCopy"
-          >
-            Create Copy
-          </button>
-        </div>
-      </div>
-    </div>
-    
     <div v-else-if="monster && form">
       <div class="header">
         <h1>Edit Monster</h1>
@@ -164,7 +132,6 @@
                 id="stability" 
                 v-model.number="form.stability" 
                 required 
-                min="0"
                 class="form-control"
               >
             </div>
@@ -202,15 +169,22 @@
 
             <div class="form-group">
               <label for="sizeLetter">Size Category *</label>
-              <select id="sizeLetter" v-model="form.size.letter" required class="form-control">
+              <select 
+                id="sizeLetter" 
+                v-model="form.size.letter" 
+                required 
+                class="form-control"
+                :disabled="form.size.value > 1"
+              >
                 <option value="">Select size...</option>
                 <option value="T">Tiny (T)</option>
                 <option value="S">Small (S)</option>
                 <option value="M">Medium (M)</option>
                 <option value="L">Large (L)</option>
-                <option value="H">Huge (H)</option>
-                <option value="G">Gargantuan (G)</option>
               </select>
+              <span v-if="form.size.value > 1" class="form-help">
+                Sizes above 1 don't use letters - just the number (e.g., 2, 3, 4...)
+              </span>
             </div>
           </div>
         </div>
@@ -310,8 +284,7 @@ export default {
       form: null,
       loading: true,
       error: null,
-      submitting: false,
-      showCopyDialog: false
+      submitting: false
     }
   },
   computed: {
@@ -324,9 +297,7 @@ export default {
     
     // Set up focus management
     this.$nextTick(() => {
-      if (this.showCopyDialog && this.$refs.copyButton) {
-        this.$refs.copyButton.focus()
-      } else if (this.$refs.nameInput) {
+      if (this.$refs.nameInput) {
         this.$refs.nameInput.focus()
       }
     })
@@ -335,11 +306,21 @@ export default {
     '$route.params.monsterId': {
       handler(newId, oldId) {
         if (newId !== oldId) {
-          this.showCopyDialog = false
           this.loadMonster()
         }
       },
       immediate: false
+    },
+    'form.size.value': {
+      handler(newValue) {
+        // If size value is greater than 1, clear the letter
+        if (this.form && newValue > 1) {
+          this.form.size.letter = ''
+        } else if (this.form && newValue === 1 && !this.form.size.letter) {
+          // Default to Medium for size 1 if no letter is set
+          this.form.size.letter = 'M'
+        }
+      }
     }
   },
   methods: {
@@ -358,7 +339,8 @@ export default {
         
         // Check if this is an official monster (not custom)
         if (!this.isCustomMonster) {
-          this.showCopyDialog = true
+          // Redirect to the monster view page instead of showing a dialog
+          this.$router.replace(`/monster/${this.monsterId}`)
           return
         }
         
@@ -396,45 +378,6 @@ export default {
         keywords: monster.keywords || [],
         abilities: monster.abilities || [],
         actions: monster.actions || []
-      }
-    },
-    
-    async createCopy() {
-      try {
-        // Create a copy of the official monster as a custom monster
-        const copyData = {
-          name: `${this.monster.name} (Copy)`,
-          level: this.monster.level,
-          ev: this.monster.ev,
-          role: this.monster.role || '',
-          organization: this.monster.organization,
-          speed: this.monster.speed,
-          stamina: this.monster.stamina,
-          stability: this.monster.stability,
-          freeStrike: this.monster.freeStrike,
-          size: {
-            value: this.monster.size?.value || 1,
-            letter: this.monster.size?.letter || 'M'
-          },
-          characteristics: {
-            might: this.monster.characteristics.might,
-            agility: this.monster.characteristics.agility,
-            reason: this.monster.characteristics.reason,
-            intuition: this.monster.characteristics.intuition,
-            presence: this.monster.characteristics.presence
-          },
-          keywords: this.monster.keywords || [],
-          abilities: this.monster.abilities || [],
-          actions: this.monster.actions || []
-        }
-        
-        const newMonsterId = this.customMonstersStore.createMonster(copyData)
-        
-        // Redirect to edit the copy
-        this.$router.push(`/monster/${newMonsterId}/edit`)
-      } catch (error) {
-        console.error('Failed to create copy:', error)
-        alert('Failed to create copy. Please try again.')
       }
     },
     
