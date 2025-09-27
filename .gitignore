@@ -20,6 +20,9 @@ coverage
 # Raw data
 data/monsters-original/
 
+# Generated bundle files
+src/data/monsters-bundle.js
+
 # Editor directories and files
 .vscode
 !.vscode/extensions.json

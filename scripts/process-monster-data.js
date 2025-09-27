@@ -299,7 +299,7 @@ try {
   console.log(`📦 Original size: ${(originalSize / 1024 / 1024).toFixed(2)} MB`)
   console.log(`📦 Processed size: ${(totalProcessedSize / 1024 / 1024).toFixed(2)} MB`)
   console.log(`🎉 Size reduction: ${reduction}%`)
-} catch (error) {
+} catch {
   console.log(`\n✅ Processing complete!`)
   console.log(`📊 Processed: ${processedCount} monsters`)
   console.log(`⚠️  Errors: ${errorCount} monsters`)
