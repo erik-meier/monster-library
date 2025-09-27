@@ -95,22 +95,21 @@
         <div class="monster-card-header">
           <h3 class="monster-name">{{ monster.name }}</h3>
           <div class="monster-role">Level {{ monster.level }}{{ monster.organization ? ` ${monster.organization}` : ''
-            }}{{ monster.role ? ` ${monster.role}` : '' }}</div>
+          }}{{ monster.role ? ` ${monster.role}` : '' }}</div>
         </div>
 
         <div class="monster-stats">
           <span v-if="monster.ev !== undefined && monster.ev !== null" class="monster-ev">EV {{ monster.ev }}</span>
         </div>
 
-        <div class="monster-keywords" v-if="monster.keywords && monster.keywords.length > 0">
-          <span v-for="keyword in monster.keywords" :key="keyword" class="keyword-tag">
-            {{ keyword }}
-          </span>
-        </div>
-
         <div class="monster-card-footer">
+          <div class="monster-keywords" v-if="monster.keywords && monster.keywords.length > 0">
+            <span v-for="keyword in monster.keywords" :key="keyword" class="keyword-tag">
+              {{ keyword }}
+            </span>
+          </div>
           <div class="monster-role">Level {{ monster.level }}{{ formatRoleOrganization(monster) ? `
-            ${formatRoleOrganization(monster)}` : '' }}</div>
+            ${formatRoleOrganization(monster) }` : '' }}</div>
         </div>
       </div>
     </div>
@@ -431,8 +430,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.75rem;
-  margin-bottom: 1rem;
+  flex: 1;
 }
 
 .loading,
@@ -482,7 +480,9 @@ export default {
 .monster-card-footer {
   margin-top: auto;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .monster-name {
