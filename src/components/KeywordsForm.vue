@@ -76,26 +76,6 @@
           Enter additional keywords not covered by the common types. Use lowercase, single words or hyphenated phrases.
         </div>
       </div>
-      
-      <!-- Quick Add Common Abilities -->
-      <div class="ability-keywords">
-        <h3 class="subsection-title">Common Ability Keywords</h3>
-        <p class="section-description">
-          Common keywords used in monster abilities and attacks.
-        </p>
-        <div class="keyword-grid small">
-          <button
-            v-for="keyword in ABILITY_KEYWORDS"
-            :key="keyword"
-            type="button"
-            class="quick-add-btn"
-            :class="{ selected: formData.keywords.includes(keyword) }"
-            @click="toggleKeyword(keyword)"
-          >
-            {{ keyword }}
-          </button>
-        </div>
-      </div>
     </div>
     
     <!-- Keywords Summary -->
@@ -111,7 +91,7 @@
 <script setup lang="ts">
 import { reactive, ref, computed, watch } from 'vue'
 import type { MonsterFormData } from '@/types/monster-forms'
-import { COMMON_KEYWORDS, ABILITY_KEYWORDS } from '@/types/monster-forms'
+import { COMMON_KEYWORDS } from '@/types/monster-forms'
 
 interface Props {
   modelValue: MonsterFormData
@@ -140,14 +120,6 @@ const removeKeyword = (keyword: string) => {
   const index = formData.keywords.indexOf(keyword)
   if (index > -1) {
     formData.keywords.splice(index, 1)
-  }
-}
-
-const toggleKeyword = (keyword: string) => {
-  if (formData.keywords.includes(keyword)) {
-    removeKeyword(keyword)
-  } else {
-    formData.keywords.push(keyword)
   }
 }
 

@@ -38,38 +38,17 @@
         
         <div class="form-group full-width">
           <label for="source-license" class="form-label">License</label>
-          <select 
+          <input 
             id="source-license"
             v-model="formData.license"
-            class="form-select"
+            type="text"
+            class="form-input"
             :class="{ invalid: errors.license }"
-          >
-            <option value="">Select a license (optional)</option>
-            <option value="Draw Steel Creator License">Draw Steel Creator License</option>
-            <option value="OGL 1.0a">Open Game License 1.0a</option>
-            <option value="CC BY 4.0">Creative Commons Attribution 4.0</option>
-            <option value="CC BY-SA 4.0">Creative Commons Attribution-ShareAlike 4.0</option>
-            <option value="Homebrew">Homebrew (Personal Use)</option>
-            <option value="Custom">Custom License</option>
-          </select>
+            placeholder="Draw Steel Creator License"
+          />
           <div v-if="errors.license" class="error-message">{{ errors.license }}</div>
           <div class="help-text">Legal license under which this monster is published</div>
         </div>
-      </div>
-      
-      <!-- Custom License Input -->
-      <div v-if="formData.license === 'Custom'" class="form-group">
-        <label for="custom-license" class="form-label">Custom License Details</label>
-        <textarea 
-          id="custom-license"
-          v-model="customLicenseText"
-          class="form-textarea"
-          :class="{ invalid: errors.customLicense }"
-          placeholder="Enter custom license text or details"
-          rows="3"
-        />
-        <div v-if="errors.customLicense" class="error-message">{{ errors.customLicense }}</div>
-        <div class="help-text">Provide details about the custom license terms</div>
       </div>
       
       <!-- Preview Section -->
@@ -103,7 +82,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, computed, watch } from 'vue'
+import { reactive, computed, watch } from 'vue'
 import type { MonsterFormData } from '@/types/monster-forms'
 
 interface Props {
@@ -131,13 +110,10 @@ const formData = reactive({
   license: props.modelValue.source?.license || ''
 })
 
-const customLicenseText = ref('')
-
 const errors = reactive({
   book: '',
   page: '',
-  license: '',
-  customLicense: ''
+  license: ''
 })
 
 const commonPresets: SourcePreset[] = [
@@ -163,9 +139,6 @@ const hasSourceInfo = computed(() => {
 })
 
 const displayLicense = computed(() => {
-  if (formData.license === 'Custom') {
-    return customLicenseText.value || 'Custom License'
-  }
   return formData.license
 })
 
@@ -202,16 +175,6 @@ const validateField = (field: string, value: string) => {
         errors.license = ''
       }
       break
-      
-    case 'customLicense':
-      if (formData.license === 'Custom' && (!value || value.trim() === '')) {
-        errors.customLicense = 'Custom license details are required when using Custom license'
-      } else if (value && value.length > 1000) {
-        errors.customLicense = 'Custom license details must be 1000 characters or less'
-      } else {
-        errors.customLicense = ''
-      }
-      break
   }
 }
 
@@ -223,7 +186,7 @@ const updateModelValue = () => {
   const sourceInfo = {
     book: formData.book || undefined,
     page: formData.page || undefined,
-    license: formData.license === 'Custom' ? customLicenseText.value || formData.license : formData.license || undefined
+    license: formData.license || undefined
   }
   
   // Only include source if at least one field has a value
@@ -240,32 +203,19 @@ watch(formData, () => {
   validateField('book', formData.book)
   validateField('page', formData.page)
   validateField('license', formData.license)
-  validateField('customLicense', customLicenseText.value)
   updateModelValue()
 }, { deep: true })
-
-// Watch custom license text
-watch(customLicenseText, () => {
-  validateField('customLicense', customLicenseText.value)
-  updateModelValue()
-})
 
 // Watch for external changes
 watch(() => props.modelValue.source, (newSource) => {
   if (newSource) {
     if (newSource.book !== formData.book) formData.book = newSource.book || ''
     if (newSource.page !== formData.page) formData.page = newSource.page || ''
-    if (newSource.license !== formData.license) {
-      formData.license = newSource.license || ''
-      if (formData.license === 'Custom') {
-        customLicenseText.value = newSource.license || ''
-      }
-    }
+    if (newSource.license !== formData.license) formData.license = newSource.license || ''
   } else {
     formData.book = ''
     formData.page = ''
     formData.license = ''
-    customLicenseText.value = ''
   }
 }, { deep: true })
 
@@ -278,7 +228,6 @@ watch(isValid, (valid) => {
 Object.keys(formData).forEach(key => {
   validateField(key, formData[key as keyof typeof formData])
 })
-validateField('customLicense', customLicenseText.value)
 </script>
 
 <style scoped>

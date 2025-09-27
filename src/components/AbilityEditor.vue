@@ -108,10 +108,11 @@
                 class="form-select"
               >
                 <option value="main">Main Action</option>
-                <option value="move">Move Action</option>
+                <option value="maneuver">Maneuver</option>
                 <option value="triggered">Triggered Action</option>
+                <option value="freeTriggered">Free Triggered Action</option>
                 <option value="villain">Villain Action</option>
-                <option value="none">Passive/Special</option>
+                <option value="move">Move Action</option>
               </select>
             </div>
             
@@ -284,7 +285,7 @@
         </section>
 
         <!-- Trigger -->
-        <section class="editor-section" v-if="formData.system.type === 'triggered'">
+        <section class="editor-section" v-if="formData.system.type === 'triggered' || formData.system.type === 'freeTriggered'">
           <h3 class="section-title">Trigger</h3>
           <div class="form-group">
             <label for="trigger-text" class="form-label">Trigger Condition</label>

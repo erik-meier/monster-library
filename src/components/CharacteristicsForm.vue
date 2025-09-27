@@ -16,27 +16,12 @@
           :placeholder="'0'"
         />
         <div v-if="errors[key]" class="error-message">{{ errors[key] }}</div>
-        <div class="help-text">
-          Modifier: {{ formatModifier(formData.characteristics[key]) }}
-        </div>
       </div>
     </div>
     
-    <div class="characteristics-summary">
-      <h3 class="summary-title">Characteristic Summary</h3>
-      <div class="summary-grid">
-        <div class="summary-item" v-for="(label, key) in characteristicLabels" :key="key">
-          <span class="summary-label">{{ label }}:</span>
-          <span class="summary-value">
-            {{ formData.characteristics[key] }} ({{ formatModifier(formData.characteristics[key]) }})
-          </span>
-        </div>
-      </div>
-      
-      <div class="highest-characteristic">
-        <strong>Highest Characteristic:</strong> 
-        {{ getHighestCharacteristic() }} ({{ Math.max(...Object.values(formData.characteristics)) }})
-      </div>
+    <div class="highest-characteristic">
+      <strong>Highest Characteristic:</strong> 
+      {{ getHighestCharacteristic() }} ({{ Math.max(...Object.values(formData.characteristics)) }})
     </div>
   </div>
 </template>
@@ -91,11 +76,6 @@ const validateCharacteristic = (key: string, value: number) => {
   } else {
     errors[key as keyof typeof errors] = ''
   }
-}
-
-const formatModifier = (value: number): string => {
-  if (typeof value !== 'number' || isNaN(value)) return '+0'
-  return value >= 0 ? `+${value}` : `${value}`
 }
 
 const getHighestCharacteristic = (): string => {
@@ -219,56 +199,6 @@ Object.keys(formData.characteristics).forEach(key => {
   margin-top: 0.25rem;
 }
 
-.help-text {
-  color: #6c757d;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  text-align: center;
-  font-weight: 500;
-}
-
-.characteristics-summary {
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-top: 2rem;
-}
-
-.summary-title {
-  color: #8b4513;
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 0 0 1rem 0;
-}
-
-.summary-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.summary-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem;
-  background: white;
-  border-radius: 4px;
-  border: 1px solid #e9ecef;
-}
-
-.summary-label {
-  font-weight: 600;
-  color: #495057;
-}
-
-.summary-value {
-  font-weight: 600;
-  color: #8b4513;
-  font-family: 'Courier New', monospace;
-}
-
 .highest-characteristic {
   background: white;
   padding: 0.75rem;
@@ -277,6 +207,7 @@ Object.keys(formData.characteristics).forEach(key => {
   color: #8b4513;
   text-align: center;
   font-size: 1rem;
+  margin-top: 1rem;
 }
 
 /* Mobile responsiveness */

@@ -14,7 +14,6 @@
             class="form-input"
             :class="{ invalid: errors.name }"
             placeholder="Enter monster name"
-            @input="updateName"
           />
           <div v-if="errors.name" class="error-message">{{ errors.name }}</div>
         </div>
@@ -28,7 +27,6 @@
             class="form-input"
             :class="{ invalid: errors.id }"
             placeholder="monster-name-format"
-            @input="updateId"
           />
           <div v-if="errors.id" class="error-message">{{ errors.id }}</div>
           <div class="help-text">Auto-generated from name, or enter custom ID</div>
@@ -70,7 +68,7 @@
       <!-- Role and Organization -->
       <div class="form-row">
         <div class="form-group">
-          <label for="monster-role" class="form-label required">Role</label>
+          <label for="monster-role" class="form-label">Role</label>
           <select 
             id="monster-role"
             v-model="formData.role"
@@ -181,7 +179,7 @@ const validateField = (field: string, value: unknown) => {
       break
       
     case 'role':
-      if (!value || typeof value !== 'string' || !MONSTER_ROLES.includes(value as MonsterRole)) {
+      if (value && (typeof value !== 'string' || !MONSTER_ROLES.includes(value as MonsterRole))) {
         errors.role = 'Please select a valid role'
       } else {
         errors.role = ''
@@ -212,23 +210,6 @@ const generateIdFromName = (name: string): string => {
     .replace(/^-|-$/g, '')
 }
 
-const updateName = () => {
-  validateField('name', formData.name)
-  
-  // Auto-generate ID if it's empty or matches the previous auto-generated format
-  if (!formData.id || formData.id === generateIdFromName(props.modelValue.name || '')) {
-    formData.id = generateIdFromName(formData.name)
-    validateField('id', formData.id)
-  }
-  
-  updateModelValue()
-}
-
-const updateId = () => {
-  validateField('id', formData.id)
-  updateModelValue()
-}
-
 const updateModelValue = () => {
   emit('update:modelValue', {
     ...props.modelValue,
@@ -242,12 +223,30 @@ const updateModelValue = () => {
 }
 
 // Watch for changes and validate
-watch(formData, () => {
-  Object.keys(formData).forEach(key => {
-    validateField(key, formData[key as keyof typeof formData])
-  })
+watch(() => formData.name, (newName, oldName) => {
+  validateField('name', newName)
+  
+  // Auto-generate ID if it's empty or matches the previous auto-generated format
+  if (!formData.id || formData.id === generateIdFromName(oldName || '')) {
+    formData.id = generateIdFromName(newName)
+    validateField('id', formData.id)
+  }
+  
   updateModelValue()
-}, { deep: true })
+})
+
+watch([() => formData.level, () => formData.ev, () => formData.role, () => formData.organization], () => {
+  validateField('level', formData.level)
+  validateField('ev', formData.ev) 
+  validateField('role', formData.role)
+  validateField('organization', formData.organization)
+  updateModelValue()
+})
+
+watch(() => formData.id, () => {
+  validateField('id', formData.id)
+  updateModelValue()
+})
 
 // Watch for external changes
 watch(() => props.modelValue, (newValue) => {

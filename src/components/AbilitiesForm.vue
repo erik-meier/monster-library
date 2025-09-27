@@ -145,7 +145,7 @@
     
     <!-- Ability Editor Modal -->
     <div v-if="editingIndex !== null && editingAbility" class="modal-overlay" @click.self="closeEditor">
-      <div class="modal-content">
+      <div class="modal-content" @click.stop>
         <AbilityEditor
           :model-value="editingAbility"
           @update:model-value="updateEditingAbility"
