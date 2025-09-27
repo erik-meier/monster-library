@@ -1,0 +1,8 @@
+[build]
+  # Use the full build command that includes data generation
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Specify Node.js version to match package.json engines
+  NODE_VERSION = "22.12.0"
