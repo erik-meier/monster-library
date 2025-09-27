@@ -124,7 +124,7 @@ function processPotencyText(text, potencyValue, characteristic, monster) {
   );
 
   // Get characteristic abbreviation 
-  let charAbbrev = 'P'; // Default fallback
+  let charAbbrev = 'A'; // Default fallback
   if (characteristic && characteristic !== 'none' && characteristic !== '') {
     charAbbrev = characteristic.charAt(0).toUpperCase();
   }
