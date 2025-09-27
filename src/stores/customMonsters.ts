@@ -28,8 +28,52 @@ export interface CustomMonster {
   };
   immunities?: Record<string, number>;
   weaknesses?: Record<string, number>;
-  abilities?: unknown[];
-  actions?: unknown[];
+  movementTypes?: string[];
+  items?: Array<{
+    name: string;
+    type: string;
+    system: {
+      keywords: string[];
+      description: {
+        value: string;
+        director?: string;
+      };
+      category?: string;
+      type?: string;
+      resource?: number | null;
+      distance?: {
+        type: string;
+        primary?: number;
+        secondary?: number;
+        tertiary?: number;
+      };
+      target?: {
+        type: string;
+        value?: number | null;
+      };
+      trigger?: string;
+      power?: {
+        roll?: {
+          formula: string;
+          characteristics: string[];
+        };
+        tiers?: Array<{
+          tier: number;
+          display: string;
+        }>;
+        effects?: Record<string, unknown>;
+      };
+      effect?: {
+        before?: string;
+        after?: string;
+      };
+      spend?: {
+        text?: string;
+        value?: number | null;
+        formattedText?: string;
+      };
+    };
+  }>;
   // Additional fields for custom monsters
   isCustom: true;
   createdAt: string;
