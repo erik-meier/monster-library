@@ -55,7 +55,7 @@ npm run test:run            # Run tests once (CI mode)
 # Data Management
 npm run clone-monsters       # Clone latest monster data
 npm run simplify-monsters    # Process raw data
-npm run format-monsters      # Fix data formatting
+npm run process-monsters     # Fix data formatting
 npm run refresh-all         # Complete data refresh pipeline
 ```
 
@@ -160,7 +160,7 @@ Each monster JSON file contains:
 ### Updating Monster Data
 1. Use `npm run refresh-all` for complete updates
 2. Run `npm run test:run` to validate changes
-3. Check formatting with `npm run format-monsters:dry-run`
+3. Check formatting with `npm run process-monsters:dry-run`
 4. Commit only processed data, not raw external data
 
 ### Debugging Issues
