@@ -11,33 +11,37 @@
       
       <div class="defense-entries">
         <div 
-          v-for="(value, damageType) in formData.immunities" 
-          :key="`immunity-${damageType}`"
+          v-for="immunity in immunityEntries" 
+          :key="`immunity-${immunity.id}`"
           class="defense-entry"
         >
-          <select 
-            v-model="formData.immunities[damageType]"
-            class="damage-type-select"
-          >
-            <option value="">Select damage type</option>
-            <option v-for="type in availableDamageTypes" :key="type" :value="type">
+          <input 
+            v-model="immunity.type"
+            type="text"
+            class="damage-type-input"
+            :list="`immunity-types`"
+            placeholder="Damage type"
+            @input="updateImmunity(immunity.id, immunity.type, immunity.value)"
+          />
+          <datalist id="immunity-types">
+            <option v-for="type in DAMAGE_TYPES" :key="type" :value="type">
               {{ capitalize(type) }}
             </option>
-          </select>
+          </datalist>
           
           <input 
-            v-model.number="formData.immunities[damageType]"
+            v-model.number="immunity.value"
             type="number"
             class="damage-value-input" 
             min="0"
-            max="10"
             placeholder="Value"
+            @input="updateImmunity(immunity.id, immunity.type, immunity.value)"
           />
           
           <button 
             type="button"
             class="btn-remove"
-            @click="removeImmunity(damageType)"
+            @click="removeImmunityEntry(immunity.id)"
             title="Remove immunity"
           >
             ×
@@ -47,7 +51,7 @@
         <button 
           type="button" 
           class="btn-add"
-          @click="addImmunity"
+          @click="addImmunityEntry"
         >
           + Add Immunity
         </button>
@@ -65,33 +69,37 @@
       
       <div class="defense-entries">
         <div 
-          v-for="(value, damageType) in formData.weaknesses" 
-          :key="`weakness-${damageType}`"
+          v-for="weakness in weaknessEntries" 
+          :key="`weakness-${weakness.id}`"
           class="defense-entry"
         >
-          <select 
-            v-model="formData.weaknesses[damageType]"
-            class="damage-type-select"
-          >
-            <option value="">Select damage type</option>
-            <option v-for="type in availableDamageTypes" :key="type" :value="type">
+          <input 
+            v-model="weakness.type"
+            type="text"
+            class="damage-type-input"
+            :list="`weakness-types`"
+            placeholder="Damage type"
+            @input="updateWeakness(weakness.id, weakness.type, weakness.value)"
+          />
+          <datalist id="weakness-types">
+            <option v-for="type in DAMAGE_TYPES" :key="type" :value="type">
               {{ capitalize(type) }}
             </option>
-          </select>
+          </datalist>
           
           <input 
-            v-model.number="formData.weaknesses[damageType]"
+            v-model.number="weakness.value"
             type="number"
             class="damage-value-input" 
             min="0"
-            max="10"
             placeholder="Value"
+            @input="updateWeakness(weakness.id, weakness.type, weakness.value)"
           />
           
           <button 
             type="button"
             class="btn-remove"
-            @click="removeWeakness(damageType)"
+            @click="removeWeaknessEntry(weakness.id)"
             title="Remove weakness"
           >
             ×
@@ -101,7 +109,7 @@
         <button 
           type="button" 
           class="btn-add"
-          @click="addWeakness"
+          @click="addWeaknessEntry"
         >
           + Add Weakness
         </button>
@@ -119,7 +127,7 @@
         </span>
       </div>
       <p class="help-text">
-        <strong>Immunities:</strong> Reduce incoming damage of that type by the specified amount (0 = full immunity).<br>
+        <strong>Immunities:</strong> Reduce incoming damage of that type by the specified amount.<br>
         <strong>Weaknesses:</strong> Take additional damage of that type equal to the specified amount.
       </p>
     </div>
@@ -127,8 +135,8 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, computed, watch } from 'vue'
-import type { MonsterFormData, DamageType } from '@/types/monster-forms'
+import { reactive, ref, computed, watch } from 'vue'
+import type { MonsterFormData } from '@/types/monster-forms'
 import { DAMAGE_TYPES } from '@/types/monster-forms'
 
 interface Props {
@@ -138,6 +146,12 @@ interface Props {
 interface Emits {
   (e: 'update:modelValue', value: MonsterFormData): void
   (e: 'update:isValid', valid: boolean): void
+}
+
+interface DefenseEntry {
+  id: string
+  type: string
+  value: number
 }
 
 const props = defineProps<Props>()
@@ -153,69 +167,102 @@ const errors = reactive({
   weaknesses: ''
 })
 
+const immunityEntries = ref<DefenseEntry[]>(
+  Object.entries(formData.immunities).map(([type, value]) => ({
+    id: Math.random().toString(36),
+    type,
+    value
+  }))
+)
+
+const weaknessEntries = ref<DefenseEntry[]>(
+  Object.entries(formData.weaknesses).map(([type, value]) => ({
+    id: Math.random().toString(36),
+    type,
+    value
+  }))
+)
+
 const capitalize = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-const availableDamageTypes = computed(() => {
-  return DAMAGE_TYPES.slice()
-})
+const addImmunityEntry = () => {
+  immunityEntries.value.push({
+    id: Math.random().toString(36),
+    type: '',
+    value: 0
+  })
+}
 
-const addImmunity = () => {
-  // Find the next available damage type
-  const usedTypes = Object.keys(formData.immunities)
-  const nextType = availableDamageTypes.value.find(type => !usedTypes.includes(type))
-  
-  if (nextType) {
-    formData.immunities[nextType] = 0
+const addWeaknessEntry = () => {
+  weaknessEntries.value.push({
+    id: Math.random().toString(36),
+    type: '',
+    value: 0
+  })
+}
+
+const removeImmunityEntry = (id: string) => {
+  const index = immunityEntries.value.findIndex(entry => entry.id === id)
+  if (index > -1) {
+    immunityEntries.value.splice(index, 1)
   }
+  updateModelFromEntries()
 }
 
-const removeImmunity = (damageType: string) => {
-  delete formData.immunities[damageType]
-}
-
-const addWeakness = () => {
-  // Find the next available damage type
-  const usedTypes = Object.keys(formData.weaknesses)
-  const nextType = availableDamageTypes.value.find(type => !usedTypes.includes(type))
-  
-  if (nextType) {
-    formData.weaknesses[nextType] = 1
+const removeWeaknessEntry = (id: string) => {
+  const index = weaknessEntries.value.findIndex(entry => entry.id === id)
+  if (index > -1) {
+    weaknessEntries.value.splice(index, 1)
   }
+  updateModelFromEntries()
 }
 
-const removeWeakness = (damageType: string) => {
-  delete formData.weaknesses[damageType]
+const updateImmunity = (id: string, type: string, value: number) => {
+  const entry = immunityEntries.value.find(e => e.id === id)
+  if (entry) {
+    entry.type = type
+    entry.value = value
+  }
+  updateModelFromEntries()
+}
+
+const updateWeakness = (id: string, type: string, value: number) => {
+  const entry = weaknessEntries.value.find(e => e.id === id)
+  if (entry) {
+    entry.type = type
+    entry.value = value
+  }
+  updateModelFromEntries()
+}
+
+const updateModelFromEntries = () => {
+  // Update immunities
+  const newImmunities: Record<string, number> = {}
+  immunityEntries.value.forEach(entry => {
+    if (entry.type.trim() && typeof entry.value === 'number') {
+      newImmunities[entry.type.trim()] = entry.value
+    }
+  })
+  formData.immunities = newImmunities
+
+  // Update weaknesses  
+  const newWeaknesses: Record<string, number> = {}
+  weaknessEntries.value.forEach(entry => {
+    if (entry.type.trim() && typeof entry.value === 'number') {
+      newWeaknesses[entry.type.trim()] = entry.value
+    }
+  })
+  formData.weaknesses = newWeaknesses
+
+  validateDefenses()
+  updateModelValue()
 }
 
 const validateDefenses = () => {
   errors.immunities = ''
   errors.weaknesses = ''
-  
-  // Validate immunities
-  for (const [type, value] of Object.entries(formData.immunities)) {
-    if (!DAMAGE_TYPES.includes(type as DamageType)) {
-      errors.immunities = `Invalid damage type: ${type}`
-      break
-    }
-    if (typeof value !== 'number' || value < 0 || value > 10) {
-      errors.immunities = `Immunity values must be between 0 and 10`
-      break
-    }
-  }
-  
-  // Validate weaknesses
-  for (const [type, value] of Object.entries(formData.weaknesses)) {
-    if (!DAMAGE_TYPES.includes(type as DamageType)) {
-      errors.weaknesses = `Invalid damage type: ${type}`
-      break
-    }
-    if (typeof value !== 'number' || value < 0 || value > 10) {
-      errors.weaknesses = `Weakness values must be between 0 and 10`
-      break
-    }
-  }
   
   // Check for overlap between immunities and weaknesses
   const immunityTypes = Object.keys(formData.immunities)
@@ -233,39 +280,30 @@ const isValid = computed(() => {
 })
 
 const updateModelValue = () => {
-  // Clean up empty entries
-  const cleanImmunities = Object.fromEntries(
-    Object.entries(formData.immunities).filter(([type, value]) => 
-      type && type !== '' && typeof value === 'number'
-    )
-  )
-  
-  const cleanWeaknesses = Object.fromEntries(
-    Object.entries(formData.weaknesses).filter(([type, value]) => 
-      type && type !== '' && typeof value === 'number'
-    )
-  )
-  
   emit('update:modelValue', {
     ...props.modelValue,
-    immunities: cleanImmunities,
-    weaknesses: cleanWeaknesses
+    immunities: { ...formData.immunities },
+    weaknesses: { ...formData.weaknesses }
   })
 }
-
-// Watch for changes and validate
-watch(formData, () => {
-  validateDefenses()
-  updateModelValue()
-}, { deep: true })
 
 // Watch for external changes
 watch(() => [props.modelValue.immunities, props.modelValue.weaknesses], ([newImmunities, newWeaknesses]) => {
   if (JSON.stringify(newImmunities) !== JSON.stringify(formData.immunities)) {
-    Object.assign(formData.immunities, newImmunities || {})
+    formData.immunities = { ...newImmunities || {} }
+    immunityEntries.value = Object.entries(formData.immunities).map(([type, value]) => ({
+      id: Math.random().toString(36),
+      type,
+      value
+    }))
   }
   if (JSON.stringify(newWeaknesses) !== JSON.stringify(formData.weaknesses)) {
-    Object.assign(formData.weaknesses, newWeaknesses || {})
+    formData.weaknesses = { ...newWeaknesses || {} }
+    weaknessEntries.value = Object.entries(formData.weaknesses).map(([type, value]) => ({
+      id: Math.random().toString(36),
+      type,
+      value
+    }))
   }
 }, { deep: true })
 
@@ -330,6 +368,7 @@ validateDefenses()
   border: 1px solid #ced4da;
 }
 
+.damage-type-input,
 .damage-type-select {
   flex: 2;
   padding: 0.5rem;
@@ -348,6 +387,7 @@ validateDefenses()
   text-align: center;
 }
 
+.damage-type-input:focus,
 .damage-type-select:focus,
 .damage-value-input:focus {
   outline: none;

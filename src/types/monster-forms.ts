@@ -111,15 +111,16 @@ export const MONSTER_ROLES = [
 
 // Common organization options
 export const MONSTER_ORGANIZATIONS = [
-  'Minion',
-  'Standard',
-  'Elite',
-  'Squad',
-  'Captain'
+  'minion',
+  'horde', 
+  'platoon',
+  'elite',
+  'leader',
+  'solo'
 ] as const
 
-// Common size letters
-export const SIZE_LETTERS = ['T', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'] as const
+// Common size letters - only for size 1, sizes above 1L are just numbers
+export const SIZE_LETTERS = ['T', 'S', 'M', 'L'] as const
 
 // Common movement types
 export const MOVEMENT_TYPES = [
@@ -133,37 +134,35 @@ export const MOVEMENT_TYPES = [
 
 // Common keywords for Draw Steel monsters
 export const COMMON_KEYWORDS = [
-  'humanoid',
+  'abyssal',
+  'accursed', 
+  'animal',
   'beast',
   'construct',
-  'demon',
-  'devil',
   'dragon',
   'elemental',
   'fey',
-  'fiend',
   'giant',
-  'monstrosity',
+  'horror',
+  'humanoid',
+  'infernal',
   'ooze',
   'plant',
-  'undead',
-  'aberration',
-  'celestial'
+  'swarm',
+  'undead'
 ] as const
 
 // Common damage types for immunities/weaknesses
 export const DAMAGE_TYPES = [
   'acid',
-  'cold',
+  'cold', 
+  'corruption',
   'fire',
-  'force',
+  'holy',
   'lightning',
-  'necrotic',
   'poison',
   'psychic',
-  'radiant',
-  'sonic',
-  'void'
+  'sonic'
 ] as const
 
 // Common ability keywords
@@ -174,15 +173,8 @@ export const ABILITY_KEYWORDS = [
   'weapon',
   'spell',
   'area',
-  'persistent',
-  'resistance',
-  'concealment',
-  'forced movement',
-  'grab',
-  'prone',
-  'restrained',
-  'slowed',
-  'weakened'
+  'psionic',
+  'charge'
 ] as const
 
 export type MonsterRole = typeof MONSTER_ROLES[number]
