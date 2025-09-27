@@ -93,7 +93,7 @@
           >
             <option value="">Select organization</option>
             <option v-for="org in MONSTER_ORGANIZATIONS" :key="org" :value="org">
-              {{ org }}
+              {{ capitalize(org) }}
             </option>
           </select>
           <div v-if="errors.organization" class="error-message">{{ errors.organization }}</div>
@@ -208,6 +208,10 @@ const generateIdFromName = (name: string): string => {
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '')
+}
+
+const capitalize = (str: string) => {
+  return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
 const updateModelValue = () => {

@@ -21,26 +21,15 @@
         <div class="form-grid">
           <div class="form-group">
             <label for="ability-name" class="form-label required">Name</label>
-            <input 
-              id="ability-name"
-              v-model="formData.name"
-              type="text" 
-              class="form-input"
-              :class="{ invalid: errors.name }"
-              placeholder="Ability name"
-            />
+            <input id="ability-name" v-model="formData.name" type="text" class="form-input"
+              :class="{ invalid: errors.name }" placeholder="Ability name" />
             <div v-if="errors.name" class="error-message">{{ errors.name }}</div>
           </div>
-          
+
           <div class="form-group">
             <label for="ability-type" class="form-label required">Type</label>
-            <select 
-              id="ability-type"
-              v-model="formData.type"
-              class="form-select"
-              :class="{ invalid: errors.type }"
-              @change="onTypeChange"
-            >
+            <select id="ability-type" v-model="formData.type" class="form-select" :class="{ invalid: errors.type }"
+              @change="onTypeChange">
               <option value="ability">Ability (Active)</option>
               <option value="feature">Feature (Passive)</option>
             </select>
@@ -54,27 +43,16 @@
         <h3 class="section-title">Feature Description</h3>
         <div class="form-group">
           <label for="feature-description" class="form-label required">Description</label>
-          <textarea 
-            id="feature-description"
-            v-model="formData.system.description!.value"
-            class="form-textarea"
-            :class="{ invalid: errors.description }"
-            rows="4"
-            placeholder="Describe what this feature does..."
-          />
+          <textarea id="feature-description" v-model="formData.system.description!.value" class="form-textarea"
+            :class="{ invalid: errors.description }" rows="4" placeholder="Describe what this feature does..." />
           <div v-if="errors.description" class="error-message">{{ errors.description }}</div>
           <div class="help-text">HTML is supported for formatting</div>
         </div>
-        
+
         <div class="form-group">
           <label for="director-notes" class="form-label">Director Notes</label>
-          <textarea 
-            id="director-notes"
-            v-model="formData.system.description!.director"
-            class="form-textarea"
-            rows="2"
-            placeholder="Optional notes for the Director..."
-          />
+          <textarea id="director-notes" v-model="formData.system.description!.director" class="form-textarea" rows="2"
+            placeholder="Optional notes for the Director..." />
           <div class="help-text">Private notes visible only to the Director</div>
         </div>
       </section>
@@ -86,27 +64,16 @@
           <h3 class="section-title">Action Properties</h3>
           <div class="form-grid">
             <div class="form-group">
-              <label for="ability-category" class="form-label">Category</label>
-              <select 
-                id="ability-category"
-                v-model="formData.system.category"
-                class="form-select"
-              >
-                <option value="">None</option>
-                <option value="signature">Signature</option>
-                <option value="heroic">Heroic</option>
-                <option value="villain">Villain</option>
-              </select>
-              <div class="help-text">Signature abilities are always available</div>
+              <label class="form-checkbox-label">
+                <input type="checkbox" v-model="isSignature" class="form-checkbox" />
+                <span class="checkbox-text">Signature Ability</span>
+              </label>
+              <div class="help-text">Signature abilities are always available (only one per monster)</div>
             </div>
-            
+
             <div class="form-group">
               <label for="action-type" class="form-label">Action Type</label>
-              <select 
-                id="action-type"
-                v-model="formData.system.type"
-                class="form-select"
-              >
+              <select id="action-type" v-model="formData.system.type" class="form-select">
                 <option value="main">Main Action</option>
                 <option value="maneuver">Maneuver</option>
                 <option value="triggered">Triggered Action</option>
@@ -115,17 +82,11 @@
                 <option value="move">Move Action</option>
               </select>
             </div>
-            
+
             <div class="form-group">
               <label for="malice-cost" class="form-label">Malice Cost</label>
-              <input 
-                id="malice-cost"
-                v-model.number="formData.system.resource"
-                type="number" 
-                class="form-input"
-                min="0"
-                placeholder="0"
-              />
+              <input id="malice-cost" v-model.number="formData.system.resource" type="number" class="form-input" min="0"
+                placeholder="0" />
               <div class="help-text">Leave empty if no cost</div>
             </div>
           </div>
@@ -136,53 +97,86 @@
           <h3 class="section-title">Targeting</h3>
           <div class="form-grid">
             <div class="form-group">
-              <label for="distance-type" class="form-label">Distance Type</label>
-              <select 
-                id="distance-type"
-                v-model="formData.system.distance!.type"
-                class="form-select"
-              >
+              <label for="range-type" class="form-label">Range Type</label>
+              <select id="range-type" v-model="rangeType" class="form-select">
                 <option value="melee">Melee</option>
                 <option value="ranged">Ranged</option>
                 <option value="meleeRanged">Melee or Ranged</option>
+                <option value="line">Line</option>
+                <option value="cube">Cube</option>
+                <option value="wall">Wall</option>
+                <option value="burst">Burst</option>
                 <option value="special">Special</option>
               </select>
             </div>
-            
-            <div class="form-group" v-if="formData.system.distance!.type === 'melee' || formData.system.distance!.type === 'meleeRanged'">
+
+            <!-- Melee Range -->
+            <div class="form-group" v-if="rangeType === 'melee' || rangeType === 'meleeRanged'">
               <label for="melee-range" class="form-label">Melee Range</label>
-              <input 
-                id="melee-range"
-                v-model.number="formData.system.distance!.primary"
-                type="number" 
-                class="form-input"
-                min="1"
-                placeholder="1"
-              />
+              <input id="melee-range" v-model.number="formData.system.distance!.primary" type="number"
+                class="form-input" min="1" placeholder="1" />
             </div>
-            
-            <div class="form-group" v-if="formData.system.distance!.type === 'ranged' || formData.system.distance!.type === 'meleeRanged'">
+
+            <!-- Ranged Distance -->
+            <div class="form-group" v-if="rangeType === 'ranged' || rangeType === 'meleeRanged'">
               <label for="ranged-distance" class="form-label">Ranged Distance</label>
-              <input 
-                id="ranged-distance"
-                v-model.number="formData.system.distance!.secondary"
-                type="number" 
-                class="form-input"
-                min="1"
-                placeholder="5"
-              />
+              <input id="ranged-distance" v-model.number="formData.system.distance!.secondary" type="number"
+                class="form-input" min="1" placeholder="5" />
             </div>
-            
+
+            <!-- Line Range -->
+            <div class="form-group-row" v-if="rangeType === 'line'">
+              <input v-model.number="formData.system.distance!.primary" type="number" class="form-input inline-input"
+                min="1" placeholder="5" />
+              <span class="range-text">x</span>
+              <input v-model.number="formData.system.distance!.secondary" type="number" class="form-input inline-input"
+                min="1" placeholder="5" />
+              <span class="range-text">line within</span>
+              <input v-model.number="formData.system.distance!.tertiary" type="number" class="form-input inline-input"
+                min="1" placeholder="10" />
+            </div>
+
+            <!-- Cube Range -->
+            <div class="form-group-row" v-if="rangeType === 'cube'">
+              <input v-model.number="formData.system.distance!.primary" type="number" class="form-input inline-input"
+                min="1" placeholder="3" />
+              <span class="range-text">cube within</span>
+              <input v-model.number="formData.system.distance!.secondary" type="number" class="form-input inline-input"
+                min="1" placeholder="10" />
+            </div>
+
+            <!-- Wall Range -->
+            <div class="form-group-row" v-if="rangeType === 'wall'">
+              <input v-model.number="formData.system.distance!.primary" type="number" class="form-input inline-input"
+                min="1" placeholder="6" />
+              <span class="range-text">wall within</span>
+              <input v-model.number="formData.system.distance!.secondary" type="number" class="form-input inline-input"
+                min="1" placeholder="10" />
+            </div>
+
+            <!-- Burst Range -->
+            <div class="form-group-row" v-if="rangeType === 'burst'">
+              <input v-model.number="formData.system.distance!.primary" type="number" class="form-input inline-input"
+                min="1" placeholder="2" />
+              <span class="range-text">burst</span>
+            </div>
+
+            <div class="form-group">
+              <label for="target-type" class="form-label">Target Type</label>
+              <select id="target-type" v-model="formData.system.target!.type" class="form-select">
+                <option value="creature">Creature</option>
+                <option value="creatureObject">Creature or Object</option>
+                <option value="enemy">Enemy</option>
+                <option value="ally">Ally</option>
+                <option value="selfAlly">Self and Ally</option>
+              </select>
+              <div class="help-text">What can be targeted by this ability</div>
+            </div>
+
             <div class="form-group">
               <label for="target-count" class="form-label">Target Count</label>
-              <input 
-                id="target-count"
-                v-model.number="formData.system.target!.value"
-                type="number" 
-                class="form-input"
-                min="1"
-                placeholder="1"
-              />
+              <input id="target-count" v-model.number="formData.system.target!.value" type="number" class="form-input"
+                min="1" placeholder="1" />
               <div class="help-text">Number of creatures or objects</div>
             </div>
           </div>
@@ -193,59 +187,40 @@
           <h3 class="section-title">Power Roll</h3>
           <div class="form-grid">
             <div class="form-group">
-              <label for="power-formula" class="form-label">Roll Formula</label>
-              <input 
-                id="power-formula"
-                v-model="formData.system.power!.roll!.formula"
-                type="text" 
-                class="form-input"
-                placeholder="2d10 + 2"
-              />
-              <div class="help-text">e.g., 2d10, 2d10 + 3, 1d20 + 5</div>
+              <label for="power-characteristic" class="form-label">Characteristic</label>
+              <select id="power-characteristic" v-model="selectedCharacteristic" class="form-select">
+                <option value="">Custom Formula</option>
+                <option v-for="char in characteristicsList" :key="char.value" :value="char.value">
+                  {{ char.label }}
+                </option>
+              </select>
+              <div class="help-text">Select characteristic for 2d10 + characteristic formula, or use custom</div>
             </div>
-            
-            <div class="form-group">
-              <label for="characteristics" class="form-label">Characteristics</label>
-              <div class="checkbox-group">
-                <label 
-                  v-for="char in characteristicsList" 
-                  :key="char.value"
-                  class="checkbox-label"
-                >
-                  <input 
-                    type="checkbox" 
-                    :value="char.value"
-                    v-model="formData.system.power!.roll!.characteristics"
-                    class="checkbox-input"
-                  />
-                  <span class="checkbox-text">{{ char.label }}</span>
-                </label>
-              </div>
+
+            <div class="form-group" v-if="!selectedCharacteristic">
+              <label for="power-formula" class="form-label">Custom Formula</label>
+              <input id="power-formula" v-model="formData.system.power!.roll!.formula" type="text" class="form-input"
+                placeholder="2d10 + 2" />
+              <div class="help-text">e.g., 2d10, 2d10 + 3</div>
+            </div>
+
+            <div class="form-group" v-else>
+              <label class="form-label">Generated Formula</label>
+              <div class="formula-display">{{ generatedFormula }}</div>
+              <div class="help-text">Formula automatically generated from selected characteristic</div>
             </div>
           </div>
-          
+
           <!-- Power Tiers -->
           <div class="power-tiers">
             <h4 class="subsection-title">Power Tiers</h4>
             <div class="tier-list">
-              <div 
-                v-for="(tier, index) in formData.system.power!.tiers!" 
-                :key="index"
-                class="tier-row"
-              >
+              <div v-for="(tier, index) in formData.system.power!.tiers!" :key="index" class="tier-row">
                 <div class="tier-number">{{ tier.tier }}</div>
-                <input 
-                  v-model="tier.display"
-                  type="text"
-                  class="tier-input"
-                  :placeholder="`Tier ${tier.tier} effect`"
-                />
-                <button 
-                  v-if="formData.system.power!.tiers!.length > 1"
-                  type="button"
-                  class="btn-remove-tier"
-                  @click="removeTier(index)"
-                >
+                <input v-model="tier.display" type="text" class="tier-input"
+                  :placeholder="`Tier ${tier.tier} effect`" />
+                <button v-if="formData.system.power!.tiers!.length > 1" type="button" class="btn-remove-tier"
+                  @click="removeTier(index)">
                   ×
                 </button>
               </div>
@@ -261,41 +236,27 @@
           <h3 class="section-title">Effects</h3>
           <div class="form-group">
             <label for="effect-before" class="form-label">Effect (Before Roll)</label>
-            <textarea 
-              id="effect-before"
-              v-model="formData.system.effect!.before"
-              class="form-textarea"
-              rows="2"
-              placeholder="Effect that happens before the power roll..."
-            />
+            <textarea id="effect-before" v-model="formData.system.effect!.before" class="form-textarea" rows="2"
+              placeholder="Effect that happens before the power roll..." />
           </div>
-          
+
           <div class="form-group">
             <label for="effect-after" class="form-label">Effect (After Roll)</label>
-            <textarea 
-              id="effect-after"
-              v-model="formData.system.effect!.after"
-              class="form-textarea"
-              rows="2"
-              placeholder="Effect that happens after the power roll..."
-            />
+            <textarea id="effect-after" v-model="formData.system.effect!.after" class="form-textarea" rows="2"
+              placeholder="Effect that happens after the power roll..." />
           </div>
-          
+
           <div class="help-text">HTML is supported for formatting</div>
         </section>
 
         <!-- Trigger -->
-        <section class="editor-section" v-if="formData.system.type === 'triggered' || formData.system.type === 'freeTriggered'">
+        <section class="editor-section"
+          v-if="formData.system.type === 'triggered' || formData.system.type === 'freeTriggered'">
           <h3 class="section-title">Trigger</h3>
           <div class="form-group">
             <label for="trigger-text" class="form-label">Trigger Condition</label>
-            <textarea 
-              id="trigger-text"
-              v-model="formData.system.trigger"
-              class="form-textarea"
-              rows="2"
-              placeholder="When this ability triggers..."
-            />
+            <textarea id="trigger-text" v-model="formData.system.trigger" class="form-textarea" rows="2"
+              placeholder="When this ability triggers..." />
           </div>
         </section>
       </template>
@@ -305,50 +266,26 @@
         <h3 class="section-title">Keywords</h3>
         <div class="keywords-editor">
           <div class="selected-keywords" v-if="formData.system.keywords.length > 0">
-            <span 
-              v-for="keyword in formData.system.keywords" 
-              :key="keyword"
-              class="keyword-tag"
-            >
+            <span v-for="keyword in formData.system.keywords" :key="keyword" class="keyword-tag">
               {{ keyword }}
-              <button 
-                type="button"
-                class="remove-keyword"
-                @click="removeKeyword(keyword)"
-              >
+              <button type="button" class="remove-keyword" @click="removeKeyword(keyword)">
                 ×
               </button>
             </span>
           </div>
-          
+
           <div class="keyword-input-group">
-            <input 
-              v-model="newKeyword"
-              type="text"
-              class="keyword-input"
-              placeholder="Add keyword..."
-              @keyup.enter="addKeyword"
-            />
-            <button 
-              type="button" 
-              class="btn-add-keyword"
-              @click="addKeyword"
-              :disabled="!newKeyword.trim()"
-            >
+            <input v-model="newKeyword" type="text" class="keyword-input" placeholder="Add keyword..."
+              @keyup.enter="addKeyword" />
+            <button type="button" class="btn-add-keyword" @click="addKeyword" :disabled="!newKeyword.trim()">
               Add
             </button>
           </div>
-          
+
           <!-- Quick Add Common Keywords -->
           <div class="quick-keywords">
-            <button
-              v-for="keyword in quickKeywords"
-              :key="keyword"
-              type="button"
-              class="quick-keyword-btn"
-              :class="{ selected: formData.system.keywords.includes(keyword) }"
-              @click="toggleQuickKeyword(keyword)"
-            >
+            <button v-for="keyword in quickKeywords" :key="keyword" type="button" class="quick-keyword-btn"
+              :class="{ selected: formData.system.keywords.includes(keyword) }" @click="toggleQuickKeyword(keyword)">
               {{ keyword }}
             </button>
           </div>
@@ -397,16 +334,58 @@ const errors = reactive({
 
 const isFeature = computed(() => formData.type === 'feature')
 
+const isSignature = computed({
+  get: () => formData.system.category === 'signature',
+  set: (value: boolean) => {
+    formData.system.category = value ? 'signature' : ''
+  }
+})
+
+const rangeType = computed({
+  get: () => formData.system.distance?.type || 'melee',
+  set: (value: string) => {
+    if (formData.system.distance) {
+      formData.system.distance.type = value as 'line' | 'melee' | 'ranged' | 'meleeRanged' | 'special' | 'cube' | 'wall' | 'burst'
+      // Reset range values when type changes
+      formData.system.distance.primary = value === 'burst' ? 2 : 1
+      formData.system.distance.secondary = undefined
+      formData.system.distance.tertiary = undefined
+    }
+  }
+})
+
+const selectedCharacteristic = computed({
+  get: () => {
+    // Check if formula matches 2d10 + {characteristic} pattern
+    const chars = formData.system.power?.roll?.characteristics || []
+    return chars.length === 1 ? chars[0] : ''
+  },
+  set: (value: string) => {
+    if (value) {
+      // Set characteristic and generate formula
+      formData.system.power!.roll!.characteristics = [value]
+      formData.system.power!.roll!.formula = `2d10 + ${value}`
+    } else {
+      // Clear characteristic for custom formula
+      formData.system.power!.roll!.characteristics = []
+    }
+  }
+})
+
+const generatedFormula = computed(() => {
+  return selectedCharacteristic.value ? `2d10 + ${selectedCharacteristic.value}` : ''
+})
+
 const isValid = computed(() => {
   return Object.values(errors).every(error => error === '') &&
-         formData.name.trim() !== '' &&
-         (isFeature.value ? formData.system.description?.value?.trim() !== '' : true)
+    formData.name.trim() !== '' &&
+    (isFeature.value ? formData.system.description?.value?.trim() !== '' : true)
 })
 
 const validateFields = () => {
   errors.name = formData.name.trim() === '' ? 'Name is required' : ''
   errors.type = !formData.type ? 'Type is required' : ''
-  
+
   if (isFeature.value) {
     errors.description = (!formData.system.description?.value || formData.system.description.value.trim() === '') ? 'Description is required for features' : ''
   } else {
@@ -629,6 +608,47 @@ validateFields()
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.form-group-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.inline-input {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.range-text {
+  font-size: 0.9rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.formula-display {
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #495057;
+}
+
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.form-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #8b4513;
 }
 
 .form-label {
@@ -875,29 +895,29 @@ validateFields()
   .ability-editor {
     padding: 1rem;
   }
-  
+
   .editor-header {
     flex-direction: column;
     gap: 1rem;
     align-items: stretch;
   }
-  
+
   .editor-actions {
     justify-content: center;
   }
-  
+
   .form-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .checkbox-group {
     grid-template-columns: 1fr;
   }
-  
+
   .tier-row {
     flex-wrap: wrap;
   }
-  
+
   .tier-input {
     min-width: 200px;
   }

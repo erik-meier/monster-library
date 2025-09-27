@@ -60,23 +60,6 @@
           <span v-if="displayLicense"> • {{ displayLicense }}</span>
         </div>
       </div>
-      
-      <!-- Common Presets -->
-      <div class="presets-section">
-        <h3 class="presets-title">Quick Presets</h3>
-        <div class="presets-grid">
-          <button
-            v-for="preset in commonPresets"
-            :key="preset.name"
-            type="button"
-            class="preset-btn"
-            @click="applyPreset(preset)"
-          >
-            {{ preset.name }}
-          </button>
-        </div>
-        <div class="help-text">Click a preset to quickly fill in common source information</div>
-      </div>
     </div>
   </div>
 </template>
@@ -94,13 +77,6 @@ interface Emits {
   (e: 'update:isValid', valid: boolean): void
 }
 
-interface SourcePreset {
-  name: string
-  book: string
-  license: string
-  page?: string
-}
-
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
 
@@ -116,24 +92,6 @@ const errors = reactive({
   license: ''
 })
 
-const commonPresets: SourcePreset[] = [
-  {
-    name: 'Draw Steel Official',
-    book: 'Monsters',
-    license: 'Draw Steel Creator License'
-  },
-  {
-    name: 'Homebrew',
-    book: 'Custom Homebrew',
-    license: 'Homebrew'
-  },
-  {
-    name: 'Community Content',
-    book: '',
-    license: 'Draw Steel Creator License'
-  }
-]
-
 const hasSourceInfo = computed(() => {
   return formData.book || formData.page || formData.license
 })
@@ -141,14 +99,6 @@ const hasSourceInfo = computed(() => {
 const displayLicense = computed(() => {
   return formData.license
 })
-
-const applyPreset = (preset: SourcePreset) => {
-  formData.book = preset.book
-  formData.license = preset.license
-  if (preset.page) {
-    formData.page = preset.page
-  }
-}
 
 const validateField = (field: string, value: string) => {
   switch (field) {
@@ -355,51 +305,9 @@ Object.keys(formData).forEach(key => {
   font-style: italic;
 }
 
-.presets-section {
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 1.5rem;
-}
-
-.presets-title {
-  color: #495057;
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0 0 1rem 0;
-}
-
-.presets-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.preset-btn {
-  padding: 0.75rem 1rem;
-  background: white;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-align: center;
-}
-
-.preset-btn:hover {
-  background: #8b4513;
-  color: white;
-  border-color: #8b4513;
-}
-
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .form-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .presets-grid {
     grid-template-columns: 1fr;
   }
 }

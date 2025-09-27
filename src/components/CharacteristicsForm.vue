@@ -21,7 +21,7 @@
     
     <div class="highest-characteristic">
       <strong>Highest Characteristic:</strong> 
-      {{ getHighestCharacteristic() }} ({{ Math.max(...Object.values(formData.characteristics)) }})
+      {{ getHighestCharacteristic() }} ({{ formatCharacteristic(Math.max(...Object.values(formData.characteristics))) }})
     </div>
   </div>
 </template>
@@ -86,6 +86,10 @@ const getHighestCharacteristic = (): string => {
   ) as keyof typeof characteristicLabels
   
   return characteristicLabels[maxKey] || 'None'
+}
+
+const formatCharacteristic = (value: number): string => {
+  return value > 0 ? `+${value}` : `${value}`
 }
 
 const isValid = computed(() => {

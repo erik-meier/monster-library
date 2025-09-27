@@ -7,28 +7,6 @@
         Select keywords that describe this monster's type and traits. These keywords are used for abilities and interactions.
       </p>
       
-      <!-- Selected Keywords -->
-      <div class="selected-keywords" v-if="formData.keywords.length > 0">
-        <h3 class="subsection-title">Selected Keywords</h3>
-        <div class="keyword-tags">
-          <span 
-            v-for="keyword in formData.keywords" 
-            :key="keyword"
-            class="keyword-tag selected"
-          >
-            {{ keyword }}
-            <button 
-              type="button"
-              class="remove-keyword"
-              @click="removeKeyword(keyword)"
-              title="Remove keyword"
-            >
-              ×
-            </button>
-          </span>
-        </div>
-      </div>
-      
       <!-- Common Keywords -->
       <div class="keyword-category">
         <h3 class="subsection-title">Common Creature Types</h3>
@@ -76,13 +54,27 @@
           Enter additional keywords not covered by the common types. Use lowercase, single words or hyphenated phrases.
         </div>
       </div>
-    </div>
-    
-    <!-- Keywords Summary -->
-    <div class="keywords-summary" v-if="formData.keywords.length > 0">
-      <h3 class="summary-title">Keywords Summary ({{ formData.keywords.length }})</h3>
-      <div class="summary-list">
-        {{ formData.keywords.join(', ') }}
+      
+      <!-- Selected Keywords Summary -->
+      <div class="selected-keywords" v-if="formData.keywords.length > 0">
+        <h3 class="subsection-title">Selected Keywords ({{ formData.keywords.length }})</h3>
+        <div class="keyword-tags">
+          <span 
+            v-for="keyword in formData.keywords" 
+            :key="keyword"
+            class="keyword-tag selected"
+          >
+            {{ keyword }}
+            <button 
+              type="button"
+              class="remove-keyword"
+              @click="removeKeyword(keyword)"
+              title="Remove keyword"
+            >
+              ×
+            </button>
+          </span>
+        </div>
       </div>
     </div>
   </div>
