@@ -148,6 +148,8 @@
       <div class="modal-content">
         <AbilityEditor
           :model-value="editingAbility"
+          :existing-items="formData.items"
+          :editing-index="editingIndex"
           @update:model-value="updateEditingAbility"
           @save="saveAbility"
           @cancel="closeEditor"

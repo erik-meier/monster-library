@@ -69,6 +69,7 @@
                 <span class="checkbox-text">Signature Ability</span>
               </label>
               <div class="help-text">Signature abilities are always available (only one per monster)</div>
+              <div v-if="errors.signature" class="error-message">{{ errors.signature }}</div>
             </div>
 
             <div class="form-group">
@@ -159,6 +160,7 @@
               <input v-model.number="formData.system.distance!.primary" type="number" class="form-input inline-input"
                 min="1" placeholder="2" />
               <span class="range-text">burst</span>
+              <span class="range-spacer"></span>
             </div>
 
             <div class="form-group">
@@ -169,6 +171,7 @@
                 <option value="enemy">Enemy</option>
                 <option value="ally">Ally</option>
                 <option value="selfAlly">Self and Ally</option>
+                <option value="special">Special</option>
               </select>
               <div class="help-text">What can be targeted by this ability</div>
             </div>
@@ -302,6 +305,8 @@ import { ABILITY_KEYWORDS } from '@/types/monster-forms'
 
 interface Props {
   modelValue: MonsterItem
+  existingItems?: MonsterItem[]
+  editingIndex?: number | null
 }
 
 interface Emits {
@@ -329,7 +334,8 @@ const quickKeywords = ABILITY_KEYWORDS.slice(0, 10) // Show first 10 for quick a
 const errors = reactive({
   name: '',
   type: '',
-  description: ''
+  description: '',
+  signature: ''
 })
 
 const isFeature = computed(() => formData.type === 'feature')
@@ -385,6 +391,16 @@ const isValid = computed(() => {
 const validateFields = () => {
   errors.name = formData.name.trim() === '' ? 'Name is required' : ''
   errors.type = !formData.type ? 'Type is required' : ''
+
+  // Validate signature uniqueness
+  if (isSignature.value && props.existingItems) {
+    const otherSignatureExists = props.existingItems.some((item, index) => 
+      item.system.category === 'signature' && index !== props.editingIndex
+    )
+    errors.signature = otherSignatureExists ? 'Only one signature ability allowed per monster' : ''
+  } else {
+    errors.signature = ''
+  }
 
   if (isFeature.value) {
     errors.description = (!formData.system.description?.value || formData.system.description.value.trim() === '') ? 'Description is required for features' : ''
@@ -626,6 +642,11 @@ validateFields()
   font-size: 0.9rem;
   color: #666;
   white-space: nowrap;
+}
+
+.range-spacer {
+  flex: 1;
+  min-width: 80px;
 }
 
 .formula-display {
