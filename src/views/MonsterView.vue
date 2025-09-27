@@ -9,24 +9,62 @@
     </div>
     
     <div v-else-if="monster">
-      <MonsterStatBlock :monster="monster" />
+      <MonsterStatBlock 
+        :monster="editMode ? editableMonster : monster" 
+        :edit-mode="editMode"
+        @update:monster="updateMonster"
+      />
       <div class="monster-actions">
-        <button class="btn btn-secondary" @click="viewRandomMonster" :disabled="loadingRandom">
+        <button class="btn btn-secondary" @click="viewRandomMonster" :disabled="loadingRandom || editMode">
           {{ loadingRandom ? 'Loading...' : 'Random Monster' }}
         </button>
         
-        <router-link 
-          v-if="canEdit" 
-          :to="`/monster/${monsterId}/edit`" 
-          class="btn btn-primary"
-        >
-          Edit Monster
-        </router-link>
+        <!-- Edit Mode Controls -->
+        <template v-if="canEdit">
+          <button 
+            v-if="!editMode" 
+            @click="enterEditMode" 
+            class="btn btn-primary"
+          >
+            Edit Inline
+          </button>
+          <template v-if="editMode">
+            <button 
+              @click="saveChanges" 
+              class="btn btn-success"
+              :disabled="saving"
+            >
+              {{ saving ? 'Saving...' : 'Save' }}
+            </button>
+            <button 
+              @click="cancelEdit" 
+              class="btn btn-secondary"
+            >
+              Cancel
+            </button>
+            <button 
+              @click="revertChanges" 
+              class="btn btn-outline"
+              title="Revert to original values"
+            >
+              Revert
+            </button>
+          </template>
+          
+          <router-link 
+            v-if="!editMode"
+            :to="`/monster/${monsterId}/edit`" 
+            class="btn btn-outline"
+          >
+            Edit Full Form
+          </router-link>
+        </template>
         
         <button 
           v-else-if="!canEdit && !monster.isCustom" 
           @click="createCopyAndEdit" 
           class="btn btn-outline"
+          :disabled="editMode"
         >
           Create Copy to Edit
         </button>
@@ -57,9 +95,13 @@ export default {
   data() {
     return {
       monster: null,
+      editableMonster: null,
+      originalMonster: null,
       loading: true,
       error: null,
       loadingRandom: false,
+      editMode: false,
+      saving: false,
     }
   },
   computed: {
@@ -189,6 +231,55 @@ export default {
         console.error('Failed to create copy:', error)
         alert('Failed to create copy. Please try again.')
       }
+    },
+
+    // Edit Mode Methods
+    enterEditMode() {
+      this.editMode = true
+      this.originalMonster = JSON.parse(JSON.stringify(this.monster)) // Deep copy
+      this.editableMonster = JSON.parse(JSON.stringify(this.monster)) // Deep copy
+    },
+
+    exitEditMode() {
+      this.editMode = false
+      this.editableMonster = null
+      this.originalMonster = null
+    },
+
+    updateMonster(updatedMonster) {
+      this.editableMonster = { ...updatedMonster }
+    },
+
+    async saveChanges() {
+      if (!this.editableMonster || !this.canEdit) return
+
+      this.saving = true
+      try {
+        const success = this.customMonstersStore.updateMonster(this.monsterId, this.editableMonster)
+        
+        if (success) {
+          // Update the current monster with the saved data
+          this.monster = { ...this.editableMonster }
+          this.exitEditMode()
+        } else {
+          throw new Error('Failed to save monster changes')
+        }
+      } catch (error) {
+        console.error('Failed to save changes:', error)
+        alert('Failed to save changes. Please try again.')
+      } finally {
+        this.saving = false
+      }
+    },
+
+    cancelEdit() {
+      this.exitEditMode()
+    },
+
+    revertChanges() {
+      if (this.originalMonster) {
+        this.editableMonster = JSON.parse(JSON.stringify(this.originalMonster))
+      }
     }
   }
 }
@@ -276,5 +367,30 @@ export default {
 
 .loading {
   color: #6b7280;
+}
+
+/* Edit mode button styles */
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.btn-success:hover:not(:disabled) {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+/* Mobile responsive buttons */
+@media (max-width: 768px) {
+  .monster-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 200px;
+    max-width: 100%;
+  }
 }
 </style>
