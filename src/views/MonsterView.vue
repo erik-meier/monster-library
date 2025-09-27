@@ -9,11 +9,15 @@
     </div>
     
     <div v-else-if="monster">
-      <MonsterStatBlock 
-        :monster="editMode ? editableMonster : monster" 
+      <MonsterStatBlockEditable 
+        :monster="monster" 
         :edit-mode="editMode"
-        @update:monster="updateMonster"
+        @update:monster="handleAutoSave"
+        @save="handleSave"
+        @cancel="cancelEdit"
+        @advanced-edit="openAdvancedEdit"
       />
+      
       <div class="monster-actions">
         <button class="btn btn-secondary" @click="viewRandomMonster" :disabled="loadingRandom || editMode">
           {{ loadingRandom ? 'Loading...' : 'Random Monster' }}
@@ -23,40 +27,18 @@
         <template v-if="canEdit">
           <button 
             v-if="!editMode" 
-            @click="enterEditMode" 
+            @click="toggleEditMode" 
             class="btn btn-primary"
           >
-            Edit Inline
+            Quick Edit
           </button>
-          <template v-if="editMode">
-            <button 
-              @click="saveChanges" 
-              class="btn btn-success"
-              :disabled="saving"
-            >
-              {{ saving ? 'Saving...' : 'Save' }}
-            </button>
-            <button 
-              @click="cancelEdit" 
-              class="btn btn-secondary"
-            >
-              Cancel
-            </button>
-            <button 
-              @click="revertChanges" 
-              class="btn btn-outline"
-              title="Revert to original values"
-            >
-              Revert
-            </button>
-          </template>
           
           <router-link 
             v-if="!editMode"
             :to="`/monster/${monsterId}/edit`" 
             class="btn btn-outline"
           >
-            Edit Full Form
+            Advanced Edit
           </router-link>
         </template>
         
@@ -69,18 +51,29 @@
           Create Copy to Edit
         </button>
       </div>
+      
+      <!-- Auto-save indicator -->
+      <div v-if="autoSaving" class="auto-save-indicator">
+        <span class="save-icon">💾</span>
+        Saving...
+      </div>
+      
+      <div v-else-if="lastSaved" class="auto-save-indicator saved">
+        <span class="save-icon">✅</span>
+        Saved {{ formatLastSaved }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import MonsterStatBlock from '@/components/MonsterStatBlock.vue'
+import MonsterStatBlockEditable from '@/components/MonsterStatBlockEditable.vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
 
 export default {
   name: 'MonsterView',
   components: {
-    MonsterStatBlock
+    MonsterStatBlockEditable
   },
   props: {
     monsterId: {
@@ -95,22 +88,37 @@ export default {
   data() {
     return {
       monster: null,
-      editableMonster: null,
-      originalMonster: null,
       loading: true,
       error: null,
       loadingRandom: false,
       editMode: false,
-      saving: false,
+      autoSaving: false,
+      lastSaved: null,
     }
   },
   computed: {
     canEdit() {
       // Can edit if it's a custom monster
       return this.monster && this.monster.isCustom === true
+    },
+    
+    formatLastSaved() {
+      if (!this.lastSaved) return ''
+      const now = new Date()
+      const diff = now - this.lastSaved
+      
+      if (diff < 60000) return 'just now'
+      if (diff < 3600000) return `${Math.floor(diff / 60000)}m ago`
+      return this.lastSaved.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   },
+  
   async mounted() {
+    // Check URL parameters for edit mode
+    if (this.$route.query.edit === 'true') {
+      this.editMode = true
+    }
+    
     await this.loadMonster()
   },
   watch: {
@@ -122,6 +130,19 @@ export default {
         }
         this.loadMonster()
       }
+    },
+    
+    // Update URL when edit mode changes
+    editMode(newValue) {
+      const query = { ...this.$route.query }
+      if (newValue) {
+        query.edit = 'true'
+      } else {
+        delete query.edit
+      }
+      
+      // Update URL without triggering navigation
+      this.$router.replace({ query }).catch(() => {})
     }
   },
   methods: {
@@ -147,35 +168,37 @@ export default {
         this.loading = false
       }
     },
+    
     addToRecentlyViewed() {
-      if (!this.monster) return;
+      if (!this.monster) return
 
       const recentMonster = {
         id: this.monsterId,
         name: this.monster.name,
         level: this.monster.level || 0,
         viewedAt: new Date().toISOString()
-      };
+      }
 
       // Get existing recent monsters
-      let recentMonsters = [];
-      const existing = localStorage.getItem('recentlyViewedMonsters');
+      let recentMonsters = []
+      const existing = localStorage.getItem('recentlyViewedMonsters')
       if (existing) {
-        recentMonsters = JSON.parse(existing);
+        recentMonsters = JSON.parse(existing)
       }
 
       // Remove if already exists (we'll add it to the front)
-      recentMonsters = recentMonsters.filter(m => m.id !== this.monsterId);
+      recentMonsters = recentMonsters.filter(m => m.id !== this.monsterId)
 
       // Add to front
-      recentMonsters.unshift(recentMonster);
+      recentMonsters.unshift(recentMonster)
 
       // Keep only the 10 most recent
-      recentMonsters = recentMonsters.slice(0, 10);
+      recentMonsters = recentMonsters.slice(0, 10)
 
       // Save back to localStorage
-      localStorage.setItem('recentlyViewedMonsters', JSON.stringify(recentMonsters));
+      localStorage.setItem('recentlyViewedMonsters', JSON.stringify(recentMonsters))
     },
+    
     async viewRandomMonster() {
       this.loadingRandom = true
       
@@ -197,7 +220,7 @@ export default {
         this.loadingRandom = false
       }
     },
-    
+
     async createCopyAndEdit() {
       try {
         // Create a copy of the official monster as a custom monster
@@ -229,44 +252,56 @@ export default {
         
         const newMonsterId = this.customMonstersStore.createMonster(copyData)
         
-        // Navigate directly to edit the copy
-        this.$router.push(`/monster/${newMonsterId}/edit`)
+        // Navigate to the copy with edit mode enabled
+        this.$router.push(`/monster/${newMonsterId}?edit=true`)
       } catch (error) {
         console.error('Failed to create copy:', error)
         alert('Failed to create copy. Please try again.')
       }
     },
 
-    // Edit Mode Methods
-    enterEditMode() {
-      this.editMode = true
-      this.originalMonster = JSON.parse(JSON.stringify(this.monster)) // Deep copy
-      this.editableMonster = JSON.parse(JSON.stringify(this.monster)) // Deep copy
+    // New edit mode methods
+    toggleEditMode() {
+      this.editMode = !this.editMode
     },
-
+    
     exitEditMode() {
       this.editMode = false
-      this.editableMonster = null
-      this.originalMonster = null
     },
-
-    updateMonster(updatedMonster) {
-      if (this.editMode && updatedMonster) {
-        // Only update if we're in edit mode and have valid data
-        this.editableMonster = { ...this.editableMonster, ...updatedMonster }
+    
+    async handleAutoSave(monsterData) {
+      if (!this.canEdit) return
+      
+      this.autoSaving = true
+      
+      try {
+        // Debounce auto-save
+        clearTimeout(this.autoSaveTimeout)
+        this.autoSaveTimeout = setTimeout(async () => {
+          const success = this.customMonstersStore.updateMonster(this.monsterId, monsterData)
+          
+          if (success) {
+            this.monster = { ...this.monster, ...monsterData }
+            this.lastSaved = new Date()
+          }
+          
+          this.autoSaving = false
+        }, 500)
+      } catch (error) {
+        console.error('Auto-save failed:', error)
+        this.autoSaving = false
       }
     },
-
-    async saveChanges() {
-      if (!this.editableMonster || !this.canEdit) return
-
-      this.saving = true
+    
+    async handleSave(monsterData) {
+      if (!this.canEdit) return
+      
       try {
-        const success = this.customMonstersStore.updateMonster(this.monsterId, this.editableMonster)
+        const success = this.customMonstersStore.updateMonster(this.monsterId, monsterData)
         
         if (success) {
-          // Update the current monster with the saved data
-          this.monster = { ...this.editableMonster }
+          this.monster = { ...this.monster, ...monsterData }
+          this.lastSaved = new Date()
           this.exitEditMode()
         } else {
           throw new Error('Failed to save monster changes')
@@ -274,19 +309,15 @@ export default {
       } catch (error) {
         console.error('Failed to save changes:', error)
         alert('Failed to save changes. Please try again.')
-      } finally {
-        this.saving = false
       }
     },
-
+    
     cancelEdit() {
       this.exitEditMode()
     },
-
-    revertChanges() {
-      if (this.originalMonster) {
-        this.editableMonster = JSON.parse(JSON.stringify(this.originalMonster))
-      }
+    
+    openAdvancedEdit() {
+      this.$router.push(`/monster/${this.monsterId}/edit`)
     }
   }
 }
@@ -374,6 +405,43 @@ export default {
 
 .loading {
   color: #6b7280;
+}
+
+/* Auto-save indicator */
+.auto-save-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 123, 255, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+.auto-save-indicator.saved {
+  background: rgba(40, 167, 69, 0.9);
+}
+
+.save-icon {
+  font-size: 1.1rem;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Edit mode button styles */
