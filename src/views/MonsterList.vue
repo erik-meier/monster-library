@@ -94,11 +94,6 @@
       <div v-for="monster in filteredMonsters" :key="monster.id" class="monster-card" @click="viewMonster(monster.id)">
         <div class="monster-card-header">
           <h3 class="monster-name">{{ monster.name }}</h3>
-          <div class="monster-role">Level {{ monster.level }}{{ monster.organization ? ` ${monster.organization}` : ''
-          }}{{ monster.role ? ` ${monster.role}` : '' }}</div>
-        </div>
-
-        <div class="monster-stats">
           <span v-if="monster.ev !== undefined && monster.ev !== null" class="monster-ev">EV {{ monster.ev }}</span>
         </div>
 
@@ -109,14 +104,14 @@
             </span>
           </div>
           <div class="monster-role">Level {{ monster.level }}{{ formatRoleOrganization(monster) ? `
-            ${formatRoleOrganization(monster) }` : '' }}</div>
+            ${formatRoleOrganization(monster)}` : '' }}</div>
         </div>
       </div>
-    </div>
 
-    <div v-if="!loading && filteredMonsters.length === 0" class="no-results">
-      <h3>No monsters found</h3>
-      <p>Try adjusting your search or filter criteria.</p>
+      <div v-if="!loading && filteredMonsters.length === 0" class="no-results">
+        <h3>No monsters found</h3>
+        <p>Try adjusting your search or filter criteria.</p>
+      </div>
     </div>
   </div>
 </template>
@@ -271,6 +266,7 @@ export default {
           id: monster.id,
           name: monster.name,
           level: monster.level,
+          ev: monster.ev,
           role: monster.role,
           organization: monster.organization,
           keywords: monster.keywords || [],
