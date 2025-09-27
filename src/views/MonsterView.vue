@@ -116,6 +116,10 @@ export default {
   watch: {
     monsterId: {
       handler() {
+        // Exit edit mode when monster changes
+        if (this.editMode) {
+          this.exitEditMode()
+        }
         this.loadMonster()
       }
     }
@@ -247,7 +251,10 @@ export default {
     },
 
     updateMonster(updatedMonster) {
-      this.editableMonster = { ...updatedMonster }
+      if (this.editMode && updatedMonster) {
+        // Only update if we're in edit mode and have valid data
+        this.editableMonster = { ...this.editableMonster, ...updatedMonster }
+      }
     },
 
     async saveChanges() {

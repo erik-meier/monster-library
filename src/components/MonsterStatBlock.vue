@@ -146,40 +146,59 @@ export default {
     
     // Initialize editable monster when monster prop changes
     const initializeEditableMonster = () => {
+      if (!props.monster) return
+      
       editableMonster.value = {
-        name: props.monster.name,
-        level: props.monster.level,
-        ev: props.monster.ev,
+        name: props.monster.name || '',
+        level: props.monster.level || 1,
+        ev: props.monster.ev || 1,
         role: props.monster.role || '',
-        organization: props.monster.organization,
+        organization: props.monster.organization || '',
         keywords: props.monster.keywords || [],
         size: {
           value: props.monster.size?.value || 1,
           letter: props.monster.size?.letter || 'M'
         },
-        speed: props.monster.speed,
-        stamina: props.monster.stamina,
-        stability: props.monster.stability,
-        freeStrike: props.monster.freeStrike,
-        characteristics: { ...props.monster.characteristics }
+        speed: props.monster.speed || 1,
+        stamina: props.monster.stamina || 1,
+        stability: props.monster.stability || 0,
+        freeStrike: props.monster.freeStrike || 0,
+        characteristics: { 
+          might: props.monster.characteristics?.might || 0,
+          agility: props.monster.characteristics?.agility || 0,
+          reason: props.monster.characteristics?.reason || 0,
+          intuition: props.monster.characteristics?.intuition || 0,
+          presence: props.monster.characteristics?.presence || 0
+        }
       }
     }
 
-    // Watch for monster changes and reinitialize
-    watch(() => props.monster, initializeEditableMonster, { immediate: true })
-    
-    // Watch for changes in editableMonster and emit updates
-    watch(editableMonster, (newValue) => {
-      if (props.editMode) {
-        emit('update:monster', newValue)
+    // Watch for monster changes and reinitialize (only when not in edit mode)
+    watch(() => [props.monster, props.editMode], ([newMonster, newEditMode]) => {
+      if (newMonster && !newEditMode) {
+        initializeEditableMonster()
+      } else if (newMonster && newEditMode && !editableMonster.value.name) {
+        // Only initialize if editableMonster is empty
+        initializeEditableMonster()
       }
-    }, { deep: true })
+    }, { immediate: true, deep: false })
+    
+    // Watch for changes in editableMonster and emit updates (only in edit mode)
+    watch(editableMonster, (newValue) => {
+      if (props.editMode && newValue && Object.keys(newValue).length > 0) {
+        emit('update:monster', { ...newValue })
+      }
+    }, { deep: true, flush: 'sync' })
+
+    const updateCharacteristics = (characteristics) => {
+      if (props.editMode && editableMonster.value) {
+        editableMonster.value.characteristics = { ...characteristics }
+      }
+    }
 
     return {
       editableMonster,
-      updateCharacteristics: (characteristics) => {
-        editableMonster.value.characteristics = { ...characteristics }
-      }
+      updateCharacteristics
     }
   },
   methods: {
