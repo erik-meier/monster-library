@@ -220,7 +220,6 @@
       <button @click="$emit('save', editableData)" class="btn btn-success">Save Changes</button>
       <button @click="$emit('cancel')" class="btn btn-secondary">Cancel</button>
       <button @click="revertChanges" class="btn btn-outline">Revert</button>
-      <button @click="openAdvancedEdit" class="btn btn-link">Advanced Edit</button>
     </div>
   </div>
 </template>
@@ -240,7 +239,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['save', 'cancel', 'update:monster', 'advanced-edit'])
+const emit = defineEmits(['save', 'cancel', 'update:monster'])
 
 const characteristicOrder = ['might', 'agility', 'reason', 'intuition', 'presence']
 
@@ -293,10 +292,6 @@ const updateCharacteristic = (characteristic, value) => {
 
 const revertChanges = () => {
   editableData.value = JSON.parse(JSON.stringify(originalData.value))
-}
-
-const openAdvancedEdit = () => {
-  emit('advanced-edit')
 }
 
 // Helper methods
@@ -478,12 +473,15 @@ const getMaxCharacteristic = () => {
 .size-input,
 .stat-input {
   flex: 1;
+  min-width: 0; /* Prevents flex items from overflowing */
+  max-width: 80px; /* Constrains input width */
   padding: 0.25rem;
   border: 1px solid #007bff;
   border-radius: 3px;
   text-align: center;
   font-weight: bold;
   background: white;
+  font-size: 0.9rem;
 }
 
 .size-select {
@@ -491,6 +489,8 @@ const getMaxCharacteristic = () => {
   border: 1px solid #007bff;
   border-radius: 3px;
   background: white;
+  min-width: 40px;
+  max-width: 50px;
 }
 
 /* Characteristics */
@@ -665,6 +665,38 @@ const getMaxCharacteristic = () => {
     gap: 0.5rem;
   }
   
+  /* Make stats section stack vertically on mobile */
+  .core-stats-grid {
+    margin-bottom: 1.5rem;
+  }
+  
+  .stat-labels {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+    padding: 0 0.25rem;
+  }
+  
+  /* Stack edit inputs with labels on mobile */
+  .stat-edit-values {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .size-edit {
+    justify-self: center;
+    max-width: 150px;
+  }
+  
+  .stat-input {
+    max-width: 80px;
+    justify-self: center;
+  }
+  
   .edit-controls {
     flex-direction: column;
     align-items: center;
@@ -683,6 +715,19 @@ const getMaxCharacteristic = () => {
   
   .monster-meta-edit {
     grid-template-columns: 1fr;
+  }
+  
+  .stat-labels {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .stat-values {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
   }
 }
 </style>

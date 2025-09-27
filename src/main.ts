@@ -10,7 +10,6 @@ import Home from './views/Home.vue'
 import MonsterCreate from './views/MonsterCreate.vue'
 import MonsterEdit from './views/MonsterEdit.vue'
 import MyMonsters from './views/MyMonsters.vue'
-import FormDemo from './views/FormDemo.vue'
 
 // Define routes
 const routes = [
@@ -37,19 +36,17 @@ const routes = [
   },
   {
     path: '/monster/:monsterId/edit',
-    name: 'MonsterEdit',
-    component: MonsterEdit,
-    props: true
+    redirect: (to: any) => {
+      return {
+        path: `/monster/${to.params.monsterId}`,
+        query: { edit: 'true' }
+      }
+    }
   },
   {
     path: '/my-monsters',
     name: 'MyMonsters',
     component: MyMonsters
-  },
-  {
-    path: '/form-demo',
-    name: 'FormDemo',
-    component: FormDemo
   }
 ]
 

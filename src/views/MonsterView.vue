@@ -9,13 +9,14 @@
     </div>
     
     <div v-else-if="monster">
+      <MonsterStatBlock v-if="!editMode" :monster="monster" />
       <MonsterStatBlockEditable 
+        v-else
         :monster="monster" 
-        :edit-mode="editMode"
+        :edit-mode="true"
         @update:monster="handleAutoSave"
         @save="handleSave"
         @cancel="cancelEdit"
-        @advanced-edit="openAdvancedEdit"
       />
       
       <div class="monster-actions">
@@ -30,16 +31,8 @@
             @click="toggleEditMode" 
             class="btn btn-primary"
           >
-            Quick Edit
+            Edit Monster
           </button>
-          
-          <router-link 
-            v-if="!editMode"
-            :to="`/monster/${monsterId}/edit`" 
-            class="btn btn-outline"
-          >
-            Advanced Edit
-          </router-link>
         </template>
         
         <button 
@@ -67,12 +60,14 @@
 </template>
 
 <script>
+import MonsterStatBlock from '@/components/MonsterStatBlock.vue'
 import MonsterStatBlockEditable from '@/components/MonsterStatBlockEditable.vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
 
 export default {
   name: 'MonsterView',
   components: {
+    MonsterStatBlock,
     MonsterStatBlockEditable
   },
   props: {
@@ -223,7 +218,7 @@ export default {
 
     async createCopyAndEdit() {
       try {
-        // Create a copy of the official monster as a custom monster
+        // Create a complete copy of the official monster as a custom monster
         const copyData = {
           name: `${this.monster.name} (Copy)`,
           level: this.monster.level,
@@ -246,8 +241,15 @@ export default {
             presence: this.monster.characteristics.presence
           },
           keywords: this.monster.keywords || [],
+          // Copy all abilities/items and other data
+          items: this.monster.items || this.monster.abilities || [],
           abilities: this.monster.abilities || [],
-          actions: this.monster.actions || []
+          actions: this.monster.actions || [],
+          // Copy additional properties that may exist
+          movementTypes: this.monster.movementTypes || ['walk'],
+          immunities: this.monster.immunities || {},
+          weaknesses: this.monster.weaknesses || {},
+          source: this.monster.source ? { ...this.monster.source } : undefined
         }
         
         const newMonsterId = this.customMonstersStore.createMonster(copyData)
@@ -314,10 +316,6 @@ export default {
     
     cancelEdit() {
       this.exitEditMode()
-    },
-    
-    openAdvancedEdit() {
-      this.$router.push(`/monster/${this.monsterId}/edit`)
     }
   }
 }
