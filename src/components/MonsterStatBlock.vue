@@ -61,7 +61,11 @@
     <div class="divider"></div>
 
     <!-- Abilities -->
-    <ActionsList :title="Abilities" :actions="monster.items" :chr="Math.max(...Object.values(monster.characteristics))"
+    <ActionsList :title="'Abilities'" :actions="monster.items || monster.abilities || []" :chr="String(getMaxCharacteristic())"
+      :monster="monster" />
+
+    <!-- Actions -->
+    <ActionsList :title="'Actions'" :actions="monster.actions || []" :chr="String(getMaxCharacteristic())"
       :monster="monster" />
 
     <!-- Source Information -->
@@ -93,6 +97,11 @@ export default {
     }
   },
   methods: {
+    getMaxCharacteristic() {
+      if (!this.monster.characteristics) return 0;
+      const values = Object.values(this.monster.characteristics);
+      return values.length > 0 ? Math.max(...values) : 0;
+    },
     formatKeywords(keywords) {
       if (!keywords || !Array.isArray(keywords)) return '';
       return keywords.map(keyword =>

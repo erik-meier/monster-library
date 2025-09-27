@@ -1,11 +1,15 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 
 // Import your views
 import MonsterView from './views/MonsterView.vue'
 import MonsterList from './views/MonsterList.vue'
 import Home from './views/Home.vue'
+import MonsterCreate from './views/MonsterCreate.vue'
+import MonsterEdit from './views/MonsterEdit.vue'
+import MyMonsters from './views/MyMonsters.vue'
 
 // Define routes
 const routes = [
@@ -20,10 +24,26 @@ const routes = [
     component: MonsterList
   },
   {
+    path: '/monster/create',
+    name: 'MonsterCreate',
+    component: MonsterCreate
+  },
+  {
     path: '/monster/:monsterId',
     name: 'Monster',
     component: MonsterView,
     props: true // This passes the route params as props
+  },
+  {
+    path: '/monster/:monsterId/edit',
+    name: 'MonsterEdit',
+    component: MonsterEdit,
+    props: true
+  },
+  {
+    path: '/my-monsters',
+    name: 'MyMonsters',
+    component: MyMonsters
   }
 ]
 
@@ -35,5 +55,7 @@ const router = createRouter({
 
 // Create and mount the app
 const app = createApp(App)
+const pinia = createPinia()
+app.use(pinia)
 app.use(router)
 app.mount('#app')

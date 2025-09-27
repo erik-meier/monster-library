@@ -9,6 +9,8 @@
         <div class="nav-menu">
           <router-link to="/" class="nav-link">Home</router-link>
           <router-link to="/monsters" class="nav-link">Browse Monsters</router-link>
+          <router-link to="/monster/create" class="nav-link">Create Monster</router-link>
+          <router-link to="/my-monsters" class="nav-link">My Monsters</router-link>
         </div>
       </div>
     </nav>

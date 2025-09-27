@@ -14,6 +14,22 @@
         <button class="btn btn-secondary" @click="viewRandomMonster" :disabled="loadingRandom">
           {{ loadingRandom ? 'Loading...' : 'Random Monster' }}
         </button>
+        
+        <router-link 
+          v-if="canEdit" 
+          :to="`/monster/${monsterId}/edit`" 
+          class="btn btn-primary"
+        >
+          Edit Monster
+        </router-link>
+        
+        <button 
+          v-else-if="!canEdit && !monster.isCustom" 
+          @click="createCopyAndEdit" 
+          class="btn btn-outline"
+        >
+          Create Copy to Edit
+        </button>
       </div>
     </div>
   </div>
@@ -21,6 +37,7 @@
 
 <script>
 import MonsterStatBlock from '@/components/MonsterStatBlock.vue'
+import { useCustomMonstersStore } from '@/stores/customMonsters'
 
 export default {
   name: 'MonsterView',
@@ -33,12 +50,22 @@ export default {
       required: true
     }
   },
+  setup() {
+    const customMonstersStore = useCustomMonstersStore()
+    return { customMonstersStore }
+  },
   data() {
     return {
       monster: null,
       loading: true,
       error: null,
       loadingRandom: false,
+    }
+  },
+  computed: {
+    canEdit() {
+      // Can edit if it's a custom monster
+      return this.monster && this.monster.isCustom === true
     }
   },
   async mounted() {
@@ -57,9 +84,8 @@ export default {
       this.error = null
       
       try {
-        // Use bundled data instead of fetch
-        const { getMonster } = await import('@/data/monsters.js')
-        const monster = getMonster(this.monsterId)
+        // Use integrated store that checks both custom and bundled monsters
+        const monster = this.customMonstersStore.getMonster(this.monsterId)
         
         if (!monster) {
           throw new Error('Monster not found')
@@ -124,6 +150,45 @@ export default {
       } finally {
         this.loadingRandom = false
       }
+    },
+    
+    async createCopyAndEdit() {
+      try {
+        // Create a copy of the official monster as a custom monster
+        const copyData = {
+          name: `${this.monster.name} (Copy)`,
+          level: this.monster.level,
+          ev: this.monster.ev,
+          role: this.monster.role || '',
+          organization: this.monster.organization,
+          speed: this.monster.speed,
+          stamina: this.monster.stamina,
+          stability: this.monster.stability,
+          freeStrike: this.monster.freeStrike,
+          size: {
+            value: this.monster.size?.value || 1,
+            letter: this.monster.size?.letter || 'M'
+          },
+          characteristics: {
+            might: this.monster.characteristics.might,
+            agility: this.monster.characteristics.agility,
+            reason: this.monster.characteristics.reason,
+            intuition: this.monster.characteristics.intuition,
+            presence: this.monster.characteristics.presence
+          },
+          keywords: this.monster.keywords || [],
+          abilities: this.monster.abilities || [],
+          actions: this.monster.actions || []
+        }
+        
+        const newMonsterId = this.customMonstersStore.createMonster(copyData)
+        
+        // Navigate directly to edit the copy
+        this.$router.push(`/monster/${newMonsterId}/edit`)
+      } catch (error) {
+        console.error('Failed to create copy:', error)
+        alert('Failed to create copy. Please try again.')
+      }
     }
   }
 }
@@ -139,6 +204,10 @@ export default {
 .monster-actions {
   margin-top: 2rem;
   text-align: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -153,6 +222,17 @@ export default {
   transition: all 0.2s ease;
 }
 
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
 .btn-secondary {
   background-color: #f8f9fa;
   color: #6c757d;
@@ -163,6 +243,17 @@ export default {
   background-color: #e9ecef;
   border-color: #adb5bd;
   color: #495057;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: #007bff;
+  color: white;
 }
 
 .btn:disabled {
