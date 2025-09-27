@@ -151,110 +151,98 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import { ref, computed, onMounted, nextTick } from 'vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
 import ExportImportPanel from '@/components/ExportImportPanel.vue'
+import type { CustomMonster } from '@/stores/customMonsters'
 
-export default {
-  name: 'MyMonsters',
-  components: {
-    ExportImportPanel
-  },
-  setup() {
-    const customMonstersStore = useCustomMonstersStore()
-    return { customMonstersStore }
-  },
-  data() {
-    return {
-      loading: true,
-      deleting: null,
-      showDeleteDialog: false,
-      monsterToDelete: null
+const customMonstersStore = useCustomMonstersStore()
+
+// Reactive state
+const loading = ref(true)
+const deleting = ref<string | null>(null)
+const showDeleteDialog = ref(false)
+const monsterToDelete = ref<CustomMonster | null>(null)
+const deleteButton = ref<HTMLButtonElement>()
+
+// Computed properties
+const customMonsters = computed(() => customMonstersStore.getAllCustomMonsters())
+
+const customMonsterCount = computed(() => customMonsters.value.length)
+
+const totalMonsters = computed(() => customMonstersStore.getAllMonsters().length)
+
+const sortedCustomMonsters = computed(() => {
+  return [...customMonsters.value].sort((a, b) => {
+    // Sort by most recently updated first
+    return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+  })
+})
+
+// Methods
+function formatDate(dateString: string) {
+  const date = new Date(dateString)
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  })
+}
+
+function deleteMonster(monster: CustomMonster) {
+  monsterToDelete.value = monster
+  showDeleteDialog.value = true
+  
+  // Focus the delete button when the dialog opens
+  nextTick(() => {
+    if (deleteButton.value) {
+      deleteButton.value.focus()
     }
-  },
-  computed: {
-    customMonsters() {
-      return this.customMonstersStore.getAllCustomMonsters()
-    },
+  })
+}
+
+function cancelDelete() {
+  showDeleteDialog.value = false
+  monsterToDelete.value = null
+}
+
+async function confirmDelete() {
+  if (!monsterToDelete.value) return
+  
+  deleting.value = monsterToDelete.value.id
+  
+  try {
+    const success = customMonstersStore.deleteMonster(monsterToDelete.value.id)
     
-    customMonsterCount() {
-      return this.customMonsters.length
-    },
-    
-    totalMonsters() {
-      return this.customMonstersStore.getAllMonsters().length
-    },
-    
-    sortedCustomMonsters() {
-      return [...this.customMonsters].sort((a, b) => {
-        // Sort by most recently updated first
-        return new Date(b.updatedAt) - new Date(a.updatedAt)
-      })
+    if (!success) {
+      throw new Error('Failed to delete monster')
     }
-  },
-  async mounted() {
-    this.loading = true
-    try {
-      // Load custom monsters from storage
-      this.customMonstersStore.loadFromStorage()
-    } catch (error) {
-      console.error('Error loading monsters:', error)
-    } finally {
-      this.loading = false
-    }
-  },
-  methods: {
-    formatDate(dateString) {
-      const date = new Date(dateString)
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-      })
-    },
     
-    deleteMonster(monster) {
-      this.monsterToDelete = monster
-      this.showDeleteDialog = true
-      
-      // Focus the delete button when the dialog opens
-      this.$nextTick(() => {
-        if (this.$refs.deleteButton) {
-          this.$refs.deleteButton.focus()
-        }
-      })
-    },
-    
-    cancelDelete() {
-      this.showDeleteDialog = false
-      this.monsterToDelete = null
-    },
-    
-    async confirmDelete() {
-      if (!this.monsterToDelete) return
-      
-      this.deleting = this.monsterToDelete.id
-      
-      try {
-        const success = this.customMonstersStore.deleteMonster(this.monsterToDelete.id)
-        
-        if (!success) {
-          throw new Error('Failed to delete monster')
-        }
-        
-        this.showDeleteDialog = false
-        this.monsterToDelete = null
-      } catch (error) {
-        console.error('Failed to delete monster:', error)
-        alert('Failed to delete monster. Please try again.')
-      } finally {
-        this.deleting = null
-      }
-    }
+    showDeleteDialog.value = false
+    monsterToDelete.value = null
+  } catch (error) {
+    console.error('Failed to delete monster:', error)
+    alert('Failed to delete monster. Please try again.')
+  } finally {
+    deleting.value = null
   }
 }
+
+// Lifecycle
+onMounted(async () => {
+  loading.value = true
+  try {
+    // Load custom monsters from storage
+    customMonstersStore.loadFromStorage()
+  } catch (error) {
+    console.error('Error loading monsters:', error)
+  } finally {
+    loading.value = false
+  }
+})
 </script>
 
 <style scoped>

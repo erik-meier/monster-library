@@ -33,6 +33,25 @@ export interface ImportResult {
   }>
 }
 
+export interface ImportPreview {
+  isValid: boolean
+  totalMonsters: number
+  validMonsters: number
+  invalidMonsters: number
+  warnings: Array<{
+    monster: string
+    type: 'id_collision' | 'validation_warning' | 'other'
+    message: string
+    action: string
+  }>
+  errors: Array<{
+    monster: string
+    error: string
+    details?: ValidationResult['errors']
+  }>
+  monsters: CustomMonster[]
+}
+
 /**
  * Export a single monster as JSON
  */
@@ -145,6 +164,105 @@ function generateUniqueId(baseId: string, existingIds: Set<string>): string {
   }
   
   return id
+}
+
+/**
+ * Preview import data to show potential warnings and errors before importing
+ * @param jsonContent - JSON string containing monster data
+ * @param customMonstersStore - Optional store instance, will use global store if not provided
+ */
+export function previewImport(jsonContent: string, customMonstersStore?: ReturnType<typeof useCustomMonstersStore>): ImportPreview {
+  const preview: ImportPreview = {
+    isValid: false,
+    totalMonsters: 0,
+    validMonsters: 0,
+    invalidMonsters: 0,
+    warnings: [],
+    errors: [],
+    monsters: []
+  }
+
+  try {
+    const data = JSON.parse(jsonContent)
+    const validation = validateImportData(data)
+    
+    if (!validation.isValid) {
+      preview.errors.push({ 
+        monster: 'File', 
+        error: validation.error! 
+      })
+      return preview
+    }
+
+    const exportData = validation.exportData!
+    preview.totalMonsters = exportData.monsters.length
+    
+    // Use provided store or create new one
+    const store = customMonstersStore || useCustomMonstersStore()
+    store.loadFromStorage()
+    
+    // Get all existing IDs (custom + bundled)
+    const existingIds = new Set<string>()
+    
+    // Add all custom monster IDs
+    Object.keys(store.customMonsters).forEach(id => existingIds.add(id))
+    
+    // Add all bundled monster IDs
+    const bundledMonsters = getBundledMonsters()
+    if (bundledMonsters) {
+      Object.keys(bundledMonsters).forEach(id => existingIds.add(id))
+    }
+
+    for (const monsterData of exportData.monsters) {
+      try {
+        // Validate monster schema
+        const validation = validateMonster(monsterData)
+        if (!validation.isValid) {
+          preview.errors.push({
+            monster: monsterData.name || 'Unknown',
+            error: 'Monster failed schema validation',
+            details: validation.errors
+          })
+          preview.invalidMonsters++
+          continue
+        }
+
+        // Check for ID collisions
+        if (existingIds.has(monsterData.id)) {
+          const newId = generateUniqueId(monsterData.id, existingIds)
+          preview.warnings.push({
+            monster: monsterData.name,
+            type: 'id_collision',
+            message: `ID collision detected`,
+            action: `Will be renamed from '${monsterData.id}' to '${newId}'`
+          })
+          existingIds.add(newId) // Add the new ID to prevent further collisions
+        } else {
+          existingIds.add(monsterData.id)
+        }
+
+        preview.monsters.push(monsterData)
+        preview.validMonsters++
+        
+      } catch (error) {
+        preview.errors.push({
+          monster: monsterData.name || 'Unknown',
+          error: `Preview error: ${error instanceof Error ? error.message : 'Unknown error'}`
+        })
+        preview.invalidMonsters++
+      }
+    }
+
+    preview.isValid = preview.validMonsters > 0
+
+  } catch (error) {
+    preview.errors.push({
+      monster: 'File',
+      error: `JSON parsing error: ${error instanceof Error ? error.message : 'Unknown error'}`
+    })
+  }
+
+  return preview
 }
 
 /**

@@ -51,6 +51,103 @@
       </div>
     </div>
 
+    <!-- Import Preview Modal -->
+    <div v-if="showImportPreview && importPreview" class="modal-overlay" @click.self="cancelImport">
+      <div class="modal import-preview-modal">
+        <h3>Import Preview</h3>
+        
+        <div class="preview-summary">
+          <div class="preview-stats">
+            <div class="stat-item">
+              <span class="stat-number">{{ importPreview.totalMonsters }}</span>
+              <span class="stat-label">Total Monsters</span>
+            </div>
+            <div class="stat-item success">
+              <span class="stat-number">{{ importPreview.validMonsters }}</span>
+              <span class="stat-label">Valid</span>
+            </div>
+            <div class="stat-item error" v-if="importPreview.invalidMonsters > 0">
+              <span class="stat-number">{{ importPreview.invalidMonsters }}</span>
+              <span class="stat-label">Invalid</span>
+            </div>
+            <div class="stat-item warning" v-if="importPreview.warnings.length > 0">
+              <span class="stat-number">{{ importPreview.warnings.length }}</span>
+              <span class="stat-label">Warnings</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview Warnings -->
+        <div v-if="importPreview.warnings.length > 0" class="preview-warnings">
+          <h4>⚠️ Warnings</h4>
+          <div class="preview-message-list">
+            <div v-for="(warning, index) in importPreview.warnings" :key="index" class="preview-message-item warning">
+              <div class="message-header">
+                <strong>{{ warning.monster }}</strong>
+                <span class="warning-type" v-if="warning.type === 'id_collision'">ID Collision</span>
+              </div>
+              <div class="message-content">
+                {{ warning.message }}
+              </div>
+              <div class="message-action">
+                {{ warning.action }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview Errors -->
+        <div v-if="importPreview.errors.length > 0" class="preview-errors">
+          <h4>❌ Errors</h4>
+          <div class="preview-message-list">
+            <div v-for="(error, index) in importPreview.errors" :key="index" class="preview-message-item error">
+              <div class="message-header">
+                <strong>{{ error.monster }}</strong>
+              </div>
+              <div class="message-content">
+                {{ error.error }}
+              </div>
+              <div v-if="error.details && error.details.length > 0" class="error-details">
+                <ul>
+                  <li v-for="(detail, detailIndex) in error.details" :key="detailIndex">
+                    <strong>{{ detail.field }}:</strong> {{ detail.message }}
+                    <span v-if="detail.value !== undefined"> (got: {{ detail.value }})</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monster List Preview -->
+        <div v-if="importPreview.validMonsters > 0" class="preview-monsters">
+          <h4>Monsters to Import ({{ importPreview.validMonsters }})</h4>
+          <div class="monster-list">
+            <div v-for="monster in importPreview.monsters.slice(0, 10)" :key="monster.id" class="monster-item">
+              <span class="monster-name">{{ monster.name }}</span>
+              <span class="monster-details">Level {{ monster.level }} {{ monster.role }} {{ monster.organization }}</span>
+            </div>
+            <div v-if="importPreview.monsters.length > 10" class="more-monsters">
+              ... and {{ importPreview.monsters.length - 10 }} more monsters
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-outline" @click="cancelImport">
+            Cancel
+          </button>
+          <button 
+            class="btn btn-primary" 
+            @click="confirmImport"
+            :disabled="!importPreview.isValid"
+          >
+            {{ importPreview.isValid ? `Import ${importPreview.validMonsters} Monster${importPreview.validMonsters !== 1 ? 's' : ''}` : 'Cannot Import' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Import Results -->
     <div v-if="importResult" class="import-results">
       <div class="import-summary" :class="{ success: importResult.success, error: !importResult.success }">
@@ -149,7 +246,7 @@
 
     <!-- Confirmation Dialog -->
     <div v-if="showClearConfirm" class="modal-overlay" @click.self="showClearConfirm = false">
-      <div class="modal">
+      <div class="modal clear-confirm-modal">
         <h3>Clear All Custom Monsters</h3>
         <p>This will permanently delete all your custom monsters. This action cannot be undone.</p>
         <p><strong>Are you sure you want to continue?</strong></p>
@@ -172,11 +269,13 @@ import { useCustomMonstersStore } from '@/stores/customMonsters'
 import { 
   exportAllMonsters, 
   importMonsters, 
+  previewImport,
   createFullBackup, 
   restoreFromBackup, 
   downloadFile, 
   generateExportFilename,
-  type ImportResult 
+  type ImportResult,
+  type ImportPreview 
 } from '@/utils/exportImport'
 
 const customMonstersStore = useCustomMonstersStore()
@@ -185,7 +284,10 @@ const customMonstersStore = useCustomMonstersStore()
 const fileInput = ref<HTMLInputElement>()
 const backupInput = ref<HTMLInputElement>()
 const importResult = ref<ImportResult | null>(null)
+const importPreview = ref<ImportPreview | null>(null)
+const showImportPreview = ref(false)
 const showClearConfirm = ref(false)
+const pendingImportContent = ref<string>('')
 
 // Computed
 const customMonsterCount = computed(() => customMonstersStore.customMonsterCount)
@@ -217,13 +319,34 @@ function handleFileUpload(event: Event) {
   reader.onload = (e) => {
     const content = e.target?.result as string
     if (content) {
-      importResult.value = importMonsters(content)
+      // Clear previous results
+      importResult.value = null
+      
+      // Generate preview
+      importPreview.value = previewImport(content)
+      pendingImportContent.value = content
+      showImportPreview.value = true
     }
   }
   reader.readAsText(file)
   
   // Clear the input so the same file can be selected again
   target.value = ''
+}
+
+function confirmImport() {
+  if (pendingImportContent.value) {
+    importResult.value = importMonsters(pendingImportContent.value)
+    showImportPreview.value = false
+    importPreview.value = null
+    pendingImportContent.value = ''
+  }
+}
+
+function cancelImport() {
+  showImportPreview.value = false
+  importPreview.value = null
+  pendingImportContent.value = ''
 }
 
 function handleBackupRestore(event: Event) {
@@ -506,11 +629,18 @@ function clearAllData() {
   max-width: 500px;
   margin: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.import-preview-modal {
+  max-width: 700px;
+  max-height: 90vh;
 }
 
 .modal h3 {
   margin: 0 0 1rem 0;
-  color: #dc3545;
+  color: #2c3e50;
 }
 
 .modal p {
@@ -523,6 +653,176 @@ function clearAllData() {
   gap: 1rem;
   justify-content: flex-end;
   margin-top: 1.5rem;
+}
+
+/* Preview Styles */
+.preview-summary {
+  margin-bottom: 1.5rem;
+}
+
+.preview-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  min-width: 80px;
+}
+
+.stat-item.success {
+  background: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.stat-item.error {
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.stat-item.warning {
+  background: #fff3cd;
+  border-color: #ffeaa7;
+  color: #856404;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.preview-warnings,
+.preview-errors {
+  margin: 1rem 0;
+}
+
+.preview-warnings h4,
+.preview-errors h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+}
+
+.preview-message-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: white;
+}
+
+.preview-message-item {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.9rem;
+}
+
+.preview-message-item:last-child {
+  border-bottom: none;
+}
+
+.preview-message-item.warning {
+  background: #fff3cd;
+  border-color: #ffeaa7;
+}
+
+.preview-message-item.error {
+  background: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.warning-type {
+  background: #ffc107;
+  color: #212529;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.message-content {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.message-action {
+  font-size: 0.8rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.preview-monsters {
+  margin: 1rem 0;
+}
+
+.preview-monsters h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+}
+
+.monster-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: white;
+}
+
+.monster-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.monster-item:last-child {
+  border-bottom: none;
+}
+
+.monster-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.monster-details {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.clear-confirm-modal h3 {
+  color: #dc3545;
+}
+
+.more-monsters {
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  font-style: italic;
+  color: #6c757d;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
 }
 
 /* Responsive Design */
