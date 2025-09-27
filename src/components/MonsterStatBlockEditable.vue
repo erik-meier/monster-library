@@ -97,54 +97,65 @@
       </div>
       
       <div v-else class="stat-edit-values">
-        <div class="size-edit">
+        <div class="stat-edit-item">
+          <div class="size-edit">
+            <input 
+              v-model.number="editableData.size.value" 
+              type="number" 
+              min="1" 
+              class="size-input"
+              @blur="updateField('size')"
+            />
+            <select 
+              v-model="editableData.size.letter" 
+              class="size-select"
+              :disabled="editableData.size.value > 1"
+              @change="updateField('size')"
+            >
+              <option value="">—</option>
+              <option value="T">T</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+            </select>
+          </div>
+        </div>
+        <div class="stat-edit-item">
           <input 
-            v-model.number="editableData.size.value" 
+            v-model.number="editableData.speed" 
             type="number" 
             min="1" 
-            class="size-input"
-            @blur="updateField('size')"
+            class="stat-input"
+            @blur="updateField('speed')"
           />
-          <select 
-            v-model="editableData.size.letter" 
-            class="size-select"
-            :disabled="editableData.size.value > 1"
-            @change="updateField('size')"
-          >
-            <option value="">—</option>
-            <option value="T">T</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-          </select>
         </div>
-        <input 
-          v-model.number="editableData.speed" 
-          type="number" 
-          min="1" 
-          class="stat-input"
-          @blur="updateField('speed')"
-        />
-        <input 
-          v-model.number="editableData.stamina" 
-          type="number" 
-          min="1" 
-          class="stat-input"
-          @blur="updateField('stamina')"
-        />
-        <input 
-          v-model.number="editableData.stability" 
-          type="number" 
-          class="stat-input"
-          @blur="updateField('stability')"
-        />
-        <input 
-          v-model.number="editableData.freeStrike" 
-          type="number" 
-          min="0" 
-          class="stat-input"
-          @blur="updateField('freeStrike')"
-        />
+        <div class="stat-edit-item">
+          <input 
+            v-model.number="editableData.stamina" 
+            type="number" 
+            min="1" 
+            class="stat-input"
+            @blur="updateField('stamina')"
+          />
+        </div>
+        <div class="stat-edit-item">
+          <input 
+            v-model.number="editableData.stability" 
+            type="number" 
+            min="1" 
+            class="stat-input"
+            @blur="updateField('stability')"
+          />
+        </div>
+        <div class="stat-edit-item">
+          <input 
+            v-model.number="editableData.freeStrike" 
+            type="number" 
+            min="0" 
+            class="stat-input"
+            @blur="updateField('freeStrike')"
+          />
+        </div>
       </div>
     </div>
 
@@ -219,7 +230,6 @@
     <div v-if="editMode" class="edit-controls">
       <button @click="$emit('save', editableData)" class="btn btn-success">Save Changes</button>
       <button @click="$emit('cancel')" class="btn btn-secondary">Cancel</button>
-      <button @click="revertChanges" class="btn btn-outline">Revert</button>
     </div>
   </div>
 </template>
@@ -288,10 +298,6 @@ const updateField = (fieldName) => {
 const updateCharacteristic = (characteristic, value) => {
   const numValue = parseInt(value) || 0
   editableData.value.characteristics[characteristic] = numValue
-}
-
-const revertChanges = () => {
-  editableData.value = JSON.parse(JSON.stringify(originalData.value))
 }
 
 // Helper methods
@@ -461,13 +467,20 @@ const getMaxCharacteristic = () => {
 .stat-edit-values {
   display: flex;
   justify-content: space-between;
-  gap: 0.5rem;
+}
+
+.stat-edit-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .size-edit {
   display: flex;
   gap: 0.25rem;
-  flex: 1;
+  justify-content: center;
+  align-items: center;
 }
 
 .size-input,
@@ -482,6 +495,7 @@ const getMaxCharacteristic = () => {
   font-weight: bold;
   background: white;
   font-size: 0.9rem;
+  margin: 0 auto; /* Center the input */
 }
 
 .size-select {
@@ -687,14 +701,16 @@ const getMaxCharacteristic = () => {
     gap: 0.75rem;
   }
   
+  .stat-edit-item {
+    justify-content: center;
+  }
+  
   .size-edit {
-    justify-self: center;
     max-width: 150px;
   }
   
   .stat-input {
     max-width: 80px;
-    justify-self: center;
   }
   
   .edit-controls {
