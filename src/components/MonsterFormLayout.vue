@@ -15,20 +15,39 @@
     </header>
 
     <nav class="form-nav">
-      <button 
-        v-for="section in sections" 
-        :key="section.id"
-        type="button"
-        class="nav-btn"
-        :class="{ 
-          active: currentSection === section.id,
-          invalid: section.isValid === false 
-        }"
-        @click="currentSection = section.id"
-      >
-        {{ section.label }}
-        <span v-if="section.isValid === false" class="invalid-indicator">!</span>
-      </button>
+      <!-- Progress Indicator -->
+      <div class="progress-indicator">
+        <div class="progress-bar">
+          <div 
+            class="progress-fill" 
+            :style="{ width: `${progressPercentage}%` }"
+          ></div>
+        </div>
+        <span class="progress-text">
+          Step {{ currentSectionIndex + 1 }} of {{ sections.length }}
+        </span>
+      </div>
+      
+      <!-- Section Navigation Tabs -->
+      <div class="nav-tabs">
+        <button 
+          v-for="(section, index) in sections" 
+          :key="section.id"
+          type="button"
+          class="nav-btn"
+          :class="{ 
+            active: currentSection === section.id,
+            invalid: section.isValid === false,
+            completed: index < currentSectionIndex && section.isValid !== false
+          }"
+          @click="navigateToSection(section.id, index)"
+        >
+          <span class="section-number">{{ index + 1 }}</span>
+          {{ section.label }}
+          <span v-if="section.isValid === false" class="invalid-indicator">!</span>
+          <span v-else-if="index < currentSectionIndex" class="completed-indicator">✓</span>
+        </button>
+      </div>
     </nav>
 
     <main class="form-content">
@@ -60,11 +79,49 @@
         <SourceInfoForm :model-value="modelValue" @update:model-value="handleUpdate" @update:isValid="updateSectionValidity('source', $event)" />
       </div>
     </main>
+
+    <!-- Wizard Navigation -->
+    <footer class="wizard-nav">
+      <div class="nav-buttons">
+        <button 
+          type="button" 
+          class="btn btn-secondary"
+          @click="previousSection"
+          :disabled="currentSectionIndex === 0"
+        >
+          ← Previous
+        </button>
+        
+        <div class="center-info">
+          <span class="current-section-name">{{ currentSectionName }}</span>
+        </div>
+        
+        <button 
+          v-if="currentSectionIndex < sections.length - 1"
+          type="button" 
+          class="btn btn-primary"
+          @click="nextSection"
+          :disabled="!canProceedToNext"
+        >
+          Next →
+        </button>
+        
+        <button 
+          v-else
+          type="button" 
+          class="btn btn-success" 
+          @click="handleSave" 
+          :disabled="!isValid"
+        >
+          {{ isEditing ? 'Save Changes' : 'Create Monster' }}
+        </button>
+      </div>
+    </footer>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import type { MonsterFormData, FormSection } from '@/types/monster-forms'
 import BasicInfoForm from './BasicInfoForm.vue'
 import StatsForm from './StatsForm.vue'
@@ -100,8 +157,25 @@ const sections = ref<FormSection[]>([
   { id: 'source', label: 'Source Info', component: 'SourceInfoForm', isValid: true }
 ])
 
+const currentSectionIndex = computed(() => {
+  return sections.value.findIndex(s => s.id === currentSection.value)
+})
+
+const currentSectionName = computed(() => {
+  return sections.value[currentSectionIndex.value]?.label || ''
+})
+
+const progressPercentage = computed(() => {
+  return ((currentSectionIndex.value + 1) / sections.value.length) * 100
+})
+
 const isValid = computed(() => {
   return sections.value.every(section => section.isValid !== false)
+})
+
+const canProceedToNext = computed(() => {
+  const current = sections.value[currentSectionIndex.value]
+  return current && current.isValid !== false
 })
 
 const updateSectionValidity = (sectionId: string, valid: boolean) => {
@@ -120,6 +194,52 @@ const handleSave = () => {
     emit('save', props.modelValue)
   }
 }
+
+// Wizard navigation methods
+const navigateToSection = (sectionId: string, index: number) => {
+  // Allow navigation to any completed section or the current/next section
+  if (index <= currentSectionIndex.value + 1) {
+    currentSection.value = sectionId
+  }
+}
+
+const nextSection = () => {
+  if (currentSectionIndex.value < sections.value.length - 1 && canProceedToNext.value) {
+    const nextIndex = currentSectionIndex.value + 1
+    currentSection.value = sections.value[nextIndex].id
+  }
+}
+
+const previousSection = () => {
+  if (currentSectionIndex.value > 0) {
+    const prevIndex = currentSectionIndex.value - 1
+    currentSection.value = sections.value[prevIndex].id
+  }
+}
+
+// Keyboard navigation
+const handleKeydown = (event: KeyboardEvent) => {
+  // Only handle if no input is focused
+  if (event.target && (event.target as HTMLElement).tagName.match(/INPUT|TEXTAREA|SELECT/)) {
+    return
+  }
+  
+  if (event.key === 'ArrowRight' && canProceedToNext.value) {
+    event.preventDefault()
+    nextSection()
+  } else if (event.key === 'ArrowLeft' && currentSectionIndex.value > 0) {
+    event.preventDefault()
+    previousSection()
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('keydown', handleKeydown)
+})
 </script>
 
 <style scoped>
@@ -186,12 +306,44 @@ const handleSave = () => {
 }
 
 .form-nav {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 1.5rem;
+}
+
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b4513, #a0522d);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.nav-tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #e9ecef;
-  padding-bottom: 1rem;
 }
 
 .nav-btn {
@@ -199,14 +351,31 @@ const handleSave = () => {
   padding: 0.75rem 1rem;
   background: transparent;
   border: 1px solid #dee2e6;
-  border-radius: 4px;
+  border-radius: 6px;
   color: #495057;
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.nav-btn:hover {
+.section-number {
+  background: #f8f9fa;
+  color: #6c757d;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
   background-color: #f8f9fa;
   border-color: #8b4513;
 }
@@ -215,6 +384,21 @@ const handleSave = () => {
   background-color: #8b4513;
   color: white;
   border-color: #8b4513;
+}
+
+.nav-btn.active .section-number {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.nav-btn.completed {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.nav-btn.completed .section-number {
+  background: #28a745;
+  color: white;
 }
 
 .nav-btn.invalid {
@@ -227,24 +411,65 @@ const handleSave = () => {
   color: white;
 }
 
-.invalid-indicator {
+.invalid-indicator, .completed-indicator {
   position: absolute;
   top: -4px;
   right: -4px;
   background: #dc3545;
   color: white;
   border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
 }
 
+.completed-indicator {
+  background: #28a745;
+}
+
 .form-content {
   min-height: 400px;
+  margin-bottom: 2rem;
+}
+
+.wizard-nav {
+  border-top: 1px solid #e9ecef;
+  padding-top: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 0 0 8px 8px;
+  margin: 0 -1rem -1rem -1rem;
+  padding: 1.5rem;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.center-info {
+  flex: 1;
+  text-align: center;
+}
+
+.current-section-name {
+  font-weight: 600;
+  color: #8b4513;
+  font-size: 1.1rem;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+  background-color: #218838;
 }
 
 .form-section {
@@ -272,29 +497,63 @@ const handleSave = () => {
     justify-content: center;
   }
   
-  .form-nav {
+  .progress-indicator {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .nav-tabs {
     justify-content: center;
+    gap: 0.25rem;
   }
   
   .nav-btn {
     flex: 1;
-    min-width: 120px;
+    min-width: 100px;
     text-align: center;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .section-number {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
   }
   
   .form-title {
     font-size: 1.3rem;
     text-align: center;
   }
+  
+  .nav-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .center-info {
+    order: -1;
+  }
+  
+  .current-section-name {
+    font-size: 1rem;
+  }
+  
+  .wizard-nav {
+    padding: 1rem;
+    margin: 0 -0.5rem -0.5rem -0.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .form-nav {
+  .nav-tabs {
     flex-direction: column;
   }
   
   .nav-btn {
     flex: none;
+    justify-content: center;
   }
 }
 </style>

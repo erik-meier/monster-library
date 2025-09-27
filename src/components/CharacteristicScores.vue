@@ -6,8 +6,18 @@
       class="characteristic-score"
     >
       <div class="characteristic-name">{{ getCharacteristicName(characteristic) }}</div>
-      <div class="characteristic-value">
+      <div v-if="!editMode" class="characteristic-value">
         {{ formatModifier(characteristics[characteristic] || 0) }}
+      </div>
+      <div v-if="editMode" class="characteristic-edit">
+        <input 
+          :value="characteristics[characteristic] || 0"
+          @input="updateCharacteristic(characteristic, $event.target.value)"
+          type="number"
+          class="characteristic-input"
+          :min="-10"
+          :max="20"
+        />
       </div>
     </div>
   </div>
@@ -20,8 +30,13 @@ export default {
     characteristics: {
       type: Object,
       required: true
+    },
+    editMode: {
+      type: Boolean,
+      default: false
     }
   },
+  emits: ['update:characteristics'],
   data() {
     return {
       characteristicOrder: ['might', 'agility', 'reason', 'intuition', 'presence']
@@ -40,6 +55,11 @@ export default {
         presence: 'Presence'
       };
       return names[characteristic];
+    },
+    updateCharacteristic(characteristic, value) {
+      const numValue = parseInt(value) || 0;
+      const updated = { ...this.characteristics, [characteristic]: numValue };
+      this.$emit('update:characteristics', updated);
     }
   }
 }
@@ -75,6 +95,30 @@ export default {
   color: #333;
   font-weight: bold;
   line-height: 1.2;
+}
+
+.characteristic-edit {
+  display: flex;
+  justify-content: center;
+}
+
+.characteristic-input {
+  width: 100%;
+  max-width: 60px;
+  padding: 0.25rem;
+  border: 1px solid #8b4513;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.characteristic-input:focus {
+  outline: 0;
+  border-color: #a0522d;
+  box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.25);
 }
 
 @media (max-width: 768px) {

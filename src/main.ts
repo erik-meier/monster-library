@@ -8,9 +8,7 @@ import MonsterView from './views/MonsterView.vue'
 import MonsterList from './views/MonsterList.vue'
 import Home from './views/Home.vue'
 import MonsterCreate from './views/MonsterCreate.vue'
-import MonsterEdit from './views/MonsterEdit.vue'
 import MyMonsters from './views/MyMonsters.vue'
-import FormDemo from './views/FormDemo.vue'
 
 // Define routes
 const routes = [
@@ -36,20 +34,9 @@ const routes = [
     props: true // This passes the route params as props
   },
   {
-    path: '/monster/:monsterId/edit',
-    name: 'MonsterEdit',
-    component: MonsterEdit,
-    props: true
-  },
-  {
     path: '/my-monsters',
     name: 'MyMonsters',
     component: MyMonsters
-  },
-  {
-    path: '/form-demo',
-    name: 'FormDemo',
-    component: FormDemo
   }
 ]
 
