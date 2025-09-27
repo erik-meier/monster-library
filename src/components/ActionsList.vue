@@ -161,7 +161,7 @@ export default {
       if (type.toLowerCase() === 'freetriggered') type = 'free triggered';
       return type + ' action';
     },
-    formatPowerRoll(formula, chr) {
+    formatPowerRoll(formula) {
       // Power roll formulas are now pre-processed in the data pipeline
       return formula || '';
     },

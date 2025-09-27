@@ -46,7 +46,6 @@ function processUuidReferences(text) {
       // Extract the monster ID from the UUID
       const monsterIdMatch = uuid.match(/Actor\.([^.]+)$/);
       if (monsterIdMatch) {
-        const foundryId = monsterIdMatch[1];
         // Convert the display name to our simplified ID format for linking
         const simplifiedId = displayName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
         return `<a href="/monster/${simplifiedId}" class="monster-link">${displayName}</a>`;
