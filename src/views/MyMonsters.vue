@@ -27,6 +27,9 @@
         </router-link>
       </div>
 
+      <!-- Export/Import Panel -->
+      <ExportImportPanel />
+
       <!-- Monster List -->
       <div v-if="loading" class="loading">
         Loading monsters...
@@ -150,9 +153,13 @@
 
 <script>
 import { useCustomMonstersStore } from '@/stores/customMonsters'
+import ExportImportPanel from '@/components/ExportImportPanel.vue'
 
 export default {
   name: 'MyMonsters',
+  components: {
+    ExportImportPanel
+  },
   setup() {
     const customMonstersStore = useCustomMonstersStore()
     return { customMonstersStore }
