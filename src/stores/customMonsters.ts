@@ -72,6 +72,11 @@ export interface CustomMonster {
         value?: number | null;
         formattedText?: string;
       };
+      source?: {
+        book?: string;
+        page?: string;
+        license?: string;
+      }
     };
   }>;
   // Additional fields for custom monsters
