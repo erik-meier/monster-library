@@ -91,7 +91,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the start of an encounter, the fury chooses one creature within their line of effect. Both the fury and the creature can add a [[/r d3]] roll to power rolls they make against each other.</p>",
+          "value": "<p>At the start of an encounter, the fury chooses one creature within their line of effect. Both the fury and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
           "director": ""
         }
       }
@@ -127,15 +127,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; <strong class=\"potency-value\">P&lt;0</strong> grabbed"
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;0</strong> grabbed"
             },
             {
               "tier": 2,
-              "display": "13 damage; <strong class=\"potency-value\">P&lt;1</strong> grabbed"
+              "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> grabbed"
             },
             {
               "tier": 3,
-              "display": "16 damage; <strong class=\"potency-value\">P&lt;2</strong> grabbed"
+              "display": "16 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed"
             }
           ]
         },
@@ -248,7 +248,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
+          "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a <span class=\"roll-formula\">d3</span> and add it to the power roll.</p>",
           "after": ""
         },
         "spend": {
