@@ -225,3 +225,4 @@ When working on this repository, always:
 4. **Test responsive design on multiple screen sizes** - mobile compatibility is critical
 5. **Validate monster data changes thoroughly** - data quality must not degrade
 6. Follow existing code patterns and conventions
+7. Ensure documentation is updated for significant changes, but don't include change history in documentation
