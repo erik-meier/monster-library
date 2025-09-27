@@ -10,31 +10,20 @@
           <p class="monster-meta-right">EV {{ monster.ev }}</p>
         </div>
       </div>
-      
+
       <div v-else class="edit-mode">
         <!-- Editable Header -->
         <div class="editable-field">
-          <input 
-            v-model="editableData.name" 
-            type="text" 
-            class="monster-name-edit"
-            placeholder="Monster name"
-            @blur="updateField('name')"
-          />
+          <input v-model="editableData.name" type="text" class="monster-name-edit" placeholder="Monster name"
+            @blur="updateField('name')" />
         </div>
-        
+
         <div class="monster-meta-edit">
           <div class="meta-edit-group">
             <label>Level:</label>
-            <input 
-              v-model.number="editableData.level" 
-              type="number" 
-              min="1" 
-              max="20"
-              @blur="updateField('level')"
-            />
+            <input v-model.number="editableData.level" type="number" min="1" max="20" @blur="updateField('level')" />
           </div>
-          
+
           <div class="meta-edit-group">
             <label>Role:</label>
             <select v-model="editableData.role" @change="updateField('role')">
@@ -50,7 +39,7 @@
               <option value="Support">Support</option>
             </select>
           </div>
-          
+
           <div class="meta-edit-group">
             <label>Organization:</label>
             <select v-model="editableData.organization" @change="updateField('organization')">
@@ -62,15 +51,10 @@
               <option value="Solo">Solo</option>
             </select>
           </div>
-          
+
           <div class="meta-edit-group">
             <label>EV:</label>
-            <input 
-              v-model.number="editableData.ev" 
-              type="number" 
-              min="1"
-              @blur="updateField('ev')"
-            />
+            <input v-model.number="editableData.ev" type="number" min="1" @blur="updateField('ev')" />
           </div>
         </div>
       </div>
@@ -87,7 +71,7 @@
         <div class="stat-label">Stability</div>
         <div class="stat-label">Free Strike</div>
       </div>
-      
+
       <div v-if="!editMode" class="stat-values">
         <div class="stat-value">{{ monster.size?.value || 1 }}{{ monster.size?.letter || 'M' }}</div>
         <div class="stat-value">{{ monster.speed }}</div>
@@ -95,23 +79,14 @@
         <div class="stat-value">{{ monster.stability }}</div>
         <div class="stat-value">{{ monster.freeStrike }}</div>
       </div>
-      
+
       <div v-else class="stat-edit-values">
         <div class="stat-edit-item">
           <div class="size-edit">
-            <input 
-              v-model.number="editableData.size.value" 
-              type="number" 
-              min="1" 
-              class="size-input"
-              @blur="updateField('size')"
-            />
-            <select 
-              v-model="editableData.size.letter" 
-              class="size-select"
-              :disabled="editableData.size.value > 1"
-              @change="updateField('size')"
-            >
+            <input v-model.number="editableData.size.value" type="number" min="1" class="size-input"
+              @blur="updateField('size')" />
+            <select v-model="editableData.size.letter" class="size-select" :disabled="editableData.size.value > 1"
+              @change="updateField('size')">
               <option value="">—</option>
               <option value="T">T</option>
               <option value="S">S</option>
@@ -121,40 +96,20 @@
           </div>
         </div>
         <div class="stat-edit-item">
-          <input 
-            v-model.number="editableData.speed" 
-            type="number" 
-            min="1" 
-            class="stat-input"
-            @blur="updateField('speed')"
-          />
+          <input v-model.number="editableData.speed" type="number" min="1" class="stat-input"
+            @blur="updateField('speed')" />
         </div>
         <div class="stat-edit-item">
-          <input 
-            v-model.number="editableData.stamina" 
-            type="number" 
-            min="1" 
-            class="stat-input"
-            @blur="updateField('stamina')"
-          />
+          <input v-model.number="editableData.stamina" type="number" min="1" class="stat-input"
+            @blur="updateField('stamina')" />
         </div>
         <div class="stat-edit-item">
-          <input 
-            v-model.number="editableData.stability" 
-            type="number" 
-            min="1" 
-            class="stat-input"
-            @blur="updateField('stability')"
-          />
+          <input v-model.number="editableData.stability" type="number" min="1" class="stat-input"
+            @blur="updateField('stability')" />
         </div>
         <div class="stat-edit-item">
-          <input 
-            v-model.number="editableData.freeStrike" 
-            type="number" 
-            min="0" 
-            class="stat-input"
-            @blur="updateField('freeStrike')"
-          />
+          <input v-model.number="editableData.freeStrike" type="number" min="0" class="stat-input"
+            @blur="updateField('freeStrike')" />
         </div>
       </div>
     </div>
@@ -163,27 +118,17 @@
 
     <!-- Characteristics -->
     <div class="characteristic-scores">
-      <div 
-        v-for="characteristic in characteristicOrder" 
-        :key="characteristic"
-        class="characteristic-score"
-      >
+      <div v-for="characteristic in characteristicOrder" :key="characteristic" class="characteristic-score">
         <div class="characteristic-name">{{ getCharacteristicName(characteristic) }}</div>
-        
+
         <div v-if="!editMode" class="characteristic-value">
           {{ formatModifier(monster.characteristics?.[characteristic] || 0) }}
         </div>
-        
+
         <div v-else class="characteristic-edit">
-          <input 
-            :value="editableData.characteristics[characteristic]"
-            @input="updateCharacteristic(characteristic, $event.target.value)"
-            @blur="updateField('characteristics')"
-            type="number"
-            class="characteristic-input"
-            :min="-10"
-            :max="20"
-          />
+          <input :value="editableData.characteristics[characteristic]"
+            @input="updateCharacteristic(characteristic, $event.target.value)" @blur="updateField('characteristics')"
+            type="number" class="characteristic-input" :min="-10" :max="20" />
         </div>
       </div>
     </div>
@@ -208,13 +153,8 @@
     <div class="divider"></div>
 
     <!-- Abilities (read-only for now) -->
-    <ActionsList 
-      v-if="monster.items || monster.abilities" 
-      :title="'Abilities'" 
-      :actions="monster.items || monster.abilities || []" 
-      :chr="String(getMaxCharacteristic())"
-      :monster="monster" 
-    />
+    <ActionsList v-if="monster.items || monster.abilities" :title="'Abilities'"
+      :actions="monster.items || monster.abilities || []" :chr="String(getMaxCharacteristic())" :monster="monster" />
 
     <!-- Source Information -->
     <div v-if="monster.source" class="source-info">
@@ -225,7 +165,7 @@
         <span v-if="monster.source.license"> • {{ monster.source.license }}</span>
       </div>
     </div>
-    
+
     <!-- Edit Mode Controls -->
     <div v-if="editMode" class="edit-controls">
       <button @click="$emit('save', editableData)" class="btn btn-success">Save Changes</button>
@@ -235,7 +175,7 @@
 </template>
 
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { ref, watch } from 'vue'
 import ActionsList from './ActionsList.vue'
 
 const props = defineProps({
@@ -281,7 +221,7 @@ const initializeEditableData = () => {
       presence: props.monster.characteristics?.presence || 0
     }
   }
-  
+
   editableData.value = data
   originalData.value = JSON.parse(JSON.stringify(data))
 }
@@ -290,7 +230,7 @@ const initializeEditableData = () => {
 watch(() => props.monster, initializeEditableData, { immediate: true, deep: true })
 
 // Auto-save functionality
-const updateField = (fieldName) => {
+const updateField = () => {
   // Emit the updated monster data for auto-save
   emit('update:monster', { ...editableData.value })
 }
@@ -486,8 +426,10 @@ const getMaxCharacteristic = () => {
 .size-input,
 .stat-input {
   flex: 1;
-  min-width: 0; /* Prevents flex items from overflowing */
-  max-width: 80px; /* Constrains input width */
+  min-width: 0;
+  /* Prevents flex items from overflowing */
+  max-width: 80px;
+  /* Constrains input width */
   padding: 0.25rem;
   border: 1px solid #007bff;
   border-radius: 3px;
@@ -495,7 +437,8 @@ const getMaxCharacteristic = () => {
   font-weight: bold;
   background: white;
   font-size: 0.9rem;
-  margin: 0 auto; /* Center the input */
+  margin: 0 auto;
+  /* Center the input */
 }
 
 .size-select {
@@ -668,56 +611,56 @@ const getMaxCharacteristic = () => {
   .monster-meta-edit {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .characteristic-scores {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
   }
-  
+
   .stat-edit-values {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   /* Make stats section stack vertically on mobile */
   .core-stats-grid {
     margin-bottom: 1.5rem;
   }
-  
+
   .stat-labels {
     font-size: 0.8rem;
     margin-bottom: 0.75rem;
   }
-  
+
   .stat-label {
     font-size: 0.8rem;
     padding: 0 0.25rem;
   }
-  
+
   /* Stack edit inputs with labels on mobile */
   .stat-edit-values {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
-  
+
   .stat-edit-item {
     justify-content: center;
   }
-  
+
   .size-edit {
     max-width: 150px;
   }
-  
+
   .stat-input {
     max-width: 80px;
   }
-  
+
   .edit-controls {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .btn {
     width: 200px;
     max-width: 100%;
@@ -728,18 +671,18 @@ const getMaxCharacteristic = () => {
   .characteristic-scores {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .monster-meta-edit {
     grid-template-columns: 1fr;
   }
-  
+
   .stat-labels {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
     margin-bottom: 1rem;
   }
-  
+
   .stat-values {
     flex-direction: column;
     gap: 0.5rem;

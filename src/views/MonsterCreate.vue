@@ -1,12 +1,7 @@
 <template>
   <div class="monster-create">
-    <MonsterFormLayout
-      :model-value="form"
-      :is-editing="false"
-      @update:model-value="updateForm"
-      @save="handleSave"
-      @cancel="handleCancel"
-    />
+    <MonsterFormLayout :model-value="form" :is-editing="false" @update:model-value="updateForm" @save="handleSave"
+      @cancel="handleCancel" />
   </div>
 </template>
 
@@ -14,7 +9,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import MonsterFormLayout from '@/components/MonsterFormLayout.vue'
-import { useCustomMonstersStore } from '@/stores/customMonsters'
+import { useCustomMonstersStore, type CustomMonster } from '@/stores/customMonsters'
 import type { MonsterFormData } from '@/types/monster-forms'
 
 const router = useRouter()
@@ -56,9 +51,9 @@ const updateForm = (newData: MonsterFormData) => {
 
 const handleSave = async (monsterData: MonsterFormData) => {
   try {
-    // Create the monster using the store (cast to resolve type differences)
-    const monsterId = customMonstersStore.createMonster(monsterData as any)
-    
+    // Create the monster using the store (convert form data to monster format)
+    const monsterId = customMonstersStore.createMonster(monsterData as Omit<CustomMonster, 'id' | 'isCustom' | 'createdAt' | 'updatedAt'>)
+
     // Redirect to the new monster's view page
     router.push(`/monster/${monsterId}`)
   } catch (error) {
