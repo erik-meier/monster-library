@@ -95,11 +95,11 @@
         <div class="monster-card-header">
           <h3 class="monster-name">{{ monster.name }}</h3>
           <div class="monster-role">Level {{ monster.level }}{{ monster.organization ? ` ${monster.organization}` : ''
-          }}{{ monster.role ? ` ${monster.role}` : '' }}</div>
+            }}{{ monster.role ? ` ${monster.role}` : '' }}</div>
         </div>
 
         <div class="monster-stats">
-          <span v-if="monster.ev" class="monster-ev">EV {{ monster.ev }}</span>
+          <span v-if="monster.ev !== undefined && monster.ev !== null" class="monster-ev">EV {{ monster.ev }}</span>
         </div>
 
         <div class="monster-keywords" v-if="monster.keywords && monster.keywords.length > 0">
@@ -110,7 +110,7 @@
 
         <div class="monster-card-footer">
           <div class="monster-role">Level {{ monster.level }}{{ formatRoleOrganization(monster) ? `
-            ${formatRoleOrganization(monster) }` : '' }}</div>
+            ${formatRoleOrganization(monster)}` : '' }}</div>
         </div>
       </div>
     </div>
@@ -453,6 +453,66 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1.5rem;
+}
+
+.monster-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 4px solid #8b4513;
+  display: flex;
+  flex-direction: column;
+}
+
+.monster-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.monster-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.monster-card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.monster-name {
+  color: #8b4513;
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: bold;
+  flex: 1;
+}
+
+.monster-role {
+  background-color: #8b4513;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+.monster-ev {
+  background: #28a745;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .monster-info {
