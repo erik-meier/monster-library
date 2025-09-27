@@ -154,7 +154,7 @@ export default {
       if (distance.type === 'burst') {
         return `${distance.primary} burst`
       }
-      return ''
+      return distance.type.charAt(0).toUpperCase() + distance.type.slice(1)
     },
     formatActionTargets(target) {
       if (!target) return '';
@@ -170,7 +170,7 @@ export default {
       } else if (target.type === 'selfAlly') {
         return 'Self and ' + `${target.value ? target.value : 'each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`;
       }
-      return target.type
+      return target.type.charAt(0).toUpperCase() + target.type.slice(1);
     },
     formatActionType(type) {
       if (!type) return '';
