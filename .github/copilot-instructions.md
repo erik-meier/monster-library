@@ -7,7 +7,7 @@
 ### Key Features
 - Browse and search through Draw Steel monsters
 - View detailed stat blocks with complete monster information
-- Responsive design for desktop and mobile use
+- **Mobile-optimized responsive design** for gaming sessions on any device
 - Fast loading and optimized performance
 
 ## Tech Stack & Architecture
@@ -18,7 +18,7 @@
 - **Vue Router** for navigation
 - **Pinia** for state management (if needed)
 - **Vite** as build tool and dev server
-- **CSS** with responsive design patterns
+- **CSS** with mobile-first responsive design patterns
 
 ### Development Tools
 - **ESLint** with Vue/TypeScript configs for linting
@@ -98,9 +98,10 @@ npm run refresh-all         # Complete data refresh pipeline
 
 ### CSS
 - Use vanilla CSS with CSS custom properties
-- Mobile-first responsive design
+- **Mobile-first responsive design is critical** - test on various screen sizes
 - Maintain consistent spacing and typography
 - Use semantic class names
+- Ensure touch-friendly interfaces for mobile gaming sessions
 
 ### Code Organization
 - Keep components focused and single-purpose
@@ -201,14 +202,15 @@ Each monster JSON file contains:
 ## Special Considerations
 
 ### Monster Data
-- Data files are large and should be handled efficiently
+- Monster data consists of many individual JSON files (238+ monsters)
 - Schema changes require careful validation
 - External data sources may have inconsistencies
 - Maintain backward compatibility when possible
 
 ### Browser Compatibility
 - Target modern browsers with ES6+ support
-- Responsive design for mobile devices
+- **Mobile compatibility is essential** - optimize for touch interfaces and small screens
+- Responsive design for gaming sessions on tablets and phones
 - Progressive enhancement approach
 
 ### Deployment
@@ -222,6 +224,6 @@ When working on this repository, always:
 1. Run tests before and after changes: `npm run test:run`
 2. Lint your code: `npm run lint`
 3. Check types: `npm run type-check`
-4. Test responsive design on multiple screen sizes
-5. Validate monster data changes thoroughly
+4. **Test responsive design on multiple screen sizes** - mobile compatibility is critical
+5. **Validate monster data changes thoroughly** - data quality must not degrade
 6. Follow existing code patterns and conventions
