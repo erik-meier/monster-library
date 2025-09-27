@@ -171,7 +171,6 @@ export const ABILITY_KEYWORDS = [
   'ranged',
   'strike',
   'weapon',
-  'spell',
   'area',
   'psionic',
   'charge'

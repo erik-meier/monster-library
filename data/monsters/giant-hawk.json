@@ -126,15 +126,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;0</strong>, slowed (save ends)"
+              "display": "4 corruption damage; <strong class=\"potency-value\">X&lt;0</strong>, slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 corruption damage; <strong class=\"potency-value\">P&lt;1</strong>, slowed (save ends)"
+              "display": "6 corruption damage; <strong class=\"potency-value\">X&lt;1</strong>, slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; <strong class=\"potency-value\">P&lt;2</strong>, restrained (save ends)"
+              "display": "9 corruption damage; <strong class=\"potency-value\">X&lt;2</strong>, restrained (save ends)"
             }
           ]
         },

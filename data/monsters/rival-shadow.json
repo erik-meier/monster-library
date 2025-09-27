@@ -48,7 +48,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the start of an encounter, the shadow chooses one creature within their line of effect. Both the shadow and the creature can add a [[/roll d3]] roll to power rolls they make against each other.</p>",
+          "value": "<p>At the start of an encounter, the shadow chooses one creature within their line of effect. Both the shadow and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
           "director": ""
         }
       }
@@ -263,7 +263,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
+          "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a <span class=\"roll-formula\">d3</span> and add it to the power roll.</p>",
           "after": ""
         },
         "spend": {

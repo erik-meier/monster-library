@@ -69,6 +69,19 @@ function processHealDirectives(text) {
 }
 
 /**
+ * Process roll directives like [[/roll d3]] or [[/r 2d6]]
+ */
+function processRollDirectives(text) {
+  if (!text) return text;
+
+  return text.replace(/\[\[\/(?:roll|r)\s+([^[\]]+?)\s*\]\]/g, (match, rollFormula) => {
+    // Clean up the roll formula (trim whitespace)
+    const cleanFormula = rollFormula.trim();
+    return `<span class="roll-formula">${cleanFormula}</span>`;
+  });
+}
+
+/**
  * Process @chr formula references
  */
 function processCharacteristicReferences(text, monster) {
@@ -124,7 +137,7 @@ function processPotencyText(text, potencyValue, characteristic, monster) {
   );
 
   // Get characteristic abbreviation 
-  let charAbbrev = 'A'; // Default fallback
+  let charAbbrev = 'X'; // Default fallback
   if (characteristic && characteristic !== 'none' && characteristic !== '') {
     charAbbrev = characteristic.charAt(0).toUpperCase();
   }
@@ -215,6 +228,9 @@ function processFoundryText(text, monster, options = {}) {
   // Process heal directives  
   processed = processHealDirectives(processed);
 
+  // Process roll directives
+  processed = processRollDirectives(processed);
+
   // Process potency placeholders and patterns (consolidated)
   if (options.potencyData) {
     processed = processPotencyText(processed, options.potencyData.value, options.potencyData.characteristic, monster);
@@ -255,7 +271,7 @@ function flattenPowerEffects(item, monster) {
   const tiers = [];
 
   // Find the primary characteristic by looking at all effect tiers
-  let primaryCharacteristic = null;
+  let primaryCharacteristic = item.system.power.roll.characteristics[0] || null;
   Object.values(effects).forEach(effect => {
     ['tier1', 'tier2', 'tier3'].forEach(tierKey => {
       const tierData = effect[effect.type]?.[tierKey];
@@ -425,6 +441,7 @@ function processMonsterText(monster) {
 export {
   processDamageDirectives,
   processHealDirectives,
+  processRollDirectives,
   processUuidReferences,
   processCharacteristicReferences,
   processPotencyText,

@@ -50,10 +50,6 @@
           </div>
         </div>
 
-        <div v-if="action.system.type == 'triggered'" class="action-trigger">
-          <strong>Trigger:</strong> {{ action.system.trigger }}
-        </div>
-
         <div v-if="action.system.type == 'triggered' || action.system.type == 'freeTriggered'" class="action-trigger">
           <strong>Trigger:</strong> {{ action.system.trigger }}
         </div>
