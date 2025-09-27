@@ -8,11 +8,25 @@
         <button type="button" class="btn btn-secondary" @click="$emit('cancel')">
           Cancel
         </button>
+        <button 
+          v-if="!isEditing" 
+          type="button" 
+          class="btn btn-outline" 
+          @click="showTemplates = !showTemplates"
+        >
+          <span class="btn-icon">📋</span>
+          {{ showTemplates ? 'Hide Templates' : 'Browse Templates' }}
+        </button>
         <button type="button" class="btn btn-primary" @click="handleSave" :disabled="!isValid">
           {{ isEditing ? 'Save Changes' : 'Create Monster' }}
         </button>
       </div>
     </header>
+
+    <!-- Templates Section -->
+    <div v-if="showTemplates && !isEditing" class="templates-section">
+      <MonsterTemplates @template-selected="handleTemplateSelected" />
+    </div>
 
     <nav class="form-nav">
       <!-- Progress Indicator -->
@@ -122,7 +136,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-import type { MonsterFormData, FormSection } from '@/types/monster-forms'
+import type { MonsterFormData, FormSection, MonsterItem } from '@/types/monster-forms'
 import BasicInfoForm from './BasicInfoForm.vue'
 import StatsForm from './StatsForm.vue'
 import CharacteristicsForm from './CharacteristicsForm.vue'
@@ -130,6 +144,32 @@ import DefensesForm from './DefensesForm.vue'
 import AbilitiesForm from './AbilitiesForm.vue'
 import KeywordsForm from './KeywordsForm.vue'
 import SourceInfoForm from './SourceInfoForm.vue'
+import MonsterTemplates from './MonsterTemplates.vue'
+
+interface TemplateMonster {
+  id: string
+  name: string
+  level: number
+  ev: number
+  role: string
+  organization: string
+  keywords: string[]
+  description: string
+  size: { value: number; letter: string }
+  speed: number
+  stamina: number
+  stability: number
+  freeStrike: number
+  characteristics: {
+    might: number
+    agility: number
+    reason: number
+    intuition: number
+    presence: number
+  }
+  movementTypes: string[]
+  items: MonsterItem[]
+}
 
 interface Props {
   modelValue: MonsterFormData
@@ -144,6 +184,9 @@ interface Emits {
 
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
+
+// Templates state
+const showTemplates = ref(false)
 
 const currentSection = ref('basic')
 
@@ -240,6 +283,33 @@ onMounted(() => {
 onUnmounted(() => {
   document.removeEventListener('keydown', handleKeydown)
 })
+
+// Template handling
+function handleTemplateSelected(template: TemplateMonster) {
+  // Apply template data to form
+  const updatedForm: MonsterFormData = {
+    ...props.modelValue,
+    name: `${template.name} (Custom)`,
+    level: template.level,
+    ev: template.ev,
+    role: template.role,
+    organization: template.organization,
+    keywords: template.keywords || [],
+    size: template.size || { value: 1, letter: 'M' },
+    speed: template.speed,
+    stamina: template.stamina,
+    stability: template.stability,
+    freeStrike: template.freeStrike,
+    characteristics: template.characteristics,
+    movementTypes: template.movementTypes || ['walk'],
+    immunities: {},
+    weaknesses: {},
+    items: template.items || []
+  }
+  
+  emit('update:modelValue', updatedForm)
+  showTemplates.value = false
+}
 </script>
 
 <style scoped>
@@ -303,6 +373,29 @@ onUnmounted(() => {
 
 .btn-secondary:hover {
   background-color: #5a6268;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #8b4513;
+  border: 1px solid #8b4513;
+}
+
+.btn-outline:hover {
+  background-color: #8b4513;
+  color: white;
+}
+
+.btn-icon {
+  margin-right: 0.5rem;
+}
+
+.templates-section {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
 }
 
 .form-nav {

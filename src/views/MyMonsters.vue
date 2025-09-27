@@ -164,31 +164,31 @@ import { useCustomMonstersStore } from '@/stores/customMonsters'
 import ExportImportPanel from '@/components/ExportImportPanel.vue'
 import MonsterTemplates from '@/components/MonsterTemplates.vue'
 import type { CustomMonster } from '@/stores/customMonsters'
+import type { MonsterItem } from '@/types/monster-forms'
 
 interface MonsterTemplate {
   id: string
   name: string
   level: number
+  ev: number
   role: string
   organization: string
   keywords: string[]
   description: string
-  baseStats: {
-    ev: number
-    size: { value: number; letter: string }
-    speed: number
-    stamina: number
-    stability: number
-    freeStrike: number
-    characteristics: {
-      might: number
-      agility: number
-      reason: number
-      intuition: number
-      presence: number
-    }
-    movementTypes: string[]
+  size: { value: number; letter: string }
+  speed: number
+  stamina: number
+  stability: number
+  freeStrike: number
+  characteristics: {
+    might: number
+    agility: number
+    reason: number
+    intuition: number
+    presence: number
   }
+  movementTypes: string[]
+  items: MonsterItem[]
 }
 
 const router = useRouter()
@@ -272,13 +272,20 @@ function startFromTemplate(template: MonsterTemplate) {
   const templateMonster = {
     name: template.name,
     level: template.level,
+    ev: template.ev,
     role: template.role,
     organization: template.organization,
     keywords: template.keywords,
-    ...template.baseStats,
+    size: template.size,
+    speed: template.speed,
+    stamina: template.stamina,
+    stability: template.stability,
+    freeStrike: template.freeStrike,
+    characteristics: template.characteristics,
+    movementTypes: template.movementTypes,
     immunities: {},
     weaknesses: {},
-    items: [] // Start with empty items - user can add their own
+    items: template.items || [] // Include abilities from stat blocks
   }
   
   // Store the template data in localStorage for the create page to pick up

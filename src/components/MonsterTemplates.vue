@@ -45,167 +45,118 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { getMonster } from '@/data/monsters.js'
+import type { MonsterItem } from '@/types/monster-forms'
 
-const templates = ref([
-  {
-    id: 'animal-template',
-    name: 'Animal',
-    level: 1,
-    role: 'Harrier',
-    organization: 'Elite',
-    keywords: ['animal'],
-    description: 'A basic animal template suitable for wildlife encounters. Features natural weapons and mobility.',
-    baseStats: {
-      ev: 12,
-      size: { value: 1, letter: 'M' },
-      speed: 6,
-      stamina: 60,
-      stability: 0,
-      freeStrike: 4,
-      characteristics: {
-        might: 0,
-        agility: 2,
-        reason: -2,
-        intuition: 1,
-        presence: -2
-      },
-      movementTypes: ['walk']
-    }
-  },
-  {
-    id: 'animal-swarm-template',
-    name: 'Animal Swarm',
-    level: 1,
-    role: 'Hexer',
-    organization: 'Elite',
-    keywords: ['animal', 'swarm'],
-    description: 'A swarm of small animals that can occupy other creatures\' spaces and impede movement.',
-    baseStats: {
-      ev: 12,
-      size: { value: 2, letter: 'M' },
-      speed: 5,
-      stamina: 40,
-      stability: 1,
-      freeStrike: 4,
-      characteristics: {
-        might: -2,
-        agility: 1,
-        reason: -3,
-        intuition: 2,
-        presence: -3
-      },
-      movementTypes: ['walk']
-    }
-  },
-  {
-    id: 'humanoid-warrior-template',
-    name: 'Humanoid Warrior',
-    level: 1,
-    role: 'Brute',
-    organization: 'Minion',
-    keywords: ['humanoid'],
-    description: 'A basic humanoid warrior template for guards, soldiers, and fighters.',
-    baseStats: {
-      ev: 3,
-      size: { value: 1, letter: 'M' },
-      speed: 5,
-      stamina: 15,
-      stability: 0,
-      freeStrike: 3,
-      characteristics: {
-        might: 2,
-        agility: 0,
-        reason: 0,
-        intuition: 0,
-        presence: 0
-      },
-      movementTypes: ['walk']
-    }
-  },
-  {
-    id: 'humanoid-spellcaster-template',
-    name: 'Humanoid Spellcaster',
-    level: 1,
-    role: 'Controller',
-    organization: 'Minion',
-    keywords: ['humanoid'],
-    description: 'A basic humanoid spellcaster template for mages, clerics, and other magic users.',
-    baseStats: {
-      ev: 3,
-      size: { value: 1, letter: 'M' },
-      speed: 5,
-      stamina: 12,
-      stability: 0,
-      freeStrike: 2,
-      characteristics: {
-        might: -1,
-        agility: 0,
-        reason: 2,
-        intuition: 1,
-        presence: 0
-      },
-      movementTypes: ['walk']
-    }
-  },
-  {
-    id: 'undead-skeleton-template',
-    name: 'Undead Skeleton',
-    level: 1,
-    role: 'Artillery',
-    organization: 'Horde',
-    keywords: ['undead'],
-    description: 'A basic undead skeleton template for ranged attackers and support monsters.',
-    baseStats: {
-      ev: 3,
-      size: { value: 1, letter: 'M' },
-      speed: 5,
-      stamina: 15,
-      stability: 0,
-      freeStrike: 3,
-      characteristics: {
-        might: 0,
-        agility: 1,
-        reason: -2,
-        intuition: 0,
-        presence: -2
-      },
-      movementTypes: ['walk']
-    }
-  },
-  {
-    id: 'elemental-template',
-    name: 'Elemental',
-    level: 1,
-    role: 'Hexer',
-    organization: 'Minion',
-    keywords: ['elemental'],
-    description: 'A basic elemental template for creatures of pure elemental energy.',
-    baseStats: {
-      ev: 3,
-      size: { value: 1, letter: 'M' },
-      speed: 5,
-      stamina: 15,
-      stability: 0,
-      freeStrike: 3,
-      characteristics: {
-        might: 0,
-        agility: 0,
-        reason: -1,
-        intuition: 2,
-        presence: -1
-      },
-      movementTypes: ['walk']
+// Template monster IDs from actual monster data
+const templateIds = [
+  'animal',           // Basic animal template
+  'animal-swarm',     // Swarm template  
+  'big-animal-a',     // Large animal template
+  'big-animal-b',     // Larger animal template
+  'predator-a',       // Predator template
+  'predator-b'        // Stronger predator template
+]
+
+interface TemplateMonster {
+  id: string
+  name: string
+  level: number
+  ev: number
+  role: string
+  organization: string
+  keywords: string[]
+  description: string
+  size: { value: number; letter: string }
+  speed: number
+  stamina: number
+  stability: number
+  freeStrike: number
+  characteristics: {
+    might: number
+    agility: number
+    reason: number
+    intuition: number
+    presence: number
+  }
+  movementTypes: string[]
+  items: MonsterItem[]
+}
+
+const templates = ref<TemplateMonster[]>([])
+
+// Load templates from actual monster data on mount
+onMounted(() => {
+  const loadedTemplates: TemplateMonster[] = []
+  
+  for (const templateId of templateIds) {
+    try {
+      const monsterData = getMonster(templateId)
+      if (monsterData) {
+        // Generate a description based on the monster's properties
+        const description = generateDescription(monsterData)
+        
+        loadedTemplates.push({
+          id: monsterData.id,
+          name: monsterData.name,
+          level: monsterData.level,
+          ev: monsterData.ev,
+          role: monsterData.role,
+          organization: monsterData.organization,
+          keywords: monsterData.keywords || [],
+          description,
+          size: monsterData.size,
+          speed: monsterData.speed,
+          stamina: monsterData.stamina,
+          stability: monsterData.stability,
+          freeStrike: monsterData.freeStrike,
+          characteristics: monsterData.characteristics,
+          movementTypes: monsterData.movementTypes || ['walk'],
+          items: monsterData.items || []
+        })
+      }
+    } catch (error) {
+      console.warn(`Failed to load template ${templateId}:`, error)
     }
   }
-])
+  
+  templates.value = loadedTemplates
+})
+
+function generateDescription(monster: { 
+  role?: string
+  keywords?: string[]
+  level?: number
+  organization?: string 
+  name?: string
+}): string {
+  const role = monster.role ? monster.role.toLowerCase() : 'creature'
+  const keywords = monster.keywords?.join(', ') || 'generic'
+  const level = monster.level || 1
+  const organization = monster.organization?.toLowerCase() || 'standard'
+  
+  // Generate description based on monster properties
+  if (monster.keywords?.includes('animal')) {
+    if (monster.keywords?.includes('swarm')) {
+      return `A ${organization} swarm of small animals that can occupy other creatures' spaces and create difficult terrain.`
+    }
+    return `A ${organization} ${role} suitable for wildlife encounters. Features natural abilities and mobility.`
+  } else if (monster.keywords?.includes('predator')) {
+    return `A powerful ${organization} predator with enhanced combat abilities for challenging encounters.`
+  } else if (monster.name?.toLowerCase().includes('big')) {
+    return `A large ${organization} creature suitable for mount or major encounter roles.`
+  }
+  
+  return `A level ${level} ${organization} ${role} template featuring ${keywords} traits.`
+}
 
 // Emit event when template is selected
 const emit = defineEmits<{
-  templateSelected: [template: typeof templates.value[0]]
+  templateSelected: [template: TemplateMonster]
 }>()
 
-function selectTemplate(template: typeof templates.value[0]) {
+function selectTemplate(template: TemplateMonster) {
   emit('templateSelected', template)
 }
 </script>
