@@ -136,7 +136,7 @@
     <div class="divider"></div>
 
     <!-- Secondary Stats -->
-    <div class="secondary-stats">
+    <div v-if="!editMode" class="secondary-stats">
       <span class="stat-item">
         <strong>Immunity</strong> {{ formatImmunity(monster.immunities) }}
       </span>
@@ -148,6 +148,103 @@
       <span class="stat-item">
         <strong>Movement</strong> {{ formatMovement(monster.movementTypes) }}
       </span>
+    </div>
+
+    <!-- Editable Defenses -->
+    <div v-else class="defenses-edit">
+      <!-- Immunities Edit -->
+      <div class="defense-edit-section">
+        <h4>Immunities</h4>
+        <div class="defense-entries">
+          <div 
+            v-for="(immunity, index) in immunityEntries" 
+            :key="`immunity-${index}`"
+            class="defense-entry"
+          >
+            <select 
+              v-model="immunity.type" 
+              @change="updateDefenses"
+              class="defense-type-select"
+            >
+              <option value="">Select type...</option>
+              <option v-for="type in DAMAGE_TYPES" :key="type" :value="type">
+                {{ capitalize(type) }}
+              </option>
+            </select>
+            <input 
+              v-model.number="immunity.value" 
+              @blur="updateDefenses"
+              type="number" 
+              min="0" 
+              class="defense-value-input" 
+              placeholder="Value"
+            />
+            <button 
+              @click="removeImmunity(index)"
+              class="btn-remove-small"
+              type="button"
+            >
+              ×
+            </button>
+          </div>
+          <button @click="addImmunity" class="btn-add-small" type="button">+ Add Immunity</button>
+        </div>
+      </div>
+
+      <!-- Weaknesses Edit -->
+      <div class="defense-edit-section">
+        <h4>Weaknesses</h4>
+        <div class="defense-entries">
+          <div 
+            v-for="(weakness, index) in weaknessEntries" 
+            :key="`weakness-${index}`"
+            class="defense-entry"
+          >
+            <select 
+              v-model="weakness.type" 
+              @change="updateDefenses"
+              class="defense-type-select"
+            >
+              <option value="">Select type...</option>
+              <option v-for="type in DAMAGE_TYPES" :key="type" :value="type">
+                {{ capitalize(type) }}
+              </option>
+            </select>
+            <input 
+              v-model.number="weakness.value" 
+              @blur="updateDefenses"
+              type="number" 
+              min="0" 
+              class="defense-value-input" 
+              placeholder="Value"
+            />
+            <button 
+              @click="removeWeakness(index)"
+              class="btn-remove-small"
+              type="button"
+            >
+              ×
+            </button>
+          </div>
+          <button @click="addWeakness" class="btn-add-small" type="button">+ Add Weakness</button>
+        </div>
+      </div>
+
+      <!-- Movement Types Edit -->
+      <div class="defense-edit-section">
+        <h4>Movement Types</h4>
+        <div class="movement-types-edit">
+          <label v-for="moveType in MOVEMENT_TYPES" :key="moveType" class="movement-checkbox">
+            <input 
+              type="checkbox" 
+              :value="moveType" 
+              :checked="editableData.movementTypes && editableData.movementTypes.includes(moveType)"
+              @change="updateMovementTypes"
+            />
+            <span>{{ capitalize(moveType) }}</span>
+          </label>
+        </div>
+      </div>
     </div>
 
     <div class="divider"></div>
@@ -177,6 +274,7 @@
 <script setup>
 import { ref, watch } from 'vue'
 import ActionsList from './ActionsList.vue'
+import { DAMAGE_TYPES, MOVEMENT_TYPES } from '@/types/monster-forms'
 
 const props = defineProps({
   monster: {
@@ -196,6 +294,10 @@ const characteristicOrder = ['might', 'agility', 'reason', 'intuition', 'presenc
 // Editable data
 const editableData = ref({})
 const originalData = ref({})
+
+// Reactive data for defenses
+const immunityEntries = ref([])
+const weaknessEntries = ref([])
 
 // Initialize editable data
 const initializeEditableData = () => {
@@ -219,11 +321,25 @@ const initializeEditableData = () => {
       reason: props.monster.characteristics?.reason || 0,
       intuition: props.monster.characteristics?.intuition || 0,
       presence: props.monster.characteristics?.presence || 0
-    }
+    },
+    immunities: props.monster.immunities || {},
+    weaknesses: props.monster.weaknesses || {},
+    movementTypes: props.monster.movementTypes || ['walk']
   }
 
   editableData.value = data
   originalData.value = JSON.parse(JSON.stringify(data))
+  
+  // Initialize defense entries
+  immunityEntries.value = Object.entries(data.immunities || {}).map(([type, value]) => ({ type, value }))
+  if (immunityEntries.value.length === 0) {
+    immunityEntries.value.push({ type: '', value: 0 })
+  }
+  
+  weaknessEntries.value = Object.entries(data.weaknesses || {}).map(([type, value]) => ({ type, value }))
+  if (weaknessEntries.value.length === 0) {
+    weaknessEntries.value.push({ type: '', value: 0 })
+  }
 }
 
 // Watch for monster changes
@@ -296,6 +412,73 @@ const getMaxCharacteristic = () => {
   if (!props.monster.characteristics) return 0
   const values = Object.values(props.monster.characteristics)
   return values.length > 0 ? Math.max(...values) : 0
+}
+
+// Defense editing methods
+const capitalize = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+}
+
+const addImmunity = () => {
+  immunityEntries.value.push({ type: '', value: 0 })
+}
+
+const removeImmunity = (index) => {
+  immunityEntries.value.splice(index, 1)
+  updateDefenses()
+}
+
+const addWeakness = () => {
+  weaknessEntries.value.push({ type: '', value: 0 })
+}
+
+const removeWeakness = (index) => {
+  weaknessEntries.value.splice(index, 1)
+  updateDefenses()
+}
+
+const updateDefenses = () => {
+  // Update immunities
+  const immunities = {}
+  immunityEntries.value.forEach(entry => {
+    if (entry.type && entry.value > 0) {
+      immunities[entry.type] = entry.value
+    }
+  })
+  editableData.value.immunities = immunities
+
+  // Update weaknesses  
+  const weaknesses = {}
+  weaknessEntries.value.forEach(entry => {
+    if (entry.type && entry.value > 0) {
+      weaknesses[entry.type] = entry.value
+    }
+  })
+  editableData.value.weaknesses = weaknesses
+
+  updateField('defenses')
+}
+
+const updateMovementTypes = (event) => {
+  const value = event.target.value
+  const isChecked = event.target.checked
+  
+  if (!editableData.value.movementTypes) {
+    editableData.value.movementTypes = []
+  }
+  
+  if (isChecked) {
+    if (!editableData.value.movementTypes.includes(value)) {
+      editableData.value.movementTypes.push(value)
+    }
+  } else {
+    const index = editableData.value.movementTypes.indexOf(value)
+    if (index > -1) {
+      editableData.value.movementTypes.splice(index, 1)
+    }
+  }
+  
+  updateField('movementTypes')
 }
 </script>
 
@@ -527,6 +710,127 @@ const getMaxCharacteristic = () => {
   color: #8b4513;
   font-weight: bold;
   margin: 0 0.25rem;
+}
+
+/* Editable defenses */
+.defenses-edit {
+  background: white;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.defense-edit-section {
+  margin-bottom: 1rem;
+}
+
+.defense-edit-section:last-child {
+  margin-bottom: 0;
+}
+
+.defense-edit-section h4 {
+  color: #8b4513;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+
+.defense-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.defense-entry {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.defense-type-select {
+  flex: 2;
+  padding: 0.25rem;
+  border: 1px solid #007bff;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  background: white;
+}
+
+.defense-value-input {
+  flex: 1;
+  max-width: 60px;
+  padding: 0.25rem;
+  border: 1px solid #007bff;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  text-align: center;
+  background: white;
+}
+
+.btn-remove-small,
+.btn-add-small {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-remove-small {
+  background: #dc3545;
+  color: white;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.btn-remove-small:hover {
+  background: #c82333;
+}
+
+.btn-add-small {
+  background: #28a745;
+  color: white;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.btn-add-small:hover {
+  background: #1e7e34;
+}
+
+.movement-types-edit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.movement-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 3px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.movement-checkbox:hover {
+  background: #f8f9fa;
+  border-color: #007bff;
+}
+
+.movement-checkbox input[type="checkbox"] {
+  margin: 0;
 }
 
 .divider {

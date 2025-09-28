@@ -24,6 +24,10 @@
           {{ loadingRandom ? 'Loading...' : 'Random Monster' }}
         </button>
         
+        <button class="btn btn-primary" @click="exportToPDF" :disabled="exportingPDF || editMode">
+          {{ exportingPDF ? 'Exporting...' : '📄 Export PDF' }}
+        </button>
+        
         <!-- Edit Mode Controls -->
         <template v-if="canEdit">
           <button 
@@ -63,6 +67,7 @@
 import MonsterStatBlock from '@/components/MonsterStatBlock.vue'
 import MonsterStatBlockEditable from '@/components/MonsterStatBlockEditable.vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
+import { exportMonsterToPDF } from '@/utils/pdfExport'
 
 export default {
   name: 'MonsterView',
@@ -89,6 +94,7 @@ export default {
       editMode: false,
       autoSaving: false,
       lastSaved: null,
+      exportingPDF: false,
     }
   },
   computed: {
@@ -316,6 +322,20 @@ export default {
     
     cancelEdit() {
       this.exitEditMode()
+    },
+
+    async exportToPDF() {
+      if (!this.monster) return
+      
+      this.exportingPDF = true
+      try {
+        await exportMonsterToPDF(this.monster)
+      } catch (error) {
+        console.error('Failed to export PDF:', error)
+        alert('Failed to export PDF. Please try again.')
+      } finally {
+        this.exportingPDF = false
+      }
     }
   }
 }
