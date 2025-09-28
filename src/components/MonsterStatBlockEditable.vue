@@ -163,7 +163,7 @@
           >
             <select 
               v-model="immunity.type" 
-              @change="updateDefenses"
+              @change="debouncedUpdateDefenses"
               class="defense-type-select"
             >
               <option value="">Select type...</option>
@@ -173,7 +173,7 @@
             </select>
             <input 
               v-model.number="immunity.value" 
-              @blur="updateDefenses"
+              @input="debouncedUpdateDefenses"
               type="number" 
               min="0" 
               class="defense-value-input" 
@@ -202,7 +202,7 @@
           >
             <select 
               v-model="weakness.type" 
-              @change="updateDefenses"
+              @change="debouncedUpdateDefenses"
               class="defense-type-select"
             >
               <option value="">Select type...</option>
@@ -212,7 +212,7 @@
             </select>
             <input 
               v-model.number="weakness.value" 
-              @blur="updateDefenses"
+              @input="debouncedUpdateDefenses"
               type="number" 
               min="0" 
               class="defense-value-input" 
@@ -249,9 +249,72 @@
 
     <div class="divider"></div>
 
-    <!-- Abilities (read-only for now) -->
-    <ActionsList v-if="monster.items || monster.abilities" :title="'Abilities'"
-      :actions="monster.items || monster.abilities || []" :chr="String(getMaxCharacteristic())" :monster="monster" />
+    <!-- Abilities -->
+    <div v-if="!editMode">
+      <ActionsList v-if="monster.items || monster.abilities" :title="'Abilities'"
+        :actions="monster.items || monster.abilities || []" :chr="String(getMaxCharacteristic())" :monster="monster" />
+    </div>
+    
+    <!-- Editable Abilities -->
+    <div v-else class="abilities-edit">
+      <div class="abilities-edit-header">
+        <h4>Abilities & Features</h4>
+        <button @click="addAbility" class="btn-add-small" type="button">+ Add Ability</button>
+      </div>
+      
+      <div v-if="editableData.items && editableData.items.length > 0" class="abilities-list-edit">
+        <div 
+          v-for="(item, index) in editableData.items" 
+          :key="`ability-${index}`"
+          class="ability-edit-item"
+        >
+          <div class="ability-edit-header">
+            <div class="ability-edit-name">
+              <input 
+                v-model="item.name" 
+                @input="debouncedUpdateField"
+                placeholder="Ability name"
+                class="ability-name-input"
+              />
+            </div>
+            <div class="ability-edit-actions">
+              <button 
+                @click="editAbility(index)"
+                class="btn-edit-small"
+                type="button"
+                title="Edit ability details"
+              >
+                ✏️
+              </button>
+              <button 
+                @click="removeAbility(index)"
+                class="btn-remove-small"
+                type="button"
+                title="Remove ability"
+              >
+                ×
+              </button>
+            </div>
+          </div>
+          
+          <!-- Simple preview of ability details -->
+          <div class="ability-edit-preview">
+            <div v-if="item.system?.description?.value" class="ability-description" v-html="item.system.description.value"></div>
+            <div v-if="item.system?.power" class="ability-power">
+              <span v-if="item.system.power.roll?.formula">{{ item.system.power.roll.formula }}</span>
+              <span v-if="item.system.type && item.system.type !== 'none'"> • {{ item.system.type }} action</span>
+            </div>
+            <div v-if="item.system?.keywords && item.system.keywords.length > 0" class="ability-keywords">
+              {{ item.system.keywords.join(', ') }}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div v-else class="no-abilities">
+        <p>No abilities added yet. Click "Add Ability" to create one.</p>
+      </div>
+    </div>
 
     <!-- Source Information -->
     <div v-if="monster.source" class="source-info">
@@ -324,7 +387,8 @@ const initializeEditableData = () => {
     },
     immunities: props.monster.immunities || {},
     weaknesses: props.monster.weaknesses || {},
-    movementTypes: props.monster.movementTypes || ['walk']
+    movementTypes: props.monster.movementTypes || ['walk'],
+    items: props.monster.items || props.monster.abilities || []
   }
 
   editableData.value = data
@@ -479,6 +543,65 @@ const updateMovementTypes = (event) => {
   }
   
   updateField('movementTypes')
+}
+
+// Ability editing methods
+const addAbility = () => {
+  if (!editableData.value.items) {
+    editableData.value.items = []
+  }
+  
+  const newAbility = {
+    name: '',
+    type: 'ability',
+    system: {
+      category: 'ability',
+      type: 'main',
+      keywords: [],
+      description: {
+        value: ''
+      },
+      power: null
+    }
+  }
+  
+  editableData.value.items.push(newAbility)
+  updateField('abilities')
+}
+
+const removeAbility = (index) => {
+  if (editableData.value.items) {
+    editableData.value.items.splice(index, 1)
+    updateField('abilities')
+  }
+}
+
+const editAbility = (index) => {
+  // For now, just focus on the name input - full editing would require AbilityEditor component
+  // This is a placeholder for more advanced ability editing
+  alert('Advanced ability editing coming soon! For now you can edit the name and basic details in the form.')
+}
+
+// Debounced version of updateField for general use
+let fieldUpdateTimeout = null
+const debouncedUpdateField = () => {
+  if (fieldUpdateTimeout) {
+    clearTimeout(fieldUpdateTimeout)
+  }
+  fieldUpdateTimeout = setTimeout(() => {
+    updateField('abilities')
+  }, 500)
+}
+
+// Debounced version of updateDefenses to prevent auto-save interference
+let defensesUpdateTimeout = null
+const debouncedUpdateDefenses = () => {
+  if (defensesUpdateTimeout) {
+    clearTimeout(defensesUpdateTimeout)
+  }
+  defensesUpdateTimeout = setTimeout(() => {
+    updateDefenses()
+  }, 500) // Wait 500ms after user stops typing/selecting
 }
 </script>
 
@@ -992,5 +1115,109 @@ const updateMovementTypes = (event) => {
     gap: 0.5rem;
     text-align: center;
   }
+}
+
+/* Abilities editing styles */
+.abilities-edit {
+  margin: 1rem 0;
+}
+
+.abilities-edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.abilities-edit-header h4 {
+  margin: 0;
+  color: #8b4513;
+}
+
+.abilities-list-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ability-edit-item {
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 1rem;
+  background: #f8f9fa;
+}
+
+.ability-edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.ability-edit-name {
+  flex: 1;
+}
+
+.ability-name-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.ability-edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ability-edit-preview {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.ability-description {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.ability-power {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.ability-keywords {
+  font-size: 0.8rem;
+  color: #999;
+  font-style: italic;
+}
+
+.no-abilities {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 2rem;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  background: #f8f9fa;
+}
+
+.btn-edit-small {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 3px;
+  background: #17a2b8;
+  color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.btn-edit-small:hover {
+  background: #138496;
 }
 </style>

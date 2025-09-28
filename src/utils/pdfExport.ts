@@ -94,24 +94,26 @@ export async function exportMonsterToPDF(monster: Monster, options: PDFExportOpt
   
   let yPosition = margin
 
-  // Helper functions
+  // Helper functions with Cambria font support and better formatting
   const addText = (text: string, x: number, y: number, options?: { 
     fontSize?: number
     fontStyle?: 'normal' | 'bold' | 'italic'
     textColor?: [number, number, number]
     align?: 'left' | 'center' | 'right'
     maxWidth?: number
+    font?: string
   }) => {
     const {
       fontSize = 10,
       fontStyle = 'normal',
       textColor = [0, 0, 0] as [number, number, number],
       align = 'left',
-      maxWidth
+      maxWidth,
+      font = 'times' // Using times as it's closer to Cambria than helvetica
     } = options || {}
     
     doc.setFontSize(fontSize)
-    doc.setFont('helvetica', fontStyle)
+    doc.setFont(font, fontStyle)
     doc.setTextColor(textColor[0], textColor[1], textColor[2])
     
     if (maxWidth) {
@@ -124,7 +126,7 @@ export async function exportMonsterToPDF(monster: Monster, options: PDFExportOpt
     }
   }
 
-  const addLine = (x1: number, y1: number, x2: number, y2: number, color: [number, number, number] = [0, 0, 0], width = 0.5) => {
+  const addLine = (x1: number, y1: number, x2: number, y2: number, color: [number, number, number] = [0, 0, 0], width = 1) => {
     doc.setDrawColor(color[0], color[1], color[2])
     doc.setLineWidth(width)
     doc.line(x1, y1, x2, y2)
@@ -147,48 +149,65 @@ export async function exportMonsterToPDF(monster: Monster, options: PDFExportOpt
     doc.rect(x, y, width, height, 'S')
   }
 
-  // Title and main info
-  yPosition += addText(monster.name.toUpperCase(), pageWidth / 2, yPosition, {
-    fontSize: 18,
-    fontStyle: 'bold',
-    textColor: [139, 69, 19], // Brown color for Draw Steel theme
-    align: 'center'
-  })
+  // Helper to strip HTML and clean text for PDF
+  const stripHtml = (html: string) => {
+    return html
+      .replace(/<[^>]*>/g, '')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&')
+      .trim()
+  }
 
-  yPosition += 5
+  // Title section with gray background
+  const titleHeight = 20
+  addRect(margin, yPosition, contentWidth, titleHeight, {
+    fillColor: [240, 240, 240] // Light gray background
+  })
+  
+  yPosition += 6
+  yPosition += addText(monster.name.toUpperCase(), pageWidth / 2, yPosition, {
+    fontSize: 16,
+    fontStyle: 'bold',
+    textColor: [0, 0, 0],
+    align: 'center',
+    font: 'times'
+  })
   
   // Monster level/role/organization
   const roleText = `Level ${monster.level} ${monster.organization}${monster.role ? ' ' + monster.role : ''}`
   yPosition += addText(roleText, pageWidth / 2, yPosition, {
-    fontSize: 12,
-    fontStyle: 'italic',
-    align: 'center'
+    fontSize: 11,
+    align: 'center',
+    font: 'times'
   })
 
   // Keywords
   if (monster.keywords && monster.keywords.length > 0) {
-    yPosition += 3
     const keywordsText = monster.keywords.map((k: string) => k.charAt(0).toUpperCase() + k.slice(1)).join(', ')
     yPosition += addText(keywordsText, pageWidth / 2, yPosition, {
-      fontSize: 10,
+      fontSize: 9,
       fontStyle: 'italic',
-      align: 'center'
+      align: 'center',
+      font: 'times'
     })
   }
 
   // EV
-  yPosition += 3
   yPosition += addText(`EV ${monster.ev}`, pageWidth / 2, yPosition, {
-    fontSize: 11,
+    fontSize: 10,
     fontStyle: 'bold',
-    align: 'center'
+    align: 'center',
+    font: 'times'
   })
 
   yPosition += 8
-  addLine(margin, yPosition, pageWidth - margin, yPosition, [139, 69, 19], 1)
+  // Black horizontal line
+  addLine(margin, yPosition, pageWidth - margin, yPosition, [0, 0, 0], 1)
   yPosition += 6
 
-  // Stats section
+  // Stats section - more condensed
   const stats = [
     { label: 'Size', value: `${monster.size?.value || 1}${monster.size?.letter || ''}` },
     { label: 'Speed', value: monster.speed?.toString() || '6' },
@@ -197,36 +216,20 @@ export async function exportMonsterToPDF(monster: Monster, options: PDFExportOpt
     { label: 'Free Strike', value: monster.freeStrike?.toString() || '2' }
   ]
 
-  // Stats header
-  const statWidth = contentWidth / 5
-  let xPos = margin
-  
-  stats.forEach(stat => {
-    addText(stat.label, xPos + (statWidth / 2), yPosition, {
-      fontSize: 9,
-      fontStyle: 'bold',
-      align: 'center'
-    })
-    xPos += statWidth
+  // Condensed stats in a single line
+  const statTexts = stats.map(stat => `${stat.label} ${stat.value}`).join(' • ')
+  yPosition += addText(statTexts, pageWidth / 2, yPosition, {
+    fontSize: 9,
+    align: 'center',
+    font: 'times'
   })
 
-  yPosition += 5
-  
-  // Stats values
-  xPos = margin
-  stats.forEach(stat => {
-    addText(stat.value, xPos + (statWidth / 2), yPosition, {
-      fontSize: 11,
-      align: 'center'
-    })
-    xPos += statWidth
-  })
-
-  yPosition += 10
-  addLine(margin, yPosition, pageWidth - margin, yPosition, [139, 69, 19], 1)
+  yPosition += 6
+  // Black horizontal line
+  addLine(margin, yPosition, pageWidth - margin, yPosition, [0, 0, 0], 1)
   yPosition += 6
 
-  // Characteristics
+  // Characteristics - more condensed
   if (monster.characteristics) {
     const chars = [
       { label: 'Might', value: monster.characteristics.might >= 0 ? `+${monster.characteristics.might}` : monster.characteristics.might.toString() },
@@ -236,33 +239,20 @@ export async function exportMonsterToPDF(monster: Monster, options: PDFExportOpt
       { label: 'Presence', value: monster.characteristics.presence >= 0 ? `+${monster.characteristics.presence}` : monster.characteristics.presence.toString() }
     ]
 
-    const charWidth = contentWidth / 5
-    xPos = margin
-
-    chars.forEach(char => {
-      // Label
-      addText(char.label, xPos + (charWidth / 2), yPosition, {
-        fontSize: 9,
-        fontStyle: 'bold',
-        align: 'center'
-      })
-      
-      // Value
-      addText(char.value, xPos + (charWidth / 2), yPosition + 4, {
-        fontSize: 11,
-        align: 'center'
-      })
-      
-      xPos += charWidth
+    const charText = chars.map(char => `${char.label} ${char.value}`).join(' • ')
+    yPosition += addText(charText, pageWidth / 2, yPosition, {
+      fontSize: 9,
+      align: 'center',
+      font: 'times'
     })
-
-    yPosition += 15
   }
 
-  addLine(margin, yPosition, pageWidth - margin, yPosition, [139, 69, 19], 1)
+  yPosition += 6
+  // Black horizontal line
+  addLine(margin, yPosition, pageWidth - margin, yPosition, [0, 0, 0], 1)
   yPosition += 6
 
-  // Secondary stats (Immunity, Weakness, Movement)
+  // Secondary stats (Immunity, Weakness, Movement) - more condensed
   const formatImmunity = (immunities?: Record<string, number>) => {
     if (!immunities || Object.keys(immunities).length === 0) return '—'
     return Object.entries(immunities)
@@ -286,77 +276,96 @@ export async function exportMonsterToPDF(monster: Monster, options: PDFExportOpt
     return 'walk'
   }
 
-  const secondaryStats = [
-    { label: 'Immunity', value: formatImmunity(monster.immunities) },
-    { label: 'Weakness', value: formatWeakness(monster.weaknesses) },
-    { label: 'Movement', value: formatMovement(monster.movementTypes) }
-  ]
-
-  secondaryStats.forEach(stat => {
-    const text = `${stat.label} ${stat.value}`
-    yPosition += addText(text, pageWidth / 2, yPosition, {
-      fontSize: 10,
-      align: 'center',
-      maxWidth: contentWidth - 20
-    })
-    yPosition += 2
+  const secondaryText = `Immunity ${formatImmunity(monster.immunities)} • Weakness ${formatWeakness(monster.weaknesses)} • Movement ${formatMovement(monster.movementTypes)}`
+  yPosition += addText(secondaryText, pageWidth / 2, yPosition, {
+    fontSize: 9,
+    align: 'center',
+    maxWidth: contentWidth - 20,
+    font: 'times'
   })
 
-  yPosition += 5
-  addLine(margin, yPosition, pageWidth - margin, yPosition, [139, 69, 19], 1)
+  yPosition += 6
+  // Black horizontal line
+  addLine(margin, yPosition, pageWidth - margin, yPosition, [0, 0, 0], 1)
   yPosition += 8
 
-  // Abilities
+  // Abilities - formatted like official stat blocks
   if (monster.items && monster.items.length > 0) {
+    // Determine if we need two columns based on content
+    const useColumns = monster.items.length > 3 && yPosition < pageHeight / 2
+    const columnWidth = useColumns ? (contentWidth - 10) / 2 : contentWidth
+    let leftColumnY = yPosition
+    let rightColumnY = yPosition
+    let currentColumn = 0 // 0 = left/single, 1 = right
+
     monster.items.forEach((item: MonsterItem, index: number) => {
-      if (yPosition > pageHeight - 40) {
+      const currentY = currentColumn === 0 ? leftColumnY : rightColumnY
+      const currentX = margin + (currentColumn === 0 ? 0 : columnWidth + 10)
+
+      if (currentY > pageHeight - 40) {
         doc.addPage()
-        yPosition = margin
+        leftColumnY = margin
+        rightColumnY = margin
+        currentColumn = 0
       }
 
-      // Ability name and type
+      // Ability name and type - only show SIGNATURE, not HEROIC
       let abilityTitle = item.name
       if (item.system?.category === 'signature') {
         abilityTitle += ' SIGNATURE'
-      } else if (item.system?.category === 'heroic') {
-        abilityTitle += ' HEROIC'
       }
-
-      if (item.system?.resource && item.system.resource > 0) {
-        abilityTitle += ` ${item.system.resource} Malice`
-      }
-
-      yPosition += addText(abilityTitle, margin, yPosition, {
-        fontSize: 12,
+      
+      // Don't show malice cost for now (resource field handling is complex)
+      
+      const titleHeight = addText(abilityTitle, currentX, currentColumn === 0 ? leftColumnY : rightColumnY, {
+        fontSize: 11,
         fontStyle: 'bold',
-        textColor: [139, 69, 19]
+        textColor: [0, 0, 0],
+        font: 'times'
       })
+
+      if (currentColumn === 0) {
+        leftColumnY += titleHeight + 2
+      } else {
+        rightColumnY += titleHeight + 2
+      }
 
       // Power roll and action type
       if (item.system?.power?.roll) {
-        yPosition += 2
         let actionInfo = item.system.power.roll.formula || '2d10'
         if (item.system.type && item.system.type !== 'none') {
           actionInfo += ` • ${item.system.type} action`
         }
-        yPosition += addText(actionInfo, margin, yPosition, {
-          fontSize: 10,
-          fontStyle: 'italic'
+        const actionHeight = addText(actionInfo, currentX, currentColumn === 0 ? leftColumnY : rightColumnY, {
+          fontSize: 9,
+          fontStyle: 'italic',
+          font: 'times'
         })
+        
+        if (currentColumn === 0) {
+          leftColumnY += actionHeight + 2
+        } else {
+          rightColumnY += actionHeight + 2
+        }
       }
 
       // Keywords
       if (item.system?.keywords && item.system.keywords.length > 0) {
-        yPosition += 2
-        yPosition += addText(item.system.keywords.join(', '), margin, yPosition, {
-          fontSize: 9,
-          fontStyle: 'italic'
+        const keywordHeight = addText(item.system.keywords.join(', '), currentX, currentColumn === 0 ? leftColumnY : rightColumnY, {
+          fontSize: 8,
+          fontStyle: 'italic',
+          font: 'times'
         })
+        
+        if (currentColumn === 0) {
+          leftColumnY += keywordHeight + 2
+        } else {
+          rightColumnY += keywordHeight + 2
+        }
       }
 
       // Distance and target
       if (item.system?.distance || item.system?.target) {
-        yPosition += 3
         let rangeText = ''
         
         if (item.system.distance) {
@@ -382,78 +391,135 @@ export async function exportMonsterToPDF(monster: Monster, options: PDFExportOpt
         }
 
         if (rangeText) {
-          yPosition += addText(rangeText, margin + 5, yPosition, {
-            fontSize: 9
+          const rangeHeight = addText(rangeText, currentX, currentColumn === 0 ? leftColumnY : rightColumnY, {
+            fontSize: 8,
+            font: 'times'
           })
+          
+          if (currentColumn === 0) {
+            leftColumnY += rangeHeight + 2
+          } else {
+            rightColumnY += rangeHeight + 2
+          }
         }
       }
 
-      // Power tiers
+      // Power tiers - formatted according to dice roll like 1: ≤11, 2: 12-16, 3: 17+
       if (item.system?.power?.tiers && item.system.power.tiers.length > 0) {
-        yPosition += 4
         item.system.power.tiers.forEach((tier: { tier: number; display: string }) => {
-          yPosition += addText(`${tier.tier}: ${tier.display}`, margin + 5, yPosition, {
-            fontSize: 9,
-            maxWidth: contentWidth - 10
+          let tierLabel = `${tier.tier}:`
+          
+          // Format tier number to match stat block format
+          if (tier.tier === 1) tierLabel = '≤11:'
+          else if (tier.tier === 2) tierLabel = '12-16:'
+          else if (tier.tier === 3) tierLabel = '17+:'
+          
+          const tierText = `${tierLabel} ${stripHtml(tier.display)}`
+          const tierHeight = addText(tierText, currentX, currentColumn === 0 ? leftColumnY : rightColumnY, {
+            fontSize: 8,
+            maxWidth: columnWidth,
+            font: 'times'
           })
-          yPosition += 1
+          
+          if (currentColumn === 0) {
+            leftColumnY += tierHeight + 1
+          } else {
+            rightColumnY += tierHeight + 1
+          }
         })
       }
 
       // Effects
       if (item.system?.effect?.before) {
-        yPosition += 3
-        yPosition += addText(`Effect: ${item.system.effect.before}`, margin + 5, yPosition, {
-          fontSize: 9,
-          maxWidth: contentWidth - 10
+        const effectText = `Effect: ${stripHtml(item.system.effect.before)}`
+        const effectHeight = addText(effectText, currentX, currentColumn === 0 ? leftColumnY : rightColumnY, {
+          fontSize: 8,
+          maxWidth: columnWidth,
+          font: 'times'
         })
+        
+        if (currentColumn === 0) {
+          leftColumnY += effectHeight + 2
+        } else {
+          rightColumnY += effectHeight + 2
+        }
       }
 
       if (item.system?.effect?.after) {
-        yPosition += 3
-        yPosition += addText(`After: ${item.system.effect.after}`, margin + 5, yPosition, {
-          fontSize: 9,
-          maxWidth: contentWidth - 10
+        const afterText = `After: ${stripHtml(item.system.effect.after)}`
+        const afterHeight = addText(afterText, currentX, currentColumn === 0 ? leftColumnY : rightColumnY, {
+          fontSize: 8,
+          maxWidth: columnWidth,
+          font: 'times'
         })
+        
+        if (currentColumn === 0) {
+          leftColumnY += afterHeight + 2
+        } else {
+          rightColumnY += afterHeight + 2
+        }
       }
 
       // Description (for features)
       if (item.system?.description?.value) {
-        yPosition += 3
-        // Strip HTML tags and decode entities for PDF
-        const cleanDescription = item.system.description.value
-          .replace(/<[^>]*>/g, '')
-          .replace(/&nbsp;/g, ' ')
-          .replace(/&lt;/g, '<')
-          .replace(/&gt;/g, '>')
-          .replace(/&amp;/g, '&')
-        
-        yPosition += addText(cleanDescription, margin + 5, yPosition, {
-          fontSize: 9,
-          maxWidth: contentWidth - 10
+        const cleanDescription = stripHtml(item.system.description.value)
+        const descHeight = addText(cleanDescription, currentX, currentColumn === 0 ? leftColumnY : rightColumnY, {
+          fontSize: 8,
+          maxWidth: columnWidth,
+          font: 'times'
         })
+        
+        if (currentColumn === 0) {
+          leftColumnY += descHeight + 2
+        } else {
+          rightColumnY += descHeight + 2
+        }
       }
 
-      yPosition += 8
+      // Add spacing between abilities and switch columns if needed
+      if (currentColumn === 0) {
+        leftColumnY += 6
+      } else {
+        rightColumnY += 6
+      }
+
+      // Switch to right column if using columns and this isn't the last item
+      if (useColumns && currentColumn === 0 && index < monster.items.length - 1) {
+        currentColumn = 1
+      } else if (useColumns && currentColumn === 1) {
+        currentColumn = 0
+      }
+
+      // Add black line between abilities
+      if (index < monster.items.length - 1) {
+        const lineY = Math.max(leftColumnY, rightColumnY)
+        addLine(margin, lineY, pageWidth - margin, lineY, [0, 0, 0], 0.5)
+        leftColumnY = lineY + 4
+        rightColumnY = lineY + 4
+      }
     })
+
+    yPosition = Math.max(leftColumnY, rightColumnY)
   }
 
   // Footer
   yPosition = pageHeight - 20
-  addLine(margin, yPosition - 5, pageWidth - margin, yPosition - 5, [139, 69, 19], 0.5)
+  addLine(margin, yPosition - 5, pageWidth - margin, yPosition - 5, [0, 0, 0], 0.5)
   
   // Generated with message
   addText('Generated with Steel Cauldron', pageWidth / 2, yPosition, {
     fontSize: 8,
     align: 'center',
-    textColor: [100, 100, 100]
+    textColor: [100, 100, 100],
+    font: 'times'
   })
   
   // License text
   addText('Draw Steel Creator License', pageWidth / 2, yPosition + 4, {
     fontSize: 8,
     align: 'center',
-    textColor: [100, 100, 100]
+    textColor: [100, 100, 100],
+    font: 'times'
   })
 
   // Save the PDF
