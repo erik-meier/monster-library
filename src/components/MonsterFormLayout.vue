@@ -293,7 +293,7 @@ function handleTemplateSelected(template: TemplateMonster) {
     level: template.level,
     ev: template.ev,
     role: template.role,
-    organization: template.organization,
+    organization: template.organization.toLowerCase(), // Normalize to lowercase
     keywords: template.keywords || [],
     size: template.size || { value: 1, letter: 'M' },
     speed: template.speed,

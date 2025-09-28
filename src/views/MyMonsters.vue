@@ -274,7 +274,7 @@ function startFromTemplate(template: MonsterTemplate) {
     level: template.level,
     ev: template.ev,
     role: template.role,
-    organization: template.organization,
+    organization: template.organization.toLowerCase(), // Normalize to lowercase
     keywords: template.keywords,
     size: template.size,
     speed: template.speed,

@@ -20,19 +20,17 @@
             v-model="formData.size.letter"
             class="form-select size-letter"
             :class="{ invalid: errors.sizeLetter }"
-            :disabled="formData.size.value > 1 && formData.size.letter === 'L'"
           >
             <option value="">Size</option>
             <option v-for="letter in availableSizeLetters" :key="letter" :value="letter">
               {{ letter }}
             </option>
-            <option v-if="formData.size.value > 1" value="">{{ formData.size.value }}</option>
           </select>
         </div>
         <div v-if="errors.sizeValue || errors.sizeLetter" class="error-message">
           {{ errors.sizeValue || errors.sizeLetter }}
         </div>
-        <div class="help-text">Size letters (T, S, M, L) only for size 1. Sizes above 1L are just numbers (2, 3, 4...)</div>
+        <div class="help-text">Size value with letter (T, S, M, L). Examples: 1M, 2M, 3L</div>
       </div>
 
       <!-- Core Combat Stats -->
@@ -164,11 +162,8 @@ const capitalize = (str: string) => {
 }
 
 const availableSizeLetters = computed(() => {
-  if (formData.size.value === 1) {
-    return SIZE_LETTERS
-  }
-  // For sizes > 1, if current letter is 'L', allow keeping it, otherwise empty
-  return formData.size.letter === 'L' ? ['L'] : []
+  // All size letters are available for any size value
+  return SIZE_LETTERS
 })
 
 const validateField = (field: string, value: unknown) => {
@@ -189,8 +184,9 @@ const validateField = (field: string, value: unknown) => {
           errors.sizeLetter = ''
         }
       } else if (formData.size.value > 1) {
-        if (value && value !== 'L') {
-          errors.sizeLetter = 'Sizes above 1 can only be L or empty'
+        // For sizes > 1, allow any valid size letter or empty
+        if (value && typeof value === 'string' && !SIZE_LETTERS.includes(value as SizeLetter)) {
+          errors.sizeLetter = 'Please select a valid size letter'
         } else {
           errors.sizeLetter = ''
         }
@@ -254,10 +250,6 @@ const updateModelValue = () => {
 
 // Watch for changes and validate
 watch(() => formData.size.value, (newValue) => {
-  // Clear size letter if size changes from 1 to something else
-  if (newValue !== 1 && formData.size.letter && formData.size.letter !== 'L') {
-    formData.size.letter = ''
-  }
   validateField('sizeValue', newValue)
   validateField('sizeLetter', formData.size.letter)
   updateModelValue()

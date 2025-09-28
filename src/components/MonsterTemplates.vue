@@ -124,31 +124,36 @@ onMounted(() => {
   templates.value = loadedTemplates
 })
 
+// Template monster IDs from actual monster data with their descriptions
+const templateDescriptions: Record<string, string> = {
+  'animal': 'Basic animal template suitable for wildlife encounters. Features natural weapons and mobility.',
+  'animal-swarm': 'Swarm of small animals that can occupy other creatures\' spaces and create difficult terrain.',
+  'big-animal-a': 'Large creature suitable for mount or major encounter roles.',
+  'big-animal-b': 'Larger creature with enhanced capabilities for significant encounters.',
+  'predator-a': 'Powerful predator with enhanced combat abilities for challenging encounters.',
+  'predator-b': 'Elite predator template with superior combat capabilities.'
+}
+
 function generateDescription(monster: { 
+  id?: string
   role?: string
   keywords?: string[]
   level?: number
   organization?: string 
   name?: string
 }): string {
+  // Use direct mapping for known template IDs
+  if (monster.id && templateDescriptions[monster.id]) {
+    return templateDescriptions[monster.id]
+  }
+  
   const role = monster.role ? monster.role.toLowerCase() : 'creature'
   const keywords = monster.keywords?.join(', ') || 'generic'
   const level = monster.level || 1
   const organization = monster.organization?.toLowerCase() || 'standard'
   
-  // Generate description based on monster properties
-  if (monster.keywords?.includes('animal')) {
-    if (monster.keywords?.includes('swarm')) {
-      return `A ${organization} swarm of small animals that can occupy other creatures' spaces and create difficult terrain.`
-    }
-    return `A ${organization} ${role} suitable for wildlife encounters. Features natural abilities and mobility.`
-  } else if (monster.keywords?.includes('predator')) {
-    return `A powerful ${organization} predator with enhanced combat abilities for challenging encounters.`
-  } else if (monster.name?.toLowerCase().includes('big')) {
-    return `A large ${organization} creature suitable for mount or major encounter roles.`
-  }
-  
-  return `A level ${level} ${organization} ${role} template featuring ${keywords} traits.`
+  // Avoid article confusion by rephrasing
+  return `Level ${level} ${organization} ${role} template featuring ${keywords} traits.`
 }
 
 // Emit event when template is selected
