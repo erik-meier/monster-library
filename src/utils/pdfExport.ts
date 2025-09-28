@@ -439,9 +439,18 @@ export async function exportMonsterToPDF(monster: Monster, options: PDFExportOpt
   }
 
   // Footer
-  yPosition = pageHeight - 15
+  yPosition = pageHeight - 20
   addLine(margin, yPosition - 5, pageWidth - margin, yPosition - 5, [139, 69, 19], 0.5)
-  addText('Draw Steel Creator License', pageWidth / 2, yPosition, {
+  
+  // Generated with message
+  addText('Generated with Steel Cauldron', pageWidth / 2, yPosition, {
+    fontSize: 8,
+    align: 'center',
+    textColor: [100, 100, 100]
+  })
+  
+  // License text
+  addText('Draw Steel Creator License', pageWidth / 2, yPosition + 4, {
     fontSize: 8,
     align: 'center',
     textColor: [100, 100, 100]
