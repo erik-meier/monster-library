@@ -25,6 +25,15 @@
           <span class="btn-icon">+</span>
           Create New Monster
         </router-link>
+        <button class="btn btn-secondary" @click="showTemplates = !showTemplates">
+          <span class="btn-icon">📋</span>
+          {{ showTemplates ? 'Hide Templates' : 'Browse Templates' }}
+        </button>
+      </div>
+
+      <!-- Monster Templates -->
+      <div v-if="showTemplates" class="templates-section">
+        <MonsterTemplates @template-selected="startFromTemplate" />
       </div>
 
       <!-- Export/Import Panel -->
@@ -74,10 +83,7 @@
                 <span class="detail-value">{{ monster.ev }}</span>
               </div>
               
-              <div class="detail-row">
-                <span class="detail-label">Size:</span>
-                <span class="detail-value">{{ monster.size.value }} {{ monster.size.letter }}</span>
-              </div>
+
             </div>
             
             <div class="monster-meta">
@@ -153,10 +159,39 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
 import ExportImportPanel from '@/components/ExportImportPanel.vue'
+import MonsterTemplates from '@/components/MonsterTemplates.vue'
 import type { CustomMonster } from '@/stores/customMonsters'
+import type { MonsterItem } from '@/types/monster-forms'
 
+interface MonsterTemplate {
+  id: string
+  name: string
+  level: number
+  ev: number
+  role: string
+  organization: string
+  keywords: string[]
+  description: string
+  size: { value: number; letter: string }
+  speed: number
+  stamina: number
+  stability: number
+  freeStrike: number
+  characteristics: {
+    might: number
+    agility: number
+    reason: number
+    intuition: number
+    presence: number
+  }
+  movementTypes: string[]
+  items: MonsterItem[]
+}
+
+const router = useRouter()
 const customMonstersStore = useCustomMonstersStore()
 
 // Reactive state
@@ -165,6 +200,7 @@ const deleting = ref<string | null>(null)
 const showDeleteDialog = ref(false)
 const monsterToDelete = ref<CustomMonster | null>(null)
 const deleteButton = ref<HTMLButtonElement>()
+const showTemplates = ref(false)
 
 // Computed properties
 const customMonsters = computed(() => customMonstersStore.getAllCustomMonsters())
@@ -231,6 +267,34 @@ async function confirmDelete() {
   }
 }
 
+function startFromTemplate(template: MonsterTemplate) {
+  // Create a monster object from the template
+  const templateMonster = {
+    name: template.name,
+    level: template.level,
+    ev: template.ev,
+    role: template.role,
+    organization: template.organization.toLowerCase(), // Normalize to lowercase
+    keywords: template.keywords,
+    size: template.size,
+    speed: template.speed,
+    stamina: template.stamina,
+    stability: template.stability,
+    freeStrike: template.freeStrike,
+    characteristics: template.characteristics,
+    movementTypes: template.movementTypes,
+    immunities: {},
+    weaknesses: {},
+    items: template.items || [] // Include abilities from stat blocks
+  }
+  
+  // Store the template data in localStorage for the create page to pick up
+  localStorage.setItem('templateMonster', JSON.stringify(templateMonster))
+  
+  // Navigate to the create page
+  router.push('/monster/create')
+}
+
 // Lifecycle
 onMounted(async () => {
   loading.value = true
@@ -260,7 +324,7 @@ onMounted(async () => {
 .header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: #2c3e50;
+  color: #8b4513;
 }
 
 .subtitle {
@@ -283,7 +347,7 @@ onMounted(async () => {
 }
 
 .stat-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
   color: white;
   padding: 1.5rem;
   border-radius: 8px;
@@ -304,6 +368,18 @@ onMounted(async () => {
 .actions {
   margin-bottom: 2rem;
   text-align: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.templates-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
 }
 
 .monsters-section h2 {
@@ -321,11 +397,13 @@ onMounted(async () => {
 }
 
 .monster-card {
-  border: 1px solid #e9ecef;
+  background: white;
   border-radius: 8px;
   padding: 1.5rem;
-  background: #fafafa;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 4px solid #8b4513;
 }
 
 .monster-card:hover {
@@ -343,12 +421,12 @@ onMounted(async () => {
 .monster-name {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #2c3e50;
+  color: #8b4513;
   margin: 0;
 }
 
 .monster-level {
-  background: #007bff;
+  background: #8b4513;
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -404,7 +482,7 @@ onMounted(async () => {
 .empty-state h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #495057;
+  color: #8b4513;
 }
 
 .empty-state p {
@@ -434,14 +512,14 @@ onMounted(async () => {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #8b4513;
   color: white;
-  border-color: #007bff;
+  border-color: #8b4513;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: #0056b3;
-  border-color: #004085;
+  background-color: #7a3c11;
+  border-color: #6c3310;
 }
 
 .btn-secondary {

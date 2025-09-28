@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import MonsterFormLayout from '@/components/MonsterFormLayout.vue'
 import { useCustomMonstersStore, type CustomMonster } from '@/stores/customMonsters'
@@ -43,6 +43,42 @@ const form = ref<MonsterFormData>({
   immunities: {},
   weaknesses: {},
   items: []
+})
+
+// Check for template data on mount
+onMounted(() => {
+  const templateData = localStorage.getItem('templateMonster')
+  if (templateData) {
+    try {
+      const template = JSON.parse(templateData)
+      // Populate form with template data
+      form.value = {
+        ...form.value,
+        name: `${template.name} (Custom)`,
+        level: template.level,
+        ev: template.ev,
+        role: template.role,
+        organization: template.organization,
+        keywords: template.keywords || [],
+        size: template.size || { value: 1, letter: 'M' },
+        speed: template.speed,
+        stamina: template.stamina,
+        stability: template.stability,
+        freeStrike: template.freeStrike,
+        characteristics: template.characteristics,
+        movementTypes: template.movementTypes || ['walk'],
+        immunities: template.immunities || {},
+        weaknesses: template.weaknesses || {},
+        items: template.items || []
+      }
+      
+      // Clear the template data from localStorage
+      localStorage.removeItem('templateMonster')
+    } catch (error) {
+      console.error('Failed to parse template data:', error)
+      localStorage.removeItem('templateMonster')
+    }
+  }
 })
 
 const updateForm = (newData: MonsterFormData) => {
