@@ -228,7 +228,7 @@
                 </button>
               </div>
             </div>
-            <button type="button" class="btn-add-tier" @click="addTier">
+            <button v-if="formData.system.power!.tiers!.length < 3" type="button" class="btn-add-tier" @click="addTier">
               + Add Tier
             </button>
           </div>
@@ -394,7 +394,7 @@ const validateFields = () => {
 
   // Validate signature uniqueness
   if (isSignature.value && props.existingItems) {
-    const otherSignatureExists = props.existingItems.some((item, index) => 
+    const otherSignatureExists = props.existingItems.some((item, index) =>
       item.system.category === 'signature' && index !== props.editingIndex
     )
     errors.signature = otherSignatureExists ? 'Only one signature ability allowed per monster' : ''

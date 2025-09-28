@@ -6,34 +6,24 @@
     </div>
 
     <div class="templates-grid">
-      <div 
-        v-for="template in templates" 
-        :key="template.id" 
-        class="template-card"
-        @click="selectTemplate(template)"
-      >
+      <div v-for="template in templates" :key="template.id" class="template-card" @click="selectTemplate(template)">
         <div class="template-header">
           <h4 class="template-name">{{ template.name }}</h4>
           <div class="template-meta">
-            <span class="template-role">{{ template.role }}</span>
-            <span class="template-level">Level {{ template.level }}</span>
+            <span class="template-role">Level {{ template.level }} {{ template.role }}</span>
           </div>
         </div>
-        
+
         <div class="template-keywords">
-          <span 
-            v-for="keyword in template.keywords" 
-            :key="keyword" 
-            class="keyword-tag"
-          >
+          <span v-for="keyword in template.keywords" :key="keyword" class="keyword-tag">
             {{ keyword }}
           </span>
         </div>
-        
+
         <div class="template-description">
           <p>{{ template.description }}</p>
         </div>
-        
+
         <div class="template-actions">
           <button class="btn btn-primary btn-sm" @click.stop="selectTemplate(template)">
             Use Template
@@ -89,14 +79,14 @@ const templates = ref<TemplateMonster[]>([])
 // Load templates from actual monster data on mount
 onMounted(() => {
   const loadedTemplates: TemplateMonster[] = []
-  
+
   for (const templateId of templateIds) {
     try {
       const monsterData = getMonster(templateId)
       if (monsterData) {
         // Generate a description based on the monster's properties
         const description = generateDescription(monsterData)
-        
+
         loadedTemplates.push({
           id: monsterData.id,
           name: monsterData.name,
@@ -120,7 +110,7 @@ onMounted(() => {
       console.warn(`Failed to load template ${templateId}:`, error)
     }
   }
-  
+
   templates.value = loadedTemplates
 })
 
@@ -128,30 +118,30 @@ onMounted(() => {
 const templateDescriptions: Record<string, string> = {
   'animal': 'Basic animal template suitable for wildlife encounters. Features natural weapons and mobility.',
   'animal-swarm': 'Swarm of small animals that can occupy other creatures\' spaces and create difficult terrain.',
-  'big-animal-a': 'Large creature suitable for mount or major encounter roles.',
-  'big-animal-b': 'Larger creature with enhanced capabilities for significant encounters.',
-  'predator-a': 'Powerful predator with enhanced combat abilities for challenging encounters.',
-  'predator-b': 'Elite predator template with superior combat capabilities.'
+  'big-animal-a': 'Large creature suitable as a mount in combat encounters.',
+  'big-animal-b': 'Larger creature suitable as a mount in combat encounters.',
+  'predator-a': 'Common predator for wild combat encounters.',
+  'predator-b': 'Predator template for larger, more dangerous creatures.'
 }
 
-function generateDescription(monster: { 
+function generateDescription(monster: {
   id?: string
   role?: string
   keywords?: string[]
   level?: number
-  organization?: string 
+  organization?: string
   name?: string
 }): string {
   // Use direct mapping for known template IDs
   if (monster.id && templateDescriptions[monster.id]) {
     return templateDescriptions[monster.id]
   }
-  
+
   const role = monster.role ? monster.role.toLowerCase() : 'creature'
   const keywords = monster.keywords?.join(', ') || 'generic'
   const level = monster.level || 1
   const organization = monster.organization?.toLowerCase() || 'standard'
-  
+
   // Avoid article confusion by rephrasing
   return `Level ${level} ${organization} ${role} template featuring ${keywords} traits.`
 }
@@ -240,15 +230,6 @@ function selectTemplate(template: TemplateMonster) {
   text-transform: capitalize;
 }
 
-.template-level {
-  background: #f8f9fa;
-  color: #495057;
-  padding: 0.125rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  border: 1px solid #e9ecef;
-}
-
 .template-keywords {
   display: flex;
   flex-wrap: wrap;
@@ -314,13 +295,13 @@ function selectTemplate(template: TemplateMonster) {
   .templates-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .template-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
+
   .template-meta {
     flex-direction: row;
     align-items: center;
