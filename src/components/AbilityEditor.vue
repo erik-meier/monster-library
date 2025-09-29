@@ -269,11 +269,18 @@
         <!-- Spend Effects -->
         <section class="editor-section">
           <h3 class="section-title">Spend Effects</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="spend-value" class="form-label">Malice Cost</label>
+              <input id="spend-value" v-model.number="formData.system.spend!.value" type="number" class="form-input" min="0" placeholder="0" />
+              <div class="help-text">Cost in Malice to activate the spend effect (leave empty if no cost)</div>
+            </div>
+          </div>
           <div class="form-group">
-            <label for="spend-text" class="form-label">Spend Effect Text</label>
-            <textarea id="spend-text" v-model="formData.system.spend.text" class="form-textarea" rows="2"
+            <label for="spend-text" class="form-label">Spend Effect Description</label>
+            <textarea id="spend-text" v-model="formData.system.spend!.text" class="form-textarea" rows="2"
               placeholder="Effect when spending resources..." />
-            <div class="help-text">Describes what happens when the character spends resources for this ability</div>
+            <div class="help-text">Describes what happens when the character spends Malice for this ability</div>
           </div>
         </section>
 
@@ -348,9 +355,8 @@ const newKeyword = ref('')
 
 // Determine if this ability has a power roll based on existing data
 const hasPowerRoll = ref(
-  !!(formData.system.power?.roll?.formula || 
-     formData.system.power?.tiers?.length ||
-     formData.system.power?.roll?.characteristics?.length)
+  !!(formData.system.power?.tiers?.length ||
+     (formData.system.power?.roll?.formula && formData.system.power?.roll?.formula !== ''))
 )
 
 const characteristicsList = [

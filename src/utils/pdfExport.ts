@@ -82,9 +82,14 @@ export async function exportMonsterToPDF(monster: Monster): Promise<void> {
     tempDiv.style.position = 'absolute'
     tempDiv.style.top = '-9999px'
     tempDiv.style.left = '-9999px'
-    tempDiv.style.width = '800px' // Set a fixed width for consistent rendering
+    tempDiv.style.width = '210mm' // A4 width
+    tempDiv.style.maxWidth = '210mm'
     tempDiv.style.backgroundColor = 'white'
-    tempDiv.style.padding = '20px'
+    tempDiv.style.padding = '10mm'
+    tempDiv.style.boxSizing = 'border-box'
+    tempDiv.style.fontFamily = 'Arial, sans-serif'
+    tempDiv.style.fontSize = '12px'
+    tempDiv.style.lineHeight = '1.4'
     
     // Generate the stat block HTML
     tempDiv.innerHTML = generateStatBlockHTML(monster)
@@ -92,17 +97,19 @@ export async function exportMonsterToPDF(monster: Monster): Promise<void> {
     // Add to DOM temporarily
     document.body.appendChild(tempDiv)
     
-    // Wait a moment for fonts to load
-    await new Promise(resolve => setTimeout(resolve, 100))
+    // Wait a moment for rendering and fonts to load
+    await new Promise(resolve => setTimeout(resolve, 300))
     
-    // Capture the element as canvas
+    // Capture the element as canvas with proper settings
     const canvas = await html2canvas(tempDiv, {
-      scale: 2, // Higher resolution
+      scale: 1.5, // Good balance of quality and file size
       useCORS: true,
       allowTaint: true,
       backgroundColor: 'white',
-      width: 800,
-      height: tempDiv.scrollHeight
+      width: tempDiv.scrollWidth,
+      height: tempDiv.scrollHeight,
+      windowWidth: tempDiv.scrollWidth,
+      windowHeight: tempDiv.scrollHeight
     })
     
     // Remove temporary element
@@ -116,61 +123,48 @@ export async function exportMonsterToPDF(monster: Monster): Promise<void> {
       format: 'a4'
     })
     
-    // Calculate dimensions to fit page
+    // Calculate dimensions to fit page properly
     const pageWidth = pdf.internal.pageSize.getWidth()
     const pageHeight = pdf.internal.pageSize.getHeight()
-    const imgWidth = pageWidth - 20 // 10mm margin on each side
-    const imgHeight = (canvas.height * imgWidth) / canvas.width
+    const margin = 10
+    const maxWidth = pageWidth - (margin * 2)
+    const maxHeight = pageHeight - (margin * 2)
     
-    // Check if we need multiple pages
-    let yPosition = 10 // Start position
-    let remainingHeight = imgHeight
+    // Calculate image dimensions maintaining aspect ratio
+    const imgAspectRatio = canvas.width / canvas.height
+    let imgWidth = maxWidth
+    let imgHeight = imgWidth / imgAspectRatio
     
-    while (remainingHeight > 0) {
-      const canvasHeight = Math.min(remainingHeight, pageHeight - 20) // 10mm top/bottom margin
-      const canvasPosition = imgHeight - remainingHeight
-      
-      // Add the image portion to current page
-      pdf.addImage(
-        imgData, 
-        'PNG', 
-        10, // x position
-        yPosition, // y position  
-        imgWidth,
-        canvasHeight,
-        undefined,
-        'FAST',
-        0, // rotation
-        -canvasPosition // crop from top
-      )
-      
-      remainingHeight -= (pageHeight - 20)
-      
-      if (remainingHeight > 0) {
-        pdf.addPage()
-        yPosition = 10
-      }
+    // If image is too tall, fit by height instead
+    if (imgHeight > maxHeight) {
+      imgHeight = maxHeight
+      imgWidth = imgHeight * imgAspectRatio
     }
     
-    // Add footer with branding and page numbers
-    const totalPages = pdf.internal.pages.length - 1
-    for (let i = 1; i <= totalPages; i++) {
-      pdf.setPage(i)
-      pdf.setFontSize(8)
-      pdf.setTextColor(128, 128, 128)
-      
-      // Center bottom: "Generated with Steel Cauldron"
-      const footerText = 'Generated with Steel Cauldron'
-      const textWidth = pdf.getTextWidth(footerText)
-      pdf.text(footerText, (pageWidth - textWidth) / 2, pageHeight - 5)
-      
-      // Right bottom: page number
-      if (totalPages > 1) {
-        const pageText = `${i} / ${totalPages}`
-        const pageTextWidth = pdf.getTextWidth(pageText)
-        pdf.text(pageText, pageWidth - pageTextWidth - 10, pageHeight - 5)
-      }
-    }
+    // Center the image on the page
+    const xOffset = (pageWidth - imgWidth) / 2
+    const yOffset = margin
+    
+    // Add the image to PDF
+    pdf.addImage(
+      imgData, 
+      'PNG', 
+      xOffset,
+      yOffset,  
+      imgWidth,
+      imgHeight,
+      undefined,
+      'FAST'
+    )
+    
+    // Add footer with branding
+    pdf.setFontSize(8)
+    pdf.setTextColor(128, 128, 128)
+    
+    // Center bottom: "Generated with Steel Cauldron"
+    const footerText = 'Generated with Steel Cauldron'
+    const textWidth = pdf.getTextWidth(footerText)
+    pdf.text(footerText, (pageWidth - textWidth) / 2, pageHeight - 5)
     
     // Download the PDF
     const fileName = `${monster.name?.replace(/[^a-zA-Z0-9]/g, '_') || 'monster'}_stat_block.pdf`
@@ -559,7 +553,7 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
             padding: 12px;
             margin: 8px 0;
           ">
-            ${item.system.power.tiers.map(tier => `
+            ${item.system?.power?.tiers?.map(tier => `
               <div style="
                 display: flex;
                 align-items: flex-start;
@@ -574,7 +568,7 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
                 ">${formatTierNumber(tier.tier)}</span>
                 <span>${stripHTML(tier.display)}</span>
               </div>
-            `).join('')}
+            `).join('') || ''}
             
             ${item.system?.effect?.after ? `
               <div style="
