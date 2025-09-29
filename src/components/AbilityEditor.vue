@@ -195,10 +195,6 @@
               <span class="toggle-label">{{ hasPowerRoll ? 'Has Power Roll' : 'No Power Roll' }}</span>
             </label>
           </div>
-          
-          <div class="help-text section-help">
-            Not all abilities need power rolls. Maneuvers, triggered actions, and some other abilities may only have descriptions.
-          </div>
 
           <template v-if="hasPowerRoll">
             <div class="form-grid">
@@ -231,19 +227,12 @@
             <div class="power-tiers">
               <h4 class="subsection-title">Power Tiers</h4>
               <div class="tier-list">
-                <div v-for="(tier, index) in formData.system.power!.tiers!" :key="index" class="tier-row">
-                  <div class="tier-number">{{ tier.tier }}</div>
-                  <input v-model="tier.display" type="text" class="tier-input"
-                    :placeholder="`Tier ${tier.tier} effect`" />
-                  <button v-if="formData.system.power!.tiers!.length > 1" type="button" class="btn-remove-tier"
-                    @click="removeTier(index)">
-                    ×
-                  </button>
+                <div v-for="tierNum in 3" :key="tierNum" class="tier-row">
+                  <div class="tier-number">{{ tierNum }}</div>
+                  <input v-model="getTierDisplay(tierNum).value" type="text" class="tier-input"
+                    :placeholder="`Tier ${tierNum} effect`" />
                 </div>
               </div>
-              <button v-if="formData.system.power!.tiers!.length < 3" type="button" class="btn-add-tier" @click="addTier">
-                + Add Tier
-              </button>
             </div>
           </template>
         </section>
@@ -272,7 +261,8 @@
           <div class="form-grid">
             <div class="form-group">
               <label for="spend-value" class="form-label">Malice Cost</label>
-              <input id="spend-value" v-model.number="formData.system.spend!.value" type="number" class="form-input" min="0" placeholder="0" />
+              <input id="spend-value" v-model.number="formData.system.spend!.value" type="number" class="form-input"
+                min="0" placeholder="0" />
               <div class="help-text">Cost in Malice to activate the spend effect (leave empty if no cost)</div>
             </div>
           </div>
@@ -355,8 +345,7 @@ const newKeyword = ref('')
 
 // Determine if this ability has a power roll based on existing data
 const hasPowerRoll = ref(
-  !!(formData.system.power?.tiers?.length ||
-     (formData.system.power?.roll?.formula && formData.system.power?.roll?.formula !== ''))
+  !!(formData.system.power?.tiers?.length && formData.system.power.tiers.length > 0)
 )
 
 const characteristicsList = [
@@ -425,6 +414,30 @@ const isValid = computed(() => {
     formData.name.trim() !== '' &&
     (isFeature.value ? formData.system.description?.value?.trim() !== '' : true)
 })
+
+const getTierDisplay = (tierNum: number) => {
+  return computed({
+    get: () => {
+      if (!formData.system.power?.tiers) return ''
+      const tier = formData.system.power.tiers.find(t => t.tier === tierNum)
+      return tier?.display || ''
+    },
+    set: (value: string) => {
+      if (!formData.system.power?.tiers) return
+
+      // Find existing tier or create new one
+      let tier = formData.system.power.tiers.find(t => t.tier === tierNum)
+      if (!tier) {
+        tier = { tier: tierNum, display: value }
+        formData.system.power.tiers.push(tier)
+        // Sort tiers by tier number
+        formData.system.power.tiers.sort((a, b) => a.tier - b.tier)
+      } else {
+        tier.display = value
+      }
+    }
+  })
+}
 
 const validateFields = () => {
   errors.name = formData.name.trim() === '' ? 'Name is required' : ''
@@ -498,25 +511,7 @@ const onTypeChange = () => {
   validateFields()
 }
 
-const addTier = () => {
-  if (!isFeature.value && formData.system.power?.tiers) {
-    const nextTier = formData.system.power.tiers.length + 1
-    formData.system.power.tiers.push({
-      tier: nextTier,
-      display: ''
-    })
-  }
-}
 
-const removeTier = (index: number) => {
-  if (!isFeature.value && formData.system.power?.tiers && formData.system.power.tiers.length > 1) {
-    formData.system.power.tiers.splice(index, 1)
-    // Renumber tiers
-    formData.system.power.tiers.forEach((tier, i) => {
-      tier.tier = i + 1
-    })
-  }
-}
 
 const addKeyword = () => {
   const keyword = newKeyword.value.toLowerCase().trim()
@@ -565,13 +560,14 @@ watch(hasPowerRoll, (newValue) => {
       }
       formData.system.power.tiers = []
     }
-  } else if (!formData.system.power?.tiers?.length) {
-    // Initialize with one tier when enabled
+  } else {
+    // Initialize with three tiers when enabled
     if (formData.system.power) {
-      formData.system.power.tiers = [{
-        tier: 1,
-        display: ''
-      }]
+      formData.system.power.tiers = [
+        { tier: 1, display: '' },
+        { tier: 2, display: '' },
+        { tier: 3, display: '' }
+      ]
     }
   }
 })
@@ -840,30 +836,7 @@ validateFields()
   font-size: 0.9rem;
 }
 
-.btn-remove-tier {
-  background: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  cursor: pointer;
-  flex-shrink: 0;
-}
 
-.btn-add-tier {
-  padding: 0.5rem 1rem;
-  background: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
 
 .keywords-editor {
   background: white;
