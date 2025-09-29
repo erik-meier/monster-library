@@ -1,6 +1,21 @@
 import html2canvas from 'html2canvas'
 import { jsPDF } from 'jspdf'
 import type { MonsterFormData, MonsterItem } from '@/types/monster-forms'
+import {
+  formatKeywords,
+  formatMonsterRole,
+  formatImmunity,
+  formatWeakness,
+  formatMovement,
+  formatCharacteristic,
+  formatActionDistance,
+  formatActionTargets,
+  formatActionType,
+  formatTierNumber,
+  stripHTML,
+  actionHasPowerRoll,
+  extractDescription
+} from './formatters.ts'
 
 // Type alias for the PDF export function to match the expected monster data structure
 type Monster = MonsterFormData
@@ -137,42 +152,6 @@ export async function exportMonsterToPDF(monster: Monster): Promise<void> {
  * Generate HTML for the stat block using the same structure as MonsterStatBlock.vue
  */
 function generateStatBlockHTML(monster: Monster): string {
-  const formatKeywords = (keywords: string[] = []) => {
-    return keywords.map(keyword => 
-      keyword.charAt(0).toUpperCase() + keyword.slice(1).toLowerCase()
-    ).join(', ')
-  }
-  
-  const formatMonsterRole = (monster: Monster) => {
-    return `Level ${monster.level} ${monster.organization}${monster.role ? ' ' + monster.role : ''}`
-  }
-  
-  const formatImmunity = (immunity?: Record<string, number>) => {
-    if (!immunity || Object.keys(immunity).length === 0) return '—'
-    return Object.entries(immunity)
-      .filter(([, value]) => value > 0)
-      .map(([type, value]) => `${type} ${value}`)
-      .join(', ')
-  }
-  
-  const formatWeakness = (weakness?: Record<string, number>) => {
-    if (!weakness || Object.keys(weakness).length === 0) return '—'
-    return Object.entries(weakness)
-      .filter(([, value]) => value > 0)
-      .map(([type, value]) => `${type} ${value}`)
-      .join(', ')
-  }
-  
-  const formatMovement = (movement?: string | string[]) => {
-    if (!movement) return '—'
-    if (typeof movement === 'string') return movement
-    if (Array.isArray(movement)) return movement.join(', ')
-    return movement
-  }
-  
-  const formatCharacteristic = (value: number) => {
-    return value >= 0 ? `+${value}` : `${value}`
-  }
   
   return `
     <div class="stat-block" style="
@@ -391,40 +370,6 @@ function generateStatBlockHTML(monster: Monster): string {
  */
 function generateAbilitiesHTML(items: MonsterItem[]): string {
   if (!items || items.length === 0) return ''
-  
-  const formatTierNumber = (tier: number) => {
-    const tierMap: Record<number, string> = { 1: '≤11', 2: '12-16', 3: '17+' }
-    return tierMap[tier] || tier.toString()
-  }
-  
-  const formatActionDistance = (distance?: { type: string; primary?: number | string; secondary?: number | string }) => {
-    if (!distance) return ''
-    if (distance.type === 'melee' || distance.type === 'ranged') {
-      return `${distance.type.charAt(0).toUpperCase() + distance.type.slice(1)} ${distance.primary}`
-    }
-    if (distance.type === 'meleeRanged') {
-      return `Melee ${distance.primary} or ranged ${distance.secondary}`
-    }
-    return distance.type.charAt(0).toUpperCase() + distance.type.slice(1)
-  }
-  
-  const formatActionTargets = (target?: { type: string; value?: number }) => {
-    if (!target) return ''
-    const targetValue = target.value ? ` ${target.value}` : ''
-    const targetMap: Record<string, string> = {
-      'creature': 'creature',
-      'creatureObject': 'creature or object',
-      'enemy': 'enemy',
-      'ally': 'ally',
-      'selfAlly': 'self and ally',
-      'special': 'special'
-    }
-    return `${targetValue} ${targetMap[target.type] || target.type}`.trim()
-  }
-
-  const stripHTML = (text: string) => {
-    return text.replace(/<[^>]*>/g, '').trim()
-  }
   
   return items.map(item => {
     const isFeature = item.type === 'feature'
