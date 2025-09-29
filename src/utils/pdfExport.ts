@@ -77,13 +77,32 @@ interface MonsterItem {
  */
 export async function exportMonsterToPDF(monster: Monster): Promise<void> {
   try {
+    // Create PDF early to get page dimensions (in mm)
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    })
+
+    const pageWidthMm = pdf.internal.pageSize.getWidth()
+    const pageHeightMm = pdf.internal.pageSize.getHeight()
+    const marginMm = 10
+    const footerMm = 6 // reserve space for footer branding
+    const contentWidthMm = pageWidthMm - marginMm * 2
+    const contentHeightMm = pageHeightMm - marginMm * 2 - footerMm
+
+    // CSS mm to px conversion at 96 DPI: 1in = 25.4mm, 1in = 96px
+    const cssPxPerMm = 96 / 25.4
+    const contentWidthPx = Math.floor(contentWidthMm * cssPxPerMm)
+
     // Create a temporary div with the stat block HTML
     const tempDiv = document.createElement('div')
     tempDiv.style.position = 'absolute'
     tempDiv.style.top = '-9999px'
     tempDiv.style.left = '-9999px'
-    tempDiv.style.width = '210mm' // A4 width
-    tempDiv.style.maxWidth = '210mm'
+    // Render at the exact content width that will be placed into the PDF
+    tempDiv.style.width = `${contentWidthPx}px`
+    tempDiv.style.maxWidth = `${contentWidthPx}px`
     tempDiv.style.backgroundColor = 'white'
     tempDiv.style.padding = '10mm'
     tempDiv.style.boxSizing = 'border-box'
@@ -102,7 +121,7 @@ export async function exportMonsterToPDF(monster: Monster): Promise<void> {
     
     // Capture the element as canvas with proper settings
     const canvas = await html2canvas(tempDiv, {
-      scale: 1.5, // Good balance of quality and file size
+      scale: 2, // Higher scale for sharper text
       useCORS: true,
       allowTaint: true,
       backgroundColor: 'white',
@@ -115,56 +134,60 @@ export async function exportMonsterToPDF(monster: Monster): Promise<void> {
     // Remove temporary element
     document.body.removeChild(tempDiv)
     
-    // Create PDF
-    const imgData = canvas.toDataURL('image/png')
-    const pdf = new jsPDF({
-      orientation: 'portrait',
-      unit: 'mm',
-      format: 'a4'
-    })
-    
-    // Calculate dimensions to fit page properly
-    const pageWidth = pdf.internal.pageSize.getWidth()
-    const pageHeight = pdf.internal.pageSize.getHeight()
-    const margin = 10
-    const maxWidth = pageWidth - (margin * 2)
-    const maxHeight = pageHeight - (margin * 2)
-    
-    // Calculate image dimensions maintaining aspect ratio
-    const imgAspectRatio = canvas.width / canvas.height
-    let imgWidth = maxWidth
-    let imgHeight = imgWidth / imgAspectRatio
-    
-    // If image is too tall, fit by height instead
-    if (imgHeight > maxHeight) {
-      imgHeight = maxHeight
-      imgWidth = imgHeight * imgAspectRatio
-    }
-    
-    // Center the image on the page
-    const xOffset = (pageWidth - imgWidth) / 2
-    const yOffset = margin
-    
-    // Add the image to PDF
-    pdf.addImage(
-      imgData, 
-      'PNG', 
-      xOffset,
-      yOffset,  
-      imgWidth,
-      imgHeight,
-      undefined,
-      'FAST'
+    // Compute slice height in pixels so that when drawn at max width it fills the available content height
+    const sliceHeightPx = Math.max(
+      1,
+      Math.floor(canvas.width * (contentHeightMm / contentWidthMm))
     )
-    
-    // Add footer with branding
-    pdf.setFontSize(8)
-    pdf.setTextColor(128, 128, 128)
-    
-    // Center bottom: "Generated with Steel Cauldron"
-    const footerText = 'Generated with Steel Cauldron'
-    const textWidth = pdf.getTextWidth(footerText)
-    pdf.text(footerText, (pageWidth - textWidth) / 2, pageHeight - 5)
+
+    // Paginate by slicing the canvas vertically
+    let offsetY = 0
+    let pageIndex = 0
+    while (offsetY < canvas.height) {
+      const remaining = canvas.height - offsetY
+      const currentSliceHeight = Math.min(sliceHeightPx, remaining)
+
+      // Create a slice canvas
+      const pageCanvas = document.createElement('canvas')
+      pageCanvas.width = canvas.width
+      pageCanvas.height = currentSliceHeight
+      const ctx = pageCanvas.getContext('2d')
+      if (ctx) {
+        ctx.drawImage(
+          canvas,
+          0,
+          offsetY,
+          canvas.width,
+          currentSliceHeight,
+          0,
+          0,
+          canvas.width,
+          currentSliceHeight
+        )
+      }
+
+      const sliceImg = pageCanvas.toDataURL('image/png')
+
+      // Draw slice on PDF page
+      const drawWidthMm = contentWidthMm
+      const drawHeightMm = (currentSliceHeight / canvas.width) * contentWidthMm
+      const xMm = marginMm
+      const yMm = marginMm
+
+      if (pageIndex > 0) pdf.addPage()
+      pdf.addImage(sliceImg, 'PNG', xMm, yMm, drawWidthMm, drawHeightMm, undefined, 'FAST')
+
+      // Footer per page
+      pdf.setFontSize(8)
+      pdf.setTextColor(128, 128, 128)
+      const footerText = 'Generated with Steel Cauldron'
+      const textWidth = pdf.getTextWidth(footerText)
+      pdf.text(footerText, (pageWidthMm - textWidth) / 2, pageHeightMm - 5)
+
+      // Advance
+      offsetY += currentSliceHeight
+      pageIndex += 1
+    }
     
     // Download the PDF
     const fileName = `${monster.name?.replace(/[^a-zA-Z0-9]/g, '_') || 'monster'}_stat_block.pdf`
@@ -229,42 +252,30 @@ function generateStatBlockHTML(monster: Monster): string {
       line-height: 1.4;
     ">
       <!-- Header -->
-      <div class="header" style="text-align: center; margin-bottom: 16px;">
+      <div class="header" style="text-align: center; margin-bottom: 12px;">
         <h1 class="monster-name" style="
-          font-size: 1.8rem;
+          font-size: 1.6rem;
           font-weight: bold;
           color: #8b4513;
-          margin: 0 0 8px 0;
+          margin: 0 0 6px 0;
           text-transform: uppercase;
           letter-spacing: 1px;
         ">${monster.name}</h1>
         
-        <div class="monster-meta-container" style="
+        <div class="monster-meta-line" style="
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
-          margin-bottom: 8px;
+          gap: 12px;
+          font-size: 0.85rem;
+          color: #6c757d;
+          flex-wrap: wrap;
         ">
-          <div class="monster-role" style="
-            color: #6c757d;
-            font-style: italic;
-            font-size: 1rem;
-          ">${formatMonsterRole(monster)}</div>
+          <span style="font-style: italic;">${formatMonsterRole(monster)}</span>
+          ${monster.keywords && monster.keywords.length > 0 ? `<span>•</span><span>${formatKeywords(monster.keywords)}</span>` : ''}
+          <span>•</span>
+          <span style="color: #8b4513; font-weight: bold;">EV ${monster.ev}</span>
         </div>
-        
-        ${monster.keywords && monster.keywords.length > 0 ? `
-          <div class="monster-keywords" style="
-            color: #6c757d;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-          ">${formatKeywords(monster.keywords)}</div>
-        ` : ''}
-        
-        <div class="monster-ev" style="
-          color: #8b4513;
-          font-weight: bold;
-          font-size: 1rem;
-        ">EV ${monster.ev}</div>
       </div>
 
       <div class="divider" style="
@@ -274,16 +285,16 @@ function generateStatBlockHTML(monster: Monster): string {
       "></div>
 
       <!-- Combat Stats -->
-      <div class="combat-stats" style="margin-bottom: 16px;">
+      <div class="combat-stats" style="margin-bottom: 12px;">
         <div class="stat-headers" style="
           display: grid;
           grid-template-columns: repeat(5, 1fr);
-          gap: 8px;
-          margin-bottom: 8px;
+          gap: 6px;
+          margin-bottom: 6px;
           font-weight: bold;
           text-align: center;
           color: #8b4513;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
         ">
           <div>Size</div>
           <div>Speed</div>
@@ -294,10 +305,10 @@ function generateStatBlockHTML(monster: Monster): string {
         <div class="stat-values" style="
           display: grid;
           grid-template-columns: repeat(5, 1fr);
-          gap: 8px;
+          gap: 6px;
           text-align: center;
           font-weight: bold;
-          font-size: 1rem;
+          font-size: 0.9rem;
         ">
           <div>${monster.size?.value}${monster.size?.letter}</div>
           <div>${monster.speed}</div>
@@ -314,71 +325,71 @@ function generateStatBlockHTML(monster: Monster): string {
       "></div>
 
       <!-- Characteristics -->
-      <div class="characteristics" style="margin-bottom: 16px;">
+      <div class="characteristics" style="margin-bottom: 12px;">
         <div class="characteristics-grid" style="
           display: grid;
           grid-template-columns: repeat(5, 1fr);
-          gap: 12px;
+          gap: 8px;
           text-align: center;
         ">
           <div class="characteristic">
             <div style="
               font-weight: bold;
               color: #8b4513;
-              font-size: 0.9rem;
-              margin-bottom: 4px;
+              font-size: 0.8rem;
+              margin-bottom: 3px;
             ">Might</div>
             <div style="
               font-weight: bold;
-              font-size: 1.1rem;
+              font-size: 1rem;
             ">${formatCharacteristic(monster.characteristics?.might || 0)}</div>
           </div>
           <div class="characteristic">
             <div style="
               font-weight: bold;
               color: #8b4513;
-              font-size: 0.9rem;
-              margin-bottom: 4px;
+              font-size: 0.8rem;
+              margin-bottom: 3px;
             ">Agility</div>
             <div style="
               font-weight: bold;
-              font-size: 1.1rem;
+              font-size: 1rem;
             ">${formatCharacteristic(monster.characteristics?.agility || 0)}</div>
           </div>
           <div class="characteristic">
             <div style="
               font-weight: bold;
               color: #8b4513;
-              font-size: 0.9rem;
-              margin-bottom: 4px;
+              font-size: 0.8rem;
+              margin-bottom: 3px;
             ">Reason</div>
             <div style="
               font-weight: bold;
-              font-size: 1.1rem;
+              font-size: 1rem;
             ">${formatCharacteristic(monster.characteristics?.reason || 0)}</div>
           </div>
           <div class="characteristic">
             <div style="
               font-weight: bold;
               color: #8b4513;
-              font-size: 0.9rem;
-              margin-bottom: 4px;
+              font-size: 0.8rem;
+              margin-bottom: 3px;
             ">Intuition</div>
             <div style="
               font-weight: bold;
-              font-size: 1.1rem;
+              font-size: 1rem;
             ">${formatCharacteristic(monster.characteristics?.intuition || 0)}</div>
           </div>
           <div class="characteristic">
             <div style="
               font-weight: bold;
               color: #8b4513;
-              font-size: 0.9rem;
-              margin-bottom: 4px;
+              font-size: 0.8rem;
+              margin-bottom: 3px;
             ">Presence</div>
             <div style="
               font-weight: bold;
-              font-size: 1.1rem;
+              font-size: 1rem;
             ">${formatCharacteristic(monster.characteristics?.presence || 0)}</div>
           </div>
         </div>
@@ -414,7 +425,13 @@ function generateStatBlockHTML(monster: Monster): string {
       "></div>
 
       <!-- Abilities -->
-      ${generateAbilitiesHTML(monster.items || [])}
+      <div class="abilities-columns" style="
+        column-count: 2;
+        column-gap: 16px;
+        column-fill: balance;
+      ">
+        ${generateAbilitiesHTML(monster.items || [])}
+      </div>
 
       <div class="divider" style="
         height: 1px;
@@ -481,7 +498,7 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
     const hasPowerRoll = item.system?.power?.tiers && item.system.power.tiers.length > 0
     
     return `
-      <div class="ability" style="margin-bottom: 16px;">
+      <div class="ability" style="margin-bottom: 16px; break-inside: avoid; -webkit-column-break-inside: avoid; page-break-inside: avoid;">
         <!-- Ability Header -->
         <div class="ability-header" style="margin-bottom: 8px;">
           <div style="
