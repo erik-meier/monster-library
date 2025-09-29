@@ -246,7 +246,7 @@
             <div v-if="item.type === 'feature'" class="ability-type-badge feature">Feature</div>
             <div v-else class="ability-info-row">
               <span v-if="item.system?.category === 'signature'" class="ability-type-badge signature">Signature</span>
-              <span v-if="item.system?.category === 'heroic'" class="ability-type-badge heroic">Heroic</span>
+              <!-- Removed heroic tag display as requested -->
               <span v-if="item.system?.type" class="ability-action-type">{{ formatActionType(item.system.type) }}</span>
               <span v-if="item.system?.resource" class="ability-resource">{{ item.system.resource }} Malice</span>
             </div>
@@ -687,20 +687,28 @@ const removeWeakness = (index) => {
 }
 
 const updateDefenses = () => {
-  // Update immunities
+  // Update immunities - allow incomplete entries for better UX
   const immunities = {}
   immunityEntries.value.forEach(entry => {
-    if (entry.type && entry.value > 0) {
-      immunities[entry.type] = entry.value
+    // Save entry if it has either a type or value > 0 (allows incomplete state)
+    if (entry.type || (entry.value && entry.value > 0)) {
+      // Only set in immunities if both type and value are present
+      if (entry.type && entry.value > 0) {
+        immunities[entry.type] = entry.value
+      }
     }
   })
   editableData.value.immunities = immunities
 
-  // Update weaknesses  
+  // Update weaknesses - allow incomplete entries for better UX
   const weaknesses = {}
   weaknessEntries.value.forEach(entry => {
-    if (entry.type && entry.value > 0) {
-      weaknesses[entry.type] = entry.value
+    // Save entry if it has either a type or value > 0 (allows incomplete state)
+    if (entry.type || (entry.value && entry.value > 0)) {
+      // Only set in weaknesses if both type and value are present
+      if (entry.type && entry.value > 0) {
+        weaknesses[entry.type] = entry.value
+      }
     }
   })
   editableData.value.weaknesses = weaknesses

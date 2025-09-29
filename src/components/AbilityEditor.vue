@@ -252,6 +252,17 @@
           <div class="help-text">HTML is supported for formatting</div>
         </section>
 
+        <!-- Spend Effects -->
+        <section class="editor-section">
+          <h3 class="section-title">Spend Effects</h3>
+          <div class="form-group">
+            <label for="spend-text" class="form-label">Spend Effect Text</label>
+            <textarea id="spend-text" v-model="formData.system.spend.text" class="form-textarea" rows="2"
+              placeholder="Effect when spending resources..." />
+            <div class="help-text">Describes what happens when the character spends resources for this ability</div>
+          </div>
+        </section>
+
         <!-- Trigger -->
         <section class="editor-section"
           v-if="formData.system.type === 'triggered' || formData.system.type === 'freeTriggered'">

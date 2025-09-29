@@ -54,6 +54,11 @@
           <strong>Trigger:</strong> {{ action.system.trigger }}
         </div>
 
+        <!-- Show "before" effect before the power roll, but only if power roll has tiers -->
+        <div v-if="action.system.effect && action.system.effect.before && actionHasPowerRoll(action)" class="action-effect-before">
+          <strong>Effect:</strong> <span v-html="formatDescription(action.system.effect.before)"></span>
+        </div>
+
         <PowerRoll v-if="actionHasPowerRoll(action)" :tiers="action.system.power.tiers || []"
           :effect="formatActionEffect(action)" />
         <div v-if="!actionHasPowerRoll(action)" class="action-description"
@@ -130,10 +135,9 @@ export default {
       return ''
     },
     formatActionEffect(action) {
-      // For the new flattened structure, effects are usually handled in tier display text
-      // Only return effect text if it's different from tier display
-      if (action.system.effect) {
-        return action.system.effect.before || action.system.effect.after || '';
+      // Only return "after" effect since "before" is handled separately
+      if (action.system.effect && action.system.effect.after) {
+        return action.system.effect.after;
       }
       return '';
     },
