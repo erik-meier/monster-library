@@ -54,15 +54,14 @@
           <strong>Trigger:</strong> {{ action.system.trigger }}
         </div>
 
-        <!-- Show "before" effect before the power roll, but only if power roll has tiers -->
-        <div v-if="action.system.effect && action.system.effect.before && actionHasPowerRoll(action)" class="action-effect-before">
-          <strong>Effect:</strong> <span v-html="formatDescription(action.system.effect.before)"></span>
-        </div>
-
-        <PowerRoll v-if="actionHasPowerRoll(action)" :tiers="action.system.power.tiers || []"
-          :effect="formatActionEffect(action)" />
+        <PowerRoll v-if="actionHasPowerRoll(action)" :tiers="action.system.power.tiers || []" />
         <div v-if="!actionHasPowerRoll(action)" class="action-description"
           v-html="formatDescription(extractDescription(action))"></div>
+
+        <div v-if="action.system.effect && action.system.effect.text && actionHasPowerRoll(action)"
+          class="action-effect-text">
+          <strong>Effect:</strong> <span v-html="formatDescription(action.system.effect.text)"></span>
+        </div>
 
         <div v-if="action.system.spend && action.system.spend.formattedText" class="action-spend">
           <span v-html="action.system.spend.formattedText"></span>
@@ -130,16 +129,10 @@ export default {
         return action.system.description.value;
       }
       if (action.system.effect) {
-        return action.system.effect.before || action.system.effect.after;
+        // Check for new unified text field first, fallback to legacy before/after
+        return action.system.effect.text || action.system.effect.before || action.system.effect.after;
       }
       return ''
-    },
-    formatActionEffect(action) {
-      // Only return "after" effect since "before" is handled separately
-      if (action.system.effect && action.system.effect.after) {
-        return action.system.effect.after;
-      }
-      return '';
     },
     formatActionDistance(distance) {
       if (!distance) return '';
@@ -173,6 +166,8 @@ export default {
         return `${target.value ? target.value : 'Each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`;
       } else if (target.type === 'selfAlly') {
         return 'Self and ' + `${target.value ? target.value : 'each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`;
+      } else if (target.type === 'selfOrAlly') {
+        return 'Self or ' + `${target.value ? target.value : ''} ${target.value && target.value > 1 ? 'allies' : 'ally'}`;
       }
       return target.type.charAt(0).toUpperCase() + target.type.slice(1);
     },

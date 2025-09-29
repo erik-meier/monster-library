@@ -1,20 +1,17 @@
 <template>
   <div class="abilities-form">
     <h2 class="form-section-title">Abilities & Features</h2>
-    
+
     <div class="abilities-section">
       <p class="section-description">
-        Manage this monster's abilities, features, and actions. Features are passive traits, while abilities are active actions the monster can take.
+        Manage this monster's abilities, features, and actions. Features are passive traits, while abilities are active
+        actions the monster can take.
       </p>
-      
+
       <!-- Abilities List -->
       <div class="abilities-list" v-if="formData.items.length > 0">
-        <div 
-          v-for="(item, index) in formData.items" 
-          :key="`ability-${index}`"
-          class="ability-card"
-          :class="{ expanded: expandedIndex === index }"
-        >
+        <div v-for="(item, index) in formData.items" :key="`ability-${index}`" class="ability-card"
+          :class="{ expanded: expandedIndex === index }">
           <div class="ability-header" @click="toggleExpanded(index)">
             <div class="ability-title-section">
               <h3 class="ability-name">{{ item.name || 'Unnamed Ability' }}</h3>
@@ -22,11 +19,7 @@
                 <span class="ability-type-badge" :class="item.type">
                   {{ capitalize(item.type) }}
                 </span>
-                <span 
-                  v-if="item.system.category" 
-                  class="category-badge"
-                  :class="item.system.category"
-                >
+                <span v-if="item.system.category" class="category-badge" :class="item.system.category">
                   {{ capitalize(item.system.category) }}
                 </span>
                 <span v-if="item.system.resource" class="resource-badge">
@@ -35,25 +28,15 @@
               </div>
             </div>
             <div class="ability-controls">
-              <button 
-                type="button"
-                class="btn-edit"
-                @click.stop="editAbility(index)"
-                title="Edit ability"
-              >
+              <button type="button" class="btn-edit" @click.stop="editAbility(index)" title="Edit ability">
                 Edit
               </button>
-              <button 
-                type="button"
-                class="btn-remove"
-                @click.stop="removeAbility(index)"
-                title="Remove ability"
-              >
+              <button type="button" class="btn-remove" @click.stop="removeAbility(index)" title="Remove ability">
                 ×
               </button>
             </div>
           </div>
-          
+
           <!-- Expanded Content -->
           <div v-if="expandedIndex === index" class="ability-content">
             <div class="ability-details">
@@ -73,7 +56,7 @@
               <div v-if="item.system.trigger" class="detail-row">
                 <strong>Trigger:</strong> {{ item.system.trigger }}
               </div>
-              
+
               <!-- Power Roll -->
               <div v-if="item.system.power?.roll" class="detail-row">
                 <strong>Power Roll:</strong> {{ item.system.power.roll.formula }}
@@ -81,32 +64,24 @@
                   ({{ item.system.power.roll.characteristics.join(', ') }})
                 </span>
               </div>
-              
+
               <!-- Power Tiers -->
               <div v-if="item.system.power?.tiers?.length" class="power-tiers">
                 <strong>Power Tiers:</strong>
                 <div class="tiers-list">
-                  <div 
-                    v-for="tier in item.system.power.tiers" 
-                    :key="tier.tier"
-                    class="tier-item"
-                  >
+                  <div v-for="tier in item.system.power.tiers" :key="tier.tier" class="tier-item">
                     <span class="tier-number">{{ tier.tier }}:</span>
                     <span class="tier-display">{{ tier.display }}</span>
                   </div>
                 </div>
               </div>
-              
+
               <!-- Effects -->
-              <div v-if="item.system.effect?.before" class="detail-row">
-                <strong>Effect (Before):</strong>
-                <div class="effect-text" v-html="item.system.effect.before"></div>
+              <div v-if="item.system.effect?.text" class="detail-row">
+                <strong>Effect:</strong>
+                <div class="effect-text" v-html="item.system.effect.text"></div>
               </div>
-              <div v-if="item.system.effect?.after" class="detail-row">
-                <strong>Effect (After):</strong>
-                <div class="effect-text" v-html="item.system.effect.after"></div>
-              </div>
-              
+
               <!-- Description (for features) -->
               <div v-if="item.system.description?.value" class="detail-row">
                 <strong>Description:</strong>
@@ -116,44 +91,30 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Empty State -->
       <div v-else class="empty-state">
         <div class="empty-icon">⚔️</div>
         <h3>No Abilities Added Yet</h3>
         <p>Add abilities and features to bring this monster to life!</p>
       </div>
-      
+
       <!-- Add New Ability -->
       <div class="add-ability-section">
-        <button 
-          type="button" 
-          class="btn-add-ability"
-          @click="addNewAbility"
-        >
+        <button type="button" class="btn-add-ability" @click="addNewAbility">
           + Add New Ability
         </button>
-        <button 
-          type="button" 
-          class="btn-add-feature"
-          @click="addNewFeature"
-        >
+        <button type="button" class="btn-add-feature" @click="addNewFeature">
           + Add New Feature
         </button>
       </div>
     </div>
-    
+
     <!-- Ability Editor Modal -->
     <div v-if="editingIndex !== null && editingAbility" class="modal-overlay">
       <div class="modal-content">
-        <AbilityEditor
-          :model-value="editingAbility"
-          :existing-items="formData.items"
-          :editing-index="editingIndex"
-          @update:model-value="updateEditingAbility"
-          @save="saveAbility"
-          @cancel="closeEditor"
-        />
+        <AbilityEditor :model-value="editingAbility" :existing-items="formData.items" :editing-index="editingIndex"
+          @update:model-value="updateEditingAbility" @save="saveAbility" @cancel="closeEditor" />
       </div>
     </div>
   </div>
@@ -201,7 +162,7 @@ const formatActionType = (type: string) => {
 
 const formatDistance = (distance: MonsterItem['system']['distance']) => {
   if (!distance) return 'Special'
-  
+
   if (distance.type === 'melee') {
     return `Melee ${distance.primary || 1}`
   } else if (distance.type === 'ranged') {
@@ -209,17 +170,17 @@ const formatDistance = (distance: MonsterItem['system']['distance']) => {
   } else if (distance.type === 'meleeRanged') {
     return `Melee ${distance.primary || 1} or Ranged ${distance.secondary || 5}`
   }
-  
+
   return capitalize(distance.type)
 }
 
 const formatTarget = (target: MonsterItem['system']['target']) => {
   if (!target) return 'Special'
-  
+
   if (target.type === 'creatureObject' && target.value) {
     return `${target.value} creature${target.value > 1 ? 's' : ''} or object${target.value > 1 ? 's' : ''}`
   }
-  
+
   return capitalize(target.type)
 }
 
@@ -290,8 +251,7 @@ const createNewItem = (type: 'ability' | 'feature'): MonsterItem => {
           ]
         },
         effect: {
-          before: '',
-          after: ''
+          text: ''
         },
         spend: {
           text: '',
@@ -307,7 +267,7 @@ const createNewItem = (type: 'ability' | 'feature'): MonsterItem => {
       })
     }
   }
-  
+
   return baseItem
 }
 
@@ -661,16 +621,16 @@ watch(isValid, (valid) => {
     align-items: flex-start;
     gap: 1rem;
   }
-  
+
   .ability-controls {
     align-self: flex-end;
   }
-  
+
   .add-ability-section {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .modal-overlay {
     padding: 0.5rem;
   }

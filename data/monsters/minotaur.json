@@ -87,8 +87,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The minotaur shifts up to 3 squares</p>"
+          "text": "<p>The minotaur shifts up to 3 squares</p>"
         },
         "spend": {
           "text": "",
@@ -122,8 +121,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of their next turn, the minotaur has damage immunity 2 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with strikes. On their next turn, the minotaur can use one additional maneuver.</p>",
-          "after": ""
+          "text": "<p>Until the end of their next turn, the minotaur has damage immunity 2 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with strikes. On their next turn, the minotaur can use one additional maneuver.</p>"
         },
         "spend": {
           "text": "",
@@ -176,8 +174,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If this ability is used as part of the Charge main action, its potency increases by 1.</p>"
+          "text": "<p>If this ability is used as part of the Charge main action, its potency increases by 1.</p>"
         },
         "spend": {
           "text": "",
@@ -214,8 +211,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The minotaur uses the Charge main action and either Flail and Blade or Goring Horns against the target.</p>",
-          "after": ""
+          "text": "<p>The minotaur uses the Charge main action and either Flail and Blade or Goring Horns against the target.</p>"
         },
         "spend": {
           "text": "",
@@ -246,8 +242,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>",
-          "after": ""
+          "text": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -278,8 +273,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>",
-          "after": ""
+          "text": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -310,8 +304,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

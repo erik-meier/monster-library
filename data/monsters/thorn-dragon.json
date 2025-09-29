@@ -152,8 +152,7 @@
           }
         },
         "effect": {
-          "before": "<p><strong>Note:</strong> Targets each Enemy and Object in the area.</p><p>Each target makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> poison damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> poison damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage</p></td></tr></tbody></table>",
-          "after": "<p>A dragonsealed creature has their wounds bound by nettles and thorns, causing them to take an extra <span class=\"damage-value damage-generic\">1d3</span> damage whenever they take damage rolled as a d6 or a d3.</p>"
+          "text": "<p><strong>Note:</strong> Targets each Enemy and Object in the area.</p><p>Each target makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> poison damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> poison damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage</p></td></tr></tbody></table> <p>A dragonsealed creature has their wounds bound by nettles and thorns, causing them to take an extra <span class=\"damage-value damage-generic\">1d3</span> damage whenever they take damage rolled as a d6 or a d3.</p>"
         },
         "spend": {
           "text": "",
@@ -205,10 +204,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "Each target takes an extra 1d3 damage, and if they have A < 2, they are bleeding (save ends).",
           "value": 2,
@@ -245,8 +241,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>Each target must be dragonsealed. Each target is pulled up to 5 squares toward the dragon, who gains 5 temporary Stamina for each target pulled.</p>"
+          "text": "<p>Each target must be dragonsealed. Each target is pulled up to 5 squares toward the dragon, who gains 5 temporary Stamina for each target pulled.</p>"
         },
         "spend": {
           "text": "",
@@ -284,8 +279,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The target is pulled up to 5 squares toward the dragon, and if they have A &lt; 2, they are restrained until the end of their next turn.</p>"
+          "text": "<p>The target is pulled up to 5 squares toward the dragon, and if they have A &lt; 2, they are restrained until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -322,8 +316,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The dragon makes a free strike against the target, and if the target has M &lt; 2, they are bleeding until the end of their next turn.</p>"
+          "text": "<p>The dragon makes a free strike against the target, and if the target has M &lt; 2, they are bleeding until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -373,10 +366,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -409,8 +399,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The thorns upon the dragon's scales grow longer and sharper. Until the end of the encounter, any adjacent creature who targets the dragon with a melee strike takes 3 damage. The dragon then uses their Provoking Nettles ability.</p>",
-          "after": ""
+          "text": "<p>The thorns upon the dragon's scales grow longer and sharper. Until the end of the encounter, any adjacent creature who targets the dragon with a melee strike takes 3 damage. The dragon then uses their Provoking Nettles ability.</p>"
         },
         "spend": {
           "text": "",
@@ -444,8 +433,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Poisonous overgrowth and seeking vines cover all surfaces on the encounter map. The dragon uses their Bramble Barricade Malice feature twice at no cost. Until the end of the encounter, any creature force moved by the dragon takes <span class=\"damage-value damage-generic\">1d3</span> poison damage, and if they have M &lt; 2, they are weakened (save ends).</p>",
-          "after": "<p><strong>Special:</strong> If the Thorn Dragon’s Domain trait is in effect, any creature other than the dragon who starts their turn on the encounter map takes <span class=\"damage-value damage-generic\">1d3</span> poison damage.</p>"
+          "text": "<p>Poisonous overgrowth and seeking vines cover all surfaces on the encounter map. The dragon uses their Bramble Barricade Malice feature twice at no cost. Until the end of the encounter, any creature force moved by the dragon takes <span class=\"damage-value damage-generic\">1d3</span> poison damage, and if they have M &lt; 2, they are weakened (save ends).</p> <p><strong>Special:</strong> If the Thorn Dragon’s Domain trait is in effect, any creature other than the dragon who starts their turn on the encounter map takes <span class=\"damage-value damage-generic\">1d3</span> poison damage.</p>"
         },
         "spend": {
           "text": "",
@@ -476,8 +464,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>A cage of thorns grows around one dragonsealed enemy on the encounter map, making that enemy restrained until the end of their next turn.</p>",
-          "after": ""
+          "text": "<p>A cage of thorns grows around one dragonsealed enemy on the encounter map, making that enemy restrained until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -508,8 +495,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The dragon grows a 10 wall of briars in unoccupied spaces on the encounter map. The wall blocks line of effect for all creatures except the dragon. Each square of the wall has 5 Stamina and fire weakness 5. The area can be moved through but is difficult terrain. Any creature who is force moved into or within the area takes <span class=\"damage-value damage-generic\">1</span> damage for each square of the area entered and is bleeding until the end of their next turn.</p>",
-          "after": ""
+          "text": "<p>The dragon grows a 10 wall of briars in unoccupied spaces on the encounter map. The wall blocks line of effect for all creatures except the dragon. Each square of the wall has 5 Stamina and fire weakness 5. The area can be moved through but is difficult terrain. Any creature who is force moved into or within the area takes <span class=\"damage-value damage-generic\">1</span> damage for each square of the area entered and is bleeding until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -540,8 +526,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The dragon takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
-          "after": ""
+          "text": "<p>The dragon takes an additional main action on their turn. They can use this feature even if they are dazed.</p>"
         },
         "spend": {
           "text": "",
@@ -572,8 +557,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The dragon summons poisonous, biting thorns around their foes. Each enemy on the encounter map makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> poison damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> poison damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage; bleeding (EoT)</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>The dragon summons poisonous, biting thorns around their foes. Each enemy on the encounter map makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> poison damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> poison damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage; bleeding (EoT)</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

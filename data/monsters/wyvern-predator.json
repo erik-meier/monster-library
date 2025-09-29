@@ -97,8 +97,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If a target slowed this way is already slowed, they are instead restrained (save ends).</p>"
+          "text": "<p>If a target slowed this way is already slowed, they are instead restrained (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -150,10 +149,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "The predator uses this ability a second time, either recreating the same line or creating a new line.",
           "value": 5,
@@ -204,10 +200,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -243,8 +236,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The predator uses Sedating Stinger against the target, then shifts up to 3 squares.</p>",
-          "after": ""
+          "text": "<p>The predator uses Sedating Stinger against the target, then shifts up to 3 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -275,8 +267,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>One wyvern in the encounter can make a free strike against each enemy adjacent to them.</p>",
-          "after": ""
+          "text": "<p>One wyvern in the encounter can make a free strike against each enemy adjacent to them.</p>"
         },
         "spend": {
           "text": "",
@@ -307,8 +298,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each wyvern in the encounter has a double edge on strikes and can use their signature ability instead of a free strike when making opportunity attacks.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, each wyvern in the encounter has a double edge on strikes and can use their signature ability instead of a free strike when making opportunity attacks.</p>"
         },
         "spend": {
           "text": "",
@@ -339,8 +329,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Every wyvern’s anger fills the encounter map with a thick miasma</p><p>of hatred. Each enemy in the encounter makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target is taunted by the nearest creature or object (save ends). While the target is taunted this way, power rolls against them have a double edge.</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target is taunted by the nearest creature or object (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>Every wyvern’s anger fills the encounter map with a thick miasma</p><p>of hatred. Each enemy in the encounter makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target is taunted by the nearest creature or object (save ends). While the target is taunted this way, power rolls against them have a double edge.</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target is taunted by the nearest creature or object (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

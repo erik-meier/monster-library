@@ -110,10 +110,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "The phantom bredbeddle shifts up to 2 squares, and can target additional enemies who come within distance of this ability during the shift.",
           "value": 3,
@@ -166,8 +163,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>A beheaded target has their head fall into an unoccupied square adjacent to the bredbeddle, but they remain alive. While beheaded this way, the target is bleeding and has line of effect only to adjacent squares. The beheaded target can survive without their head for 24 hours, and can reattach their head as a maneuver by entering its square. A target who remains beheaded for 24 hours dies.</p>"
+          "text": "<p>A beheaded target has their head fall into an unoccupied square adjacent to the bredbeddle, but they remain alive. While beheaded this way, the target is bleeding and has line of effect only to adjacent squares. The beheaded target can survive without their head for 24 hours, and can reattach their head as a maneuver by entering its square. A target who remains beheaded for 24 hours dies.</p>"
         },
         "spend": {
           "text": "",
@@ -201,8 +197,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>While the phantom bredbeddle is headless, they shift up to their speed. Each time a creature comes adjacent to the bredbeddle during the shift, the bredbeddle can push that creature 1 square. Each square the bredbeddle exits during the shift is difficult terrain.</p>"
+          "text": "<p>While the phantom bredbeddle is headless, they shift up to their speed. Each time a creature comes adjacent to the bredbeddle during the shift, the bredbeddle can push that creature 1 square. Each square the bredbeddle exits during the shift is difficult terrain.</p>"
         },
         "spend": {
           "text": "",
@@ -254,8 +249,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The phantom bredbeddle must have a head in their possession (attached to them or not), which they throw at the target. If the head was attached, the bredbeddle is left headless.</p>"
+          "text": "<p>The phantom bredbeddle must have a head in their possession (attached to them or not), which they throw at the target. If the head was attached, the bredbeddle is left headless.</p>"
         },
         "spend": {
           "text": "",
@@ -291,8 +285,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The phantom bredbeddle uses the same ability against the triggering creature after the triggering strike is resolved, using that creature's bonus to any power rolls they make.</p>"
+          "text": "<p>The phantom bredbeddle uses the same ability against the triggering creature after the triggering strike is resolved, using that creature's bonus to any power rolls they make.</p>"
         },
         "spend": {
           "text": "",
@@ -323,8 +316,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The bredbeddle’s axe lengthens and turns a ghastly green, granting a +1 bonus to the distance of the bredbeddle’s melee strikes and the dimensions of their burst area abilities until the end of their turn.</p>",
-          "after": ""
+          "text": "<p>The bredbeddle’s axe lengthens and turns a ghastly green, granting a +1 bonus to the distance of the bredbeddle’s melee strikes and the dimensions of their burst area abilities until the end of their turn.</p>"
         },
         "spend": {
           "text": "",
@@ -355,8 +347,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>A ghostly size 1L stockade seeps out from under the bredbeddle’s feet to fill an unoccupied square within 10 squares. When a size 1L or smaller enemy enters the stockade’s square, they are restrained (save ends). When a restrained creature is no longer restrained, the stock ade fades away. At the start of each of the bredbeddle’s turns, they can slide an active stockade and any creature in it up to 5 squares.</p>",
-          "after": ""
+          "text": "<p>A ghostly size 1L stockade seeps out from under the bredbeddle’s feet to fill an unoccupied square within 10 squares. When a size 1L or smaller enemy enters the stockade’s square, they are restrained (save ends). When a restrained creature is no longer restrained, the stock ade fades away. At the start of each of the bredbeddle’s turns, they can slide an active stockade and any creature in it up to 5 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -388,8 +379,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The bredbeddle takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
-          "after": ""
+          "text": "<p>The bredbeddle takes an additional main action on their turn. They can use this feature even if they are dazed.</p>"
         },
         "spend": {
           "text": "",
@@ -421,8 +411,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>A phantom second bredbeddle phases into view, appearing in an unoccupied space anywhere on the encounter map, then vanishing at the end of the round. The phantom bredbeddle shares the original bredbeddle’s statistics but has 24 Stamina, corruption immunity 10, and can fly. The phantom bredbeddle can take one turn and use any of the bredbeddle’s abilities except for villain actions. Only one phantom bredbeddle can be active at a time.</p><p><span class=\"reference-text\">Phantom Bredbeddle</span></p>",
-          "after": ""
+          "text": "<p>A phantom second bredbeddle phases into view, appearing in an unoccupied space anywhere on the encounter map, then vanishing at the end of the round. The phantom bredbeddle shares the original bredbeddle’s statistics but has 24 Stamina, corruption immunity 10, and can fly. The phantom bredbeddle can take one turn and use any of the bredbeddle’s abilities except for villain actions. Only one phantom bredbeddle can be active at a time.</p><p><span class=\"reference-text\">Phantom Bredbeddle</span></p>"
         },
         "spend": {
           "text": "",

@@ -67,8 +67,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
-          "after": ""
+          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
         },
         "spend": {
           "text": "",
@@ -99,8 +98,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
-          "after": ""
+          "text": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>"
         },
         "spend": {
           "text": "",
@@ -150,8 +148,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>One creature within 5 squares regains <span class=\"heal-value\">1</span> healing</p>"
+          "text": "<p>One creature within 5 squares regains [[/heal 1]]</p>"
         },
         "spend": {
           "text": "",

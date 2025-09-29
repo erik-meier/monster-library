@@ -88,8 +88,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>",
-          "after": ""
+          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>"
         },
         "spend": {
           "text": "",
@@ -120,8 +119,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two kobolds take their turns in a row.</p>",
-          "after": ""
+          "text": "<p>Two kobolds take their turns in a row.</p>"
         },
         "spend": {
           "text": "",
@@ -152,8 +150,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
         },
         "spend": {
           "text": "",
@@ -196,18 +193,15 @@
             },
             {
               "tier": 2,
-              "display": "6 damage; {{potency}} restrained (save ends)"
+              "display": "6 damage; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "7 damage; {{potency}} restrained (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "The venator lights their net on fire, and a target restrained  this way takes 2 fire damage at the start of each of their turns.",
           "value": 3,

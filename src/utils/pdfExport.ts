@@ -1,75 +1,9 @@
 import html2canvas from 'html2canvas'
 import { jsPDF } from 'jspdf'
+import type { MonsterFormData, MonsterItem } from '@/types/monster-forms'
 
-// Types for monster data
-interface Monster {
-  name: string
-  level?: number
-  ev?: number
-  role?: string
-  organization?: string
-  keywords?: string[]
-  size?: {
-    value?: number
-    letter?: string
-  }
-  speed?: number
-  stamina?: number
-  stability?: number
-  freeStrike?: number
-  characteristics?: {
-    might: number
-    agility: number
-    reason: number
-    intuition: number
-    presence: number
-  }
-  immunities?: Record<string, number>
-  weaknesses?: Record<string, number>
-  movementTypes?: string | string[]
-  items?: MonsterItem[]
-}
-
-interface MonsterItem {
-  name: string
-  type?: string
-  system?: {
-    category?: string
-    type?: string
-    resource?: number | null
-    keywords?: string[]
-    distance?: {
-      type: string
-      primary?: number | string
-      secondary?: number | string
-    }
-    target?: {
-      type: string
-      value?: number
-    }
-    power?: {
-      roll?: {
-        formula: string
-        characteristics?: string[]
-      }
-      tiers?: Array<{
-        tier: number
-        display: string
-      }>
-    }
-    effect?: {
-      before?: string
-      after?: string
-    }
-    spend?: {
-      text?: string
-      value?: number | null
-    }
-    description?: {
-      value?: string
-    }
-  }
-}
+// Type alias for the PDF export function to match the expected monster data structure
+type Monster = MonsterFormData
 
 /**
  * Export monster stat block to PDF using HTML+CSS approach
@@ -551,16 +485,6 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
           </div>
         </div>
 
-        <!-- Before Effect -->
-        ${item.system?.effect?.before ? `
-          <div style="
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-          ">
-            <strong>Effect:</strong> ${stripHTML(item.system.effect.before)}
-          </div>
-        ` : ''}
-
         <!-- Power Roll Tiers -->
         ${hasPowerRoll ? `
           <div class="power-roll" style="
@@ -587,12 +511,12 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
               </div>
             `).join('') || ''}
             
-            ${item.system?.effect?.after ? `
+            ${item.system?.effect?.text ? `
               <div style="
                 margin-top: 8px;
                 font-size: 0.9rem;
               ">
-                <strong>Effect:</strong> ${stripHTML(item.system.effect.after)}
+                <strong>Effect:</strong> ${stripHTML(item.system.effect.text)}
               </div>
             ` : ''}
           </div>
@@ -605,10 +529,10 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
           </div>
         ` : ''}
 
-        <!-- Description (for abilities without power rolls but with before effect) -->
-        ${!hasPowerRoll && !item.system?.description?.value && item.system?.effect?.before ? `
+        <!-- Description (for abilities without power rolls but with effect text) -->
+        ${!hasPowerRoll && !item.system?.description?.value && item.system?.effect?.text ? `
           <div style="font-size: 0.9rem; margin: 8px 0;">
-            ${stripHTML(item.system.effect.before)}
+            <strong>Effect:</strong> ${stripHTML(item.system.effect.text)}
           </div>
         ` : ''}
 

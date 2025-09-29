@@ -100,8 +100,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If the apprentice mage doesn’t use a maneuver or a move action this turn, the target is also slowed (EoT).</p>"
+          "text": "<p>If the apprentice mage doesn’t use a maneuver or a move action this turn, the target is also slowed (EoT).</p>"
         },
         "spend": {
           "text": "",
@@ -132,8 +131,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
-          "after": ""
+          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
         },
         "spend": {
           "text": "",
@@ -164,8 +162,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
-          "after": ""
+          "text": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>"
         },
         "spend": {
           "text": "",

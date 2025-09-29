@@ -49,7 +49,7 @@ export interface MonsterItem {
   name: string
   type: 'feature' | 'ability'
   system: {
-    category?: 'signature' | 'heroic' | string
+    category?: 'signature' | string
     type?: 'main' | 'move' | 'none' | string
     resource?: number | null
     keywords: string[]
@@ -76,8 +76,7 @@ export interface MonsterItem {
       effects?: Record<string, unknown>
     } | null
     effect?: {
-      before?: string
-      after?: string
+      text?: string
     }
     description?: {
       value: string

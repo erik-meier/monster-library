@@ -85,8 +85,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If this ability gains an edge or has a double edge, it deals an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
+          "text": "<p>If this ability gains an edge or has a double edge, it deals an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
         },
         "spend": {
           "text": "",
@@ -138,8 +137,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>While bleeding this way, the target takes a bane on tests to search for the lightbender while they are hidden.</p>"
+          "text": "<p>While bleeding this way, the target takes a bane on tests to search for the lightbender while they are hidden.</p>"
         },
         "spend": {
           "text": "",
@@ -190,8 +188,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>While dazed this way, a target has speed 0. If a target takes damage, or if someone else uses a main action to shake the target out of their stupor, the dazed condition ends.</p>"
+          "text": "<p>While dazed this way, a target has speed 0. If a target takes damage, or if someone else uses a main action to shake the target out of their stupor, the dazed condition ends.</p>"
         },
         "spend": {
           "text": "",
@@ -227,8 +224,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The lightbender halves the damage, ignores any nondamaging effects associated with it, and can teleport up to 5 squares. If they teleport into concealment or cover, the lightbender can immediately attempt to hide as a free maneuver.</p>"
+          "text": "<p>The lightbender halves the damage, ignores any nondamaging effects associated with it, and can teleport up to 5 squares. If they teleport into concealment or cover, the lightbender can immediately attempt to hide as a free maneuver.</p>"
         },
         "spend": {
           "text": "",
@@ -259,8 +255,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each lightbender acting this turn can teleport up to their speed as a move action and attempt to hide as a free maneuver, all until the start of their next turn.</p>",
-          "after": ""
+          "text": "<p>Each lightbender acting this turn can teleport up to their speed as a move action and attempt to hide as a free maneuver, all until the start of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -291,8 +286,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each lightbender acting this turn can create a duplicate lightbender in an unoccupied space adjacent to them. The duplicate is indistinguishable from the lightbender except by supernatural means, has 1 Stamina, and has the lightbender’s speed. A duplicate acts on the lightbender’s turn but can take only move actions. Once per round before or after using an ability, a lightbender can trade places with any lightbender duplicate.</p>",
-          "after": ""
+          "text": "<p>Each lightbender acting this turn can create a duplicate lightbender in an unoccupied space adjacent to them. The duplicate is indistinguishable from the lightbender except by supernatural means, has 1 Stamina, and has the lightbender’s speed. A duplicate acts on the lightbender’s turn but can take only move actions. Once per round before or after using an ability, a lightbender can trade places with any lightbender duplicate.</p>"
         },
         "spend": {
           "text": "",
@@ -323,8 +317,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each lightbender in the encounter shines radiantly, distorting the senses of any enemy within 5 squares of them. Each affected enemy makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Reason test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target doesn’t have line of effect to any lightbender (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target doesn’t have line of effect to any lightbender (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>Each lightbender in the encounter shines radiantly, distorting the senses of any enemy within 5 squares of them. Each affected enemy makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Reason test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target doesn’t have line of effect to any lightbender (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target doesn’t have line of effect to any lightbender (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

@@ -89,8 +89,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The cleaver jumps up to 4 squares before or after making this strike.</p>"
+          "text": "<p>The cleaver jumps up to 4 squares before or after making this strike.</p>"
         },
         "spend": {
           "text": "",
@@ -121,8 +120,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -153,8 +151,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> sonic damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> sonic damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -248,8 +245,7 @@
           }
         },
         "effect": {
-          "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
-          "after": ""
+          "text": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>"
         },
         "spend": {
           "text": "",

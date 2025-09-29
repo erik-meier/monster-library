@@ -97,10 +97,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "Each target who has m<1 is bleeding (save ends).",
           "value": 1,
@@ -151,8 +148,7 @@
           ]
         },
         "effect": {
-          "before": "<p>The juggernaut jumps up to 6 squares before using this ability.</p>",
-          "after": ""
+          "text": "<p>The juggernaut jumps up to 6 squares before using this ability.</p>"
         },
         "spend": {
           "text": "",
@@ -202,8 +198,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>While a target is frightened this way, any ogre gains an edge on strikes against them.</p>"
+          "text": "<p>While a target is frightened this way, any ogre gains an edge on strikes against them.</p>"
         },
         "spend": {
           "text": "",
@@ -234,8 +229,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The juggernaut moves up to their speed and can make a <span class=\"damage-value damage-generic\">5</span> damage free strike.</p>",
-          "after": ""
+          "text": "<p>The juggernaut moves up to their speed and can make a <span class=\"damage-value damage-generic\">5</span> damage free strike.</p>"
         },
         "spend": {
           "text": "",
@@ -266,8 +260,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>",
-          "after": ""
+          "text": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>"
         },
         "spend": {
           "text": "",
@@ -298,8 +291,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -330,8 +322,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>"
         },
         "spend": {
           "text": "",

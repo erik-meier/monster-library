@@ -85,8 +85,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The animal shifts up to 2 squares between strikes.</p>"
+          "text": "<p>The animal shifts up to 2 squares between strikes.</p>"
         },
         "spend": {
           "text": "",
@@ -122,8 +121,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The animal moves up to their speed.</p>"
+          "text": "<p>The animal moves up to their speed.</p>"
         },
         "spend": {
           "text": "",

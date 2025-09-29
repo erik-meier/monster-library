@@ -70,8 +70,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>Until the start of the brambleguard's next turn, their speed is 0 and they extend themself into a 5 wall. Each ally who starts their turn adjacent to the brambleguard regains <span class=\"heal-value\">5</span> healing and can apply the Magic keyword to their weapon abilities until the end of their turn.</p>"
+          "text": "<p>Until the start of the brambleguard's next turn, their speed is 0 and they extend themself into a 5 wall. Each ally who starts their turn adjacent to the brambleguard regains [[/heal 5]] and can apply the Magic keyword to their weapon abilities until the end of their turn.</p>"
         },
         "spend": {
           "text": "",
@@ -121,10 +120,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -154,8 +150,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
         },
         "spend": {
           "text": "",
@@ -206,8 +201,7 @@
           ]
         },
         "effect": {
-          "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
-          "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          "text": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p> <p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
         },
         "spend": {
           "text": "",
@@ -238,8 +232,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
         },
         "spend": {
           "text": "",

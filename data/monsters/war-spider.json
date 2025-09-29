@@ -97,10 +97,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "For any tier outcome, if the target has M < 3, they are  weakened (save ends).",
           "value": 2,
@@ -151,10 +148,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -184,8 +178,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The spider shifts up to their speed and uses Leg Blade against each creature who comes adjacent to them during the shift. The spider makes one power roll against all targets.</p>",
-          "after": ""
+          "text": "<p>The spider shifts up to their speed and uses Leg Blade against each creature who comes adjacent to them during the shift. The spider makes one power roll against all targets.</p>"
         },
         "spend": {
           "text": "",
@@ -237,8 +230,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The area is difficult terrain for enemies.</p>"
+          "text": "<p>The area is difficult terrain for enemies.</p>"
         },
         "spend": {
           "text": "",
@@ -269,8 +261,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The damage is halved, and the spider shifts up to 2 squares after the triggering effect resolves.</p>",
-          "after": ""
+          "text": "<p>The damage is halved, and the spider shifts up to 2 squares after the triggering effect resolves.</p>"
         },
         "spend": {
           "text": "",

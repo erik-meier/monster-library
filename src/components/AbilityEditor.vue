@@ -239,20 +239,13 @@
 
         <!-- Effects -->
         <section class="editor-section">
-          <h3 class="section-title">Effects</h3>
+          <h3 class="section-title">Effect</h3>
           <div class="form-group">
-            <label for="effect-before" class="form-label">Effect (Before Roll)</label>
-            <textarea id="effect-before" v-model="formData.system.effect!.before" class="form-textarea" rows="2"
-              placeholder="Effect that happens before the power roll..." />
+            <label for="effect-text" class="form-label">Effect Description</label>
+            <textarea id="effect-text" v-model="formData.system.effect!.text" class="form-textarea" rows="3"
+              placeholder="Describe what this ability does..." />
+            <div class="help-text">HTML is supported for formatting</div>
           </div>
-
-          <div class="form-group">
-            <label for="effect-after" class="form-label">Effect (After Roll)</label>
-            <textarea id="effect-after" v-model="formData.system.effect!.after" class="form-textarea" rows="2"
-              placeholder="Effect that happens after the power roll..." />
-          </div>
-
-          <div class="help-text">HTML is supported for formatting</div>
         </section>
 
         <!-- Spend Effects -->
@@ -499,8 +492,7 @@ const onTypeChange = () => {
         ]
       },
       effect: formData.system.effect || {
-        before: '',
-        after: ''
+        text: ''
       },
       spend: formData.system.spend || {
         text: '',

@@ -267,9 +267,8 @@
             <!-- Description or Effects -->
             <div v-if="item.type === 'feature' && item.system?.description?.value" class="ability-description"
               v-html="item.system.description.value"></div>
-            <div v-else-if="item.system?.effect" class="ability-effects">
-              <div v-if="item.system.effect.before" class="effect-before">Before: {{ item.system.effect.before }}</div>
-              <div v-if="item.system.effect.after" class="effect-after">After: {{ item.system.effect.after }}</div>
+            <div v-else-if="item.system?.effect?.text" class="ability-effects">
+              <div class="effect-text"><strong>Effect:</strong> <span v-html="item.system.effect.text"></span></div>
             </div>
 
             <!-- Keywords -->
@@ -526,6 +525,9 @@ const formatTarget = (target) => {
     case 'selfAlly':
       targetText = 'Self and Ally'
       break
+    case 'selfOrAlly':
+      targetText = 'Self or Ally'
+      break
     case 'special':
       targetText = 'Special'
       break
@@ -634,9 +636,26 @@ const normalizeAbilityForEditor = (ability) => {
 
     if (!ability.system.effect) {
       ability.system.effect = {
-        before: '',
-        after: ''
+        text: ''
       }
+    } else {
+      // Convert legacy before/after fields to unified text field
+      let combinedText = '';
+      if (ability.system.effect.before) {
+        combinedText += ability.system.effect.before;
+      }
+      if (ability.system.effect.after) {
+        if (combinedText) {
+          combinedText += ' ';
+        }
+        combinedText += ability.system.effect.after;
+      }
+      if (!ability.system.effect.text && combinedText) {
+        ability.system.effect.text = combinedText;
+      }
+      // Clean up legacy fields
+      delete ability.system.effect.before;
+      delete ability.system.effect.after;
     }
 
     if (ability.system.trigger === undefined) {
@@ -773,8 +792,7 @@ const addAbility = () => {
         ]
       },
       effect: {
-        before: '',
-        after: ''
+        text: ''
       },
       spend: {
         text: '',
@@ -1479,6 +1497,7 @@ const debouncedUpdateDefenses = () => {
 .btn-edit-small:hover {
   background: #138496;
 }
+
 /* Enhanced ability preview styles */
 .ability-info-row {
   display: flex;
@@ -1566,8 +1585,7 @@ const debouncedUpdateDefenses = () => {
   color: #555;
 }
 
-.effect-before,
-.effect-after {
+.effect-text {
   margin-bottom: 0.125rem;
   padding: 0.25rem;
   background: #f8f9fa;

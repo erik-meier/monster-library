@@ -86,8 +86,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>Until the end of their turn, the soot crow ignores opportunity attacks from the target.</p>"
+          "text": "<p>Until the end of their turn, the soot crow ignores opportunity attacks from the target.</p>"
         },
         "spend": {
           "text": "",
@@ -118,8 +117,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
         },
         "spend": {
           "text": "",
@@ -150,8 +148,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
         },
         "spend": {
           "text": "",
