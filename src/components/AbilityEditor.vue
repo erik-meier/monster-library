@@ -185,53 +185,67 @@
           </div>
         </section>
 
-        <!-- Power Roll -->
+        <!-- Power Roll (Optional) -->
         <section class="editor-section">
-          <h3 class="section-title">Power Roll</h3>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="power-characteristic" class="form-label">Characteristic</label>
-              <select id="power-characteristic" v-model="selectedCharacteristic" class="form-select">
-                <option value="">Custom Formula</option>
-                <option v-for="char in characteristicsList" :key="char.value" :value="char.value">
-                  {{ char.label }}
-                </option>
-              </select>
-              <div class="help-text">Select characteristic for 2d10 + characteristic formula, or use custom</div>
-            </div>
-
-            <div class="form-group" v-if="!selectedCharacteristic">
-              <label for="power-formula" class="form-label">Custom Formula</label>
-              <input id="power-formula" v-model="formData.system.power!.roll!.formula" type="text" class="form-input"
-                placeholder="2d10 + 2" />
-              <div class="help-text">e.g., 2d10, 2d10 + 3</div>
-            </div>
-
-            <div class="form-group" v-else>
-              <label class="form-label">Generated Formula</label>
-              <div class="formula-display">{{ generatedFormula }}</div>
-              <div class="help-text">Formula automatically generated from selected characteristic</div>
-            </div>
+          <div class="section-header-with-toggle">
+            <h3 class="section-title">Power Roll (Optional)</h3>
+            <label class="toggle-switch">
+              <input type="checkbox" v-model="hasPowerRoll" />
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">{{ hasPowerRoll ? 'Has Power Roll' : 'No Power Roll' }}</span>
+            </label>
+          </div>
+          
+          <div class="help-text section-help">
+            Not all abilities need power rolls. Maneuvers, triggered actions, and some other abilities may only have descriptions.
           </div>
 
-          <!-- Power Tiers -->
-          <div class="power-tiers">
-            <h4 class="subsection-title">Power Tiers</h4>
-            <div class="tier-list">
-              <div v-for="(tier, index) in formData.system.power!.tiers!" :key="index" class="tier-row">
-                <div class="tier-number">{{ tier.tier }}</div>
-                <input v-model="tier.display" type="text" class="tier-input"
-                  :placeholder="`Tier ${tier.tier} effect`" />
-                <button v-if="formData.system.power!.tiers!.length > 1" type="button" class="btn-remove-tier"
-                  @click="removeTier(index)">
-                  ×
-                </button>
+          <template v-if="hasPowerRoll">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="power-characteristic" class="form-label">Characteristic</label>
+                <select id="power-characteristic" v-model="selectedCharacteristic" class="form-select">
+                  <option value="">Custom Formula</option>
+                  <option v-for="char in characteristicsList" :key="char.value" :value="char.value">
+                    {{ char.label }}
+                  </option>
+                </select>
+                <div class="help-text">Select characteristic for 2d10 + characteristic formula, or use custom</div>
+              </div>
+
+              <div class="form-group" v-if="!selectedCharacteristic">
+                <label for="power-formula" class="form-label">Custom Formula</label>
+                <input id="power-formula" v-model="formData.system.power!.roll!.formula" type="text" class="form-input"
+                  placeholder="2d10 + 2" />
+                <div class="help-text">e.g., 2d10, 2d10 + 3</div>
+              </div>
+
+              <div class="form-group" v-else>
+                <label class="form-label">Generated Formula</label>
+                <div class="formula-display">{{ generatedFormula }}</div>
+                <div class="help-text">Formula automatically generated from selected characteristic</div>
               </div>
             </div>
-            <button v-if="formData.system.power!.tiers!.length < 3" type="button" class="btn-add-tier" @click="addTier">
-              + Add Tier
-            </button>
-          </div>
+
+            <!-- Power Tiers -->
+            <div class="power-tiers">
+              <h4 class="subsection-title">Power Tiers</h4>
+              <div class="tier-list">
+                <div v-for="(tier, index) in formData.system.power!.tiers!" :key="index" class="tier-row">
+                  <div class="tier-number">{{ tier.tier }}</div>
+                  <input v-model="tier.display" type="text" class="tier-input"
+                    :placeholder="`Tier ${tier.tier} effect`" />
+                  <button v-if="formData.system.power!.tiers!.length > 1" type="button" class="btn-remove-tier"
+                    @click="removeTier(index)">
+                    ×
+                  </button>
+                </div>
+              </div>
+              <button v-if="formData.system.power!.tiers!.length < 3" type="button" class="btn-add-tier" @click="addTier">
+                + Add Tier
+              </button>
+            </div>
+          </template>
         </section>
 
         <!-- Effects -->
@@ -331,6 +345,13 @@ const emit = defineEmits<Emits>()
 
 const formData = reactive<MonsterItem>(JSON.parse(JSON.stringify(props.modelValue)))
 const newKeyword = ref('')
+
+// Determine if this ability has a power roll based on existing data
+const hasPowerRoll = ref(
+  !!(formData.system.power?.roll?.formula || 
+     formData.system.power?.tiers?.length ||
+     formData.system.power?.roll?.characteristics?.length)
+)
 
 const characteristicsList = [
   { value: 'might', label: 'Might' },
@@ -526,6 +547,28 @@ watch(formData, () => {
   validateFields()
   emit('update:modelValue', JSON.parse(JSON.stringify(formData)))
 }, { deep: true })
+
+// Watch for hasPowerRoll toggle changes
+watch(hasPowerRoll, (newValue) => {
+  if (!newValue) {
+    // Clear power roll data when disabled
+    if (formData.system.power) {
+      formData.system.power.roll = {
+        formula: '',
+        characteristics: []
+      }
+      formData.system.power.tiers = []
+    }
+  } else if (!formData.system.power?.tiers?.length) {
+    // Initialize with one tier when enabled
+    if (formData.system.power) {
+      formData.system.power.tiers = [{
+        tier: 1,
+        display: ''
+      }]
+    }
+  }
+})
 
 // Watch for external changes
 watch(() => props.modelValue, (newValue) => {
@@ -953,5 +996,65 @@ validateFields()
   .tier-input {
     min-width: 200px;
   }
+}
+
+/* Toggle Switch Styles */
+.section-header-with-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-help {
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: #6c757d;
+}
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-switch input[type="checkbox"] {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  appearance: none;
+  background: #ccc;
+  border-radius: 20px;
+  outline: none;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.toggle-switch input[type="checkbox"]:checked {
+  background: #28a745;
+}
+
+.toggle-switch input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle-switch input[type="checkbox"]:checked::before {
+  transform: translateX(20px);
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #495057;
 }
 </style>

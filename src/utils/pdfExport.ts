@@ -1,4 +1,7 @@
-// Types for monster data - using a subset since we don't have the full types file yet
+import html2canvas from 'html2canvas'
+import { jsPDF } from 'jspdf'
+
+// Types for monster data
 interface Monster {
   name: string
   level?: number
@@ -53,390 +56,563 @@ interface MonsterItem {
         tier: number
         display: string
       }>
-    } | null
+    }
     effect?: {
       before?: string
       after?: string
     }
+    spend?: {
+      text?: string
+      value?: number | null
+    }
     description?: {
-      value: string
+      value?: string
     }
-    trigger?: string
   }
 }
 
-interface PDFExportOptions {
-  filename?: string
-  format?: 'A4' | 'Letter'
-  orientation?: 'portrait' | 'landscape'
+/**
+ * Export monster stat block to PDF using HTML+CSS approach
+ * This captures the existing styled stat block and converts it to PDF
+ */
+export async function exportMonsterToPDF(monster: Monster): Promise<void> {
+  try {
+    // Create a temporary div with the stat block HTML
+    const tempDiv = document.createElement('div')
+    tempDiv.style.position = 'absolute'
+    tempDiv.style.top = '-9999px'
+    tempDiv.style.left = '-9999px'
+    tempDiv.style.width = '800px' // Set a fixed width for consistent rendering
+    tempDiv.style.backgroundColor = 'white'
+    tempDiv.style.padding = '20px'
+    
+    // Generate the stat block HTML
+    tempDiv.innerHTML = generateStatBlockHTML(monster)
+    
+    // Add to DOM temporarily
+    document.body.appendChild(tempDiv)
+    
+    // Wait a moment for fonts to load
+    await new Promise(resolve => setTimeout(resolve, 100))
+    
+    // Capture the element as canvas
+    const canvas = await html2canvas(tempDiv, {
+      scale: 2, // Higher resolution
+      useCORS: true,
+      allowTaint: true,
+      backgroundColor: 'white',
+      width: 800,
+      height: tempDiv.scrollHeight
+    })
+    
+    // Remove temporary element
+    document.body.removeChild(tempDiv)
+    
+    // Create PDF
+    const imgData = canvas.toDataURL('image/png')
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    })
+    
+    // Calculate dimensions to fit page
+    const pageWidth = pdf.internal.pageSize.getWidth()
+    const pageHeight = pdf.internal.pageSize.getHeight()
+    const imgWidth = pageWidth - 20 // 10mm margin on each side
+    const imgHeight = (canvas.height * imgWidth) / canvas.width
+    
+    // Check if we need multiple pages
+    let yPosition = 10 // Start position
+    let remainingHeight = imgHeight
+    
+    while (remainingHeight > 0) {
+      const canvasHeight = Math.min(remainingHeight, pageHeight - 20) // 10mm top/bottom margin
+      const canvasPosition = imgHeight - remainingHeight
+      
+      // Add the image portion to current page
+      pdf.addImage(
+        imgData, 
+        'PNG', 
+        10, // x position
+        yPosition, // y position  
+        imgWidth,
+        canvasHeight,
+        undefined,
+        'FAST',
+        0, // rotation
+        -canvasPosition // crop from top
+      )
+      
+      remainingHeight -= (pageHeight - 20)
+      
+      if (remainingHeight > 0) {
+        pdf.addPage()
+        yPosition = 10
+      }
+    }
+    
+    // Add footer with branding and page numbers
+    const totalPages = pdf.internal.pages.length - 1
+    for (let i = 1; i <= totalPages; i++) {
+      pdf.setPage(i)
+      pdf.setFontSize(8)
+      pdf.setTextColor(128, 128, 128)
+      
+      // Center bottom: "Generated with Steel Cauldron"
+      const footerText = 'Generated with Steel Cauldron'
+      const textWidth = pdf.getTextWidth(footerText)
+      pdf.text(footerText, (pageWidth - textWidth) / 2, pageHeight - 5)
+      
+      // Right bottom: page number
+      if (totalPages > 1) {
+        const pageText = `${i} / ${totalPages}`
+        const pageTextWidth = pdf.getTextWidth(pageText)
+        pdf.text(pageText, pageWidth - pageTextWidth - 10, pageHeight - 5)
+      }
+    }
+    
+    // Download the PDF
+    const fileName = `${monster.name?.replace(/[^a-zA-Z0-9]/g, '_') || 'monster'}_stat_block.pdf`
+    pdf.save(fileName)
+    
+  } catch (error) {
+    console.error('Error generating PDF:', error)
+    throw new Error('Failed to generate PDF. Please try again.')
+  }
 }
 
-export async function exportMonsterToPDF(monster: Monster, options: PDFExportOptions = {}) {
-  // Use jsPDF library for PDF generation
-  const { jsPDF } = await import('jspdf')
+/**
+ * Generate HTML for the stat block using the same structure as MonsterStatBlock.vue
+ */
+function generateStatBlockHTML(monster: Monster): string {
+  const formatKeywords = (keywords: string[] = []) => {
+    return keywords.map(keyword => 
+      keyword.charAt(0).toUpperCase() + keyword.slice(1).toLowerCase()
+    ).join(', ')
+  }
   
-  const {
-    filename = `${monster.name.replace(/[^a-z0-9]/gi, '-').toLowerCase()}-stat-block.pdf`,
-    format = 'Letter',
-    orientation = 'portrait'
-  } = options
-
-  const doc = new jsPDF({
-    orientation,
-    unit: 'mm',
-    format: format.toLowerCase() as 'a4' | 'letter'
-  })
-
-  // Page dimensions
-  const pageWidth = doc.internal.pageSize.getWidth()
-  const pageHeight = doc.internal.pageSize.getHeight()
-  const margin = 15
-  const contentWidth = pageWidth - (margin * 2)
+  const formatMonsterRole = (monster: Monster) => {
+    return `Level ${monster.level} ${monster.organization}${monster.role ? ' ' + monster.role : ''}`
+  }
   
-  let yPosition = margin
-
-  // Helper functions with Cambria font support and better formatting
-  const addText = (text: string, x: number, y: number, options?: { 
-    fontSize?: number
-    fontStyle?: 'normal' | 'bold' | 'italic'
-    textColor?: [number, number, number]
-    align?: 'left' | 'center' | 'right'
-    maxWidth?: number
-    font?: string
-  }) => {
-    const {
-      fontSize = 10,
-      fontStyle = 'normal',
-      textColor = [0, 0, 0] as [number, number, number],
-      align = 'left',
-      maxWidth,
-      font = 'times' // Using times as it's closer to Cambria than helvetica
-    } = options || {}
-    
-    doc.setFontSize(fontSize)
-    doc.setFont(font, fontStyle)
-    doc.setTextColor(textColor[0], textColor[1], textColor[2])
-    
-    if (maxWidth) {
-      const lines = doc.splitTextToSize(text, maxWidth)
-      doc.text(lines, x, y, { align })
-      return lines.length * (fontSize * 0.35) // Return height used
-    } else {
-      doc.text(text, x, y, { align })
-      return fontSize * 0.35 // Return height used
-    }
-  }
-
-  const addLine = (x1: number, y1: number, x2: number, y2: number, color: [number, number, number] = [0, 0, 0], width = 1) => {
-    doc.setDrawColor(color[0], color[1], color[2])
-    doc.setLineWidth(width)
-    doc.line(x1, y1, x2, y2)
-  }
-
-  const addRect = (x: number, y: number, width: number, height: number, options?: {
-    fillColor?: [number, number, number]
-    borderColor?: [number, number, number]
-    borderWidth?: number
-  }) => {
-    const { fillColor, borderColor = [0, 0, 0] as [number, number, number], borderWidth = 0.5 } = options || {}
-    
-    if (fillColor) {
-      doc.setFillColor(fillColor[0], fillColor[1], fillColor[2])
-      doc.rect(x, y, width, height, 'F')
-    }
-    
-    doc.setDrawColor(borderColor[0], borderColor[1], borderColor[2])
-    doc.setLineWidth(borderWidth)
-    doc.rect(x, y, width, height, 'S')
-  }
-
-  // Helper to strip HTML and clean text for PDF
-  const stripHtml = (html: string) => {
-    return html
-      .replace(/<[^>]*>/g, '')
-      .replace(/&nbsp;/g, ' ')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&amp;/g, '&')
-      .trim()
-  }
-
-  // Title: Monster Name
-  addText(monster.name.toUpperCase(), margin, yPosition, {
-    fontSize: 20,
-    fontStyle: 'bold',
-    font: 'times'
-  })
-
-  // Level and EV on the right
-  const levelText = `Level ${monster.level} ${monster.organization || ''}${monster.role ? ` ${monster.role}` : ''}`.trim()
-  addText(levelText, pageWidth - margin, yPosition, {
-    fontSize: 12,
-    align: 'right',
-    font: 'times'
-  })
-
-  const evText = `EV ${monster.ev}`
-  addText(evText, pageWidth - margin, yPosition + 5, {
-    fontSize: 12,
-    align: 'right',
-    font: 'times'
-  })
-
-  yPosition += 8
-
-  // Keywords below name
-  if (monster.keywords && monster.keywords.length > 0) {
-    const keywordsText = monster.keywords.map(k => k.charAt(0).toUpperCase() + k.slice(1)).join(', ')
-    addText(keywordsText, margin, yPosition, {
-      fontSize: 10,
-      fontStyle: 'italic',
-      font: 'times'
-    })
-  }
-
-  yPosition += 10
-  // Black horizontal line
-  addLine(margin, yPosition, pageWidth - margin, yPosition, [0, 0, 0], 0.5)
-  yPosition += 6
-
-  // Stats section - more condensed
-  const stats = [
-    { label: 'Size', value: `${monster.size?.value || 1}${monster.size?.letter || ''}` },
-    { label: 'Speed', value: monster.speed?.toString() || '6' },
-    { label: 'Stamina', value: monster.stamina?.toString() || '10' },
-    { label: 'Stability', value: monster.stability?.toString() || '0' },
-    { label: 'Free Strike', value: monster.freeStrike?.toString() || '2' }
-  ]
-
-  // Stats section - boxed layout
-  const statBoxWidth = (contentWidth - (4 * 2)) / 5 // 5 boxes with 2mm gap
-  const statBoxHeight = 15
-  let currentX = margin
-
-  stats.forEach(stat => {
-    addRect(currentX, yPosition, statBoxWidth, statBoxHeight)
-    addText(stat.value, currentX + statBoxWidth / 2, yPosition + 7, {
-      fontSize: 12,
-      fontStyle: 'bold',
-      align: 'center',
-      font: 'times'
-    })
-    addText(stat.label, currentX + statBoxWidth / 2, yPosition + 12, {
-      fontSize: 8,
-      align: 'center',
-      font: 'times'
-    })
-    currentX += statBoxWidth + 2
-  })
-
-  yPosition += statBoxHeight + 4
-
-  // Black horizontal line
-  addLine(margin, yPosition, pageWidth - margin, yPosition, [0, 0, 0], 1)
-  yPosition += 6
-
-  // Characteristics - boxed layout
-  if (monster.characteristics) {
-    const chars = [
-      { label: 'Might', value: monster.characteristics.might >= 0 ? `+${monster.characteristics.might}` : monster.characteristics.might.toString() },
-      { label: 'Agility', value: monster.characteristics.agility >= 0 ? `+${monster.characteristics.agility}` : monster.characteristics.agility.toString() },
-      { label: 'Reason', value: monster.characteristics.reason >= 0 ? `+${monster.characteristics.reason}` : monster.characteristics.reason.toString() },
-      { label: 'Intuition', value: monster.characteristics.intuition >= 0 ? `+${monster.characteristics.intuition}` : monster.characteristics.intuition.toString() },
-      { label: 'Presence', value: monster.characteristics.presence >= 0 ? `+${monster.characteristics.presence}` : monster.characteristics.presence.toString() }
-    ]
-
-    const charBoxWidth = (contentWidth - (4 * 2)) / 5
-    const charBoxHeight = 8
-    currentX = margin
-
-    chars.forEach(char => {
-      addRect(currentX, yPosition, charBoxWidth, charBoxHeight)
-      addText(`${char.label} ${char.value}`, currentX + charBoxWidth / 2, yPosition + 5, {
-        fontSize: 9,
-        align: 'center',
-        font: 'times'
-      })
-      currentX += charBoxWidth + 2
-    })
-    yPosition += charBoxHeight
-  }
-
-  yPosition += 6
-  // Black horizontal line
-  addLine(margin, yPosition, pageWidth - margin, yPosition, [0, 0, 0], 1)
-  yPosition += 6
-
-  // Secondary stats (Immunity, Weakness, Movement) - more condensed
-  const formatImmunity = (immunities?: Record<string, number>) => {
-    if (!immunities || Object.keys(immunities).length === 0) return '—'
-    return Object.entries(immunities)
+  const formatImmunity = (immunity?: Record<string, number>) => {
+    if (!immunity || Object.keys(immunity).length === 0) return '—'
+    return Object.entries(immunity)
       .filter(([, value]) => value > 0)
       .map(([type, value]) => `${type} ${value}`)
       .join(', ')
   }
-
-  const formatWeakness = (weaknesses?: Record<string, number>) => {
-    if (!weaknesses || Object.keys(weaknesses).length === 0) return '—'
-    return Object.entries(weaknesses)
+  
+  const formatWeakness = (weakness?: Record<string, number>) => {
+    if (!weakness || Object.keys(weakness).length === 0) return '—'
+    return Object.entries(weakness)
       .filter(([, value]) => value > 0)
       .map(([type, value]) => `${type} ${value}`)
       .join(', ')
   }
-
-  const formatMovement = (movementTypes?: string | string[]) => {
-    if (!movementTypes) return 'walk'
-    if (typeof movementTypes === 'string') return movementTypes
-    if (Array.isArray(movementTypes)) return movementTypes.join(', ')
-    return 'walk'
-  }
-
-  const secondaryText = `Immunity ${formatImmunity(monster.immunities)} • Weakness ${formatWeakness(monster.weaknesses)} • Movement ${formatMovement(monster.movementTypes)}`
-  yPosition += addText(secondaryText, pageWidth / 2, yPosition, {
-    fontSize: 9,
-    align: 'center',
-    maxWidth: contentWidth - 20,
-    font: 'times'
-  })
-
-  yPosition += 6
-  // Black horizontal line
-  addLine(margin, yPosition, pageWidth - margin, yPosition, [0, 0, 0], 1)
-  yPosition += 8
-
-  // Abilities - formatted like official stat blocks
-  if (monster.items && monster.items.length > 0) {
-    const features = monster.items.filter(item => item.type === 'feature')
-    const abilities = monster.items.filter(item => item.type === 'ability')
-
-    const pageHeight = doc.internal.pageSize.getHeight()
-    const footerHeight = 20
-    const usablePageHeight = pageHeight - footerHeight
-
-    const renderItem = (item: MonsterItem, x: number, y: number, width: number): number => {
-      let itemY = y
-      const icon = item.type === 'feature' ? '★' : '❖'
-      addText(icon, x, itemY, { fontSize: 12, font: 'times' })
-
-      const titleX = x + 5
-      const titleWidth = width - 5
-      
-      let title = item.name.toUpperCase()
-      if (item.system?.category === 'signature') {
-        title += ' (SIGNATURE ABILITY)'
-      }
-      itemY += addText(title, titleX, itemY, { fontSize: 9, fontStyle: 'bold', maxWidth: titleWidth, font: 'times' })
-
-      let details = []
-      if (item.system?.type && item.system.type !== 'none') {
-        details.push(item.system.type.charAt(0).toUpperCase() + item.system.type.slice(1))
-      }
-      if (item.system?.keywords?.length) {
-        details.push(item.system.keywords.join(', '))
-      }
-      if (details.length > 0) {
-        itemY += addText(details.join(' • '), titleX, itemY, { fontSize: 8, fontStyle: 'italic', maxWidth: titleWidth, font: 'times' })
-      }
-
-      if (item.system?.trigger) {
-        itemY += addText(`Trigger: ${stripHtml(item.system.trigger)}`, titleX, itemY, { fontSize: 8, maxWidth: titleWidth, font: 'times' })
-      }
-
-      if (item.system?.description?.value) {
-        itemY += addText(stripHtml(item.system.description.value), titleX, itemY, { fontSize: 8, maxWidth: titleWidth, font: 'times' })
-      }
-
-      if (item.system?.power?.tiers) {
-        item.system.power.tiers.forEach(tier => {
-          const tierText = `Tier ${tier.tier}: ${stripHtml(tier.display)}`
-          itemY += addText(tierText, titleX, itemY, { fontSize: 8, maxWidth: titleWidth, font: 'times' })
-        })
-      }
-      
-      if (item.system?.effect?.before) {
-        itemY += addText(`Effect: ${stripHtml(item.system.effect.before)}`, titleX, itemY, { fontSize: 8, maxWidth: titleWidth, font: 'times' })
-      }
-      if (item.system?.effect?.after) {
-        itemY += addText(stripHtml(item.system.effect.after), titleX, itemY, { fontSize: 8, maxWidth: titleWidth, font: 'times' })
-      }
-
-      return itemY - y + 4 // return height used + padding
-    }
-
-    const columnWidth = (contentWidth - 10) / 2
-    let leftY = yPosition
-    let rightY = yPosition
-
-    const checkPageBreak = (columnY: number, itemHeight: number) => {
-      if (columnY + itemHeight > usablePageHeight) {
-        return true
-      }
-      return false
-    }
-
-    const addPage = () => {
-      doc.addPage()
-      leftY = margin
-      rightY = margin
-    }
-
-    // Render features in the right column first
-    features.forEach(item => {
-      const itemHeight = renderItem(item, 0, 0, columnWidth) // Dry run to get height
-      if (checkPageBreak(rightY, itemHeight)) {
-        addPage()
-      }
-      rightY += renderItem(item, margin + columnWidth + 10, rightY, columnWidth)
-      addLine(margin + columnWidth + 10, rightY - 2, pageWidth - margin, rightY - 2, [200, 200, 200], 0.5)
-    })
-
-    // Render abilities, filling left then right column
-    abilities.forEach(item => {
-      const itemHeight = renderItem(item, 0, 0, columnWidth) // Dry run
-      if (leftY <= rightY) {
-        if (checkPageBreak(leftY, itemHeight)) {
-          addPage()
-        }
-        leftY += renderItem(item, margin, leftY, columnWidth)
-        addLine(margin, leftY - 2, margin + columnWidth, leftY - 2, [200, 200, 200], 0.5)
-      } else {
-        if (checkPageBreak(rightY, itemHeight)) {
-          addPage()
-        }
-        rightY += renderItem(item, margin + columnWidth + 10, rightY, columnWidth)
-        addLine(margin + columnWidth + 10, rightY - 2, pageWidth - margin, rightY - 2, [200, 200, 200], 0.5)
-      }
-    })
-
-    yPosition = Math.max(leftY, rightY)
-  }
-
-  // Footer
-  yPosition = pageHeight - 20
-  addLine(margin, yPosition - 5, pageWidth - margin, yPosition - 5, [0, 0, 0], 0.5)
   
-  // Generated with message
-  addText('Generated with Steel Cauldron', pageWidth / 2, yPosition, {
-    fontSize: 8,
-    align: 'center',
-    textColor: [100, 100, 100],
-    font: 'times'
-  })
+  const formatMovement = (movement?: string | string[]) => {
+    if (!movement) return '—'
+    if (typeof movement === 'string') return movement
+    if (Array.isArray(movement)) return movement.join(', ')
+    return movement
+  }
   
-  // License text
-  addText('Draw Steel Creator License', pageWidth / 2, yPosition + 4, {
-    fontSize: 8,
-    align: 'center',
-    textColor: [100, 100, 100],
-    font: 'times'
-  })
+  const formatCharacteristic = (value: number) => {
+    return value >= 0 ? `+${value}` : `${value}`
+  }
+  
+  return `
+    <div class="stat-block" style="
+      background: #fdf6e3;
+      border: 2px solid #8b4513;
+      border-radius: 8px;
+      padding: 24px;
+      font-family: 'Libre Baskerville', 'Book Antiqua', Georgia, serif;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      line-height: 1.4;
+    ">
+      <!-- Header -->
+      <div class="header" style="text-align: center; margin-bottom: 16px;">
+        <h1 class="monster-name" style="
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: #8b4513;
+          margin: 0 0 8px 0;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        ">${monster.name}</h1>
+        
+        <div class="monster-meta-container" style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 8px;
+        ">
+          <div class="monster-role" style="
+            color: #6c757d;
+            font-style: italic;
+            font-size: 1rem;
+          ">${formatMonsterRole(monster)}</div>
+        </div>
+        
+        ${monster.keywords && monster.keywords.length > 0 ? `
+          <div class="monster-keywords" style="
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+          ">${formatKeywords(monster.keywords)}</div>
+        ` : ''}
+        
+        <div class="monster-ev" style="
+          color: #8b4513;
+          font-weight: bold;
+          font-size: 1rem;
+        ">EV ${monster.ev}</div>
+      </div>
 
-  // Save the PDF
-  doc.save(filename)
+      <div class="divider" style="
+        height: 2px;
+        background: #8b4513;
+        margin: 16px 0;
+      "></div>
+
+      <!-- Combat Stats -->
+      <div class="combat-stats" style="margin-bottom: 16px;">
+        <div class="stat-headers" style="
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 8px;
+          margin-bottom: 8px;
+          font-weight: bold;
+          text-align: center;
+          color: #8b4513;
+          font-size: 0.9rem;
+        ">
+          <div>Size</div>
+          <div>Speed</div>
+          <div>Stamina</div>
+          <div>Stability</div>
+          <div>Free Strike</div>
+        </div>
+        <div class="stat-values" style="
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 8px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1rem;
+        ">
+          <div>${monster.size?.value}${monster.size?.letter}</div>
+          <div>${monster.speed}</div>
+          <div>${monster.stamina}</div>
+          <div>${monster.stability}</div>
+          <div>${monster.freeStrike}</div>
+        </div>
+      </div>
+
+      <div class="divider" style="
+        height: 2px;
+        background: #8b4513;
+        margin: 16px 0;
+      "></div>
+
+      <!-- Characteristics -->
+      <div class="characteristics" style="margin-bottom: 16px;">
+        <div class="characteristics-grid" style="
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 12px;
+          text-align: center;
+        ">
+          <div class="characteristic">
+            <div style="
+              font-weight: bold;
+              color: #8b4513;
+              font-size: 0.9rem;
+              margin-bottom: 4px;
+            ">Might</div>
+            <div style="
+              font-weight: bold;
+              font-size: 1.1rem;
+            ">${formatCharacteristic(monster.characteristics?.might || 0)}</div>
+          </div>
+          <div class="characteristic">
+            <div style="
+              font-weight: bold;
+              color: #8b4513;
+              font-size: 0.9rem;
+              margin-bottom: 4px;
+            ">Agility</div>
+            <div style="
+              font-weight: bold;
+              font-size: 1.1rem;
+            ">${formatCharacteristic(monster.characteristics?.agility || 0)}</div>
+          </div>
+          <div class="characteristic">
+            <div style="
+              font-weight: bold;
+              color: #8b4513;
+              font-size: 0.9rem;
+              margin-bottom: 4px;
+            ">Reason</div>
+            <div style="
+              font-weight: bold;
+              font-size: 1.1rem;
+            ">${formatCharacteristic(monster.characteristics?.reason || 0)}</div>
+          </div>
+          <div class="characteristic">
+            <div style="
+              font-weight: bold;
+              color: #8b4513;
+              font-size: 0.9rem;
+              margin-bottom: 4px;
+            ">Intuition</div>
+            <div style="
+              font-weight: bold;
+              font-size: 1.1rem;
+            ">${formatCharacteristic(monster.characteristics?.intuition || 0)}</div>
+          </div>
+          <div class="characteristic">
+            <div style="
+              font-weight: bold;
+              color: #8b4513;
+              font-size: 0.9rem;
+              margin-bottom: 4px;
+            ">Presence</div>
+            <div style="
+              font-weight: bold;
+              font-size: 1.1rem;
+            ">${formatCharacteristic(monster.characteristics?.presence || 0)}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider" style="
+        height: 2px;
+        background: #8b4513;
+        margin: 16px 0;
+      "></div>
+
+      <!-- Secondary Stats -->
+      <div class="secondary-stats" style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+      ">
+        <span><strong>Immunity</strong> ${formatImmunity(monster.immunities)}</span>
+        <span style="color: #6c757d;">•</span>
+        <span><strong>Weakness</strong> ${formatWeakness(monster.weaknesses)}</span>
+        <span style="color: #6c757d;">•</span>
+        <span><strong>Movement</strong> ${formatMovement(monster.movementTypes)}</span>
+      </div>
+
+      <div class="divider" style="
+        height: 2px;
+        background: #8b4513;
+        margin: 16px 0;
+      "></div>
+
+      <!-- Abilities -->
+      ${generateAbilitiesHTML(monster.items || [])}
+
+      <div class="divider" style="
+        height: 1px;
+        background: #6c757d;
+        margin: 16px 0;
+      "></div>
+
+      <!-- Footer -->
+      <div style="
+        text-align: center;
+        font-size: 0.8rem;
+        color: #6c757d;
+        font-style: italic;
+      ">
+        Monsters, page 211 • Draw Steel Creator License
+      </div>
+    </div>
+  `
 }
 
-export function isJsPDFAvailable(): Promise<boolean> {
-  return import('jspdf')
-    .then(() => true)
-    .catch(() => false)
+/**
+ * Generate HTML for abilities section
+ */
+function generateAbilitiesHTML(items: MonsterItem[]): string {
+  if (!items || items.length === 0) return ''
+  
+  const formatTierNumber = (tier: number) => {
+    const tierMap: Record<number, string> = { 1: '≤11', 2: '12-16', 3: '17+' }
+    return tierMap[tier] || tier.toString()
+  }
+  
+  const formatActionDistance = (distance?: { type: string; primary?: number | string; secondary?: number | string }) => {
+    if (!distance) return ''
+    if (distance.type === 'melee' || distance.type === 'ranged') {
+      return `${distance.type.charAt(0).toUpperCase() + distance.type.slice(1)} ${distance.primary}`
+    }
+    if (distance.type === 'meleeRanged') {
+      return `Melee ${distance.primary} or ranged ${distance.secondary}`
+    }
+    return distance.type.charAt(0).toUpperCase() + distance.type.slice(1)
+  }
+  
+  const formatActionTargets = (target?: { type: string; value?: number }) => {
+    if (!target) return ''
+    const targetValue = target.value ? ` ${target.value}` : ''
+    const targetMap: Record<string, string> = {
+      'creature': 'creature',
+      'creatureObject': 'creature or object',
+      'enemy': 'enemy',
+      'ally': 'ally',
+      'selfAlly': 'self and ally',
+      'special': 'special'
+    }
+    return `${targetValue} ${targetMap[target.type] || target.type}`.trim()
+  }
+
+  const stripHTML = (text: string) => {
+    return text.replace(/<[^>]*>/g, '').trim()
+  }
+  
+  return items.map(item => {
+    const isFeature = item.type === 'feature'
+    const isSignature = item.system?.category === 'signature'
+    const hasPowerRoll = item.system?.power?.tiers && item.system.power.tiers.length > 0
+    
+    return `
+      <div class="ability" style="margin-bottom: 16px;">
+        <!-- Ability Header -->
+        <div class="ability-header" style="margin-bottom: 8px;">
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+          ">
+            <h4 style="
+              margin: 0;
+              color: #8b4513;
+              font-size: 1.1rem;
+              font-weight: bold;
+            ">
+              ${item.name}
+              ${isFeature ? ' <span style="color: #ffc107;">★</span>' : ''}
+              ${isSignature ? ' <span style="background: #8b4513; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 4px;">SIGNATURE</span>' : ''}
+              ${item.system?.resource ? ` <span style="color: #dc3545; font-weight: bold; margin-left: 4px;">${item.system.resource} Malice</span>` : ''}
+            </h4>
+            <div style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              font-size: 0.9rem;
+              color: #6c757d;
+            ">
+              ${item.system?.power?.roll?.formula ? `<span style="font-weight: bold;">${item.system.power.roll.formula}</span>` : ''}
+              ${item.system?.type && item.system.type !== 'none' ? `<span>${item.system.type.replace(/([A-Z])/g, ' $1').toLowerCase()}</span>` : ''}
+            </div>
+          </div>
+          
+          ${item.system?.keywords && item.system.keywords.length > 0 ? `
+            <div style="
+              font-size: 0.8rem;
+              color: #6c757d;
+              font-style: italic;
+              margin-bottom: 4px;
+            ">${item.system.keywords.join(', ')}</div>
+          ` : ''}
+          
+          <div style="
+            display: flex;
+            gap: 16px;
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-bottom: 8px;
+          ">
+            ${formatActionDistance(item.system?.distance) ? `<span><strong>Range:</strong> ${formatActionDistance(item.system?.distance)}</span>` : ''}
+            ${formatActionTargets(item.system?.target) ? `<span><strong>Target:</strong> ${formatActionTargets(item.system?.target)}</span>` : ''}
+          </div>
+        </div>
+
+        <!-- Before Effect -->
+        ${item.system?.effect?.before ? `
+          <div style="
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+          ">
+            <strong>Effect:</strong> ${stripHTML(item.system.effect.before)}
+          </div>
+        ` : ''}
+
+        <!-- Power Roll Tiers -->
+        ${hasPowerRoll ? `
+          <div class="power-roll" style="
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 8px 0;
+          ">
+            ${item.system.power.tiers.map(tier => `
+              <div style="
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 6px;
+                font-size: 0.9rem;
+              ">
+                <span style="
+                  font-weight: bold;
+                  color: #4a5568;
+                  min-width: 40px;
+                  margin-right: 8px;
+                ">${formatTierNumber(tier.tier)}</span>
+                <span>${stripHTML(tier.display)}</span>
+              </div>
+            `).join('')}
+            
+            ${item.system?.effect?.after ? `
+              <div style="
+                margin-top: 8px;
+                font-size: 0.9rem;
+              ">
+                <strong>Effect:</strong> ${stripHTML(item.system.effect.after)}
+              </div>
+            ` : ''}
+          </div>
+        ` : ''}
+
+        <!-- Description (for abilities without power rolls) -->
+        ${!hasPowerRoll && item.system?.description?.value ? `
+          <div style="font-size: 0.9rem; margin: 8px 0;">
+            ${stripHTML(item.system.description.value)}
+          </div>
+        ` : ''}
+
+        <!-- Description (for abilities without power rolls but with before effect) -->
+        ${!hasPowerRoll && !item.system?.description?.value && item.system?.effect?.before ? `
+          <div style="font-size: 0.9rem; margin: 8px 0;">
+            ${stripHTML(item.system.effect.before)}
+          </div>
+        ` : ''}
+
+        <!-- Spend Effects -->
+        ${item.system?.spend?.text ? `
+          <div style="
+            margin-top: 8px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #6c757d;
+          ">
+            <strong>Spend:</strong> ${stripHTML(item.system.spend.text)}
+          </div>
+        ` : ''}
+      </div>
+    `
+  }).join('')
 }
