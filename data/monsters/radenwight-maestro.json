@@ -67,8 +67,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The maestro makes a free strike against the target.</p>",
-          "after": ""
+          "text": "<p>The maestro makes a free strike against the target.</p>"
         },
         "spend": {
           "text": "",
@@ -100,8 +99,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>",
-          "after": ""
+          "text": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>"
         },
         "spend": {
           "text": "",
@@ -152,8 +150,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If the target is wearing clothing covering the lower half of their body, they must use a maneuver once to pull that clothing up before they can move.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          "text": "<p>If the target is wearing clothing covering the lower half of their body, they must use a maneuver once to pull that clothing up before they can move.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
         },
         "spend": {
           "text": "",
@@ -204,8 +201,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>Each ally within distance can use Ready Rodent as a free triggered action once before the end of the round.</p>"
+          "text": "<p>Each ally within distance can use Ready Rodent as a free triggered action once before the end of the round.</p>"
         },
         "spend": {
           "text": "",
@@ -256,10 +252,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "Each ally within 3 squares of any target has a +2 bonus to  speed until the end of their next turn.",
           "value": 3,
@@ -294,8 +287,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each target can shift up to their speed or take the Defend action.</p>",
-          "after": ""
+          "text": "<p>Each target can shift up to their speed or take the Defend action.</p>"
         },
         "spend": {
           "text": "",
@@ -330,8 +322,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of their next turn, the target halves any damage they take, gains a +4 damage bonus to strikes, and has their speed doubled.</p>",
-          "after": ""
+          "text": "<p>Until the end of their next turn, the target halves any damage they take, gains a +4 damage bonus to strikes, and has their speed doubled.</p>"
         },
         "spend": {
           "text": "",
@@ -366,8 +357,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p><strong>Note:</strong> Targets each dead ally in the area.</p><p></p>",
-          "after": "<p>Each target stands, makes a free strike, then falls dead again. Any ally of the targets can use Ready Rodent as a free triggered action once in conjunction with these free strikes.</p>"
+          "text": "<p><strong>Note:</strong> Targets each dead ally in the area.</p><p></p> <p>Each target stands, makes a free strike, then falls dead again. Any ally of the targets can use Ready Rodent as a free triggered action once in conjunction with these free strikes.</p>"
         },
         "spend": {
           "text": "",
@@ -398,8 +388,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">7</span> sonic damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">7</span> sonic damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

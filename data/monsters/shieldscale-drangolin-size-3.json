@@ -77,8 +77,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">5</span> damage free strike</p>",
-          "after": ""
+          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">5</span> damage free strike</p>"
         },
         "spend": {
           "text": "",
@@ -109,8 +108,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two kobolds take their turns in a row.</p>",
-          "after": ""
+          "text": "<p>Two kobolds take their turns in a row.</p>"
         },
         "spend": {
           "text": "",
@@ -141,8 +139,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
         },
         "spend": {
           "text": "",
@@ -194,8 +191,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>Special: If the drangolin is size 3, the distance becomes Melee 2.</p>"
+          "text": "<p>Special: If the drangolin is size 3, the distance becomes Melee 2.</p>"
         },
         "spend": {
           "text": "",
@@ -226,8 +222,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The drangolin shifts up to their speed and uses Fiery Claws against each creature who comes adjacent to them during the shift. The drangolin makes one power roll against all targets.</p>",
-          "after": ""
+          "text": "<p>The drangolin shifts up to their speed and uses Fiery Claws against each creature who comes adjacent to them during the shift. The drangolin makes one power roll against all targets.</p>"
         },
         "spend": {
           "text": "",
@@ -278,8 +273,7 @@
           ]
         },
         "effect": {
-          "before": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra <span class=\"damage-value damage-generic\">2</span> fire damage.</p>",
-          "after": ""
+          "text": "<p>The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra <span class=\"damage-value damage-generic\">2</span> fire damage.</p>"
         },
         "spend": {
           "text": "",

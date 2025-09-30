@@ -86,10 +86,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "One target adjacent to the deathrex is grabbed in the deathrex's mouth.",
           "value": 1,
@@ -141,8 +138,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The target is no longer grabbed by the deathrex, and the deathrex slides them up to 5 squares.</p>"
+          "text": "<p>The target is no longer grabbed by the deathrex, and the deathrex slides them up to 5 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -176,8 +172,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The deathrex moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>",
-          "after": ""
+          "text": "<p>The deathrex moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>"
         },
         "spend": {
           "text": "",
@@ -214,8 +209,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The deathrex slides the target up to 5 squares.</p>"
+          "text": "<p>The deathrex slides the target up to 5 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -252,8 +246,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table>",
-          "after": "<p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
+          "text": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table> <p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
         },
         "spend": {
           "text": "",
@@ -284,8 +277,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains [[/heal 10 temporary]], regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains <span class=\"heal-value\">10</span> temporary stamina, regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -315,10 +307,7 @@
           },
           "effects": {}
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null

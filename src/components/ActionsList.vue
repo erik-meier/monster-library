@@ -54,10 +54,14 @@
           <strong>Trigger:</strong> {{ action.system.trigger }}
         </div>
 
-        <PowerRoll v-if="actionHasPowerRoll(action)" :tiers="action.system.power.tiers || []"
-          :effect="formatActionEffect(action)" />
+        <PowerRoll v-if="actionHasPowerRoll(action)" :tiers="action.system.power.tiers || []" />
         <div v-if="!actionHasPowerRoll(action)" class="action-description"
           v-html="formatDescription(extractDescription(action))"></div>
+
+        <div v-if="action.system.effect && action.system.effect.text && actionHasPowerRoll(action)"
+          class="action-effect-text">
+          <strong>Effect:</strong> <span v-html="formatDescription(action.system.effect.text)"></span>
+        </div>
 
         <div v-if="action.system.spend && action.system.spend.formattedText" class="action-spend">
           <span v-html="action.system.spend.formattedText"></span>
@@ -69,6 +73,13 @@
 
 <script>
 import PowerRoll from './PowerRoll.vue'
+import {
+  formatActionDistance,
+  formatActionTargets,
+  formatActionType,
+  actionHasPowerRoll,
+  extractDescription
+} from '@/utils/formatters'
 
 export default {
   name: 'ActionsList',
@@ -119,85 +130,15 @@ export default {
     }
   },
   methods: {
-    extractDescription(action) {
-      if (!action.system) return action.description || action.effect || '';
-      if (action.system.description && action.system.description.value) {
-        return action.system.description.value;
-      }
-      if (action.system.effect) {
-        return action.system.effect.before || action.system.effect.after;
-      }
-      return ''
-    },
-    formatActionEffect(action) {
-      // For the new flattened structure, effects are usually handled in tier display text
-      // Only return effect text if it's different from tier display
-      if (action.system.effect) {
-        return action.system.effect.before || action.system.effect.after || '';
-      }
-      return '';
-    },
-    formatActionDistance(distance) {
-      if (!distance) return '';
-      if (distance.type === 'melee' || distance.type === 'ranged') {
-        return `${distance.type.charAt(0).toUpperCase() + distance.type.slice(1)} ${distance.primary}`;
-      }
-      if (distance.type === 'meleeRanged') {
-        return `Melee ${distance.primary} or ranged ${distance.secondary}`;
-      }
-      if (distance.type === 'line') {
-        return `${distance.primary} x ${distance.secondary} line within ${distance.tertiary}`
-      }
-      if (distance.type === 'cube' || distance.type === 'wall') {
-        return `${distance.primary} ${distance.type} within ${distance.secondary}`
-      }
-      if (distance.type === 'burst') {
-        return `${distance.primary} burst`
-      }
-      return distance.type.charAt(0).toUpperCase() + distance.type.slice(1)
-    },
-    formatActionTargets(target) {
-      if (!target) return '';
-      if (target.type === 'creature') {
-        return `${target.value ? target.value : 'Each'} creature${target.value > 1 ? 's' : ''}`;
-      } else if (target.type === 'creatureObject') {
-        return `${target.value ? target.value : 'Each'} creature${target.value && target.value > 1 ? 's' : ''} or object${target.value && target.value > 1 ? 's' : ''}`;
-      } else if (target.type === 'enemy') {
-        return `${target.value ? target.value : 'Each'} ${target.value && target.value > 1 ? 'enemies' : 'enemy'}`;
-      }
-      else if (target.type === 'ally') {
-        return `${target.value ? target.value : 'Each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`;
-      } else if (target.type === 'selfAlly') {
-        return 'Self and ' + `${target.value ? target.value : 'each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`;
-      }
-      return target.type.charAt(0).toUpperCase() + target.type.slice(1);
-    },
-    formatActionType(type) {
-      if (!type) return '';
-      if (type.toLowerCase() === 'none') return '';
-      if (type.toLowerCase() === 'maneuver') return type;
-      if (type.toLowerCase() === 'freetriggered') type = 'free triggered';
-      return type + ' action';
-    },
+    // Use imported formatters from shared utilities
+    extractDescription,
+    formatActionDistance,
+    formatActionTargets,
+    formatActionType,
+    actionHasPowerRoll,
     formatPowerRoll(formula) {
       // Power roll formulas are now pre-processed in the data pipeline
       return formula || '';
-    },
-    actionHasPowerRoll(action) {
-      // Check for tiers array in the new flattened structure
-      if (action.system.power && action.system.power.tiers && action.system.power.tiers.length > 0) {
-        return true;
-      }
-
-      // Fallback check for old effects structure (if any remain)
-      if (action.system.power && action.system.power.effects) {
-        for (const effect of Object.values(action.system.power.effects)) {
-          if (effect.type === 'damage') {
-            return true
-          }
-        }
-      }
-      return false
     },
     formatDescription(description) {
       // Text is now pre-processed in the data pipeline, so just return as-is

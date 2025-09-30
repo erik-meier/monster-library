@@ -97,8 +97,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>While adjacent to any ally, the sagittarion gains an edge on this ability.</p>"
+          "text": "<p>While adjacent to any ally, the sagittarion gains an edge on this ability.</p>"
         },
         "spend": {
           "text": "",
@@ -129,8 +128,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>",
-          "after": ""
+          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>"
         },
         "spend": {
           "text": "",
@@ -161,8 +159,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two kobolds take their turns in a row.</p>",
-          "after": ""
+          "text": "<p>Two kobolds take their turns in a row.</p>"
         },
         "spend": {
           "text": "",
@@ -193,8 +190,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
         },
         "spend": {
           "text": "",

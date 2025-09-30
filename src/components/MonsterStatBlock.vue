@@ -61,8 +61,8 @@
     <div class="divider"></div>
 
     <!-- Abilities -->
-    <ActionsList :title="'Abilities'" :actions="monster.items || monster.abilities || []" :chr="String(getMaxCharacteristic())"
-      :monster="monster" />
+    <ActionsList :title="'Abilities'" :actions="monster.items || monster.abilities || []"
+      :chr="String(getMaxCharacteristic())" :monster="monster" />
 
     <!-- Actions -->
     <ActionsList :title="'Actions'" :actions="monster.actions || []" :chr="String(getMaxCharacteristic())"
@@ -82,7 +82,14 @@
 
 <script>
 import CharacteristicScores from './CharacteristicScores.vue'
-import ActionsList from './ActionsList.vue';
+import ActionsList from './ActionsList.vue'
+import {
+  formatKeywords,
+  formatMonsterRole,
+  formatImmunity,
+  formatWeakness,
+  formatMovement
+} from '@/utils/formatters'
 
 export default {
   name: 'MonsterStatBlock',
@@ -102,41 +109,12 @@ export default {
       const values = Object.values(this.monster.characteristics);
       return values.length > 0 ? Math.max(...values) : 0;
     },
-    formatKeywords(keywords) {
-      if (!keywords || !Array.isArray(keywords)) return '';
-      return keywords.map(keyword =>
-        keyword.charAt(0).toUpperCase() + keyword.slice(1).toLowerCase()
-      ).join(', ');
-    },
-    formatMonsterRole(monster) {
-      return `Level ${monster.level} ${monster.organization}${monster.role ? ' ' + monster.role : ''}`;
-    },
-    formatImmunity(immunity) {
-      let result = null;
-      if (typeof immunity === 'object') {
-        result = Object.entries(immunity)
-          .filter(([, value]) => value > 0)
-          .map(([type, value]) => `${type} ${value}`)
-          .join(', ');
-      }
-      return result || '—';
-    },
-    formatWeakness(weakness) {
-      let result = null;
-      if (typeof weakness === 'object') {
-        result = Object.entries(weakness)
-          .filter(([, value]) => value > 0)
-          .map(([type, value]) => `${type} ${value}`)
-          .join(', ');
-      }
-      return result || '—';
-    },
-    formatMovement(movement) {
-      if (!movement) return '—';
-      if (typeof movement === 'string') return movement;
-      if (Array.isArray(movement)) return movement.join(', ');
-      return movement;
-    }
+    // Use imported formatters from shared utilities
+    formatKeywords,
+    formatMonsterRole,
+    formatImmunity,
+    formatWeakness,
+    formatMovement
   }
 }
 </script>

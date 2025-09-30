@@ -76,8 +76,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The target takes a bane on their next strike. If the target is winded, they have a double bane on their next strike instead.</p>"
+          "text": "<p>The target takes a bane on their next strike. If the target is winded, they have a double bane on their next strike instead.</p>"
         },
         "spend": {
           "text": "",
@@ -108,8 +107,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>",
-          "after": ""
+          "text": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>"
         },
         "spend": {
           "text": "",
@@ -140,8 +138,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>",
-          "after": ""
+          "text": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>"
         },
         "spend": {
           "text": "",

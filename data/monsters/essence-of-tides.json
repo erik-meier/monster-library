@@ -100,8 +100,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If a target has P &lt; 2, their stability is reduced to 0 and they move 2 additional squares whenever they are force moved (save ends).</p>"
+          "text": "<p>If a target has P &lt; 2, their stability is reduced to 0 and they move 2 additional squares whenever they are force moved (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -139,8 +138,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the essence's next turn, the target has cold immunity 5.</p>",
-          "after": ""
+          "text": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the essence's next turn, the target has cold immunity 5.</p>"
         },
         "spend": {
           "text": "Until the end of the encounter, the ground within 1  square of the target is a pool of water that is difficult terrain. This  water extends out behind the target as they move, creating a  stream that lasts until the end of the encounter. Any enemy who  ends their turn in the stream and has M<2 is slowed (save ends).",
@@ -178,8 +176,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The essence makes a free strike against the target.</p>",
-          "after": ""
+          "text": "<p>The essence makes a free strike against the target.</p>"
         },
         "spend": {
           "text": "",
@@ -210,8 +207,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
-          "after": ""
+          "text": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>"
         },
         "spend": {
           "text": "",
@@ -242,8 +238,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
-          "after": ""
+          "text": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>"
         },
         "spend": {
           "text": "",
@@ -275,8 +270,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
-          "after": ""
+          "text": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>"
         },
         "spend": {
           "text": "",

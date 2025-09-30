@@ -97,10 +97,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -130,8 +127,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The worg moves up to their speed.</p>",
-          "after": ""
+          "text": "<p>The worg moves up to their speed.</p>"
         },
         "spend": {
           "text": "",

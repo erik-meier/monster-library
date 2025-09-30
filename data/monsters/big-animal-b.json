@@ -96,10 +96,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -132,8 +129,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The animal moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>",
-          "after": ""
+          "text": "<p>The animal moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>"
         },
         "spend": {
           "text": "",
@@ -168,8 +164,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The animal moves up to their speed. If they end their turn adjacent to the target, they can use the Stand Up maneuver to let the target stand, then get on to ride them.</p>",
-          "after": ""
+          "text": "<p>The animal moves up to their speed. If they end their turn adjacent to the target, they can use the Stand Up maneuver to let the target stand, then get on to ride them.</p>"
         },
         "spend": {
           "text": "",

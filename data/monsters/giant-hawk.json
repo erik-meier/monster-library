@@ -85,10 +85,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "If this ability gains an edge or has a double edge, it deals an  extra 2 damage.",
           "value": 2,
@@ -139,8 +136,7 @@
           ]
         },
         "effect": {
-          "before": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p>",
-          "after": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+          "text": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p> <p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
         },
         "spend": {
           "text": "",
@@ -171,8 +167,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
-          "after": ""
+          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
         },
         "spend": {
           "text": "",
@@ -203,8 +198,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
-          "after": ""
+          "text": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>"
         },
         "spend": {
           "text": "",
@@ -235,8 +229,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The hawk moves up to their speed.</p>",
-          "after": ""
+          "text": "<p>The hawk moves up to their speed.</p>"
         },
         "spend": {
           "text": "",

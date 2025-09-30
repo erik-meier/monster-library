@@ -86,8 +86,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>For each elemental mote adjacent to the wyrd, the size of the cube increases by 1.</p>"
+          "text": "<p>For each elemental mote adjacent to the wyrd, the size of the cube increases by 1.</p>"
         },
         "spend": {
           "text": "",
@@ -124,8 +123,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The wyrd summons two <strong><span class=\"reference-text\">Elemental Motes</span></strong> or two <strong><span class=\"reference-text\">Soot Crows</span></strong> into unoccupied spaces within distance.</p>"
+          "text": "<p>The wyrd summons two <strong><span class=\"reference-text\">Elemental Motes</span></strong> or two <strong><span class=\"reference-text\">Soot Crows</span></strong> into unoccupied spaces within distance.</p>"
         },
         "spend": {
           "text": "",
@@ -164,8 +162,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The wyrd shapes the land in the area as if it were loose clay, either raising the ground or pushing it down to create a trench. Any creature in the area moves with the terrain to its new higher elevation, or falls if the ground is lowered beneath them.</p>"
+          "text": "<p>The wyrd shapes the land in the area as if it were loose clay, either raising the ground or pushing it down to create a trench. Any creature in the area moves with the terrain to its new higher elevation, or falls if the ground is lowered beneath them.</p>"
         },
         "spend": {
           "text": "",
@@ -196,8 +193,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
         },
         "spend": {
           "text": "",
@@ -248,8 +244,7 @@
           ]
         },
         "effect": {
-          "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
-          "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          "text": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p> <p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
         },
         "spend": {
           "text": "",
@@ -280,8 +275,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
         },
         "spend": {
           "text": "",

@@ -104,7 +104,7 @@
               </router-link>
               
               <router-link 
-                :to="`/monster/${monster.id}/edit`" 
+                :to="`/monster/${monster.id}?edit=true`" 
                 class="btn btn-sm btn-primary"
               >
                 Edit
