@@ -1,7 +1,7 @@
 <template>
   <div class="monster-view">
     <LoadingSpinner v-if="loading" message="Loading monster..." />
-    
+
     <div v-else-if="error" class="error">
       <div class="error-icon">⚠️</div>
       <div class="error-content">
@@ -10,54 +10,40 @@
         <router-link to="/monsters" class="btn btn-primary">Browse Monsters</router-link>
       </div>
     </div>
-    
+
     <div v-else-if="monster">
       <MonsterStatBlock v-if="!editMode" :monster="monster" />
-      <MonsterStatBlockEditable 
-        v-else
-        :monster="monster" 
-        :edit-mode="true"
-        @update:monster="handleAutoSave"
-        @save="handleSave"
-        @cancel="cancelEdit"
-      />
-      
+      <MonsterStatBlockEditable v-else :monster="monster" :edit-mode="true" @update:monster="handleAutoSave"
+        @save="handleSave" @cancel="cancelEdit" />
+
       <div class="monster-actions">
         <button class="btn btn-secondary" @click="viewRandomMonster" :disabled="loadingRandom || editMode">
           {{ loadingRandom ? 'Loading...' : 'Random Monster' }}
         </button>
-        
+
         <button class="btn btn-primary" @click="exportToPDF" :disabled="exportingPDF || editMode">
           {{ exportingPDF ? 'Exporting...' : '📄 Export PDF' }}
         </button>
-        
+
         <!-- Edit Mode Controls -->
         <template v-if="canEdit">
-          <button 
-            v-if="!editMode" 
-            @click="toggleEditMode" 
-            class="btn btn-primary"
-          >
+          <button v-if="!editMode" @click="toggleEditMode" class="btn btn-primary">
             Edit Monster
           </button>
         </template>
-        
-        <button 
-          v-else-if="!canEdit && !monster.isCustom" 
-          @click="createCopyAndEdit" 
-          class="btn btn-outline"
-          :disabled="editMode"
-        >
+
+        <button v-else-if="!canEdit && !monster.isCustom" @click="createCopyAndEdit" class="btn btn-outline"
+          :disabled="editMode">
           Create Copy to Edit
         </button>
       </div>
-      
+
       <!-- Auto-save indicator -->
       <div v-if="autoSaving" class="auto-save-indicator">
         <span class="save-icon">💾</span>
         Saving...
       </div>
-      
+
       <div v-else-if="lastSaved" class="auto-save-indicator saved">
         <span class="save-icon">✅</span>
         Saved {{ formatLastSaved }}
@@ -107,24 +93,24 @@ export default {
       // Can edit if it's a custom monster
       return this.monster && this.monster.isCustom === true
     },
-    
+
     formatLastSaved() {
       if (!this.lastSaved) return ''
       const now = new Date()
       const diff = now - this.lastSaved
-      
+
       if (diff < 60000) return 'just now'
       if (diff < 3600000) return `${Math.floor(diff / 60000)}m ago`
       return this.lastSaved.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   },
-  
+
   async mounted() {
     // Check URL parameters for edit mode
     if (this.$route.query.edit === 'true') {
       this.editMode = true
     }
-    
+
     await this.loadMonster()
   },
   watch: {
@@ -137,7 +123,7 @@ export default {
         this.loadMonster()
       }
     },
-    
+
     // Update URL when edit mode changes
     editMode(newValue) {
       const query = { ...this.$route.query }
@@ -146,26 +132,26 @@ export default {
       } else {
         delete query.edit
       }
-      
+
       // Update URL without triggering navigation
-      this.$router.replace({ query }).catch(() => {})
+      this.$router.replace({ query }).catch(() => { })
     }
   },
   methods: {
     async loadMonster() {
       this.loading = true
       this.error = null
-      
+
       try {
         // Use integrated store that checks both custom and bundled monsters
         const monster = this.customMonstersStore.getMonster(this.monsterId)
-        
+
         if (!monster) {
           throw new Error('Monster not found')
         }
-        
+
         this.monster = monster
-        
+
         // Add to recently viewed monsters
         this.addToRecentlyViewed()
       } catch (err) {
@@ -174,7 +160,7 @@ export default {
         this.loading = false
       }
     },
-    
+
     addToRecentlyViewed() {
       if (!this.monster) return
 
@@ -204,14 +190,14 @@ export default {
       // Save back to localStorage
       localStorage.setItem('recentlyViewedMonsters', JSON.stringify(recentMonsters))
     },
-    
+
     async viewRandomMonster() {
       this.loadingRandom = true
-      
+
       try {
         const { getRandomMonsterId } = await import('@/utils/monsterUtils.js')
         const randomId = await getRandomMonsterId()
-        
+
         if (randomId && randomId !== this.monsterId) {
           // Navigate to the new random monster
           this.$router.push(`/monster/${randomId}`)
@@ -262,9 +248,9 @@ export default {
           weaknesses: this.monster.weaknesses || {},
           source: this.monster.source ? { ...this.monster.source } : undefined
         }
-        
+
         const newMonsterId = this.customMonstersStore.createMonster(copyData)
-        
+
         // Navigate to the copy with edit mode enabled
         this.$router.push(`/monster/${newMonsterId}?edit=true`)
       } catch (error) {
@@ -277,27 +263,27 @@ export default {
     toggleEditMode() {
       this.editMode = !this.editMode
     },
-    
+
     exitEditMode() {
       this.editMode = false
     },
-    
+
     async handleAutoSave(monsterData) {
       if (!this.canEdit) return
-      
+
       this.autoSaving = true
-      
+
       try {
         // Debounce auto-save
         clearTimeout(this.autoSaveTimeout)
         this.autoSaveTimeout = setTimeout(async () => {
           const success = this.customMonstersStore.updateMonster(this.monsterId, monsterData)
-          
+
           if (success) {
             this.monster = { ...this.monster, ...monsterData }
             this.lastSaved = new Date()
           }
-          
+
           this.autoSaving = false
         }, 500)
       } catch (error) {
@@ -305,13 +291,13 @@ export default {
         this.autoSaving = false
       }
     },
-    
+
     async handleSave(monsterData) {
       if (!this.canEdit) return
-      
+
       try {
         const success = this.customMonstersStore.updateMonster(this.monsterId, monsterData)
-        
+
         if (success) {
           this.monster = { ...this.monster, ...monsterData }
           this.lastSaved = new Date()
@@ -324,14 +310,14 @@ export default {
         alert('Failed to save changes. Please try again.')
       }
     },
-    
+
     cancelEdit() {
       this.exitEditMode()
     },
 
     async exportToPDF() {
       if (!this.monster) return
-      
+
       this.exportingPDF = true
       try {
         await exportMonsterToPDF(this.monster)
@@ -350,159 +336,91 @@ export default {
 .monster-view {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--space-8);
 }
 
 .monster-actions {
-  margin-top: 2rem;
+  margin-top: var(--space-8);
   text-align: center;
   display: flex;
-  gap: 1rem;
+  gap: var(--space-4);
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 400;
-  text-decoration: none;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+/* Buttons use design system classes from components.css */
 
-.btn-primary {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
-}
-
-.btn-primary:hover:not(:disabled) {
-  background-color: #0056b3;
-  border-color: #004085;
-}
-
-.btn-secondary {
-  background-color: #f8f9fa;
-  color: #6c757d;
-  border-color: #dee2e6;
-}
-
-.btn-secondary:hover:not(:disabled) {
-  background-color: #e9ecef;
-  border-color: #adb5bd;
-  color: #495057;
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-outline:hover:not(:disabled) {
-  background-color: #007bff;
-  color: white;
-}
-
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.loading, .error {
+.loading,
+.error {
   text-align: center;
-  padding: 2rem;
-  font-size: 1.2rem;
+  padding: var(--space-8);
+  font-size: var(--font-size-lg);
 }
 
 .error {
-  color: #dc2626;
-  background-color: #fef2f2;
-  border: 1px solid #fecaca;
-  border-radius: 0.5rem;
+  color: var(--color-error-600);
+  background-color: var(--color-error-50);
+  border: 2px solid var(--color-error-200);
+  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 3rem 2rem;
+  gap: var(--space-4);
+  padding: var(--space-12) var(--space-8);
   text-align: center;
 }
 
 .error-icon {
-  font-size: 3rem;
+  font-size: var(--font-size-5xl);
 }
 
 .error-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--space-3);
 }
 
 .error-content h3 {
   margin: 0;
-  color: #991b1b;
+  color: var(--color-error-700);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
 }
 
 .error-content p {
   margin: 0;
-  color: #dc2626;
-}
-
-.error .btn {
-  margin-top: 0.5rem;
-  padding: 0.625rem 1.25rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.error .btn-primary {
-  background-color: #8b4513;
-  color: white;
-  display: inline-block;
-}
-
-.error .btn-primary:hover {
-  background-color: #6d3410;
+  color: var(--color-error-600);
 }
 
 .loading {
-  color: #6b7280;
+  color: var(--color-neutral-500);
 }
 
 /* Auto-save indicator */
 .auto-save-indicator {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(0, 123, 255, 0.9);
+  bottom: var(--space-5);
+  right: var(--space-5);
+  background: var(--color-info-600);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  animation: slideIn 0.3s ease;
+  gap: var(--space-2);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-toast);
+  animation: slideIn var(--duration-slow) var(--ease-bounce);
 }
 
 .auto-save-indicator.saved {
-  background: rgba(40, 167, 69, 0.9);
+  background: var(--color-success-600);
 }
 
 .save-icon {
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
 }
 
 @keyframes slideIn {
@@ -510,33 +428,27 @@ export default {
     transform: translateX(100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-/* Edit mode button styles */
-.btn-success {
-  background-color: #28a745;
-  color: white;
-  border-color: #28a745;
-}
-
-.btn-success:hover:not(:disabled) {
-  background-color: #218838;
-  border-color: #1e7e34;
-}
-
 /* Mobile responsive buttons */
 @media (max-width: 768px) {
+  .monster-view {
+    padding: var(--space-4);
+  }
+
   .monster-actions {
     flex-direction: column;
     align-items: center;
+    gap: var(--space-3);
   }
-  
-  .btn {
-    width: 200px;
+
+  .monster-actions .btn {
+    min-width: 200px;
     max-width: 100%;
   }
 }

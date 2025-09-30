@@ -11,12 +11,7 @@
         <button type="button" class="btn btn-secondary" @click="handleCancel">
           Cancel
         </button>
-        <button 
-          v-if="!isEditing" 
-          type="button" 
-          class="btn btn-outline" 
-          @click="showTemplates = !showTemplates"
-        >
+        <button v-if="!isEditing" type="button" class="btn btn-outline" @click="showTemplates = !showTemplates">
           <span class="btn-icon">📋</span>
           {{ showTemplates ? 'Hide Templates' : 'Browse Templates' }}
         </button>
@@ -38,30 +33,20 @@
       <!-- Progress Indicator -->
       <div class="progress-indicator">
         <div class="progress-bar">
-          <div 
-            class="progress-fill" 
-            :style="{ width: `${progressPercentage}%` }"
-          ></div>
+          <div class="progress-fill" :style="{ width: `${progressPercentage}%` }"></div>
         </div>
         <span class="progress-text">
           Step {{ currentSectionIndex + 1 }} of {{ sections.length }}
         </span>
       </div>
-      
+
       <!-- Section Navigation Tabs -->
       <div class="nav-tabs">
-        <button 
-          v-for="(section, index) in sections" 
-          :key="section.id"
-          type="button"
-          class="nav-btn"
-          :class="{ 
-            active: currentSection === section.id,
-            invalid: section.isValid === false,
-            completed: index < currentSectionIndex && section.isValid !== false
-          }"
-          @click="navigateToSection(section.id, index)"
-        >
+        <button v-for="(section, index) in sections" :key="section.id" type="button" class="nav-btn" :class="{
+          active: currentSection === section.id,
+          invalid: section.isValid === false,
+          completed: index < currentSectionIndex && section.isValid !== false
+        }" @click="navigateToSection(section.id, index)">
           <span class="section-number">{{ index + 1 }}</span>
           {{ section.label }}
           <span v-if="section.isValid === false" class="invalid-indicator">!</span>
@@ -72,67 +57,58 @@
 
     <main class="form-content">
       <div class="form-section" v-show="currentSection === 'basic'">
-        <BasicInfoForm :model-value="modelValue" @update:model-value="handleUpdate" @update:isValid="updateSectionValidity('basic', $event)" />
+        <BasicInfoForm :model-value="modelValue" @update:model-value="handleUpdate"
+          @update:isValid="updateSectionValidity('basic', $event)" />
       </div>
-      
+
       <div class="form-section" v-show="currentSection === 'stats'">
-        <StatsForm :model-value="modelValue" @update:model-value="handleUpdate" @update:isValid="updateSectionValidity('stats', $event)" />
+        <StatsForm :model-value="modelValue" @update:model-value="handleUpdate"
+          @update:isValid="updateSectionValidity('stats', $event)" />
       </div>
-      
+
       <div class="form-section" v-show="currentSection === 'characteristics'">
-        <CharacteristicsForm :model-value="modelValue" @update:model-value="handleUpdate" @update:isValid="updateSectionValidity('characteristics', $event)" />
+        <CharacteristicsForm :model-value="modelValue" @update:model-value="handleUpdate"
+          @update:isValid="updateSectionValidity('characteristics', $event)" />
       </div>
-      
+
       <div class="form-section" v-show="currentSection === 'defenses'">
-        <DefensesForm :model-value="modelValue" @update:model-value="handleUpdate" @update:isValid="updateSectionValidity('defenses', $event)" />
+        <DefensesForm :model-value="modelValue" @update:model-value="handleUpdate"
+          @update:isValid="updateSectionValidity('defenses', $event)" />
       </div>
-      
+
       <div class="form-section" v-show="currentSection === 'abilities'">
-        <AbilitiesForm :model-value="modelValue" @update:model-value="handleUpdate" @update:isValid="updateSectionValidity('abilities', $event)" />
+        <AbilitiesForm :model-value="modelValue" @update:model-value="handleUpdate"
+          @update:isValid="updateSectionValidity('abilities', $event)" />
       </div>
-      
+
       <div class="form-section" v-show="currentSection === 'keywords'">
-        <KeywordsForm :model-value="modelValue" @update:model-value="handleUpdate" @update:isValid="updateSectionValidity('keywords', $event)" />
+        <KeywordsForm :model-value="modelValue" @update:model-value="handleUpdate"
+          @update:isValid="updateSectionValidity('keywords', $event)" />
       </div>
-      
+
       <div class="form-section" v-show="currentSection === 'source'">
-        <SourceInfoForm :model-value="modelValue" @update:model-value="handleUpdate" @update:isValid="updateSectionValidity('source', $event)" />
+        <SourceInfoForm :model-value="modelValue" @update:model-value="handleUpdate"
+          @update:isValid="updateSectionValidity('source', $event)" />
       </div>
     </main>
 
     <!-- Wizard Navigation -->
     <footer class="wizard-nav">
       <div class="nav-buttons">
-        <button 
-          type="button" 
-          class="btn btn-secondary"
-          @click="previousSection"
-          :disabled="currentSectionIndex === 0"
-        >
+        <button type="button" class="btn btn-secondary" @click="previousSection" :disabled="currentSectionIndex === 0">
           ← Previous
         </button>
-        
+
         <div class="center-info">
           <span class="current-section-name">{{ currentSectionName }}</span>
         </div>
-        
-        <button 
-          v-if="currentSectionIndex < sections.length - 1"
-          type="button" 
-          class="btn btn-primary"
-          @click="nextSection"
-          :disabled="!canProceedToNext"
-        >
+
+        <button v-if="currentSectionIndex < sections.length - 1" type="button" class="btn btn-primary"
+          @click="nextSection" :disabled="!canProceedToNext">
           Next →
         </button>
-        
-        <button 
-          v-else
-          type="button" 
-          class="btn btn-success" 
-          @click="handleSave" 
-          :disabled="!isValid"
-        >
+
+        <button v-else type="button" class="btn btn-success" @click="handleSave" :disabled="!isValid">
           {{ isEditing ? 'Save Changes' : 'Create Monster' }}
         </button>
       </div>
@@ -294,7 +270,7 @@ const handleKeydown = (event: KeyboardEvent) => {
   if (event.target && (event.target as HTMLElement).tagName.match(/INPUT|TEXTAREA|SELECT/)) {
     return
   }
-  
+
   if (event.key === 'ArrowRight' && canProceedToNext.value) {
     event.preventDefault()
     nextSection()
@@ -334,7 +310,7 @@ function handleTemplateSelected(template: TemplateMonster) {
     weaknesses: {},
     items: template.items || []
   }
-  
+
   emit('update:modelValue', updatedForm)
   showTemplates.value = false
 }
@@ -344,104 +320,66 @@ function handleTemplateSelected(template: TemplateMonster) {
 .monster-form-layout {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: var(--space-6);
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
 }
 
 .form-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid #e9ecef;
-  margin-bottom: 2rem;
-  gap: 1rem;
+  padding-bottom: var(--space-6);
+  border-bottom: 2px solid var(--color-neutral-200);
+  margin-bottom: var(--space-8);
+  gap: var(--space-4);
 }
 
 .form-title {
-  color: #8b4513;
-  font-size: 1.75rem;
-  font-weight: 700;
+  color: var(--color-primary-600);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
   margin: 0;
-  line-height: 1.2;
+  line-height: var(--line-height-tight);
 }
 
 .form-actions {
   display: flex;
-  gap: 0.75rem;
+  gap: var(--space-3);
   flex-wrap: wrap;
   align-items: center;
 }
 
-.btn {
-  padding: 0.625rem 1.25rem;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
+/* Buttons use design system classes from components.css */
 .btn:focus-visible {
-  outline: 2px solid #8b4513;
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
-.btn-primary {
-  background-color: #8b4513;
+.btn-success {
+  background-color: var(--color-success-600);
   color: white;
+  border: 2px solid var(--color-success-600);
 }
 
-.btn-primary:hover:not(:disabled) {
-  background-color: #6d3410;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+.btn-success:hover:not(:disabled) {
+  background-color: var(--color-success-700);
+  border-color: var(--color-success-700);
   transform: translateY(-1px);
-}
-
-.btn-primary:disabled {
-  background-color: #d1d5db;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-.btn-secondary {
-  background-color: #6c757d;
-  color: white;
-}
-
-.btn-secondary:hover:not(:disabled) {
-  background-color: #5a6268;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  transform: translateY(-1px);
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: #8b4513;
-  border: 1px solid #8b4513;
-  box-shadow: none;
-}
-
-.btn-outline:hover {
-  background-color: #8b4513;
-  color: white;
-  box-shadow: 0 2px 6px rgba(139, 69, 19, 0.2);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-icon {
-  margin-right: 0.5rem;
-  font-size: 1rem;
+  margin-right: var(--space-2);
+  font-size: var(--font-size-base);
 }
 
 .btn-icon-only {
   background-color: transparent;
-  color: #8b4513;
-  border: 1px solid #8b4513;
-  padding: 0.5rem 0.75rem;
+  color: var(--color-primary-600);
+  border: 2px solid var(--color-primary-600);
+  padding: var(--space-2) var(--space-3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -449,7 +387,7 @@ function handleTemplateSelected(template: TemplateMonster) {
 }
 
 .btn-icon-only:hover {
-  background-color: #f8f9fa;
+  background-color: var(--color-primary-50);
 }
 
 .btn-icon-only .btn-icon {
@@ -457,96 +395,96 @@ function handleTemplateSelected(template: TemplateMonster) {
 }
 
 .templates-section {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
+  margin-bottom: var(--space-8);
+  padding: var(--space-6);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-neutral-200);
 }
 
 .form-nav {
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #e9ecef;
-  padding-bottom: 1.5rem;
+  margin-bottom: var(--space-8);
+  border-bottom: 2px solid var(--color-neutral-200);
+  padding-bottom: var(--space-6);
 }
 
 .progress-indicator {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
 }
 
 .progress-bar {
   flex: 1;
   height: 8px;
-  background: #e9ecef;
-  border-radius: 4px;
+  background: var(--color-neutral-200);
+  border-radius: var(--radius-base);
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #8b4513, #a0522d);
-  border-radius: 4px;
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, var(--color-primary-600), var(--color-primary-700));
+  border-radius: var(--radius-base);
+  transition: width var(--duration-slow) var(--ease-out);
   box-shadow: 0 1px 3px rgba(139, 69, 19, 0.3);
 }
 
 .progress-text {
-  font-size: 0.9rem;
-  color: #6c757d;
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-500);
+  font-weight: var(--font-weight-semibold);
   white-space: nowrap;
 }
 
 .nav-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: var(--space-3);
 }
 
 .nav-btn {
   position: relative;
-  padding: 0.75rem 1.25rem;
-  background: #ffffff;
-  border: 2px solid #dee2e6;
-  border-radius: 8px;
-  color: #495057;
+  padding: var(--space-3) var(--space-5);
+  background: white;
+  border: 2px solid var(--color-neutral-300);
+  border-radius: var(--radius-lg);
+  color: var(--color-neutral-700);
   cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.9rem;
-  font-weight: 500;
+  transition: var(--transition-all);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .section-number {
-  background: #f8f9fa;
-  color: #6c757d;
-  border-radius: 50%;
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-500);
+  border-radius: var(--radius-full);
   width: 26px;
   height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 700;
-  transition: all 0.2s ease;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  transition: var(--transition-all);
 }
 
 .nav-btn:hover:not(:disabled) {
-  background-color: #f8f9fa;
-  border-color: #8b4513;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  background-color: var(--color-neutral-50);
+  border-color: var(--color-primary-500);
+  box-shadow: var(--shadow-sm);
 }
 
 .nav-btn.active {
-  background-color: #8b4513;
+  background-color: var(--color-primary-600);
   color: white;
-  border-color: #8b4513;
-  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+  border-color: var(--color-primary-600);
+  box-shadow: var(--shadow-md);
 }
 
 .nav-btn.active .section-number {
@@ -555,64 +493,65 @@ function handleTemplateSelected(template: TemplateMonster) {
 }
 
 .nav-btn.completed {
-  border-color: #28a745;
-  color: #28a745;
+  border-color: var(--color-success-500);
+  color: var(--color-success-600);
 }
 
 .nav-btn.completed .section-number {
-  background: #28a745;
+  background: var(--color-success-600);
   color: white;
 }
 
 .nav-btn.invalid {
-  border-color: #dc3545;
-  color: #dc3545;
+  border-color: var(--color-error-500);
+  color: var(--color-error-600);
 }
 
 .nav-btn.invalid.active {
-  background-color: #dc3545;
+  background-color: var(--color-error-600);
   color: white;
 }
 
-.invalid-indicator, .completed-indicator {
+.invalid-indicator,
+.completed-indicator {
   position: absolute;
   top: -4px;
   right: -4px;
-  background: #dc3545;
+  background: var(--color-error-600);
   color: white;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   width: 18px;
   height: 18px;
   font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 }
 
 .completed-indicator {
-  background: #28a745;
+  background: var(--color-success-600);
 }
 
 .form-content {
   min-height: 400px;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-8);
 }
 
 .wizard-nav {
-  border-top: 1px solid #e9ecef;
-  padding-top: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 0 0 8px 8px;
-  margin: 0 -1rem -1rem -1rem;
-  padding: 1.5rem;
+  border-top: 1px solid var(--color-neutral-200);
+  padding-top: var(--space-6);
+  background: var(--color-neutral-50);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  margin: 0 calc(-1 * var(--space-4)) calc(-1 * var(--space-4)) calc(-1 * var(--space-4));
+  padding: var(--space-6);
 }
 
 .nav-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .center-info {
@@ -621,91 +560,89 @@ function handleTemplateSelected(template: TemplateMonster) {
 }
 
 .current-section-name {
-  font-weight: 600;
-  color: #8b4513;
-  font-size: 1.1rem;
-}
-
-.btn-success {
-  background-color: #28a745;
-  color: white;
-}
-
-.btn-success:hover:not(:disabled) {
-  background-color: #218838;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-600);
+  font-size: var(--font-size-lg);
 }
 
 .form-section {
-  animation: fadeIn 0.2s ease-in;
+  animation: fadeIn var(--duration-normal) var(--ease-out);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .monster-form-layout {
-    padding: 0.5rem;
+    padding: var(--space-2);
   }
-  
+
   .form-header {
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--space-4);
     align-items: stretch;
   }
-  
+
   .form-actions {
     justify-content: center;
   }
-  
+
   .progress-indicator {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-2);
     text-align: center;
   }
-  
+
   .nav-tabs {
     justify-content: center;
-    gap: 0.25rem;
+    gap: var(--space-1);
   }
-  
+
   .nav-btn {
     flex: 1;
     min-width: 100px;
     text-align: center;
-    padding: 0.5rem;
-    font-size: 0.8rem;
+    padding: var(--space-2);
+    font-size: var(--font-size-xs);
   }
-  
+
   .section-number {
     width: 20px;
     height: 20px;
-    font-size: 0.7rem;
+    font-size: var(--font-size-xs);
   }
-  
+
   .form-title {
-    font-size: 1.3rem;
+    font-size: var(--font-size-xl);
     text-align: center;
   }
-  
+
   .nav-buttons {
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--space-4);
   }
-  
+
   .center-info {
     order: -1;
   }
-  
+
   .current-section-name {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
-  
+
   .wizard-nav {
-    padding: 1rem;
-    margin: 0 -0.5rem -0.5rem -0.5rem;
+    padding: var(--space-4);
+    margin: 0 calc(-1 * var(--space-2)) calc(-1 * var(--space-2)) calc(-1 * var(--space-2));
   }
 }
 
@@ -713,10 +650,14 @@ function handleTemplateSelected(template: TemplateMonster) {
   .nav-tabs {
     flex-direction: column;
   }
-  
+
   .nav-btn {
     flex: none;
     justify-content: center;
+  }
+
+  .form-actions .btn {
+    min-width: 120px;
   }
 }
 </style>

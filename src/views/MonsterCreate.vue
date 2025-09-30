@@ -71,7 +71,7 @@ onMounted(() => {
         weaknesses: template.weaknesses || {},
         items: template.items || []
       }
-      
+
       // Clear the template data from localStorage
       localStorage.removeItem('templateMonster')
     } catch (error) {
@@ -106,13 +106,13 @@ const handleCancel = () => {
 <style scoped>
 .monster-create {
   min-height: 100vh;
-  background: #f8f9fa;
-  padding: 2rem 1rem;
+  background: var(--color-neutral-50);
+  padding: var(--space-8) var(--space-4);
 }
 
 @media (max-width: 768px) {
   .monster-create {
-    padding: 1rem 0.5rem;
+    padding: var(--space-4) var(--space-2);
   }
 }
 </style>

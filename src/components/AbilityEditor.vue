@@ -48,13 +48,6 @@
           <div v-if="errors.description" class="error-message">{{ errors.description }}</div>
           <div class="help-text">HTML is supported for formatting</div>
         </div>
-
-        <div class="form-group">
-          <label for="director-notes" class="form-label">Director Notes</label>
-          <textarea id="director-notes" v-model="formData.system.description!.director" class="form-textarea" rows="2"
-            placeholder="Optional notes for the Director..." />
-          <div class="help-text">Private notes visible only to the Director</div>
-        </div>
       </section>
 
       <!-- Ability-specific fields -->

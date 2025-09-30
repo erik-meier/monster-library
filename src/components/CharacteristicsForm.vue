@@ -1,27 +1,21 @@
 <template>
   <div class="characteristics-form">
     <h2 class="form-section-title">Characteristics</h2>
-    
+
     <div class="characteristics-grid">
       <div class="form-group" v-for="(label, key) in characteristicLabels" :key="key">
         <label :for="`char-${key}`" class="form-label required">{{ label }}</label>
-        <input 
-          :id="`char-${key}`"
-          v-model.number="formData.characteristics[key]"
-          type="number" 
-          class="form-input characteristic-input"
-          :class="{ invalid: errors[key] }"
-          min="-5" 
-          max="10"
-          :placeholder="'0'"
-        />
+        <input :id="`char-${key}`" v-model.number="formData.characteristics[key]" type="number"
+          class="form-input characteristic-input" :class="{ invalid: errors[key] }" min="-9" max="99"
+          :placeholder="'0'" />
         <div v-if="errors[key]" class="error-message">{{ errors[key] }}</div>
       </div>
     </div>
-    
+
     <div class="highest-characteristic">
-      <strong>Highest Characteristic:</strong> 
-      {{ getHighestCharacteristic() }} ({{ formatCharacteristic(Math.max(...Object.values(formData.characteristics))) }})
+      <strong>Highest Characteristic:</strong>
+      {{ getHighestCharacteristic() }} ({{ formatCharacteristic(Math.max(...Object.values(formData.characteristics)))
+      }})
     </div>
   </div>
 </template>
@@ -44,7 +38,7 @@ const emit = defineEmits<Emits>()
 
 const characteristicLabels = {
   might: 'Might',
-  agility: 'Agility', 
+  agility: 'Agility',
   reason: 'Reason',
   intuition: 'Intuition',
   presence: 'Presence'
@@ -71,8 +65,8 @@ const errors = reactive({
 const validateCharacteristic = (key: string, value: number) => {
   if (typeof value !== 'number' || isNaN(value)) {
     errors[key as keyof typeof errors] = `${characteristicLabels[key as keyof typeof characteristicLabels]} must be a valid number`
-  } else if (value < -5 || value > 10) {
-    errors[key as keyof typeof errors] = `${characteristicLabels[key as keyof typeof characteristicLabels]} must be between -5 and 10`
+  } else if (value < -9 || value > 99) {
+    errors[key as keyof typeof errors] = `${characteristicLabels[key as keyof typeof characteristicLabels]} must be between -9 and 99`
   } else {
     errors[key as keyof typeof errors] = ''
   }
@@ -84,7 +78,7 @@ const getHighestCharacteristic = (): string => {
   const maxKey = Object.keys(characteristics).find(
     key => characteristics[key as keyof typeof characteristics] === maxValue
   ) as keyof typeof characteristicLabels
-  
+
   return characteristicLabels[maxKey] || 'None'
 }
 
@@ -219,7 +213,7 @@ Object.keys(formData.characteristics).forEach(key => {
   .characteristics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .summary-grid {
     grid-template-columns: 1fr;
   }
