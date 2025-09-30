@@ -85,8 +85,8 @@
           <div class="size-edit">
             <input v-model.number="editableData.size.value" type="number" min="1" class="size-input"
               @blur="updateField('size')" />
-            <select v-model="editableData.size.letter" class="size-select" :disabled="editableData.size.value > 1"
-              @change="updateField('size')">
+            <select v-model="editableData.size.letter" class="form-select size-select"
+              :disabled="editableData.size.value > 1" @change="updateField('size')">
               <option value="">—</option>
               <option value="T">T</option>
               <option value="S">S</option>
@@ -157,7 +157,7 @@
         <h4>Immunities</h4>
         <div class="defense-entries">
           <div v-for="(immunity, index) in immunityEntries" :key="`immunity-${index}`" class="defense-entry">
-            <select v-model="immunity.type" @change="debouncedUpdateDefenses" class="defense-type-select">
+            <select v-model="immunity.type" @change="debouncedUpdateDefenses" class="form-select defense-type-select">
               <option value="">Select type...</option>
               <option v-for="type in DAMAGE_TYPES" :key="type" :value="type">
                 {{ capitalize(type) }}
@@ -178,7 +178,7 @@
         <h4>Weaknesses</h4>
         <div class="defense-entries">
           <div v-for="(weakness, index) in weaknessEntries" :key="`weakness-${index}`" class="defense-entry">
-            <select v-model="weakness.type" @change="debouncedUpdateDefenses" class="defense-type-select">
+            <select v-model="weakness.type" @change="debouncedUpdateDefenses" class="form-select defense-type-select">
               <option value="">Select type...</option>
               <option v-for="type in DAMAGE_TYPES" :key="type" :value="type">
                 {{ capitalize(type) }}
@@ -1105,12 +1105,12 @@ onUnmounted(() => {
 }
 
 .size-select {
-  padding: 0.25rem;
-  border: 1px solid #007bff;
-  border-radius: 3px;
-  background: white;
+  /* Extend form-select with specific sizing for stat block */
+  padding: var(--space-1);
+  font-size: var(--font-size-sm);
   min-width: 40px;
   max-width: 50px;
+  border: 1px solid var(--color-primary-500);
 }
 
 /* Characteristics */
@@ -1229,12 +1229,11 @@ onUnmounted(() => {
 }
 
 .defense-type-select {
+  /* Extend form-select with specific sizing for defenses */
   flex: 2;
-  padding: 0.25rem;
-  border: 1px solid #007bff;
-  border-radius: 3px;
-  font-size: 0.8rem;
-  background: white;
+  padding: var(--space-1);
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--color-primary-500);
 }
 
 .defense-value-input {

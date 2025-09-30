@@ -44,8 +44,22 @@
 
   --color-info-50: #eff6ff;
   --color-info-500: #3b82f6;
-  --color-error-600: #2563eb;
+  --color-info-600: #2563eb;
   --color-info-700: #1d4ed8;
+
+  /* === ACCESSIBILITY COLORS - WCAG AAA Compliant === */
+  --color-text-high-contrast: #000000;
+  --color-text-aa: var(--color-neutral-700);  /* 4.5:1 contrast */
+  --color-text-aaa: var(--color-neutral-800); /* 7:1 contrast */
+  --color-link-default: #0066cc;
+  --color-link-visited: #551a8b;
+  --color-link-hover: #004499;
+  --color-focus-visible: #005fcc;
+  
+  /* High Contrast Mode Support */
+  --color-border-high-contrast: var(--color-neutral-900);
+  --color-background-high-contrast: #ffffff;
+  --color-text-high-contrast: #000000;
 
   /* === TYPOGRAPHY === */
   --font-family-serif: 'Libre Baskerville', 'Book Antiqua', Georgia, serif;
@@ -118,10 +132,18 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 
-  /* Focus rings */
-  --focus-ring: 0 0 0 3px rgba(139, 69, 19, 0.1);
-  --focus-ring-error: 0 0 0 3px rgba(220, 38, 38, 0.1);
-  --focus-ring-success: 0 0 0 3px rgba(22, 163, 74, 0.1);
+  /* Focus rings - Enhanced for accessibility */
+  --focus-ring: 0 0 0 3px rgba(139, 69, 19, 0.2);
+  --focus-ring-error: 0 0 0 3px rgba(220, 38, 38, 0.2);
+  --focus-ring-success: 0 0 0 3px rgba(22, 163, 74, 0.2);
+  --focus-ring-info: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  --focus-ring-warning: 0 0 0 3px rgba(245, 158, 11, 0.2);
+  
+  /* Focus styles for different interaction modes */
+  --focus-ring-inset: inset 0 0 0 2px var(--color-focus-visible);
+  --focus-ring-thick: 0 0 0 4px rgba(139, 69, 19, 0.3);
+  --focus-outline: 2px solid var(--color-focus-visible);
+  --focus-outline-offset: 2px;
 
   /* === ANIMATIONS === */
   /* Timing Functions */
@@ -136,6 +158,12 @@
   --duration-normal: 200ms;
   --duration-slow: 300ms;
   --duration-slower: 500ms;
+  
+  /* Progressive Disclosure Animations */
+  --duration-collapse: 250ms;
+  --duration-expand: 300ms;
+  --duration-slide: 200ms;
+  --duration-fade: 150ms;
 
   /* Common Transitions */
   --transition-colors: color var(--duration-normal) var(--ease-out),
@@ -144,6 +172,18 @@
   --transition-transform: transform var(--duration-normal) var(--ease-out);
   --transition-opacity: opacity var(--duration-normal) var(--ease-out);
   --transition-all: all var(--duration-normal) var(--ease-out);
+  --transition-shadow: box-shadow var(--duration-normal) var(--ease-out);
+  --transition-scale: transform var(--duration-fast) var(--ease-out);
+  
+  /* Micro-interaction Transitions */
+  --transition-button: background-color var(--duration-fast) var(--ease-out),
+                      border-color var(--duration-fast) var(--ease-out),
+                      box-shadow var(--duration-fast) var(--ease-out),
+                      transform var(--duration-fast) var(--ease-out);
+  --transition-input: border-color var(--duration-fast) var(--ease-out),
+                     box-shadow var(--duration-fast) var(--ease-out);
+  --transition-card: box-shadow var(--duration-normal) var(--ease-out),
+                    transform var(--duration-normal) var(--ease-out);
 
   /* === Z-INDEX SCALE === */
   --z-dropdown: 1000;

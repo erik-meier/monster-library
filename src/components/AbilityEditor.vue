@@ -1,14 +1,16 @@
 <template>
-  <div class="ability-editor">
+  <div class="ability-editor" role="dialog" aria-labelledby="editor-title" aria-modal="true">
     <header class="editor-header">
-      <h2 class="editor-title">
-        {{ isFeature ? 'Edit Feature' : 'Edit Ability' }}: {{ formData.name }}
+      <h2 id="editor-title" class="editor-title">
+        {{ isFeature ? 'Edit Feature' : 'Edit Ability' }}: {{ formData.name || 'New Item' }}
       </h2>
       <div class="editor-actions">
-        <button type="button" class="btn btn-secondary" @click="$emit('cancel')">
+        <button type="button" class="btn btn-secondary" @click="$emit('cancel')"
+          aria-label="Cancel editing and close dialog">
           Cancel
         </button>
-        <button type="button" class="btn btn-primary" @click="handleSave" :disabled="!isValid">
+        <button type="button" class="btn btn-primary" @click="handleSave" :disabled="!isValid"
+          :aria-label="isValid ? 'Save changes' : 'Please fix validation errors before saving'">
           Save
         </button>
       </div>
@@ -16,31 +18,31 @@
 
     <div class="editor-content">
       <!-- Basic Info -->
-      <section class="editor-section">
-        <h3 class="section-title">Basic Information</h3>
+      <CollapsibleSection title="Basic Information" :expanded="true" id="basic-info">
         <div class="form-grid">
           <div class="form-group">
             <label for="ability-name" class="form-label required">Name</label>
             <input id="ability-name" v-model="formData.name" type="text" class="form-input"
-              :class="{ invalid: errors.name }" placeholder="Ability name" />
-            <div v-if="errors.name" class="error-message">{{ errors.name }}</div>
+              :class="{ invalid: errors.name }" placeholder="Ability name" :aria-invalid="!!errors.name"
+              :aria-describedby="errors.name ? 'ability-name-error' : undefined" required />
+            <div v-if="errors.name" id="ability-name-error" class="error-message" role="alert">{{ errors.name }}</div>
           </div>
 
           <div class="form-group">
             <label for="ability-type" class="form-label required">Type</label>
             <select id="ability-type" v-model="formData.type" class="form-select" :class="{ invalid: errors.type }"
-              @change="onTypeChange">
+              @change="onTypeChange" :aria-invalid="!!errors.type"
+              :aria-describedby="errors.type ? 'ability-type-error' : undefined" required>
               <option value="ability">Ability (Active)</option>
               <option value="feature">Feature (Passive)</option>
             </select>
-            <div v-if="errors.type" class="error-message">{{ errors.type }}</div>
+            <div v-if="errors.type" id="ability-type-error" class="error-message" role="alert">{{ errors.type }}</div>
           </div>
         </div>
-      </section>
+      </CollapsibleSection>
 
       <!-- Feature-specific fields -->
-      <section v-if="isFeature" class="editor-section">
-        <h3 class="section-title">Feature Description</h3>
+      <CollapsibleSection v-if="isFeature" title="Feature Description" :expanded="true" id="feature-description">
         <div class="form-group">
           <label for="feature-description" class="form-label required">Description</label>
           <textarea id="feature-description" v-model="formData.system.description!.value" class="form-textarea"
@@ -48,13 +50,12 @@
           <div v-if="errors.description" class="error-message">{{ errors.description }}</div>
           <div class="help-text">HTML is supported for formatting</div>
         </div>
-      </section>
+      </CollapsibleSection>
 
       <!-- Ability-specific fields -->
       <template v-if="!isFeature">
         <!-- System Properties -->
-        <section class="editor-section">
-          <h3 class="section-title">Action Properties</h3>
+        <CollapsibleSection title="Action Properties" :expanded="true" id="action-properties">
           <div class="form-grid">
             <div class="form-group">
               <label class="form-checkbox-label">
@@ -79,12 +80,12 @@
 
             <div class="form-group">
               <label for="malice-cost" class="form-label">Malice Cost</label>
-              <input id="malice-cost" v-model.number="formData.system.resource" type="number" class="form-input" min="0"
+              <input id="malice-cost" v-model="formData.system.resource" type="number" class="form-input" min="0"
                 placeholder="0" />
               <div class="help-text">Leave empty if no cost</div>
             </div>
           </div>
-        </section>
+        </CollapsibleSection>
 
         <!-- Targeting -->
         <section class="editor-section">
@@ -314,6 +315,11 @@
 import { reactive, ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import type { MonsterItem } from '@/types/monster-forms'
 import { ABILITY_KEYWORDS } from '@/types/monster-forms'
+import CollapsibleSection from '@/components/CollapsibleSection.vue'
+import { useToast } from '@/composables/useToast'
+
+// Initialize toast notifications
+const { success, error } = useToast()
 
 interface Props {
   modelValue: MonsterItem
@@ -535,7 +541,15 @@ const toggleQuickKeyword = (keyword: string) => {
 const handleSave = () => {
   validateFields()
   if (isValid.value) {
-    emit('save')
+    try {
+      emit('save')
+      success(`${isFeature.value ? 'Feature' : 'Ability'} "${formData.name}" saved successfully!`)
+    } catch (err) {
+      error('Failed to save. Please check your inputs and try again.')
+      console.error('Save error:', err)
+    }
+  } else {
+    error('Please fix the validation errors before saving.')
   }
 }
 
@@ -621,52 +635,85 @@ validateFields()
 
 .editor-actions {
   display: flex;
-  gap: 0.75rem;
+  gap: var(--space-3);
+  align-items: center;
 }
 
 .btn {
-  padding: 0.5rem 1rem;
+  padding: var(--space-3) var(--space-6);
   border: none;
-  border-radius: 4px;
-  font-weight: 500;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-button);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .btn-primary {
-  background-color: #8b4513;
-  color: white;
+  background-color: var(--color-primary-600);
+  color: var(--color-neutral-50);
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: #a0522d;
+  background-color: var(--color-primary-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  transition-duration: var(--duration-fast);
 }
 
 .btn-primary:disabled {
-  background-color: #ccc;
+  background-color: var(--color-neutral-400);
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .btn-secondary {
-  background-color: #6c757d;
-  color: white;
+  background-color: var(--color-neutral-600);
+  color: var(--color-neutral-50);
 }
 
-.btn-secondary:hover {
-  background-color: #5a6268;
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-neutral-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(0);
+  transition-duration: var(--duration-fast);
 }
 
 .editor-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--space-6);
 }
 
 .editor-section {
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background: #f8f9fa;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  background: var(--color-neutral-50);
+  transition: var(--transition-card);
+}
+
+.editor-section:hover {
+  border-color: var(--color-neutral-300);
+  background: white;
 }
 
 .section-title {
@@ -744,40 +791,19 @@ validateFields()
 }
 
 .form-label {
-  font-weight: 600;
-  color: #333;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-800);
+  font-size: var(--font-size-sm);
+  display: block;
+  margin-bottom: var(--space-2);
 }
 
 .form-label.required::after {
   content: ' *';
-  color: #dc3545;
+  color: var(--color-error-600);
 }
 
-.form-input,
-.form-select,
-.form-textarea {
-  padding: 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  background: white;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-  outline: none;
-  border-color: #8b4513;
-  box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.25);
-}
-
-.form-input.invalid,
-.form-select.invalid,
-.form-textarea.invalid {
-  border-color: #dc3545;
-}
+/* Use global form styles from design system */
 
 .form-textarea {
   resize: vertical;
@@ -948,15 +974,25 @@ validateFields()
 }
 
 .error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+  color: var(--color-error-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: var(--font-weight-medium);
+}
+
+.error-message::before {
+  content: '⚠';
+  font-size: var(--font-size-base);
 }
 
 .help-text {
-  color: #6c757d;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+  line-height: var(--line-height-relaxed);
 }
 
 /* Mobile responsiveness */

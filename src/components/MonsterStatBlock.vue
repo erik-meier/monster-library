@@ -28,7 +28,7 @@
         <div class="stat-label">Free Strike</div>
       </div>
       <div class="stat-values">
-        <div class="stat-value">{{ monster.size.value }}{{ monster.size.letter }}</div>
+        <div class="stat-value">{{ monster.size.value }}{{ monster.size.value > 1 ? '' : monster.size.letter }}</div>
         <div class="stat-value">{{ monster.speed }}</div>
         <div class="stat-value">{{ monster.stamina }}</div>
         <div class="stat-value">{{ monster.stability }}</div>
@@ -61,12 +61,17 @@
     <div class="divider"></div>
 
     <!-- Abilities -->
-    <ActionsList :title="'Abilities'" :actions="monster.items || monster.abilities || []"
-      :chr="String(getMaxCharacteristic())" :monster="monster" />
+    <CollapsibleSection v-if="(monster.items || monster.abilities || []).length > 0" title="Abilities" :expanded="true"
+      id="abilities-section">
+      <ActionsList :title="'Abilities'" :actions="monster.items || monster.abilities || []"
+        :chr="String(getMaxCharacteristic())" :monster="monster" />
+    </CollapsibleSection>
 
     <!-- Actions -->
-    <ActionsList :title="'Actions'" :actions="monster.actions || []" :chr="String(getMaxCharacteristic())"
-      :monster="monster" />
+    <CollapsibleSection v-if="(monster.actions || []).length > 0" title="Actions" :expanded="true" id="actions-section">
+      <ActionsList :title="'Actions'" :actions="monster.actions || []" :chr="String(getMaxCharacteristic())"
+        :monster="monster" />
+    </CollapsibleSection>
 
     <!-- Source Information -->
     <div v-if="monster.source" class="source-info">
@@ -83,6 +88,7 @@
 <script>
 import CharacteristicScores from './CharacteristicScores.vue'
 import ActionsList from './ActionsList.vue'
+import CollapsibleSection from './CollapsibleSection.vue'
 import {
   formatKeywords,
   formatMonsterRole,
@@ -95,7 +101,8 @@ export default {
   name: 'MonsterStatBlock',
   components: {
     CharacteristicScores,
-    ActionsList
+    ActionsList,
+    CollapsibleSection
   },
   props: {
     monster: {

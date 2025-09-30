@@ -16,7 +16,7 @@
       </div>
     </nav>
 
-    <main class="main-content">
+    <main class="main-content" id="main-content">
       <router-view />
     </main>
 
@@ -34,12 +34,23 @@
         </div>
       </div>
     </footer>
+
+    <!-- Toast notifications -->
+    <ToastContainer />
+
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
   </div>
 </template>
 
 <script>
+import ToastContainer from '@/components/ToastContainer.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    ToastContainer
+  }
 }
 </script>
 
@@ -61,7 +72,12 @@ export default {
 }
 
 /* Typography improvements */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: var(--line-height-tight);
   margin-bottom: 0.5em;
   font-weight: var(--font-weight-bold);
@@ -72,19 +88,22 @@ p {
 }
 
 /* Global button styles - ensure base buttons work with design system */
-button, .btn {
+button,
+.btn {
   font-family: inherit;
   cursor: pointer;
   border: none;
   transition: var(--transition-all);
 }
 
-button:focus-visible, .btn:focus-visible {
+button:focus-visible,
+.btn:focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
 }
 
-button:disabled, .btn:disabled {
+button:disabled,
+.btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
@@ -147,13 +166,15 @@ button:disabled, .btn:disabled {
   text-decoration: none;
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-md);
-  transition: var(--transition-all);
+  transition: var(--transition-button);
   min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-base);
+  position: relative;
+  outline-offset: 2px;
 }
 
 .nav-link:hover {
@@ -161,10 +182,32 @@ button:disabled, .btn:disabled {
   transform: translateY(-1px);
 }
 
+.nav-link:focus-visible {
+  outline: 2px solid var(--color-primary-50);
+  outline-offset: 2px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-link:active {
+  transform: translateY(0);
+  transition-duration: var(--duration-fast);
+}
+
 .nav-link.router-link-active {
   background-color: rgba(255, 255, 255, 0.25);
   font-weight: var(--font-weight-semibold);
   box-shadow: var(--shadow-sm);
+}
+
+.nav-link.router-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: var(--space-2);
+  right: var(--space-2);
+  height: 2px;
+  background-color: var(--color-primary-50);
+  border-radius: 1px;
 }
 
 .main-content {

@@ -8,19 +8,25 @@
         <label class="form-label required">Size</label>
         <div class="size-input-group">
           <input v-model.number="formData.size.value" type="number" class="form-input size-number"
-            :class="{ invalid: errors.sizeValue }" min="0" max="10" placeholder="1" />
+            :class="{ invalid: errors.sizeValue }" min="1" max="99" placeholder="1" aria-label="Size value"
+            :aria-invalid="!!errors.sizeValue" :aria-describedby="errors.sizeValue ? 'size-value-error' : 'size-help'"
+            required />
           <select v-if="formData.size.value === 1" v-model="formData.size.letter" class="form-select size-letter"
-            :class="{ invalid: errors.sizeLetter }">
+            :class="{ invalid: errors.sizeLetter }" aria-label="Size letter" :aria-invalid="!!errors.sizeLetter"
+            :aria-describedby="errors.sizeLetter ? 'size-letter-error' : 'size-help'" required>
             <option value="">Size</option>
             <option v-for="letter in availableSizeLetters" :key="letter" :value="letter">
               {{ letter }}
             </option>
           </select>
         </div>
-        <div v-if="errors.sizeValue || errors.sizeLetter" class="error-message">
-          {{ errors.sizeValue || errors.sizeLetter }}
+        <div v-if="errors.sizeValue" id="size-value-error" class="error-message" role="alert">
+          {{ errors.sizeValue }}
         </div>
-        <div class="help-text">Size value with optional letter (T, S, M, L). Examples: 1M, 2, 3</div>
+        <div v-if="errors.sizeLetter" id="size-letter-error" class="error-message" role="alert">
+          {{ errors.sizeLetter }}
+        </div>
+        <div id="size-help" class="help-text">Size value with optional letter (T, S, M, L). Examples: 1M, 2, 3</div>
       </div>
 
       <!-- Core Combat Stats -->
@@ -28,47 +34,54 @@
         <div class="form-group">
           <label for="monster-speed" class="form-label required">Speed</label>
           <input id="monster-speed" v-model.number="formData.speed" type="number" class="form-input"
-            :class="{ invalid: errors.speed }" min="0" placeholder="6" />
-          <div v-if="errors.speed" class="error-message">{{ errors.speed }}</div>
-          <div class="help-text">Movement speed in squares</div>
+            :class="{ invalid: errors.speed }" min="0" placeholder="6" :aria-invalid="!!errors.speed"
+            :aria-describedby="errors.speed ? 'speed-error' : 'speed-help'" required />
+          <div v-if="errors.speed" id="speed-error" class="error-message" role="alert">{{ errors.speed }}</div>
+          <div id="speed-help" class="help-text">Movement speed in squares</div>
         </div>
 
         <div class="form-group">
           <label for="monster-stamina" class="form-label required">Stamina</label>
           <input id="monster-stamina" v-model.number="formData.stamina" type="number" class="form-input"
-            :class="{ invalid: errors.stamina }" min="1" placeholder="10" />
-          <div v-if="errors.stamina" class="error-message">{{ errors.stamina }}</div>
-          <div class="help-text">Health points</div>
+            :class="{ invalid: errors.stamina }" min="1" placeholder="10" :aria-invalid="!!errors.stamina"
+            :aria-describedby="errors.stamina ? 'stamina-error' : 'stamina-help'" required />
+          <div v-if="errors.stamina" id="stamina-error" class="error-message" role="alert">{{ errors.stamina }}</div>
+          <div id="stamina-help" class="help-text">Health points</div>
         </div>
 
         <div class="form-group">
           <label for="monster-stability" class="form-label required">Stability</label>
           <input id="monster-stability" v-model.number="formData.stability" type="number" class="form-input"
-            :class="{ invalid: errors.stability }" placeholder="0" />
-          <div v-if="errors.stability" class="error-message">{{ errors.stability }}</div>
-          <div class="help-text">Resistance to forced movement</div>
+            :class="{ invalid: errors.stability }" placeholder="0" :aria-invalid="!!errors.stability"
+            :aria-describedby="errors.stability ? 'stability-error' : 'stability-help'" required />
+          <div v-if="errors.stability" id="stability-error" class="error-message" role="alert">{{ errors.stability }}
+          </div>
+          <div id="stability-help" class="help-text">Resistance to forced movement</div>
         </div>
 
         <div class="form-group">
           <label for="monster-free-strike" class="form-label required">Free Strike</label>
           <input id="monster-free-strike" v-model.number="formData.freeStrike" type="number" class="form-input"
-            :class="{ invalid: errors.freeStrike }" min="0" placeholder="2" />
-          <div v-if="errors.freeStrike" class="error-message">{{ errors.freeStrike }}</div>
-          <div class="help-text">Free strike damage</div>
+            :class="{ invalid: errors.freeStrike }" min="0" placeholder="2" :aria-invalid="!!errors.freeStrike"
+            :aria-describedby="errors.freeStrike ? 'free-strike-error' : 'free-strike-help'" required />
+          <div v-if="errors.freeStrike" id="free-strike-error" class="error-message" role="alert">{{ errors.freeStrike
+            }}</div>
+          <div id="free-strike-help" class="help-text">Free strike damage</div>
         </div>
       </div>
 
       <!-- Movement Types -->
-      <div class="form-group">
-        <label class="form-label">Movement Types</label>
-        <div class="checkbox-group">
+      <fieldset class="form-group">
+        <legend class="form-label">Movement Types</legend>
+        <div class="checkbox-group" role="group" aria-labelledby="movement-types-legend">
           <label v-for="moveType in MOVEMENT_TYPES" :key="moveType" class="checkbox-label">
-            <input type="checkbox" :value="moveType" v-model="formData.movementTypes" class="checkbox-input" />
+            <input type="checkbox" :value="moveType" v-model="formData.movementTypes" class="checkbox-input"
+              :aria-describedby="'movement-help'" />
             <span class="checkbox-text">{{ capitalize(moveType) }}</span>
           </label>
         </div>
-        <div class="help-text">Select all movement types this monster can use</div>
-      </div>
+        <div id="movement-help" class="help-text">Select all movement types this monster can use</div>
+      </fieldset>
     </div>
   </div>
 </template>
@@ -123,8 +136,8 @@ const availableSizeLetters = computed(() => {
 const validateField = (field: string, value: unknown) => {
   switch (field) {
     case 'sizeValue':
-      if (!value || typeof value !== 'number' || value < 0 || value > 10) {
-        errors.sizeValue = 'Size value must be between 0 and 10'
+      if (!value || typeof value !== 'number' || value < 1 || value > 99) {
+        errors.sizeValue = 'Size value must be between 1 and 99'
       } else {
         errors.sizeValue = ''
       }
@@ -267,44 +280,46 @@ validateField('freeStrike', formData.freeStrike)
 
 <style scoped>
 .stats-form {
-  padding: 1rem 0;
+  padding: var(--space-4) 0;
 }
 
 .form-section-title {
-  color: #8b4513;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin: 0 0 1.5rem 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #8b4513;
+  color: var(--color-primary-600);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--space-6) 0;
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-primary-600);
 }
 
 .form-grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-6);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .form-label {
-  font-weight: 600;
-  color: #333;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-800);
+  font-size: var(--font-size-sm);
+  display: block;
+  margin-bottom: var(--space-1);
 }
 
 .form-label.required::after {
   content: ' *';
-  color: #dc3545;
+  color: var(--color-error-600);
 }
 
 .size-input-group {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .size-number {
@@ -320,84 +335,112 @@ validateField('freeStrike', formData.freeStrike)
 .stats-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
-.form-input,
-.form-select {
-  padding: 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.form-input:focus,
-.form-select:focus {
-  outline: none;
-  border-color: #8b4513;
-  box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.25);
-}
-
-.form-input.invalid,
-.form-select.invalid {
-  border-color: #dc3545;
-}
-
-.form-input.invalid:focus,
-.form-select.invalid:focus {
-  border-color: #dc3545;
-  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
-}
+/* Use design system form styles - remove local overrides */
 
 .error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+  color: var(--color-error-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: var(--font-weight-medium);
+}
+
+.error-message::before {
+  content: '⚠';
+  font-size: var(--font-size-base);
 }
 
 .help-text {
-  color: #6c757d;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+  line-height: var(--line-height-relaxed);
 }
 
 .checkbox-group {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.75rem;
-  padding: 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  background: #f8f9fa;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 2px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-50);
+  transition: var(--transition-colors);
+}
+
+.checkbox-group:hover {
+  border-color: var(--color-neutral-300);
+  background: white;
 }
 
 .checkbox-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-700);
+  transition: var(--transition-colors);
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+}
+
+.checkbox-label:hover {
+  background: var(--color-primary-50);
+  color: var(--color-primary-700);
 }
 
 .checkbox-input {
-  width: 16px;
-  height: 16px;
-  accent-color: #8b4513;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary-600);
 }
 
 .checkbox-text {
   user-select: none;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Fieldset and legend styling */
+fieldset.form-group {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+fieldset.form-group legend {
+  padding: 0;
+  margin: 0;
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  .form-section-title {
+    font-size: var(--font-size-lg);
+  }
+
   .stats-row {
     grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
   }
 
   .checkbox-group {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+
+  .size-input-group {
+    flex-direction: column;
+  }
+
+  .size-number,
+  .size-letter {
+    max-width: none;
   }
 }
 
