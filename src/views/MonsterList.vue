@@ -82,12 +82,15 @@
       </div>
     </div>
 
-    <div v-if="loading" class="loading">
-      Loading monsters...
-    </div>
+    <LoadingSpinner v-if="loading" message="Loading monsters..." />
 
     <div v-else-if="error" class="error">
-      {{ error }}
+      <div class="error-icon">⚠️</div>
+      <div class="error-content">
+        <h3>Failed to Load Monsters</h3>
+        <p>{{ error }}</p>
+        <button @click="loadMonsters" class="btn btn-primary">Try Again</button>
+      </div>
     </div>
 
     <div v-else class="monsters-grid">
@@ -118,9 +121,13 @@
 
 <script>
 import { useCustomMonstersStore } from '@/stores/customMonsters'
+import LoadingSpinner from '@/components/LoadingSpinner.vue'
 
 export default {
   name: 'MonsterList',
+  components: {
+    LoadingSpinner
+  },
   setup() {
     const customMonstersStore = useCustomMonstersStore()
     return { customMonstersStore }
@@ -441,6 +448,52 @@ export default {
   background-color: #fef2f2;
   border: 1px solid #fecaca;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+}
+
+.error-icon {
+  font-size: 3rem;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.error-content h3 {
+  margin: 0;
+  color: #991b1b;
+}
+
+.error-content p {
+  margin: 0;
+  color: #dc2626;
+}
+
+.error .btn {
+  margin-top: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.error .btn-primary {
+  background-color: #8b4513;
+  color: white;
+}
+
+.error .btn-primary:hover {
+  background-color: #6d3410;
 }
 
 .monsters-grid {

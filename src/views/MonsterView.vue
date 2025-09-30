@@ -1,11 +1,14 @@
 <template>
   <div class="monster-view">
-    <div v-if="loading" class="loading">
-      Loading monster...
-    </div>
+    <LoadingSpinner v-if="loading" message="Loading monster..." />
     
     <div v-else-if="error" class="error">
-      Error: {{ error }}
+      <div class="error-icon">⚠️</div>
+      <div class="error-content">
+        <h3>Monster Not Found</h3>
+        <p>{{ error }}</p>
+        <router-link to="/monsters" class="btn btn-primary">Browse Monsters</router-link>
+      </div>
     </div>
     
     <div v-else-if="monster">
@@ -66,6 +69,7 @@
 <script>
 import MonsterStatBlock from '@/components/MonsterStatBlock.vue'
 import MonsterStatBlockEditable from '@/components/MonsterStatBlockEditable.vue'
+import LoadingSpinner from '@/components/LoadingSpinner.vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
 import { exportMonsterToPDF } from '@/utils/pdfExport'
 
@@ -73,7 +77,8 @@ export default {
   name: 'MonsterView',
   components: {
     MonsterStatBlock,
-    MonsterStatBlockEditable
+    MonsterStatBlockEditable,
+    LoadingSpinner
   },
   props: {
     monsterId: {
@@ -419,6 +424,55 @@ export default {
   background-color: #fef2f2;
   border: 1px solid #fecaca;
   border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.error-content h3 {
+  margin: 0;
+  color: #991b1b;
+}
+
+.error-content p {
+  margin: 0;
+  color: #dc2626;
+}
+
+.error .btn {
+  margin-top: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.error .btn-primary {
+  background-color: #8b4513;
+  color: white;
+  display: inline-block;
+}
+
+.error .btn-primary:hover {
+  background-color: #6d3410;
 }
 
 .loading {

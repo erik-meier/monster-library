@@ -5,7 +5,10 @@
         {{ isEditing ? 'Edit Monster' : 'Create Monster' }}: {{ modelValue.name || 'Unnamed Monster' }}
       </h1>
       <div class="form-actions">
-        <button type="button" class="btn btn-secondary" @click="$emit('cancel')">
+        <button type="button" class="btn btn-icon-only" @click="showHelp = true" title="Help (?)">
+          <span class="btn-icon">❓</span>
+        </button>
+        <button type="button" class="btn btn-secondary" @click="handleCancel">
           Cancel
         </button>
         <button 
@@ -22,6 +25,9 @@
         </button>
       </div>
     </header>
+
+    <!-- Help Modal -->
+    <HelpModal :is-open="showHelp" @close="showHelp = false" />
 
     <!-- Templates Section -->
     <div v-if="showTemplates && !isEditing" class="templates-section">
@@ -145,6 +151,7 @@ import AbilitiesForm from './AbilitiesForm.vue'
 import KeywordsForm from './KeywordsForm.vue'
 import SourceInfoForm from './SourceInfoForm.vue'
 import MonsterTemplates from './MonsterTemplates.vue'
+import HelpModal from './HelpModal.vue'
 
 interface TemplateMonster {
   id: string
@@ -184,6 +191,9 @@ interface Emits {
 
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
+
+// Help modal state
+const showHelp = ref(false)
 
 // Templates state
 const showTemplates = ref(false)
@@ -238,6 +248,10 @@ const handleSave = () => {
   }
 }
 
+const handleCancel = () => {
+  emit('cancel')
+}
+
 // Wizard navigation methods
 const navigateToSection = (sectionId: string, index: number) => {
   // Allow navigation to any completed section or the current/next section
@@ -260,9 +274,23 @@ const previousSection = () => {
   }
 }
 
-// Keyboard navigation
+// Keyboard navigation and shortcuts
 const handleKeydown = (event: KeyboardEvent) => {
-  // Only handle if no input is focused
+  // Ctrl+S or Cmd+S to save
+  if ((event.ctrlKey || event.metaKey) && event.key === 's') {
+    event.preventDefault()
+    handleSave()
+    return
+  }
+
+  // Escape to cancel (but not if help modal is open)
+  if (event.key === 'Escape' && !showHelp.value) {
+    event.preventDefault()
+    handleCancel()
+    return
+  }
+
+  // Only handle arrow keys if no input is focused
   if (event.target && (event.target as HTMLElement).tagName.match(/INPUT|TEXTAREA|SELECT/)) {
     return
   }
@@ -388,6 +416,24 @@ function handleTemplateSelected(template: TemplateMonster) {
 
 .btn-icon {
   margin-right: 0.5rem;
+}
+
+.btn-icon-only {
+  background-color: transparent;
+  color: #8b4513;
+  border: 1px solid #8b4513;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon-only:hover {
+  background-color: #f8f9fa;
+}
+
+.btn-icon-only .btn-icon {
+  margin: 0;
 }
 
 .templates-section {
