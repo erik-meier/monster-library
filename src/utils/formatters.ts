@@ -21,6 +21,25 @@ interface TargetData {
   value?: number
 }
 
+interface ActionData {
+  system?: {
+    power?: {
+      tiers?: Array<{ tier: number; display: string }>
+      effects?: Record<string, unknown>
+    } | null
+    description?: {
+      value?: string
+    }
+    effect?: {
+      text?: string
+      before?: string
+      after?: string
+    }
+  }
+  description?: string
+  effect?: string
+}
+
 /**
  * Format keywords array into a capitalized, comma-separated string
  */
@@ -169,7 +188,7 @@ export function stripHTML(text: string): string {
 /**
  * Check if an action/ability has a power roll
  */
-export function actionHasPowerRoll(action: any): boolean {
+export function actionHasPowerRoll(action: ActionData): boolean {
   // Check for tiers array in the new flattened structure
   if (action.system?.power?.tiers && action.system.power.tiers.length > 0) {
     return true
@@ -178,7 +197,7 @@ export function actionHasPowerRoll(action: any): boolean {
   // Fallback check for old effects structure (if any remain)
   if (action.system?.power?.effects) {
     for (const effect of Object.values(action.system.power.effects)) {
-      if ((effect as any).type === 'damage') {
+      if (effect && typeof effect === 'object' && 'type' in effect && effect.type === 'damage') {
         return true
       }
     }
@@ -189,14 +208,14 @@ export function actionHasPowerRoll(action: any): boolean {
 /**
  * Extract description from action/ability
  */
-export function extractDescription(action: any): string {
+export function extractDescription(action: ActionData): string {
   if (!action.system) return action.description || action.effect || ''
   if (action.system.description && action.system.description.value) {
     return action.system.description.value
   }
   if (action.system.effect) {
     // Check for new unified text field first, fallback to legacy before/after
-    return action.system.effect.text || action.system.effect.before || action.system.effect.after
+    return action.system.effect.text || action.system.effect.before || action.system.effect.after || ''
   }
   return ''
 }

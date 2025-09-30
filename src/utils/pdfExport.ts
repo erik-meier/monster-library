@@ -10,11 +10,9 @@ import {
   formatCharacteristic,
   formatActionDistance,
   formatActionTargets,
-  formatActionType,
   formatTierNumber,
   stripHTML,
-  actionHasPowerRoll,
-  extractDescription
+  actionHasPowerRoll
 } from './formatters.ts'
 
 // Type alias for the PDF export function to match the expected monster data structure
@@ -374,7 +372,7 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
   return items.map(item => {
     const isFeature = item.type === 'feature'
     const isSignature = item.system?.category === 'signature'
-    const hasPowerRoll = item.system?.power?.tiers && item.system.power.tiers.length > 0
+    const hasPowerRoll = actionHasPowerRoll(item)
     
     return `
       <div class="ability" style="margin-bottom: 16px; break-inside: avoid; -webkit-column-break-inside: avoid; page-break-inside: avoid;">
