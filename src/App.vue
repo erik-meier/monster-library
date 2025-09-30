@@ -3,7 +3,8 @@
     <nav class="navbar">
       <div class="nav-container">
         <router-link to="/" class="nav-brand">
-          Steel Cauldron
+          <img src="/cauldron-logo.svg" alt="Steel Cauldron" class="nav-logo" />
+          <span class="nav-brand-text">Steel Cauldron</span>
         </router-link>
 
         <div class="nav-menu">
@@ -109,6 +110,9 @@ button:disabled, .btn:disabled {
 }
 
 .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary-50);
@@ -116,6 +120,16 @@ button:disabled, .btn:disabled {
   font-family: var(--font-family-serif);
   transition: var(--transition-colors);
   letter-spacing: -0.02em;
+}
+
+.nav-logo {
+  width: 32px;
+  height: 32px;
+  filter: brightness(1.2) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.nav-brand-text {
+  display: inline-block;
 }
 
 .nav-brand:hover {
@@ -234,6 +248,11 @@ button:disabled, .btn:disabled {
     flex-shrink: 0;
   }
 
+  .nav-logo {
+    width: 28px;
+    height: 28px;
+  }
+
   .nav-menu {
     gap: var(--space-3);
     flex-wrap: wrap;
@@ -258,6 +277,11 @@ button:disabled, .btn:disabled {
     padding: var(--space-3) var(--space-2);
     align-items: center;
     text-align: center;
+  }
+
+  .nav-logo {
+    width: 24px;
+    height: 24px;
   }
 
   .nav-menu {

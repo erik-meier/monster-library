@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <div class="hero">
+      <img src="/cauldron-logo.svg" alt="Steel Cauldron Logo" class="hero-logo" />
       <h1 class="hero-title">Steel Cauldron</h1>
       <p class="hero-subtitle">
         Your workshop for brewing Draw Steel monsters and encounters
@@ -114,6 +115,16 @@ export default {
   height: 200%;
   background: radial-gradient(circle, rgba(139, 69, 19, 0.03) 0%, transparent 70%);
   pointer-events: none;
+}
+
+.hero-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-6);
+  display: block;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title {
@@ -368,6 +379,11 @@ export default {
     padding: var(--space-8) var(--space-4);
   }
 
+  .hero-logo {
+    width: 64px;
+    height: 64px;
+  }
+
   .hero-title {
     font-size: var(--font-size-4xl);
   }
@@ -402,6 +418,11 @@ export default {
 @media (max-width: 480px) {
   .hero {
     padding: var(--space-6) var(--space-3);
+  }
+
+  .hero-logo {
+    width: 56px;
+    height: 56px;
   }
 
   .hero-title {
