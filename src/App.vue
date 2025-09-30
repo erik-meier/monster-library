@@ -9,8 +9,8 @@
         <div class="nav-menu">
           <router-link to="/" class="nav-link">Home</router-link>
           <router-link to="/monsters" class="nav-link">Browse Monsters</router-link>
-          <router-link to="/monster/create" class="nav-link">Create Monster</router-link>
           <router-link to="/my-monsters" class="nav-link">My Monsters</router-link>
+          <router-link to="/about" class="nav-link">About</router-link>
         </div>
       </div>
     </nav>
@@ -51,16 +51,45 @@ export default {
 }
 
 #app {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #f8f9fa;
+  line-height: 1.6;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* Global button styles */
+button, .btn {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+button:focus-visible, .btn:focus-visible {
+  outline: 2px solid #8b4513;
+  outline-offset: 2px;
+}
+
+button:disabled, .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .navbar {
   background: linear-gradient(135deg, #8b4513, #a0522d);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   position: sticky;
   top: 0;
   z-index: 100;

@@ -1,0 +1,231 @@
+{
+  "id": "flesh-mournling",
+  "name": "Flesh Mournling",
+  "level": 4,
+  "ev": 6,
+  "role": "Defender",
+  "organization": "Horde",
+  "keywords": [
+    "undead"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 35,
+  "stability": 2,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 3,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 2,
+    "presence": -1
+  },
+  "immunities": {
+    "corruption": 4,
+    "poison": 4
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Arise",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The first time the mournling is reduced to 0 Stamina by damage that isn't fire damage or holy damage and their body isn't destroyed, they instead have <span class=\"heal-value\">10</span>  stamina and fall prone.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Immutable Form",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The mournling's shape can't be changed by any external effect.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Multiarm Strike",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 2
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage"
+            },
+            {
+              "tier": 2,
+              "display": "7 damage"
+            },
+            {
+              "tier": 3,
+              "display": "9 damage"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The target can't shift until the end of their next turn</p>"
+        },
+        "spend": {
+          "text": "This ability targets one additional target.",
+          "value": 1,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> This ability targets one additional target."
+        }
+      }
+    },
+    {
+      "name": "Horrid Wail",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 5
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 psychic damage"
+            },
+            {
+              "tier": 2,
+              "display": "3 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "4 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>A target who is still frightened this way at the end of the encounter can't take a respite activity during their next respite.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Blood Hunger",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One undead acting this turn uses a signature ability against a creature who is bleeding. As a free triggered action, each undead within 5 squares of the first undead moves up to their speed and can make a free strike against the same target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "266",
+    "license": "Draw Steel Creator License"
+  }
+}

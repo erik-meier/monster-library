@@ -1,8 +1,8 @@
 {
   "id": "rival-null",
   "name": "Rival Null",
-  "level": 2,
-  "ev": 16,
+  "level": 10,
+  "ev": 48,
   "role": "Harrier",
   "organization": "Elite",
   "keywords": [
@@ -13,14 +13,14 @@
     "letter": "M"
   },
   "speed": 7,
-  "stamina": 80,
+  "stamina": 240,
   "stability": 3,
-  "freeStrike": 5,
+  "freeStrike": 10,
   "characteristics": {
-    "might": 0,
-    "agility": 2,
-    "reason": 1,
-    "intuition": 2,
+    "might": 3,
+    "agility": 5,
+    "reason": 4,
+    "intuition": 5,
     "presence": 0
   },
   "immunities": {},
@@ -30,13 +30,13 @@
   ],
   "items": [
     {
-      "name": "Inertial Shield",
+      "name": "Energy Conservation",
       "type": "feature",
       "system": {
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The first time each round that the null is targeted by a damage-dealing strike, they halve the damage.</p>",
+          "value": "<p>The first time each round that the null is targeted by a strike, it takes a bane and the null halves the damage from it. The creature making the strike takes <span class=\"damage-value damage-generic\">10</span> damage.</p>",
           "director": ""
         }
       }
@@ -48,16 +48,67 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the start of an encounter, the null chooses one creature within their line of effect. Both the null and the creature can add a d3 roll to power rolls they make against each other.</p>",
+          "value": "<p>At the start of an encounter, the null chooses one creature within their line of effect. Both the null and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
           "director": ""
         }
       }
     },
     {
-      "name": "Nimble Step",
+      "name": "Incapacitate",
       "type": "ability",
       "system": {
-        "category": "signature",
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 5,
+        "keywords": [
+          "melee",
+          "psionic",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "13 damage; <strong class=\"potency-value\">R&lt;3</strong> dazed and restrained (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "17 damage; <strong class=\"potency-value\">R&lt;4</strong> dazed and restrained (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "20 damage; <strong class=\"potency-value\">R&lt;5</strong> dazed and restrained (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Kinetic Danse",
+      "type": "ability",
+      "system": {
+        "category": "",
         "type": "main",
         "resource": null,
         "keywords": [
@@ -76,7 +127,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
               "agility"
             ]
@@ -84,66 +135,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; the null shifts up to 2 squares"
+              "display": "15 damage; the null shifts up to 4 squares; 10 damage"
             },
             {
               "tier": 2,
-              "display": "10 damage; the null shifts up to 3 squares"
+              "display": "20 damage; the null shifts up to 5 squares; 15 damage"
             },
             {
               "tier": 3,
-              "display": "13 damage; the null shifts up to 4 squares"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Numb",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 2,
-        "keywords": [
-          "melee",
-          "psionic",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage; <strong class=\"potency-value\">R&lt;0</strong> slowed (EoT)"
-            },
-            {
-              "tier": 2,
-              "display": "10 damage; <strong class=\"potency-value\">R&lt;1</strong> slowed (EoT)"
-            },
-            {
-              "tier": 3,
-              "display": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (EoT)"
+              "display": "24 damage; the null shifts up to 6 squares; 19 damage"
             }
           ]
         },
@@ -171,13 +171,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each rival regains [[/heal 10]] Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
+          "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
         },
         "spend": {
           "text": "",
@@ -202,7 +202,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -233,7 +233,7 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -264,7 +264,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -295,7 +295,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -312,7 +312,7 @@
   ],
   "source": {
     "book": "Monsters",
-    "page": "234",
+    "page": "244",
     "license": "Draw Steel Creator License"
   }
 }

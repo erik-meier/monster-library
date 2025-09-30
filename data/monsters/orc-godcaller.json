@@ -158,7 +158,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each target regains [[/heal 15]] and ignores difficult terrain until the end of the encounter.</p>"
+          "text": "<p>Each target regains <span class=\"heal-value\">15</span>  stamina and ignores difficult terrain until the end of the encounter.</p>"
         },
         "spend": {
           "text": "",

@@ -111,7 +111,7 @@
     </div>
 
     <!-- Ability Editor Modal -->
-    <div v-if="editingIndex !== null && editingAbility" class="modal-overlay">
+    <div v-if="editingIndex !== null && editingAbility" class="modal-overlay" @keydown.escape.stop="closeEditor">
       <div class="modal-content">
         <AbilityEditor :model-value="editingAbility" :existing-items="formData.items" :editing-index="editingIndex"
           @update:model-value="updateEditingAbility" @save="saveAbility" @cancel="closeEditor" />
@@ -227,7 +227,7 @@ const createNewItem = (type: 'ability' | 'feature'): MonsterItem => {
     system: {
       keywords: [],
       ...(type === 'ability' && {
-        category: 'signature',
+        category: '',
         type: 'main',
         resource: null,
         distance: {

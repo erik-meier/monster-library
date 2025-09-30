@@ -99,7 +99,8 @@
         },
         "target": {
           "type": "enemy",
-          "value": null
+          "value": null,
+          "custom": "Each enemy in the area"
         },
         "trigger": "",
         "power": {
@@ -232,7 +233,8 @@
         },
         "target": {
           "type": "creatureObject",
-          "value": null
+          "value": null,
+          "custom": "The triggering creature or object"
         },
         "trigger": "A size 1 creature or object is force moved within distance, or a size 1 ally willingly moves within distance.",
         "power": {
@@ -258,14 +260,18 @@
         "category": "",
         "type": "triggered",
         "resource": null,
-        "keywords": [],
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
         "distance": {
           "type": "ranged",
           "primary": 5
         },
         "target": {
           "type": "ally",
-          "value": null
+          "value": null,
+          "custom": "The triggering ally"
         },
         "trigger": "An ally within distance takes damage.",
         "power": {

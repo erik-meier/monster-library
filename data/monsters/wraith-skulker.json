@@ -1,0 +1,134 @@
+{
+  "id": "wraith-skulker",
+  "name": "Wraith Skulker",
+  "level": 10,
+  "ev": 12,
+  "role": "",
+  "organization": "Minion",
+  "keywords": [
+    "undead"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 7,
+  "stamina": 15,
+  "stability": 1,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": -2,
+    "agility": 3,
+    "reason": 1,
+    "intuition": 1,
+    "presence": 5
+  },
+  "immunities": {
+    "corruption": 10,
+    "poison": 10
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly"
+  ],
+  "items": [
+    {
+      "name": "Corruptive Phasing",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The wraith can move through creatures and objects at their usual speed, but can't end their turn inside a creature or object. The first time in a round that the wraith moves through a creature, that creature takes <span class=\"damage-value damage-generic\">5</span> corruption damage. The wraith doesn't take damage from being force moved into objects.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p><p><span class=\"reference-text\">Blood Hunger</span></p><p><span class=\"reference-text\">Necrotic Rupture</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Draining Rake",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 cold damage; the wraith can shift 1 square"
+            },
+            {
+              "tier": 2,
+              "display": "7 cold damage; the wraith shifts up to 2 squares"
+            },
+            {
+              "tier": 3,
+              "display": "9 cold damage; <strong class=\"potency-value\">P&lt;5</strong> slowed (save ends); the wraith shifts up to  3 squares"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "273",
+    "license": "Draw Steel Creator License"
+  }
+}

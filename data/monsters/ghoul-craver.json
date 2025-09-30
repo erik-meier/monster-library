@@ -1,0 +1,180 @@
+{
+  "id": "ghoul-craver",
+  "name": "Ghoul Craver",
+  "level": 4,
+  "ev": 6,
+  "role": "",
+  "organization": "Minion",
+  "keywords": [
+    "undead"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 7,
+  "stamina": 8,
+  "stability": 0,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 3,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {
+    "corruption": 4,
+    "poison": 4
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "climb"
+  ],
+  "items": [
+    {
+      "name": "Ever So Hungry",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Any enemy adjacent to three or more ghoul cravers can't shift</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Hunger",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the ghoul craver uses the Charge main action, they gain a +2 bonus to speed until the end of their turn.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Taste",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 damage"
+            },
+            {
+              "tier": 2,
+              "display": "4 damage"
+            },
+            {
+              "tier": 3,
+              "display": "6 damage"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>This ability has a double edge against a bleeding target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Blood Hunger",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One undead acting this turn uses a signature ability against a creature who is bleeding. As a free triggered action, each undead within 5 squares of the first undead moves up to their speed and can make a free strike against the same target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "265",
+    "license": "Draw Steel Creator License"
+  }
+}

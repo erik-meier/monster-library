@@ -48,8 +48,9 @@
           "tertiary": null
         },
         "target": {
-          "type": "creatureObject",
-          "value": 1
+          "type": "creature",
+          "value": 1,
+          "custom": "One creature per minion"
         },
         "trigger": "",
         "power": {

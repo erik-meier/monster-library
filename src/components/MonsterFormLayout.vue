@@ -5,7 +5,10 @@
         {{ isEditing ? 'Edit Monster' : 'Create Monster' }}: {{ modelValue.name || 'Unnamed Monster' }}
       </h1>
       <div class="form-actions">
-        <button type="button" class="btn btn-secondary" @click="$emit('cancel')">
+        <button type="button" class="btn btn-icon-only" @click="showHelp = true" title="Help (?)">
+          <span class="btn-icon">❓</span>
+        </button>
+        <button type="button" class="btn btn-secondary" @click="handleCancel">
           Cancel
         </button>
         <button 
@@ -22,6 +25,9 @@
         </button>
       </div>
     </header>
+
+    <!-- Help Modal -->
+    <HelpModal :is-open="showHelp" @close="showHelp = false" />
 
     <!-- Templates Section -->
     <div v-if="showTemplates && !isEditing" class="templates-section">
@@ -145,6 +151,7 @@ import AbilitiesForm from './AbilitiesForm.vue'
 import KeywordsForm from './KeywordsForm.vue'
 import SourceInfoForm from './SourceInfoForm.vue'
 import MonsterTemplates from './MonsterTemplates.vue'
+import HelpModal from './HelpModal.vue'
 
 interface TemplateMonster {
   id: string
@@ -184,6 +191,9 @@ interface Emits {
 
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
+
+// Help modal state
+const showHelp = ref(false)
 
 // Templates state
 const showTemplates = ref(false)
@@ -238,6 +248,10 @@ const handleSave = () => {
   }
 }
 
+const handleCancel = () => {
+  emit('cancel')
+}
+
 // Wizard navigation methods
 const navigateToSection = (sectionId: string, index: number) => {
   // Allow navigation to any completed section or the current/next section
@@ -260,9 +274,23 @@ const previousSection = () => {
   }
 }
 
-// Keyboard navigation
+// Keyboard navigation and shortcuts
 const handleKeydown = (event: KeyboardEvent) => {
-  // Only handle if no input is focused
+  // Alt+S to save
+  if (event.altKey && event.key === 's') {
+    event.preventDefault()
+    handleSave()
+    return
+  }
+
+  // Escape to cancel (but not if help modal is open)
+  if (event.key === 'Escape' && !showHelp.value) {
+    event.preventDefault()
+    handleCancel()
+    return
+  }
+
+  // Only handle arrow keys if no input is focused
   if (event.target && (event.target as HTMLElement).tagName.match(/INPUT|TEXTAREA|SELECT/)) {
     return
   }
@@ -316,40 +344,51 @@ function handleTemplateSelected(template: TemplateMonster) {
 .monster-form-layout {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.5rem;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .form-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e9ecef;
-  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e9ecef;
+  margin-bottom: 2rem;
+  gap: 1rem;
 }
 
 .form-title {
   color: #8b4513;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.75rem;
+  font-weight: 700;
   margin: 0;
+  line-height: 1.2;
 }
 
 .form-actions {
   display: flex;
   gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .btn {
-  padding: 0.5rem 1rem;
+  padding: 0.625rem 1.25rem;
   border: none;
-  border-radius: 4px;
-  font-weight: 500;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn:focus-visible {
+  outline: 2px solid #8b4513;
+  outline-offset: 2px;
 }
 
 .btn-primary {
@@ -358,12 +397,15 @@ function handleTemplateSelected(template: TemplateMonster) {
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: #a0522d;
+  background-color: #6d3410;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
 .btn-primary:disabled {
-  background-color: #ccc;
+  background-color: #d1d5db;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .btn-secondary {
@@ -371,27 +413,51 @@ function handleTemplateSelected(template: TemplateMonster) {
   color: white;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover:not(:disabled) {
   background-color: #5a6268;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
 .btn-outline {
   background-color: transparent;
   color: #8b4513;
   border: 1px solid #8b4513;
+  box-shadow: none;
 }
 
 .btn-outline:hover {
   background-color: #8b4513;
   color: white;
+  box-shadow: 0 2px 6px rgba(139, 69, 19, 0.2);
 }
 
 .btn-icon {
   margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn-icon-only {
+  background-color: transparent;
+  color: #8b4513;
+  border: 1px solid #8b4513;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.btn-icon-only:hover {
+  background-color: #f8f9fa;
+}
+
+.btn-icon-only .btn-icon {
+  margin: 0;
 }
 
 .templates-section {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   padding: 1.5rem;
   background: #f8f9fa;
   border-radius: 8px;
@@ -400,7 +466,7 @@ function handleTemplateSelected(template: TemplateMonster) {
 
 .form-nav {
   margin-bottom: 2rem;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 2px solid #e9ecef;
   padding-bottom: 1.5rem;
 }
 
@@ -408,47 +474,49 @@ function handleTemplateSelected(template: TemplateMonster) {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .progress-bar {
   flex: 1;
-  height: 6px;
+  height: 8px;
   background: #e9ecef;
-  border-radius: 3px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
   background: linear-gradient(90deg, #8b4513, #a0522d);
-  border-radius: 3px;
+  border-radius: 4px;
   transition: width 0.3s ease;
+  box-shadow: 0 1px 3px rgba(139, 69, 19, 0.3);
 }
 
 .progress-text {
   font-size: 0.9rem;
   color: #6c757d;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
 }
 
 .nav-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .nav-btn {
   position: relative;
-  padding: 0.75rem 1rem;
-  background: transparent;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  background: #ffffff;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
   color: #495057;
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 0.9rem;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -458,29 +526,31 @@ function handleTemplateSelected(template: TemplateMonster) {
   background: #f8f9fa;
   color: #6c757d;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.2s ease;
 }
 
 .nav-btn:hover:not(:disabled) {
   background-color: #f8f9fa;
   border-color: #8b4513;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .nav-btn.active {
   background-color: #8b4513;
   color: white;
   border-color: #8b4513;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
 }
 
 .nav-btn.active .section-number {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   color: white;
 }
 

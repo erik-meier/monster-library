@@ -9,6 +9,7 @@ import MonsterList from './views/MonsterList.vue'
 import Home from './views/Home.vue'
 import MonsterCreate from './views/MonsterCreate.vue'
 import MyMonsters from './views/MyMonsters.vue'
+import About from './views/About.vue'
 
 // Define routes
 const routes = [
@@ -37,6 +38,11 @@ const routes = [
     path: '/my-monsters',
     name: 'MyMonsters',
     component: MyMonsters
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About
   }
 ]
 

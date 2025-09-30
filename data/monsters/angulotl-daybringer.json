@@ -145,7 +145,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The daybringer expands their throat to make it resemble the sun until the start of their next turn. During that time, each angulotl who starts their turn within 10 squares of the daybringer regains [[/heal 5]] and gains a +3 bonus to speed until the end of their turn.</p>"
+          "text": "<p>The daybringer expands their throat to make it resemble the sun until the start of their next turn. During that time, each angulotl who starts their turn within 10 squares of the daybringer regains <span class=\"heal-value\">5</span>  stamina and gains a +3 bonus to speed until the end of their turn.</p>"
         },
         "spend": {
           "text": "",

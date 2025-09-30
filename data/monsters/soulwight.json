@@ -72,7 +72,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The target regains [[/heal 10]]. The soulwight can’t use this maneuver again until after they strike a creature with their Soulstealer Longsword.</p>"
+          "text": "<p>The target regains <span class=\"heal-value\">10</span>  stamina. The soulwight can’t use this maneuver again until after they strike a creature with their Soulstealer Longsword.</p>"
         },
         "spend": {
           "text": "",

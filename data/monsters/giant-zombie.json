@@ -1,0 +1,211 @@
+{
+  "id": "giant-zombie",
+  "name": "Giant Zombie",
+  "level": 4,
+  "ev": 24,
+  "role": "Brute",
+  "organization": "Elite",
+  "keywords": [
+    "undead"
+  ],
+  "size": {
+    "value": 3,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 140,
+  "stability": 2,
+  "freeStrike": 6,
+  "characteristics": {
+    "might": 3,
+    "agility": -1,
+    "reason": -2,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {
+    "corruption": 4,
+    "poison": 4
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Endless Knight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The first time the giant zombie is reduced to 0 Stamina by damage that isn't fire damage or holy damage and their body isn't destroyed, they instead have <span class=\"heal-value\">50</span>  stamina and fall prone.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Negative Nerves",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the giant zombie is targeted by an ability that deals rolled damage, they halve the damage from a tier 1 outcome</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Rotten Smash",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 3
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 damage"
+            },
+            {
+              "tier": 2,
+              "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
+            },
+            {
+              "tier": 3,
+              "display": "17 damage; <strong class=\"potency-value\">A&lt;3</strong> grabbed"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Knocking Heads",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 1,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "The giant zombie grabs two creatures or objects, or starts their turn with two creatures or objects grabbed.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The creatures or objects are smashed together using Rotten Smash, which has a double edge.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Blood Hunger",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One undead acting this turn uses a signature ability against a creature who is bleeding. As a free triggered action, each undead within 5 squares of the first undead moves up to their speed and can make a free strike against the same target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "266",
+    "license": "Draw Steel Creator License"
+  }
+}

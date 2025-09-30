@@ -135,7 +135,8 @@ export function formatActionTargets(target?: TargetData): string {
     'ally': 'ally',
     'selfAlly': 'self and ally',
     'selfOrAlly': 'self or ally',
-    'special': 'special'
+    'self': 'Self',
+    'special': 'Special'
   }
   
   let baseText = targetMap[target.type] || target.type
@@ -150,9 +151,11 @@ export function formatActionTargets(target?: TargetData): string {
   } else if (target.type === 'ally') {
     baseText = target.value && target.value > 1 ? 'allies' : 'ally'
   } else if (target.type === 'selfAlly') {
-    baseText = 'Self and ' + `${target.value ? target.value : 'each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`
+    return 'Self and ' + `${target.value ? target.value : 'each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`
   } else if (target.type === 'selfOrAlly') {
-    baseText = 'Self or ' + `${target.value ? target.value : ''} ${target.value && target.value > 1 ? 'allies' : 'ally'}`
+    return 'Self or ' + `${target.value ? target.value : ''} ${target.value && target.value > 1 ? 'allies' : 'ally'}`
+  } else if (target.type === 'self') {
+    return 'Self'
   }
   
   return `${targetValue} ${baseText}`.trim()

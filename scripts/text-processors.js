@@ -63,11 +63,8 @@ function processUuidReferences(text) {
 function processHealDirectives(text) {
   if (!text) return text;
 
-  let result = text.replace(/\[\[\/heal\s+(\d+|\dd\d+)\]\]/g, (match, value) => {
-    return `<span class="heal-value">${value}</span> healing`;
-  });
-  result = text.replace(/\[\[\/heal\s+(\d+|\dd\d+)\s+temporary\]\]/g, (match, value) => {
-    return `<span class="heal-value">${value}</span> temporary stamina`;
+  let result = text.replace(/\[\[\/heal\s+(\d+|\dd\d+)\s*(?:temporary)?\]\]/g, (match, value) => {
+    return `<span class="heal-value">${value}</span> ${match.match(/temporary/) ? 'temporary' : ''} stamina`;
   });
 
   return result;

@@ -107,6 +107,7 @@
                 <option value="cube">Cube</option>
                 <option value="wall">Wall</option>
                 <option value="burst">Burst</option>
+                <option value="self">Self</option>
                 <option value="special">Special</option>
               </select>
             </div>
@@ -171,16 +172,19 @@
                 <option value="enemy">Enemy</option>
                 <option value="ally">Ally</option>
                 <option value="selfAlly">Self and Ally</option>
+                <option value="selfOrAlly">Self or Ally</option>
+                <option value="self">Self</option>
                 <option value="special">Special</option>
               </select>
               <div class="help-text">What can be targeted by this ability</div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group"
+              v-if="formData.system.target!.type !== 'self' && formData.system.target!.type !== 'special'">
               <label for="target-count" class="form-label">Target Count</label>
               <input id="target-count" v-model.number="formData.system.target!.value" type="number" class="form-input"
                 min="1" placeholder="1" />
-              <div class="help-text">Number of creatures or objects</div>
+              <div class="help-text">Number of targets</div>
             </div>
           </div>
         </section>
@@ -314,7 +318,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, computed, watch } from 'vue'
+import { reactive, ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import type { MonsterItem } from '@/types/monster-forms'
 import { ABILITY_KEYWORDS } from '@/types/monster-forms'
 
@@ -371,11 +375,18 @@ const rangeType = computed({
   get: () => formData.system.distance?.type || 'melee',
   set: (value: string) => {
     if (formData.system.distance) {
-      formData.system.distance.type = value as 'line' | 'melee' | 'ranged' | 'meleeRanged' | 'special' | 'cube' | 'wall' | 'burst'
+      formData.system.distance.type = value as 'line' | 'melee' | 'ranged' | 'meleeRanged' | 'special' | 'cube' | 'wall' | 'burst' | 'self'
       // Reset range values when type changes
-      formData.system.distance.primary = value === 'burst' ? 2 : 1
-      formData.system.distance.secondary = undefined
-      formData.system.distance.tertiary = undefined
+      if (value === 'self') {
+        // Self range doesn't need any distance values
+        formData.system.distance.primary = undefined
+        formData.system.distance.secondary = undefined
+        formData.system.distance.tertiary = undefined
+      } else {
+        formData.system.distance.primary = value === 'burst' ? 2 : 1
+        formData.system.distance.secondary = undefined
+        formData.system.distance.tertiary = undefined
+      }
     }
   }
 })
@@ -468,7 +479,7 @@ const onTypeChange = () => {
     // Initialize ability fields
     formData.system = {
       keywords: formData.system.keywords || [],
-      category: formData.system.category || 'signature',
+      category: formData.system.category || '',
       type: formData.system.type || 'main',
       resource: formData.system.resource || null,
       distance: formData.system.distance || {
@@ -534,6 +545,25 @@ const handleSave = () => {
     emit('save')
   }
 }
+
+// Handle escape key to close editor
+const handleEscape = (event: KeyboardEvent) => {
+  if (event.key === 'Escape') {
+    event.preventDefault()
+    event.stopPropagation()
+    emit('cancel')
+  }
+}
+
+// Add event listener when component mounts
+onMounted(() => {
+  document.addEventListener('keydown', handleEscape, true) // Use capture phase
+})
+
+// Remove event listener when component unmounts
+onUnmounted(() => {
+  document.removeEventListener('keydown', handleEscape, true)
+})
 
 // Watch for changes and validate
 watch(formData, () => {

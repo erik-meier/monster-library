@@ -301,7 +301,7 @@
 
     <!-- Edit Mode Controls -->
     <div v-if="editMode" class="edit-controls">
-      <button @click="$emit('save', editableData)" class="btn btn-success">Save Changes</button>
+      <button @click="handleSave" class="btn btn-success">Save Changes</button>
       <button @click="$emit('cancel')" class="btn btn-secondary">Cancel</button>
     </div>
 
@@ -317,7 +317,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import ActionsList from './ActionsList.vue'
 import AbilityEditor from './AbilityEditor.vue'
 import { DAMAGE_TYPES, MOVEMENT_TYPES } from '@/types/monster-forms'
@@ -349,6 +349,19 @@ const weaknessEntries = ref([])
 const showAbilityEditor = ref(false)
 const editingAbility = ref(null)
 const editingAbilityIndex = ref(null)
+
+// Helper function to check for partial defense entries
+const hasPartialEntries = () => {
+  // Check if any immunity entry has been modified from default empty state
+  const hasModifiedImmunities = immunityEntries.value.some(entry =>
+    entry.type !== '' || (entry.value && entry.value > 0)
+  )
+  // Check if any weakness entry has been modified from default empty state
+  const hasModifiedWeaknesses = weaknessEntries.value.some(entry =>
+    entry.type !== '' || (entry.value && entry.value > 0)
+  )
+  return hasModifiedImmunities || hasModifiedWeaknesses
+}
 
 // Initialize editable data
 const initializeEditableData = () => {
@@ -382,15 +395,17 @@ const initializeEditableData = () => {
   editableData.value = data
   originalData.value = JSON.parse(JSON.stringify(data))
 
-  // Initialize defense entries
-  immunityEntries.value = Object.entries(data.immunities || {}).map(([type, value]) => ({ type, value }))
-  if (immunityEntries.value.length === 0) {
-    immunityEntries.value.push({ type: '', value: 0 })
-  }
+  // Initialize defense entries (but preserve partial entries that user is working on)
+  if (!hasPartialEntries()) {
+    immunityEntries.value = Object.entries(data.immunities || {}).map(([type, value]) => ({ type, value }))
+    if (immunityEntries.value.length === 0) {
+      immunityEntries.value.push({ type: '', value: 0 })
+    }
 
-  weaknessEntries.value = Object.entries(data.weaknesses || {}).map(([type, value]) => ({ type, value }))
-  if (weaknessEntries.value.length === 0) {
-    weaknessEntries.value.push({ type: '', value: 0 })
+    weaknessEntries.value = Object.entries(data.weaknesses || {}).map(([type, value]) => ({ type, value }))
+    if (weaknessEntries.value.length === 0) {
+      weaknessEntries.value.push({ type: '', value: 0 })
+    }
   }
 }
 
@@ -671,7 +686,7 @@ const normalizeAbilityForEditor = (ability) => {
 
     // Ensure category and type exist
     if (!ability.system.category) {
-      ability.system.category = 'signature'
+      ability.system.category = ''
     }
 
     if (!ability.system.type) {
@@ -685,6 +700,33 @@ const normalizeAbilityForEditor = (ability) => {
 // Defense editing methods
 const capitalize = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+}
+
+const cleanupEmptyDefenseEntries = () => {
+  // Remove completely empty entries (both type and value are empty/zero)
+  immunityEntries.value = immunityEntries.value.filter(entry =>
+    entry.type !== '' || (entry.value && entry.value > 0)
+  )
+  weaknessEntries.value = weaknessEntries.value.filter(entry =>
+    entry.type !== '' || (entry.value && entry.value > 0)
+  )
+
+  // Ensure we always have at least one empty entry for adding new ones
+  if (immunityEntries.value.length === 0) {
+    immunityEntries.value.push({ type: '', value: 0 })
+  }
+  if (weaknessEntries.value.length === 0) {
+    weaknessEntries.value.push({ type: '', value: 0 })
+  }
+}
+
+const handleSave = () => {
+  // Clean up empty defense entries before saving
+  cleanupEmptyDefenseEntries()
+  // Update defenses one final time to ensure consistency
+  updateDefenses()
+  // Emit save event
+  emit('save', editableData.value)
 }
 
 const addImmunity = () => {
@@ -767,7 +809,7 @@ const addAbility = () => {
     name: 'New Ability',
     type: 'ability',
     system: {
-      category: 'signature',
+      category: '',
       type: 'main',
       resource: null,
       keywords: [],
@@ -880,6 +922,44 @@ const debouncedUpdateDefenses = () => {
     updateDefenses()
   }, 500) // Wait 500ms after user stops typing/selecting
 }
+
+// Keyboard shortcuts
+const handleKeydown = (event) => {
+  // Alt+S to save (only when in edit mode)
+  if (event.altKey && event.key === 's' && props.editMode) {
+    event.preventDefault()
+    emit('save', editableData.value)
+    return
+  }
+
+  // Escape to close ability editor (if open) or cancel editing
+  if (event.key === 'Escape') {
+    if (showAbilityEditor.value) {
+      // Close ability editor first
+      event.preventDefault()
+      handleAbilityCancel()
+      return
+    } else if (props.editMode) {
+      // Then cancel editing if no ability editor is open
+      event.preventDefault()
+      emit('cancel')
+      return
+    }
+  }
+
+  // Only handle if no input is focused (except when in ability editor)
+  if (event.target && (event.target).tagName.match(/INPUT|TEXTAREA|SELECT/) && !showAbilityEditor.value) {
+    return
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('keydown', handleKeydown)
+})
 </script>
 
 <style scoped>

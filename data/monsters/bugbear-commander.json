@@ -144,7 +144,8 @@
         },
         "target": {
           "type": "ally",
-          "value": null
+          "value": null,
+          "custom": "Each ally in the area"
         },
         "trigger": "",
         "power": {
@@ -201,9 +202,11 @@
       "type": "ability",
       "system": {
         "category": "",
-        "type": "none",
+        "type": "freeTriggered",
         "resource": null,
-        "keywords": [],
+        "keywords": [
+          "melee"
+        ],
         "distance": {
           "type": "self"
         },
