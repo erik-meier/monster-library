@@ -156,17 +156,85 @@
   --z-toast: 1080;
 }
 
+/* === SEMANTIC APPLICATION COLORS === */
+/* These are the colors used throughout the app that adapt to theme */
+:root {
+  /* Backgrounds */
+  --app-bg: var(--color-neutral-50);
+  --app-bg-secondary: white;
+  --app-bg-elevated: white;
+  
+  /* Text colors */
+  --app-text: var(--color-neutral-900);
+  --app-text-muted: var(--color-neutral-600);
+  --app-text-light: var(--color-neutral-500);
+  
+  /* Border colors */
+  --app-border: var(--color-neutral-200);
+  --app-border-strong: var(--color-neutral-300);
+  
+  /* Component backgrounds */
+  --card-bg: white;
+  --card-border: var(--color-neutral-200);
+  --input-bg: white;
+  --input-border: var(--color-neutral-300);
+}
+
 /* === DARK MODE SUPPORT === */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--color-neutral-900);
-    --color-background-soft: var(--color-neutral-800);
-    --color-background-mute: var(--color-neutral-700);
-
-    --color-border: rgba(84, 84, 84, 0.48);
-    --color-border-hover: rgba(84, 84, 84, 0.65);
-
-    --color-text: var(--color-neutral-100);
-    --color-text-muted: var(--color-neutral-400);
+    --app-bg: var(--color-neutral-900);
+    --app-bg-secondary: var(--color-neutral-800);
+    --app-bg-elevated: var(--color-neutral-700);
+    
+    --app-text: var(--color-neutral-100);
+    --app-text-muted: var(--color-neutral-400);
+    --app-text-light: var(--color-neutral-500);
+    
+    --app-border: rgba(255, 255, 255, 0.1);
+    --app-border-strong: rgba(255, 255, 255, 0.2);
+    
+    --card-bg: var(--color-neutral-800);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --input-bg: var(--color-neutral-700);
+    --input-border: rgba(255, 255, 255, 0.15);
   }
+}
+
+/* === EXPLICIT THEME OVERRIDE === */
+/* These override the media query when user explicitly sets theme */
+[data-theme='light'] {
+  --app-bg: var(--color-neutral-50);
+  --app-bg-secondary: white;
+  --app-bg-elevated: white;
+  
+  --app-text: var(--color-neutral-900);
+  --app-text-muted: var(--color-neutral-600);
+  --app-text-light: var(--color-neutral-500);
+  
+  --app-border: var(--color-neutral-200);
+  --app-border-strong: var(--color-neutral-300);
+  
+  --card-bg: white;
+  --card-border: var(--color-neutral-200);
+  --input-bg: white;
+  --input-border: var(--color-neutral-300);
+}
+
+[data-theme='dark'] {
+  --app-bg: var(--color-neutral-900);
+  --app-bg-secondary: var(--color-neutral-800);
+  --app-bg-elevated: var(--color-neutral-700);
+  
+  --app-text: var(--color-neutral-100);
+  --app-text-muted: var(--color-neutral-400);
+  --app-text-light: var(--color-neutral-500);
+  
+  --app-border: rgba(255, 255, 255, 0.1);
+  --app-border-strong: rgba(255, 255, 255, 0.2);
+  
+  --card-bg: var(--color-neutral-800);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --input-bg: var(--color-neutral-700);
+  --input-border: rgba(255, 255, 255, 0.15);
 }

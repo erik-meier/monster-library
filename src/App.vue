@@ -11,6 +11,9 @@
           <router-link to="/monsters" class="nav-link">Browse Monsters</router-link>
           <router-link to="/my-monsters" class="nav-link">My Monsters</router-link>
           <router-link to="/about" class="nav-link">About</router-link>
+          <button @click="toggleTheme" class="theme-toggle" :aria-label="themeLabel">
+            <span class="theme-icon">{{ themeIcon }}</span>
+          </button>
         </div>
       </div>
     </nav>
@@ -36,10 +39,27 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App'
+<script setup lang="ts">
+import { onMounted, computed } from 'vue'
+import { useThemeStore } from '@/stores/theme'
+
+const themeStore = useThemeStore()
+
+onMounted(() => {
+  themeStore.initTheme()
+})
+
+const toggleTheme = () => {
+  themeStore.toggleTheme()
 }
+
+const themeIcon = computed(() => {
+  return themeStore.isDark ? '☀️' : '🌙'
+})
+
+const themeLabel = computed(() => {
+  return themeStore.isDark ? 'Switch to light mode' : 'Switch to dark mode'
+})
 </script>
 
 <style>
@@ -55,8 +75,10 @@ export default {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-neutral-100);
+  background-color: var(--app-bg);
+  color: var(--app-text);
   line-height: var(--line-height-normal);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography improvements */
@@ -153,6 +175,36 @@ button:disabled, .btn:disabled {
   box-shadow: var(--shadow-sm);
 }
 
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-primary-50);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-all);
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+.theme-icon {
+  display: inline-block;
+  line-height: 1;
+}
+
 .main-content {
   flex: 1;
   padding: var(--space-8) var(--space-4);
@@ -167,7 +219,12 @@ button:disabled, .btn:disabled {
   color: var(--color-neutral-400);
   padding: var(--space-8) var(--space-4);
   margin-top: auto;
-  border-top: 1px solid var(--color-neutral-700);
+  border-top: 1px solid var(--app-border-strong);
+}
+
+[data-theme='dark'] .footer {
+  background: linear-gradient(180deg, var(--color-neutral-900) 0%, var(--color-neutral-950, #0a0a0a) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-content {
