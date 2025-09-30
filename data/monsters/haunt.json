@@ -1,0 +1,218 @@
+{
+  "id": "haunt",
+  "name": "Haunt",
+  "level": 7,
+  "ev": 9,
+  "role": "Controller",
+  "organization": "Horde",
+  "keywords": [
+    "undead"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 40,
+  "stability": 1,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": -2,
+    "agility": 4,
+    "reason": -1,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {
+    "corruption": 7,
+    "poison": 7
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly"
+  ],
+  "items": [
+    {
+      "name": "Invisible Horror",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The haunt can move through creatures and objects at their usual speed, but can't end their turn inside a creature or object. They are invisible while moving using a move action. The haunt doesn't take damage from being force moved into objects.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Lash Out",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 3
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; slide 2"
+            },
+            {
+              "tier": 2,
+              "display": "10 damage; slide 3"
+            },
+            {
+              "tier": 3,
+              "display": "11 damage; slide 5"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>If the target is force moved into another creature's space, that creature takes an additional <span class=\"damage-value damage-generic\">4</span> damage and the haunt slides them up to 2 squares.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Crushing Despair",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 3
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage; <strong class=\"potency-value\">I&lt;2</strong> prone"
+            },
+            {
+              "tier": 2,
+              "display": "6 damage; <strong class=\"potency-value\">I&lt;3</strong> prone"
+            },
+            {
+              "tier": 3,
+              "display": "7 damage; <strong class=\"potency-value\">I&lt;4</strong> prone"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>A target knocked prone this way can't use the Stand Up maneuver on themself while any haunt is within 20 squares of them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p><p><span class=\"reference-text\">Blood Hunger</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Necrotic Rupture",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, whenever an undead is reduced to 0 Stamina, they deal <span class=\"damage-value damage-generic\">8</span> corruption damage to each enemy within 3 squares of them</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "270",
+    "license": "Draw Steel Creator License"
+  }
+}

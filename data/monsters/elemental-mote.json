@@ -49,7 +49,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>On their turn, the mote can leave the encounter in a flash of light to revive one adjacent dead soot crow, brambleguard, or ceramic horse. The revived creature returns with [[/heal 3]].</p>",
+          "value": "<p>On their turn, the mote can leave the encounter in a flash of light to revive one adjacent dead soot crow, brambleguard, or ceramic horse. The revived creature returns with <span class=\"heal-value\">3</span>  stamina.</p>",
           "director": ""
         }
       }

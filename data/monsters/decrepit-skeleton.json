@@ -33,18 +33,6 @@
   ],
   "items": [
     {
-      "name": "With Captain",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p><strong>With Captain:</strong> Gain an edge on strikes.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
       "name": "Bonetrops",
       "type": "feature",
       "system": {
@@ -74,7 +62,8 @@
         },
         "target": {
           "type": "creatureObject",
-          "value": 1
+          "value": 1,
+          "custom": "One creature or object per minion"
         },
         "trigger": "",
         "power": {

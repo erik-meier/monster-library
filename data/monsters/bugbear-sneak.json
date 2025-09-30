@@ -98,7 +98,8 @@
         },
         "target": {
           "type": "enemy",
-          "value": null
+          "value": null,
+          "custom": "Each enemy in the area"
         },
         "trigger": "",
         "power": {
@@ -238,7 +239,8 @@
         },
         "target": {
           "type": "creatureObject",
-          "value": 1
+          "value": 1,
+          "custom": "The triggering creature or object"
         },
         "trigger": "A size 1 creature or object is force moved within distance, or a size 1 ally willingly moves within distance.",
         "power": {

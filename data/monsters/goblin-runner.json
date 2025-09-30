@@ -59,7 +59,8 @@
         },
         "target": {
           "type": "creatureObject",
-          "value": 1
+          "value": 1,
+          "custom": "One creature or object per minion"
         },
         "trigger": "",
         "power": {

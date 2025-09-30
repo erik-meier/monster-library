@@ -52,7 +52,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Any angulotl who can target the pollywog with a melee free strike can eat them as a maneuver. The angulotl regains [[/heal 4]] and is wet until the end of their next turn.</p>",
+          "value": "<p>Any angulotl who can target the pollywog with a melee free strike can eat them as a maneuver. The angulotl regains <span class=\"heal-value\">4</span>  stamina and is wet until the end of their next turn.</p>",
           "director": ""
         }
       }

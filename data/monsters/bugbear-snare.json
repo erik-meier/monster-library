@@ -31,18 +31,6 @@
   ],
   "items": [
     {
-      "name": "With Captain",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p><strong>With Captain:</strong> +3 bonus to speed</p>",
-          "director": ""
-        }
-      }
-    },
-    {
       "name": "Cut 'Em Low!",
       "type": "ability",
       "system": {
@@ -60,8 +48,9 @@
           "primary": 1
         },
         "target": {
-          "type": "creature",
-          "value": 1
+          "type": "creatureObject",
+          "value": 1,
+          "custom": "One creature or object per minion"
         },
         "trigger": "",
         "power": {

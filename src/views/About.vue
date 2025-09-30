@@ -9,8 +9,9 @@
       <section class="about-section">
         <h2>🎲 What is Steel Cauldron?</h2>
         <p>
-          Steel Cauldron is a web application designed to help Game Masters run amazing Draw Steel campaigns.
-          Browse through 238+ official monsters, create custom creatures, and build balanced encounters for your table.
+          Steel Cauldron is a web application designed to help Directors run amazing Draw Steel encounters.
+          Browse through official monster stat blocks, create your own custom creatures, and build balanced encounters
+          for your table.
         </p>
       </section>
 
@@ -19,13 +20,13 @@
         <div class="features-grid">
           <div class="feature-item">
             <div class="feature-icon">📖</div>
-            <h3>Monster Library</h3>
+            <h3><router-link to="/monsters">Monster Library</router-link></h3>
             <p>Browse and search through all Draw Steel monsters with complete stat blocks and abilities.</p>
           </div>
 
           <div class="feature-item">
             <div class="feature-icon">🛠️</div>
-            <h3>Custom Monster Builder</h3>
+            <h3><router-link to="/my-monsters">Custom Monster Builder</router-link></h3>
             <p>Create your own monsters with a guided step-by-step form. Save them locally and export for sharing.</p>
           </div>
 
@@ -59,19 +60,23 @@
         <h2>🚀 Getting Started</h2>
         <ol class="getting-started-list">
           <li>
-            <strong>Browse Monsters:</strong> Head to the <router-link to="/monsters">Monster Library</router-link> to explore all available creatures.
+            <strong>Browse Monsters:</strong> Head to the <router-link to="/monsters">Monster Library</router-link> to
+            explore all available creatures.
           </li>
           <li>
-            <strong>View Details:</strong> Click any monster to see its complete stat block with all abilities and actions.
+            <strong>View Details:</strong> Click any monster to see its complete stat block with all abilities and
+            actions.
           </li>
           <li>
-            <strong>Create Custom Monsters:</strong> Visit <router-link to="/my-monsters">My Monsters</router-link> to build your own creatures.
+            <strong>Create Custom Monsters:</strong> Visit <router-link to="/my-monsters">My Monsters</router-link> to
+            build your own creatures.
           </li>
           <li>
-            <strong>Use Templates:</strong> When creating a monster, click "Browse Templates" to start from an existing creature.
+            <strong>Use Templates:</strong> When creating a monster, click "Browse Templates" to start from an existing
+            creature.
           </li>
           <li>
-            <strong>Export & Share:</strong> Save your custom monsters as JSON files to share with other GMs.
+            <strong>Export & Share:</strong> Save your custom monsters as JSON files to share with other directors.
           </li>
         </ol>
       </section>
@@ -105,16 +110,18 @@
         <ul class="tips-list">
           <li><strong>Recently Viewed:</strong> The home page shows your recently viewed monsters for quick access.</li>
           <li><strong>Random Monster:</strong> Click "Random Monster" to discover creatures you haven't seen yet.</li>
-          <li><strong>Search:</strong> Use the search bar in the Monster Library to find specific creatures quickly.</li>
+          <li><strong>Search:</strong> Use the search bar in the Monster Library to find specific creatures quickly.
+          </li>
           <li><strong>Local Storage:</strong> All your custom monsters are saved in your browser's local storage.</li>
-          <li><strong>Backup Your Work:</strong> Export your custom monsters regularly to avoid losing your creations.</li>
+          <li><strong>Backup Your Work:</strong> Export your custom monsters regularly to avoid losing your creations.
+          </li>
         </ul>
       </section>
 
       <section class="about-section">
         <h2>🛡️ Data & Privacy</h2>
         <p>
-          Steel Cauldron stores all data locally in your browser. No data is sent to any servers. 
+          Steel Cauldron stores all data locally in your browser. No data is sent to any servers.
           Your custom monsters, recently viewed history, and preferences stay on your device.
         </p>
       </section>
@@ -122,11 +129,11 @@
       <section class="about-section">
         <h2>📜 Legal</h2>
         <p class="legal-text">
-          Steel Cauldron is an independent product published under the DRAW STEEL Creator License 
+          Steel Cauldron is an independent product published under the DRAW STEEL Creator License
           and is not affiliated with MCDM Productions, LLC. DRAW STEEL © 2024 MCDM Productions, LLC.
         </p>
         <p class="legal-text">
-          Monster data is sourced from the Draw Steel Foundry VTT module, which is available under 
+          Monster data is sourced from the Draw Steel Foundry VTT module, which is available under
           the DRAW STEEL Creator License.
         </p>
       </section>

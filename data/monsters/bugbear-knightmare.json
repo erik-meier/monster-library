@@ -31,18 +31,6 @@
   ],
   "items": [
     {
-      "name": "With Captain",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p><strong>With Captain:</strong> Gain an edge on strikes</p>",
-          "director": ""
-        }
-      }
-    },
-    {
       "name": "Bu'gathic Inspiration",
       "type": "feature",
       "system": {
@@ -84,8 +72,9 @@
           "primary": 1
         },
         "target": {
-          "type": "creature",
-          "value": 1
+          "type": "creatureObject",
+          "value": 1,
+          "custom": "One creature or object per minion"
         },
         "trigger": "",
         "power": {

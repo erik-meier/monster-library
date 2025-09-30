@@ -121,7 +121,8 @@
           "primary": 8
         },
         "target": {
-          "type": "selfOrAlly"
+          "type": "selfOrAlly",
+          "custom": "Self or one ally with a Phasing trait"
         },
         "trigger": "",
         "power": {
@@ -132,7 +133,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p><strong>Note: Self or one ally with a Phasing trait.</strong></p><p>The target shifts up to their speed.</p>"
+          "text": "<p>The target shifts up to their speed.</p>"
         },
         "spend": {
           "text": "The ghost chooses one additional target.",
@@ -158,7 +159,8 @@
         },
         "target": {
           "type": "enemy",
-          "value": 1
+          "value": 1,
+          "custom": "The triggering creature"
         },
         "trigger": "A creature within distance targets the ghost with a strike.",
         "power": {
@@ -194,7 +196,8 @@
         },
         "target": {
           "type": "object",
-          "value": null
+          "value": null,
+          "custom": "Each size 3 or smaller object in the area"
         },
         "trigger": "",
         "power": {
@@ -205,7 +208,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Note: Targets Each 3 size or smaller object in the area</p><p>Each target rises 1 square into the air and is vertically pulled up to 5 squares toward the nearest enemy within 3 squares of the target.</p>"
+          "text": "<p>Each target rises 1 square into the air and is vertically pulled up to 5 squares toward the nearest enemy within 3 squares of the target.</p>"
         },
         "spend": {
           "text": "",
@@ -230,7 +233,8 @@
         },
         "target": {
           "type": "enemy",
-          "value": null
+          "value": null,
+          "custom": "Each enemy in the area"
         },
         "trigger": "",
         "power": {
@@ -281,7 +285,8 @@
         },
         "target": {
           "type": "enemy",
-          "value": null
+          "value": null,
+          "custom": "Each enemy in the area"
         },
         "trigger": "",
         "power": {

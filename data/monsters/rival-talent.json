@@ -1,8 +1,8 @@
 {
   "id": "rival-talent",
   "name": "Rival Talent",
-  "level": 2,
-  "ev": 16,
+  "level": 10,
+  "ev": 48,
   "role": "Hexer",
   "organization": "Elite",
   "keywords": [
@@ -13,13 +13,13 @@
     "letter": "M"
   },
   "speed": 5,
-  "stamina": 60,
+  "stamina": 220,
   "stability": 2,
-  "freeStrike": 5,
+  "freeStrike": 10,
   "characteristics": {
     "might": 0,
     "agility": 0,
-    "reason": 2,
+    "reason": 5,
     "intuition": 0,
     "presence": 1
   },
@@ -42,7 +42,7 @@
       }
     },
     {
-      "name": "Reverberating Blast",
+      "name": "Override",
       "type": "ability",
       "system": {
         "category": "signature",
@@ -65,7 +65,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
               "reason"
             ]
@@ -73,36 +73,37 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 psychic damage; <strong class=\"potency-value\">M&lt;0</strong> prone"
+              "display": "15 psychic damage"
             },
             {
               "tier": 2,
-              "display": "10 psychic damage; push 2; <strong class=\"potency-value\">M&lt;1</strong> prone"
+              "display": "20 psychic damage"
             },
             {
               "tier": 3,
-              "display": "13 psychic damage; push 3; <strong class=\"potency-value\">M&lt;2</strong> prone"
+              "display": "24 psychic damage"
             }
           ]
         },
         "effect": {},
         "spend": {
-          "text": "",
-          "value": null
+          "text": "Each target moves up to their speed and can make a free strike against one enemy of the talent's choice. The target's movement can provoke opportunity attacks, but they can't otherwise be moved in a way that would harm them.",
+          "value": 4,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">4 Malice:</strong> Each target moves up to their speed and can make a free strike against one enemy of the talent's choice. The target's movement can provoke opportunity attacks, but they can't otherwise be moved in a way that would harm them."
         }
       }
     },
     {
-      "name": "Muddle the Mind",
+      "name": "Steal Time",
       "type": "ability",
       "system": {
         "category": "heroic",
         "type": "maneuver",
-        "resource": 2,
+        "resource": 3,
         "keywords": [
           "psionic",
           "ranged",
-          "telepathy"
+          "chronopathy"
         ],
         "distance": {
           "type": "ranged",
@@ -115,7 +116,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
               "reason"
             ]
@@ -123,19 +124,21 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">R&lt;0</strong> slowed (save ends)"
+              "display": "<strong class=\"potency-value\">R&lt;3</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">R&lt;4</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "<strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (save ends)"
+              "display": "<strong class=\"potency-value\">R&lt;5</strong> restrained (save ends)"
             }
           ]
         },
-        "effect": {},
+        "effect": {
+          "text": "<p>One ally within distance can use an additional main action on their next turn.</p>"
+        },
         "spend": {
           "text": "",
           "value": null
@@ -143,12 +146,12 @@
       }
     },
     {
-      "name": "Precognitive Shift",
+      "name": "Psionic Retribution",
       "type": "ability",
       "system": {
         "category": "heroic",
         "type": "triggered",
-        "resource": 1,
+        "resource": 2,
         "keywords": [
           "psionic"
         ],
@@ -162,7 +165,7 @@
         "trigger": "A creature deals damage to the talent.",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
               "reason"
             ]
@@ -170,162 +173,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The talent halves the damage and shifts up to 2 squares</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Calling the Shots",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each rival regains [[/heal 10]] Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Check Out Our Loot",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Coordinated Takedown",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 10,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A Rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "We Just Do It Better",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a <span class=\"roll-formula\">d3</span> and add it to the power roll.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Work as One",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>"
+          "text": "<p>The talent halves the damage and shifts up to 2 squares. The triggering creature takes psychic damage equal to half the damage dealt and is pushed up to 5 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -336,7 +184,7 @@
   ],
   "source": {
     "book": "Monsters",
-    "page": "235",
+    "page": "245",
     "license": "Draw Steel Creator License"
   }
 }

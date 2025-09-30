@@ -1,0 +1,232 @@
+{
+  "id": "vicisitator",
+  "name": "Vicisitator",
+  "level": 10,
+  "ev": 12,
+  "role": "Harrier",
+  "organization": "Horde",
+  "keywords": [
+    "abyssal"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 9,
+  "stamina": 60,
+  "stability": 0,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 4,
+    "agility": 5,
+    "reason": -1,
+    "intuition": -2,
+    "presence": -3
+  },
+  "immunities": {},
+  "weaknesses": {
+    "holy": 5
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Lethe",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While the vicisitator is winded, they gain an edge on strikes, and any strike made against them gains an edge.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Soulsight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Any creature within 2 squares of the vicisitator can't be hidden from them.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Warp Touch",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "melee",
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 1
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 damage"
+            },
+            {
+              "tier": 2,
+              "display": "12 damage"
+            },
+            {
+              "tier": 3,
+              "display": "14 damage; <strong class=\"potency-value\">I&lt;5</strong> the target is slowed and weakened (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The effects of being slowed and weakened this way can't be ignored.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Soul Flay",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 5,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 6,
+          "secondary": 3,
+          "tertiary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 psychic damage; <strong class=\"potency-value\">P&lt;3</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "7 psychic damage; <strong class=\"potency-value\">P&lt;4</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 psychic damage; <strong class=\"potency-value\">P&lt;5</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Any creature who is bleeding from this ability loses <span class=\"damage-value damage-generic\">2d6</span> Stamina instead of 1d6.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The demon activates a Malice feature available to demons of level 9 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p><p><span class=\"reference-text\">Abyssal Jaunt</span></p><p><span class=\"reference-text\">Seeping Blight</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Soul Flense",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One demon acting this turn unleashes their pent-up agony and pain on every non-demon in a 5 burst. Each target makes a <strong>Presence test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"92\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> corruption damage; the target is soul flensed</p></td></tr><tr><td data-colwidth=\"92\"><p>12-16</p></td><td><p>The target is soul flensed</p></td></tr><tr><td data-colwidth=\"92\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table> <p>The demon removes all conditions and effects on themself that can be ended by a saving throw, and transfers all those effects to each creature soul flensed this way.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "74",
+    "license": "Draw Steel Creator License"
+  }
+}

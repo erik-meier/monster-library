@@ -148,7 +148,7 @@
           ]
         },
         "effect": {
-          "text": "<p>One creature within 5 squares regains [[/heal 1]]</p>"
+          "text": "<p>One creature within 5 squares regains <span class=\"heal-value\">1</span>  stamina</p>"
         },
         "spend": {
           "text": "",

@@ -225,7 +225,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each target regains [[/heal 5]]</p>"
+          "text": "<p>Each target regains <span class=\"heal-value\">5</span>  stamina</p>"
         },
         "spend": {
           "text": "",

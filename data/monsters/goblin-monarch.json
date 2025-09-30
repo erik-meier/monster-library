@@ -121,7 +121,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Two goblin runners appear in unoccupied spaces within distance.</p>"
+          "text": "<p>Two <a href=\"/monster/goblin-runners\" class=\"monster-link\">goblin runners</a> appear in unoccupied spaces within distance.</p>"
         },
         "spend": {
           "text": "",
@@ -180,7 +180,8 @@
         },
         "target": {
           "type": "ally",
-          "value": null
+          "value": null,
+          "custom": "Each ally in the area"
         },
         "trigger": "",
         "power": {
@@ -214,8 +215,9 @@
           "primary": 10
         },
         "target": {
-          "type": "creatureObject",
-          "value": 1
+          "type": "enemyObject",
+          "value": 1,
+          "custom": ""
         },
         "trigger": "",
         "power": {
@@ -226,7 +228,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Note: One enemy or object</p><p>Each ally within 10 squares of the target can move up to their speed toward the target.</p>"
+          "text": "<p>Each ally within 10 squares of the target can move up to their speed toward the target.</p>"
         },
         "spend": {
           "text": "",

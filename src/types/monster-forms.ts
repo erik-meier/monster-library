@@ -54,7 +54,7 @@ export interface MonsterItem {
     resource?: number | null
     keywords: string[]
     distance?: {
-      type: 'melee' | 'ranged' | 'meleeRanged' | 'special' | 'line' | 'cube' | 'wall' | 'burst'
+      type: 'melee' | 'ranged' | 'meleeRanged' | 'special' | 'line' | 'cube' | 'wall' | 'burst' | 'self'
       primary?: number | string
       secondary?: number | string
       tertiary?: number | string

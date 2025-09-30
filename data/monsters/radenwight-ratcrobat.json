@@ -251,7 +251,8 @@
         },
         "target": {
           "type": "creature",
-          "value": 1
+          "value": 1,
+          "custom": ""
         },
         "trigger": "",
         "power": {

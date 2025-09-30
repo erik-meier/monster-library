@@ -31,18 +31,6 @@
   ],
   "items": [
     {
-      "name": "With Captain",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p><strong>With Captain:</strong> +<span class=\"damage-value damage-generic\">2</span> damage bonus to strikes</p>",
-          "director": ""
-        }
-      }
-    },
-    {
       "name": "Swarm",
       "type": "feature",
       "system": {
@@ -72,7 +60,8 @@
         },
         "target": {
           "type": "creatureObject",
-          "value": 1
+          "value": 1,
+          "custom": "One creature or object per minion"
         },
         "trigger": "",
         "power": {
