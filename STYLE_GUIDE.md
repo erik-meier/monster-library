@@ -476,3 +476,193 @@ This design system provides consistent visual patterns, components, and interact
 .bg-warning { background-color: var(--color-warning-50); }
 .bg-error { background-color: var(--color-error-50); }
 ```
+
+## Advanced Patterns
+
+### Animated Borders
+
+Create subtle animated border effects on cards:
+
+```css
+.card-with-animated-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-with-animated-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-primary-600), var(--color-primary-700));
+  transform: scaleY(1);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.card-with-animated-border:hover::before {
+  transform: scaleY(1.1);
+}
+```
+
+### Animated Top Border on Hover
+
+Add a sliding top border effect:
+
+```css
+.card-with-top-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-with-top-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-600), var(--color-primary-700));
+  transform: scaleX(0);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.card-with-top-border:hover::before {
+  transform: scaleX(1);
+}
+```
+
+### Radial Gradient Overlay
+
+Create depth with subtle radial gradients:
+
+```css
+.hero-with-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-with-overlay::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(139, 69, 19, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+```
+
+### Enhanced Focus States
+
+Always provide clear focus indicators for accessibility:
+
+```css
+.interactive-element:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* For error states */
+.input-error:focus-visible {
+  box-shadow: var(--focus-ring-error);
+}
+
+/* For success states */
+.input-success:focus-visible {
+  box-shadow: var(--focus-ring-success);
+}
+```
+
+### Touch-Friendly Targets
+
+Ensure all interactive elements meet WCAG minimum touch target size (44x44px):
+
+```css
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
+## Mobile-First Responsive Design
+
+### Breakpoints
+
+Use consistent breakpoints across the application:
+
+```css
+/* Mobile first - default styles are for mobile */
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  /* Tablet styles */
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  /* Desktop styles */
+}
+
+/* Large desktop */
+@media (min-width: 1280px) {
+  /* Large desktop styles */
+}
+
+/* Mobile-specific overrides when needed */
+@media (max-width: 767px) {
+  /* Mobile-only adjustments */
+}
+```
+
+### Mobile Spacing Adjustments
+
+Use design tokens for responsive spacing:
+
+```css
+.container {
+  padding: var(--space-8) var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-4) var(--space-2);
+  }
+}
+```
+
+## Implementation Guidelines
+
+### Using Design Tokens
+
+1. **Always use design tokens** instead of hardcoded values
+2. **Import globally** via main.ts or main.js:
+   ```js
+   import './assets/design-tokens.css'
+   import './assets/components.css'
+   ```
+3. **Reference tokens** in component styles:
+   ```css
+   color: var(--color-primary-600);
+   padding: var(--space-4);
+   font-size: var(--font-size-lg);
+   ```
+
+### Maintaining Consistency
+
+- Use the same transition duration/easing across similar interactions
+- Apply consistent shadow depths (sm, base, md, lg, xl)
+- Maintain spacing rhythm using the spacing scale
+- Keep font sizes within the modular scale
+
+### Performance Considerations
+
+- Use `transform` and `opacity` for animations (GPU accelerated)
+- Avoid animating layout properties (width, height, top, left)
+- Use `will-change` sparingly and only when needed
+- Keep transition durations under 300ms for snappy feel
