@@ -37,85 +37,85 @@ export default {
 
 <style scoped>
 .power-roll {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 1rem;
-  margin: 0.5rem 0;
+  background: var(--color-neutral-50);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-2) 0;
 }
 
 .outcome {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 4px;
+  margin-bottom: var(--space-2);
+  padding: var(--space-2);
+  border-radius: var(--radius-base);
   border-left: 4px solid;
 }
 
 .outcome.tier-1 {
-  background: #fff5f5;
-  border-left-color: #ef4444;
+  background: var(--color-error-50);
+  border-left-color: var(--color-error-600);
 }
 
 .outcome.tier-2 {
-  background: #fffbeb;
-  border-left-color: #f59e0b;
+  background: var(--color-warning-50);
+  border-left-color: var(--color-warning-600);
 }
 
 .outcome.tier-3 {
-  background: #f0fdf4;
-  border-left-color: #22c55e;
+  background: var(--color-success-50);
+  border-left-color: var(--color-success-600);
 }
 
 .tier-number {
   background: white;
-  color: #495057;
-  font-weight: bold;
-  font-size: 0.8rem;
+  color: var(--color-neutral-700);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xs);
   min-width: 3rem;
   height: 1.5rem;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 0.75rem;
+  margin-right: var(--space-3);
   flex-shrink: 0;
   border: 2px solid;
-  padding: 0 0.25rem;
+  padding: 0 var(--space-1);
 }
 
 .tier-1 .tier-number {
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: var(--color-error-600);
+  color: var(--color-error-600);
 }
 
 .tier-2 .tier-number {
-  border-color: #f59e0b;
-  color: #f59e0b;
+  border-color: var(--color-warning-600);
+  color: var(--color-warning-600);
 }
 
 .tier-3 .tier-number {
-  border-color: #22c55e;
-  color: #22c55e;
+  border-color: var(--color-success-600);
+  color: var(--color-success-600);
 }
 
 .outcome-text {
   flex: 1;
-  line-height: 1.4;
-  color: #374151;
+  line-height: var(--line-height-snug);
+  color: var(--color-neutral-800);
 }
 
 .effect-text {
-  color: #374151;
-  line-height: 1.4;
-  margin-top: 0.5rem;
+  color: var(--color-neutral-800);
+  line-height: var(--line-height-snug);
+  margin-top: var(--space-2);
 }
 
 /* Handle HTML formatting in descriptions */
 .outcome-text :deep(strong),
 .effect-text :deep(strong) {
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 }
 
 .outcome-text :deep(em),
@@ -125,25 +125,25 @@ export default {
 
 .outcome-text :deep(br),
 .effect-text :deep(br) {
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--space-1);
 }
 
 /* Potency value styling */
 .outcome-text :deep(.potency-value),
 .effect-text :deep(.potency-value) {
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   color: #2563eb;
   background: #dbeafe;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
-  font-size: 0.9rem;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
 }
 
 /* Damage type styling */
 .outcome-text :deep(.damage-value),
 .effect-text :deep(.damage-value) {
-  font-weight: bold;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
 }
 
 /* Specific damage type colors */
@@ -151,72 +151,72 @@ export default {
 .effect-text :deep(.damage-value.damage-acid) {
   color: #059669;
   background: #d1fae5;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
 }
 
 .outcome-text :deep(.damage-value.damage-cold),
 .effect-text :deep(.damage-value.damage-cold) {
   color: #0891b2;
   background: #cffafe;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
 }
 
 .outcome-text :deep(.damage-value.damage-corruption),
 .effect-text :deep(.damage-value.damage-corruption) {
   color: #7c2d12;
   background: #fef3c7;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
 }
 
 .outcome-text :deep(.damage-value.damage-fire),
 .effect-text :deep(.damage-value.damage-fire) {
   color: #dc2626;
   background: #fee2e2;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
 }
 
 .outcome-text :deep(.damage-value.damage-holy),
 .effect-text :deep(.damage-value.damage-holy) {
   color: #ca8a04;
   background: #fef9c3;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
 }
 
 .outcome-text :deep(.damage-value.damage-lightning),
 .effect-text :deep(.damage-value.damage-lightning) {
   color: #7c3aed;
   background: #ede9fe;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
 }
 
 .outcome-text :deep(.damage-value.damage-poison),
 .effect-text :deep(.damage-value.damage-poison) {
   color: #16a34a;
   background: #dcfce7;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
 }
 
 .outcome-text :deep(.damage-value.damage-psychic),
 .effect-text :deep(.damage-value.damage-psychic) {
   color: #be185d;
   background: #fce7f3;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
 }
 
 .outcome-text :deep(.damage-value.damage-sonic),
 .effect-text :deep(.damage-value.damage-sonic) {
   color: #8b5cf6;
   background: #f3e8ff;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
 }
 
 /* Untyped damage - just bold, no background */
@@ -227,19 +227,19 @@ export default {
 
 @media (max-width: 768px) {
   .power-roll {
-    padding: 0.75rem;
+    padding: var(--space-3);
   }
 
   .outcome {
-    padding: 0.4rem;
+    padding: var(--space-2);
   }
 
   .tier-number {
     min-width: 2.5rem;
     height: 1.25rem;
-    font-size: 0.7rem;
-    margin-right: 0.5rem;
-    padding: 0 0.2rem;
+    font-size: var(--font-size-xs);
+    margin-right: var(--space-2);
+    padding: 0 var(--space-1);
   }
 }
 </style>

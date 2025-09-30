@@ -165,41 +165,41 @@ Object.keys(formData).forEach(key => {
 
 <style scoped>
 .source-info-form {
-  padding: 1rem 0;
+  padding: var(--space-4) 0;
 }
 
 .form-section-title {
-  color: #8b4513;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin: 0 0 1.5rem 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #8b4513;
+  color: var(--color-primary-600);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--space-6) 0;
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-primary-600);
 }
 
 .form-section {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-6);
 }
 
 .section-description {
-  color: #6c757d;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
   margin: 0;
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .form-group.full-width {
@@ -207,9 +207,9 @@ Object.keys(formData).forEach(key => {
 }
 
 .form-label {
-  font-weight: 600;
-  color: #333;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-800);
+  font-size: var(--font-size-sm);
 }
 
 /* Use global form styles from design system */
@@ -217,45 +217,45 @@ Object.keys(formData).forEach(key => {
 .form-textarea {
   resize: vertical;
   min-height: 80px;
-  font-family: inherit;
-  line-height: 1.5;
+  font-family: var(--font-family-sans);
+  line-height: var(--line-height-relaxed);
 }
 
 .error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+  color: var(--color-error-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
 }
 
 .help-text {
-  color: #6c757d;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  line-height: 1.4;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+  line-height: var(--line-height-snug);
 }
 
 .source-preview {
-  background: #e8f5e8;
-  border: 1px solid #c3e6c3;
-  border-radius: 8px;
-  padding: 1.5rem;
+  background: var(--color-success-50);
+  border: 1px solid var(--color-success-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
 }
 
 .preview-title {
-  color: #495057;
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0 0 1rem 0;
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--space-4) 0;
 }
 
 .preview-content {
-  color: #333;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  padding: 0.75rem;
+  color: var(--color-neutral-800);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  padding: var(--space-3);
   background: white;
-  border-radius: 4px;
-  border: 1px solid #dee2e6;
+  border-radius: var(--radius-base);
+  border: 1px solid var(--color-neutral-200);
   font-style: italic;
 }
 

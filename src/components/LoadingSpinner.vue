@@ -20,22 +20,22 @@ defineProps<Props>()
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 2rem;
+  gap: var(--space-4);
+  padding: var(--space-8);
 }
 
 .loading-spinner.inline {
   display: inline-flex;
   flex-direction: row;
-  padding: 0.5rem;
+  padding: var(--space-2);
 }
 
 .spinner {
   width: 40px;
   height: 40px;
-  border: 4px solid #f3f4f6;
-  border-top-color: #8b4513;
-  border-radius: 50%;
+  border: 4px solid var(--color-neutral-200);
+  border-top-color: var(--color-primary-600);
+  border-radius: var(--radius-full);
   animation: spin 0.8s linear infinite;
 }
 
@@ -46,12 +46,12 @@ defineProps<Props>()
 }
 
 .loading-message {
-  color: #6b7280;
-  font-size: 0.9rem;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
 }
 
 .loading-spinner.inline .loading-message {
-  font-size: 0.85rem;
+  font-size: var(--font-size-xs);
 }
 
 @keyframes spin {

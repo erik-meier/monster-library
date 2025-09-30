@@ -158,102 +158,109 @@ function selectTemplate(template: TemplateMonster) {
 
 <style scoped>
 .monster-templates {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-8);
 }
 
 .templates-header {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .templates-header h3 {
-  color: #8b4513;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  color: var(--color-primary-700);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-2);
 }
 
 .templates-header p {
-  color: #6c757d;
-  font-size: 1rem;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
 }
 
 .templates-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .template-card {
   background: white;
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 1rem;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
   cursor: pointer;
-  transition: all 0.2s ease;
-  border-left: 4px solid #8b4513;
+  transition: var(--transition-all);
+  border-left: 4px solid var(--color-primary-600);
+  box-shadow: var(--shadow-sm);
 }
 
 .template-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
+  border-color: var(--color-primary-500);
 }
 
 .template-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-3);
 }
 
 .template-name {
-  color: #8b4513;
-  font-size: 1.1rem;
-  font-weight: bold;
+  color: var(--color-primary-700);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
   margin: 0;
   flex: 1;
+  line-height: var(--line-height-tight);
 }
 
 .template-meta {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: var(--space-1);
   align-items: flex-end;
 }
 
 .template-role {
-  background-color: #8b4513;
+  background-color: var(--color-primary-600);
   color: white;
-  padding: 0.125rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: bold;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
   text-transform: capitalize;
+  box-shadow: var(--shadow-sm);
 }
 
 .template-keywords {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
-  margin-bottom: 0.75rem;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
 }
 
 .keyword-tag {
-  background: #f8f9fa;
-  color: #495057;
-  padding: 0.125rem 0.375rem;
-  border-radius: 8px;
-  font-size: 0.7rem;
-  border: 1px solid #e9ecef;
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-700);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-xs);
+  border: 1px solid var(--color-neutral-200);
+  font-weight: var(--font-weight-medium);
 }
 
 .template-description {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .template-description p {
-  color: #6c757d;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-snug);
   margin: 0;
 }
 
@@ -263,32 +270,40 @@ function selectTemplate(template: TemplateMonster) {
 
 .btn {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 400;
+  padding: var(--padding-btn);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
   text-decoration: none;
   border: 1px solid;
-  border-radius: 4px;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-all);
   text-align: center;
   background: none;
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-sm {
-  padding: 0.375rem 0.75rem;
-  font-size: 0.8rem;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
 }
 
 .btn-primary {
-  background-color: #8b4513;
+  background-color: var(--color-primary-600);
   color: white;
-  border-color: #8b4513;
+  border-color: var(--color-primary-600);
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: #7a3c11;
-  border-color: #6c3310;
+  background-color: var(--color-primary-700);
+  border-color: var(--color-primary-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 @media (max-width: 768px) {
@@ -299,7 +314,7 @@ function selectTemplate(template: TemplateMonster) {
   .template-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: var(--space-2);
   }
 
   .template-meta {
