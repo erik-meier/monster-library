@@ -3,7 +3,7 @@
     <div class="hero">
       <h1 class="hero-title">Steel Cauldron</h1>
       <p class="hero-subtitle">
-        Your comprehensive library for Draw Steel monsters and encounters
+        Your workshop for brewing Draw Steel monsters and encounters
       </p>
 
       <div class="hero-actions">

@@ -82,30 +82,6 @@
       </section>
 
       <section class="about-section">
-        <h2>⌨️ Keyboard Shortcuts</h2>
-        <div class="shortcuts-grid">
-          <div class="shortcut-item">
-            <div class="shortcut-keys">
-              <kbd>Alt</kbd> + <kbd>S</kbd>
-            </div>
-            <div class="shortcut-description">Save monster (in builder)</div>
-          </div>
-          <div class="shortcut-item">
-            <div class="shortcut-keys">
-              <kbd>Esc</kbd>
-            </div>
-            <div class="shortcut-description">Close modal or cancel</div>
-          </div>
-          <div class="shortcut-item">
-            <div class="shortcut-keys">
-              <kbd>←</kbd> / <kbd>→</kbd>
-            </div>
-            <div class="shortcut-description">Navigate form sections (in builder)</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="about-section">
         <h2>💡 Tips & Tricks</h2>
         <ul class="tips-list">
           <li><strong>Recently Viewed:</strong> The home page shows your recently viewed monsters for quick access.</li>

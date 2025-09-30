@@ -318,7 +318,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, computed, watch } from 'vue'
+import { reactive, ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import type { MonsterItem } from '@/types/monster-forms'
 import { ABILITY_KEYWORDS } from '@/types/monster-forms'
 
@@ -479,7 +479,7 @@ const onTypeChange = () => {
     // Initialize ability fields
     formData.system = {
       keywords: formData.system.keywords || [],
-      category: formData.system.category || 'signature',
+      category: formData.system.category || '',
       type: formData.system.type || 'main',
       resource: formData.system.resource || null,
       distance: formData.system.distance || {
@@ -545,6 +545,25 @@ const handleSave = () => {
     emit('save')
   }
 }
+
+// Handle escape key to close editor
+const handleEscape = (event: KeyboardEvent) => {
+  if (event.key === 'Escape') {
+    event.preventDefault()
+    event.stopPropagation()
+    emit('cancel')
+  }
+}
+
+// Add event listener when component mounts
+onMounted(() => {
+  document.addEventListener('keydown', handleEscape, true) // Use capture phase
+})
+
+// Remove event listener when component unmounts
+onUnmounted(() => {
+  document.removeEventListener('keydown', handleEscape, true)
+})
 
 // Watch for changes and validate
 watch(formData, () => {
