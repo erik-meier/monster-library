@@ -2,7 +2,7 @@
   <div class="about-page">
     <div class="about-hero">
       <h1>About Steel Cauldron</h1>
-      <p class="subtitle">Your comprehensive monster library and builder for Draw Steel</p>
+      <p class="subtitle"> Your workshop for brewing Draw Steel monsters and encounters</p>
     </div>
 
     <div class="about-content">
