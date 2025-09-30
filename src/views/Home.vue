@@ -18,22 +18,22 @@
 
     <div class="features">
       <div class="feature-grid">
-        <div class="feature-card">
+        <router-link to="/monsters" class="feature-card">
           <div class="feature-icon">📖</div>
           <h3>Monster Library</h3>
-          <p>Browse Draw Steel monsters with detailed stat blocks</p>
-        </div>
+          <p>Browse official Draw Steel monsters with detailed stat blocks</p>
+        </router-link>
 
-        <div class="feature-card">
+        <router-link to="/monster/create" class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>Monster Builder</h3>
+          <p>Create custom monsters from existing templates or start from scratch</p>
+        </router-link>
+
+        <div class="feature-card feature-card-disabled">
           <div class="feature-icon">⚔️</div>
           <h3>Encounter Builder</h3>
-          <p>Create balanced encounters for your Draw Steel campaigns (Coming Soon)</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>Mobile Ready</h3>
-          <p>Access your monsters on any device, perfect for gaming sessions</p>
+          <p>Create balanced encounters for your Draw Steel adventures (Coming Soon)</p>
         </div>
       </div>
     </div>
@@ -176,11 +176,27 @@ export default {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
 
 .feature-card:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #f8f9fa;
+}
+
+.feature-card-disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .feature-icon {
@@ -192,6 +208,10 @@ export default {
   color: #8b4513;
   margin-bottom: 1rem;
   font-size: 1.3rem;
+}
+
+.feature-card:visited h3 {
+  color: #8b4513;
 }
 
 .feature-card p {
