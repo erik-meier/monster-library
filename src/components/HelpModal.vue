@@ -28,7 +28,7 @@
             <div class="help-section">
               <h3>⌨️ Keyboard Shortcuts</h3>
               <ul>
-                <li><kbd>Ctrl</kbd> + <kbd>S</kbd> (or <kbd>Cmd</kbd> + <kbd>S</kbd>): Save monster</li>
+                <li><kbd>Alt</kbd> + <kbd>S</kbd>: Save monster</li>
                 <li><kbd>Esc</kbd>: Cancel or close modal</li>
                 <li><kbd>←</kbd> / <kbd>→</kbd>: Navigate between sections (when not in input field)</li>
               </ul>

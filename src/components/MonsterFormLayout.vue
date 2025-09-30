@@ -276,8 +276,8 @@ const previousSection = () => {
 
 // Keyboard navigation and shortcuts
 const handleKeydown = (event: KeyboardEvent) => {
-  // Ctrl+S or Cmd+S to save
-  if ((event.ctrlKey || event.metaKey) && event.key === 's') {
+  // Alt+S to save
+  if (event.altKey && event.key === 's') {
     event.preventDefault()
     handleSave()
     return

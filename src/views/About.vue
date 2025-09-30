@@ -86,7 +86,7 @@
         <div class="shortcuts-grid">
           <div class="shortcut-item">
             <div class="shortcut-keys">
-              <kbd>Ctrl</kbd> + <kbd>S</kbd>
+              <kbd>Alt</kbd> + <kbd>S</kbd>
             </div>
             <div class="shortcut-description">Save monster (in builder)</div>
           </div>

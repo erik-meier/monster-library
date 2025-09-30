@@ -317,7 +317,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import ActionsList from './ActionsList.vue'
 import AbilityEditor from './AbilityEditor.vue'
 import { DAMAGE_TYPES, MOVEMENT_TYPES } from '@/types/monster-forms'
@@ -880,6 +880,44 @@ const debouncedUpdateDefenses = () => {
     updateDefenses()
   }, 500) // Wait 500ms after user stops typing/selecting
 }
+
+// Keyboard shortcuts
+const handleKeydown = (event) => {
+  // Alt+S to save (only when in edit mode)
+  if (event.altKey && event.key === 's' && props.editMode) {
+    event.preventDefault()
+    emit('save', editableData.value)
+    return
+  }
+
+  // Escape to close ability editor (if open) or cancel editing
+  if (event.key === 'Escape') {
+    if (showAbilityEditor.value) {
+      // Close ability editor first
+      event.preventDefault()
+      handleAbilityCancel()
+      return
+    } else if (props.editMode) {
+      // Then cancel editing if no ability editor is open
+      event.preventDefault()
+      emit('cancel')
+      return
+    }
+  }
+
+  // Only handle if no input is focused (except when in ability editor)
+  if (event.target && (event.target).tagName.match(/INPUT|TEXTAREA|SELECT/) && !showAbilityEditor.value) {
+    return
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('keydown', handleKeydown)
+})
 </script>
 
 <style scoped>

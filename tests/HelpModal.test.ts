@@ -92,7 +92,7 @@ describe('HelpModal', () => {
     })
     expect(wrapper.text()).toContain('Monster Builder Guide')
     expect(wrapper.text()).toContain('Keyboard Shortcuts')
-    expect(wrapper.text()).toContain('Ctrl')
+    expect(wrapper.text()).toContain('Alt')
   })
 
   it('renders custom slot content', () => {
