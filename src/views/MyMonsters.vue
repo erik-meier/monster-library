@@ -36,9 +36,6 @@
         <MonsterTemplates @template-selected="startFromTemplate" />
       </div>
 
-      <!-- Export/Import Panel -->
-      <ExportImportPanel />
-
       <!-- Monster List -->
       <div v-if="loading" class="loading">
         Loading monsters...
@@ -108,6 +105,9 @@
         </div>
       </div>
     </div>
+
+    <!-- Export/Import Panel -->
+    <ExportImportPanel />
 
     <!-- Delete Confirmation Dialog -->
     <div v-if="showDeleteDialog" class="dialog-overlay" @click.self="cancelDelete">
