@@ -1,0 +1,102 @@
+{
+  "id": "war-dog-saboteur",
+  "name": "War Dog Saboteur",
+  "level": 7,
+  "ev": 9,
+  "role": "Ambusher",
+  "organization": "Minion",
+  "keywords": [
+    "humanoid",
+    "soulless"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "S"
+  },
+  "speed": 6,
+  "stamina": 12,
+  "stability": 0,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": -1,
+    "agility": 2,
+    "reason": 4,
+    "intuition": 3,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Loyalty Collar",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the saboteur is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">2d6</span> damage to each adjacent enemy and object.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Fuse-Iron Bomb",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "ranged",
+          "weapon"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 5
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 fire damage"
+            },
+            {
+              "tier": 2,
+              "display": "7 fire damage; push 1"
+            },
+            {
+              "tier": 3,
+              "display": "8 fire damage; push 3"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The space the target occupies fills with dark smoke and blocks line of effect until the start of the saboteur's next turn</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "310",
+    "license": "Draw Steel Creator License"
+  }
+}

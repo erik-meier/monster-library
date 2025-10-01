@@ -1,0 +1,218 @@
+{
+  "id": "war-dog-blackcap",
+  "name": "War Dog Blackcap",
+  "level": 7,
+  "ev": 9,
+  "role": "Ambusher",
+  "organization": "Horde",
+  "keywords": [
+    "humanoid",
+    "soulless"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 45,
+  "stability": 0,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 1,
+    "agility": 4,
+    "reason": 4,
+    "intuition": 2,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "teleport",
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Ash Clones",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>An ash clone created by the blackcap has the blackcap's statistics but has 1 Stamina. Ash clones don't take turns in combat, but they can act when the blackcap allows them to and can move when the blackcap willingly moves.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Duplicating Loyalty Collar",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the blackcap or any of their ash clones is reduced to 0 Stamina, that creature's loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> poison damage to each adjacent enemy and object. If any adjacent enemy has A &lt; 3 they are also weakened (save ends)</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Flesh-Eater Knife",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "melee",
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "meleeRanged",
+          "primary": 1,
+          "secondary": 5
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage"
+            },
+            {
+              "tier": 2,
+              "display": "11 damage"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage; <strong class=\"potency-value\">M&lt;4</strong> bleeding and weakened (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The blackcap can teleport up to their speed before using this ability, creating an ash clone (see below) in their original square.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Ashes to Ashes",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 20
+        },
+        "target": {
+          "type": "special",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Note: targets Up to three ash clones</p><p>Each target makes a free strike.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p><p><span class=\"reference-text\">Loyalty Unto Death</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Alchemical Cloud",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>A bank of choking chemicals sweeps across the area of the en counter map. Each enemy in the encounter makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"96\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> poison damage; dazed (EoT)</p></td></tr><tr><td data-colwidth=\"96\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> poison damage; weakened (EoT)</p></td></tr><tr><td data-colwidth=\"96\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">4</span> poison damage</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "312",
+    "license": "Draw Steel Creator License"
+  }
+}

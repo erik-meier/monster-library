@@ -1,0 +1,148 @@
+{
+  "id": "war-dog-breaker",
+  "name": "War Dog Breaker",
+  "level": 7,
+  "ev": 36,
+  "role": "Brute",
+  "organization": "Elite",
+  "keywords": [
+    "humanoid",
+    "soulless"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 200,
+  "stability": 4,
+  "freeStrike": 7,
+  "characteristics": {
+    "might": 4,
+    "agility": 2,
+    "reason": 1,
+    "intuition": 1,
+    "presence": 3
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Breaking Point",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the breaker would be reduced to 0 Stamina, they delay that effect as they end any conditions affecting them and immediately take a turn, regardless of whether they have already taken a turn this round. The breaker's abilities deal an extra <span class=\"damage-value damage-generic\">5</span> damage during this turn, at the end of which they are reduced to 0 Stamina.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Loyalty Collar",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the breaker is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> damage to each adjacent enemy and object.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Pile Bunker Gauntlet",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "12 damage; push 4; prone"
+            },
+            {
+              "tier": 2,
+              "display": "17 damage; slide 4; prone or <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "21 damage; slide 4; prone or <strong class=\"potency-value\">M&lt;4</strong> dazed (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Surging Power",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the start of their next turn, the breaker has a double edge on abilities and is automatically affected by all potency effect</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "312",
+    "license": "Draw Steel Creator License"
+  }
+}
