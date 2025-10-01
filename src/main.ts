@@ -3,6 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 
+// Import design system
+import './assets/design-tokens.css'
+import './assets/components.css'
+import './assets/base.css'
+
 // Import your views
 import MonsterView from './views/MonsterView.vue'
 import MonsterList from './views/MonsterList.vue'

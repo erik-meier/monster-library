@@ -1,27 +1,21 @@
 <template>
   <div class="characteristics-form">
     <h2 class="form-section-title">Characteristics</h2>
-    
+
     <div class="characteristics-grid">
       <div class="form-group" v-for="(label, key) in characteristicLabels" :key="key">
         <label :for="`char-${key}`" class="form-label required">{{ label }}</label>
-        <input 
-          :id="`char-${key}`"
-          v-model.number="formData.characteristics[key]"
-          type="number" 
-          class="form-input characteristic-input"
-          :class="{ invalid: errors[key] }"
-          min="-5" 
-          max="10"
-          :placeholder="'0'"
-        />
+        <input :id="`char-${key}`" v-model.number="formData.characteristics[key]" type="number"
+          class="form-input characteristic-input" :class="{ invalid: errors[key] }" min="-9" max="99"
+          :placeholder="'0'" />
         <div v-if="errors[key]" class="error-message">{{ errors[key] }}</div>
       </div>
     </div>
-    
+
     <div class="highest-characteristic">
-      <strong>Highest Characteristic:</strong> 
-      {{ getHighestCharacteristic() }} ({{ formatCharacteristic(Math.max(...Object.values(formData.characteristics))) }})
+      <strong>Highest Characteristic:</strong>
+      {{ getHighestCharacteristic() }} ({{ formatCharacteristic(Math.max(...Object.values(formData.characteristics)))
+      }})
     </div>
   </div>
 </template>
@@ -44,7 +38,7 @@ const emit = defineEmits<Emits>()
 
 const characteristicLabels = {
   might: 'Might',
-  agility: 'Agility', 
+  agility: 'Agility',
   reason: 'Reason',
   intuition: 'Intuition',
   presence: 'Presence'
@@ -71,8 +65,8 @@ const errors = reactive({
 const validateCharacteristic = (key: string, value: number) => {
   if (typeof value !== 'number' || isNaN(value)) {
     errors[key as keyof typeof errors] = `${characteristicLabels[key as keyof typeof characteristicLabels]} must be a valid number`
-  } else if (value < -5 || value > 10) {
-    errors[key as keyof typeof errors] = `${characteristicLabels[key as keyof typeof characteristicLabels]} must be between -5 and 10`
+  } else if (value < -9 || value > 99) {
+    errors[key as keyof typeof errors] = `${characteristicLabels[key as keyof typeof characteristicLabels]} must be between -9 and 99`
   } else {
     errors[key as keyof typeof errors] = ''
   }
@@ -84,7 +78,7 @@ const getHighestCharacteristic = (): string => {
   const maxKey = Object.keys(characteristics).find(
     key => characteristics[key as keyof typeof characteristics] === maxValue
   ) as keyof typeof characteristicLabels
-  
+
   return characteristicLabels[maxKey] || 'None'
 }
 
@@ -136,98 +130,137 @@ Object.keys(formData.characteristics).forEach(key => {
 
 <style scoped>
 .characteristics-form {
-  padding: 1rem 0;
+  padding: var(--space-4) 0;
 }
 
 .form-section-title {
-  color: #8b4513;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin: 0 0 1.5rem 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #8b4513;
+  color: var(--color-primary-600);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--space-6) 0;
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-primary-600);
 }
 
 .characteristics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .form-label {
-  font-weight: 600;
-  color: #333;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-800);
+  font-size: var(--font-size-sm);
+  display: block;
+  margin-bottom: var(--space-1);
 }
 
 .form-label.required::after {
   content: ' *';
-  color: #dc3545;
+  color: var(--color-error-600);
 }
 
 .characteristic-input {
-  padding: 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: var(--padding-input);
+  border: 2px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
   text-align: center;
-  font-weight: 600;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-weight: var(--font-weight-semibold);
+  background: var(--color-neutral-50);
+  color: var(--color-neutral-800);
+  transition: var(--transition-input);
+  font-family: var(--font-family-sans);
 }
 
 .characteristic-input:focus {
   outline: none;
-  border-color: #8b4513;
-  box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.25);
+  border-color: var(--color-primary-500);
+  box-shadow: var(--focus-ring);
+  background: white;
+}
+
+.characteristic-input:hover:not(:focus) {
+  border-color: var(--color-neutral-300);
+  background: white;
 }
 
 .characteristic-input.invalid {
-  border-color: #dc3545;
+  border-color: var(--color-error-500);
 }
 
 .characteristic-input.invalid:focus {
-  border-color: #dc3545;
-  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+  box-shadow: var(--focus-ring-error);
 }
 
 .error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+  color: var(--color-error-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: var(--font-weight-medium);
+}
+
+.error-message::before {
+  content: '⚠';
+  font-size: var(--font-size-base);
 }
 
 .highest-characteristic {
-  background: white;
-  padding: 0.75rem;
-  border-radius: 4px;
-  border: 2px solid #8b4513;
-  color: #8b4513;
+  background: var(--color-primary-50);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-primary-400);
+  color: var(--color-primary-700);
   text-align: center;
-  font-size: 1rem;
-  margin-top: 1rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  margin-top: var(--space-4);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-  .characteristics-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .form-section-title {
+    font-size: var(--font-size-lg);
   }
   
-  .summary-grid {
-    grid-template-columns: 1fr;
+  .characteristics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+  }
+
+  .characteristic-input {
+    padding: var(--space-2);
+    font-size: var(--font-size-sm);
   }
 }
 
 @media (max-width: 480px) {
   .characteristics-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  
+  .form-group {
+    gap: var(--space-1);
+  }
+  
+  .highest-characteristic {
+    margin-top: var(--space-3);
+    padding: var(--space-2);
+    font-size: var(--font-size-sm);
   }
 }
 </style>

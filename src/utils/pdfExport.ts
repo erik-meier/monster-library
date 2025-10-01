@@ -153,7 +153,7 @@ function generateStatBlockHTML(monster: Monster): string {
   
   return `
     <div class="stat-block" style="
-      background: #fdf6e3;
+      background: #fdf8f6;
       border: 2px solid #8b4513;
       border-radius: 8px;
       padding: 24px;
@@ -179,7 +179,7 @@ function generateStatBlockHTML(monster: Monster): string {
           align-items: center;
           gap: 12px;
           font-size: 0.85rem;
-          color: #6c757d;
+          color: #737373;
           flex-wrap: wrap;
         ">
           <span style="font-style: italic;">${formatMonsterRole(monster)}</span>
@@ -220,6 +220,7 @@ function generateStatBlockHTML(monster: Monster): string {
           text-align: center;
           font-weight: bold;
           font-size: 0.9rem;
+          color: #262626;
         ">
           <div>${monster.size?.value}${monster.size?.letter}</div>
           <div>${monster.speed}</div>
@@ -253,6 +254,7 @@ function generateStatBlockHTML(monster: Monster): string {
             <div style="
               font-weight: bold;
               font-size: 1rem;
+              color: #262626;
             ">${formatCharacteristic(monster.characteristics?.might || 0)}</div>
           </div>
           <div class="characteristic">
@@ -265,6 +267,7 @@ function generateStatBlockHTML(monster: Monster): string {
             <div style="
               font-weight: bold;
               font-size: 1rem;
+              color: #262626;
             ">${formatCharacteristic(monster.characteristics?.agility || 0)}</div>
           </div>
           <div class="characteristic">
@@ -277,6 +280,7 @@ function generateStatBlockHTML(monster: Monster): string {
             <div style="
               font-weight: bold;
               font-size: 1rem;
+              color: #262626;
             ">${formatCharacteristic(monster.characteristics?.reason || 0)}</div>
           </div>
           <div class="characteristic">
@@ -289,6 +293,7 @@ function generateStatBlockHTML(monster: Monster): string {
             <div style="
               font-weight: bold;
               font-size: 1rem;
+              color: #262626;
             ">${formatCharacteristic(monster.characteristics?.intuition || 0)}</div>
           </div>
           <div class="characteristic">
@@ -301,6 +306,7 @@ function generateStatBlockHTML(monster: Monster): string {
             <div style="
               font-weight: bold;
               font-size: 1rem;
+              color: #262626;
             ">${formatCharacteristic(monster.characteristics?.presence || 0)}</div>
           </div>
         </div>
@@ -321,11 +327,12 @@ function generateStatBlockHTML(monster: Monster): string {
         gap: 8px;
         margin-bottom: 16px;
         font-size: 0.9rem;
+        color: #404040;
       ">
         <span><strong>Immunity</strong> ${formatImmunity(monster.immunities)}</span>
-        <span style="color: #6c757d;">•</span>
+        <span style="color: #737373;">•</span>
         <span><strong>Weakness</strong> ${formatWeakness(monster.weaknesses)}</span>
-        <span style="color: #6c757d;">•</span>
+        <span style="color: #737373;">•</span>
         <span><strong>Movement</strong> ${formatMovement(monster.movementTypes)}</span>
       </div>
 
@@ -346,7 +353,7 @@ function generateStatBlockHTML(monster: Monster): string {
 
       <div class="divider" style="
         height: 1px;
-        background: #6c757d;
+        background: #737373;
         margin: 16px 0;
       "></div>
 
@@ -354,7 +361,7 @@ function generateStatBlockHTML(monster: Monster): string {
       <div style="
         text-align: center;
         font-size: 0.8rem;
-        color: #6c757d;
+        color: #737373;
         font-style: italic;
       ">
         Monsters, page 211 • Draw Steel Creator License
@@ -391,16 +398,16 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
               font-weight: bold;
             ">
               ${item.name}
-              ${isFeature ? ' <span style="color: #ffc107;">★</span>' : ''}
+              ${isFeature ? ' <span style="color: #f59e0b;">★</span>' : ''}
               ${isSignature ? ' <span style="background: #8b4513; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 4px;">SIGNATURE</span>' : ''}
-              ${item.system?.resource ? ` <span style="color: #dc3545; font-weight: bold; margin-left: 4px;">${item.system.resource} Malice</span>` : ''}
+              ${item.system?.resource ? ` <span style="color: #ef4444; font-weight: bold; margin-left: 4px;">${item.system.resource} Malice</span>` : ''}
             </h4>
             <div style="
               display: flex;
               align-items: center;
               gap: 8px;
               font-size: 0.9rem;
-              color: #6c757d;
+              color: #737373;
             ">
               ${item.system?.power?.roll?.formula ? `<span style="font-weight: bold;">${item.system.power.roll.formula}</span>` : ''}
               ${item.system?.type && item.system.type !== 'none' ? `<span>${item.system.type.replace(/([A-Z])/g, ' $1').toLowerCase()}</span>` : ''}
@@ -410,7 +417,7 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
           ${item.system?.keywords && item.system.keywords.length > 0 ? `
             <div style="
               font-size: 0.8rem;
-              color: #6c757d;
+              color: #737373;
               font-style: italic;
               margin-bottom: 4px;
             ">${item.system.keywords.join(', ')}</div>
@@ -420,7 +427,7 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
             display: flex;
             gap: 16px;
             font-size: 0.8rem;
-            color: #6c757d;
+            color: #737373;
             margin-bottom: 8px;
           ">
             ${formatActionDistance(item.system?.distance) ? `<span><strong>Range:</strong> ${formatActionDistance(item.system?.distance)}</span>` : ''}
@@ -431,8 +438,8 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
         <!-- Power Roll Tiers -->
         ${hasPowerRoll ? `
           <div class="power-roll" style="
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
             border-radius: 6px;
             padding: 12px;
             margin: 8px 0;
@@ -446,11 +453,11 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
               ">
                 <span style="
                   font-weight: bold;
-                  color: #4a5568;
+                  color: #404040;
                   min-width: 40px;
                   margin-right: 8px;
                 ">${formatTierNumber(tier.tier)}</span>
-                <span>${stripHTML(tier.display)}</span>
+                <span style="color: #404040;">${stripHTML(tier.display)}</span>
               </div>
             `).join('') || ''}
             
@@ -458,6 +465,7 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
               <div style="
                 margin-top: 8px;
                 font-size: 0.9rem;
+                color: #404040;
               ">
                 <strong>Effect:</strong> ${stripHTML(item.system.effect.text)}
               </div>
@@ -467,14 +475,14 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
 
         <!-- Description (for abilities without power rolls) -->
         ${!hasPowerRoll && item.system?.description?.value ? `
-          <div style="font-size: 0.9rem; margin: 8px 0;">
+          <div style="font-size: 0.9rem; margin: 8px 0; color: #404040;">
             ${stripHTML(item.system.description.value)}
           </div>
         ` : ''}
 
         <!-- Description (for abilities without power rolls but with effect text) -->
         ${!hasPowerRoll && !item.system?.description?.value && item.system?.effect?.text ? `
-          <div style="font-size: 0.9rem; margin: 8px 0;">
+          <div style="font-size: 0.9rem; margin: 8px 0; color: #404040;">
             <strong>Effect:</strong> ${stripHTML(item.system.effect.text)}
           </div>
         ` : ''}
@@ -485,7 +493,7 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
             margin-top: 8px;
             font-size: 0.9rem;
             font-style: italic;
-            color: #6c757d;
+            color: #737373;
           ">
             <strong>Spend:</strong> ${stripHTML(item.system.spend.text)}
           </div>

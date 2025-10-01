@@ -12,7 +12,7 @@
           <div class="stat-number">{{ customMonsterCount }}</div>
           <div class="stat-label">Custom Monsters</div>
         </div>
-        
+
         <div class="stat-card">
           <div class="stat-number">{{ totalMonsters }}</div>
           <div class="stat-label">Total Monsters</div>
@@ -43,7 +43,7 @@
       <div v-if="loading" class="loading">
         Loading monsters...
       </div>
-      
+
       <div v-else-if="customMonsters.length === 0" class="empty-state">
         <div class="empty-icon">🐉</div>
         <h2>No Custom Monsters Yet</h2>
@@ -52,40 +52,36 @@
           Create Your First Monster
         </router-link>
       </div>
-      
+
       <div v-else class="monsters-section">
         <h2>Your Custom Monsters ({{ customMonsters.length }})</h2>
-        
+
         <div class="monsters-grid">
-          <div 
-            v-for="monster in sortedCustomMonsters" 
-            :key="monster.id" 
-            class="monster-card"
-          >
+          <div v-for="monster in sortedCustomMonsters" :key="monster.id" class="monster-card">
             <div class="monster-header">
               <h3 class="monster-name">{{ monster.name }}</h3>
               <div class="monster-level">Level {{ monster.level }}</div>
             </div>
-            
+
             <div class="monster-details">
               <div class="detail-row">
                 <span class="detail-label">Role:</span>
                 <span class="detail-value">{{ monster.role || 'None' }}</span>
               </div>
-              
+
               <div class="detail-row">
                 <span class="detail-label">Organization:</span>
                 <span class="detail-value">{{ monster.organization }}</span>
               </div>
-              
+
               <div class="detail-row">
                 <span class="detail-label">EV:</span>
                 <span class="detail-value">{{ monster.ev }}</span>
               </div>
-              
+
 
             </div>
-            
+
             <div class="monster-meta">
               <div class="created-date">
                 Created: {{ formatDate(monster.createdAt) }}
@@ -94,27 +90,17 @@
                 Updated: {{ formatDate(monster.updatedAt) }}
               </div>
             </div>
-            
+
             <div class="monster-actions">
-              <router-link 
-                :to="`/monster/${monster.id}`" 
-                class="btn btn-sm btn-secondary"
-              >
+              <router-link :to="`/monster/${monster.id}`" class="btn btn-sm btn-secondary">
                 View
               </router-link>
-              
-              <router-link 
-                :to="`/monster/${monster.id}?edit=true`" 
-                class="btn btn-sm btn-primary"
-              >
+
+              <router-link :to="`/monster/${monster.id}?edit=true`" class="btn btn-sm btn-primary">
                 Edit
               </router-link>
-              
-              <button 
-                @click="deleteMonster(monster)" 
-                class="btn btn-sm btn-danger"
-                :disabled="deleting === monster.id"
-              >
+
+              <button @click="deleteMonster(monster)" class="btn btn-sm btn-danger" :disabled="deleting === monster.id">
                 {{ deleting === monster.id ? 'Deleting...' : 'Delete' }}
               </button>
             </div>
@@ -122,33 +108,20 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Delete Confirmation Dialog -->
     <div v-if="showDeleteDialog" class="dialog-overlay" @click.self="cancelDelete">
-      <div 
-        class="dialog" 
-        role="dialog"
-        aria-labelledby="delete-dialog-title"
-        aria-describedby="delete-dialog-desc"
-        @keydown.escape="cancelDelete"
-        ref="deleteDialog"
-      >
+      <div class="dialog" role="dialog" aria-labelledby="delete-dialog-title" aria-describedby="delete-dialog-desc"
+        @keydown.escape="cancelDelete" ref="deleteDialog">
         <h3 id="delete-dialog-title">Delete Monster</h3>
-        <p id="delete-dialog-desc">Are you sure you want to delete "{{ monsterToDelete?.name }}"? This action cannot be undone.</p>
+        <p id="delete-dialog-desc">Are you sure you want to delete "{{ monsterToDelete?.name }}"? This action cannot be
+          undone.</p>
         <div class="dialog-actions">
-          <button 
-            @click="cancelDelete" 
-            class="btn btn-secondary"
-            @keydown.escape="cancelDelete"
-          >
+          <button @click="cancelDelete" class="btn btn-secondary" @keydown.escape="cancelDelete">
             Cancel
           </button>
-          <button 
-            @click="confirmDelete" 
-            class="btn btn-danger"
-            ref="deleteButton"
-            @keydown.enter.prevent="confirmDelete"
-          >
+          <button @click="confirmDelete" class="btn btn-danger" ref="deleteButton"
+            @keydown.enter.prevent="confirmDelete">
             Delete
           </button>
         </div>
@@ -231,7 +204,7 @@ function formatDate(dateString: string) {
 function deleteMonster(monster: CustomMonster) {
   monsterToDelete.value = monster
   showDeleteDialog.value = true
-  
+
   // Focus the delete button when the dialog opens
   nextTick(() => {
     if (deleteButton.value) {
@@ -247,16 +220,16 @@ function cancelDelete() {
 
 async function confirmDelete() {
   if (!monsterToDelete.value) return
-  
+
   deleting.value = monsterToDelete.value.id
-  
+
   try {
     const success = customMonstersStore.deleteMonster(monsterToDelete.value.id)
-    
+
     if (!success) {
       throw new Error('Failed to delete monster')
     }
-    
+
     showDeleteDialog.value = false
     monsterToDelete.value = null
   } catch (error) {
@@ -287,10 +260,10 @@ function startFromTemplate(template: MonsterTemplate) {
     weaknesses: {},
     items: template.items || [] // Include abilities from stat blocks
   }
-  
+
   // Store the template data in localStorage for the create page to pick up
   localStorage.setItem('templateMonster', JSON.stringify(templateMonster))
-  
+
   // Navigate to the create page
   router.push('/monster/create')
 }
@@ -313,101 +286,104 @@ onMounted(async () => {
 .my-monsters {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--space-8);
 }
 
 .header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-8);
 }
 
 .header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #8b4513;
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-2);
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-bold);
 }
 
 .subtitle {
-  color: #6c757d;
-  font-size: 1.2rem;
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-lg);
 }
 
 .dashboard {
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-base);
+  padding: var(--space-8);
 }
 
 .stats-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
 }
 
 .stat-card {
-  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
   color: white;
-  padding: 1.5rem;
-  border-radius: 8px;
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
   text-align: center;
+  box-shadow: var(--shadow-sm);
 }
 
 .stat-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-2);
 }
 
 .stat-label {
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   opacity: 0.9;
 }
 
 .actions {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-8);
   text-align: center;
   display: flex;
-  gap: 1rem;
+  gap: var(--space-4);
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .templates-section {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
+  margin-bottom: var(--space-8);
+  padding: var(--space-6);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-neutral-200);
 }
 
 .monsters-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #495057;
-  border-bottom: 2px solid #e9ecef;
-  padding-bottom: 0.5rem;
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-6);
+  color: var(--color-neutral-700);
+  border-bottom: 2px solid var(--color-neutral-200);
+  padding-bottom: var(--space-2);
+  font-weight: var(--font-weight-semibold);
 }
 
 .monsters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.5rem;
+  gap: var(--space-6);
 }
 
 .monster-card {
   background: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
-  transition: all 0.2s ease;
-  border-left: 4px solid #8b4513;
+  transition: var(--transition-all);
+  border-left: 4px solid var(--color-primary-600);
 }
 
 .monster-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 
@@ -415,143 +391,108 @@ onMounted(async () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .monster-name {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #8b4513;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
   margin: 0;
 }
 
 .monster-level {
-  background: #8b4513;
+  background: var(--color-primary-600);
   color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
 }
 
 .monster-details {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .detail-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
 }
 
 .detail-label {
-  color: #6c757d;
-  font-weight: 500;
+  color: var(--color-neutral-500);
+  font-weight: var(--font-weight-medium);
 }
 
 .detail-value {
-  color: #495057;
+  color: var(--color-neutral-700);
 }
 
 .monster-meta {
-  font-size: 0.8rem;
-  color: #6c757d;
-  margin-bottom: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e9ecef;
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
+  margin-bottom: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-neutral-200);
 }
 
 .monster-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--space-2);
   flex-wrap: wrap;
 }
 
 .empty-state {
   text-align: center;
-  padding: 4rem 2rem;
-  color: #6c757d;
+  padding: var(--space-16) var(--space-8);
+  color: var(--color-neutral-500);
 }
 
 .empty-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-size: var(--font-size-5xl);
+  margin-bottom: var(--space-4);
 }
 
 .empty-state h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #8b4513;
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-4);
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-semibold);
 }
 
 .empty-state p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-8);
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 400;
-  text-decoration: none;
-  border: 1px solid;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-align: center;
-}
-
-.btn-sm {
-  padding: 0.375rem 0.75rem;
-  font-size: 0.8rem;
-}
-
-.btn-primary {
-  background-color: #8b4513;
-  color: white;
-  border-color: #8b4513;
-}
-
-.btn-primary:hover:not(:disabled) {
-  background-color: #7a3c11;
-  border-color: #6c3310;
-}
-
-.btn-secondary {
-  background-color: #6c757d;
-  color: white;
-  border-color: #6c757d;
-}
-
-.btn-secondary:hover:not(:disabled) {
-  background-color: #545b62;
-  border-color: #4e555b;
-}
+/* Buttons use design system classes from components.css */
 
 .btn-danger {
-  background-color: #dc3545;
+  background-color: var(--color-error-600);
   color: white;
-  border-color: #dc3545;
+  border: 2px solid var(--color-error-600);
 }
 
 .btn-danger:hover:not(:disabled) {
-  background-color: #c82333;
-  border-color: #bd2130;
+  background-color: var(--color-error-700);
+  border-color: var(--color-error-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.btn-danger:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-icon {
-  margin-right: 0.5rem;
-  font-weight: bold;
+  margin-right: var(--space-2);
+  font-weight: var(--font-weight-bold);
 }
 
 .dialog-overlay {
@@ -564,69 +505,105 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: var(--z-modal-backdrop);
+  animation: fadeIn var(--duration-normal) var(--ease-out);
 }
 
 .dialog {
   background: white;
-  border-radius: 8px;
-  padding: 2rem;
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
   max-width: 400px;
-  margin: 1rem;
+  margin: var(--space-4);
   text-align: center;
+  box-shadow: var(--shadow-xl);
+  animation: slideIn var(--duration-normal) var(--ease-out);
 }
 
 .dialog h3 {
-  margin-bottom: 1rem;
-  color: #2c3e50;
+  margin-bottom: var(--space-4);
+  color: var(--color-neutral-800);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
 }
 
 .dialog p {
-  margin-bottom: 2rem;
-  color: #6c757d;
-  line-height: 1.5;
+  margin-bottom: var(--space-8);
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
 }
 
 .dialog-actions {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-4);
   justify-content: center;
 }
 
 .loading {
   text-align: center;
-  padding: 4rem 2rem;
-  font-size: 1.2rem;
-  color: #6b7280;
+  padding: var(--space-16) var(--space-8);
+  font-size: var(--font-size-lg);
+  color: var(--color-neutral-500);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 768px) {
   .my-monsters {
-    padding: 1rem;
+    padding: var(--space-4);
   }
-  
+
   .dashboard {
-    padding: 1rem;
+    padding: var(--space-4);
   }
-  
+
   .stats-cards {
     grid-template-columns: 1fr;
   }
-  
+
   .monsters-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .monster-actions {
     justify-content: center;
   }
-  
+
   .dialog-actions {
     flex-direction: column;
   }
-  
+
   .dialog {
-    margin: 0.5rem;
+    margin: var(--space-2);
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .actions .btn {
+    min-width: 200px;
   }
 }
 </style>

@@ -6,21 +6,13 @@
       <div class="export-section">
         <h4>Export Monsters</h4>
         <div class="export-buttons">
-          <button 
-            class="btn btn-secondary"
-            @click="exportAllCustomMonsters"
-            :disabled="customMonsterCount === 0"
-            title="Export all your custom monsters as JSON"
-          >
+          <button class="btn btn-secondary" @click="exportAllCustomMonsters" :disabled="customMonsterCount === 0"
+            title="Export all your custom monsters as JSON">
             <span class="btn-icon">📦</span>
             Export All Custom ({{ customMonsterCount }})
           </button>
-          
-          <button 
-            class="btn btn-outline"
-            @click="createBackup"
-            title="Create a full backup including all settings"
-          >
+
+          <button class="btn btn-outline" @click="createBackup" title="Create a full backup including all settings">
             <span class="btn-icon">💾</span>
             Create Full Backup
           </button>
@@ -31,14 +23,8 @@
       <div class="import-section">
         <h4>Import Monsters</h4>
         <div class="import-area">
-          <input
-            type="file"
-            ref="fileInput"
-            accept=".json"
-            @change="handleFileUpload"
-            class="file-input"
-            id="monster-import"
-          />
+          <input type="file" ref="fileInput" accept=".json" @change="handleFileUpload" class="file-input"
+            id="monster-import" />
           <label for="monster-import" class="file-label btn btn-primary">
             <span class="btn-icon">📁</span>
             Choose JSON File
@@ -55,7 +41,7 @@
     <div v-if="showImportPreview && importPreview" class="modal-overlay" @click.self="cancelImport">
       <div class="modal import-preview-modal">
         <h3>Import Preview</h3>
-        
+
         <div class="preview-summary">
           <div class="preview-stats">
             <div class="stat-item">
@@ -125,7 +111,8 @@
           <div class="monster-list">
             <div v-for="monster in importPreview.monsters.slice(0, 10)" :key="monster.id" class="monster-item">
               <span class="monster-name">{{ monster.name }}</span>
-              <span class="monster-details">Level {{ monster.level }} {{ monster.role }} {{ monster.organization }}</span>
+              <span class="monster-details">Level {{ monster.level }} {{ monster.role }} {{ monster.organization
+                }}</span>
             </div>
             <div v-if="importPreview.monsters.length > 10" class="more-monsters">
               ... and {{ importPreview.monsters.length - 10 }} more monsters
@@ -137,12 +124,9 @@
           <button class="btn btn-outline" @click="cancelImport">
             Cancel
           </button>
-          <button 
-            class="btn btn-primary" 
-            @click="confirmImport"
-            :disabled="!importPreview.isValid"
-          >
-            {{ importPreview.isValid ? `Import ${importPreview.validMonsters} Monster${importPreview.validMonsters !== 1 ? 's' : ''}` : 'Cannot Import' }}
+          <button class="btn btn-primary" @click="confirmImport" :disabled="!importPreview.isValid">
+            {{ importPreview.isValid ? `Import ${importPreview.validMonsters} Monster${importPreview.validMonsters !== 1
+              ? 's' : ''}` : 'Cannot Import' }}
           </button>
         </div>
       </div>
@@ -166,7 +150,7 @@
             <strong>{{ importResult.warnings.length }}</strong> warnings
           </span>
         </div>
-        
+
         <button class="btn btn-sm btn-outline" @click="clearImportResult">
           Clear Results
         </button>
@@ -210,34 +194,23 @@
         <summary>Advanced Options</summary>
         <div class="advanced-content">
           <h4>Data Recovery</h4>
-          <p>Use these options if you need to restore data or recover from corruption:</p>
-          
+
           <div class="restore-buttons">
-            <input
-              type="file"
-              ref="backupInput"
-              accept=".json"
-              @change="handleBackupRestore"
-              class="file-input"
-              id="backup-restore"
-            />
+            <input type="file" ref="backupInput" accept=".json" @change="handleBackupRestore" class="file-input"
+              id="backup-restore" />
             <label for="backup-restore" class="file-label btn btn-warning">
               <span class="btn-icon">🔄</span>
               Restore from Backup
             </label>
-            
-            <button 
-              class="btn btn-danger"
-              @click="showClearConfirm = true"
-              title="Clear all custom monster data"
-            >
+
+            <button class="btn btn-danger" @click="showClearConfirm = true" title="Clear all custom monster data">
               <span class="btn-icon">🗑️</span>
               Clear All Data
             </button>
           </div>
-          
+
           <p class="warning-text">
-            ⚠️ <strong>Warning:</strong> Restore will replace all existing custom monsters. 
+            ⚠️ <strong>Warning:</strong> Restore will replace all existing custom monsters.
             Create a backup first if you want to preserve current data.
           </p>
         </div>
@@ -266,16 +239,16 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
-import { 
-  exportAllMonsters, 
-  importMonsters, 
+import {
+  exportAllMonsters,
+  importMonsters,
   previewImport,
-  createFullBackup, 
-  restoreFromBackup, 
-  downloadFile, 
+  createFullBackup,
+  restoreFromBackup,
+  downloadFile,
   generateExportFilename,
   type ImportResult,
-  type ImportPreview 
+  type ImportPreview
 } from '@/utils/exportImport'
 
 const customMonstersStore = useCustomMonstersStore()
@@ -296,7 +269,7 @@ const customMonsterCount = computed(() => customMonstersStore.customMonsterCount
 function exportAllCustomMonsters() {
   const monsters = customMonstersStore.getAllCustomMonsters()
   if (monsters.length === 0) return
-  
+
   const jsonContent = exportAllMonsters(monsters)
   const filename = generateExportFilename('custom-monsters-export')
   downloadFile(jsonContent, filename)
@@ -312,16 +285,16 @@ function createBackup() {
 function handleFileUpload(event: Event) {
   const target = event.target as HTMLInputElement
   const file = target.files?.[0]
-  
+
   if (!file) return
-  
+
   const reader = new FileReader()
   reader.onload = (e) => {
     const content = e.target?.result as string
     if (content) {
       // Clear previous results
       importResult.value = null
-      
+
       // Generate preview
       importPreview.value = previewImport(content)
       pendingImportContent.value = content
@@ -329,7 +302,7 @@ function handleFileUpload(event: Event) {
     }
   }
   reader.readAsText(file)
-  
+
   // Clear the input so the same file can be selected again
   target.value = ''
 }
@@ -352,14 +325,14 @@ function cancelImport() {
 function handleBackupRestore(event: Event) {
   const target = event.target as HTMLInputElement
   const file = target.files?.[0]
-  
+
   if (!file) return
-  
+
   if (!confirm('This will replace all existing custom monsters. Are you sure?')) {
     target.value = ''
     return
   }
-  
+
   const reader = new FileReader()
   reader.onload = (e) => {
     const content = e.target?.result as string
@@ -368,7 +341,7 @@ function handleBackupRestore(event: Event) {
     }
   }
   reader.readAsText(file)
-  
+
   // Clear the input
   target.value = ''
 }
@@ -397,51 +370,62 @@ function clearAllData() {
 <style scoped>
 .export-import-section {
   background: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-8);
+  border: 1px solid var(--color-neutral-200);
 }
 
 .export-import-section h3 {
-  margin: 0 0 1.5rem 0;
-  color: #2c3e50;
-  border-bottom: 2px solid #e9ecef;
-  padding-bottom: 0.5rem;
+  margin: 0 0 var(--space-6) 0;
+  color: var(--color-neutral-900);
+  border-bottom: 2px solid var(--color-neutral-200);
+  padding-bottom: var(--space-2);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
 }
 
 .export-import-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
 }
 
 .export-section,
 .import-section {
-  padding: 1rem;
-  border: 1px solid #e9ecef;
-  border-radius: 6px;
-  background: #f8f9fa;
+  padding: var(--space-4);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-50);
+  transition: var(--transition-colors);
+}
+
+.export-section:hover,
+.import-section:hover {
+  background: var(--color-neutral-100);
+  border-color: var(--color-neutral-300);
 }
 
 .export-section h4,
 .import-section h4 {
-  margin: 0 0 1rem 0;
-  color: #495057;
-  font-size: 1.1rem;
+  margin: 0 0 var(--space-4) 0;
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
 }
 
 .export-buttons {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .import-area {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .file-input {
@@ -460,79 +444,83 @@ function clearAllData() {
 }
 
 .import-info {
-  font-size: 0.9rem;
-  color: #6c757d;
-  line-height: 1.4;
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
 }
 
 .import-info small {
-  color: #868e96;
+  color: var(--color-neutral-500);
 }
 
 /* Import Results */
 .import-results {
-  background: #f1f3f4;
-  border-radius: 6px;
-  padding: 1rem;
-  margin: 1rem 0;
+  background: var(--color-neutral-100);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-4) 0;
+  border: 1px solid var(--color-neutral-200);
 }
 
 .import-summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
 }
 
 .import-summary.success {
-  background: #d4edda;
-  border: 1px solid #c3e6cb;
-  color: #155724;
+  background: var(--color-success-50);
+  border: 1px solid var(--color-success-200);
+  color: var(--color-success-800);
 }
 
 .import-summary.error {
-  background: #f8d7da;
-  border: 1px solid #f5c6cb;
-  color: #721c24;
+  background: var(--color-error-50);
+  border: 1px solid var(--color-error-200);
+  color: var(--color-error-800);
 }
 
 .import-summary h4 {
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
 }
 
 .import-stats {
   display: flex;
-  gap: 1rem;
-  font-size: 0.9rem;
+  gap: var(--space-4);
+  font-size: var(--font-size-sm);
 }
 
 .import-warnings,
 .import-errors {
-  margin: 1rem 0;
+  margin: var(--space-4) 0;
 }
 
 .import-warnings h5,
 .import-errors h5 {
-  margin: 0 0 0.5rem 0;
-  font-size: 0.95rem;
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
 }
 
 .message-list {
   max-height: 200px;
   overflow-y: auto;
-  border: 1px solid #dee2e6;
-  border-radius: 4px;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
   background: white;
+  box-shadow: var(--shadow-sm);
 }
 
 .message-item {
-  padding: 0.5rem;
-  border-bottom: 1px solid #e9ecef;
-  font-size: 0.85rem;
-  line-height: 1.4;
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--color-neutral-200);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-relaxed);
 }
 
 .message-item:last-child {
@@ -540,72 +528,82 @@ function clearAllData() {
 }
 
 .message-item.warning {
-  background: #fff3cd;
-  color: #856404;
+  background: var(--color-warning-50);
+  color: var(--color-warning-800);
+  border-bottom-color: var(--color-warning-200);
 }
 
 .message-item.error {
-  background: #f8d7da;
-  color: #721c24;
+  background: var(--color-error-50);
+  color: var(--color-error-800);
+  border-bottom-color: var(--color-error-200);
 }
 
 .error-details {
-  margin-top: 0.5rem;
-  padding-left: 1rem;
+  margin-top: var(--space-2);
+  padding-left: var(--space-4);
 }
 
 .error-details ul {
-  margin: 0.25rem 0 0 0;
-  padding-left: 1rem;
+  margin: var(--space-1) 0 0 0;
+  padding-left: var(--space-4);
 }
 
 /* Advanced Options */
 .advanced-options {
-  margin-top: 2rem;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  background: #f8f9fa;
+  margin-top: var(--space-8);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-50);
+  box-shadow: var(--shadow-sm);
 }
 
 .advanced-options summary {
-  padding: 1rem;
+  padding: var(--space-4);
   cursor: pointer;
-  font-weight: 500;
-  color: #495057;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-700);
   user-select: none;
+  transition: var(--transition-colors);
+  border-radius: var(--radius-md);
 }
 
 .advanced-options summary:hover {
-  background: #e9ecef;
+  background: var(--color-neutral-100);
 }
 
 .advanced-content {
-  padding: 0 1rem 1rem 1rem;
-  border-top: 1px solid #dee2e6;
+  padding: 0 var(--space-4) var(--space-4) var(--space-4);
+  border-top: 1px solid var(--color-neutral-200);
 }
 
 .advanced-content h4 {
-  margin: 0.5rem 0 1rem 0;
-  color: #495057;
-  font-size: 1.1rem;
+  margin: var(--space-2) 0 var(--space-4) 0;
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.advanced-content p {
+  color: var(--color-neutral-700);
 }
 
 .restore-buttons {
   display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
   flex-wrap: wrap;
 }
 
 .warning-text {
-  background: #fff3cd;
-  border: 1px solid #ffeaa7;
-  border-radius: 4px;
-  padding: 0.75rem;
-  margin: 1rem 0 0 0;
-  font-size: 0.9rem;
-  color: #856404;
-  line-height: 1.4;
+  background: var(--color-warning-50);
+  border: 1px solid var(--color-warning-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin: var(--space-4) 0 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-warning-800);
+  line-height: var(--line-height-relaxed);
 }
 
 /* Modal */
@@ -615,22 +613,24 @@ function clearAllData() {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  backdrop-filter: blur(4px);
 }
 
 .modal {
   background: white;
-  border-radius: 8px;
-  padding: 2rem;
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
   max-width: 500px;
-  margin: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: var(--space-4);
+  box-shadow: var(--shadow-xl);
   max-height: 80vh;
   overflow-y: auto;
+  border: 1px solid var(--color-neutral-200);
 }
 
 .import-preview-modal {
@@ -639,30 +639,33 @@ function clearAllData() {
 }
 
 .modal h3 {
-  margin: 0 0 1rem 0;
-  color: #2c3e50;
+  margin: 0 0 var(--space-4) 0;
+  color: var(--color-neutral-900);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
 }
 
 .modal p {
-  margin: 0.5rem 0;
-  line-height: 1.5;
+  margin: var(--space-2) 0;
+  line-height: var(--line-height-relaxed);
+  color: var(--color-neutral-700);
 }
 
 .modal-actions {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-4);
   justify-content: flex-end;
-  margin-top: 1.5rem;
+  margin-top: var(--space-6);
 }
 
 /* Preview Styles */
 .preview-summary {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .preview-stats {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-4);
   flex-wrap: wrap;
 }
 
@@ -670,65 +673,69 @@ function clearAllData() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.75rem;
-  border-radius: 6px;
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-50);
+  border: 1px solid var(--color-neutral-200);
   min-width: 80px;
+  box-shadow: var(--shadow-sm);
 }
 
 .stat-item.success {
-  background: #d4edda;
-  border-color: #c3e6cb;
-  color: #155724;
+  background: var(--color-success-50);
+  border-color: var(--color-success-200);
+  color: var(--color-success-800);
 }
 
 .stat-item.error {
-  background: #f8d7da;
-  border-color: #f5c6cb;
-  color: #721c24;
+  background: var(--color-error-50);
+  border-color: var(--color-error-200);
+  color: var(--color-error-800);
 }
 
 .stat-item.warning {
-  background: #fff3cd;
-  border-color: #ffeaa7;
-  color: #856404;
+  background: var(--color-warning-50);
+  border-color: var(--color-warning-200);
+  color: var(--color-warning-800);
 }
 
 .stat-number {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
 }
 
 .stat-label {
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   text-transform: uppercase;
-  margin-top: 0.25rem;
+  margin-top: var(--space-1);
+  font-weight: var(--font-weight-medium);
 }
 
 .preview-warnings,
 .preview-errors {
-  margin: 1rem 0;
+  margin: var(--space-4) 0;
 }
 
 .preview-warnings h4,
 .preview-errors h4 {
-  margin: 0 0 0.75rem 0;
-  font-size: 1rem;
+  margin: 0 0 var(--space-3) 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
 }
 
 .preview-message-list {
   max-height: 200px;
   overflow-y: auto;
-  border: 1px solid #dee2e6;
-  border-radius: 4px;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
   background: white;
+  box-shadow: var(--shadow-sm);
 }
 
 .preview-message-item {
-  padding: 0.75rem;
-  border-bottom: 1px solid #e9ecef;
-  font-size: 0.9rem;
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-neutral-200);
+  font-size: var(--font-size-sm);
 }
 
 .preview-message-item:last-child {
@@ -736,66 +743,68 @@ function clearAllData() {
 }
 
 .preview-message-item.warning {
-  background: #fff3cd;
-  border-color: #ffeaa7;
+  background: var(--color-warning-50);
+  border-bottom-color: var(--color-warning-200);
 }
 
 .preview-message-item.error {
-  background: #f8d7da;
-  border-color: #f5c6cb;
+  background: var(--color-error-50);
+  border-bottom-color: var(--color-error-200);
 }
 
 .message-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
 }
 
 .warning-type {
-  background: #ffc107;
-  color: #212529;
-  padding: 0.2rem 0.4rem;
-  border-radius: 3px;
-  font-size: 0.7rem;
-  font-weight: 500;
+  background: var(--color-warning-500);
+  color: var(--color-neutral-900);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
 }
 
 .message-content {
-  margin-bottom: 0.25rem;
-  font-weight: 500;
+  margin-bottom: var(--space-1);
+  font-weight: var(--font-weight-medium);
 }
 
 .message-action {
-  font-size: 0.8rem;
-  color: #6c757d;
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-600);
   font-style: italic;
 }
 
 .preview-monsters {
-  margin: 1rem 0;
+  margin: var(--space-4) 0;
 }
 
 .preview-monsters h4 {
-  margin: 0 0 0.75rem 0;
-  font-size: 1rem;
+  margin: 0 0 var(--space-3) 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
 }
 
 .monster-list {
   max-height: 200px;
   overflow-y: auto;
-  border: 1px solid #dee2e6;
-  border-radius: 4px;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
   background: white;
+  box-shadow: var(--shadow-sm);
 }
 
 .monster-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid #e9ecef;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-neutral-200);
 }
 
 .monster-item:last-child {
@@ -803,80 +812,111 @@ function clearAllData() {
 }
 
 .monster-name {
-  font-weight: 500;
-  color: #2c3e50;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-900);
 }
 
 .monster-details {
-  font-size: 0.8rem;
-  color: #6c757d;
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-600);
 }
 
 .clear-confirm-modal h3 {
-  color: #dc3545;
+  color: var(--color-error-600);
 }
 
 .more-monsters {
-  padding: 0.5rem 0.75rem;
+  padding: var(--space-2) var(--space-3);
   text-align: center;
   font-style: italic;
-  color: #6c757d;
-  background: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+  color: var(--color-neutral-600);
+  background: var(--color-neutral-50);
+  border-top: 1px solid var(--color-neutral-200);
+  font-size: var(--font-size-sm);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .export-import-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: var(--space-4);
   }
-  
+
   .export-buttons,
   .restore-buttons {
-    gap: 0.75rem;
+    gap: var(--space-3);
   }
-  
+
   .import-stats {
     flex-direction: column;
-    gap: 0.25rem;
+    gap: var(--space-1);
   }
-  
+
   .modal {
-    margin: 0.5rem;
-    padding: 1.5rem;
+    margin: var(--space-2);
+    padding: var(--space-6);
   }
-  
+
   .modal-actions {
     flex-direction: column-reverse;
+    gap: var(--space-2);
+  }
+
+  .preview-stats {
+    gap: var(--space-2);
+  }
+
+  .stat-item {
+    min-width: 60px;
+    padding: var(--space-2);
   }
 }
 
 @media (max-width: 480px) {
   .export-import-section {
-    padding: 1rem;
+    padding: var(--space-4);
   }
-  
+
   .restore-buttons {
     flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .modal {
+    margin: var(--space-1);
+    padding: var(--space-4);
+  }
+
+  .preview-stats {
+    justify-content: center;
+  }
+
+  .stat-item {
+    min-width: 50px;
+    padding: var(--space-2);
+  }
+
+  .stat-number {
+    font-size: var(--font-size-xl);
   }
 }
 
 /* Button Styles */
 .btn {
-  padding: 0.75rem 1rem;
+  padding: var(--space-3) var(--space-4);
   border: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: var(--transition-button);
   min-height: 44px;
+  font-family: var(--font-family-sans);
 }
 
 .btn:disabled {
@@ -885,59 +925,95 @@ function clearAllData() {
 }
 
 .btn-primary {
-  background: #007bff;
+  background: var(--color-primary-600);
   color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: #0056b3;
+  background: var(--color-primary-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .btn-secondary {
-  background: #6c757d;
+  background: var(--color-neutral-600);
   color: white;
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background: #545b62;
+  background: var(--color-neutral-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .btn-outline {
   background: transparent;
-  color: #6c757d;
-  border: 1px solid #6c757d;
+  color: var(--color-neutral-600);
+  border: 2px solid var(--color-neutral-300);
 }
 
 .btn-outline:hover {
-  background: #6c757d;
+  background: var(--color-neutral-600);
   color: white;
+  border-color: var(--color-neutral-600);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .btn-warning {
-  background: #ffc107;
-  color: #212529;
+  background: var(--color-warning-500);
+  color: var(--color-neutral-900);
 }
 
 .btn-warning:hover {
-  background: #e0a800;
+  background: var(--color-warning-600);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-warning:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-warning);
 }
 
 .btn-danger {
-  background: #dc3545;
+  background: var(--color-error-600);
   color: white;
 }
 
 .btn-danger:hover {
-  background: #c82333;
+  background: var(--color-error-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-danger:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-error);
 }
 
 .btn-sm {
-  padding: 0.5rem 0.75rem;
-  font-size: 0.8rem;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-xs);
   min-height: 36px;
 }
 
 .btn-icon {
-  font-size: 1rem;
+  font-size: var(--font-size-base);
 }
 </style>

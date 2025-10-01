@@ -85,8 +85,8 @@
           <div class="size-edit">
             <input v-model.number="editableData.size.value" type="number" min="1" class="size-input"
               @blur="updateField('size')" />
-            <select v-model="editableData.size.letter" class="size-select" :disabled="editableData.size.value > 1"
-              @change="updateField('size')">
+            <select v-model="editableData.size.letter" class="form-select size-select"
+              :disabled="editableData.size.value > 1" @change="updateField('size')">
               <option value="">—</option>
               <option value="T">T</option>
               <option value="S">S</option>
@@ -157,7 +157,7 @@
         <h4>Immunities</h4>
         <div class="defense-entries">
           <div v-for="(immunity, index) in immunityEntries" :key="`immunity-${index}`" class="defense-entry">
-            <select v-model="immunity.type" @change="debouncedUpdateDefenses" class="defense-type-select">
+            <select v-model="immunity.type" @change="debouncedUpdateDefenses" class="form-select defense-type-select">
               <option value="">Select type...</option>
               <option v-for="type in DAMAGE_TYPES" :key="type" :value="type">
                 {{ capitalize(type) }}
@@ -178,7 +178,7 @@
         <h4>Weaknesses</h4>
         <div class="defense-entries">
           <div v-for="(weakness, index) in weaknessEntries" :key="`weakness-${index}`" class="defense-entry">
-            <select v-model="weakness.type" @change="debouncedUpdateDefenses" class="defense-type-select">
+            <select v-model="weakness.type" @change="debouncedUpdateDefenses" class="form-select defense-type-select">
               <option value="">Select type...</option>
               <option v-for="type in DAMAGE_TYPES" :key="type" :value="type">
                 {{ capitalize(type) }}
@@ -965,18 +965,18 @@ onUnmounted(() => {
 <style scoped>
 /* Base stat block styles */
 .stat-block {
-  background: #fdf6e3;
-  border: 1px solid #8b4513;
-  border-radius: 4px;
-  padding: 1.5rem;
-  font-family: 'Libre Baskerville', 'Book Antiqua', serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--color-primary-50);
+  border: 1px solid var(--color-primary-700);
+  border-radius: var(--radius-base);
+  padding: var(--space-6);
+  font-family: var(--font-family-serif);
+  box-shadow: var(--shadow-base);
   max-width: 100%;
-  transition: all 0.3s ease;
+  transition: var(--transition-all);
 }
 
 .stat-block.edit-mode {
-  background: #f8f9fa;
+  background: var(--color-neutral-50);
   border-color: #007bff;
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
 }
@@ -984,74 +984,74 @@ onUnmounted(() => {
 /* Header styles */
 .header {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .monster-name {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #8b4513;
-  margin: 0 0 0.5rem 0;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-700);
+  margin: 0 0 var(--space-2) 0;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .monster-name-edit {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #8b4513;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-700);
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
   border: 2px solid #007bff;
-  border-radius: 4px;
-  padding: 0.5rem;
+  border-radius: var(--radius-base);
+  padding: var(--space-2);
   background: white;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .monster-meta-edit {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
 }
 
 .meta-edit-group {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: var(--space-1);
 }
 
 .meta-edit-group label {
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #495057;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-700);
 }
 
 .meta-edit-group input,
 .meta-edit-group select {
-  padding: 0.25rem;
-  border: 1px solid #ced4da;
-  border-radius: 3px;
-  font-size: 0.9rem;
+  padding: var(--space-1);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
 }
 
 /* Core stats */
 .core-stats-grid {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .stat-labels {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
 }
 
 .stat-label {
-  font-weight: bold;
-  color: #8b4513;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-700);
   flex: 1;
   text-align: center;
 }
@@ -1081,7 +1081,7 @@ onUnmounted(() => {
 
 .size-edit {
   display: flex;
-  gap: 0.25rem;
+  gap: var(--space-1);
   justify-content: center;
   align-items: center;
 }
@@ -1093,39 +1093,39 @@ onUnmounted(() => {
   /* Prevents flex items from overflowing */
   max-width: 80px;
   /* Constrains input width */
-  padding: 0.25rem;
+  padding: var(--space-1);
   border: 1px solid #007bff;
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
   text-align: center;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   background: white;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   margin: 0 auto;
   /* Center the input */
 }
 
 .size-select {
-  padding: 0.25rem;
-  border: 1px solid #007bff;
-  border-radius: 3px;
-  background: white;
+  /* Extend form-select with specific sizing for stat block */
+  padding: var(--space-1);
+  font-size: var(--font-size-sm);
   min-width: 40px;
   max-width: 50px;
+  border: 1px solid var(--color-primary-500);
 }
 
 /* Characteristics */
 .characteristic-scores {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 0.75rem;
-  margin: 1rem 0;
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
 }
 
 .characteristic-score {
   text-align: center;
-  border: 1px solid #8b4513;
-  border-radius: 4px;
-  padding: 0.75rem 0.5rem;
+  border: 1px solid var(--color-primary-700);
+  border-radius: var(--radius-base);
+  padding: var(--space-3) 0.5rem;
   background: #f9f5f0;
   min-width: 0;
   transition: all 0.2s ease;
@@ -1137,28 +1137,28 @@ onUnmounted(() => {
 }
 
 .characteristic-name {
-  font-weight: bold;
-  font-size: 0.8rem;
-  color: #8b4513;
-  margin-bottom: 0.25rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xs);
+  color: var(--color-primary-700);
+  margin-bottom: var(--space-1);
   letter-spacing: 0.5px;
 }
 
 .characteristic-value {
-  font-size: 1rem;
+  font-size: var(--space-4);
   color: #333;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   line-height: 1.2;
 }
 
 .characteristic-input {
   width: 100%;
   max-width: 60px;
-  padding: 0.25rem;
+  padding: var(--space-1);
   border: 1px solid #007bff;
-  border-radius: 3px;
-  font-size: 0.9rem;
-  font-weight: bold;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   text-align: center;
   background: white;
   color: #333;
@@ -1166,14 +1166,14 @@ onUnmounted(() => {
 
 /* Secondary stats and other elements */
 .secondary-stats {
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   color: #666;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--space-2);
   line-height: 1.4;
 }
 
@@ -1182,13 +1182,13 @@ onUnmounted(() => {
 }
 
 .stat-item strong {
-  color: #8b4513;
-  font-weight: bold;
+  color: var(--color-primary-700);
+  font-weight: var(--font-weight-bold);
 }
 
 .stat-separator {
-  color: #8b4513;
-  font-weight: bold;
+  color: var(--color-primary-700);
+  font-weight: var(--font-weight-bold);
   margin: 0 0.25rem;
 }
 
@@ -1196,13 +1196,13 @@ onUnmounted(() => {
 .defenses-edit {
   background: white;
   border: 1px solid #007bff;
-  border-radius: 4px;
-  padding: 1rem;
-  margin: 0.5rem 0;
+  border-radius: var(--radius-base);
+  padding: var(--space-4);
+  margin: var(--space-2) 0;
 }
 
 .defense-edit-section {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .defense-edit-section:last-child {
@@ -1210,50 +1210,49 @@ onUnmounted(() => {
 }
 
 .defense-edit-section h4 {
-  color: #8b4513;
-  font-size: 0.9rem;
-  font-weight: bold;
+  color: var(--color-primary-700);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   margin: 0 0 0.5rem 0;
 }
 
 .defense-entries {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .defense-entry {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .defense-type-select {
+  /* Extend form-select with specific sizing for defenses */
   flex: 2;
-  padding: 0.25rem;
-  border: 1px solid #007bff;
-  border-radius: 3px;
-  font-size: 0.8rem;
-  background: white;
+  padding: var(--space-1);
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--color-primary-500);
 }
 
 .defense-value-input {
   flex: 1;
   max-width: 60px;
-  padding: 0.25rem;
+  padding: var(--space-1);
   border: 1px solid #007bff;
-  border-radius: 3px;
-  font-size: 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
   text-align: center;
   background: white;
 }
 
 .btn-remove-small,
 .btn-add-small {
-  padding: 0.25rem 0.5rem;
+  padding: var(--space-1) 0.5rem;
   border: none;
-  border-radius: 3px;
-  font-size: 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--space-3);
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -1278,7 +1277,7 @@ onUnmounted(() => {
   background: #28a745;
   color: white;
   align-self: flex-start;
-  margin-top: 0.25rem;
+  margin-top: var(--space-1);
 }
 
 .btn-add-small:hover {
@@ -1288,24 +1287,24 @@ onUnmounted(() => {
 .movement-types-edit {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .movement-checkbox {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  font-size: 0.85rem;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid #dee2e6;
-  border-radius: 3px;
+  padding: var(--space-1) 0.5rem;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-sm);
   background: white;
   transition: all 0.2s ease;
 }
 
 .movement-checkbox:hover {
-  background: #f8f9fa;
+  background: var(--color-neutral-50);
   border-color: #007bff;
 }
 
@@ -1315,16 +1314,16 @@ onUnmounted(() => {
 
 .divider {
   height: 2px;
-  background: linear-gradient(to right, transparent, #8b4513, transparent);
-  margin: 1rem 0;
+  background: linear-gradient(to right, transparent, var(--color-primary-700), transparent);
+  margin: var(--space-4) 0;
 }
 
 .source-info {
-  margin-top: 1rem;
+  margin-top: var(--space-4);
 }
 
 .source-text {
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   color: #777;
   text-align: center;
   font-style: italic;
@@ -1332,21 +1331,21 @@ onUnmounted(() => {
 
 /* Edit controls */
 .edit-controls {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e9ecef;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-neutral-200);
   display: flex;
-  gap: 0.5rem;
+  gap: var(--space-2);
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .btn {
-  padding: 0.5rem 1rem;
+  padding: var(--space-2) 1rem;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-base);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   font-weight: 500;
   transition: all 0.2s ease;
 }
@@ -1361,7 +1360,7 @@ onUnmounted(() => {
 }
 
 .btn-secondary {
-  background: #6c757d;
+  background: var(--color-neutral-600);
   color: white;
 }
 
@@ -1371,12 +1370,12 @@ onUnmounted(() => {
 
 .btn-outline {
   background: transparent;
-  color: #6c757d;
-  border: 1px solid #6c757d;
+  color: var(--color-neutral-600);
+  border: 1px solid var(--color-neutral-600);
 }
 
 .btn-outline:hover {
-  background: #6c757d;
+  background: var(--color-neutral-600);
   color: white;
 }
 
@@ -1398,26 +1397,26 @@ onUnmounted(() => {
 
   .characteristic-scores {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    gap: var(--space-2);
   }
 
   .stat-edit-values {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-2);
   }
 
   /* Make stats section stack vertically on mobile */
   .core-stats-grid {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-6);
   }
 
   .stat-labels {
-    font-size: 0.8rem;
-    margin-bottom: 0.75rem;
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--space-3);
   }
 
   .stat-label {
-    font-size: 0.8rem;
+    font-size: var(--font-size-xs);
     padding: 0 0.25rem;
   }
 
@@ -1425,7 +1424,7 @@ onUnmounted(() => {
   .stat-edit-values {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: var(--space-3);
   }
 
   .stat-edit-item {
@@ -1462,53 +1461,53 @@ onUnmounted(() => {
 
   .stat-labels {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-2);
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
   }
 
   .stat-values {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-2);
     text-align: center;
   }
 }
 
 /* Abilities editing styles */
 .abilities-edit {
-  margin: 1rem 0;
+  margin: var(--space-4) 0;
 }
 
 .abilities-edit-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .abilities-edit-header h4 {
   margin: 0;
-  color: #8b4513;
+  color: var(--color-primary-700);
 }
 
 .abilities-list-edit {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .ability-edit-item {
-  border: 1px solid #e9ecef;
-  border-radius: 4px;
-  padding: 1rem;
-  background: #f8f9fa;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-base);
+  padding: var(--space-4);
+  background: var(--color-neutral-50);
 }
 
 .ability-edit-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
 }
 
 .ability-edit-name {
@@ -1517,38 +1516,38 @@ onUnmounted(() => {
 
 .ability-name-input {
   width: 100%;
-  padding: 0.5rem;
+  padding: var(--space-2);
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 1.1rem;
+  border-radius: var(--radius-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
 }
 
 .ability-edit-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .ability-edit-preview {
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid #e9ecef;
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-neutral-200);
 }
 
 .ability-description {
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
 }
 
 .ability-power {
   font-style: italic;
   color: #666;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
 }
 
 .ability-keywords {
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   color: #999;
   font-style: italic;
 }
@@ -1557,20 +1556,20 @@ onUnmounted(() => {
   text-align: center;
   color: #666;
   font-style: italic;
-  padding: 2rem;
+  padding: var(--space-8);
   border: 2px dashed #ccc;
-  border-radius: 4px;
-  background: #f8f9fa;
+  border-radius: var(--radius-base);
+  background: var(--color-neutral-50);
 }
 
 .btn-edit-small {
-  padding: 0.25rem 0.5rem;
+  padding: var(--space-1) 0.5rem;
   border: none;
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
   background: #17a2b8;
   color: white;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   transition: background-color 0.2s;
 }
 
@@ -1582,8 +1581,8 @@ onUnmounted(() => {
 .ability-info-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.25rem;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
   flex-wrap: wrap;
 }
 
@@ -1591,13 +1590,13 @@ onUnmounted(() => {
   padding: 0.125rem 0.375rem;
   border-radius: 12px;
   font-size: 0.7rem;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .ability-type-badge.signature {
-  background: #8b4513;
+  background: var(--color-primary-700);
   color: white;
 }
 
@@ -1609,94 +1608,94 @@ onUnmounted(() => {
 .ability-type-badge.feature {
   background: #28a745;
   color: white;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
 }
 
 .ability-action-type {
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   color: #666;
   font-style: italic;
 }
 
 .ability-resource {
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
   color: #dc3545;
   font-weight: 500;
 }
 
 .ability-targeting {
   display: flex;
-  gap: 0.75rem;
-  margin-bottom: 0.25rem;
-  font-size: 0.85rem;
+  gap: var(--space-3);
+  margin-bottom: var(--space-1);
+  font-size: var(--font-size-sm);
   color: #666;
   flex-wrap: wrap;
 }
 
 .ability-range,
 .ability-target {
-  background: #f8f9fa;
+  background: var(--color-neutral-50);
   padding: 0.125rem 0.375rem;
-  border-radius: 4px;
-  border: 1px solid #e9ecef;
-  font-size: 0.75rem;
+  border-radius: var(--radius-base);
+  border: 1px solid var(--color-neutral-200);
+  font-size: var(--space-3);
 }
 
 .ability-power {
-  margin-bottom: 0.25rem;
-  font-size: 0.9rem;
+  margin-bottom: var(--space-1);
+  font-size: var(--font-size-sm);
   color: #333;
 }
 
 .ability-power strong {
-  color: #8b4513;
+  color: var(--color-primary-700);
   font-family: 'Courier New', monospace;
 }
 
 .tier-count {
   color: #666;
-  font-size: 0.8rem;
-  margin-left: 0.5rem;
+  font-size: var(--font-size-xs);
+  margin-left: var(--space-2);
 }
 
 .ability-effects {
-  margin-bottom: 0.25rem;
-  font-size: 0.85rem;
+  margin-bottom: var(--space-1);
+  font-size: var(--font-size-sm);
   color: #555;
 }
 
 .effect-text {
   margin-bottom: 0.125rem;
-  padding: 0.25rem;
-  background: #f8f9fa;
-  border-radius: 4px;
-  border-left: 3px solid #8b4513;
+  padding: var(--space-1);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-base);
+  border-left: 3px solid var(--color-primary-700);
 }
 
 .ability-trigger {
-  margin-bottom: 0.25rem;
-  font-size: 0.85rem;
+  margin-bottom: var(--space-1);
+  font-size: var(--font-size-sm);
   color: #666;
-  padding: 0.25rem;
+  padding: var(--space-1);
   background: #fff3cd;
-  border-radius: 4px;
+  border-radius: var(--radius-base);
   border-left: 3px solid #ffc107;
 }
 
 .ability-description {
-  margin-bottom: 0.25rem;
-  font-size: 0.85rem;
+  margin-bottom: var(--space-1);
+  font-size: var(--font-size-sm);
   color: #555;
   line-height: 1.4;
 }
 
 .ability-keywords {
-  font-size: 0.75rem;
+  font-size: var(--space-3);
   color: #999;
   font-style: italic;
-  margin-top: 0.25rem;
-  padding-top: 0.25rem;
-  border-top: 1px solid #e9ecef;
+  margin-top: var(--space-1);
+  padding-top: var(--space-1);
+  border-top: 1px solid var(--color-neutral-200);
 }
 
 /* Modal styles for AbilityEditor */
@@ -1712,12 +1711,12 @@ onUnmounted(() => {
   justify-content: center;
   z-index: 1000;
   overflow-y: auto;
-  padding: 1rem;
+  padding: var(--space-4);
 }
 
 .editor-modal-container {
   background: white;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   width: min(1200px, 95vw);
   max-height: 90vh;
@@ -1734,11 +1733,11 @@ onUnmounted(() => {
   .editor-modal-container {
     width: min(100vw - 2rem, 95vw);
     max-height: 95vh;
-    margin: 0.5rem;
+    margin: var(--space-2);
   }
 
   .editor-modal-overlay {
-    padding: 0.5rem;
+    padding: var(--space-2);
   }
 }
 

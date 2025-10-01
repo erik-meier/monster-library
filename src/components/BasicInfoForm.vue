@@ -1,33 +1,21 @@
 <template>
   <div class="basic-info-form">
     <h2 class="form-section-title">Basic Information</h2>
-    
+
     <div class="form-grid">
       <!-- Name and ID -->
       <div class="form-row">
         <div class="form-group">
           <label for="monster-name" class="form-label required">Monster Name</label>
-          <input 
-            id="monster-name"
-            v-model="formData.name"
-            type="text" 
-            class="form-input"
-            :class="{ invalid: errors.name }"
-            placeholder="Enter monster name"
-          />
+          <input id="monster-name" v-model="formData.name" type="text" class="form-input"
+            :class="{ invalid: errors.name }" placeholder="Enter monster name" />
           <div v-if="errors.name" class="error-message">{{ errors.name }}</div>
         </div>
-        
+
         <div class="form-group">
           <label for="monster-id" class="form-label required">Monster ID</label>
-          <input 
-            id="monster-id"
-            v-model="formData.id"
-            type="text" 
-            class="form-input"
-            :class="{ invalid: errors.id }"
-            placeholder="monster-name-format"
-          />
+          <input id="monster-id" v-model="formData.id" type="text" class="form-input" :class="{ invalid: errors.id }"
+            placeholder="monster-name-format" />
           <div v-if="errors.id" class="error-message">{{ errors.id }}</div>
           <div class="help-text">Auto-generated from name, or enter custom ID</div>
         </div>
@@ -37,30 +25,15 @@
       <div class="form-row">
         <div class="form-group">
           <label for="monster-level" class="form-label required">Level</label>
-          <input 
-            id="monster-level"
-            v-model.number="formData.level"
-            type="number" 
-            class="form-input"
-            :class="{ invalid: errors.level }"
-            min="1" 
-            max="20"
-            placeholder="1"
-          />
+          <input id="monster-level" v-model.number="formData.level" type="number" class="form-input"
+            :class="{ invalid: errors.level }" min="1" max="20" placeholder="1" />
           <div v-if="errors.level" class="error-message">{{ errors.level }}</div>
         </div>
-        
+
         <div class="form-group">
           <label for="monster-ev" class="form-label required">Encounter Value (EV)</label>
-          <input 
-            id="monster-ev"
-            v-model.number="formData.ev"
-            type="number" 
-            class="form-input"
-            :class="{ invalid: errors.ev }"
-            min="1"
-            placeholder="1"
-          />
+          <input id="monster-ev" v-model.number="formData.ev" type="number" class="form-input"
+            :class="{ invalid: errors.ev }" min="1" placeholder="1" />
           <div v-if="errors.ev" class="error-message">{{ errors.ev }}</div>
         </div>
       </div>
@@ -69,12 +42,7 @@
       <div class="form-row">
         <div class="form-group">
           <label for="monster-role" class="form-label">Role</label>
-          <select 
-            id="monster-role"
-            v-model="formData.role"
-            class="form-select"
-            :class="{ invalid: errors.role }"
-          >
+          <select id="monster-role" v-model="formData.role" class="form-select" :class="{ invalid: errors.role }">
             <option value="">Select a role</option>
             <option v-for="role in MONSTER_ROLES" :key="role" :value="role">
               {{ role }}
@@ -82,15 +50,11 @@
           </select>
           <div v-if="errors.role" class="error-message">{{ errors.role }}</div>
         </div>
-        
+
         <div class="form-group">
           <label for="monster-organization" class="form-label required">Organization</label>
-          <select 
-            id="monster-organization"
-            v-model="formData.organization"
-            class="form-select"
-            :class="{ invalid: errors.organization }"
-          >
+          <select id="monster-organization" v-model="formData.organization" class="form-select"
+            :class="{ invalid: errors.organization }">
             <option value="">Select organization</option>
             <option v-for="org in MONSTER_ORGANIZATIONS" :key="org" :value="org">
               {{ capitalize(org) }}
@@ -149,7 +113,7 @@ const validateField = (field: string, value: unknown) => {
         errors.name = ''
       }
       break
-      
+
     case 'id':
       if (!value || typeof value !== 'string' || value.trim() === '') {
         errors.id = 'Monster ID is required'
@@ -161,7 +125,7 @@ const validateField = (field: string, value: unknown) => {
         errors.id = ''
       }
       break
-      
+
     case 'level':
       if (!value || typeof value !== 'number' || value < 1 || value > 20) {
         errors.level = 'Level must be between 1 and 20'
@@ -169,7 +133,7 @@ const validateField = (field: string, value: unknown) => {
         errors.level = ''
       }
       break
-      
+
     case 'ev':
       if (!value || typeof value !== 'number' || value < 1) {
         errors.ev = 'EV must be at least 1'
@@ -177,7 +141,7 @@ const validateField = (field: string, value: unknown) => {
         errors.ev = ''
       }
       break
-      
+
     case 'role':
       if (value && (typeof value !== 'string' || !MONSTER_ROLES.includes(value as MonsterRole))) {
         errors.role = 'Please select a valid role'
@@ -185,7 +149,7 @@ const validateField = (field: string, value: unknown) => {
         errors.role = ''
       }
       break
-      
+
     case 'organization':
       if (!value || typeof value !== 'string' || !MONSTER_ORGANIZATIONS.includes(value as MonsterOrganization)) {
         errors.organization = 'Please select a valid organization'
@@ -229,19 +193,19 @@ const updateModelValue = () => {
 // Watch for changes and validate
 watch(() => formData.name, (newName, oldName) => {
   validateField('name', newName)
-  
+
   // Auto-generate ID if it's empty or matches the previous auto-generated format
   if (!formData.id || formData.id === generateIdFromName(oldName || '')) {
     formData.id = generateIdFromName(newName)
     validateField('id', formData.id)
   }
-  
+
   updateModelValue()
 })
 
 watch([() => formData.level, () => formData.ev, () => formData.role, () => formData.organization], () => {
   validateField('level', formData.level)
-  validateField('ev', formData.ev) 
+  validateField('ev', formData.ev)
   validateField('role', formData.role)
   validateField('organization', formData.organization)
   updateModelValue()
@@ -279,86 +243,82 @@ Object.keys(formData).forEach(key => {
 }
 
 .form-section-title {
-  color: #8b4513;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin: 0 0 1.5rem 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #8b4513;
+  color: var(--color-primary-600);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--space-6) 0;
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-primary-600);
 }
 
 .form-grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-6);
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .form-label {
-  font-weight: 600;
-  color: #333;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-800);
+  font-size: var(--font-size-sm);
+  display: block;
+  margin-bottom: var(--space-1);
 }
 
 .form-label.required::after {
   content: ' *';
-  color: #dc3545;
+  color: var(--color-error-600);
 }
 
-.form-input,
-.form-select {
-  padding: 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.form-input:focus,
-.form-select:focus {
-  outline: none;
-  border-color: #8b4513;
-  box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.25);
-}
-
-.form-input.invalid,
-.form-select.invalid {
-  border-color: #dc3545;
-}
-
-.form-input.invalid:focus,
-.form-select.invalid:focus {
-  border-color: #dc3545;
-  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
-}
+/* Use design system form styles - remove local overrides */
 
 .error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+  color: var(--color-error-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: var(--font-weight-medium);
+}
+
+.error-message::before {
+  content: '⚠';
+  font-size: var(--font-size-base);
 }
 
 .help-text {
-  color: #6c757d;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+  line-height: var(--line-height-relaxed);
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  .form-section-title {
+    font-size: var(--font-size-lg);
+  }
+
   .form-row {
     grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .form-grid {
+    gap: var(--space-4);
   }
 }
 </style>
