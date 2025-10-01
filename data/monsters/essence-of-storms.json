@@ -74,7 +74,7 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; 0 lightning damage"
+              "display": "5 damage"
             },
             {
               "tier": 2,

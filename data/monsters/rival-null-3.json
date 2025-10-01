@@ -1,9 +1,9 @@
 {
-  "id": "rival-elementalist",
-  "name": "Rival Elementalist",
-  "level": 2,
-  "ev": 16,
-  "role": "Controller",
+  "id": "rival-null-3",
+  "name": "Rival Null",
+  "level": 8,
+  "ev": 40,
+  "role": "Harrier",
   "organization": "Elite",
   "keywords": [
     "humanoid"
@@ -12,15 +12,15 @@
     "value": 1,
     "letter": "M"
   },
-  "speed": 5,
-  "stamina": 60,
-  "stability": 1,
-  "freeStrike": 5,
+  "speed": 7,
+  "stamina": 200,
+  "stability": 3,
+  "freeStrike": 8,
   "characteristics": {
-    "might": 0,
-    "agility": 0,
-    "reason": 2,
-    "intuition": 1,
+    "might": 2,
+    "agility": 4,
+    "reason": 3,
+    "intuition": 4,
     "presence": 0
   },
   "immunities": {},
@@ -30,54 +30,14 @@
   ],
   "items": [
     {
-      "name": "The Writhing Green",
-      "type": "ability",
+      "name": "Force Dampener",
+      "type": "feature",
       "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike",
-          "green"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10,
-          "secondary": 10
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage; slide 1"
-            },
-            {
-              "tier": 2,
-              "display": "10 damage; slide 2"
-            },
-            {
-              "tier": 3,
-              "display": "13 damage; slide 3"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The first time each round that the null is targeted by a strike, it takes a bane and the null halves any damage from it.</p>",
+          "director": ""
         }
       }
     },
@@ -88,93 +48,56 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the start of an encounter, the elementalist chooses one creature within their line of effect. Both the elementalist and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
+          "value": "<p>At the start of an encounter, the null chooses one creature within their line of effect. Both the null and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
           "director": ""
         }
       }
     },
     {
-      "name": "The Earth Devours",
+      "name": "Stun",
       "type": "ability",
       "system": {
         "category": "heroic",
-        "type": "main",
+        "type": "maneuver",
         "resource": 3,
         "keywords": [
-          "area",
-          "magic",
-          "ranged",
-          "green"
+          "melee",
+          "psionic",
+          "strike",
+          "weapon"
         ],
         "distance": {
-          "type": "cube",
-          "primary": 3,
-          "secondary": 10
+          "type": "melee",
+          "primary": 1
         },
         "target": {
-          "type": "enemy",
-          "value": null
+          "type": "creatureObject",
+          "value": 1
         },
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 4",
             "characteristics": [
-              "reason"
+              "agility"
             ]
           },
           "tiers": [
             {
               "tier": 1,
-              "display": "3 damage"
+              "display": "12 damage; <strong class=\"potency-value\">R&lt;2</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "5 damage; restrained (EoT)"
+              "display": "17 damage; <strong class=\"potency-value\">R&lt;3</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "8 damage; restrained (save ends)"
+              "display": "21 damage; <strong class=\"potency-value\">R&lt;4</strong> dazed and restrained (save ends)"
             }
           ]
         },
-        "effect": {
-          "text": "<p>The area is difficult terrain for enemies until the end of the encounter. Any enemy in the area has acid weakness 2.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Jaws of the Void",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "void"
-        ],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "The elementalist takes damage.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The elementalist can teleport up to 2 squares. Each creature adjacent to the space they leave takes 2 corruption damage.</p>"
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -198,13 +121,44 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 4",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
           "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Check Out Our Loot",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "A rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -229,7 +183,7 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 4",
             "characteristics": []
           },
           "effects": {}
@@ -260,7 +214,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 4",
             "characteristics": []
           },
           "effects": {}
@@ -291,7 +245,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 4",
             "characteristics": []
           },
           "effects": {}
@@ -306,30 +260,49 @@
       }
     },
     {
-      "name": "Check Out Our Loot",
+      "name": "Inertial Flow",
       "type": "ability",
       "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
+        "category": "",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
         "distance": {
-          "type": "self"
+          "type": "melee",
+          "primary": 1
         },
         "target": {
-          "type": "self"
+          "type": "creatureObject",
+          "value": 2
         },
-        "trigger": "A rival's turn starts",
+        "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "agility"
+            ]
           },
-          "effects": {}
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "12 damage; the null shifts up to 3 squares; <strong class=\"potency-value\">A&lt;2</strong> 8 damage"
+            },
+            {
+              "tier": 2,
+              "display": "17 damage; the null shifts up to 4 squares; <strong class=\"potency-value\">A&lt;3</strong> 13 damage"
+            },
+            {
+              "tier": 3,
+              "display": "21 damage; the null shifts up to 5 squares; <strong class=\"potency-value\">A&lt;4</strong> 17 damage"
+            }
+          ]
         },
-        "effect": {
-          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -339,7 +312,7 @@
   ],
   "source": {
     "book": "Monsters",
-    "page": "233",
+    "page": "241",
     "license": "Draw Steel Creator License"
   }
 }

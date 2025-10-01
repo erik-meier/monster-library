@@ -1,9 +1,9 @@
 {
-  "id": "rival-shadow",
-  "name": "Rival Shadow",
-  "level": 2,
-  "ev": 16,
-  "role": "Ambusher",
+  "id": "rival-conduit-4",
+  "name": "Rival Conduit",
+  "level": 10,
+  "ev": 48,
+  "role": "Support",
   "organization": "Elite",
   "keywords": [
     "humanoid"
@@ -12,16 +12,16 @@
     "value": 1,
     "letter": "M"
   },
-  "speed": 7,
-  "stamina": 80,
+  "speed": 5,
+  "stamina": 240,
   "stability": 1,
-  "freeStrike": 5,
+  "freeStrike": 10,
   "characteristics": {
-    "might": 0,
-    "agility": 2,
-    "reason": 0,
-    "intuition": 0,
-    "presence": 1
+    "might": 4,
+    "agility": 1,
+    "reason": 1,
+    "intuition": 5,
+    "presence": 3
   },
   "immunities": {},
   "weaknesses": {},
@@ -30,13 +30,13 @@
   ],
   "items": [
     {
-      "name": "Exploit Opening",
+      "name": "Unwavering Defender",
       "type": "feature",
       "system": {
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The shadow deals an extra <span class=\"damage-value damage-generic\">5</span> damage to any bleeding target.</p>",
+          "value": "<p>Damage dealt to any ally adjacent to the conduit is halved.</p>",
           "director": ""
         }
       }
@@ -48,26 +48,28 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the start of an encounter, the shadow chooses one creature within their line of effect. Both the shadow and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
+          "value": "<p>At the start of an encounter, the conduit chooses one creature within their line of effect. Both the conduit and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
           "director": ""
         }
       }
     },
     {
-      "name": "Swift Serration",
+      "name": "Sunder the Very Skies",
       "type": "ability",
       "system": {
         "category": "signature",
         "type": "main",
         "resource": null,
         "keywords": [
+          "magic",
           "melee",
-          "strike",
-          "weapon"
+          "ranged",
+          "strike"
         ],
         "distance": {
-          "type": "melee",
-          "primary": 1
+          "type": "meleeRanged",
+          "primary": 1,
+          "secondary": 10
         },
         "target": {
           "type": "creatureObject",
@@ -76,65 +78,67 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
-              "agility"
+              "intuition"
             ]
           },
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage"
+              "display": "15 damage; vertical slide 3; 5 lightning damage"
             },
             {
               "tier": 2,
-              "display": "11 damage"
+              "display": "20 damage; vertical slide 4; 7 lightning damage"
             },
             {
               "tier": 3,
-              "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+              "display": "24 damage; vertical slide 5; 9 lightning damage"
             }
           ]
         },
         "effect": {
-          "text": "<p>The shadow can teleport up to 5 squares, then can attempt to hide.</p>"
+          "text": "<p>The conduit or one ally within distance regains Stamina equal to half the damage dealt.</p><p><span class=\"heal-value\">7</span>  stamina{Heal 7 Stamina}</p><p><span class=\"heal-value\">10</span>  stamina{Heal 10 Stamina}</p><p><span class=\"heal-value\">12</span>  stamina{Heal 12 Stamina}</p>"
         },
         "spend": {
-          "text": "The shadow can teleport up to 5 squares, then can attempt to hide.",
-          "value": 1,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The shadow can teleport up to 5 squares, then can attempt to hide."
+          "text": "Two additional allies within distance regain the same  amount of Stamina.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Two additional allies within distance regain the same  amount of Stamina."
         }
       }
     },
     {
-      "name": "Poison the Blade",
+      "name": "Empyrean Boon",
       "type": "ability",
       "system": {
-        "category": "",
+        "category": "heroic",
         "type": "maneuver",
-        "resource": null,
+        "resource": 5,
         "keywords": [
-          "-"
+          "magic",
+          "ranged"
         ],
         "distance": {
-          "type": "self"
+          "type": "ranged",
+          "primary": 10
         },
         "target": {
-          "type": "self",
-          "value": null
+          "type": "selfAlly",
+          "value": 5
         },
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
-              "agility"
+              "intuition"
             ]
           },
           "effects": {}
         },
         "effect": {
-          "text": "<p>The shadow coats their weapon with poison. They gain an edge on their next strike, and any potency for that strike increases by 1.</p>"
+          "text": "<p>Each target has a double edge on their next strike, and that strike deals an extra <span class=\"damage-value damage-generic\">10</span> holy damage. Additionally, they can vertical slide each creature targeted by the strike up to 2 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -159,7 +163,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -190,7 +194,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -221,7 +225,7 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -252,7 +256,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -283,7 +287,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -300,7 +304,7 @@
   ],
   "source": {
     "book": "Monsters",
-    "page": "234",
+    "page": "243",
     "license": "Draw Steel Creator License"
   }
 }

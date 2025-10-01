@@ -1,9 +1,9 @@
 {
-  "id": "rival-elementalist",
-  "name": "Rival Elementalist",
-  "level": 2,
-  "ev": 16,
-  "role": "Controller",
+  "id": "rival-tactician-4",
+  "name": "Rival Tactician",
+  "level": 10,
+  "ev": 48,
+  "role": "Artillery",
   "organization": "Elite",
   "keywords": [
     "humanoid"
@@ -13,15 +13,15 @@
     "letter": "M"
   },
   "speed": 5,
-  "stamina": 60,
-  "stability": 1,
-  "freeStrike": 5,
+  "stamina": 220,
+  "stability": 2,
+  "freeStrike": 10,
   "characteristics": {
-    "might": 0,
-    "agility": 0,
-    "reason": 2,
-    "intuition": 1,
-    "presence": 0
+    "might": 5,
+    "agility": 2,
+    "reason": 4,
+    "intuition": 0,
+    "presence": 3
   },
   "immunities": {},
   "weaknesses": {},
@@ -30,22 +30,32 @@
   ],
   "items": [
     {
-      "name": "The Writhing Green",
+      "name": "Rivalry",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the start of an encounter, the tactician chooses one creature within their line of effect. Both the tactician and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Forward Assault",
       "type": "ability",
       "system": {
         "category": "signature",
         "type": "main",
         "resource": null,
         "keywords": [
-          "magic",
           "ranged",
           "strike",
-          "green"
+          "weapon"
         ],
         "distance": {
           "type": "ranged",
-          "primary": 10,
-          "secondary": 10
+          "primary": 10
         },
         "target": {
           "type": "creatureObject",
@@ -54,47 +64,36 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
-              "reason"
+              "might"
             ]
           },
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; slide 1"
+              "display": "15 damage"
             },
             {
               "tier": 2,
-              "display": "10 damage; slide 2"
+              "display": "21 damage; <strong class=\"potency-value\">A&lt;4</strong> prone and can't stand (EoT)"
             },
             {
               "tier": 3,
-              "display": "13 damage; slide 3"
+              "display": "25 damage; prone; <strong class=\"potency-value\">M&lt;5</strong> and can't stand (EoT)"
             }
           ]
         },
         "effect": {},
         "spend": {
-          "text": "",
-          "value": null
+          "text": "Two allies within distance move up to their speed and can use a signature ability that has a double edge.",
+          "value": 5,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> Two allies within distance move up to their speed and can use a signature ability that has a double edge."
         }
       }
     },
     {
-      "name": "Rivalry",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the start of an encounter, the elementalist chooses one creature within their line of effect. Both the elementalist and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "The Earth Devours",
+      "name": "Guardian From Afar",
       "type": "ability",
       "system": {
         "category": "heroic",
@@ -102,9 +101,8 @@
         "resource": 3,
         "keywords": [
           "area",
-          "magic",
           "ranged",
-          "green"
+          "weapon"
         ],
         "distance": {
           "type": "cube",
@@ -112,34 +110,34 @@
           "secondary": 10
         },
         "target": {
-          "type": "enemy",
-          "value": null
+          "type": "creature",
+          "value": 1
         },
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
-              "reason"
+              "might"
             ]
           },
           "tiers": [
             {
               "tier": 1,
-              "display": "3 damage"
+              "display": "10 damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "5 damage; restrained (EoT)"
+              "display": "16 damage; <strong class=\"potency-value\">M&lt;4</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "8 damage; restrained (save ends)"
+              "display": "20 damage; <strong class=\"potency-value\">M&lt;5</strong> weakened (save ends)"
             }
           ]
         },
         "effect": {
-          "text": "<p>The area is difficult terrain for enemies until the end of the encounter. Any enemy in the area has acid weakness 2.</p>"
+          "text": "<p>Each ally in the area regains <span class=\"heal-value\">10</span>  stamina.</p>"
         },
         "spend": {
           "text": "",
@@ -148,32 +146,35 @@
       }
     },
     {
-      "name": "Jaws of the Void",
+      "name": "Battlefield Control",
       "type": "ability",
       "system": {
         "category": "",
         "type": "triggered",
         "resource": null,
         "keywords": [
-          "magic",
-          "void"
+          "ranged"
         ],
         "distance": {
-          "type": "self"
+          "type": "ranged",
+          "primary": 10
         },
         "target": {
-          "type": "self"
+          "type": "enemy",
+          "value": 1
         },
-        "trigger": "The elementalist takes damage.",
+        "trigger": "An enemy within distance willingly moves.",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "might"
+            ]
           },
           "effects": {}
         },
         "effect": {
-          "text": "<p>The elementalist can teleport up to 2 squares. Each creature adjacent to the space they leave takes 2 corruption damage.</p>"
+          "text": "<p>At any point during the movement, the tactician and one ally within distance can use a signature ability against the target.</p>"
         },
         "spend": {
           "text": "",
@@ -198,13 +199,44 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
           "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Check Out Our Loot",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "A rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -229,7 +261,7 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -260,7 +292,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -291,7 +323,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
@@ -304,42 +336,11 @@
           "value": null
         }
       }
-    },
-    {
-      "name": "Check Out Our Loot",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "233",
+    "page": "245",
     "license": "Draw Steel Creator License"
   }
 }
