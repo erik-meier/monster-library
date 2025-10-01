@@ -134,15 +134,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 corruption damage; 4 corruption damage"
+              "display": "5 corruption damage; <strong class=\"potency-value\">P&lt;1</strong> 4 corruption damage"
             },
             {
               "tier": 2,
-              "display": "8 corruption damage; 5 corruption damage"
+              "display": "8 corruption damage; <strong class=\"potency-value\">P&lt;2</strong> 5 corruption damage"
             },
             {
               "tier": 3,
-              "display": "10 corruption damage; 6 corruption damage"
+              "display": "10 corruption damage; <strong class=\"potency-value\">P&lt;3</strong> 6 corruption damage"
             }
           ]
         },

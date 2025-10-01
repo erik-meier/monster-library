@@ -251,11 +251,11 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "0 damage; push 3; <strong class=\"potency-value\">I&lt;3</strong> dazed (save ends)"
+              "display": "push 3; <strong class=\"potency-value\">I&lt;3</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "0 damage; push 3; <strong class=\"potency-value\">I&lt;4</strong> dazed (save ends)"
+              "display": "push 3; <strong class=\"potency-value\">I&lt;4</strong> dazed (save ends)"
             },
             {
               "tier": 3,

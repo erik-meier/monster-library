@@ -64,6 +64,26 @@ const monsterIndex = {
 let processedCount = 0
 let errorCount = 0
 
+// Track used IDs to prevent collisions
+const usedIds = new Set()
+
+/**
+ * Generate a unique monster ID, handling collisions by appending a number
+ */
+function generateUniqueId(name) {
+  let baseId = generateId(name)
+  let uniqueId = baseId
+  let counter = 2
+
+  while (usedIds.has(uniqueId)) {
+    uniqueId = `${baseId}-${counter}`
+    counter++
+  }
+
+  usedIds.add(uniqueId)
+  return uniqueId
+}
+
 /**
  * Walk through directory structure to find all monster JSON files
  */
@@ -91,9 +111,9 @@ function processMonsterFile(filePath) {
   try {
     const rawData = JSON.parse(fs.readFileSync(filePath, 'utf8'))
 
-    // Standardize name and generate ID
+    // Standardize name and generate unique ID
     const standardizedName = standardizeName(rawData.name)
-    const monsterId = generateId(standardizedName)
+    const monsterId = generateUniqueId(standardizedName)
 
     // Extract and format core data
     const monster = {

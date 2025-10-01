@@ -1,9 +1,9 @@
 {
-  "id": "rival-shadow",
-  "name": "Rival Shadow",
-  "level": 2,
-  "ev": 16,
-  "role": "Ambusher",
+  "id": "rival-conduit-2",
+  "name": "Rival Conduit",
+  "level": 5,
+  "ev": 28,
+  "role": "Support",
   "organization": "Elite",
   "keywords": [
     "humanoid"
@@ -12,15 +12,15 @@
     "value": 1,
     "letter": "M"
   },
-  "speed": 7,
-  "stamina": 80,
+  "speed": 5,
+  "stamina": 140,
   "stability": 1,
-  "freeStrike": 5,
+  "freeStrike": 6,
   "characteristics": {
-    "might": 0,
-    "agility": 2,
+    "might": 2,
+    "agility": 0,
     "reason": 0,
-    "intuition": 0,
+    "intuition": 3,
     "presence": 1
   },
   "immunities": {},
@@ -30,13 +30,13 @@
   ],
   "items": [
     {
-      "name": "Exploit Opening",
+      "name": "Stalwart Guardian",
       "type": "feature",
       "system": {
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The shadow deals an extra <span class=\"damage-value damage-generic\">5</span> damage to any bleeding target.</p>",
+          "value": "<p>Strikes made against allies adjacent to the conduit take a bane.</p>",
           "director": ""
         }
       }
@@ -48,26 +48,28 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the start of an encounter, the shadow chooses one creature within their line of effect. Both the shadow and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
+          "value": "<p>At the start of an encounter, the conduit chooses one creature within their line of effect. Both the conduit and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
           "director": ""
         }
       }
     },
     {
-      "name": "Swift Serration",
+      "name": "Raging Tempest",
       "type": "ability",
       "system": {
         "category": "signature",
         "type": "main",
         "resource": null,
         "keywords": [
+          "magic",
           "melee",
-          "strike",
-          "weapon"
+          "ranged",
+          "strike"
         ],
         "distance": {
-          "type": "melee",
-          "primary": 1
+          "type": "meleeRanged",
+          "primary": 1,
+          "secondary": 10
         },
         "target": {
           "type": "creatureObject",
@@ -76,65 +78,66 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 3",
             "characteristics": [
-              "agility"
+              "intuition"
             ]
           },
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage"
+              "display": "9 holy damage; vertical slide 1"
             },
             {
               "tier": 2,
-              "display": "11 damage"
+              "display": "14 holy damage; vertical slide 2"
             },
             {
               "tier": 3,
-              "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+              "display": "17 holy damage; vertical slide 3"
             }
           ]
         },
         "effect": {
-          "text": "<p>The shadow can teleport up to 5 squares, then can attempt to hide.</p>"
+          "text": "<p>The conduit or one ally within distance regains Stamina equal to half the damage dealt.</p><p><span class=\"heal-value\">4</span>  stamina{Heal 4 Stamina}</p><p><span class=\"heal-value\">7</span>  stamina{Heal 7 Stamina}</p><p><span class=\"heal-value\">8</span>  stamina{Heal 8 Stamina}</p>"
         },
         "spend": {
-          "text": "The shadow can teleport up to 5 squares, then can attempt to hide.",
-          "value": 1,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The shadow can teleport up to 5 squares, then can attempt to hide."
+          "text": "",
+          "value": null
         }
       }
     },
     {
-      "name": "Poison the Blade",
+      "name": "Imbue with Power",
       "type": "ability",
       "system": {
-        "category": "",
+        "category": "heroic",
         "type": "maneuver",
-        "resource": null,
+        "resource": 3,
         "keywords": [
-          "-"
+          "magic",
+          "ranged"
         ],
         "distance": {
-          "type": "self"
+          "type": "ranged",
+          "primary": 10
         },
         "target": {
-          "type": "self",
-          "value": null
+          "type": "selfAlly",
+          "value": 5
         },
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 3",
             "characteristics": [
-              "agility"
+              "intuition"
             ]
           },
           "effects": {}
         },
         "effect": {
-          "text": "<p>The shadow coats their weapon with poison. They gain an edge on their next strike, and any potency for that strike increases by 1.</p>"
+          "text": "<p>Each target has a double edge on their next strike.</p>"
         },
         "spend": {
           "text": "",
@@ -159,7 +162,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -190,7 +193,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -221,7 +224,7 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -252,7 +255,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -283,7 +286,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 3",
             "characteristics": []
           },
           "effects": {}
@@ -300,7 +303,7 @@
   ],
   "source": {
     "book": "Monsters",
-    "page": "234",
+    "page": "236",
     "license": "Draw Steel Creator License"
   }
 }

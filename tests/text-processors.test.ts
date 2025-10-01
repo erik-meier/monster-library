@@ -12,7 +12,8 @@ import {
   processPotencyText,
   processForcedPlaceholders,
   processFoundryText,
-  processPowerRollFormula
+  processPowerRollFormula,
+  flattenPowerEffects
 } from '../scripts/text-processors.js';
 
 describe('Text Processing Functions', () => {
@@ -398,6 +399,228 @@ describe('Text Processing Functions', () => {
       const result = processPowerRollFormula('2d6 + 5', sampleMonster);
       
       expect(result).toBe('2d6 + 5');
+    });
+  });
+
+  describe('flattenPowerEffects', () => {
+    describe('named damage effects with potency', () => {
+      it('should process named damage effect with agility potency correctly', () => {
+        const item = {
+          system: {
+            power: {
+              roll: {
+                characteristics: ['agility']
+              },
+              effects: {
+                'damage1': {
+                  name: '',
+                  type: 'damage',
+                  damage: {
+                    tier1: { value: '4', types: [], potency: { value: '@potency.weak', characteristic: 'none' } },
+                    tier2: { value: '4', types: [], potency: { value: '@potency.average', characteristic: '' } },
+                    tier3: { value: '4', types: [], potency: { value: '@potency.strong', characteristic: '' } }
+                  }
+                },
+                'damage2': {
+                  name: 'Agility Damage',
+                  type: 'damage',
+                  damage: {
+                    tier1: { value: '0', types: [], potency: { value: '@potency.weak', characteristic: 'none' } },
+                    tier2: { value: '2', types: [], potency: { value: '1', characteristic: 'agility' } },
+                    tier3: { value: '5', types: [], potency: { value: '2', characteristic: 'agility' } }
+                  }
+                },
+                'applied1': {
+                  name: 'Prone',
+                  type: 'applied',
+                  applied: {
+                    tier1: { display: '', potency: { value: '@potency.weak', characteristic: 'none' } },
+                    tier2: { display: 'Prone', potency: { value: '1', characteristic: 'agility' } },
+                    tier3: { display: 'prone and can\'t stand (save ends)', potency: { value: '2', characteristic: '' } }
+                  }
+                }
+              }
+            }
+          }
+        };
+
+        const result = flattenPowerEffects(item, sampleMonster);
+
+        expect(result.system.power.tiers).toHaveLength(3);
+        expect(result.system.power.tiers[0].display).toBe('4 damage'); // Zero damage effect is not shown
+        expect(result.system.power.tiers[1].display).toBe('4 damage; <strong class="potency-value">A&lt;1</strong> 2 damage; Prone');
+        expect(result.system.power.tiers[2].display).toBe('4 damage; <strong class="potency-value">A&lt;2</strong> 5 damage; prone and can\'t stand (save ends)');
+      });
+
+      it('should not add potency for damage effects with characteristic "none"', () => {
+        const item = {
+          system: {
+            power: {
+              roll: {
+                characteristics: ['might']
+              },
+              effects: {
+                'damage1': {
+                  name: 'Regular Damage',
+                  type: 'damage',
+                  damage: {
+                    tier1: { value: '6', types: ['fire'], potency: { value: '@potency.weak', characteristic: 'none' } },
+                    tier2: { value: '8', types: ['fire'], potency: { value: '@potency.average', characteristic: '' } },
+                    tier3: { value: '12', types: ['fire'], potency: { value: '@potency.strong', characteristic: '' } }
+                  }
+                }
+              }
+            }
+          }
+        };
+
+        const result = flattenPowerEffects(item, sampleMonster);
+
+        expect(result.system.power.tiers).toHaveLength(3);
+        expect(result.system.power.tiers[0].display).toBe('6 fire damage');
+        expect(result.system.power.tiers[1].display).toBe('8 fire damage');
+        expect(result.system.power.tiers[2].display).toBe('12 fire damage');
+      });
+
+      it('should handle zero damage values correctly', () => {
+        const item = {
+          system: {
+            power: {
+              roll: {
+                characteristics: ['agility']
+              },
+              effects: {
+                'damage1': {
+                  name: 'Base Damage',
+                  type: 'damage',
+                  damage: {
+                    tier1: { value: '3', types: [], potency: { value: '@potency.weak', characteristic: 'none' } },
+                    tier2: { value: '3', types: [], potency: { value: '@potency.average', characteristic: 'none' } },
+                    tier3: { value: '3', types: [], potency: { value: '@potency.strong', characteristic: 'none' } }
+                  }
+                },
+                'damage2': {
+                  name: 'Bonus Damage',
+                  type: 'damage',
+                  damage: {
+                    tier1: { value: '0', types: [], potency: { value: '1', characteristic: 'agility' } },
+                    tier2: { value: '1', types: [], potency: { value: '2', characteristic: 'agility' } },
+                    tier3: { value: '3', types: [], potency: { value: '3', characteristic: 'agility' } }
+                  }
+                }
+              }
+            }
+          }
+        };
+
+        const result = flattenPowerEffects(item, sampleMonster);
+
+        expect(result.system.power.tiers).toHaveLength(3);
+        expect(result.system.power.tiers[0].display).toBe('3 damage'); // Zero damage effect is not shown at all
+        expect(result.system.power.tiers[1].display).toBe('3 damage; <strong class="potency-value">A&lt;2</strong> 1 damage');
+        expect(result.system.power.tiers[2].display).toBe('3 damage; <strong class="potency-value">A&lt;3</strong> 3 damage');
+      });
+
+      it('should process different characteristics correctly', () => {
+        const item = {
+          system: {
+            power: {
+              roll: {
+                characteristics: ['might']
+              },
+              effects: {
+                'damage1': {
+                  name: 'Might Damage',
+                  type: 'damage',
+                  damage: {
+                    tier1: { value: '2', types: [], potency: { value: '0', characteristic: 'might' } },
+                    tier2: { value: '4', types: [], potency: { value: '1', characteristic: 'might' } },
+                    tier3: { value: '6', types: [], potency: { value: '2', characteristic: 'might' } }
+                  }
+                },
+                'damage2': {
+                  name: 'Reason Damage',
+                  type: 'damage',
+                  damage: {
+                    tier1: { value: '1', types: [], potency: { value: '-2', characteristic: 'reason' } },
+                    tier2: { value: '2', types: [], potency: { value: '-1', characteristic: 'reason' } },
+                    tier3: { value: '3', types: [], potency: { value: '0', characteristic: 'reason' } }
+                  }
+                }
+              }
+            }
+          }
+        };
+
+        const result = flattenPowerEffects(item, sampleMonster);
+
+        expect(result.system.power.tiers).toHaveLength(3);
+        expect(result.system.power.tiers[0].display).toBe('2 damage; <strong class="potency-value">R&lt;-2</strong> 1 damage'); // Both damages show (potency 0 doesn't show for might damage)
+        expect(result.system.power.tiers[1].display).toBe('<strong class="potency-value">M&lt;1</strong> 4 damage; <strong class="potency-value">R&lt;-1</strong> 2 damage');
+        expect(result.system.power.tiers[2].display).toBe('<strong class="potency-value">M&lt;2</strong> 6 damage; 3 damage'); // Reason damage potency 0 doesn't show
+      });
+
+      it('should inherit characteristic from tier 1 when tiers 2 and 3 have empty characteristics', () => {
+        const item = {
+          system: {
+            power: {
+              roll: {
+                characteristics: ['agility']
+              },
+              effects: {
+                'damage1': {
+                  name: 'Agility Damage',
+                  type: 'damage',
+                  damage: {
+                    tier1: { value: '10', types: [], potency: { value: '@potency.weak', characteristic: 'agility' } },
+                    tier2: { value: '15', types: [], potency: { value: '@potency.average', characteristic: '' } },
+                    tier3: { value: '19', types: [], potency: { value: '@potency.strong', characteristic: '' } }
+                  }
+                }
+              }
+            }
+          }
+        };
+
+        const result = flattenPowerEffects(item, sampleMonster);
+
+        expect(result.system.power.tiers).toHaveLength(3);
+        expect(result.system.power.tiers[0].display).toBe('<strong class="potency-value">A&lt;1</strong> 10 damage'); // A<3-2=1 for @potency.weak
+        expect(result.system.power.tiers[1].display).toBe('<strong class="potency-value">A&lt;2</strong> 15 damage'); // A<3-1=2 for @potency.average, inherits agility
+        expect(result.system.power.tiers[2].display).toBe('<strong class="potency-value">A&lt;3</strong> 19 damage'); // A<3 for @potency.strong, inherits agility
+      });
+    });
+
+    describe('regular effects processing', () => {
+      it('should handle items without power effects', () => {
+        const item = {
+          system: {
+            description: { value: 'Just a regular item' }
+          }
+        };
+
+        const result = flattenPowerEffects(item, sampleMonster);
+
+        expect(result).toEqual(item); // Should be unchanged
+      });
+
+      it('should process existing tiers without modification', () => {
+        const item = {
+          system: {
+            power: {
+              roll: { characteristics: ['agility'] },
+              tiers: [
+                { tier: 1, display: 'Custom tier 1' },
+                { tier: 2, display: 'Custom tier 2' }
+              ]
+            }
+          }
+        };
+
+        const result = flattenPowerEffects(item, sampleMonster);
+
+        expect(result.system.power.tiers).toEqual(item.system.power.tiers);
+      });
     });
   });
 });

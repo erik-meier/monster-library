@@ -76,15 +76,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; 0 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 corruption damage; 5 corruption damage; and bleeding (save ends)"
+              "display": "10 corruption damage; <strong class=\"potency-value\">M&lt;3</strong> 5 corruption damage; and bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 corruption damage; 7 corruption damage; and bleeding (save ends)"
+              "display": "11 corruption damage; <strong class=\"potency-value\">M&lt;4</strong> 7 corruption damage; and bleeding (save ends)"
             }
           ]
         },

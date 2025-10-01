@@ -1,0 +1,190 @@
+{
+  "id": "rival-talent-4",
+  "name": "Rival Talent",
+  "level": 10,
+  "ev": 48,
+  "role": "Hexer",
+  "organization": "Elite",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 220,
+  "stability": 2,
+  "freeStrike": 10,
+  "characteristics": {
+    "might": 0,
+    "agility": 0,
+    "reason": 5,
+    "intuition": 0,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Rivalry",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the start of an encounter, the talent chooses one creature within their line of effect. Both the talent and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Override",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "psionic",
+          "ranged",
+          "strike",
+          "telekinesis"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "15 psychic damage"
+            },
+            {
+              "tier": 2,
+              "display": "20 psychic damage"
+            },
+            {
+              "tier": 3,
+              "display": "24 psychic damage"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "Each target moves up to their speed and can make a free strike against one enemy of the talent's choice. The target's movement can provoke opportunity attacks, but they can't otherwise be moved in a way that would harm them.",
+          "value": 4,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">4 Malice:</strong> Each target moves up to their speed and can make a free strike against one enemy of the talent's choice. The target's movement can provoke opportunity attacks, but they can't otherwise be moved in a way that would harm them."
+        }
+      }
+    },
+    {
+      "name": "Steal Time",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "psionic",
+          "ranged",
+          "chronopathy"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "<strong class=\"potency-value\">R&lt;3</strong> slowed (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "<strong class=\"potency-value\">R&lt;4</strong> restrained (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "<strong class=\"potency-value\">R&lt;5</strong> restrained (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>One ally within distance can use an additional main action on their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Psionic Retribution",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 2,
+        "keywords": [
+          "psionic"
+        ],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "A creature deals damage to the talent.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The talent halves the damage and shifts up to 2 squares. The triggering creature takes psychic damage equal to half the damage dealt and is pushed up to 5 squares.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "245",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -293,15 +293,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; 0 damage"
+              "display": "4 damage"
             },
             {
               "tier": 2,
-              "display": "4 damage; 2 damage; Prone"
+              "display": "4 damage; <strong class=\"potency-value\">A&lt;1</strong> 2 damage; Prone"
             },
             {
               "tier": 3,
-              "display": "4 damage; 5 damage; prone and can't stand (save ends)"
+              "display": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> 5 damage; prone and can't stand (save ends)"
             }
           ]
         },

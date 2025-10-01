@@ -298,12 +298,51 @@ function flattenPowerEffects(item, monster) {
       if (!tierData) return;
 
       if (effectType === 'damage') {
+        // Skip zero damage effects entirely
+        if (tierData.value === '0') {
+          return; // Don't add anything to tierParts for zero damage
+        }
+
         // Handle damage effects
         let damageText = `${tierData.value}`;
         if (tierData.types?.length > 0) {
           damageText += ` ${tierData.types.join('/')}`;
         }
         damageText += ' damage';
+
+        // Handle potency for named damage effects (only if there's a meaningful characteristic)
+        if (effect.name && effect.name.trim() && tierData.potency) {
+          let characteristic = tierData.potency.characteristic;
+          let potencyValue = tierData.potency.value;
+
+          // Inherit characteristic from earlier tiers if current tier has empty/missing characteristic
+          if (!characteristic || characteristic === 'none' || characteristic === '' || characteristic.trim() === '') {
+            // Look for characteristic in earlier tiers for this same effect
+            for (let inheritTierNum = tierNum - 1; inheritTierNum >= 1; inheritTierNum--) {
+              const inheritTierKey = `tier${inheritTierNum}`;
+              const inheritTierData = effect[effectType]?.[inheritTierKey];
+              if (inheritTierData?.potency?.characteristic &&
+                inheritTierData.potency.characteristic !== 'none' &&
+                inheritTierData.potency.characteristic !== '' &&
+                inheritTierData.potency.characteristic.trim() !== '') {
+                characteristic = inheritTierData.potency.characteristic;
+                break;
+              }
+            }
+          }
+
+          // Only process potency if we have a real characteristic and meaningful potency value
+          if (potencyValue && potencyValue !== '0' && characteristic && characteristic !== 'none' && characteristic !== '' && characteristic.trim() !== '') {
+            // Apply potency processing to get the formatted potency display
+            const processedPotency = processPotencyText('{{potency}}', potencyValue, characteristic, monster);
+
+            // If we got a formatted potency back, use it; otherwise fall back to simple display
+            if (processedPotency && processedPotency !== '{{potency}}') {
+              damageText = processedPotency + ' ' + damageText;
+            }
+          }
+        }
+
         tierParts.push(damageText);
       } else if (effectType === 'applied' || effectType === 'forced' || effectType === 'other') {
         // Handle effects with display templates
