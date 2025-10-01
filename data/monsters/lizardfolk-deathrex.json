@@ -1,0 +1,427 @@
+{
+  "id": "lizardfolk-deathrex",
+  "name": "Lizardfolk Deathrex",
+  "level": 1,
+  "ev": 12,
+  "role": "",
+  "organization": "Leader",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 80,
+  "stability": 2,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 3,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "swim",
+    "climb",
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Rex Reptilian Escape",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While the deathrex has a tail, whenever they are affected by an effect that can be ended by a saving throw or that ends at the end of their turn, they can lose their tail to immediately end that effect, then shift up to 2 squares.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Ripper Spear",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 3
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; pull 1; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "10 damage; pull 1; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage; pull 2; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "One target adjacent to the deathrex is grabbed in the deathrex's mouth.",
+          "value": 1,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> One target adjacent to the deathrex is grabbed in the deathrex's mouth."
+        }
+      }
+    },
+    {
+      "name": "Death Roll",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 3,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "15 damage; <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The target is no longer grabbed by the deathrex, and the deathrex slides them up to 5 squares.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Trundle",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The deathrex moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Swat the Fly",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "triggered",
+        "resource": null,
+        "keywords": [
+          "melee"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creature",
+          "value": null
+        },
+        "trigger": "A creature or object within distance moves or shifts away from the deathrex.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The deathrex slides the target up to 5 squares.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Snack Attack",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "ally",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target moves up to their speed and can make a free strike. Each target gains temporary Stamina equal to the damage they deal.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Shed Some Skin",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The deathrex shifts up to their speed, leaving behind a shed skin duplicate in the space they started in. The duplicate acts on the deathrex's turn and has the deathrex's characteristics, but has 10 Stamina and no villain actions.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Net Trap",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "ranged",
+          "weapon"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 1,
+          "secondary": 3
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table> <p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Water Pit",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains <span class=\"heal-value\">10</span> temporary stamina, regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Flood the Shores",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Thresher Thrasher",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "selfAlly",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target moves up to their speed. Until the end of the encounter, whenever a creature comes adjacent to a target or starts their turn there, the target can make a free strike against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "201",
+    "license": "Draw Steel Creator License"
+  }
+}

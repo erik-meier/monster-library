@@ -1,0 +1,384 @@
+{
+  "id": "human-bandit-chief",
+  "name": "Human Bandit Chief",
+  "level": 3,
+  "ev": 20,
+  "role": "",
+  "organization": "Leader",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 120,
+  "stability": 2,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 2,
+    "agility": 3,
+    "reason": 2,
+    "intuition": 3,
+    "presence": 2
+  },
+  "immunities": {
+    "corruption": 4,
+    "psychic": 4
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Supernatural Insight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The bandit chief ignores concealment if it’s granted by a supernatural effect.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "End Effect",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the end of each of their turns, the bandit chief can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Whip and Magic Longsword",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 2
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; pull 1"
+            },
+            {
+              "tier": 2,
+              "display": "12 damage; pull 2"
+            },
+            {
+              "tier": 3,
+              "display": "15 damage; pull 3"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Any target who is adjacent to the bandit chief after the power roll is resolved takes <span class=\"damage-value damage-generic\">3</span> corruption damage.</p>"
+        },
+        "spend": {
+          "text": "This ability targets one additional target.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> This ability targets one additional target."
+        }
+      }
+    },
+    {
+      "name": "Kneel, Peasant!",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "melee"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "push 1; <strong class=\"potency-value\">M&lt;1</strong> prone"
+            },
+            {
+              "tier": 2,
+              "display": "push 2; <strong class=\"potency-value\">M&lt;2</strong> prone"
+            },
+            {
+              "tier": 3,
+              "display": "push 4; <strong class=\"potency-value\">M&lt;3</strong> prone"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "The ability takes the Area keyword, loses the Melee key word, and is a 1 burst that targets each enemy in the area.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ability takes the Area keyword, loses the Melee key word, and is a 1 burst that targets each enemy in the area."
+        }
+      }
+    },
+    {
+      "name": "Bloodstones",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "triggered",
+        "resource": null,
+        "keywords": [
+          "magic"
+        ],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "The bandit chief makes a power roll.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The bandit chief takes <span class=\"damage-value damage-generic\">5</span> corruption damage and increases the outcome of the power roll by one tier. This damage can’t be reduced in any way.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Shoot!",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "special",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Note: Each artillery ally in the area.</p><p>Each target makes a ranged free strike.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Form Up!",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "ally",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target shifts up to their speed. Additionally, until the end of the encounter, while the bandit chief or any ally is adjacent to a target, they have damage immunity 2.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Lead From the Front",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The bandit chief shifts up to 10 squares. During or after this movement, they can use their Whip and Magic Longsword against up to four targets. Additionally, one ally adjacent to each target can make a free strike against that target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Alchemical Device",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 3,
+          "secondary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 corruption damage; <strong class=\"potency-value\">X&lt;1</strong>, slowed (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "6 corruption damage; <strong class=\"potency-value\">X&lt;2</strong>, slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 corruption damage; <strong class=\"potency-value\">X&lt;3</strong>, restrained (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p> <p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Exploit Opening",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A human's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "184",
+    "license": "Draw Steel Creator License"
+  }
+}

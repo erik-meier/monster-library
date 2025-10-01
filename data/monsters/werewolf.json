@@ -1,0 +1,507 @@
+{
+  "id": "werewolf",
+  "name": "Werewolf",
+  "level": 1,
+  "ev": 36,
+  "role": "",
+  "organization": "Solo",
+  "keywords": [
+    "accursed",
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 7,
+  "stamina": 200,
+  "stability": 0,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 3,
+    "agility": 2,
+    "reason": -1,
+    "intuition": 1,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Solo Monster",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>End Effect: At the end of each of their turns, the werewolf can take 5 damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p><p>Solo Turns: The werewolf can take two turns each round. They can’t take turns consecutively.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Accursed Rage",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The werewolf’s ferocity is expressed through rage, and their abilities can inflict rage points on any enemy except a stormwight fury. A creature who starts their turn with 10 or more range expends their rage. Then before taking their turn, they must shift up to their speed toward the nearest creature and make a melee free strike against them. A creature who takes damage from this free strike gains 1 rage. Accumulated rage disappears after a character finishes a respite.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Shapeshifter",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The werewolf enters combat in their hybrid humanoid form. Their shape can’t be changed by any external effect.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Vukenstep",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The werewolf ignores difficult terrain.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Accursed Bite",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 damage; the target gains 2 rage"
+            },
+            {
+              "tier": 2,
+              "display": "13 damage; the target gains 4 rage"
+            },
+            {
+              "tier": 3,
+              "display": "16 damage; the target gains 5 rage"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "If the target has P < 0, they are afflicted with lycanthropy. Each time the target is unaffected by the potency effect, the potency increases by 1 the next time the werewolf uses the ability against the same target. A creature afflicted with lycanthropy gains 2 rage at the end of each of their turns whenever they’re in combat. Their rage doesn’t disappear after finishing a respite, and they must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If the target has P < 0, they are afflicted with lycanthropy. Each time the target is unaffected by the potency effect, the potency increases by 1 the next time the werewolf uses the ability against the same target. A creature afflicted with lycanthropy gains 2 rage at the end of each of their turns whenever they’re in combat. Their rage doesn’t disappear after finishing a respite, and they must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect."
+        }
+      }
+    },
+    {
+      "name": "Ripping Claws",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creature",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "11 damage; the target gains 1 rage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "14 damage; the target gains 3 rage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Berserker Slash",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "weapon"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage; push 2"
+            },
+            {
+              "tier": 2,
+              "display": "6 damage; push 3; the target gains 1 rage"
+            },
+            {
+              "tier": 3,
+              "display": "7 damage; slide 3; the target gains 3 rage"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Wall Leap",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The werewolf jumps up to 4 squares. If they end this jump at a wall, the werewolf jumps off the wall up to 4 squares and can make a melee free strike. If the target of the free strike has m&lt;2, they are knocked prone.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Facepalm and Head Slam",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 2,
+        "keywords": [
+          "melee"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": 1
+        },
+        "trigger": "A creature within distance targets the werewolf with a melee ability after charging or moving 2 or more squares in a straight line toward them.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The target is knocked prone and takes 5 damage before the triggering ability is resolved.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Howl",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 5
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target makes an Intuition test.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The target must move their speed in a straight line away from the werewolf; frightened (save ends)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table> <p>Any enemy in the encounter who has 1 or more rage gains 4 rage and howls along with the werewolf.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Full Wolf",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The werewolf transforms into a massive wolf of size 3 until they die or until the end of the encounter. They move to a space that can accommodate their new size and push adjacent creatures out of their way. While in wolf form, they have speed 10 and stability 2, their strikes gain a +2 damage bonus and bestow an additional 1 rage, and the potency of Accursed Bite increases by 1.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Rampage",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "burst",
+          "primary": 2
+        },
+        "target": {
+          "type": "creature"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; the target gains 2 rage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "8 damage; the target gains 4 rage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "11 damage; the target gains 8 rage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Blood In Their Eyes",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "A werewolf's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The werewolf gains 10 temporary Stamina and a +3 bonus to speed until the end of their turn. The werewolf can’t use this fea ture if they took any holy damage since ending their last turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Moonfall",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 10,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A werewolf's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the encounter, the encounter map turns to night and the moon appears impossibly huge in the sky. The werewolf can take an additional move action or maneuver on each of their turns while they have line of effect to the moon. Any creature who ends their turn with line of effect to the moon with 1 or more rage gains 2 rage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Solo Action",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special",
+          "value": null
+        },
+        "trigger": "A werewolf's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The werewolf takes an additional main action on their turn. They can use this feature even if they are dazed.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "323",
+    "license": "Draw Steel Creator License"
+  }
+}

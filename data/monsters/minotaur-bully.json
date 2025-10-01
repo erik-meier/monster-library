@@ -1,0 +1,197 @@
+{
+  "id": "minotaur-bully",
+  "name": "Minotaur Bully",
+  "level": 8,
+  "ev": 10,
+  "role": "Brute",
+  "organization": "Minion",
+  "keywords": [
+    "accursed",
+    "humanoid"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 14,
+  "stability": 2,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 4,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 3,
+    "presence": -1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Minotaur Sense",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The bully can't obtain less than a tier 2 outcome when making tests to navigate, search, or seek.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Javelin and Bellow",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "meleeRanged",
+          "primary": 2,
+          "secondary": 5
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
+            },
+            {
+              "tier": 2,
+              "display": "7 damage"
+            },
+            {
+              "tier": 3,
+              "display": "9 damage; <strong class=\"potency-value\">I&lt;4</strong> taunted (EoT) or frightened of all minotaurs (Save Ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Bull Rush",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "special",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A minotaur starts its turn.",
+        "power": {
+          "roll": {
+            "formula": "",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Cut the … Nonsense!",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "special",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A minotaur starts its turn.",
+        "power": {
+          "roll": {
+            "formula": "",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Bullseye",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "special",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A minotaur starts its turn.",
+        "power": {
+          "roll": {
+            "formula": "",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "208",
+    "license": "Draw Steel Creator License"
+  }
+}

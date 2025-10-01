@@ -1,0 +1,303 @@
+{
+  "id": "high-elf-deathtouch",
+  "name": "High Elf Deathtouch",
+  "level": 2,
+  "ev": 8,
+  "role": "Artillery",
+  "organization": "Platoon",
+  "keywords": [
+    "fey",
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 30,
+  "stability": 0,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 2,
+    "agility": 0,
+    "reason": 1,
+    "intuition": 0,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Otherworldly Grace",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the start of each of their turns, the deathtouch can choose one effect on them that can be ended by a saving throw. That effect instead ends at the end of their turn.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Heartpiercer",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 15
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
+            },
+            {
+              "tier": 2,
+              "display": "10 damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> bleeding (save ends); <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends); <strong class=\"potency-value\">P&lt;2</strong> restrained (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Kiss of Death",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "melee"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "ally",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The target has a +5 bonus to speed and automatically obtains a tier 3 outcome on power rolls. They can still roll to determine if they score a critical hit. At the end of their next turn, the target immediately dies.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Chaincast",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Gift From an Accursed Tome",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 5,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 5,
+          "secondary": 1,
+          "tertiary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p> <p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "In Defiance of Time",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Heartpiercer",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": 5,
+        "keywords": [
+          "area",
+          "ranged",
+          "weapon"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 3,
+          "secondary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
+            },
+            {
+              "tier": 2,
+              "display": "10 damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> bleeding (save ends); <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends); <strong class=\"potency-value\">P&lt;2</strong> restrained (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "121",
+    "license": "Draw Steel Creator License"
+  }
+}

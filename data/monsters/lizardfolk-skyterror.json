@@ -1,0 +1,264 @@
+{
+  "id": "lizardfolk-skyterror",
+  "name": "Lizardfolk Skyterror",
+  "level": 1,
+  "ev": 6,
+  "role": "Harrier",
+  "organization": "Platoon",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "S"
+  },
+  "speed": 7,
+  "stamina": 30,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 1,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "swim",
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Glider",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Whenever the skyterror moves 2 or more squares along the ground or falls 2 or more squares, they can fly until the end of their next turn.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Reptilian Escape",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While the skyterror has a tail, whenever they are grabbed, prone, slowed, or weakened, they can lose their tail to immediately end that condition, then shift up to 2 squares.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Glaive Rush",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage"
+            },
+            {
+              "tier": 2,
+              "display": "7 damage"
+            },
+            {
+              "tier": 3,
+              "display": "9 damage; Prone"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>If the skyterror is flying, they shift up to 4 squares.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Poison Blow Dart",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 5
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage; <strong class=\"potency-value\">M&lt;0</strong> weakened (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Any creature who ends their turn adjacent to a target weakened this way is weakened until the end of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Net Trap",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "ranged",
+          "weapon"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 1,
+          "secondary": 3
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>A lizardfolk acting this turn sets up a net trap into the area. The first time an enemy steps into a square with a net trap, they make an <strong>Agility test</strong>. If the creature was unaware of the trap, they take a bane on the test.</p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p>Restrained (save ends).</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p>Restrained (EoT).</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No Effect.</p></td></tr></tbody></table> <p>Any creature not also restrained by a net trap who is adjacent to a creature restrained by the trap can free them as a maneuver.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Water Pit",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>lizardfolk acting this turn unearths a magical size 2 pit that is 2 squares deep and filled with water. Any lizardfolk who moves into, then exits the pit on their turn gains <span class=\"heal-value\">10</span> temporary stamina, regrows their tail if applicable, and ends one effect on them that can be ended by a saving throw. While adjacent to the pit, any creature who can burrow or who has the Nature skill can make a <strong>Might test or a Reason test</strong> to drain it.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>The creature falls into the pit and is knocked prone.</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>The creature fails to empty the pit.</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>The pit empties of water.</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Flood the Shores",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "200",
+    "license": "Draw Steel Creator License"
+  }
+}

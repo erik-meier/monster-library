@@ -1,0 +1,212 @@
+{
+  "id": "chimeron",
+  "name": "Chimeron",
+  "level": 9,
+  "ev": 9,
+  "role": "Brute",
+  "organization": "Horde",
+  "keywords": [
+    "abyssal"
+  ],
+  "size": {
+    "value": 3,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 90,
+  "stability": 2,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 4,
+    "agility": 0,
+    "reason": 2,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {
+    "holy": 5
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Lethe",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While the chimeron is winded, they gain an edge on strikes, and any strike made against them gains an edge.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Soulsight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Any creature within 2 squares of the chimeron can't be hidden from them.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Flux Gnash",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 2
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 cold/fire/sonic damage"
+            },
+            {
+              "tier": 2,
+              "display": "11 cold/fire/sonic damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 cold/fire/sonic damage; <strong class=\"potency-value\">M&lt;4</strong> bleeding, dazed, or slowed (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>After making the power roll, the chimeron decides what damage type the ability deals and which condition it imposes.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Pain Absorption",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 1,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "The chimeron is targeted by a damage-dealing strike.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The chimeron halves the damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The demon activates a Malice feature available to demons of level 6 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p><p><span class=\"reference-text\">Abyssal Jaunt</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Seeping Blight",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One demon acting this turn expels blight—digested soul juice— onto the ground around them in a 3 burst that lingers until the start of their next turn. Any enemy who enters the area or starts their turn there takes <span class=\"damage-value damage-generic\">6</span> corruption damage, and has a double bane on power rolls until the start of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "70",
+    "license": "Draw Steel Creator License"
+  }
+}

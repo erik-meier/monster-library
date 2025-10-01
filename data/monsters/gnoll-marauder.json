@@ -1,0 +1,137 @@
+{
+  "id": "gnoll-marauder",
+  "name": "Gnoll Marauder",
+  "level": 2,
+  "ev": 4,
+  "role": "Harrier",
+  "organization": "Horde",
+  "keywords": [
+    "abyssal"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 7,
+  "stamina": 20,
+  "stability": 1,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 1,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Death Frenzy",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Whenever a non-minion ally within 7 squares of the marauder is reduced to 0 Stamina, the marauder moves up to their speed and can make a melee free strike.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Fury Flail",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
+            },
+            {
+              "tier": 2,
+              "display": "5 damage"
+            },
+            {
+              "tier": 3,
+              "display": "7 damage; Prone; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>This ability targets one additional target for each 2 Malice spent.</p>"
+        },
+        "spend": {
+          "text": "This ability targets one additional target for each 2 Malice spent.",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Marauder's Cackletongue",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 2
+        },
+        "target": {
+          "type": "ally",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 1",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target shifts up to their speed. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "157",
+    "license": "Draw Steel Creator License"
+  }
+}

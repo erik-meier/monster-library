@@ -1,0 +1,91 @@
+{
+  "id": "skitterling",
+  "name": "Skitterling",
+  "level": 1,
+  "ev": 3,
+  "role": "Hexer",
+  "organization": "Minion",
+  "keywords": [
+    "animal"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "T"
+  },
+  "speed": 5,
+  "stamina": 3,
+  "stability": 0,
+  "freeStrike": 1,
+  "characteristics": {
+    "might": -5,
+    "agility": 2,
+    "reason": -4,
+    "intuition": 0,
+    "presence": -2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "fly"
+  ],
+  "items": [
+    {
+      "name": "Claws",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1,
+          "secondary": null,
+          "tertiary": null
+        },
+        "target": {
+          "type": "creature",
+          "value": 1,
+          "custom": "One creature per minion"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "1 poison damage"
+            },
+            {
+              "tier": 2,
+              "display": "2 poison damage"
+            },
+            {
+              "tier": 3,
+              "display": "3 poison damage"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The target takes a bane on their next strike.</p>"
+        },
+        "spend": {
+          "value": null,
+          "text": ""
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "160",
+    "license": "Draw Steel Creator License"
+  }
+}

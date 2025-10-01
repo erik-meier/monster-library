@@ -1,0 +1,254 @@
+{
+  "id": "time-raider-mind-punk",
+  "name": "Time Raider Mind Punk",
+  "level": 3,
+  "ev": 10,
+  "role": "Hexer",
+  "organization": "Platoon",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 40,
+  "stability": 2,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 2,
+    "agility": 0,
+    "reason": 2,
+    "intuition": 2,
+    "presence": 1
+  },
+  "immunities": {
+    "psychic": 3
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Foresight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The mind punk doesn't take a bane on strikes against creatures with concealment.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Repelling Psihander",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "psionic",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creature",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage"
+            },
+            {
+              "tier": 2,
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "11 damage; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>A target who ends their next turn adjacent to the other target falls prone.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Mindpunk",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 2,
+        "keywords": [
+          "area",
+          "psionic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 3
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 psychic damage; prone"
+            },
+            {
+              "tier": 2,
+              "display": "6 psychic damage; push 1; prone and can't stand (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 psychic damage; push 2; prone and can't stand (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Gravity Well",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "psionic",
+          "ranged",
+          "weapon"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 5,
+          "secondary": 3
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Recall Module",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Psi-Cage",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 10,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> psychic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> psychic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "251",
+    "license": "Draw Steel Creator License"
+  }
+}

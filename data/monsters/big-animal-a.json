@@ -1,0 +1,169 @@
+{
+  "id": "big-animal-a",
+  "name": "Big Animal A",
+  "level": 1,
+  "ev": 12,
+  "role": "Mount",
+  "organization": "Elite",
+  "keywords": [
+    "animal"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 60,
+  "stability": 1,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 1,
+    "agility": 2,
+    "reason": -2,
+    "intuition": 1,
+    "presence": -2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Nature's Spirit",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While outdoors or in a natural environment, the animal can negate a bane on their abilities or turn a double bane into a bane.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Toss",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "melee"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Special: The target must be the animal's size or smaller.</p><p>The target vertical slides up to 3 squares. If the target is an ally, they can make a free strike at the end of the forced movement, then fall without taking damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "**Juke**",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "triggered",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "The animal is targeted by an area ability.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The animal shifts up to 2 squares before the ability resolves.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Natural Weapon",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage; 0 damage"
+            },
+            {
+              "tier": 2,
+              "display": "9 damage; 3 damage"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage; 3 damage"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "42",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "id": "radenwight-maestro",
+  "name": "Radenwight Maestro",
+  "level": 1,
+  "ev": 12,
+  "role": "",
+  "organization": "Leader",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "S"
+  },
+  "speed": 5,
+  "stamina": 80,
+  "stability": 1,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": -2,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 3
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk",
+    "climb"
+  ],
+  "items": [
+    {
+      "name": "End Effect",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the end of each of their turns, the maestro can take 5 damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Ever-Ready Rodent",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 2,
+        "keywords": [],
+        "distance": {
+          "type": "ranged",
+          "primary": 5
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "A creature within distance deals damage to an ally or takes  damage from an ally.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The maestro makes a free strike against the target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Rat Race",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special",
+          "value": null
+        },
+        "trigger": "A Radenwight's turn starts.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Cacophony",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 5
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 sonic damage; slide 1; the maestro can shift 1 square"
+            },
+            {
+              "tier": 2,
+              "display": "6 sonic damage; slide 3; the maestro can shift up to 3 squares"
+            },
+            {
+              "tier": 3,
+              "display": "8 sonic damage; slide 5; the maestro can shift up to 5 squares"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Each ally within distance can use Ready Rodent as a free triggered action once before the end of the round.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Tempo Change",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "<strong class=\"potency-value\">P&lt;1</strong> slowed (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "<strong class=\"potency-value\">P&lt;2</strong> slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "<strong class=\"potency-value\">P&lt;3</strong> slowed (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "Each ally within 3 squares of any target has a +2 bonus to  speed until the end of their next turn.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Each ally within 3 squares of any target has a +2 bonus to  speed until the end of their next turn."
+        }
+      }
+    },
+    {
+      "name": "Overture",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "ally",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target can shift up to their speed or take the Defend action.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Solo Act",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 15
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of their next turn, the target halves any damage they take, gains a +4 damage bonus to strikes, and has their speed doubled.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Rondo of Rat",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "ally",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p><strong>Note:</strong> Targets each dead ally in the area.</p><p></p> <p>Each target stands, makes a free strike, then falls dead again. Any ally of the targets can use Ready Rodent as a free triggered action once in conjunction with these free strikes.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Rally the Rodents",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A Radenwight's turn starts.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">7</span> sonic damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Trouser Cut",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 3,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1,
+          "secondary": null
+        },
+        "target": {
+          "type": "creature",
+          "value": 1,
+          "custom": ""
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; push 3"
+            },
+            {
+              "tier": 2,
+              "display": "10 damage; push 3; taunted (EoT)"
+            },
+            {
+              "tier": 3,
+              "display": "13 damage; push 5; taunted (EoT)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>If the target is wearing clothing covering the lower half of their body, they must use a maneuver once to pull that clothing up before they can move.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "228",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -1,0 +1,574 @@
+{
+  "id": "thorn-dragon",
+  "name": "Thorn Dragon",
+  "level": 2,
+  "ev": 48,
+  "role": "",
+  "organization": "Solo",
+  "keywords": [
+    "dragon",
+    "elemental"
+  ],
+  "size": {
+    "value": 3,
+    "letter": "M"
+  },
+  "speed": 8,
+  "stamina": 250,
+  "stability": 6,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 2,
+    "agility": 3,
+    "reason": -1,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {
+    "poison": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly",
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Solo Monster",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the end of each of their turns, the dragon can take <span class=\"damage-value damage-generic\">10</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p>The dragon can take two turns each round. They can't take turns consecutively.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Withering Wyrmscale Aura",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The dragon's scales create a 2 aura of withering green magic around them. Any creature other than the dragon who regains Stamina in the area regains only half the expected amount. Any winded creature who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">1d3</span> corruption damage.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Provoking Nettles",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Once per turn, the dragon shifts up to 5 squares and can move through enemies' spaces at their usual speed. The first time the dragon moves through an enemy's space during this movement, the enemy takes <span class=\"damage-value damage-generic\">3</span> damage.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Virulent Breath",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 10,
+          "secondary": 1,
+          "tertiary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {
+            "G0iD5SWwG9OQT27I": {
+              "name": "",
+              "img": null,
+              "type": "applied",
+              "_id": "G0iD5SWwG9OQT27I",
+              "applied": {
+                "tier1": {
+                  "display": "",
+                  "effects": {
+                    "evd5O1lH9z6bKcPr": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  },
+                  "potency": {
+                    "value": "@potency.weak",
+                    "characteristic": "none"
+                  }
+                },
+                "tier2": {
+                  "display": "",
+                  "effects": {
+                    "evd5O1lH9z6bKcPr": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  },
+                  "potency": {
+                    "value": "@potency.average",
+                    "characteristic": ""
+                  }
+                },
+                "tier3": {
+                  "display": "",
+                  "effects": {
+                    "evd5O1lH9z6bKcPr": {
+                      "condition": "failure",
+                      "end": "save",
+                      "properties": []
+                    }
+                  },
+                  "potency": {
+                    "value": "@potency.strong",
+                    "characteristic": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "text": "<p><strong>Note:</strong> Targets each Enemy and Object in the area.</p><p>Each target makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> poison damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> poison damage; the target is dragonsealed (save ends)</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage</p></td></tr></tbody></table> <p>A dragonsealed creature has their wounds bound by nettles and thorns, causing them to take an extra <span class=\"damage-value damage-generic\">1d3</span> damage whenever they take damage rolled as a d6 or a d3.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Spinous Tail Swing",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 2
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; push 2"
+            },
+            {
+              "tier": 2,
+              "display": "12 damage; push 4"
+            },
+            {
+              "tier": 3,
+              "display": "15 damage; push 8"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "Each target takes an extra 1d3 damage, and if they have A < 2, they are bleeding (save ends).",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target takes an extra 1d3 damage, and if they have A < 2, they are bleeding (save ends)."
+        }
+      }
+    },
+    {
+      "name": "Investiture of Verdure",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 5,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target must be dragonsealed. Each target is pulled up to 5 squares toward the dragon, who gains 5 temporary Stamina for each target pulled.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prickly Situation",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "freeTriggered",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creature",
+          "value": null
+        },
+        "trigger": "A dragonsealed creature within distance ends the dragonsealed effect.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The target is pulled up to 5 squares toward the dragon, and if they have A &lt; 2, they are restrained until the end of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Thorny Scales",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "freeTriggered",
+        "resource": 1,
+        "keywords": [
+          "melee"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creature",
+          "value": null
+        },
+        "trigger": "A creature within distance deals damage to the dragon with a melee strike.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The dragon makes a free strike against the target, and if the target has M &lt; 2, they are bleeding until the end of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Briar Bindings",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 4
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "9 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage; <strong class=\"potency-value\">A&lt;3</strong> restrained (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Thorned Armor",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The thorns upon the dragon's scales grow longer and sharper. Until the end of the encounter, any adjacent creature who targets the dragon with a melee strike takes 3 damage. The dragon then uses their Provoking Nettles ability.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Malign Thicket",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Poisonous overgrowth and seeking vines cover all surfaces on the encounter map. The dragon uses their Bramble Barricade Malice feature twice at no cost. Until the end of the encounter, any creature force moved by the dragon takes <span class=\"damage-value damage-generic\">1d3</span> poison damage, and if they have M &lt; 2, they are weakened (save ends).</p> <p><strong>Special:</strong> If the Thorn Dragon’s Domain trait is in effect, any creature other than the dragon who starts their turn on the encounter map takes <span class=\"damage-value damage-generic\">1d3</span> poison damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Cage of Thorns",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>A cage of thorns grows around one dragonsealed enemy on the encounter map, making that enemy restrained until the end of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Bramble Barricade",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The dragon grows a 10 wall of briars in unoccupied spaces on the encounter map. The wall blocks line of effect for all creatures except the dragon. Each square of the wall has 5 Stamina and fire weakness 5. The area can be moved through but is difficult terrain. Any creature who is force moved into or within the area takes <span class=\"damage-value damage-generic\">1</span> damage for each square of the area entered and is bleeding until the end of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Solo Action",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The dragon takes an additional main action on their turn. They can use this feature even if they are dazed.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Afflictive Overgrowth",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The dragon summons poisonous, biting thorns around their foes. Each enemy on the encounter map makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"122\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> poison damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> poison damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"122\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage; bleeding (EoT)</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "95",
+    "license": "Draw Steel Creator License"
+  }
+}

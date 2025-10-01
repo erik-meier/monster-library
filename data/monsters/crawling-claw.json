@@ -1,0 +1,229 @@
+{
+  "id": "crawling-claw",
+  "name": "Crawling Claw",
+  "level": 1,
+  "ev": 3,
+  "role": "Harrier",
+  "organization": "Minion",
+  "keywords": [],
+  "size": {
+    "value": 1,
+    "letter": "T"
+  },
+  "speed": 6,
+  "stamina": 4,
+  "stability": 0,
+  "freeStrike": 1,
+  "characteristics": {
+    "might": 0,
+    "agility": 2,
+    "reason": -5,
+    "intuition": -1,
+    "presence": -1
+  },
+  "immunities": {
+    "corruption": 1,
+    "poison": 1
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk",
+    "climb"
+  ],
+  "items": [
+    {
+      "name": "Disorganized",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Allies can’t flank with the crawling claw.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Fingernails",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1,
+          "custom": "One creature or object per minion"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "1 damage"
+            },
+            {
+              "tier": 2,
+              "display": "2 damage"
+            },
+            {
+              "tier": 3,
+              "display": "3 damage"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The crawling claw shifts up to a number of squares equal to the damage dealt.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Dread March",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Paranormal Fling",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Ravenous Horde",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 2,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "The Grasping, the Hungry",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table> <p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "261",
+    "license": "Draw Steel Creator License"
+  }
+}

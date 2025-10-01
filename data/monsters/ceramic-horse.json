@@ -1,0 +1,299 @@
+{
+  "id": "ceramic-horse",
+  "name": "Ceramic Horse",
+  "level": 1,
+  "ev": 6,
+  "role": "Mount",
+  "organization": "Platoon",
+  "keywords": [
+    "elemental"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 10,
+  "stamina": 30,
+  "stability": 2,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 2,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Shared Otherworldly Grace",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>If the ceramic horse's rider has the Otherworldly Grace trait, the ceramic horse also has that trait.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Elemental Charge",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage"
+            },
+            {
+              "tier": 2,
+              "display": "7 fire damage"
+            },
+            {
+              "tier": 3,
+              "display": "9 lightning damage; <strong class=\"potency-value\">M&lt;2</strong> prone"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Stomp",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "area",
+          "weapon"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage"
+            },
+            {
+              "tier": 2,
+              "display": "5 damage"
+            },
+            {
+              "tier": 3,
+              "display": "7 damage"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Any target who is prone takes an extra <span class=\"damage-value damage-generic\">2</span> damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Buck",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 2,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "special",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Note: Targets the Horses rider</p><p>The horse vertical slides the target up to 3 squares, ignoring stability. The target can use a ranged ability at any point during this forced movement, and takes no damage if they then fall.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Chaincast",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Gift From an Accursed Tome",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 5,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 5,
+          "secondary": 1,
+          "tertiary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p> <p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "In Defiance of Time",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "125",
+    "license": "Draw Steel Creator License"
+  }
+}

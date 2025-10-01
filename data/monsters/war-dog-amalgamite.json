@@ -1,0 +1,242 @@
+{
+  "id": "war-dog-amalgamite",
+  "name": "War Dog Amalgamite",
+  "level": 2,
+  "ev": 4,
+  "role": "Brute",
+  "organization": "Horde",
+  "keywords": [
+    "humanoid",
+    "soulless"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 25,
+  "stability": 2,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 2,
+    "agility": 0,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Loyalty Collar",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the amalgamite is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">1d6</span> damage to each adjacent enemy and object.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Several Arms",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
+            },
+            {
+              "tier": 2,
+              "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> grabbed"
+            },
+            {
+              "tier": 3,
+              "display": "6 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The amalgamite can have up to four targets grabbed at once.</p><p><span class=\"damage-value damage-generic\">3</span> damage</p>"
+        },
+        "spend": {
+          "text": "The amalgamite deals 3 damage to each creature grabbed this way or who they already have grabbed, and regains Stamina equal to the damage dealt.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The amalgamite deals 3 damage to each creature grabbed this way or who they already have grabbed, and regains Stamina equal to the damage dealt."
+        }
+      }
+    },
+    {
+      "name": "Posthumous Promotion",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "special",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Fire for Effect",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 5,
+        "keywords": [
+          "area",
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 4,
+          "secondary": 10
+        },
+        "target": {
+          "type": "creature",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> fire damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> fire damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> fire damage</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Fodder Run",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Reconstitute",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "300",
+    "license": "Draw Steel Creator License"
+  }
+}

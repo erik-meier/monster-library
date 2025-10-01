@@ -1,0 +1,397 @@
+{
+  "id": "strategos-alkestis",
+  "name": "Strategos Alkestis",
+  "level": 10,
+  "ev": 48,
+  "role": "",
+  "organization": "Leader",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 260,
+  "stability": 1,
+  "freeStrike": 10,
+  "characteristics": {
+    "might": 4,
+    "agility": 4,
+    "reason": 5,
+    "intuition": 5,
+    "presence": 5
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "End Effect",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the end of each of her turns, Alkestis can take <span class=\"damage-value damage-generic\">20</span> damage to end one effect on her that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Tactical Brilliance",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the start of each of Alkestis's turns, the Director gains 2 Malice. While Alkestis is alive and in the encounter, the Director also gains 1 Malice whenever a war dog in the encounter obtains a tier 3 outcome on a power roll.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Houndgun and Houndblade",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "meleeRanged",
+          "primary": 1,
+          "secondary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "15 damage; <strong class=\"potency-value\">M&lt;3+1</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "21 damage; <strong class=\"potency-value\">M&lt;4+1</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "25 damage; <strong class=\"potency-value\">M&lt;5+1</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Each target loses <span class=\"roll-formula\">1d3</span>{1d3 Recoveries}.</p>"
+        },
+        "spend": {
+          "text": "When a target is made bleeding this way, each ally adjacent to them can make a free strike against the target.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> When a target is made bleeding this way, each ally adjacent to them can make a free strike against the target."
+        }
+      }
+    },
+    {
+      "name": "Focus Fire",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 15
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the start of Alkestis's next turn, any effect that reduces the damage taken by the target has no effect.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Artillery Enfilade",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 2,
+        "keywords": [
+          "area",
+          "ranged",
+          "weapon"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 7,
+          "secondary": 3,
+          "tertiary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": null
+        },
+        "trigger": "An ally is reduced to 0 Stamina within 10 squares of Alkestis.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; <strong class=\"potency-value\">A&lt;3+1</strong> slowed (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "13 damage; <strong class=\"potency-value\">A&lt;4+1</strong> slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "16 damage; <strong class=\"potency-value\">A&lt;5+1</strong> slowed (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The area is difficult terrain until the start of the next round</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Fog of War",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "ally",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target can disappear, then reappear anywhere on the encounter map 3 or more squares away from any enemy. Additionally, each target has a double edge on their next power roll.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Send in the Second Wave",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 15
+        },
+        "target": {
+          "type": "special",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>For each war dog reduced to 0 Stamina in the encounter, a war dog shriketrooper appears in an unoccupied space within distance.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "The Silver Wolf's Final Stratagem",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 5
+        },
+        "target": {
+          "type": "creature",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the start of the next round, each target enemy who has I &lt; 4 is dazed, each target enemy who has M &lt; 4 is restrained, and each target enemy who has A &lt; 4 can't use triggered actions. Additionally, until the end of the encounter, Alkestis and each target ally have damage immunity 3 and deal an extra 5 damage with strikes.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p><p><span class=\"reference-text\">Loyalty Unto Death</span></p><p><span class=\"reference-text\">Alchemical Cloud</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Cry Havoc",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 7,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 3
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "5",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 psychic damage"
+            },
+            {
+              "tier": 2,
+              "display": "11 psychic damage; <strong class=\"potency-value\">P&lt;4</strong> frightened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "14 psychic damage; <strong class=\"potency-value\">P&lt;5</strong> frightened (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Each war dog within distance deals an extra <span class=\"damage-value damage-generic\">15</span> damage with strikes until the end of their next turn. Additionally, they end any effect on them that can be ended by a saving throw or that ends at the end of their turn, then shift up to their speed and can make a free strike.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "320",
+    "license": "Draw Steel Creator License"
+  }
+}

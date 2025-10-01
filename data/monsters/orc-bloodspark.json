@@ -1,0 +1,112 @@
+{
+  "id": "orc-bloodspark",
+  "name": "Orc Bloodspark",
+  "level": 1,
+  "ev": 3,
+  "role": "Artillery",
+  "organization": "Minion",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 3,
+  "stability": 0,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 0,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "With Captain",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p><strong>With Captain:</strong> +2 bonus to forced movement distance</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Explosive Mote",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 damage; or the bloodspark can shift 1 square away from the target."
+            },
+            {
+              "tier": 2,
+              "display": "4 damage; or the bloodspark can shift 2 square away from the target."
+            },
+            {
+              "tier": 3,
+              "display": "5 damage; or the bloodspark can shift 4 square away from the target."
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Bloodfire Burn",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>If the bloodspark is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">2</span> damage free strike before dying.</p>",
+          "director": ""
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "216",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "id": "brambleguard",
+  "name": "Brambleguard",
+  "level": 2,
+  "ev": 8,
+  "role": "Defender",
+  "organization": "Platoon",
+  "keywords": [
+    "elemental"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 4,
+  "stamina": 59,
+  "stability": 3,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 2,
+    "agility": 0,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Thicket and Thorns",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The brambleguard blocks line of effect for enemies. Each enemy who starts their turn adjacent to a brambleguard takes <span class=\"damage-value damage-generic\">4</span> damage</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Wall of Roses",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the start of the brambleguard's next turn, their speed is 0 and they extend themself into a 5 wall. Each ally who starts their turn adjacent to the brambleguard regains <span class=\"heal-value\">5</span>  stamina and can apply the Magic keyword to their weapon abilities until the end of their turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Whip Frenzy",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "area",
+          "weapon"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 2
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
+            },
+            {
+              "tier": 2,
+              "display": "7 damage; push 3"
+            },
+            {
+              "tier": 3,
+              "display": "10 damage; push 3; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Chaincast",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Gift From an Accursed Tome",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 5,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 5,
+          "secondary": 1,
+          "tertiary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p> <p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "In Defiance of Time",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "121",
+    "license": "Draw Steel Creator License"
+  }
+}

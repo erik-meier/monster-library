@@ -1,0 +1,245 @@
+{
+  "id": "mummy",
+  "name": "Mummy",
+  "level": 4,
+  "ev": 6,
+  "role": "Brute",
+  "organization": "Horde",
+  "keywords": [
+    "undead"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 50,
+  "stability": 2,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 3,
+    "agility": -1,
+    "reason": 1,
+    "intuition": 3,
+    "presence": 0
+  },
+  "immunities": {
+    "corruption": 4,
+    "poison": 4
+  },
+  "weaknesses": {
+    "fire": 5
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Accursed Bindings",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 3
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 corruption damage; pull 1"
+            },
+            {
+              "tier": 2,
+              "display": "8 corruption damage; pull 2"
+            },
+            {
+              "tier": 3,
+              "display": "10 corruption damage; pull 2; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The next ability the mummy uses against the target has any potency increased by 1 for the target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Eldritch Curse",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 3,
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 corruption damage; <strong class=\"potency-value\">I&lt;1</strong> the target is cursed (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "5 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> the target is cursed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "7 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> the target is cursed (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>A cursed target is bleeding and weakened, and allies gain an edge on strikes made against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Blast of Mummy Dust",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 1,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 1
+        },
+        "target": {
+          "type": "creature",
+          "value": null
+        },
+        "trigger": "The mummy comes within distance of a restrained creature or starts their turn within distance of one.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The target takes <span class=\"damage-value damage-generic\">8</span> poison damage</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Blood Hunger",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One undead acting this turn uses a signature ability against a creature who is bleeding. As a free triggered action, each undead within 5 squares of the first undead moves up to their speed and can make a free strike against the same target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "266",
+    "license": "Draw Steel Creator License"
+  }
+}

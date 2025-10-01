@@ -1,0 +1,458 @@
+{
+  "id": "high-elf-ordinator",
+  "name": "High Elf Ordinator",
+  "level": 3,
+  "ev": 20,
+  "role": "",
+  "organization": "Leader",
+  "keywords": [
+    "fey",
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 120,
+  "stability": 0,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 0,
+    "agility": 2,
+    "reason": 3,
+    "intuition": 2,
+    "presence": 3
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "fly",
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Otherworldly Blessing",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the start of each of their turns, the ordinator can choose one or more effects on them that can be ended by a saving throw. The effects instead end at the end of the ordinator's turn</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Lightning Rod",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "9 lightning damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "14 lightning damage; <strong class=\"potency-value\">R&lt;2</strong> dazed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "17 lightning damage; <strong class=\"potency-value\">R&lt;3</strong> dazed (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Until the start of the ordinator's next turn, each ally high elf in the encounter gains an edge on ability rolls against the target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Elemental Uproar",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Note: Targets Each elemental ally in the area</p><p>Each target can move up to their speed or make a free strike. Elemental mote targets can, instead, use their Spark of Life trait.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Summon Elemental",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 2,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "special",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The ordinator summons four <span class=\"reference-text\">Elemental Motes</span> or four <span class=\"reference-text\">Soot Crows</span> into unoccupied space within distance.</p>"
+        },
+        "spend": {
+          "text": "The ordinator instead summons one ceramic horse or one  winded brambleguard into an unoccupied space within distance.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The ordinator instead summons one ceramic horse or one  winded brambleguard into an unoccupied space within distance."
+        }
+      }
+    },
+    {
+      "name": "Enough!",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "triggered",
+        "resource": null,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": 1
+        },
+        "trigger": "An enemy within distance uses an ability against the ordinator or any ally within distance.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The ordinator uses Lightning Rod against the target after the ability is resolved.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Fountains Roar, Now Free From the Earth",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "ally",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target glows briefly, and can end one effect on themself then move up to their speed.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "And the Sun Forsook Her Children",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 5,
+          "secondary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target makes a **Presence test**.</p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> corruption damage; pull 5 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> corruption damage; pull 3 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p>Pull 1 toward the center of the cube</p></td></tr></tbody></table> <p>The area turns dark and distorted, and is difficult terrain for enemies.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "But We Will Change Her Mind",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 10
+        },
+        "target": {
+          "type": "selfAlly",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target’s free strike now has the Magic keyword and can target two creatures or objects. Additionally, each target glows with magic.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "The Ordinator is a Magic Beacon",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Whenever a high elf ordinator appears on an encounter map, the Chaincast Malice feature is improved and always active. When any elf uses a magic ability as if they were in the ordinator’s space, that ability has a double edge.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Chaincast",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Gift From an Accursed Tome",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 5,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 5,
+          "secondary": 1,
+          "tertiary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p> <p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "In Defiance of Time",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "124",
+    "license": "Draw Steel Creator License"
+  }
+}

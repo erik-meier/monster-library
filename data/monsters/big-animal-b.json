@@ -1,0 +1,181 @@
+{
+  "id": "big-animal-b",
+  "name": "Big Animal B",
+  "level": 2,
+  "ev": 16,
+  "role": "Mount",
+  "organization": "Elite",
+  "keywords": [
+    "animal"
+  ],
+  "size": {
+    "value": 3,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 80,
+  "stability": 3,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 2,
+    "agility": 1,
+    "reason": -1,
+    "intuition": 1,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Beast of Burden",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While riding the animal, two size 1 allies can occupy the same space.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Nature's Spirit",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While outdoors or in a natural environment, the animal can negate a bane on their abilities or turn a double bane into a bane.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Natural Weapon",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 2
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
+            },
+            {
+              "tier": 2,
+              "display": "10 damage; push 1"
+            },
+            {
+              "tier": 3,
+              "display": "13 damage; push 2"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Trundle",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The animal moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Animal Rally",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "triggered",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "ranged",
+          "primary": 20
+        },
+        "target": {
+          "type": "ally",
+          "value": 1
+        },
+        "trigger": "The target is knocked prone.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The animal moves up to their speed. If they end their turn adjacent to the target, they can use the Stand Up maneuver to let the target stand, then get on to ride them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "42",
+    "license": "Draw Steel Creator License"
+  }
+}

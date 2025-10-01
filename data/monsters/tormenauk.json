@@ -1,0 +1,229 @@
+{
+  "id": "tormenauk",
+  "name": "Tormenauk",
+  "level": 6,
+  "ev": 8,
+  "role": "Brute",
+  "organization": "Horde",
+  "keywords": [
+    "abyssal"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 45,
+  "stability": 2,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 3,
+    "agility": 0,
+    "reason": 2,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {
+    "holy": 5
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Lethe",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While the tormenauk is winded, they gain an edge on strikes, and any strike made against them gains an edge.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Soulsight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Any creature within 2 squares of the tormenauk can't be hidden from them.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Many Maws",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
+            },
+            {
+              "tier": 2,
+              "display": "9 damage"
+            },
+            {
+              "tier": 3,
+              "display": "11 damage; grabbed, and the target takes a bane on the Escape Grab maneuver"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Any target grabbed this way takes <span class=\"damage-value damage-generic\">4</span> psychic damage at the start of each of the tormenauk's turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Agony Wail",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 5,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 3
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 psychic damage; <strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "6 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "8 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> dazed (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The potency increases by 1 if the target is grabbed by the tormenauk.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Abyssal Jaunt",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "67",
+    "license": "Draw Steel Creator License"
+  }
+}

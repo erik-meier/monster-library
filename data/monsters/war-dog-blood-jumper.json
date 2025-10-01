@@ -1,0 +1,145 @@
+{
+  "id": "war-dog-blood-jumper",
+  "name": "War Dog Blood Jumper",
+  "level": 10,
+  "ev": 12,
+  "role": "",
+  "organization": "Minion",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 7,
+  "stamina": 15,
+  "stability": 2,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 5,
+    "agility": 4,
+    "reason": 2,
+    "intuition": 3,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "fly",
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Drop Troop",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>If the jumper doesn't end their turn on the ground, they fall prone.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Loyalty Collar",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the jumper is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> damage to each adjacent enemy and object.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Jumplance",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
+            },
+            {
+              "tier": 2,
+              "display": "7 damage"
+            },
+            {
+              "tier": 3,
+              "display": "9 damage; <strong class=\"potency-value\">A&lt;5</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p><p><span class=\"reference-text\">Loyalty Unto Death</span></p><p><span class=\"reference-text\">Alchemical Cloud</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "315",
+    "license": "Draw Steel Creator License"
+  }
+}

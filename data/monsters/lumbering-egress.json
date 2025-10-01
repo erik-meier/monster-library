@@ -1,0 +1,383 @@
+{
+  "id": "lumbering-egress",
+  "name": "Lumbering Egress",
+  "level": 6,
+  "ev": 32,
+  "role": "",
+  "organization": "Leader",
+  "keywords": [
+    "abyssal"
+  ],
+  "size": {
+    "value": 3,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 180,
+  "stability": 3,
+  "freeStrike": 7,
+  "characteristics": {
+    "might": 4,
+    "agility": -1,
+    "reason": 1,
+    "intuition": 2,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {
+    "holy": 5
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "End Effect",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the end of each of their turns, the egress can take <span class=\"damage-value damage-generic\">10</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Ensnarer Cannon",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "11 corruption damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "16 corruption damage; <strong class=\"potency-value\">A&lt;3</strong> restrained (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "19 corruption damage; <strong class=\"potency-value\">A&lt;4</strong> restrained (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p><a href=\"/monster/ensnarer\" class=\"monster-link\">Ensnarer</a></p>"
+        },
+        "spend": {
+          "text": "Two ensnarers appear in unoccupied spaces adjacent to each target. On a tier 3 outcome, four ensnarers appear.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Two ensnarers appear in unoccupied spaces adjacent to each target. On a tier 3 outcome, four ensnarers appear."
+        }
+      }
+    },
+    {
+      "name": "Demonic Egress",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 2,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 3
+        },
+        "target": {
+          "type": "special",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Four level 1 demon minions (most commonly ensnarers, frenzieds, and pitlings) burst forth from the egress and appear in unoccupied spaces in the area.</p><p><a href=\"/monster/ensnarer\" class=\"monster-link\">Ensnarer</a></p><p><a href=\"/monster/frenzied\" class=\"monster-link\">Frenzied</a></p><p><a href=\"/monster/pitling\" class=\"monster-link\">Pitling</a></p> <p><a href=\"/monster/orliq\" class=\"monster-link\">Orliq</a></p><p><a href=\"/monster/grulqin\" class=\"monster-link\">Grulqin</a></p><p><a href=\"/monster/wobalas\" class=\"monster-link\">Wobalas</a></p>"
+        },
+        "spend": {
+          "text": "Four level 4 demon minions (most commonly orliq, grul qins, and wobalas) appear instead.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Four level 4 demon minions (most commonly orliq, grul qins, and wobalas) appear instead."
+        }
+      }
+    },
+    {
+      "name": "Abyssal Protectors",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "triggered",
+        "resource": 2,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 5
+        },
+        "target": {
+          "type": "special",
+          "value": null
+        },
+        "trigger": "The last ally minion on the encounter map dies, or the egress is reduced below 25 Stamina.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Eight <a href=\"/monster/ensnarer\" class=\"monster-link\">Ensnarer</a> appear anywhere in the area.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Frenzied Deluge",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "enemy",
+          "value": 3
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 corruption damage"
+            },
+            {
+              "tier": 2,
+              "display": "12 corruption damage"
+            },
+            {
+              "tier": 3,
+              "display": "15 corruption damage; two frenzieds appear in unoccupied spaces adjacent to each target"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p><a href=\"/monster/frenzied\" class=\"monster-link\">Frenzied</a></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Fold Space",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 20
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The egress folds into their own portal and teleports to an un occupied space within distance. Four level 4 demon minions (most commonly orliq, grulqins, and wobalas) appear in squares in the egress's former space.</p> <p><a href=\"/monster/orliq\" class=\"monster-link\">Orliq</a></p><p><a href=\"/monster/grulqin\" class=\"monster-link\">Grulqin</a></p><p><a href=\"/monster/wobalas\" class=\"monster-link\">Wobalas</a></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Blood of the Abyss",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 10,
+          "secondary": 3,
+          "tertiary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 corruption damage; <strong class=\"potency-value\">R&lt;2</strong> weakened (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "11 corruption damage; <strong class=\"potency-value\">R&lt;3</strong> weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "14 corruption damage; <strong class=\"potency-value\">R&lt;4</strong> weakened (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Note: Targets <strong>Enemy</strong> and Object in the area.</p> <p>The egress recalls and instantly destroys any minion allies on the encounter map. A torrent of churned-up minion bodies, blood, and ichor erupts from the egress, dealing an extra <span class=\"damage-value damage-generic\">1</span> damage for each minion destroyed this way.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Abyssal Jaunt",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "68",
+    "license": "Draw Steel Creator License"
+  }
+}

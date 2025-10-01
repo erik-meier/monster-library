@@ -1,0 +1,241 @@
+{
+  "id": "fangling",
+  "name": "Fangling",
+  "level": 4,
+  "ev": 6,
+  "role": "Harrier",
+  "organization": "Horde",
+  "keywords": [
+    "abyssal"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "L"
+  },
+  "speed": 8,
+  "stamina": 30,
+  "stability": 0,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 3,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {
+    "holy": 5
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Made of Teeth",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Whenever an adjacent enemy grabs the fangling or uses a melee ability against the fangling, they take <span class=\"damage-value damage-generic\">2</span> damage.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Lethe",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While the fangling is winded, they gain an edge on strikes, and any strike made against them gains an edge.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Soulsight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Any creature within 2 squares of the fangling can't be hidden from them</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Tooth! Tusk! Claw!",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage"
+            },
+            {
+              "tier": 2,
+              "display": "7 damage"
+            },
+            {
+              "tier": 3,
+              "display": "9 damage"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Each enemy adjacent to the fangling takes <span class=\"damage-value damage-generic\">2</span> damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Tumbling Gore",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 2,
+        "keywords": [
+          "area",
+          "weapon"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 8,
+          "secondary": 3,
+          "tertiary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 damage; pull 1; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "3 damage; pull 1; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "4 damage; pull 1; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Abyssal Jaunt",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "66",
+    "license": "Draw Steel Creator License"
+  }
+}

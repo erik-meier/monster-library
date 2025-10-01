@@ -1,0 +1,227 @@
+{
+  "id": "servitor-war-walker",
+  "name": "Servitor War Walker",
+  "level": 1,
+  "ev": 12,
+  "role": "Mount",
+  "organization": "Elite",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 3,
+    "letter": "M"
+  },
+  "speed": 8,
+  "stamina": 60,
+  "stability": 2,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 2,
+    "agility": 0,
+    "reason": -2,
+    "intuition": 0,
+    "presence": -2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "climb",
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Cupola",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While riding the war walker, three size 1 allies can occupy the same space. Creatures riding the war walker have cover.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Mobile Prison Harness",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Any restrained or slowed creature who comes adjacent to the war walker is automatically restrained (save ends) and takes a bane on power rolls. A creature restrained this way moves with the war walker.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Grasping Claws",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage"
+            },
+            {
+              "tier": 2,
+              "display": "9 damage"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>A target already restrained or restrained by this ability is pulled up to 3 squares. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Stunning Blast",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "weapon"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 3
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 lightning damage; <strong class=\"potency-value\">A&lt;0</strong> slowed (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "6 lightning damage; <strong class=\"potency-value\">A&lt;1</strong> slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "7 lightning damage; <strong class=\"potency-value\">A&lt;2</strong> slowed (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Breaching Charge",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A dwarf starts their turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Rappelling Barrage",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A dwarf starts their turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "111",
+    "license": "Draw Steel Creator License"
+  }
+}

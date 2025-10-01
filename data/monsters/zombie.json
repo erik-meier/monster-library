@@ -1,0 +1,278 @@
+{
+  "id": "zombie",
+  "name": "Zombie",
+  "level": 1,
+  "ev": 3,
+  "role": "Brute",
+  "organization": "Horde",
+  "keywords": [
+    "undead"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 20,
+  "stability": 1,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 2,
+    "agility": 1,
+    "reason": -5,
+    "intuition": -2,
+    "presence": 1
+  },
+  "immunities": {
+    "corruption": 1,
+    "poison": 1
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Clobber and Clutch",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 damage"
+            },
+            {
+              "tier": 2,
+              "display": "6 damage"
+            },
+            {
+              "tier": 3,
+              "display": "7 damage; grabbed"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>A target who starts their turn grabbed by the zombie takes 2 corruption damage. A creature who takes 5 or more corruption damage this way becomes insatiably hungry for flesh, and must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Zombie Dust",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 2
+        },
+        "target": {
+          "type": "enemy",
+          "value": null,
+          "custom": "Each enemy in the area"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "2 corruption damage"
+            },
+            {
+              "tier": 2,
+              "display": "3 corruption damage; <strong class=\"potency-value\">M&lt;1</strong> Weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "4 corruption damage; <strong class=\"potency-value\">M&lt;2</strong> Dazed (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Endless Knight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The first time the zombie is reduced to 0 Stamina by damage that isn’t fire damage or holy damage and their body isn’t destroyed, they instead have 10 Stamina and fall prone.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Dread March",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Paranormal Fling",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Ravenous Horde",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 2,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "The Grasping, the Hungry",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table> <p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "264",
+    "license": "Draw Steel Creator License"
+  }
+}

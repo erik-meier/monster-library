@@ -1,0 +1,337 @@
+{
+  "id": "minotaur-sunderer",
+  "name": "Minotaur Sunderer",
+  "level": 3,
+  "ev": 20,
+  "role": "Brute",
+  "organization": "Elite",
+  "keywords": [
+    "accursed",
+    "humanoid"
+  ],
+  "size": {
+    "value": 2,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 120,
+  "stability": 2,
+  "freeStrike": 6,
+  "characteristics": {
+    "might": 2,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 2,
+    "presence": -1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Minotaur Sense",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The sunderer can't obtain less than a tier 2 outcome when making tests to navigate, search, or seek.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Spiked Maul",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 2
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "8 damage; pull 1"
+            },
+            {
+              "tier": 2,
+              "display": "12 damage; pull 2"
+            },
+            {
+              "tier": 3,
+              "display": "15 damage; pull 3"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>A target pulled adjacent to the sunderer is automatically grabbed.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Fearsome Bay",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 5,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 3
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "<strong class=\"potency-value\">I&lt;0</strong> frightened (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "<strong class=\"potency-value\">I&lt;1</strong> frightened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "<strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Until the end of their next turn, the minotaur has damage immunity 2 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with strikes.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Disemboweling Horns",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "charge",
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 2
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>While bleeding this way, the target takes <span class=\"damage-value damage-generic\">1d6</span> damage at the start of each of their turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Retaliatory Strike",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "triggered",
+        "resource": null,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 6
+        },
+        "target": {
+          "type": "creature",
+          "value": null
+        },
+        "trigger": "A creature within distance deals damage to the sunderer.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The sunderer uses the Charge main action and Spiked Maul against the target.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Bull Rush",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "special",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A minotaur starts its turn.",
+        "power": {
+          "roll": {
+            "formula": "",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Cut the … Nonsense!",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "special",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A minotaur starts its turn.",
+        "power": {
+          "roll": {
+            "formula": "",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Bullseye",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "special",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A minotaur starts its turn.",
+        "power": {
+          "roll": {
+            "formula": "",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "207",
+    "license": "Draw Steel Creator License"
+  }
+}

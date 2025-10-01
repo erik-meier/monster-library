@@ -1,0 +1,259 @@
+{
+  "id": "specter",
+  "name": "Specter",
+  "level": 1,
+  "ev": 3,
+  "role": "Hexer",
+  "organization": "Horde",
+  "keywords": [
+    "undead"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 10,
+  "stability": 1,
+  "freeStrike": 1,
+  "characteristics": {
+    "might": -5,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 2
+  },
+  "immunities": {
+    "corruption": 1,
+    "poison": 1
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly"
+  ],
+  "items": [
+    {
+      "name": "Corruptive Phasing",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The specter can move through creatures and objects at their usual speed, but can’t end their turn inside a creature or object. The first time in a round that the specter moves through a creature, that creature takes 2 corruption damage. The specter doesn’t take damage from being force moved into objects.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Hidden Movement",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The specter turns invisible, moves up to their speed, and is visible again.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Decaying Touch",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "melee",
+          "strike"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "presence"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 corruption damage; <strong class=\"potency-value\">P&lt;0</strong> weakened (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "4 corruption damage; <strong class=\"potency-value\">P&lt;1</strong> weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "5 corruption damage; <strong class=\"potency-value\">P&lt;2</strong> weakened (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "The potency increases by 1. Any living creature who dies  from this damage rises at the start of the next round in the target’s  space as a specter under the Director’s control.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The potency increases by 1. Any living creature who dies  from this damage rises at the start of the next round in the target’s  space as a specter under the Director’s control."
+        }
+      }
+    },
+    {
+      "name": "Dread March",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Up to four undead in the encounter move up to their speed and can make a free strike. The number of undead affected increases by 1 for each additional Malice spent on this feature. If an undead is reduced to 0 Stamina during this dread march, they don’t die until the march is resolved.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Paranormal Fling",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Up to three unattended objects on the encounter map rise to f loat 1 square off the ground. Each object is then pulled 5 squares toward the nearest enemy within 3 squares of the object.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Ravenous Horde",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 2,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>At the end of this round, each hero not already adjacent to one or more undead is beset by two <strong>rotting zombies</strong> who burst up from the ground to appear in adjacent unoccupied spaces. Each zombie is winded. This feature can’t be used two rounds in a row.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "The Grasping, the Hungry",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "An undead starts its turn",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Ravenous and rotting undead arms burst forth from 9 connected squares of a vertical or horizontal surface. Any creature who ends their turn adjacent to an affected square makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; restrained (EoT)</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage.</p></td></tr></tbody></table> <p>While restrained this way, a creature takes 1d6 damage at the start of each of their turns.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "262",
+    "license": "Draw Steel Creator License"
+  }
+}

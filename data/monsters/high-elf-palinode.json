@@ -1,0 +1,255 @@
+{
+  "id": "high-elf-palinode",
+  "name": "High Elf Palinode",
+  "level": 1,
+  "ev": 6,
+  "role": "Support",
+  "organization": "Platoon",
+  "keywords": [
+    "fey",
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 5,
+  "stamina": 30,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 0,
+    "agility": 0,
+    "reason": 0,
+    "intuition": 2,
+    "presence": 1
+  },
+  "immunities": {
+    "psychic": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Otherworldly Grace",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the start of each of their turns, the palinode can choose one effect on them that can be ended by a saving throw. That effect instead ends at the end of their turn.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Instill Regret",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 8
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "intuition"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 psychic damage"
+            },
+            {
+              "tier": 2,
+              "display": "7 psychic damage; <strong class=\"potency-value\">I&lt;1</strong> weakened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "9 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> weakened (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "The potency increases by 1. If the target is weakened this  way at the end of the encounter, they can’t take a respite activity  during their next respite.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The potency increases by 1. If the target is weakened this  way at the end of the encounter, they can’t take a respite activity  during their next respite."
+        }
+      }
+    },
+    {
+      "name": "Recall",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 5
+        },
+        "target": {
+          "type": "ally",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "intuition"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target can teleport to an unoccupied space adjacent to the palinode. The palinode and each target then gain <span class=\"heal-value\">5</span> temporary stamina.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Chaincast",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Gift From an Accursed Tome",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 5,
+        "keywords": [
+          "area",
+          "magic"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 5,
+          "secondary": 1,
+          "tertiary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2",
+            "characteristics": []
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p> <p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "In Defiance of Time",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "122",
+    "license": "Draw Steel Creator License"
+  }
+}

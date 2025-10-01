@@ -1,0 +1,138 @@
+{
+  "id": "animal",
+  "name": "Animal",
+  "level": 1,
+  "ev": 12,
+  "role": "Harrier",
+  "organization": "Elite",
+  "keywords": [
+    "animal"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 60,
+  "stability": 0,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 0,
+    "agility": 2,
+    "reason": -2,
+    "intuition": 1,
+    "presence": -2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Nature's Spirit",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While outdoors or in a natural environment, the animal can negate a bane on their abilities or turn a double bane into a bane.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Natural Weapon",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage"
+            },
+            {
+              "tier": 2,
+              "display": "9 damage"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The animal shifts up to 2 squares between strikes.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Rush",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [
+          "-"
+        ],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The animal moves up to their speed.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "41",
+    "license": "Draw Steel Creator License"
+  }
+}

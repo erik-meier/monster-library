@@ -1,0 +1,233 @@
+{
+  "id": "bale-eye",
+  "name": "Bale Eye",
+  "level": 5,
+  "ev": 7,
+  "role": "Hexer",
+  "organization": "Horde",
+  "keywords": [
+    "abyssal"
+  ],
+  "size": {
+    "value": 4,
+    "letter": "M"
+  },
+  "speed": 6,
+  "stamina": 30,
+  "stability": 2,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 0,
+    "agility": 0,
+    "reason": 3,
+    "intuition": 3,
+    "presence": 3
+  },
+  "immunities": {},
+  "weaknesses": {
+    "holy": 5
+  },
+  "movementTypes": [
+    "walk",
+    "fly"
+  ],
+  "items": [
+    {
+      "name": "Lethe",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While the bale eye is winded, they gain an edge on strikes, and any strike made against them gains an edge.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Soulsight",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Any creature within 5 squares of the bale eye can't be hidden from them.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Wilting Visions",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 15
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 psychic damage"
+            },
+            {
+              "tier": 2,
+              "display": "8 psychic damage"
+            },
+            {
+              "tier": 3,
+              "display": "9 psychic damage"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The target has corruption weakness 5 (EoT).</p>"
+        },
+        "spend": {
+          "text": "If the target has i<2, they have corruption weakness 5  (save ends).",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If the target has i<2, they have corruption weakness 5  (save ends)."
+        }
+      }
+    },
+    {
+      "name": "Demonwarp Tears",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "main",
+        "resource": 5,
+        "keywords": [
+          "area",
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 4,
+          "secondary": 5
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 psychic damage; <strong class=\"potency-value\">A&lt;1</strong> the target is warped (Save Ends)"
+            },
+            {
+              "tier": 2,
+              "display": "5 psychic damage; <strong class=\"potency-value\">A&lt;2</strong> the target is warped (Save Ends)"
+            },
+            {
+              "tier": 3,
+              "display": "6 psychic damage; <strong class=\"potency-value\">A&lt;3</strong> the target is warped (Save Ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p><strong>Special:</strong> The bale eye must create the cube beneath themself.</p> <p>While warped, a creature has a double bane on power rolls using any characteristic higher than 0, and has a double edge on power rolls using any characteristic lower than 0.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The demon activates a Malice feature available to demons of level 3 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Abyssal Jaunt",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One demon acting this turn folds space around them, temporarily slipping in and out of the Abyssal Wasteland. Until the start of the demon’s next turn, they ignore difficult terrain, can move through solid matter, and don’t provoke opportunity attacks by moving. If the demon ends their turn inside solid matter, they are shunted out into the space from which they entered it.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "66",
+    "license": "Draw Steel Creator License"
+  }
+}

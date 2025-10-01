@@ -1,0 +1,50 @@
+{
+  "id": "familiar",
+  "name": "Familiar",
+  "level": 1,
+  "ev": 4,
+  "role": "Support",
+  "organization": "Minion",
+  "keywords": [
+    "animal"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "T"
+  },
+  "speed": 5,
+  "stamina": 20,
+  "stability": 0,
+  "freeStrike": 0,
+  "characteristics": {
+    "might": -3,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Telepathic",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While you and your familiar are within 10 squares of each other, you can communicate telepathically and share each other’s senses. While sharing senses, each of you also benefits from your own senses at the same time.</p>",
+          "director": ""
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Heroes",
+    "page": "231",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "id": "wode-elf-chirurgeon",
+  "name": "Wode Elf Chirurgeon",
+  "level": 2,
+  "ev": 8,
+  "role": "Harrier",
+  "organization": "Platoon",
+  "keywords": [
+    "fey",
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 7,
+  "stamina": 40,
+  "stability": 0,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 1,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "climb",
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Masking Glamor",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Abilities targeting the chirurgeon that would take a bane from cover or concealment have a double bane instead.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Wild Ax",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "meleeRanged",
+          "primary": 1,
+          "secondary": 5
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "6 damage; push 1"
+            },
+            {
+              "tier": 2,
+              "display": "9 damage; push 3"
+            },
+            {
+              "tier": 3,
+              "display": "12 damage; push 5"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The chirurgeon can make a ranged free strike before using this ability.</p>"
+        },
+        "spend": {
+          "text": "The chirurgeon uses this ability again.",
+          "value": 5,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> The chirurgeon uses this ability again."
+        }
+      }
+    },
+    {
+      "name": "The Wode Protects Us",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 5
+        },
+        "target": {
+          "type": "selfAlly",
+          "value": 3
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each target can teleport up to 10 squares to a space that has cover or concealment.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Forest Network",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Punishing Regrowth",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Vines Everywhere",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "137",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "id": "kobold-adeptus",
+  "name": "Kobold Adeptus",
+  "level": 1,
+  "ev": 3,
+  "role": "Artillery",
+  "organization": "Horde",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "S"
+  },
+  "speed": 5,
+  "stamina": 10,
+  "stability": 0,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 0,
+    "agility": 1,
+    "reason": 2,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Shield? Shield!",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>While adjacent to an ally who also has this trait, the adeptus has stability 1, has cover, and grants cover to allies.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Maniple Tactics",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Set the Initiative",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Two kobolds take their turns in a row.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Shield Wall",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Shocking Bolt",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 15
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "4 lightning damage"
+            },
+            {
+              "tier": 2,
+              "display": "6 lightning damage"
+            },
+            {
+              "tier": 3,
+              "display": "7 lightning damage"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>While the target is adjacent to any enemy, the adeptus gains an edge on this ability. Each enemy adjacent to the target takes <span class=\"damage-value damage-generic\">2</span> lighting damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Arcane Telum",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 15
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 3
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage"
+            },
+            {
+              "tier": 2,
+              "display": "5 damage"
+            },
+            {
+              "tier": 3,
+              "display": "6 damage"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "192",
+    "license": "Draw Steel Creator License"
+  }
+}
