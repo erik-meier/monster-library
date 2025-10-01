@@ -4,6 +4,7 @@ import type { MonsterFormData, MonsterItem } from '@/types/monster-forms'
 import {
   formatKeywords,
   formatMonsterRole,
+  formatMonsterEV,
   formatImmunity,
   formatWeakness,
   formatMovement,
@@ -185,7 +186,7 @@ function generateStatBlockHTML(monster: Monster): string {
           <span style="font-style: italic;">${formatMonsterRole(monster)}</span>
           ${monster.keywords && monster.keywords.length > 0 ? `<span>•</span><span>${formatKeywords(monster.keywords)}</span>` : ''}
           <span>•</span>
-          <span style="color: #8b4513; font-weight: bold;">EV ${monster.ev}</span>
+          <span style="color: #8b4513; font-weight: bold;">${formatMonsterEV(monster)}</span>
         </div>
       </div>
 
@@ -348,7 +349,7 @@ function generateStatBlockHTML(monster: Monster): string {
         column-gap: 16px;
         column-fill: balance;
       ">
-        ${generateAbilitiesHTML(monster.items || [])}
+        ${generateAbilitiesHTML(monster.items || [], monster.organization)}
       </div>
 
       <div class="divider" style="
@@ -373,7 +374,7 @@ function generateStatBlockHTML(monster: Monster): string {
 /**
  * Generate HTML for abilities section
  */
-function generateAbilitiesHTML(items: MonsterItem[]): string {
+function generateAbilitiesHTML(items: MonsterItem[], organization?: string): string {
   if (!items || items.length === 0) return ''
   
   return items.map(item => {
@@ -431,7 +432,7 @@ function generateAbilitiesHTML(items: MonsterItem[]): string {
             margin-bottom: 8px;
           ">
             ${formatActionDistance(item.system?.distance) ? `<span><strong>Range:</strong> ${formatActionDistance(item.system?.distance)}</span>` : ''}
-            ${formatActionTargets(item.system?.target) ? `<span><strong>Target:</strong> ${formatActionTargets(item.system?.target)}</span>` : ''}
+            ${formatActionTargets(item.system?.target, organization) ? `<span><strong>Target:</strong> ${formatActionTargets(item.system?.target, organization)}</span>` : ''}
           </div>
         </div>
 

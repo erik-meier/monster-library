@@ -11,7 +11,7 @@
           {{ formatKeywords(monster.keywords) }}
         </p>
         <p class="monster-meta-right">
-          EV {{ monster.ev }}
+          {{ formatMonsterEV(monster) }}
         </p>
       </div>
     </div>
@@ -84,6 +84,7 @@ import ActionsList from './ActionsList.vue'
 import {
   formatKeywords,
   formatMonsterRole,
+  formatMonsterEV,
   formatImmunity,
   formatWeakness,
   formatMovement
@@ -110,6 +111,7 @@ export default {
     // Use imported formatters from shared utilities
     formatKeywords,
     formatMonsterRole,
+    formatMonsterEV,
     formatImmunity,
     formatWeakness,
     formatMovement
