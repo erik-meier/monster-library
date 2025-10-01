@@ -8,10 +8,12 @@
         </router-link>
 
         <div class="nav-menu">
-          <router-link to="/" class="nav-link">Home</router-link>
-          <router-link to="/monsters" class="nav-link">Browse Monsters</router-link>
-          <router-link to="/my-monsters" class="nav-link">My Monsters</router-link>
-          <router-link to="/about" class="nav-link">About</router-link>
+          <router-link to="/" class="nav-link" title="Home" aria-label="Go to Home page">Home</router-link>
+          <router-link to="/monsters" class="nav-link" title="Browse Monsters"
+            aria-label="Browse monster library">Browse Monsters</router-link>
+          <router-link to="/my-monsters" class="nav-link" title="My Monsters" aria-label="View my custom monsters">My
+            Monsters</router-link>
+          <router-link to="/about" class="nav-link" title="About" aria-label="About Steel Cauldron">About</router-link>
         </div>
       </div>
     </nav>
@@ -112,10 +114,18 @@ button:disabled,
 .navbar {
   background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
   box-shadow: var(--shadow-md);
-  position: sticky;
-  top: 0;
+  position: static;
+  /* Non-sticky by default for mobile-first */
   z-index: var(--z-sticky);
   backdrop-filter: blur(8px);
+}
+
+/* Make navbar sticky only on larger screens */
+@media (min-width: 769px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .nav-container {
@@ -282,30 +292,35 @@ button:disabled,
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 var(--space-2);
-    min-height: 56px;
-    height: auto;
+    height: 56px;
+    /* Fixed height to prevent expansion */
   }
 
   .nav-brand {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     flex-shrink: 0;
   }
 
+  .nav-brand-text {
+    display: none;
+    /* Hide brand text on mobile to save space */
+  }
+
   .nav-logo {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
   }
 
   .nav-menu {
-    gap: var(--space-3);
-    flex-wrap: wrap;
+    gap: var(--space-1);
     justify-content: flex-end;
   }
 
   .nav-link {
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--font-size-sm);
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--font-size-xs);
     white-space: nowrap;
+    min-width: auto;
   }
 
   .main-content {
@@ -315,41 +330,103 @@ button:disabled,
 
 @media (max-width: 480px) {
   .nav-container {
-    flex-direction: column;
-    gap: var(--space-3);
-    padding: var(--space-3) var(--space-2);
-    align-items: center;
-    text-align: center;
+    padding: var(--space-1);
+    height: 48px;
+    /* Even more compact */
   }
 
   .nav-logo {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
 
   .nav-menu {
-    gap: var(--space-4);
-    justify-content: center;
-    flex-wrap: nowrap;
+    gap: var(--space-1);
   }
 
   .nav-link {
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--font-size-sm);
+    padding: var(--space-1);
+    font-size: var(--font-size-xs);
+    /* Abbreviate long link text on very small screens */
   }
 }
 
 @media (max-width: 360px) {
-  .nav-menu {
-    flex-direction: column;
-    gap: var(--space-2);
-    width: 100%;
+
+  /* Use abbreviated navigation labels for smallest screens */
+  .nav-link {
+    font-size: 0;
+    position: relative;
+    min-width: 40px;
+    /* Ensure touch target size */
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .nav-link {
-    display: block;
-    text-align: center;
-    padding: var(--space-2);
+  .nav-link[href="/"]::after {
+    content: "🏠";
+    font-size: var(--font-size-lg);
+  }
+
+  .nav-link[href="/monsters"]::after {
+    content: "📚";
+    font-size: var(--font-size-lg);
+  }
+
+  .nav-link[href="/my-monsters"]::after {
+    content: "⭐";
+    font-size: var(--font-size-lg);
+  }
+
+  .nav-link[href="/about"]::after {
+    content: "ℹ️";
+    font-size: var(--font-size-lg);
+  }
+
+  /* Override active state styling for icon navigation */
+  .nav-link.router-link-active::after {
+    /* Reset positioning that causes issues */
+    position: static;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    height: auto;
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  /* Explicitly set content for active states to ensure icons show */
+  .nav-link.router-link-active[href="/"]::after {
+    content: "🏠";
+    font-size: var(--font-size-lg);
+  }
+
+  .nav-link.router-link-active[href="/monsters"]::after {
+    content: "📚";
+    font-size: var(--font-size-lg);
+  }
+
+  .nav-link.router-link-active[href="/my-monsters"]::after {
+    content: "⭐";
+    font-size: var(--font-size-lg);
+  }
+
+  .nav-link.router-link-active[href="/about"]::after {
+    content: "ℹ️";
+    font-size: var(--font-size-lg);
+  }
+
+  /* Add a subtle background for active icon instead */
+  .nav-link.router-link-active {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
+  }
+
+  /* Ensure proper spacing between icon nav items */
+  .nav-menu {
+    gap: var(--space-2);
   }
 }
 
