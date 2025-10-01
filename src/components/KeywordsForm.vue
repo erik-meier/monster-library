@@ -1,51 +1,33 @@
 <template>
   <div class="keywords-form">
     <h2 class="form-section-title">Keywords</h2>
-    
+
     <div class="keywords-section">
       <p class="section-description">
-        Select keywords that describe this monster's type and traits. These keywords are used for abilities and interactions.
+        Select keywords that describe this monster's type and traits. These keywords are used for abilities and
+        interactions.
       </p>
-      
+
       <!-- Common Keywords -->
       <div class="keyword-category">
         <h3 class="subsection-title">Common Creature Types</h3>
         <div class="keyword-grid">
-          <label 
-            v-for="keyword in COMMON_KEYWORDS" 
-            :key="keyword"
-            class="keyword-checkbox"
-            :class="{ selected: formData.keywords.includes(keyword) }"
-          >
-            <input 
-              type="checkbox" 
-              :value="keyword"
-              v-model="formData.keywords"
-              class="checkbox-input"
-            />
+          <label v-for="keyword in COMMON_KEYWORDS" :key="keyword" class="keyword-checkbox"
+            :class="{ selected: formData.keywords.includes(keyword) }">
+            <input type="checkbox" :value="keyword" v-model="formData.keywords" class="checkbox-input" />
             <span class="keyword-text">{{ capitalize(keyword) }}</span>
           </label>
         </div>
       </div>
-      
+
       <!-- Custom Keywords -->
       <div class="custom-keywords">
         <h3 class="subsection-title">Custom Keywords</h3>
         <div class="custom-input-group">
-          <input 
-            v-model="customKeyword"
-            type="text"
-            class="custom-input"
-            :class="{ invalid: customKeywordError }"
-            placeholder="Enter custom keyword"
-            @keyup.enter="addCustomKeyword"
-          />
-          <button 
-            type="button" 
-            class="btn-add-custom"
-            @click="addCustomKeyword"
-            :disabled="!customKeyword.trim() || !!customKeywordError"
-          >
+          <input v-model="customKeyword" type="text" class="custom-input" :class="{ invalid: customKeywordError }"
+            placeholder="Enter custom keyword" @keyup.enter="addCustomKeyword" />
+          <button type="button" class="btn-add-custom" @click="addCustomKeyword"
+            :disabled="!customKeyword.trim() || !!customKeywordError">
             Add
           </button>
         </div>
@@ -54,23 +36,14 @@
           Enter additional keywords not covered by the common types. Use lowercase, single words or hyphenated phrases.
         </div>
       </div>
-      
+
       <!-- Selected Keywords Summary -->
       <div class="selected-keywords" v-if="formData.keywords.length > 0">
         <h3 class="subsection-title">Selected Keywords ({{ formData.keywords.length }})</h3>
         <div class="keyword-tags">
-          <span 
-            v-for="keyword in formData.keywords" 
-            :key="keyword"
-            class="keyword-tag selected"
-          >
+          <span v-for="keyword in formData.keywords" :key="keyword" class="keyword-tag selected">
             {{ keyword }}
-            <button 
-              type="button"
-              class="remove-keyword"
-              @click="removeKeyword(keyword)"
-              title="Remove keyword"
-            >
+            <button type="button" class="remove-keyword" @click="removeKeyword(keyword)" title="Remove keyword">
               ×
             </button>
           </span>
@@ -119,31 +92,31 @@ const validateCustomKeyword = (keyword: string): string => {
   if (!keyword.trim()) {
     return 'Keyword cannot be empty'
   }
-  
+
   if (keyword.length > 50) {
     return 'Keyword must be 50 characters or less'
   }
-  
+
   if (!/^[a-z0-9-\s]+$/i.test(keyword)) {
     return 'Keywords can only contain letters, numbers, hyphens, and spaces'
   }
-  
+
   if (formData.keywords.includes(keyword.toLowerCase().trim())) {
     return 'This keyword is already added'
   }
-  
+
   return ''
 }
 
 const addCustomKeyword = () => {
   const keyword = customKeyword.value.toLowerCase().trim()
   const error = validateCustomKeyword(keyword)
-  
+
   if (error) {
     customKeywordError.value = error
     return
   }
-  
+
   formData.keywords.push(keyword)
   customKeyword.value = ''
   customKeywordError.value = ''
@@ -314,6 +287,7 @@ watch(isValid, (valid) => {
 
 .keyword-text {
   user-select: none;
+  color: var(--color-neutral-800);
 }
 
 .custom-keywords {
@@ -445,11 +419,11 @@ watch(isValid, (valid) => {
   .keyword-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .keyword-grid.small {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .custom-input-group {
     flex-direction: column;
   }
@@ -459,11 +433,11 @@ watch(isValid, (valid) => {
   .keyword-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .keyword-grid.small {
     grid-template-columns: 1fr;
   }
-  
+
   .keyword-tags {
     justify-content: center;
   }

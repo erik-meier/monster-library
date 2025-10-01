@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="nav-container">
         <router-link to="/" class="nav-brand">
-          <img src="/cauldron-logo.svg" alt="Steel Cauldron" class="nav-logo" />
+          <img src="/cauldron.png" alt="Steel Cauldron" class="nav-logo" />
           <span class="nav-brand-text">Steel Cauldron</span>
         </router-link>
 

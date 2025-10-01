@@ -103,6 +103,12 @@
       </section>
 
       <section class="about-section">
+        <h2>🎨 Art Credits</h2>
+        <a href="https://www.flaticon.com/free-icons/cauldron" title="cauldron icons">Cauldron icons created by Ashok
+          creative - Flaticon</a>
+      </section>
+
+      <section class="about-section">
         <h2>📜 Legal</h2>
         <p class="legal-text">
           Steel Cauldron is an independent product published under the DRAW STEEL Creator License

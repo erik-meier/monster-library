@@ -1,20 +1,10 @@
 <template>
   <div class="home">
     <div class="hero">
-      <img src="/cauldron-logo.svg" alt="Steel Cauldron Logo" class="hero-logo" />
       <h1 class="hero-title">Steel Cauldron</h1>
       <p class="hero-subtitle">
         Your workshop for brewing Draw Steel monsters and encounters
       </p>
-
-      <div class="hero-actions">
-        <router-link to="/monsters" class="btn btn-primary">
-          Browse Monsters
-        </router-link>
-        <button class="btn btn-secondary" @click="viewRandomMonster">
-          Random Monster
-        </button>
-      </div>
     </div>
 
     <div class="features">
@@ -37,6 +27,15 @@
           <p>Create balanced encounters for your Draw Steel adventures (Coming Soon)</p>
         </div>
       </div>
+    </div>
+
+    <p class="hero-actions-text">
+      Not sure where to start? Try a random monster!
+    </p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" @click="viewRandomMonster">
+        Random Monster
+      </button>
     </div>
 
     <div class="recent-section">
@@ -154,6 +153,15 @@ export default {
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
+}
+
+.hero-actions-text {
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-700);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-relaxed);
+  display: flex;
+  justify-content: center;
 }
 
 .btn {

@@ -61,17 +61,10 @@
     <div class="divider"></div>
 
     <!-- Abilities -->
-    <CollapsibleSection v-if="(monster.items || monster.abilities || []).length > 0" title="Abilities" :expanded="true"
-      id="abilities-section">
-      <ActionsList :title="'Abilities'" :actions="monster.items || monster.abilities || []"
-        :chr="String(getMaxCharacteristic())" :monster="monster" />
-    </CollapsibleSection>
-
-    <!-- Actions -->
-    <CollapsibleSection v-if="(monster.actions || []).length > 0" title="Actions" :expanded="true" id="actions-section">
-      <ActionsList :title="'Actions'" :actions="monster.actions || []" :chr="String(getMaxCharacteristic())"
+    <div v-if="(monster.items || []).length > 0" title="Abilities" :expanded="true" id="abilities-section">
+      <ActionsList :title="'Abilities'" :actions="monster.items || []" :chr="String(getMaxCharacteristic())"
         :monster="monster" />
-    </CollapsibleSection>
+    </div>
 
     <!-- Source Information -->
     <div v-if="monster.source" class="source-info">
@@ -88,7 +81,6 @@
 <script>
 import CharacteristicScores from './CharacteristicScores.vue'
 import ActionsList from './ActionsList.vue'
-import CollapsibleSection from './CollapsibleSection.vue'
 import {
   formatKeywords,
   formatMonsterRole,
@@ -101,8 +93,7 @@ export default {
   name: 'MonsterStatBlock',
   components: {
     CharacteristicScores,
-    ActionsList,
-    CollapsibleSection
+    ActionsList
   },
   props: {
     monster: {
