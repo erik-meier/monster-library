@@ -312,11 +312,20 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, computed, watch, onMounted, onUnmounted } from 'vue'
+import { reactive, ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import type { MonsterItem } from '@/types/monster-forms'
 import { ABILITY_KEYWORDS } from '@/types/monster-forms'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import { useToast } from '@/composables/useToast'
+
+// Debounce utility for performance optimization
+function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(fn: T, delay: number): T {
+  let timeoutId: ReturnType<typeof setTimeout>
+  return ((...args: Parameters<T>) => {
+    clearTimeout(timeoutId)
+    timeoutId = setTimeout(() => fn(...args), delay)
+  }) as T
+}
 
 // Initialize toast notifications
 const { success, error } = useToast()
@@ -428,16 +437,20 @@ const getTierDisplay = (tierNum: number) => {
     set: (value: string) => {
       if (!formData.system.power?.tiers) return
 
-      // Find existing tier or create new one
-      let tier = formData.system.power.tiers.find(t => t.tier === tierNum)
-      if (!tier) {
-        tier = { tier: tierNum, display: value }
-        formData.system.power.tiers.push(tier)
-        // Sort tiers by tier number
-        formData.system.power.tiers.sort((a, b) => a.tier - b.tier)
-      } else {
-        tier.display = value
-      }
+      isInternalUpdate = true
+      nextTick(() => {
+        // Find existing tier or create new one
+        let tier = formData.system.power!.tiers!.find(t => t.tier === tierNum)
+        if (!tier) {
+          tier = { tier: tierNum, display: value }
+          formData.system.power!.tiers!.push(tier)
+          // Sort tiers by tier number
+          formData.system.power!.tiers!.sort((a, b) => a.tier - b.tier)
+        } else {
+          tier.display = value
+        }
+        isInternalUpdate = false
+      })
     }
   })
 }
@@ -464,53 +477,59 @@ const validateFields = () => {
 }
 
 const onTypeChange = () => {
-  if (formData.type === 'feature') {
-    // Initialize feature fields
-    formData.system = {
-      keywords: formData.system.keywords || [],
-      power: null,
-      description: {
-        value: formData.system.description?.value || '',
-        director: formData.system.description?.director || ''
+  isInternalUpdate = true
+
+  nextTick(() => {
+    if (formData.type === 'feature') {
+      // Initialize feature fields
+      formData.system = {
+        keywords: formData.system.keywords || [],
+        power: null,
+        description: {
+          value: formData.system.description?.value || '',
+          director: formData.system.description?.director || ''
+        }
       }
-    }
-  } else {
-    // Initialize ability fields
-    formData.system = {
-      keywords: formData.system.keywords || [],
-      category: formData.system.category || '',
-      type: formData.system.type || 'main',
-      resource: formData.system.resource || null,
-      distance: formData.system.distance || {
-        type: 'melee',
-        primary: 1
-      },
-      target: formData.system.target || {
-        type: 'creatureObject',
-        value: 1
-      },
-      trigger: formData.system.trigger || '',
-      power: formData.system.power || {
-        roll: {
-          formula: '2d10',
-          characteristics: ['might']
+    } else {
+      // Initialize ability fields
+      formData.system = {
+        keywords: formData.system.keywords || [],
+        category: formData.system.category || '',
+        type: formData.system.type || 'main',
+        resource: formData.system.resource || null,
+        distance: formData.system.distance || {
+          type: 'melee',
+          primary: 1
         },
-        tiers: [
-          { tier: 1, display: '' },
-          { tier: 2, display: '' },
-          { tier: 3, display: '' }
-        ]
-      },
-      effect: formData.system.effect || {
-        text: ''
-      },
-      spend: formData.system.spend || {
-        text: '',
-        value: null
+        target: formData.system.target || {
+          type: 'creatureObject',
+          value: 1
+        },
+        trigger: formData.system.trigger || '',
+        power: formData.system.power || {
+          roll: {
+            formula: '2d10',
+            characteristics: ['might']
+          },
+          tiers: [
+            { tier: 1, display: '' },
+            { tier: 2, display: '' },
+            { tier: 3, display: '' }
+          ]
+        },
+        effect: formData.system.effect || {
+          text: ''
+        },
+        spend: formData.system.spend || {
+          text: '',
+          value: null
+        }
       }
     }
-  }
-  validateFields()
+
+    validateFields()
+    isInternalUpdate = false
+  })
 }
 
 
@@ -518,15 +537,23 @@ const onTypeChange = () => {
 const addKeyword = () => {
   const keyword = newKeyword.value.toLowerCase().trim()
   if (keyword && !formData.system.keywords.includes(keyword)) {
+    isInternalUpdate = true
     formData.system.keywords.push(keyword)
     newKeyword.value = ''
+    nextTick(() => {
+      isInternalUpdate = false
+    })
   }
 }
 
 const removeKeyword = (keyword: string) => {
   const index = formData.system.keywords.indexOf(keyword)
   if (index > -1) {
+    isInternalUpdate = true
     formData.system.keywords.splice(index, 1)
+    nextTick(() => {
+      isInternalUpdate = false
+    })
   }
 }
 
@@ -534,7 +561,11 @@ const toggleQuickKeyword = (keyword: string) => {
   if (formData.system.keywords.includes(keyword)) {
     removeKeyword(keyword)
   } else {
+    isInternalUpdate = true
     formData.system.keywords.push(keyword)
+    nextTick(() => {
+      isInternalUpdate = false
+    })
   }
 }
 
@@ -572,38 +603,62 @@ onUnmounted(() => {
   document.removeEventListener('keydown', handleEscape, true)
 })
 
-// Watch for changes and validate
-watch(formData, () => {
+// Debounced validation and emit to prevent performance issues on mobile
+const debouncedUpdate = debounce(() => {
   validateFields()
+  // Only emit if there are actual changes to prevent circular updates
   emit('update:modelValue', JSON.parse(JSON.stringify(formData)))
-}, { deep: true })
+}, 300) // 300ms debounce
+
+let isInternalUpdate = false
+
+// Watch for changes and validate (debounced for performance)
+watch(formData, () => {
+  if (!isInternalUpdate) {
+    debouncedUpdate()
+  }
+}, { deep: true, flush: 'post' })
 
 // Watch for hasPowerRoll toggle changes
 watch(hasPowerRoll, (newValue) => {
-  if (!newValue) {
-    // Clear power roll data when disabled
-    if (formData.system.power) {
-      formData.system.power.roll = {
-        formula: '',
-        characteristics: []
+  isInternalUpdate = true
+  nextTick(() => {
+    if (!newValue) {
+      // Clear power roll data when disabled
+      if (formData.system.power) {
+        formData.system.power.roll = {
+          formula: '',
+          characteristics: []
+        }
+        formData.system.power.tiers = []
       }
-      formData.system.power.tiers = []
+    } else {
+      // Initialize with three tiers when enabled
+      if (formData.system.power) {
+        formData.system.power.tiers = [
+          { tier: 1, display: '' },
+          { tier: 2, display: '' },
+          { tier: 3, display: '' }
+        ]
+      }
     }
-  } else {
-    // Initialize with three tiers when enabled
-    if (formData.system.power) {
-      formData.system.power.tiers = [
-        { tier: 1, display: '' },
-        { tier: 2, display: '' },
-        { tier: 3, display: '' }
-      ]
-    }
-  }
+    isInternalUpdate = false
+  })
 })
 
-// Watch for external changes
-watch(() => props.modelValue, (newValue) => {
+// Watch for external changes (debounced to prevent conflicts)
+const debouncedExternalUpdate = debounce((newValue: MonsterItem) => {
+  isInternalUpdate = true
   Object.assign(formData, JSON.parse(JSON.stringify(newValue)))
+  nextTick(() => {
+    isInternalUpdate = false
+  })
+}, 100)
+
+watch(() => props.modelValue, (newValue) => {
+  if (!isInternalUpdate) {
+    debouncedExternalUpdate(newValue)
+  }
 }, { deep: true })
 
 // Initial validation

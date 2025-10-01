@@ -293,7 +293,8 @@ function handleTemplateSelected(template: TemplateMonster) {
   // Apply template data to form
   const updatedForm: MonsterFormData = {
     ...props.modelValue,
-    name: `${template.name} (Custom)`,
+    name: template.name,
+    id: template.id,
     level: template.level,
     ev: template.ev,
     role: template.role,
