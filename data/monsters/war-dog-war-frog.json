@@ -1,0 +1,177 @@
+{
+  "id": "war-dog-war-frog",
+  "name": "War Dog War Frog",
+  "level": 4,
+  "ev": 6,
+  "role": "Ambusher",
+  "organization": "Minion",
+  "keywords": [
+    "humanoid",
+    "soulless"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "S"
+  },
+  "speed": 5,
+  "stamina": 8,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": -1,
+    "agility": 3,
+    "reason": 0,
+    "intuition": 2,
+    "presence": 0
+  },
+  "immunities": {
+    "poison": 4
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "swim",
+    "climb",
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Loyalty Collar",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the war frog is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">1d6</span> damage to each adjacent enemy and object.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Poisoned Dagger",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "meleeRanged",
+          "primary": 1,
+          "secondary": 4
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 poison damage"
+            },
+            {
+              "tier": 2,
+              "display": "5 poison damage"
+            },
+            {
+              "tier": 3,
+              "display": "7 poison damage"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The war frog can jump 3 squares before or after making the strike. If they end this jump in cover or concealment, they can attempt to hide.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Loyalty Unto Death",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 5,
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10,
+          "secondary": null
+        },
+        "target": {
+          "type": "ally",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p><strong>Note:</strong> Targets Two War Dogs</p><p>Each target who has a loyalty collar shifts up to their speed, then is reduced to 0 Stamina. After each target’s Loyalty Collar trait is resolved, each enemy adjacent to either target makes a <strong>Presence test.</strong></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>Push 4; the enemy is frightened of the nearest non-minion war dog (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>Push 2; the enemy is frightened of the nearest non-minion war dog (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "305",
+    "license": "Draw Steel Creator License"
+  }
+}

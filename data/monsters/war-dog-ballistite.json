@@ -1,0 +1,216 @@
+{
+  "id": "war-dog-ballistite",
+  "name": "War Dog Ballistite",
+  "level": 8,
+  "ev": 10,
+  "role": "Artillery",
+  "organization": "Horde",
+  "keywords": [
+    "soulless"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "L"
+  },
+  "speed": 0,
+  "stamina": 72,
+  "stability": 5,
+  "freeStrike": 4,
+  "characteristics": {
+    "might": 4,
+    "agility": -2,
+    "reason": 2,
+    "intuition": 3,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Set Up and Tear Down",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the start of each of the ballistite's turns, they can gain a +4 bonus to speed until the end of their turn. While their speed is greater than 0 by any means, they can't use main actions or maneuvers.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Loyalty Collar",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the ballistite is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> damage to each adjacent enemy and object.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Biokinetic Ballista",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 15
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; push 1"
+            },
+            {
+              "tier": 2,
+              "display": "10 damage; push 3"
+            },
+            {
+              "tier": 3,
+              "display": "11 damage; push 5"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>Any target pushed into an obstacle is knocked prone, and if they have M &lt; 3 they are restrained (save ends).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Kill Zone",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 3,
+        "keywords": [
+          "area",
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 3,
+          "secondary": 12
+        },
+        "target": {
+          "type": "special",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the start of the ballistite's next turn, the area is difficult terrain, and any ranged ability targeting an enemy in the area deals an extra <span class=\"damage-value damage-generic\">8</span> damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p><p><span class=\"reference-text\">Loyalty Unto Death</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Alchemical Cloud",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 7,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>A bank of choking chemicals sweeps across the area of the en counter map. Each enemy in the encounter makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"96\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> poison damage; dazed (EoT)</p></td></tr><tr><td data-colwidth=\"96\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> poison damage; weakened (EoT)</p></td></tr><tr><td data-colwidth=\"96\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">4</span> poison damage</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "311",
+    "license": "Draw Steel Creator License"
+  }
+}
