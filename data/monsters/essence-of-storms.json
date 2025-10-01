@@ -87,8 +87,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The essence shifts up to 3 squares before or after using this ability.</p>"
+          "text": "<p>The essence shifts up to 3 squares before or after using this ability.</p>"
         },
         "spend": {
           "text": "",
@@ -126,8 +125,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the essence’s next turn, the target has light ning immunity 5.</p>",
-          "after": ""
+          "text": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the essence’s next turn, the target has light ning immunity 5.</p>"
         },
         "spend": {
           "text": "Until the end of the encounter, a vortex surrounds the tar get in a 3 aura. The area is difficult terrain for enemies. Additionally,  at the end of each of the target’s turns, they can push one creature in  the area up to 5 squares.",
@@ -166,8 +164,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The target takes <span class=\"damage-value damage-generic\">5</span> lightning damage.</p>"
+          "text": "<p>The target takes <span class=\"damage-value damage-generic\">5</span> lightning damage.</p>"
         },
         "spend": {
           "text": "",
@@ -198,8 +195,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
-          "after": ""
+          "text": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>"
         },
         "spend": {
           "text": "",
@@ -230,8 +226,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
-          "after": ""
+          "text": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>"
         },
         "spend": {
           "text": "",
@@ -263,8 +258,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
-          "after": ""
+          "text": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>"
         },
         "spend": {
           "text": "",

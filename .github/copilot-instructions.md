@@ -27,6 +27,13 @@
 - **vue-tsc** for TypeScript checking
 - **GitHub Actions** for CI/CD
 
+### Design System & Styling
+- **Complete design system** defined in `STYLE_GUIDE.md` with design tokens, components, and patterns
+- **Design tokens** available in `src/assets/design-tokens.css` for consistent colors, spacing, typography
+- **Component library** in `src/assets/components.css` with `.btn`, `.card`, `.form-input`, `.modal` classes
+- **Always use design tokens** instead of hardcoded values (colors, spacing, typography)
+- **Follow established patterns** for new components to maintain visual consistency
+
 ### Data Management
 - Monster data stored in `/data/monsters/` as individual JSON files
 - Monster index in `/data/monster_index.json`
@@ -95,12 +102,13 @@ npm run refresh-all         # Complete data refresh pipeline
 - Leverage Vue's TypeScript support with `vue-tsc`
 - Define interfaces for data structures
 
-### CSS
-- Use vanilla CSS with CSS custom properties
+### CSS & Design System
+- **Follow the Steel Cauldron Design System** - Use design tokens from `STYLE_GUIDE.md`
+- **Use CSS custom properties** - Always prefer design tokens over hardcoded values
 - **Mobile-first responsive design is critical** - test on various screen sizes
-- Maintain consistent spacing and typography
-- Use semantic class names
-- Ensure touch-friendly interfaces for mobile gaming sessions
+- **Follow component library patterns** - Use established `.btn`, `.card`, `.form-input` classes
+- **Maintain design consistency** - Reference `src/assets/design-tokens.css` for all styling
+- Use semantic class names and ensure touch-friendly interfaces for mobile gaming sessions
 
 ### Code Organization
 - Keep components focused and single-purpose
@@ -153,13 +161,23 @@ Each monster JSON file contains:
 ### Adding New Components
 1. Create component in appropriate directory (`/components/` or `/views/`)
 2. Use TypeScript and proper typing
-3. Add to router if it's a page component
-4. Include responsive design considerations
+3. **Follow design system patterns** - Use established component classes and design tokens
+4. **Use design system components** - Reference `STYLE_GUIDE.md` for buttons, forms, cards, etc.
+5. Add to router if it's a page component
+6. Include responsive design considerations
+7. **Test against design system** - Ensure consistency with existing components
 
 ### Updating Monster Data
 1. Use `npm run refresh-all` for complete updates
 2. Run `npm run test:run` to validate changes
 3. Commit only processed data, not raw external data
+
+### Maintaining the Design System
+1. **When adding new component patterns** - Document them in `STYLE_GUIDE.md`
+2. **When creating new design tokens** - Add to `src/assets/design-tokens.css` and document usage
+3. **When modifying existing components** - Ensure changes are reflected in the style guide
+4. **Before major styling changes** - Review impact on design system consistency
+5. **Component library updates** - Update `src/assets/components.css` and provide examples
 
 ### Debugging Issues
 1. Check browser console for runtime errors
@@ -222,7 +240,9 @@ When working on this repository, always:
 1. Run tests before and after changes: `npm run test:run`
 2. Lint your code: `npm run lint`
 3. Check types: `npm run type-check`
-4. **Test responsive design on multiple screen sizes** - mobile compatibility is critical
-5. **Validate monster data changes thoroughly** - data quality must not degrade
-6. Follow existing code patterns and conventions
-7. Ensure documentation is updated for significant changes, but don't include change history in documentation
+4. **Follow the design system** - Use design tokens and component patterns from `STYLE_GUIDE.md`
+5. **Test responsive design on multiple screen sizes** - mobile compatibility is critical
+6. **Validate monster data changes thoroughly** - data quality must not degrade
+7. Follow existing code patterns and conventions
+8. **Update STYLE_GUIDE.md when adding new patterns** - Document new components and design decisions
+9. Ensure documentation is updated for significant changes, but don't include change history in documentation

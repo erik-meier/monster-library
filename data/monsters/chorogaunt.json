@@ -110,8 +110,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>One ally within 10 squares of the chorogaunt shifts up to their speed.</p>"
+          "text": "<p>One ally within 10 squares of the chorogaunt shifts up to their speed.</p>"
         },
         "spend": {
           "text": "",
@@ -148,8 +147,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The chorogaunt slides each target up to 3 squares, ignoring stability.</p>"
+          "text": "<p>The chorogaunt slides each target up to 3 squares, ignoring stability.</p>"
         },
         "spend": {
           "text": "",
@@ -185,8 +183,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>Any damage from the strike is halved, and the chorogaunt's abilities deal an extra 3 damage until the end of their next turn.</p>"
+          "text": "<p>Any damage from the strike is halved, and the chorogaunt's abilities deal an extra 3 damage until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -223,8 +220,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>Each target must choose between taking <span class=\"damage-value damage-generic\">5</span> psychic damage, or being frightened (save ends).</p>"
+          "text": "<p>Each target must choose between taking <span class=\"damage-value damage-generic\">5</span> psychic damage, or being frightened (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -262,8 +258,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The chorogaunt kills the target, and each other ally in the encounter deals an extra <span class=\"damage-value damage-generic\">3</span> damage with strikes until the end of the round. The Director gains Malice equal to the number of heroes in the encounter.</p>",
-          "after": ""
+          "text": "<p>The chorogaunt kills the target, and each other ally in the encounter deals an extra <span class=\"damage-value damage-generic\">3</span> damage with strikes until the end of the round. The Director gains Malice equal to the number of heroes in the encounter.</p>"
         },
         "spend": {
           "text": "",
@@ -299,8 +294,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The chorogaunt shifts up to their speed, uses Agonizing Harmony, shifts up to their speed, and then uses Agonizing Harmony again.</p>"
+          "text": "<p>The chorogaunt shifts up to their speed, uses Agonizing Harmony, shifts up to their speed, and then uses Agonizing Harmony again.</p>"
         },
         "spend": {
           "text": "",
@@ -333,8 +327,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each demon acting this turn has a double edge on abilities.</p>",
-          "after": ""
+          "text": "<p>Each demon acting this turn has a double edge on abilities.</p>"
         },
         "spend": {
           "text": "",
@@ -365,8 +358,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>",
-          "after": ""
+          "text": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>"
         },
         "spend": {
           "text": "",
@@ -397,8 +389,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span> healing Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span>  stamina Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

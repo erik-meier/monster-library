@@ -68,8 +68,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>NOTE: Targets \"One Trap or Other Terrain Object\"</p><p>The trap or terrain object instantly triggers.</p>",
-          "after": ""
+          "text": "<p>NOTE: Targets \"One Trap or Other Terrain Object\"</p><p>The trap or terrain object instantly triggers.</p>"
         },
         "spend": {
           "text": "The artifex places a new trap in the encounter and can  instantly trigger it. The artifex prefers working with angry beehives, flammable oil, snare traps, and spike traps.",
@@ -122,8 +121,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If this forced movement triggers a trap that uses a power roll, that roll has a double edge.</p>"
+          "text": "<p>If this forced movement triggers a trap that uses a power roll, that roll has a double edge.</p>"
         },
         "spend": {
           "text": "",
@@ -154,8 +152,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
-          "after": ""
+          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>"
         },
         "spend": {
           "text": "",
@@ -186,8 +183,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two kobolds take their turns in a row.</p>",
-          "after": ""
+          "text": "<p>Two kobolds take their turns in a row.</p>"
         },
         "spend": {
           "text": "",
@@ -218,8 +214,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
         },
         "spend": {
           "text": "",

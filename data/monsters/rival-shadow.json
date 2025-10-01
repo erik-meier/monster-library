@@ -1,8 +1,8 @@
 {
   "id": "rival-shadow",
   "name": "Rival Shadow",
-  "level": 2,
-  "ev": 16,
+  "level": 10,
+  "ev": 48,
   "role": "Ambusher",
   "organization": "Elite",
   "keywords": [
@@ -13,15 +13,15 @@
     "letter": "M"
   },
   "speed": 7,
-  "stamina": 80,
+  "stamina": 240,
   "stability": 1,
-  "freeStrike": 5,
+  "freeStrike": 10,
   "characteristics": {
     "might": 0,
-    "agility": 2,
-    "reason": 0,
-    "intuition": 0,
-    "presence": 1
+    "agility": 5,
+    "reason": 3,
+    "intuition": 2,
+    "presence": 4
   },
   "immunities": {},
   "weaknesses": {},
@@ -30,13 +30,13 @@
   ],
   "items": [
     {
-      "name": "Exploit Opening",
+      "name": "Exploit Weakness",
       "type": "feature",
       "system": {
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The shadow deals an extra <span class=\"damage-value damage-generic\">5</span> damage to any bleeding target.</p>",
+          "value": "<p>The shadow deals an extra <span class=\"damage-value damage-generic\">10</span> damage to any target affected by a condition.</p>",
           "director": ""
         }
       }
@@ -48,13 +48,13 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>At the start of an encounter, the shadow chooses one creature within their line of effect. Both the shadow and the creature can add a [[/roll d3]] roll to power rolls they make against each other.</p>",
+          "value": "<p>At the start of an encounter, the shadow chooses one creature within their line of effect. Both the shadow and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
           "director": ""
         }
       }
     },
     {
-      "name": "Swift Serration",
+      "name": "A Hush of Ash",
       "type": "ability",
       "system": {
         "category": "signature",
@@ -76,7 +76,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
               "agility"
             ]
@@ -84,39 +84,34 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage"
+              "display": "15 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 damage"
+              "display": "21 damage; <strong class=\"potency-value\">A&lt;4</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+              "display": "25 damage; <strong class=\"potency-value\">A&lt;5</strong> bleeding (save ends)"
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": "<p>The shadow can teleport up to 5 squares, then can attempt to hide.</p>"
-        },
+        "effect": {},
         "spend": {
-          "text": "The shadow can teleport up to 5 squares, then can attempt to hide.",
+          "text": "The shadow can teleport up to 10 squares, then can attempt to hide.",
           "value": 1,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The shadow can teleport up to 5 squares, then can attempt to hide."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The shadow can teleport up to 10 squares, then can attempt to hide."
         }
       }
     },
     {
-      "name": "Poison the Blade",
+      "name": "Envenomed Steel",
       "type": "ability",
       "system": {
         "category": "",
         "type": "maneuver",
         "resource": null,
-        "keywords": [
-          "-"
-        ],
+        "keywords": [],
         "distance": {
           "type": "self"
         },
@@ -127,7 +122,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
               "agility"
             ]
@@ -135,8 +130,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The shadow coats their weapon with poison. They gain an edge on their next strike, and any potency for that strike increases by 1.</p>"
+          "text": "<p>The shadow coats their weapon with poison. They have a double edge on their next strike, any potency for that strike increases by 2, and if the target has M &lt; 4, they are weakened (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -161,14 +155,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
-          "after": ""
+          "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
         },
         "spend": {
           "text": "",
@@ -193,14 +186,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -225,14 +217,13 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>",
-          "after": ""
+          "text": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>"
         },
         "spend": {
           "text": "",
@@ -257,14 +248,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a <span class=\"roll-formula\">d3</span> and add it to the power roll.</p>"
         },
         "spend": {
           "text": "",
@@ -289,14 +279,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>"
         },
         "spend": {
           "text": "",
@@ -307,7 +296,7 @@
   ],
   "source": {
     "book": "Monsters",
-    "page": "234",
+    "page": "245",
     "license": "Draw Steel Creator License"
   }
 }

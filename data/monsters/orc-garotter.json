@@ -64,8 +64,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -96,8 +95,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>",
-          "after": ""
+          "text": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>"
         },
         "spend": {
           "text": "",
@@ -128,8 +126,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -160,8 +157,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The garroter turns invisible until the end of their turn. This invisibility ends early if they take damage or use an ability.</p>",
-          "after": ""
+          "text": "<p>The garroter turns invisible until the end of their turn. This invisibility ends early if they take damage or use an ability.</p>"
         },
         "spend": {
           "text": "",
@@ -213,8 +209,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If this ability gains an edge or has a double edge, it deals an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
+          "text": "<p>If this ability gains an edge or has a double edge, it deals an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
         },
         "spend": {
           "text": "",
@@ -257,17 +252,16 @@
             },
             {
               "tier": 2,
-              "display": "9 damage; {{potency}} dazed (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 damage; grabbed; {{potency}} dazed (save ends)"
+              "display": "12 damage; grabbed; <strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
             }
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>While grabbed this way, a target can’t communicate or use magic abilities.</p>"
+          "text": "<p>While grabbed this way, a target can’t communicate or use magic abilities.</p>"
         },
         "spend": {
           "text": "",

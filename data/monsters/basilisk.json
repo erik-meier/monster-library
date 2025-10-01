@@ -87,8 +87,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>This ability gains an edge against targets the basilisk has previously dealt poison damage to.</p>"
+          "text": "<p>This ability gains an edge against targets the basilisk has previously dealt poison damage to.</p>"
         },
         "spend": {
           "text": "",
@@ -141,8 +140,7 @@
           ]
         },
         "effect": {
-          "before": "<p>The area extends from both the basilisk's eyes, and this ability targets the first creature without cover on either side of the area.</p>",
-          "after": "<p>If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target’s body, dealing <span class=\"damage-value damage-generic\">8</span> damage to the target that can’t be reduced in any way and ending this effect.</p>"
+          "text": "<p>The area extends from both the basilisk's eyes, and this ability targets the first creature without cover on either side of the area.</p> <p>If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target’s body, dealing <span class=\"damage-value damage-generic\">8</span> damage to the target that can’t be reduced in any way and ending this effect.</p>"
         },
         "spend": {
           "text": "",
@@ -193,10 +191,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -232,8 +227,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>Each target takes <span class=\"damage-value damage-generic\">5</span> damage. Any target who has A &lt; 2 is also bleeding (save ends).</p>"
+          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">5</span> damage. Any target who has A &lt; 2 is also bleeding (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -264,8 +258,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>A basilisk acting this turn can burrow until the start of their next turn, and moves up to their speed. They have damage immunity 2 while underground. The basilisk can burrow through stone, but can’t drag other creatures underground when they do so. At the start of each of the basilisk’s turns, the Director can spend 1 Malice to let the basilisk continue burrowing.</p>",
-          "after": ""
+          "text": "<p>A basilisk acting this turn can burrow until the start of their next turn, and moves up to their speed. They have damage immunity 2 while underground. The basilisk can burrow through stone, but can’t drag other creatures underground when they do so. At the start of each of the basilisk’s turns, the Director can spend 1 Malice to let the basilisk continue burrowing.</p>"
         },
         "spend": {
           "text": "",
@@ -309,8 +302,7 @@
           ]
         },
         "effect": {
-          "before": "<p>The basilisk spits up a chunk of partly digested stone.</p>",
-          "after": ""
+          "text": "<p>The basilisk spits up a chunk of partly digested stone.</p>"
         },
         "spend": {
           "text": "",
@@ -341,8 +333,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>A basilisk spews reflective spittle across an adjacent vertical surface in a 3-square-by-3-square area. The basilisk can use their Petrifying Eye Beams ability to target a square in the area, causing the area and distance of that ability to become a 20 × 3 line within 1 square of the wall.</p>",
-          "after": ""
+          "text": "<p>A basilisk spews reflective spittle across an adjacent vertical surface in a 3-square-by-3-square area. The basilisk can use their Petrifying Eye Beams ability to target a square in the area, causing the area and distance of that ability to become a 20 × 3 line within 1 square of the wall.</p>"
         },
         "spend": {
           "text": "",

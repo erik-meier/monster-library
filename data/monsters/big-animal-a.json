@@ -70,8 +70,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Special: The target must be the animal's size or smaller.</p><p>The target vertical slides up to 3 squares. If the target is an ally, they can make a free strike at the end of the forced movement, then fall without taking damage.</p>",
-          "after": ""
+          "text": "<p>Special: The target must be the animal's size or smaller.</p><p>The target vertical slides up to 3 squares. If the target is an ally, they can make a free strike at the end of the forced movement, then fall without taking damage.</p>"
         },
         "spend": {
           "text": "",
@@ -105,8 +104,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The animal shifts up to 2 squares before the ability resolves.</p>",
-          "after": ""
+          "text": "<p>The animal shifts up to 2 squares before the ability resolves.</p>"
         },
         "spend": {
           "text": "",
@@ -155,10 +153,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null

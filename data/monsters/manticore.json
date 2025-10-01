@@ -98,8 +98,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If the target is frightened, this ability gains an edge.</p>"
+          "text": "<p>If the target is frightened, this ability gains an edge.</p>"
         },
         "spend": {
           "text": "",
@@ -150,10 +149,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "While weakened this way, a target takes 1d6 poison damage at the start of each of their turns.",
           "value": 1,
@@ -190,8 +186,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The manticore shifts up to 5 squares into the air, then can use Tail Spike against the target.</p>"
+          "text": "<p>The manticore shifts up to 5 squares into the air, then can use Tail Spike against the target.</p>"
         },
         "spend": {
           "text": "",
@@ -241,10 +236,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -279,8 +271,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The manticore shifts up to their speed, then can use Tail Spike against each enemy within distance of that ability.</p>"
+          "text": "<p>The manticore shifts up to their speed, then can use Tail Spike against each enemy within distance of that ability.</p>"
         },
         "spend": {
           "text": "",
@@ -316,8 +307,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The manticore sours their poison with enmity. Until the end of the encounter, the manticore has a double edge on power rolls against weakened creatures. Additionally, any creature weakened by the manticore's Tail Spike ability has their speed halved and takes an extra 3 poison damage at the start of each of their turns.</p>"
+          "text": "<p>The manticore sours their poison with enmity. Until the end of the encounter, the manticore has a double edge on power rolls against weakened creatures. Additionally, any creature weakened by the manticore's Tail Spike ability has their speed halved and takes an extra 3 poison damage at the start of each of their turns.</p>"
         },
         "spend": {
           "text": "",
@@ -348,8 +338,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The manticore uses their mimicry in an attempt to unnerve one creature within their line of effect. If the target has <strong class=\"potency-value\">R&lt;4</strong>, they take a bane on power rolls against the manticore (save ends). Each time this feature is used against the same target during the encounter, its potency decreases by 2.</p>",
-          "after": ""
+          "text": "<p>The manticore uses their mimicry in an attempt to unnerve one creature within their line of effect. If the target has <strong class=\"potency-value\">R&lt;4</strong>, they take a bane on power rolls against the manticore (save ends). Each time this feature is used against the same target during the encounter, its potency decreases by 2.</p>"
         },
         "spend": {
           "text": "",
@@ -380,8 +369,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The manticore takes an additional main action on their turn. They can use this feature even if they are dazed.</p>",
-          "after": ""
+          "text": "<p>The manticore takes an additional main action on their turn. They can use this feature even if they are dazed.</p>"
         },
         "spend": {
           "text": "",
@@ -412,8 +400,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The manticore lets out an unnerving cry. Each enemy within the</p><p>manticore’s line of effect makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Intuition test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>Frightened (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>The manticore lets out an unnerving cry. Each enemy within the</p><p>manticore’s line of effect makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Intuition test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>Frightened (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>Frightened (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -444,8 +431,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The manticore sprays tail spikes across the ground within 5 squares of them. Each enemy in that area who has <strong class=\"potency-value\">A&lt;3</strong> is bleeding (save ends). Additionally, the area is difficult terrain, and any enemy takes <span class=\"damage-value damage-generic\">3</span> poison damage for each square of the area they enter. An enemy who takes <span class=\"damage-value damage-generic\">9</span> poison damage this way on one turn is weakened until the end of the encounter.</p>",
-          "after": ""
+          "text": "<p>The manticore sprays tail spikes across the ground within 5 squares of them. Each enemy in that area who has <strong class=\"potency-value\">A&lt;3</strong> is bleeding (save ends). Additionally, the area is difficult terrain, and any enemy takes <span class=\"damage-value damage-generic\">3</span> poison damage for each square of the area they enter. An enemy who takes <span class=\"damage-value damage-generic\">9</span> poison damage this way on one turn is weakened until the end of the encounter.</p>"
         },
         "spend": {
           "text": "",
@@ -497,8 +483,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If the target is frightened, this ability gains an edge.</p>"
+          "text": "<p>If the target is frightened, this ability gains an edge.</p>"
         },
         "spend": {
           "text": "",

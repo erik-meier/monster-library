@@ -74,8 +74,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If this ability gains an edge or has a double edge, it deals an extra 2 damage.</p>"
+          "text": "<p>If this ability gains an edge or has a double edge, it deals an extra 2 damage.</p>"
         },
         "spend": {
           "text": "",
@@ -150,10 +149,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -183,8 +179,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>",
-          "after": ""
+          "text": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>"
         },
         "spend": {
           "text": "",
@@ -215,8 +210,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>",
-          "after": ""
+          "text": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>"
         },
         "spend": {
           "text": "",
@@ -249,8 +243,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

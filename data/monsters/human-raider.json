@@ -99,8 +99,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If this ability is used as part of a charge, the raider can make a ranged free strike before using the ability.</p>"
+          "text": "<p>If this ability is used as part of a charge, the raider can make a ranged free strike before using the ability.</p>"
         },
         "spend": {
           "text": "",
@@ -131,8 +130,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>",
-          "after": ""
+          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
         },
         "spend": {
           "text": "",
@@ -163,8 +161,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>",
-          "after": ""
+          "text": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>"
         },
         "spend": {
           "text": "",

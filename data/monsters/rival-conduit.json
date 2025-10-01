@@ -1,8 +1,8 @@
 {
   "id": "rival-conduit",
   "name": "Rival Conduit",
-  "level": 2,
-  "ev": 16,
+  "level": 10,
+  "ev": 48,
   "role": "Support",
   "organization": "Elite",
   "keywords": [
@@ -13,15 +13,15 @@
     "letter": "M"
   },
   "speed": 5,
-  "stamina": 80,
+  "stamina": 240,
   "stability": 1,
-  "freeStrike": 5,
+  "freeStrike": 10,
   "characteristics": {
-    "might": 1,
-    "agility": 0,
-    "reason": 0,
-    "intuition": 2,
-    "presence": 0
+    "might": 4,
+    "agility": 1,
+    "reason": 1,
+    "intuition": 5,
+    "presence": 3
   },
   "immunities": {},
   "weaknesses": {},
@@ -30,7 +30,31 @@
   ],
   "items": [
     {
-      "name": "Thunder of Heavens",
+      "name": "Unwavering Defender",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Damage dealt to any ally adjacent to the conduit is halved.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Rivalry",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the start of an encounter, the conduit chooses one creature within their line of effect. Both the conduit and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Sunder the Very Skies",
       "type": "ability",
       "system": {
         "category": "signature",
@@ -54,7 +78,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": [
               "intuition"
             ]
@@ -62,35 +86,35 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 holy damage"
+              "display": "15 damage; vertical slide 3; 5 lightning damage"
             },
             {
               "tier": 2,
-              "display": "10 holy damage"
+              "display": "20 damage; vertical slide 4; 7 lightning damage"
             },
             {
               "tier": 3,
-              "display": "13 holy damage"
+              "display": "24 damage; vertical slide 5; 9 lightning damage"
             }
           ]
         },
         "effect": {
-          "before": "",
-          "after": ""
+          "text": "<p>The conduit or one ally within distance regains Stamina equal to half the damage dealt.</p><p><span class=\"heal-value\">7</span>  stamina{Heal 7 Stamina}</p><p><span class=\"heal-value\">10</span>  stamina{Heal 10 Stamina}</p><p><span class=\"heal-value\">12</span>  stamina{Heal 12 Stamina}</p>"
         },
         "spend": {
-          "text": "",
-          "value": null
+          "text": "Two additional allies within distance regain the same  amount of Stamina.",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Two additional allies within distance regain the same  amount of Stamina."
         }
       }
     },
     {
-      "name": "Imbue with Might",
+      "name": "Empyrean Boon",
       "type": "ability",
       "system": {
         "category": "heroic",
         "type": "maneuver",
-        "resource": 2,
+        "resource": 5,
         "keywords": [
           "magic",
           "ranged"
@@ -106,42 +130,19 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "intuition"
+            ]
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each target gains an edge on their next strike.</p>",
-          "after": ""
+          "text": "<p>Each target has a double edge on their next strike, and that strike deals an extra <span class=\"damage-value damage-generic\">10</span> holy damage. Additionally, they can vertical slide each creature targeted by the strike up to 2 squares.</p>"
         },
         "spend": {
           "text": "",
           "value": null
-        }
-      }
-    },
-    {
-      "name": "Stalwart Guardian",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Strikes made against allies adjacent to the conduit take a bane.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Rivalry",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the start of an encounter, the conduit chooses one creature within their line of effect. Both the conduit and the creature can add a [[/r d3]] roll to power rolls they make against each other.</p>",
-          "director": ""
         }
       }
     },
@@ -162,110 +163,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each rival regains <span class=\"heal-value\">10</span> healing Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>",
-          "after": ""
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Coordinated Takedown",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 10,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A Rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "before": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>",
-          "after": ""
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "We Just Do It Better",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "before": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a [[/r d3]] and add it to the power roll.</p>",
-          "after": ""
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Work as One",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "before": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>",
-          "after": ""
+          "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
         },
         "spend": {
           "text": "",
@@ -290,14 +194,106 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 2",
+            "formula": "2d10 + 5",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "before": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Coordinated Takedown",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 10,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A Rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "We Just Do It Better",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a <span class=\"roll-formula\">d3</span> and add it to the power roll.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Work as One",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>"
         },
         "spend": {
           "text": "",
@@ -308,7 +304,7 @@
   ],
   "source": {
     "book": "Monsters",
-    "page": "233",
+    "page": "243",
     "license": "Draw Steel Creator License"
   }
 }

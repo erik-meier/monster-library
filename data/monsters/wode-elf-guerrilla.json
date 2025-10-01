@@ -101,8 +101,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The guerrilla can teleport up to 3 squares.</p>"
+          "text": "<p>The guerrilla can teleport up to 3 squares.</p>"
         },
         "spend": {
           "text": "This ability targets one additional target, and deals an addi tional 3 damage if both targets are adjacent to each other.",
@@ -140,8 +139,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p><strong>Special:</strong> The guerrilla must be acting as a captain.</p><p>The targets take their turn immediately. Each target gains an edge on abilities until the end of their turn.</p>",
-          "after": ""
+          "text": "<p><strong>Special:</strong> The guerrilla must be acting as a captain.</p><p>The targets take their turn immediately. Each target gains an edge on abilities until the end of their turn.</p>"
         },
         "spend": {
           "text": "",
@@ -172,8 +170,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
-          "after": ""
+          "text": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>"
         },
         "spend": {
           "text": "",
@@ -204,8 +201,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -236,8 +232,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

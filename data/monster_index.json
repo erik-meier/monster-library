@@ -46,6 +46,21 @@
     "orliq": "Orliq",
     "tormenauk": "Tormenauk",
     "wobalas": "Wobalas",
+    "blight-phage": "Blight Phage",
+    "chimeron": "Chimeron",
+    "soulraker-handmaiden": "Soulraker Handmaiden",
+    "soulraker-hivequeen": "Soulraker Hivequeen",
+    "soulraker-praetorian": "Soulraker Praetorian",
+    "soulraker-scout": "Soulraker Scout",
+    "soulraker-soldier": "Soulraker Soldier",
+    "soulraker-stinger": "Soulraker Stinger",
+    "styrich": "Styrich",
+    "aurumvas": "Aurumvas",
+    "izyak": "Izyak",
+    "optacus": "Optacus",
+    "tyburaki": "Tyburaki",
+    "unguloid": "Unguloid",
+    "vicisitator": "Vicisitator",
     "gloom-dragon": "Gloom Dragon",
     "thorn-dragon": "Thorn Dragon",
     "dwarf-axethrower": "Dwarf Axethrower",
@@ -222,6 +237,29 @@
     "specter": "Specter",
     "umbral-stalker": "Umbral Stalker",
     "zombie": "Zombie",
+    "flesh-mournling": "Flesh Mournling",
+    "fleshflayed-shambler-zombie": "Fleshflayed Shambler Zombie",
+    "ghoul-craver": "Ghoul Craver",
+    "giant-zombie": "Giant Zombie",
+    "hollowbone-launcher": "Hollowbone Launcher",
+    "mummy": "Mummy",
+    "mummy-lord": "Mummy Lord",
+    "vampire-spawn": "Vampire Spawn",
+    "wraith": "Wraith",
+    "blood-starved-vampire": "Blood-starved Vampire",
+    "dirt-mournling": "Dirt Mournling",
+    "faded-echo-spirit": "Faded Echo Spirit",
+    "haunt": "Haunt",
+    "koptourok": "Koptourok",
+    "mummy-rotwrap": "Mummy Rotwrap",
+    "vampire": "Vampire",
+    "vampire-lord": "Vampire Lord",
+    "waxen": "Waxen",
+    "bonecage": "Bonecage",
+    "giant-shambler-zombie": "Giant Shambler Zombie",
+    "lithgekh": "Lithgekh",
+    "skeleton-knight": "Skeleton Knight",
+    "wraith-skulker": "Wraith Skulker",
     "war-dog-amalgamite": "War Dog Amalgamite",
     "war-dog-commando": "War Dog Commando",
     "war-dog-conscript": "War Dog Conscript",
@@ -363,6 +401,27 @@
       "rival-shadow",
       "rival-tactician",
       "rival-talent",
+      "rival-conduit",
+      "rival-elementalist",
+      "rival-fury",
+      "rival-null",
+      "rival-shadow",
+      "rival-tactician",
+      "rival-talent",
+      "rival-conduit",
+      "rival-elementalist",
+      "rival-fury",
+      "rival-null",
+      "rival-shadow",
+      "rival-tactician",
+      "rival-talent",
+      "rival-conduit",
+      "rival-elementalist",
+      "rival-fury",
+      "rival-null",
+      "rival-shadow",
+      "rival-tactician",
+      "rival-talent",
       "time-raider-archon",
       "time-raider-armiger",
       "time-raider-cannonfall",
@@ -436,7 +495,30 @@
       "soulwight",
       "specter",
       "umbral-stalker",
-      "zombie"
+      "zombie",
+      "flesh-mournling",
+      "fleshflayed-shambler-zombie",
+      "ghoul-craver",
+      "giant-zombie",
+      "hollowbone-launcher",
+      "mummy",
+      "mummy-lord",
+      "vampire-spawn",
+      "wraith",
+      "blood-starved-vampire",
+      "dirt-mournling",
+      "faded-echo-spirit",
+      "haunt",
+      "koptourok",
+      "mummy-rotwrap",
+      "vampire",
+      "vampire-lord",
+      "waxen",
+      "bonecage",
+      "giant-shambler-zombie",
+      "lithgekh",
+      "skeleton-knight",
+      "wraith-skulker"
     ],
     "giant": [
       "bredbeddle",
@@ -496,6 +578,21 @@
       "orliq",
       "tormenauk",
       "wobalas",
+      "blight-phage",
+      "chimeron",
+      "soulraker-handmaiden",
+      "soulraker-hivequeen",
+      "soulraker-praetorian",
+      "soulraker-scout",
+      "soulraker-soldier",
+      "soulraker-stinger",
+      "styrich",
+      "aurumvas",
+      "izyak",
+      "optacus",
+      "tyburaki",
+      "unguloid",
+      "vicisitator",
       "abyssal-hyena",
       "gnoll-abyssal-archer",
       "gnoll-abyssal-summoner",
@@ -691,7 +788,14 @@
       "orc-godcaller",
       "radenwight-bruxer",
       "radenwight-piper",
-      "radenwight-ratcrobat"
+      "radenwight-ratcrobat",
+      "flesh-mournling",
+      "fleshflayed-shambler-zombie",
+      "ghoul-craver",
+      "hollowbone-launcher",
+      "mummy",
+      "vampire-spawn",
+      "wraith"
     ],
     "7": [
       "bugbear-mob",
@@ -713,11 +817,27 @@
       "orc-terranova"
     ],
     "9": [
+      "blight-phage",
+      "chimeron",
+      "soulraker-praetorian",
+      "soulraker-scout",
+      "soulraker-soldier",
+      "soulraker-stinger",
       "ogre-blue-blood",
-      "ogre-tantrum"
+      "ogre-tantrum",
+      "blood-starved-vampire",
+      "dirt-mournling",
+      "faded-echo-spirit",
+      "haunt",
+      "koptourok",
+      "mummy-rotwrap",
+      "vampire",
+      "waxen"
     ],
     "10": [
       "bugbear-knightmare",
+      "soulraker-handmaiden",
+      "styrich",
       "dwarf-shieldwall",
       "dwarf-stone-whisperer",
       "high-elf-orbweaver",
@@ -745,6 +865,11 @@
       "predator-a",
       "basilisk",
       "basilisk-tonguesnapper",
+      "izyak",
+      "optacus",
+      "tyburaki",
+      "unguloid",
+      "vicisitator",
       "servitor-war-walker",
       "goblin-monarch",
       "war-spider",
@@ -758,7 +883,12 @@
       "minotaur-stampede",
       "cyclops",
       "radenwight-maestro",
-      "ghost"
+      "ghost",
+      "bonecage",
+      "giant-shambler-zombie",
+      "lithgekh",
+      "skeleton-knight",
+      "wraith-skulker"
     ],
     "16": [
       "big-animal-b",
@@ -801,22 +931,52 @@
       "war-dog-ground-commander"
     ],
     "24": [
+      "giant-zombie",
+      "mummy-lord",
       "wyvern-lurker",
       "wyvern-predator"
     ],
     "28": [
-      "field-of-growth"
+      "field-of-growth",
+      "rival-conduit",
+      "rival-elementalist",
+      "rival-fury",
+      "rival-null",
+      "rival-shadow",
+      "rival-tactician",
+      "rival-talent"
     ],
     "32": [
       "lumbering-egress"
     ],
     "36": [
       "arixx",
+      "vampire-lord",
       "werewolf"
     ],
+    "40": [
+      "rival-conduit",
+      "rival-elementalist",
+      "rival-fury",
+      "rival-null",
+      "rival-shadow",
+      "rival-tactician",
+      "rival-talent"
+    ],
+    "44": [
+      "soulraker-hivequeen"
+    ],
     "48": [
+      "aurumvas",
       "thorn-dragon",
-      "fossil-cryptic"
+      "fossil-cryptic",
+      "rival-conduit",
+      "rival-elementalist",
+      "rival-fury",
+      "rival-null",
+      "rival-shadow",
+      "rival-tactician",
+      "rival-talent"
     ],
     "60": [
       "bredbeddle",
@@ -838,6 +998,7 @@
       "bugbear-sneak",
       "remasch",
       "fiktin",
+      "soulraker-handmaiden",
       "high-elf-bloodletter",
       "wode-elf-guerrilla",
       "wode-elf-scout",
@@ -849,6 +1010,9 @@
       "mohler",
       "orc-garotter",
       "radenwight-mischiever",
+      "rival-shadow",
+      "rival-shadow",
+      "rival-shadow",
       "rival-shadow",
       "time-raider-hijack",
       "shade",
@@ -862,6 +1026,7 @@
       "angulotl-needler",
       "pitling",
       "wobalas",
+      "optacus",
       "dwarf-gunner",
       "crux-of-fire",
       "high-elf-deathtouch",
@@ -881,9 +1046,13 @@
       "orc-eye-of-grole",
       "radenwight-redeye",
       "rival-tactician",
+      "rival-tactician",
+      "rival-tactician",
+      "rival-tactician",
       "time-raider-cannonfall",
       "decrepit-skeleton",
       "skeleton",
+      "waxen",
       "war-dog-crucibite",
       "war-dog-sharpshooter"
     ],
@@ -891,6 +1060,8 @@
       "angulotl-daybringer",
       "chorogaunt",
       "lumbering-egress",
+      "soulraker-hivequeen",
+      "aurumvas",
       "dwarf-marauder",
       "high-elf-ordinator",
       "wode-elf-warleader",
@@ -905,6 +1076,8 @@
       "radenwight-maestro",
       "time-raider-tyrannis",
       "ghost",
+      "mummy-lord",
+      "vampire-lord",
       "war-dog-ground-commander"
     ],
     "harrier": [
@@ -914,6 +1087,9 @@
       "ruinant",
       "fangling",
       "orliq",
+      "soulraker-praetorian",
+      "tyburaki",
+      "vicisitator",
       "dwarf-driver",
       "dwarf-trapper",
       "essence-of-storms",
@@ -938,10 +1114,14 @@
       "radenwight-ratcrobat",
       "radenwight-swiftpaw",
       "rival-null",
+      "rival-null",
+      "rival-null",
+      "rival-null",
       "time-raider-archon",
       "time-raider-nemesis",
       "crawling-claw",
       "ghoul",
+      "vampire-spawn",
       "war-dog-conscript",
       "war-dog-eviscerite"
     ],
@@ -950,6 +1130,8 @@
       "bugbear-channeler",
       "torlas",
       "gunge",
+      "blight-phage",
+      "izyak",
       "dwarf-stone-whisperer",
       "essence-of-tides",
       "field-of-growth",
@@ -964,7 +1146,13 @@
       "orc-glorifier",
       "orc-terranova",
       "rival-elementalist",
+      "rival-elementalist",
+      "rival-elementalist",
+      "rival-elementalist",
       "time-raider-helix",
+      "dirt-mournling",
+      "haunt",
+      "bonecage",
       "war-dog-pestilite"
     ],
     "brute": [
@@ -978,6 +1166,8 @@
       "muceron",
       "grulqin",
       "tormenauk",
+      "chimeron",
+      "unguloid",
       "dwarf-catchpole",
       "dwarf-warden",
       "force-of-earth",
@@ -999,9 +1189,14 @@
       "orc-razor",
       "radenwight-bruxer",
       "rival-fury",
+      "rival-fury",
+      "rival-fury",
+      "rival-fury",
       "time-raider-myriad",
       "rotting-zombie",
       "zombie",
+      "giant-zombie",
+      "mummy",
       "war-dog-amalgamite",
       "war-dog-tetherite",
       "wyvern-predator"
@@ -1012,6 +1207,7 @@
       "bugbear-knightmare",
       "bendrak",
       "bale-eye",
+      "styrich",
       "dwarf-launcher",
       "elemental-mote",
       "high-elf-orbweaver",
@@ -1025,9 +1221,16 @@
       "lizardfolk-bloodeye",
       "orc-chainlock",
       "rival-talent",
+      "rival-talent",
+      "rival-talent",
+      "rival-talent",
       "time-raider-mind-punk",
       "soulwight",
       "specter",
+      "wraith",
+      "koptourok",
+      "vampire",
+      "lithgekh",
       "war-dog-phosphorite"
     ],
     "mount": [
@@ -1070,9 +1273,26 @@
       "orc-godcaller",
       "radenwight-piper",
       "rival-conduit",
+      "rival-conduit",
+      "rival-conduit",
+      "rival-conduit",
       "familiar",
       "time-raider-vertex",
       "war-dog-subcommander"
+    ],
+    "minion": [
+      "soulraker-scout",
+      "soulraker-soldier",
+      "soulraker-stinger",
+      "fleshflayed-shambler-zombie",
+      "ghoul-craver",
+      "hollowbone-launcher",
+      "blood-starved-vampire",
+      "faded-echo-spirit",
+      "mummy-rotwrap",
+      "giant-shambler-zombie",
+      "skeleton-knight",
+      "wraith-skulker"
     ],
     "defender": [
       "dwarf-axethrower",
@@ -1087,6 +1307,7 @@
       "orc-rampart",
       "radenwight-scrapper",
       "time-raider-armiger",
+      "flesh-mournling",
       "war-dog-neuronite"
     ],
     "unknown": [
@@ -1559,6 +1780,156 @@
       "ev": 6,
       "role": "Artillery",
       "organization": "Minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "blight-phage": {
+      "name": "Blight Phage",
+      "level": 7,
+      "ev": 9,
+      "role": "Controller",
+      "organization": "Horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "chimeron": {
+      "name": "Chimeron",
+      "level": 9,
+      "ev": 9,
+      "role": "Brute",
+      "organization": "Horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "soulraker-handmaiden": {
+      "name": "Soulraker Handmaiden",
+      "level": 8,
+      "ev": 10,
+      "role": "Ambusher",
+      "organization": "Horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "soulraker-hivequeen": {
+      "name": "Soulraker Hivequeen",
+      "level": 9,
+      "ev": 44,
+      "role": "",
+      "organization": "Leader",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "soulraker-praetorian": {
+      "name": "Soulraker Praetorian",
+      "level": 7,
+      "ev": 9,
+      "role": "Harrier",
+      "organization": "Horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "soulraker-scout": {
+      "name": "Soulraker Scout",
+      "level": 7,
+      "ev": 9,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "soulraker-soldier": {
+      "name": "Soulraker Soldier",
+      "level": 7,
+      "ev": 9,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "soulraker-stinger": {
+      "name": "Soulraker Stinger",
+      "level": 7,
+      "ev": 9,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "styrich": {
+      "name": "Styrich",
+      "level": 8,
+      "ev": 10,
+      "role": "Hexer",
+      "organization": "Horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "aurumvas": {
+      "name": "Aurumvas",
+      "level": 10,
+      "ev": 48,
+      "role": "",
+      "organization": "Leader",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "izyak": {
+      "name": "Izyak",
+      "level": 10,
+      "ev": 12,
+      "role": "Controller",
+      "organization": "Horde",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "optacus": {
+      "name": "Optacus",
+      "level": 10,
+      "ev": 12,
+      "role": "Artillery",
+      "organization": "Minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "tyburaki": {
+      "name": "Tyburaki",
+      "level": 10,
+      "ev": 12,
+      "role": "Harrier",
+      "organization": "Minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "unguloid": {
+      "name": "Unguloid",
+      "level": 10,
+      "ev": 12,
+      "role": "Brute",
+      "organization": "Minion",
+      "keywords": [
+        "abyssal"
+      ]
+    },
+    "vicisitator": {
+      "name": "Vicisitator",
+      "level": 10,
+      "ev": 12,
+      "role": "Harrier",
+      "organization": "Horde",
       "keywords": [
         "abyssal"
       ]
@@ -3059,8 +3430,8 @@
     },
     "rival-conduit": {
       "name": "Rival Conduit",
-      "level": 2,
-      "ev": 16,
+      "level": 10,
+      "ev": 48,
       "role": "Support",
       "organization": "Elite",
       "keywords": [
@@ -3069,8 +3440,8 @@
     },
     "rival-elementalist": {
       "name": "Rival Elementalist",
-      "level": 2,
-      "ev": 16,
+      "level": 10,
+      "ev": 48,
       "role": "Controller",
       "organization": "Elite",
       "keywords": [
@@ -3079,8 +3450,8 @@
     },
     "rival-fury": {
       "name": "Rival Fury",
-      "level": 2,
-      "ev": 16,
+      "level": 10,
+      "ev": 48,
       "role": "Brute",
       "organization": "Elite",
       "keywords": [
@@ -3089,8 +3460,8 @@
     },
     "rival-null": {
       "name": "Rival Null",
-      "level": 2,
-      "ev": 16,
+      "level": 10,
+      "ev": 48,
       "role": "Harrier",
       "organization": "Elite",
       "keywords": [
@@ -3099,8 +3470,8 @@
     },
     "rival-shadow": {
       "name": "Rival Shadow",
-      "level": 2,
-      "ev": 16,
+      "level": 10,
+      "ev": 48,
       "role": "Ambusher",
       "organization": "Elite",
       "keywords": [
@@ -3109,8 +3480,8 @@
     },
     "rival-tactician": {
       "name": "Rival Tactician",
-      "level": 2,
-      "ev": 16,
+      "level": 10,
+      "ev": 48,
       "role": "Artillery",
       "organization": "Elite",
       "keywords": [
@@ -3119,8 +3490,8 @@
     },
     "rival-talent": {
       "name": "Rival Talent",
-      "level": 2,
-      "ev": 16,
+      "level": 10,
+      "ev": 48,
       "role": "Hexer",
       "organization": "Elite",
       "keywords": [
@@ -3339,6 +3710,236 @@
       "ev": 3,
       "role": "Brute",
       "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "flesh-mournling": {
+      "name": "Flesh Mournling",
+      "level": 4,
+      "ev": 6,
+      "role": "Defender",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "fleshflayed-shambler-zombie": {
+      "name": "Fleshflayed Shambler Zombie",
+      "level": 4,
+      "ev": 6,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "ghoul-craver": {
+      "name": "Ghoul Craver",
+      "level": 4,
+      "ev": 6,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "giant-zombie": {
+      "name": "Giant Zombie",
+      "level": 4,
+      "ev": 24,
+      "role": "Brute",
+      "organization": "Elite",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "hollowbone-launcher": {
+      "name": "Hollowbone Launcher",
+      "level": 4,
+      "ev": 6,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "mummy": {
+      "name": "Mummy",
+      "level": 4,
+      "ev": 6,
+      "role": "Brute",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "mummy-lord": {
+      "name": "Mummy Lord",
+      "level": 4,
+      "ev": 24,
+      "role": "",
+      "organization": "Leader",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "vampire-spawn": {
+      "name": "Vampire Spawn",
+      "level": 4,
+      "ev": 6,
+      "role": "Harrier",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "wraith": {
+      "name": "Wraith",
+      "level": 4,
+      "ev": 6,
+      "role": "Hexer",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "blood-starved-vampire": {
+      "name": "Blood-starved Vampire",
+      "level": 7,
+      "ev": 9,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "dirt-mournling": {
+      "name": "Dirt Mournling",
+      "level": 7,
+      "ev": 9,
+      "role": "Controller",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "faded-echo-spirit": {
+      "name": "Faded Echo Spirit",
+      "level": 7,
+      "ev": 9,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "haunt": {
+      "name": "Haunt",
+      "level": 7,
+      "ev": 9,
+      "role": "Controller",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "koptourok": {
+      "name": "Koptourok",
+      "level": 7,
+      "ev": 9,
+      "role": "Hexer",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "mummy-rotwrap": {
+      "name": "Mummy Rotwrap",
+      "level": 7,
+      "ev": 9,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "vampire": {
+      "name": "Vampire",
+      "level": 7,
+      "ev": 9,
+      "role": "Hexer",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "vampire-lord": {
+      "name": "Vampire Lord",
+      "level": 7,
+      "ev": 36,
+      "role": "",
+      "organization": "Leader",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "waxen": {
+      "name": "Waxen",
+      "level": 7,
+      "ev": 9,
+      "role": "Artillery",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "bonecage": {
+      "name": "Bonecage",
+      "level": 10,
+      "ev": 12,
+      "role": "Controller",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "giant-shambler-zombie": {
+      "name": "Giant Shambler Zombie",
+      "level": 10,
+      "ev": 12,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "lithgekh": {
+      "name": "Lithgekh",
+      "level": 10,
+      "ev": 12,
+      "role": "Hexer",
+      "organization": "Horde",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "skeleton-knight": {
+      "name": "Skeleton Knight",
+      "level": 10,
+      "ev": 12,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "undead"
+      ]
+    },
+    "wraith-skulker": {
+      "name": "Wraith Skulker",
+      "level": 10,
+      "ev": 12,
+      "role": "",
+      "organization": "Minion",
       "keywords": [
         "undead"
       ]

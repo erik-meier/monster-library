@@ -111,8 +111,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The warleader can teleport up to 3 squares between each strike.</p><p><br /><span class=\"damage-value damage-generic\">3</span></p>"
+          "text": "<p>The warleader can teleport up to 3 squares between each strike.</p><p><br /><span class=\"damage-value damage-generic\">3</span></p>"
         },
         "spend": {
           "text": "A target restrained by this ability takes an extra 3 damage.",
@@ -150,8 +149,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>Each non-minion target can make a free strike, then each target shifts up to 3 squares. A target who has cover or concealment at the end of this shift can attempt to hide at the end of the warleader's turn.</p>"
+          "text": "<p>Each non-minion target can make a free strike, then each target shifts up to 3 squares. A target who has cover or concealment at the end of this shift can attempt to hide at the end of the warleader's turn.</p>"
         },
         "spend": {
           "text": "",
@@ -188,8 +186,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The target must not have taken their turn this round. The target takes their turn immediately, and if they have P &lt; 2 they are bleeding and take a bane on strikes until the end of their turn.</p>"
+          "text": "<p>The target must not have taken their turn this round. The target takes their turn immediately, and if they have P &lt; 2 they are bleeding and take a bane on strikes until the end of their turn.</p>"
         },
         "spend": {
           "text": "",
@@ -226,8 +223,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The warleader uses Wodeblade against each target and gains an edge on the power roll.</p>"
+          "text": "<p>The warleader uses Wodeblade against each target and gains an edge on the power roll.</p>"
         },
         "spend": {
           "text": "",
@@ -264,8 +260,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The warleader can use Wodeblade. Each target can then make a free strike.</p>"
+          "text": "<p>The warleader can use Wodeblade. Each target can then make a free strike.</p>"
         },
         "spend": {
           "text": "",
@@ -302,8 +297,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>Each target is invisible until the start of the next round. The warleader then uses Wodeblade.</p>"
+          "text": "<p>Each target is invisible until the start of the next round. The warleader then uses Wodeblade.</p>"
         },
         "spend": {
           "text": "",
@@ -334,8 +328,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>",
-          "after": ""
+          "text": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>"
         },
         "spend": {
           "text": "",
@@ -366,8 +359,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -398,8 +390,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

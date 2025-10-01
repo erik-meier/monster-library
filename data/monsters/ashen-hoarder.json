@@ -113,8 +113,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The ashen hoarder can have up to two size 1 creatures grabbed at a time.</p>"
+          "text": "<p>The ashen hoarder can have up to two size 1 creatures grabbed at a time.</p>"
         },
         "spend": {
           "text": "",
@@ -167,8 +166,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p><strong>3 Malice</strong>: The ashen hoarder targets a second 4 cube within distance.</p>"
+          "text": "<p><strong>3 Malice</strong>: The ashen hoarder targets a second 4 cube within distance.</p>"
         },
         "spend": {
           "text": "Any enemy weakened this way is instead slowed and weakened (save ends).",
@@ -222,8 +220,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>An impaled creature is restrained and bleeding, and moves with the ashen hoarder. The ashen hoarder can have three creatures impaled with this ability at a time.</p>"
+          "text": "<p>An impaled creature is restrained and bleeding, and moves with the ashen hoarder. The ashen hoarder can have three creatures impaled with this ability at a time.</p>"
         },
         "spend": {
           "text": "",
@@ -257,8 +254,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ashen hoarder moves up to twice their speed in a straight line. Each creature or object in the path of this movement is either pushed into the nearest unoccupied space outside the path, or if they have M &lt; 3 is pushed forward until the movement ends. Any creature who is force moved forward into an obstacle is dazed (save ends).</p>",
-          "after": ""
+          "text": "<p>The ashen hoarder moves up to twice their speed in a straight line. Each creature or object in the path of this movement is either pushed into the nearest unoccupied space outside the path, or if they have M &lt; 3 is pushed forward until the movement ends. Any creature who is force moved forward into an obstacle is dazed (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -292,8 +288,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ashen hoarder halves the damage. If the ashen hoarder has one or more creatures impaled, the Malice cost of this feature is reduced by 1 and one impaled creature takes the other half of the damage.</p>",
-          "after": ""
+          "text": "<p>The ashen hoarder halves the damage. If the ashen hoarder has one or more creatures impaled, the Malice cost of this feature is reduced by 1 and one impaled creature takes the other half of the damage.</p>"
         },
         "spend": {
           "text": "",
@@ -346,8 +341,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>Each target is force moved straight up, then falls. A target who would normally land prone after falling is instead restrained (save ends).</p>"
+          "text": "<p>Each target is force moved straight up, then falls. A target who would normally land prone after falling is instead restrained (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -386,8 +380,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ashen hoarder sprays out six size 1M zombie mines that appear in unoccupied squares within distance. Any enemy who moves adjacent to a zombie mine for the first time in a round or starts their turn there causes the mine to explode, dealing <span class=\"damage-value damage-generic\">4</span> corruption damage to each creature adjacent to the mine. Any other zombie mines adjacent to the exploding mine also explode. At the start of each of the ashen hoarder's turns, each unexploded zombie mine can be moved up to 2 squares.</p>",
-          "after": ""
+          "text": "<p>The ashen hoarder sprays out six size 1M zombie mines that appear in unoccupied squares within distance. Any enemy who moves adjacent to a zombie mine for the first time in a round or starts their turn there causes the mine to explode, dealing <span class=\"damage-value damage-generic\">4</span> corruption damage to each creature adjacent to the mine. Any other zombie mines adjacent to the exploding mine also explode. At the start of each of the ashen hoarder's turns, each unexploded zombie mine can be moved up to 2 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -425,8 +418,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ashen hoarder moves up to their speed and uses Claw and Blade with a double edge against one target. On a tier 3 outcome, the ashen hoarder can use Impale without spending Malice.</p>",
-          "after": ""
+          "text": "<p>The ashen hoarder moves up to their speed and uses Claw and Blade with a double edge against one target. On a tier 3 outcome, the ashen hoarder can use Impale without spending Malice.</p>"
         },
         "spend": {
           "text": "",
@@ -457,8 +449,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ashen hoarder moves up to their speed and can make a free strike against two targets.</p>",
-          "after": ""
+          "text": "<p>The ashen hoarder moves up to their speed and can make a free strike against two targets.</p>"
         },
         "spend": {
           "text": "",
@@ -489,8 +480,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ashen hoarder summons a 10 wall of bones and blades into unoccupied squares within 5 squares of them. Each square of the wall has 5 Stamina. An enemy who comes adjacent to the wall for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">3</span> damage.</p>",
-          "after": ""
+          "text": "<p>The ashen hoarder summons a 10 wall of bones and blades into unoccupied squares within 5 squares of them. Each square of the wall has 5 Stamina. An enemy who comes adjacent to the wall for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">3</span> damage.</p>"
         },
         "spend": {
           "text": "",
@@ -521,8 +511,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ashen hoarder takes an additional main action on their turn.</p><p>They can use this feature even if they are dazed.</p>",
-          "after": ""
+          "text": "<p>The ashen hoarder takes an additional main action on their turn.</p><p>They can use this feature even if they are dazed.</p>"
         },
         "spend": {
           "text": "",
@@ -553,8 +542,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ashen hoarder launches bone lances into the air, raining them</p><p>down on enemies and impaling those unlucky enough to be on</p><p>the receiving end. Each enemy within 20 squares of the ashen</p><p>hoarder makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Agility test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">14</span> damage; restrained and bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>The ashen hoarder launches bone lances into the air, raining them</p><p>down on enemies and impaling those unlucky enough to be on</p><p>the receiving end. Each enemy within 20 squares of the ashen</p><p>hoarder makes an <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Agility test</span></strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">14</span> damage; restrained and bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

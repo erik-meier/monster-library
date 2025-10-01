@@ -64,8 +64,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>",
-          "after": ""
+          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>"
         },
         "spend": {
           "text": "",
@@ -96,8 +95,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two kobolds take their turns in a row.</p>",
-          "after": ""
+          "text": "<p>Two kobolds take their turns in a row.</p>"
         },
         "spend": {
           "text": "",
@@ -128,8 +126,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
         },
         "spend": {
           "text": "",
@@ -180,10 +177,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "If the legionary is acting as a captain, they and each mem ber of their squad shift up to 2 squares before this ability is used.",
           "value": 3,
@@ -222,22 +216,19 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; {{potency}} prone"
+              "display": "2 damage; <strong class=\"potency-value\">M&lt;0</strong> prone"
             },
             {
               "tier": 2,
-              "display": "3 damage; {{potency}} prone"
+              "display": "3 damage; <strong class=\"potency-value\">M&lt;1</strong> prone"
             },
             {
               "tier": 3,
-              "display": "4 damage; {{potency}} prone"
+              "display": "4 damage; <strong class=\"potency-value\">M&lt;2</strong> prone"
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null

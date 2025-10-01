@@ -87,8 +87,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>After using this ability, the commando can attempt to hide even if observed.</p>"
+          "text": "<p>After using this ability, the commando can attempt to hide even if observed.</p>"
         },
         "spend": {
           "text": "",

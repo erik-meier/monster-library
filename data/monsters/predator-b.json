@@ -96,10 +96,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -148,10 +145,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -187,8 +181,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The target is pushed up to 5 squares.</p>"
+          "text": "<p>The target is pushed up to 5 squares.</p>"
         },
         "spend": {
           "text": "",

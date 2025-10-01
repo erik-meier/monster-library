@@ -100,8 +100,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If a target made prone this way is already prone, they are instead restrained (save ends). If the target was also unable to stand, that effect ends when they are no longer restrained this way.</p>"
+          "text": "<p>If a target made prone this way is already prone, they are instead restrained (save ends). If the target was also unable to stand, that effect ends when they are no longer restrained this way.</p>"
         },
         "spend": {
           "text": "",
@@ -139,8 +138,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The target gains [[/heal 15 temporary]] that lasts until the start of the field's next turn.</p>"
+          "text": "<p>The target gains <span class=\"heal-value\">15</span> temporary stamina that lasts until the start of the field's next turn.</p>"
         },
         "spend": {
           "text": "Until the end of the encounter, the ground within 1 square  of the target is overgrown with underbrush and vines. Whenever any  enemy makes a strike against the target while within line of effect  of that area, the enemy is pulled 5 squares toward the area after the  strike is resolved. Any enemy who enters the area for the first time in  a round or starts their turn there is knocked prone.",
@@ -179,8 +177,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The target takes <span class=\"damage-value damage-generic\">6</span> damage, and if they have A &lt; 2, they are bleeding (save ends).</p>"
+          "text": "<p>The target takes <span class=\"damage-value damage-generic\">6</span> damage, and if they have A &lt; 2, they are bleeding (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -211,8 +208,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>",
-          "after": ""
+          "text": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>"
         },
         "spend": {
           "text": "",
@@ -243,8 +239,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>",
-          "after": ""
+          "text": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>"
         },
         "spend": {
           "text": "",
@@ -276,8 +271,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>",
-          "after": ""
+          "text": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>"
         },
         "spend": {
           "text": "",

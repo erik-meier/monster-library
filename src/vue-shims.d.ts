@@ -18,3 +18,10 @@ declare module '@/views/*' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module '@/data/monsters.js' {
+  import type { MonsterSchema } from '../tests/helpers/validation-utils'
+  export function getMonster(id: string): MonsterSchema | null
+  export function getAllMonsters(): MonsterSchema[]
+  export function getMonsterIndex(): Record<string, unknown>
+}

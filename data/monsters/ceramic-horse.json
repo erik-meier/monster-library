@@ -85,10 +85,7 @@
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -138,8 +135,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>Any target who is prone takes an extra <span class=\"damage-value damage-generic\">2</span> damage.</p>"
+          "text": "<p>Any target who is prone takes an extra <span class=\"damage-value damage-generic\">2</span> damage.</p>"
         },
         "spend": {
           "text": "",
@@ -173,8 +169,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Note: Targets the Horses rider</p><p>The horse vertical slides the target up to 3 squares, ignoring stability. The target can use a ranged ability at any point during this forced movement, and takes no damage if they then fall.</p>",
-          "after": ""
+          "text": "<p>Note: Targets the Horses rider</p><p>The horse vertical slides the target up to 3 squares, ignoring stability. The target can use a ranged ability at any point during this forced movement, and takes no damage if they then fall.</p>"
         },
         "spend": {
           "text": "",
@@ -205,8 +200,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
         },
         "spend": {
           "text": "",
@@ -257,8 +251,7 @@
           ]
         },
         "effect": {
-          "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
-          "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          "text": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p> <p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
         },
         "spend": {
           "text": "",
@@ -289,8 +282,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
         },
         "spend": {
           "text": "",

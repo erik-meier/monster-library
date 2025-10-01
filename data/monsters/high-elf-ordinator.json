@@ -87,8 +87,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>Until the start of the ordinator's next turn, each ally high elf in the encounter gains an edge on ability rolls against the target.</p>"
+          "text": "<p>Until the start of the ordinator's next turn, each ally high elf in the encounter gains an edge on ability rolls against the target.</p>"
         },
         "spend": {
           "text": "",
@@ -126,8 +125,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Note: Targets Each elemental ally in the area</p><p>Each target can move up to their speed or make a free strike. Elemental mote targets can, instead, use their Spark of Life trait.</p>",
-          "after": ""
+          "text": "<p>Note: Targets Each elemental ally in the area</p><p>Each target can move up to their speed or make a free strike. Elemental mote targets can, instead, use their Spark of Life trait.</p>"
         },
         "spend": {
           "text": "",
@@ -164,8 +162,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The ordinator summons four <span class=\"reference-text\">Elemental Motes</span> or four <span class=\"reference-text\">Soot Crows</span> into unoccupied space within distance.</p>"
+          "text": "<p>The ordinator summons four <span class=\"reference-text\">Elemental Motes</span> or four <span class=\"reference-text\">Soot Crows</span> into unoccupied space within distance.</p>"
         },
         "spend": {
           "text": "The ordinator instead summons one ceramic horse or one  winded brambleguard into an unoccupied space within distance.",
@@ -203,8 +200,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ordinator uses Lightning Rod against the target after the ability is resolved.</p>",
-          "after": ""
+          "text": "<p>The ordinator uses Lightning Rod against the target after the ability is resolved.</p>"
         },
         "spend": {
           "text": "",
@@ -242,8 +238,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each target glows briefly, and can end one effect on themself then move up to their speed.</p>",
-          "after": ""
+          "text": "<p>Each target glows briefly, and can end one effect on themself then move up to their speed.</p>"
         },
         "spend": {
           "text": "",
@@ -283,8 +278,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each target makes a **Presence test**.</p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> corruption damage; pull 5 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> corruption damage; pull 3 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p>Pull 1 toward the center of the cube</p></td></tr></tbody></table>",
-          "after": "<p>The area turns dark and distorted, and is difficult terrain for enemies.</p>"
+          "text": "<p>Each target makes a **Presence test**.</p><table><tbody><tr><td data-colwidth=\"121\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">12</span> corruption damage; pull 5 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">9</span> corruption damage; pull 3 toward the center of the cube</p></td></tr><tr><td data-colwidth=\"121\"><p>17+</p></td><td><p>Pull 1 toward the center of the cube</p></td></tr></tbody></table> <p>The area turns dark and distorted, and is difficult terrain for enemies.</p>"
         },
         "spend": {
           "text": "",
@@ -322,8 +316,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each target’s free strike now has the Magic keyword and can target two creatures or objects. Additionally, each target glows with magic.</p>",
-          "after": ""
+          "text": "<p>Each target’s free strike now has the Magic keyword and can target two creatures or objects. Additionally, each target glows with magic.</p>"
         },
         "spend": {
           "text": "",
@@ -366,8 +359,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
         },
         "spend": {
           "text": "",
@@ -418,8 +410,7 @@
           ]
         },
         "effect": {
-          "before": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p>",
-          "after": "<p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          "text": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p> <p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
         },
         "spend": {
           "text": "",
@@ -450,8 +441,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
         },
         "spend": {
           "text": "",

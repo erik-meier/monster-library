@@ -76,8 +76,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Any damage dealt by the triggering ability is halved. If the creature or object who used the ability is within 3 squares of the scyza, the scyza can make a <span class=\"damage-value damage-generic\">5</span> damage free strike against them.</p>",
-          "after": ""
+          "text": "<p>Any damage dealt by the triggering ability is halved. If the creature or object who used the ability is within 3 squares of the scyza, the scyza can make a <span class=\"damage-value damage-generic\">5</span> damage free strike against them.</p>"
         },
         "spend": {
           "text": "",
@@ -129,8 +128,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The scyza roars, and if the target has i&lt;2 they are frightened (save ends).</p>"
+          "text": "<p>The scyza roars, and if the target has i&lt;2 they are frightened (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -177,13 +175,12 @@
             },
             {
               "tier": 3,
-              "display": "16 damage; {{potency}} bleeding (save ends)"
+              "display": "16 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
             }
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>Against a target on top of the scyza, this ability gains an edge, and the target is pushed into an unoccupied adjacent square and knocked prone.</p>"
+          "text": "<p>Against a target on top of the scyza, this ability gains an edge, and the target is pushed into an unoccupied adjacent square and knocked prone.</p>"
         },
         "spend": {
           "text": "",
@@ -223,22 +220,19 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; 1 sonic damage; {{potency}} dazed (save ends)"
+              "display": "4 damage; 1 sonic damage; <strong class=\"potency-value\">M&lt;0</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 damage; 2 sonic damage; {{potency}} dazed (save ends)"
+              "display": "7 damage; 2 sonic damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; 3 sonic damage; {{potency}} dazed (save ends)"
+              "display": "9 damage; 3 sonic damage; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
             }
           ]
         },
-        "effect": {
-          "before": "",
-          "after": ""
-        },
+        "effect": {},
         "spend": {
           "text": "",
           "value": null
@@ -271,8 +265,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The scyza kicks up a sandstorm, granting concealment to themself and any ally in the area until the end of the scyza’s next turn. Each enemy in the area makes an <strong>Intuition test.</strong></p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> damage; prone; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>The scyza kicks up a sandstorm, granting concealment to themself and any ally in the area until the end of the scyza’s next turn. Each enemy in the area makes an <strong>Intuition test.</strong></p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> damage; prone; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",

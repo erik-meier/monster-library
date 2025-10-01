@@ -28,7 +28,7 @@
         <div class="stat-label">Free Strike</div>
       </div>
       <div class="stat-values">
-        <div class="stat-value">{{ monster.size.value }}{{ monster.size.letter }}</div>
+        <div class="stat-value">{{ monster.size.value }}{{ monster.size.value > 1 ? '' : monster.size.letter }}</div>
         <div class="stat-value">{{ monster.speed }}</div>
         <div class="stat-value">{{ monster.stamina }}</div>
         <div class="stat-value">{{ monster.stability }}</div>
@@ -61,8 +61,10 @@
     <div class="divider"></div>
 
     <!-- Abilities -->
-    <ActionsList :title="Abilities" :actions="monster.items" :chr="Math.max(...Object.values(monster.characteristics))"
-      :monster="monster" />
+    <div v-if="(monster.items || []).length > 0" title="Abilities" :expanded="true" id="abilities-section">
+      <ActionsList :title="'Abilities'" :actions="monster.items || []" :chr="String(getMaxCharacteristic())"
+        :monster="monster" />
+    </div>
 
     <!-- Source Information -->
     <div v-if="monster.source" class="source-info">
@@ -78,7 +80,14 @@
 
 <script>
 import CharacteristicScores from './CharacteristicScores.vue'
-import ActionsList from './ActionsList.vue';
+import ActionsList from './ActionsList.vue'
+import {
+  formatKeywords,
+  formatMonsterRole,
+  formatImmunity,
+  formatWeakness,
+  formatMovement
+} from '@/utils/formatters'
 
 export default {
   name: 'MonsterStatBlock',
@@ -93,66 +102,42 @@ export default {
     }
   },
   methods: {
-    formatKeywords(keywords) {
-      if (!keywords || !Array.isArray(keywords)) return '';
-      return keywords.map(keyword =>
-        keyword.charAt(0).toUpperCase() + keyword.slice(1).toLowerCase()
-      ).join(', ');
+    getMaxCharacteristic() {
+      if (!this.monster.characteristics) return 0;
+      const values = Object.values(this.monster.characteristics);
+      return values.length > 0 ? Math.max(...values) : 0;
     },
-    formatMonsterRole(monster) {
-      return `Level ${monster.level} ${monster.organization}${monster.role ? ' ' + monster.role : ''}`;
-    },
-    formatImmunity(immunity) {
-      let result = null;
-      if (typeof immunity === 'object') {
-        result = Object.entries(immunity)
-          .filter(([, value]) => value > 0)
-          .map(([type, value]) => `${type} ${value}`)
-          .join(', ');
-      }
-      return result || '—';
-    },
-    formatWeakness(weakness) {
-      let result = null;
-      if (typeof weakness === 'object') {
-        result = Object.entries(weakness)
-          .filter(([, value]) => value > 0)
-          .map(([type, value]) => `${type} ${value}`)
-          .join(', ');
-      }
-      return result || '—';
-    },
-    formatMovement(movement) {
-      if (!movement) return '—';
-      if (typeof movement === 'string') return movement;
-      if (Array.isArray(movement)) return movement.join(', ');
-      return movement;
-    }
+    // Use imported formatters from shared utilities
+    formatKeywords,
+    formatMonsterRole,
+    formatImmunity,
+    formatWeakness,
+    formatMovement
   }
 }
 </script>
 
 <style scoped>
 .stat-block {
-  background: #fdf6e3;
-  border: 1px solid #8b4513;
-  border-radius: 4px;
-  padding: 1.5rem;
-  font-family: 'Libre Baskerville', 'Book Antiqua', serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--color-primary-50);
+  border: 2px solid var(--color-primary-600);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  font-family: var(--font-family-serif);
+  box-shadow: var(--shadow-md);
   max-width: 100%;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .monster-name {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #8b4513;
-  margin: 0 0 0.5rem 0;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
+  margin: 0 0 var(--space-2) 0;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -161,23 +146,23 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 var(--space-2) 0;
   text-transform: capitalize;
   position: relative;
 }
 
 .monster-meta-left {
   margin: 0;
-  font-weight: bold;
-  color: #666;
-  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-base);
 }
 
 .monster-meta-center {
   margin: 0;
   font-style: italic;
-  color: #666;
-  font-size: 1rem;
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-base);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -186,32 +171,33 @@ export default {
 
 .monster-meta-right {
   margin: 0;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #8b4513;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
 }
 
 .divider {
   height: 2px;
-  background: linear-gradient(to right, transparent, #8b4513, transparent);
-  margin: 1rem 0;
+  background: linear-gradient(to right, transparent, var(--color-primary-600), transparent);
+  margin: var(--space-4) 0;
 }
 
 .core-stats {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .stat-labels {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
 }
 
 .stat-label {
-  font-weight: bold;
-  color: #8b4513;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
   flex: 1;
   text-align: center;
+  font-size: var(--font-size-sm);
 }
 
 .stat-values {
@@ -221,20 +207,21 @@ export default {
 
 .stat-value {
   flex: 1;
-  color: #333;
+  color: var(--color-neutral-800);
   text-align: center;
+  font-weight: var(--font-weight-semibold);
 }
 
 .secondary-stats {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  line-height: 1.4;
+  gap: var(--space-2);
+  line-height: var(--line-height-relaxed);
 }
 
 .stat-item {
@@ -242,62 +229,62 @@ export default {
 }
 
 .stat-item strong {
-  color: #8b4513;
-  font-weight: bold;
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-bold);
 }
 
 .stat-separator {
-  color: #8b4513;
-  font-weight: bold;
-  margin: 0 0.25rem;
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-bold);
+  margin: 0 var(--space-1);
 }
 
 .source-info {
-  margin-top: 1rem;
+  margin-top: var(--space-4);
 }
 
 .source-text {
-  font-size: 0.8rem;
-  color: #777;
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
   text-align: center;
   font-style: italic;
 }
 
 .abilities-section {
-  margin: 1rem 0;
+  margin: var(--space-4) 0;
 }
 
 .ability {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .ability-name {
-  font-weight: bold;
-  color: #8b4513;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
   margin: 0;
   display: inline;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
 }
 
 .ability-text {
   display: inline;
   margin: 0;
-  color: #333;
-  line-height: 1.5;
+  color: var(--color-neutral-800);
+  line-height: var(--line-height-relaxed);
 }
 
 @media (max-width: 768px) {
   .stat-block {
-    padding: 1rem;
+    padding: var(--space-4);
   }
 
   .monster-name {
-    font-size: 1.5rem;
+    font-size: var(--font-size-2xl);
   }
 
   .monster-meta-container {
     flex-direction: column;
-    gap: 0.25rem;
+    gap: var(--space-1);
     text-align: center;
     align-items: center;
   }
@@ -312,24 +299,24 @@ export default {
   }
 
   .core-stats {
-    margin-bottom: 1.25rem;
+    margin-bottom: var(--space-5);
   }
 
   .stat-labels,
   .stat-values {
-    gap: 0.25rem;
+    gap: var(--space-1);
   }
 
   .stat-label,
   .stat-value {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     min-width: 0;
   }
 
   .secondary-stats {
     flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.85rem;
+    gap: var(--space-2);
+    font-size: var(--font-size-sm);
     text-align: left;
     align-items: flex-start;
   }
@@ -346,44 +333,44 @@ export default {
 
 @media (max-width: 480px) {
   .stat-block {
-    padding: 0.75rem;
+    padding: var(--space-3);
   }
 
   .monster-name {
-    font-size: 1.3rem;
+    font-size: var(--font-size-xl);
     letter-spacing: 0.5px;
   }
 
   .monster-meta-container {
-    gap: 0.4rem;
+    gap: var(--space-2);
   }
 
   .monster-meta-left,
   .monster-meta-center,
   .monster-meta-right {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
   }
 
   .core-stats {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
   }
 
   .stat-labels {
-    margin-bottom: 0.4rem;
+    margin-bottom: var(--space-2);
   }
 
   .stat-label {
-    font-size: 0.85rem;
+    font-size: var(--font-size-xs);
   }
 
   .stat-value {
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
   }
 
   .secondary-stats {
-    font-size: 0.8rem;
-    gap: 0.4rem;
+    font-size: var(--font-size-xs);
+    gap: var(--space-2);
   }
 }
 </style>

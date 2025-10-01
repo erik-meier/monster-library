@@ -100,21 +100,20 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 acid damage; {{potency}} dazed (save ends)"
+              "display": "7 acid damage; <strong class=\"potency-value\">A&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 acid damage; {{potency}} dazed (save ends)"
+              "display": "10 acid damage; <strong class=\"potency-value\">A&lt;2</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 acid damage; {{potency}} dazed (save ends)"
+              "display": "13 acid damage; <strong class=\"potency-value\">A&lt;3</strong> dazed (save ends)"
             }
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The next time the target makes a strike against the daybringer, the target takes <span class=\"damage-value damage-generic\">4</span> acid damage after the strike is resolved.</p>"
+          "text": "<p>The next time the target makes a strike against the daybringer, the target takes <span class=\"damage-value damage-generic\">4</span> acid damage after the strike is resolved.</p>"
         },
         "spend": {
           "text": "The daybringer jumps up to 3 squares before or after using this ability.",
@@ -146,8 +145,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The daybringer expands their throat to make it resemble the sun until the start of their next turn. During that time, each angulotl who starts their turn within 10 squares of the daybringer regains <span class=\"heal-value\">5</span> healing and gains a +3 bonus to speed until the end of their turn.</p>",
-          "after": ""
+          "text": "<p>The daybringer expands their throat to make it resemble the sun until the start of their next turn. During that time, each angulotl who starts their turn within 10 squares of the daybringer regains <span class=\"heal-value\">5</span>  stamina and gains a +3 bonus to speed until the end of their turn.</p>"
         },
         "spend": {
           "text": "",
@@ -180,8 +178,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The outcome of the strike’s power roll is reduced by one tier.</p>",
-          "after": ""
+          "text": "<p>The outcome of the strike’s power roll is reduced by one tier.</p>"
         },
         "spend": {
           "text": "The target is pulled up to 4 squares after the strike resolves.",
@@ -216,8 +213,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Four <a href=\"/monster/angulotl-pollywogs\" class=\"monster-link\">angulotl pollywogs</a> erupt from the daybringer’s back and waddle into unoccupied spaces within distance.</p>",
-          "after": ""
+          "text": "<p>Four <a href=\"/monster/angulotl-pollywogs\" class=\"monster-link\">angulotl pollywogs</a> erupt from the daybringer’s back and waddle into unoccupied spaces within distance.</p>"
         },
         "spend": {
           "text": "",
@@ -252,8 +248,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each target can jump up to 4 squares. Each non-minion target can make a free strike at the end of the jump.</p>",
-          "after": ""
+          "text": "<p>Each target can jump up to 4 squares. Each non-minion target can make a free strike at the end of the jump.</p>"
         },
         "spend": {
           "text": "",
@@ -284,8 +279,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The encounter map dries up and each enemy and object on it is illuminated until the end of the encounter. An illuminated creature or object can’t hide or become invisible, and any strike made against an illuminated target gains an edge. Additionally, each enemy in the encounter who is wet has that effect end and takes <span class=\"damage-value damage-generic\">6</span> acid damage. Each angulotl in the encounter has a double edge on their next strike.</p>",
-          "after": ""
+          "text": "<p>The encounter map dries up and each enemy and object on it is illuminated until the end of the encounter. An illuminated creature or object can’t hide or become invisible, and any strike made against an illuminated target gains an edge. Additionally, each enemy in the encounter who is wet has that effect end and takes <span class=\"damage-value damage-generic\">6</span> acid damage. Each angulotl in the encounter has a double edge on their next strike.</p>"
         },
         "spend": {
           "text": "",
@@ -316,8 +310,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>",
-          "after": ""
+          "text": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -348,8 +341,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> sonic damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> sonic damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -431,8 +423,7 @@
           }
         },
         "effect": {
-          "before": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>",
-          "after": ""
+          "text": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>"
         },
         "spend": {
           "text": "",

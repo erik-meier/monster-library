@@ -86,8 +86,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>The ratcrobat shifts up to 2 squares after striking the first target, then can shift 1 square after striking the second target.</p>"
+          "text": "<p>The ratcrobat shifts up to 2 squares after striking the first target, then can shift 1 square after striking the second target.</p>"
         },
         "spend": {
           "text": "",
@@ -124,8 +123,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "",
-          "after": "<p>The ratcrobat slides the target up to 3 squares, then can shift into any square the target left</p>"
+          "text": "<p>The ratcrobat slides the target up to 3 squares, then can shift into any square the target left</p>"
         },
         "spend": {
           "text": "",
@@ -163,8 +161,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>The ratcrobat makes a free strike against the target.</p>",
-          "after": ""
+          "text": "<p>The ratcrobat makes a free strike against the target.</p>"
         },
         "spend": {
           "text": "",
@@ -195,8 +192,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">7</span> sonic damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>",
-          "after": ""
+          "text": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">7</span> sonic damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -228,8 +224,7 @@
           "effects": {}
         },
         "effect": {
-          "before": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>",
-          "after": ""
+          "text": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>"
         },
         "spend": {
           "text": "",
@@ -256,7 +251,8 @@
         },
         "target": {
           "type": "creature",
-          "value": 1
+          "value": 1,
+          "custom": ""
         },
         "trigger": "",
         "power": {
@@ -280,8 +276,7 @@
           ]
         },
         "effect": {
-          "before": "",
-          "after": "<p>If the target is wearing clothing covering the lower half of their body, they must use a maneuver once to pull that clothing up before they can move.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
+          "text": "<p>If the target is wearing clothing covering the lower half of their body, they must use a maneuver once to pull that clothing up before they can move.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
         },
         "spend": {
           "text": "",

@@ -63,8 +63,23 @@ function processUuidReferences(text) {
 function processHealDirectives(text) {
   if (!text) return text;
 
-  return text.replace(/\[\[\/heal\s+(\d+|\dd\d+)\]\]/g, (match, value) => {
-    return `<span class="heal-value">${value}</span> healing`;
+  let result = text.replace(/\[\[\/heal\s+(\d+|\dd\d+)\s*(?:temporary)?\]\]/g, (match, value) => {
+    return `<span class="heal-value">${value}</span> ${match.match(/temporary/) ? 'temporary' : ''} stamina`;
+  });
+
+  return result;
+}
+
+/**
+ * Process roll directives like [[/roll d3]] or [[/r 2d6]]
+ */
+function processRollDirectives(text) {
+  if (!text) return text;
+
+  return text.replace(/\[\[\/(?:roll|r)\s+([^[\]]+?)\s*\]\]/g, (match, rollFormula) => {
+    // Clean up the roll formula (trim whitespace)
+    const cleanFormula = rollFormula.trim();
+    return `<span class="roll-formula">${cleanFormula}</span>`;
   });
 }
 
@@ -124,7 +139,7 @@ function processPotencyText(text, potencyValue, characteristic, monster) {
   );
 
   // Get characteristic abbreviation 
-  let charAbbrev = 'A'; // Default fallback
+  let charAbbrev = 'X'; // Default fallback
   if (characteristic && characteristic !== 'none' && characteristic !== '') {
     charAbbrev = characteristic.charAt(0).toUpperCase();
   }
@@ -215,6 +230,9 @@ function processFoundryText(text, monster, options = {}) {
   // Process heal directives  
   processed = processHealDirectives(processed);
 
+  // Process roll directives
+  processed = processRollDirectives(processed);
+
   // Process potency placeholders and patterns (consolidated)
   if (options.potencyData) {
     processed = processPotencyText(processed, options.potencyData.value, options.potencyData.characteristic, monster);
@@ -255,7 +273,7 @@ function flattenPowerEffects(item, monster) {
   const tiers = [];
 
   // Find the primary characteristic by looking at all effect tiers
-  let primaryCharacteristic = null;
+  let primaryCharacteristic = item.system.power.roll.characteristics[0] || null;
   Object.values(effects).forEach(effect => {
     ['tier1', 'tier2', 'tier3'].forEach(tierKey => {
       const tierData = effect[effect.type]?.[tierKey];
@@ -329,7 +347,24 @@ function flattenPowerEffects(item, monster) {
           }
 
           // Process all potency-related content ({{potency}}, @potency.*, patterns)
-          processedDisplay = processPotencyText(processedDisplay, tierData.potency?.value, characteristic, monster);
+          // Default to weak, average, strong based on tier if no explicit potency value
+          let potencyValue = tierData.potency?.value;
+          if (potencyValue === undefined || potencyValue === null) {
+            switch (tierNum) {
+              case 1:
+                potencyValue = '@potency.weak';
+                break;
+              case 2:
+                potencyValue = '@potency.average';
+                break;
+              case 3:
+                potencyValue = '@potency.strong';
+                break;
+              default:
+                potencyValue = null;
+            }
+          }
+          processedDisplay = processPotencyText(processedDisplay, potencyValue, characteristic, monster);
 
           // Process {{forced}} placeholders for forced movement
           if (processedDisplay.includes('{{forced}}') && effectType === 'forced') {
@@ -384,19 +419,35 @@ function processMonsterText(monster) {
       );
     }
 
-    // Process effect text (before/after)
-    if (processedItem.system?.effect?.before) {
-      processedItem.system.effect.before = processFoundryText(
-        processedItem.system.effect.before,
-        monster
-      );
-    }
+    // Process and combine effect text (before/after into single text field)
+    if (processedItem.system?.effect) {
+      let combinedEffectText = '';
 
-    if (processedItem.system?.effect?.after) {
-      processedItem.system.effect.after = processFoundryText(
-        processedItem.system.effect.after,
-        monster
-      );
+      if (processedItem.system.effect.before) {
+        combinedEffectText += processFoundryText(
+          processedItem.system.effect.before,
+          monster
+        );
+      }
+
+      if (processedItem.system.effect.after) {
+        if (combinedEffectText) {
+          combinedEffectText += ' '; // Add space between before and after
+        }
+        combinedEffectText += processFoundryText(
+          processedItem.system.effect.after,
+          monster
+        );
+      }
+
+      // Store in unified text field and remove old fields
+      if (combinedEffectText) {
+        processedItem.system.effect.text = combinedEffectText;
+      }
+
+      // Clean up old fields
+      delete processedItem.system.effect.before;
+      delete processedItem.system.effect.after;
     }
 
     // Process power roll formula
@@ -425,6 +476,7 @@ function processMonsterText(monster) {
 export {
   processDamageDirectives,
   processHealDirectives,
+  processRollDirectives,
   processUuidReferences,
   processCharacteristicReferences,
   processPotencyText,

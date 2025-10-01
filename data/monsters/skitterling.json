@@ -48,8 +48,9 @@
           "tertiary": null
         },
         "target": {
-          "type": "creatureObject",
-          "value": 1
+          "type": "creature",
+          "value": 1,
+          "custom": "One creature per minion"
         },
         "trigger": "",
         "power": {
@@ -73,8 +74,7 @@
           ]
         },
         "effect": {
-          "after": "<p>The target takes a bane on their next strike.</p>",
-          "before": ""
+          "text": "<p>The target takes a bane on their next strike.</p>"
         },
         "spend": {
           "value": null,

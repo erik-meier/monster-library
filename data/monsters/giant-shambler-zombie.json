@@ -1,0 +1,134 @@
+{
+  "id": "giant-shambler-zombie",
+  "name": "Giant Shambler Zombie",
+  "level": 10,
+  "ev": 12,
+  "role": "",
+  "organization": "Minion",
+  "keywords": [
+    "undead"
+  ],
+  "size": {
+    "value": 3,
+    "letter": "M"
+  },
+  "speed": 4,
+  "stamina": 17,
+  "stability": 5,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 5,
+    "agility": -3,
+    "reason": -3,
+    "intuition": 1,
+    "presence": -2
+  },
+  "immunities": {
+    "corruption": 10,
+    "poison": 10
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Meat Shield",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Each ally adjacent to the shambler has damage immunity 3.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Rotten Kick",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 2
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 1
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "5 damage; push 2"
+            },
+            {
+              "tier": 2,
+              "display": "8 damage; push 4"
+            },
+            {
+              "tier": 3,
+              "display": "10 damage; push 6"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 5",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p><p><span class=\"reference-text\">Blood Hunger</span></p><p><span class=\"reference-text\">Necrotic Rupture</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "273",
+    "license": "Draw Steel Creator License"
+  }
+}

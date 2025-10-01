@@ -2,9 +2,9 @@ name: Test Monster Data
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, dev/** ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, dev/** ]
 
 jobs:
   test:
@@ -33,12 +33,13 @@ jobs:
     - name: Run TypeScript type checking
       run: npm run type-check
       
+    - name: Build project
+      run: npm run build
+
     - name: Run monster validation tests
       run: npm run test:run
       
-    - name: Build project
-      run: npm run build
-      
+
     - name: Generate test report
       if: always()
       run: |
