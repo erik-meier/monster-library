@@ -176,6 +176,7 @@ export default {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary-600);
+  text-transform: none;
 }
 
 .divider {
