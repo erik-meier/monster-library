@@ -210,10 +210,19 @@
 
     <div class="divider"></div>
 
-    <!-- Abilities -->
-    <div v-if="!editMode">
-      <ActionsList v-if="monster.items || monster.abilities" :title="'Abilities'"
-        :actions="monster.items || monster.abilities || []" :chr="String(getMaxCharacteristic())" :monster="monster" />
+    <!-- With Captain Features (Non-edit mode) -->
+    <div v-if="!editMode && getWithCaptainAbilities().length > 0" class="with-captain-section">
+      <div v-for="ability in getWithCaptainAbilities()" :key="ability.name" class="with-captain-ability">
+        <span class="with-captain-label">With Captain:</span>
+        <span class="with-captain-text" v-html="ability.system?.description?.value || ability.description || ''"></span>
+      </div>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Abilities (Non-edit mode) -->
+    <div v-if="!editMode && getRegularAbilities().length > 0">
+      <ActionsList :title="'Abilities'" :actions="getRegularAbilities()" :chr="String(getMaxCharacteristic())"
+        :monster="monster" />
     </div>
 
     <!-- Editable Abilities -->
@@ -479,6 +488,20 @@ const getMaxCharacteristic = () => {
   if (!props.monster.characteristics) return 0
   const values = Object.values(props.monster.characteristics)
   return values.length > 0 ? Math.max(...values) : 0
+}
+
+const getWithCaptainAbilities = () => {
+  const items = editableData.value.items || props.monster.items || []
+  return items.filter(item =>
+    item.name && item.name.toLowerCase() === 'with captain'
+  )
+}
+
+const getRegularAbilities = () => {
+  const items = editableData.value.items || props.monster.items || []
+  return items.filter(item =>
+    !item.name || item.name.toLowerCase() !== 'with captain'
+  )
 }
 
 // Ability formatting helpers
@@ -1448,6 +1471,12 @@ onUnmounted(() => {
     width: 200px;
     max-width: 100%;
   }
+
+  .with-captain-ability {
+    font-size: var(--font-size-xs);
+    text-align: left;
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1471,6 +1500,43 @@ onUnmounted(() => {
     gap: var(--space-2);
     text-align: center;
   }
+}
+
+/* With Captain styles */
+.with-captain-section {
+  margin: var(--space-4) 0;
+}
+
+.with-captain-ability {
+  margin-bottom: var(--space-2);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.with-captain-label {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
+  white-space: nowrap;
+}
+
+.with-captain-text {
+  color: var(--color-neutral-800);
+  margin-left: var(--space-1);
+  display: inline;
+}
+
+.with-captain-text p {
+  display: inline;
+  margin: 0;
+}
+
+.with-captain-text * {
+  display: inline;
+  margin: 0;
 }
 
 /* Abilities editing styles */
