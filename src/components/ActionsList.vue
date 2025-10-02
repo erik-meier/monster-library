@@ -38,13 +38,13 @@
                 </svg>
                 Range: {{ formatActionDistance(action.system.distance) }}
               </span>
-              <span v-if="formatActionTargets(action.system.target)" class="action-target">
+              <span v-if="formatActionTargets(action.system.target, monster?.organization)" class="action-target">
                 <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                   <circle cx="12" cy="12" r="10" />
                   <circle cx="12" cy="12" r="6" />
                   <circle cx="12" cy="12" r="2" />
                 </svg>
-                Target: {{ formatActionTargets(action.system.target) }}
+                Target: {{ formatActionTargets(action.system.target, monster?.organization) }}
               </span>
             </div>
           </div>

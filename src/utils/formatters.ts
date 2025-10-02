@@ -7,6 +7,7 @@ interface MonsterData {
   level?: number
   organization?: string
   role?: string
+  ev?: number
 }
 
 interface DistanceData {
@@ -55,6 +56,17 @@ export function formatKeywords(keywords: string[] = []): string {
  */
 export function formatMonsterRole(monster: MonsterData): string {
   return `Level ${monster.level} ${monster.organization}${monster.role ? ' ' + monster.role : ''}`
+}
+
+/**
+ * Format monster EV display with minion suffix if applicable
+ */
+export function formatMonsterEV(monster: MonsterData): string {
+  const ev = monster.ev || 0
+  if (monster.organization === 'Minion') {
+    return `EV ${ev} for 4 minions`
+  }
+  return `EV ${ev}`
 }
 
 /**
@@ -124,7 +136,7 @@ export function formatActionDistance(distance?: DistanceData): string {
 /**
  * Format action targets for display
  */
-export function formatActionTargets(target?: TargetData): string {
+export function formatActionTargets(target?: TargetData, organization?: string): string {
   if (!target) return ''
   
   const targetValue = target.value ? ` ${target.value}` : ''
@@ -151,14 +163,23 @@ export function formatActionTargets(target?: TargetData): string {
   } else if (target.type === 'ally') {
     baseText = target.value && target.value > 1 ? 'allies' : 'ally'
   } else if (target.type === 'selfAlly') {
-    return 'Self and ' + `${target.value ? target.value : 'each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`
+    const result = 'Self and ' + `${target.value ? target.value : 'each'} ${target.value && target.value > 1 ? 'allies' : 'ally'}`
+    return organization === 'Minion' ? `${result} per minion` : result
   } else if (target.type === 'selfOrAlly') {
-    return 'Self or ' + `${target.value ? target.value : ''} ${target.value && target.value > 1 ? 'allies' : 'ally'}`
+    const result = 'Self or ' + `${target.value ? target.value : ''} ${target.value && target.value > 1 ? 'allies' : 'ally'}`
+    return organization === 'Minion' ? `${result} per minion` : result
   } else if (target.type === 'self') {
     return 'Self'
   }
   
-  return `${targetValue} ${baseText}`.trim()
+  let result = `${targetValue} ${baseText}`.trim()
+  
+  // Add "per minion" suffix for minion organizations (except Self and Special)
+  if (organization === 'Minion' && target.type !== 'self' && target.type !== 'special') {
+    result += ' per minion'
+  }
+  
+  return result
 }
 
 /**
