@@ -264,6 +264,34 @@ describe('Text Processing Functions', () => {
       expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
     });
 
+    it('should format negative potency values', () => {
+      const text = 'Must beat R<-1 to succeed.';
+      const result = processPotencyText(text, null, null, sampleMonster);
+      
+      expect(result).toContain('<strong class="potency-value">R&lt;-1</strong>');
+    });
+
+    it('should format multiple potency patterns including negative values', () => {
+      const text = 'Test M<5 and R<-2 and P<0 patterns.';
+      const result = processPotencyText(text, null, null, sampleMonster);
+      
+      expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
+      expect(result).toContain('<strong class="potency-value">R&lt;-2</strong>');
+      expect(result).toContain('<strong class="potency-value">P&lt;0</strong>');
+    });
+
+    it('should not double-wrap already formatted potency values', () => {
+      const text = 'Already formatted <strong class="potency-value">M&lt;5</strong> and new R<3.';
+      const result = processPotencyText(text, null, null, sampleMonster);
+      
+      // Should not double-wrap the already formatted one
+      expect(result).not.toContain('<strong class="potency-value"><strong class="potency-value">');
+      // Should format the new one
+      expect(result).toContain('<strong class="potency-value">R&lt;3</strong>');
+      // Should keep the already formatted one as-is
+      expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
+    });
+
     it('should handle text without monster characteristics', () => {
       const result = processPotencyText('Some text', 5, 'might', {});
       

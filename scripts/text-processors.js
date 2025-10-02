@@ -173,15 +173,13 @@ function processPotencyText(text, potencyValue, characteristic, monster) {
     return potencyMap[type].toString();
   });
 
-  // Step 3: Format standalone potency patterns like "M<5" with proper styling
-  // Avoid double-wrapping by checking if already formatted
-  if (!processed.includes('<strong class="potency-value">')) {
-    processed = processed.replace(/([A-Z]&lt;\d+|[A-Z]<\d+)/g, (match) => {
-      // Ensure consistent &lt; encoding
-      const normalized = match.replace('<', '&lt;');
-      return `<strong class="potency-value">${normalized}</strong>`;
-    });
-  }
+  // Step 3: Format standalone potency patterns like "M<5", "R<-1" with proper styling
+  // Match patterns with optional negative sign, but avoid double-wrapping
+  // by using a negative lookbehind to skip patterns already inside potency-value tags
+  processed = processed.replace(/(?<!<strong class="potency-value">)([A-Z])(&lt;|<)(-?\d+)(?!<\/strong>)/g, (match, char, operator, number) => {
+    // Ensure consistent &lt; encoding
+    return `<strong class="potency-value">${char}&lt;${number}</strong>`;
+  });
 
   return processed;
 }
@@ -594,12 +592,19 @@ function processMonsterText(monster) {
     }
 
     // Process spend effects (Malice costs)
-    if (processedItem.system?.spend?.text && processedItem.system?.spend?.value) {
+    if (processedItem.system?.spend?.text) {
       const spendText = processFoundryText(
         processedItem.system.spend.text,
         monster
       );
-      processedItem.system.spend.formattedText = `<strong class="malice-cost-emphasis">${processedItem.system.spend.value} Malice:</strong> ${spendText}`;
+      
+      // If value exists, create formatted text with malice cost emphasis
+      if (processedItem.system.spend.value) {
+        processedItem.system.spend.formattedText = `<strong class="malice-cost-emphasis">${processedItem.system.spend.value} Malice:</strong> ${spendText}`;
+      } else {
+        // Even without a value, process the text for formatting
+        processedItem.system.spend.text = spendText;
+      }
     }
 
     return processedItem;
