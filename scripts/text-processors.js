@@ -173,12 +173,48 @@ function processPotencyText(text, potencyValue, characteristic, monster) {
     return potencyMap[type].toString();
   });
 
-  // Step 3: Format standalone potency patterns like "M<5", "R<-1" with proper styling
-  // Match patterns with optional negative sign, but avoid double-wrapping
-  // by using a negative lookbehind to skip patterns already inside potency-value tags
-  processed = processed.replace(/(?<!<strong class="potency-value">)([A-Z])(&lt;|<)(-?\d+)(?!<\/strong>)/g, (match, char, operator, number) => {
+  // Step 3: Format standalone potency patterns like "M<5", "R<-1", "m<2", "P < 0" with proper styling
+  // Use a more compatible approach without lookbehind since it's not supported in all JS environments
+
+  // First handle uppercase patterns with optional spaces: "P < 0", "M<5", etc.
+  // But skip patterns already wrapped in strong tags
+  processed = processed.replace(/([A-Z])\s*(&lt;|<)\s*(-?\d+)/g, (match, char, operator, number, offset, string) => {
+    // Check if this match is already inside a potency-value strong tag
+    const beforeMatch = string.substring(0, offset);
+    const afterMatch = string.substring(offset + match.length);
+
+    // Look for strong tag with potency-value class before this match
+    const strongOpenBefore = beforeMatch.lastIndexOf('<strong class="potency-value">');
+    const strongCloseBefore = beforeMatch.lastIndexOf('</strong>');
+    const strongCloseAfter = afterMatch.indexOf('</strong>');
+
+    // If we're inside a potency-value strong tag, don't modify
+    if (strongOpenBefore > strongCloseBefore && strongCloseAfter !== -1) {
+      return match;
+    }
+
     // Ensure consistent &lt; encoding
     return `<strong class="potency-value">${char}&lt;${number}</strong>`;
+  });
+
+  // Then handle lowercase patterns and convert to uppercase: "m<2" -> "M<2"
+  processed = processed.replace(/([a-z])\s*(&lt;|<)\s*(-?\d+)/g, (match, char, operator, number, offset, string) => {
+    // Check if this match is already inside a potency-value strong tag
+    const beforeMatch = string.substring(0, offset);
+    const afterMatch = string.substring(offset + match.length);
+
+    // Look for strong tag with potency-value class before this match
+    const strongOpenBefore = beforeMatch.lastIndexOf('<strong class="potency-value">');
+    const strongCloseBefore = beforeMatch.lastIndexOf('</strong>');
+    const strongCloseAfter = afterMatch.indexOf('</strong>');
+
+    // If we're inside a potency-value strong tag, don't modify
+    if (strongOpenBefore > strongCloseBefore && strongCloseAfter !== -1) {
+      return match;
+    }
+
+    // Convert to uppercase and ensure consistent &lt; encoding
+    return `<strong class="potency-value">${char.toUpperCase()}&lt;${number}</strong>`;
   });
 
   return processed;
@@ -576,6 +612,12 @@ function processMonsterText(monster) {
       // Store in unified text field and remove old fields
       if (combinedEffectText) {
         processedItem.system.effect.text = combinedEffectText;
+      } else if (processedItem.system.effect.text) {
+        // Process existing effect.text if it exists and we didn't create combined text
+        processedItem.system.effect.text = processFoundryText(
+          processedItem.system.effect.text,
+          monster
+        );
       }
 
       // Clean up old fields
@@ -597,7 +639,7 @@ function processMonsterText(monster) {
         processedItem.system.spend.text,
         monster
       );
-      
+
       // If value exists, create formatted text with malice cost emphasis
       if (processedItem.system.spend.value) {
         processedItem.system.spend.formattedText = `<strong class="malice-cost-emphasis">${processedItem.system.spend.value} Malice:</strong> ${spendText}`;

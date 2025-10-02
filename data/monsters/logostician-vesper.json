@@ -209,7 +209,7 @@
           "text": "<p>A portal appears at the center of the area. Any creature at the center of the area when this ability is used or who is pulled into the center for the first time in a round takes 10 sonic damage</p>"
         },
         "spend": {
-          "text": "The area remains active and deals its damage until Vesper is  reduced to 0 Stamina or until the end of the encounter. Any creature who enters the area and has A<4  is pulled 3 squares toward the  center of the area. Any creature who starts their turn in the area and has M<4 is slowed until the end of their turn.",
+          "text": "The area remains active and deals its damage until Vesper is  reduced to 0 Stamina or until the end of the encounter. Any creature who enters the area and has <strong class=\"potency-value\">A&lt;4</strong>  is pulled 3 squares toward the  center of the area. Any creature who starts their turn in the area and has <strong class=\"potency-value\">M&lt;4</strong> is slowed until the end of their turn.",
           "value": null
         }
       }

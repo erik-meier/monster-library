@@ -100,7 +100,7 @@
         "spend": {
           "text": "Each target who has M < 2 is slowed (save ends).",
           "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target who has M < 2 is slowed (save ends)."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target who has <strong class=\"potency-value\">M&lt;2</strong> is slowed (save ends)."
         }
       }
     },

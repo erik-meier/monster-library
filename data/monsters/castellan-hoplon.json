@@ -223,7 +223,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Hoplon teleports to an unoccupied space adjacent to the enemy and becomes the new target of the ability. He can then make a free strike against the enemy, and if that enemy has R &lt; 4 they are taunted until the end of their next turn.</p>"
+          "text": "<p>Hoplon teleports to an unoccupied space adjacent to the enemy and becomes the new target of the ability. He can then make a free strike against the enemy, and if that enemy has <strong class=\"potency-value\">R&lt;4</strong> they are taunted until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",

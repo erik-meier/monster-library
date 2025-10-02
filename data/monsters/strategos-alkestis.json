@@ -300,7 +300,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Until the start of the next round, each target enemy who has I &lt; 4 is dazed, each target enemy who has M &lt; 4 is restrained, and each target enemy who has A &lt; 4 can't use triggered actions. Additionally, until the end of the encounter, Alkestis and each target ally have damage immunity 3 and deal an extra 5 damage with strikes.</p>"
+          "text": "<p>Until the start of the next round, each target enemy who has <strong class=\"potency-value\">I&lt;4</strong> is dazed, each target enemy who has <strong class=\"potency-value\">M&lt;4</strong> is restrained, and each target enemy who has <strong class=\"potency-value\">A&lt;4</strong> can't use triggered actions. Additionally, until the end of the encounter, Alkestis and each target ally have damage immunity 3 and deal an extra 5 damage with strikes.</p>"
         },
         "spend": {
           "text": "",

@@ -178,7 +178,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">5</span> damage from a self-inflicted wound, and if they have M &lt; 4 Psyche slides them up to 5 squares.</p>"
+          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">5</span> damage from a self-inflicted wound, and if they have <strong class=\"potency-value\">M&lt;4</strong> Psyche slides them up to 5 squares.</p>"
         },
         "spend": {
           "text": "",

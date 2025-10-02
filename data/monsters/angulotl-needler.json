@@ -104,7 +104,7 @@
         "spend": {
           "text": "A target who has M < 2 is weakened (save ends). A target  weakened this way takes 2 poison damage at the start of each of  their turns.",
           "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> A target who has M < 2 is weakened (save ends). A target  weakened this way takes 2 poison damage at the start of each of  their turns."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> A target who has <strong class=\"potency-value\">M&lt;2</strong> is weakened (save ends). A target  weakened this way takes 2 poison damage at the start of each of  their turns."
         }
       }
     },

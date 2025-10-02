@@ -204,7 +204,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Slide 5, and if the the target has M &lt; 4, they fall prone.</p>"
+          "text": "<p>Slide 5, and if the the target has <strong class=\"potency-value\">M&lt;4</strong>, they fall prone.</p>"
         },
         "spend": {
           "text": "",

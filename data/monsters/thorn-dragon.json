@@ -208,7 +208,7 @@
         "spend": {
           "text": "Each target takes an extra 1d3 damage, and if they have A < 2, they are bleeding (save ends).",
           "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target takes an extra 1d3 damage, and if they have A < 2, they are bleeding (save ends)."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target takes an extra 1d3 damage, and if they have <strong class=\"potency-value\">A&lt;2</strong>, they are bleeding (save ends)."
         }
       }
     },
@@ -279,7 +279,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The target is pulled up to 5 squares toward the dragon, and if they have A &lt; 2, they are restrained until the end of their next turn.</p>"
+          "text": "<p>The target is pulled up to 5 squares toward the dragon, and if they have <strong class=\"potency-value\">A&lt;2</strong>, they are restrained until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -316,7 +316,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The dragon makes a free strike against the target, and if the target has M &lt; 2, they are bleeding until the end of their next turn.</p>"
+          "text": "<p>The dragon makes a free strike against the target, and if the target has <strong class=\"potency-value\">M&lt;2</strong>, they are bleeding until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -433,7 +433,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Poisonous overgrowth and seeking vines cover all surfaces on the encounter map. The dragon uses their Bramble Barricade Malice feature twice at no cost. Until the end of the encounter, any creature force moved by the dragon takes <span class=\"damage-value damage-generic\">1d3</span> poison damage, and if they have M &lt; 2, they are weakened (save ends).</p> <p><strong>Special:</strong> If the Thorn Dragon’s Domain trait is in effect, any creature other than the dragon who starts their turn on the encounter map takes <span class=\"damage-value damage-generic\">1d3</span> poison damage.</p>"
+          "text": "<p>Poisonous overgrowth and seeking vines cover all surfaces on the encounter map. The dragon uses their Bramble Barricade Malice feature twice at no cost. Until the end of the encounter, any creature force moved by the dragon takes <span class=\"damage-value damage-generic\">1d3</span> poison damage, and if they have <strong class=\"potency-value\">M&lt;2</strong>, they are weakened (save ends).</p> <p><strong>Special:</strong> If the Thorn Dragon’s Domain trait is in effect, any creature other than the dragon who starts their turn on the encounter map takes <span class=\"damage-value damage-generic\">1d3</span> poison damage.</p>"
         },
         "spend": {
           "text": "",

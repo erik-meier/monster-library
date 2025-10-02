@@ -221,7 +221,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each target moves up to their speed and can make a free strike. Any creature damaged by one of these free strikes who has M &lt; 2 is knocked prone.</p>"
+          "text": "<p>Each target moves up to their speed and can make a free strike. Any creature damaged by one of these free strikes who has <strong class=\"potency-value\">M&lt;2</strong> is knocked prone.</p>"
         },
         "spend": {
           "text": "",
