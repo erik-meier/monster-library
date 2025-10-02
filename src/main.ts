@@ -16,6 +16,7 @@ import MonsterCreate from './views/MonsterCreate.vue'
 import MyMonsters from './views/MyMonsters.vue'
 import About from './views/About.vue'
 import MonsterRandom from './views/MonsterRandom.vue'
+import EncounterBuilder from './views/EncounterBuilder.vue'
 
 // Define routes
 const routes = [
@@ -49,6 +50,11 @@ const routes = [
     path: '/my-monsters',
     name: 'MyMonsters',
     component: MyMonsters
+  },
+  {
+    path: '/encounters',
+    name: 'EncounterBuilder',
+    component: EncounterBuilder
   },
   {
     path: '/about',
