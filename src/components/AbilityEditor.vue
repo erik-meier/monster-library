@@ -30,10 +30,9 @@
 
           <div class="form-group">
             <label for="ability-type" class="form-label required">Type</label>
-            <div class="type-display">
+            <div class="type-display" title="Type is set when creating and cannot be changed">
               {{ formData.type === 'ability' ? 'Ability (Active)' : 'Feature (Passive)' }}
             </div>
-            <div class="help-text">Type is set when creating and cannot be changed</div>
           </div>
         </div>
       </CollapsibleSection>
