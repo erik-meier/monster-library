@@ -525,12 +525,6 @@ validateDefenses()
   text-align: center;
   font-weight: var(--font-weight-medium);
   border: 1px solid var(--color-neutral-300);
-  transition: var(--transition-colors);
-}
-
-.damage-type-badge:hover {
-  background: var(--color-neutral-300);
-  border-color: var(--color-neutral-400);
 }
 
 .help-text {
