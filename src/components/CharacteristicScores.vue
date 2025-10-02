@@ -1,6 +1,9 @@
 <template>
   <div class="characteristic-scores">
-    <div v-for="characteristic in characteristicOrder" :key="characteristic" class="characteristic-score">
+    <div v-for="characteristic in characteristicOrder" :key="characteristic" 
+         class="characteristic-score" 
+         :class="{ 'clickable': !editMode }"
+         @click="!editMode && handleRoll(characteristic)">
       <div class="characteristic-name">{{ getCharacteristicName(characteristic) }}</div>
       <div v-if="!editMode" class="characteristic-value">
         {{ formatModifier(characteristics[characteristic] || 0) }}
@@ -13,9 +16,20 @@
       </div>
     </div>
   </div>
+  
+  <RollResultModal 
+    :show="showRollModal" 
+    :result="rollResult" 
+    :characteristicName="rolledCharacteristicName"
+    @close="showRollModal = false"
+    @reroll="rerollCurrentCharacteristic" />
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import RollResultModal from './RollResultModal.vue'
+import { rollPowerRoll, type PowerRollResult } from '@/utils/diceRoller'
+
 interface Props {
   characteristics: Record<string, number>
   editMode?: boolean
@@ -32,6 +46,17 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits<Emits>()
 
 const characteristicOrder = ['might', 'agility', 'reason', 'intuition', 'presence']
+
+const showRollModal = ref(false)
+const rollResult = ref<PowerRollResult>({
+  roll1: 1,
+  roll2: 1,
+  total: 2,
+  modifier: 0,
+  tier: 1
+})
+const rolledCharacteristic = ref<string>('')
+const rolledCharacteristicName = ref<string>('')
 
 const formatModifier = (value: number): string => {
   return value >= 0 ? `+${value}` : `${value}`
@@ -52,6 +77,21 @@ const updateCharacteristic = (characteristic: string, value: string): void => {
   const numValue = parseInt(value) || 0
   const updated = { ...props.characteristics, [characteristic]: numValue }
   emit('update:characteristics', updated)
+}
+
+const handleRoll = (characteristic: string): void => {
+  const modifier = props.characteristics[characteristic] || 0
+  rolledCharacteristic.value = characteristic
+  rolledCharacteristicName.value = getCharacteristicName(characteristic)
+  rollResult.value = rollPowerRoll(modifier)
+  showRollModal.value = true
+}
+
+const rerollCurrentCharacteristic = (): void => {
+  if (rolledCharacteristic.value) {
+    const modifier = props.characteristics[rolledCharacteristic.value] || 0
+    rollResult.value = rollPowerRoll(modifier)
+  }
 }
 </script>
 
@@ -74,11 +114,20 @@ const updateCharacteristic = (characteristic: string, value: string): void => {
   box-shadow: var(--shadow-sm);
 }
 
-.characteristic-score:hover {
+.characteristic-score.clickable {
+  cursor: pointer;
+}
+
+.characteristic-score.clickable:hover {
   border-color: var(--color-primary-500);
   background: var(--color-primary-100);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
+}
+
+.characteristic-score:not(.clickable):hover {
+  border-color: var(--color-primary-500);
+  background: var(--color-primary-100);
 }
 
 .characteristic-score:focus-within {
