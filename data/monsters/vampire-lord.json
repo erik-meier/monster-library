@@ -202,7 +202,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each target who has P &lt; 4 is now bleeding (save ends).</p>"
+          "text": "<p>Each target who has <strong class=\"potency-value\">P&lt;4</strong> is now bleeding (save ends).</p>"
         },
         "spend": {
           "text": "",

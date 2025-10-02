@@ -341,6 +341,15 @@ export default {
   font-size: var(--font-size-base);
 }
 
+.action-spend :deep(.potency-value) {
+  font-weight: bold;
+  color: #2563eb;
+  background: #dbeafe;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
 .action-description :deep(em) {
   font-style: italic;
 }

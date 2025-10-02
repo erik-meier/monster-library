@@ -88,7 +88,7 @@
           ]
         },
         "effect": {
-          "text": "<p>If this ability is used as part of the Charge main action, each creature the stampede moves through who has M &lt; 4 is knocked prone.</p>"
+          "text": "<p>If this ability is used as part of the Charge main action, each creature the stampede moves through who has <strong class=\"potency-value\">M&lt;4</strong> is knocked prone.</p>"
         },
         "spend": {
           "text": "",

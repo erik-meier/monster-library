@@ -186,7 +186,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The target must not have taken their turn this round. The target takes their turn immediately, and if they have P &lt; 2 they are bleeding and take a bane on strikes until the end of their turn.</p>"
+          "text": "<p>The target must not have taken their turn this round. The target takes their turn immediately, and if they have <strong class=\"potency-value\">P&lt;2</strong> they are bleeding and take a bane on strikes until the end of their turn.</p>"
         },
         "spend": {
           "text": "",

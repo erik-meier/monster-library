@@ -128,7 +128,7 @@
           ]
         },
         "effect": {
-          "text": "<p>The scyza roars, and if the target has i&lt;2 they are frightened (save ends).</p>"
+          "text": "<p>The scyza roars, and if the target has <strong class=\"potency-value\">I&lt;2</strong> they are frightened (save ends).</p>"
         },
         "spend": {
           "text": "",

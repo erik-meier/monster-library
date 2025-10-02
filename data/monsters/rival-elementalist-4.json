@@ -127,7 +127,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The area becomes overgrown with caustic vines until the end of the encounter. While in the area, any enemy has acid weakness 5 and is slowed. Any enemy who ends their turn in the area and has M &lt; 4 is restrained (save ends).</p>"
+          "text": "<p>The area becomes overgrown with caustic vines until the end of the encounter. While in the area, any enemy has acid weakness 5 and is slowed. Any enemy who ends their turn in the area and has <strong class=\"potency-value\">M&lt;4</strong> is restrained (save ends).</p>"
         },
         "spend": {
           "text": "",

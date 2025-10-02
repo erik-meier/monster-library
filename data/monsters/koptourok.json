@@ -39,7 +39,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The first time the koptourok is made winded by damage that isn't fire damage or holy damage, each enemy within 3 squares of them takes <span class=\"damage-value damage-generic\">8</span> corruption damage. Any enemy who takes this damage and has M &lt; 3 is also weakened (save ends)</p>",
+          "value": "<p>The first time the koptourok is made winded by damage that isn't fire damage or holy damage, each enemy within 3 squares of them takes <span class=\"damage-value damage-generic\">8</span> corruption damage. Any enemy who takes this damage and has <strong class=\"potency-value\">M&lt;3</strong> is also weakened (save ends)</p>",
           "director": ""
         }
       }

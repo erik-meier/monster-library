@@ -100,7 +100,7 @@
         "spend": {
           "text": "Each target who has M < 3 is bleeding and slowed (save ends).",
           "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Each target who has M < 3 is bleeding and slowed (save ends)."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Each target who has <strong class=\"potency-value\">M&lt;3</strong> is bleeding and slowed (save ends)."
         }
       }
     },
@@ -135,15 +135,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "15 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed M < 3"
+              "display": "15 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed <strong class=\"potency-value\">M&lt;3</strong>"
             },
             {
               "tier": 2,
-              "display": "21 damage; <strong class=\"potency-value\">M&lt;3</strong> grabbed M < 3"
+              "display": "21 damage; <strong class=\"potency-value\">M&lt;3</strong> grabbed <strong class=\"potency-value\">M&lt;3</strong>"
             },
             {
               "tier": 3,
-              "display": "26 damage; <strong class=\"potency-value\">M&lt;4</strong> grabbed M < 3"
+              "display": "26 damage; <strong class=\"potency-value\">M&lt;4</strong> grabbed <strong class=\"potency-value\">M&lt;3</strong>"
             }
           ]
         },

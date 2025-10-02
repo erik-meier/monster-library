@@ -14,7 +14,8 @@ import {
   processFoundryText,
   processPowerRollFormula,
   flattenPowerEffects,
-  extractTableToTiers
+  extractTableToTiers,
+  processMonsterText
 } from '../scripts/text-processors.js';
 
 describe('Text Processing Functions', () => {
@@ -261,6 +262,34 @@ describe('Text Processing Functions', () => {
       const text = 'Must beat M&lt;5 to succeed.';
       const result = processPotencyText(text, null, null, sampleMonster);
       
+      expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
+    });
+
+    it('should format negative potency values', () => {
+      const text = 'Must beat R<-1 to succeed.';
+      const result = processPotencyText(text, null, null, sampleMonster);
+      
+      expect(result).toContain('<strong class="potency-value">R&lt;-1</strong>');
+    });
+
+    it('should format multiple potency patterns including negative values', () => {
+      const text = 'Test M<5 and R<-2 and P<0 patterns.';
+      const result = processPotencyText(text, null, null, sampleMonster);
+      
+      expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
+      expect(result).toContain('<strong class="potency-value">R&lt;-2</strong>');
+      expect(result).toContain('<strong class="potency-value">P&lt;0</strong>');
+    });
+
+    it('should not double-wrap already formatted potency values', () => {
+      const text = 'Already formatted <strong class="potency-value">M&lt;5</strong> and new R<3.';
+      const result = processPotencyText(text, null, null, sampleMonster);
+      
+      // Should not double-wrap the already formatted one
+      expect(result).not.toContain('<strong class="potency-value"><strong class="potency-value">');
+      // Should format the new one
+      expect(result).toContain('<strong class="potency-value">R&lt;3</strong>');
+      // Should keep the already formatted one as-is
       expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
     });
 
@@ -795,6 +824,383 @@ describe('Text Processing Functions', () => {
         const result = flattenPowerEffects(item, sampleMonster);
 
         expect(result.system.power.tiers).toEqual(item.system.power.tiers);
+      });
+    });
+  });
+
+  describe('Enhanced Potency Processing', () => {
+    describe('processPotencyText - lowercase patterns', () => {
+      it('should format lowercase potency patterns and convert to uppercase', () => {
+        const text = 'Target with m<2 is knocked prone.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).toContain('<strong class="potency-value">M&lt;2</strong>');
+      });
+
+      it('should format multiple lowercase patterns', () => {
+        const text = 'Check a<1 and r<0 and p<3.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).toContain('<strong class="potency-value">A&lt;1</strong>');
+        expect(result).toContain('<strong class="potency-value">R&lt;0</strong>');
+        expect(result).toContain('<strong class="potency-value">P&lt;3</strong>');
+      });
+
+      it('should handle lowercase patterns with negative values', () => {
+        const text = 'Target with m<-1 is affected.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).toContain('<strong class="potency-value">M&lt;-1</strong>');
+      });
+    });
+
+    describe('processPotencyText - patterns with spaces', () => {
+      it('should format uppercase patterns with spaces', () => {
+        const text = 'Target with P < 0 is affected.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).toContain('<strong class="potency-value">P&lt;0</strong>');
+      });
+
+      it('should format patterns with multiple spaces', () => {
+        const text = 'Check M  <  5 and A   <   2.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
+        expect(result).toContain('<strong class="potency-value">A&lt;2</strong>');
+      });
+
+      it('should format lowercase patterns with spaces', () => {
+        const text = 'Target with m < 2 is knocked prone.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).toContain('<strong class="potency-value">M&lt;2</strong>');
+      });
+
+      it('should handle negative values with spaces', () => {
+        const text = 'Target with R < -1 is affected.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).toContain('<strong class="potency-value">R&lt;-1</strong>');
+      });
+    });
+
+    describe('processPotencyText - HTML encoded patterns', () => {
+      it('should format HTML encoded patterns', () => {
+        const text = 'Target with m&lt;2 is knocked prone.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).toContain('<strong class="potency-value">M&lt;2</strong>');
+      });
+
+      it('should format mixed HTML encoded and raw patterns', () => {
+        const text = 'Check m&lt;2 and A < 3.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).toContain('<strong class="potency-value">M&lt;2</strong>');
+        expect(result).toContain('<strong class="potency-value">A&lt;3</strong>');
+      });
+
+      it('should handle HTML encoded patterns with spaces', () => {
+        const text = 'Target with P &lt; 0 is affected.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).toContain('<strong class="potency-value">P&lt;0</strong>');
+      });
+    });
+
+    describe('processPotencyText - avoid double wrapping', () => {
+      it('should not double-wrap already formatted patterns', () => {
+        const text = 'Already formatted <strong class="potency-value">M&lt;5</strong> and new m<2.';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).not.toContain('<strong class="potency-value"><strong class="potency-value">');
+        expect(result).toContain('<strong class="potency-value">M&lt;2</strong>'); // New pattern formatted
+        expect(result.match(/<strong class="potency-value">M&lt;5<\/strong>/g)).toHaveLength(1); // Original kept
+      });
+
+      it('should handle complex HTML with multiple patterns', () => {
+        const text = '<p>Already wrapped: <strong class="potency-value">A&lt;1</strong> and new pattern m<3.</p>';
+        const result = processPotencyText(text, null, null, sampleMonster);
+        
+        expect(result).not.toContain('<strong class="potency-value"><strong class="potency-value">');
+        expect(result).toContain('<strong class="potency-value">M&lt;3</strong>');
+        expect(result).toContain('<strong class="potency-value">A&lt;1</strong>');
+      });
+    });
+  });
+
+  describe('processMonsterText - Comprehensive Potency Processing', () => {
+    const mockMonster = {
+      id: 'test-monster',
+      name: 'Test Monster',
+      characteristics: {
+        might: 3,
+        agility: 2,
+        reason: 1,
+        intuition: 2,
+        presence: 1
+      },
+      items: []
+    };
+
+    describe('effect text processing', () => {
+      it('should process potency patterns in effect text', () => {
+        const monster = {
+          ...mockMonster,
+          items: [
+            {
+              name: 'Wall Leap',
+              type: 'ability',
+              system: {
+                effect: {
+                  text: '<p>If the target has m&lt;2, they are knocked prone.</p>'
+                }
+              }
+            }
+          ]
+        };
+
+        const result = processMonsterText(monster);
+        const processedEffect = result.items[0].system.effect.text;
+        
+        expect(processedEffect).toContain('<strong class="potency-value">M&lt;2</strong>');
+        expect(processedEffect).not.toContain('m&lt;2'); // Original should be replaced
+      });
+
+      it('should process multiple potency patterns in effect text', () => {
+        const monster = {
+          ...mockMonster,
+          items: [
+            {
+              name: 'Complex Effect',
+              type: 'ability',
+              system: {
+                effect: {
+                  text: '<p>Targets with A < 2 are dazed, those with p<0 are weakened.</p>'
+                }
+              }
+            }
+          ]
+        };
+
+        const result = processMonsterText(monster);
+        const processedEffect = result.items[0].system.effect.text;
+        
+        expect(processedEffect).toContain('<strong class="potency-value">A&lt;2</strong>');
+        expect(processedEffect).toContain('<strong class="potency-value">P&lt;0</strong>');
+      });
+
+      it('should handle effect text with before/after fields', () => {
+        const monster = {
+          ...mockMonster,
+          items: [
+            {
+              name: 'Combined Effect',
+              type: 'ability',
+              system: {
+                effect: {
+                  before: 'First part with M < 3.',
+                  after: 'Second part with a<1.'
+                }
+              }
+            }
+          ]
+        };
+
+        const result = processMonsterText(monster);
+        const processedEffect = result.items[0].system.effect.text;
+        
+        expect(processedEffect).toContain('<strong class="potency-value">M&lt;3</strong>');
+        expect(processedEffect).toContain('<strong class="potency-value">A&lt;1</strong>');
+        expect(result.items[0].system.effect.before).toBeUndefined();
+        expect(result.items[0].system.effect.after).toBeUndefined();
+      });
+    });
+
+    describe('spend effect processing', () => {
+      it('should process potency patterns in spend text', () => {
+        const monster = {
+          ...mockMonster,
+          items: [
+            {
+              name: 'Accursed Bite',
+              type: 'ability',
+              system: {
+                spend: {
+                  text: 'If the target has P < 0, they are afflicted with lycanthropy.',
+                  value: 2
+                }
+              }
+            }
+          ]
+        };
+
+        const result = processMonsterText(monster);
+        const spendData = result.items[0].system.spend;
+        
+        expect(spendData.formattedText).toContain('<strong class="potency-value">P&lt;0</strong>');
+        expect(spendData.formattedText).toContain('<strong class="malice-cost-emphasis">2 Malice:</strong>');
+        expect(spendData.text).toBe('If the target has P < 0, they are afflicted with lycanthropy.'); // Original preserved
+      });
+
+      it('should process spend text without malice value', () => {
+        const monster = {
+          ...mockMonster,
+          items: [
+            {
+              name: 'No Value Spend',
+              type: 'ability',
+              system: {
+                spend: {
+                  text: 'Target with m<1 is bleeding.',
+                  value: null
+                }
+              }
+            }
+          ]
+        };
+
+        const result = processMonsterText(monster);
+        const spendData = result.items[0].system.spend;
+        
+        expect(spendData.text).toContain('<strong class="potency-value">M&lt;1</strong>');
+        expect(spendData.formattedText).toBeUndefined(); // No formattedText without value
+      });
+
+      it('should handle complex potency patterns in spend text', () => {
+        const monster = {
+          ...mockMonster,
+          items: [
+            {
+              name: 'Complex Spend',
+              type: 'ability',
+              system: {
+                spend: {
+                  text: 'Targets with A < 2 are weakened, those with m&lt;0 are restrained.',
+                  value: 3
+                }
+              }
+            }
+          ]
+        };
+
+        const result = processMonsterText(monster);
+        const formattedText = result.items[0].system.spend.formattedText;
+        
+        expect(formattedText).toContain('<strong class="potency-value">A&lt;2</strong>');
+        expect(formattedText).toContain('<strong class="potency-value">M&lt;0</strong>');
+        expect(formattedText).toContain('<strong class="malice-cost-emphasis">3 Malice:</strong>');
+      });
+    });
+
+    describe('feature description processing', () => {
+      it('should process potency patterns in feature descriptions', () => {
+        const monster = {
+          ...mockMonster,
+          items: [
+            {
+              name: 'Shapeshifter',
+              type: 'feature',
+              system: {
+                description: {
+                  value: '<p>Creatures with R < 0 cannot detect this transformation.</p>'
+                }
+              }
+            }
+          ]
+        };
+
+        const result = processMonsterText(monster);
+        const description = result.items[0].system.description.value;
+        
+        expect(description).toContain('<strong class="potency-value">R&lt;0</strong>');
+      });
+
+      it('should handle multiple patterns in feature descriptions', () => {
+        const monster = {
+          ...mockMonster,
+          items: [
+            {
+              name: 'Complex Feature',
+              type: 'feature',
+              system: {
+                description: {
+                  value: '<p>Affects creatures with m<2 and A &lt; 1 differently.</p>'
+                }
+              }
+            }
+          ]
+        };
+
+        const result = processMonsterText(monster);
+        const description = result.items[0].system.description.value;
+        
+        expect(description).toContain('<strong class="potency-value">M&lt;2</strong>');
+        expect(description).toContain('<strong class="potency-value">A&lt;1</strong>');
+      });
+    });
+
+    describe('mixed content processing', () => {
+      it('should process potency patterns across all text fields', () => {
+        const monster = {
+          ...mockMonster,
+          items: [
+            {
+              name: 'Complex Ability',
+              type: 'ability',
+              system: {
+                description: {
+                  value: '<p>Base ability affects creatures with m<3.</p>'
+                },
+                effect: {
+                  text: '<p>Additional effect for targets with A < 1.</p>'
+                },
+                spend: {
+                  text: 'Enhanced version affects P < 0 targets.',
+                  value: 2
+                }
+              }
+            }
+          ]
+        };
+
+        const result = processMonsterText(monster);
+        const item = result.items[0].system;
+        
+        expect(item.description.value).toContain('<strong class="potency-value">M&lt;3</strong>');
+        expect(item.effect.text).toContain('<strong class="potency-value">A&lt;1</strong>');
+        expect(item.spend.formattedText).toContain('<strong class="potency-value">P&lt;0</strong>');
+      });
+
+      it('should preserve other text processing while adding potency processing', () => {
+        const monster = {
+          ...mockMonster,
+          items: [
+            {
+              name: 'Multi-Processing Ability',
+              type: 'ability', 
+              system: {
+                effect: {
+                  text: '<p>Deals [[/damage 5 fire]] to targets with m<2.</p>'
+                },
+                spend: {
+                  text: 'Enhanced damage [[/damage 10 fire]] for P < 0 targets.',
+                  value: 1
+                }
+              }
+            }
+          ]
+        };
+
+        const result = processMonsterText(monster);
+        const item = result.items[0].system;
+        
+        // Should process both damage directives AND potency patterns
+        expect(item.effect.text).toContain('<span class="damage-value damage-generic">5</span>');
+        expect(item.effect.text).toContain('<strong class="potency-value">M&lt;2</strong>');
+        expect(item.spend.formattedText).toContain('<span class="damage-value damage-generic">10</span>');
+        expect(item.spend.formattedText).toContain('<strong class="potency-value">P&lt;0</strong>');
       });
     });
   });

@@ -85,7 +85,7 @@
           ]
         },
         "effect": {
-          "text": "<p>The tantrum unearths a rock or a hunk of terrain and tosses it. If a size 1L, 1M, or 1S creature or object adjacent to the tantrum has A &lt; 3 the tantrum can grab them to use as the projectile for this ability.</p> <p>A creature or object used as a projectile is vertically pushed 8 (or 13 with a captain), ignoring stability.</p>"
+          "text": "<p>The tantrum unearths a rock or a hunk of terrain and tosses it. If a size 1L, 1M, or 1S creature or object adjacent to the tantrum has <strong class=\"potency-value\">A&lt;3</strong> the tantrum can grab them to use as the projectile for this ability.</p> <p>A creature or object used as a projectile is vertically pushed 8 (or 13 with a captain), ignoring stability.</p>"
         },
         "spend": {
           "text": "",

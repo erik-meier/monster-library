@@ -50,7 +50,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>When the blackcap or any of their ash clones is reduced to 0 Stamina, that creature's loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> poison damage to each adjacent enemy and object. If any adjacent enemy has A &lt; 3 they are also weakened (save ends)</p>",
+          "value": "<p>When the blackcap or any of their ash clones is reduced to 0 Stamina, that creature's loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> poison damage to each adjacent enemy and object. If any adjacent enemy has <strong class=\"potency-value\">A&lt;3</strong> they are also weakened (save ends)</p>",
           "director": ""
         }
       }

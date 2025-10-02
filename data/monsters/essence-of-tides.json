@@ -100,7 +100,7 @@
           ]
         },
         "effect": {
-          "text": "<p>If a target has P &lt; 2, their stability is reduced to 0 and they move 2 additional squares whenever they are force moved (save ends).</p>"
+          "text": "<p>If a target has <strong class=\"potency-value\">P&lt;2</strong>, their stability is reduced to 0 and they move 2 additional squares whenever they are force moved (save ends).</p>"
         },
         "spend": {
           "text": "",
