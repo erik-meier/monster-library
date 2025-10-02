@@ -1,0 +1,302 @@
+{
+  "id": "rival-shadow-2",
+  "name": "Rival Shadow",
+  "level": 5,
+  "ev": 28,
+  "role": "Ambusher",
+  "organization": "Elite",
+  "keywords": [
+    "humanoid"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 7,
+  "stamina": 140,
+  "stability": 1,
+  "freeStrike": 7,
+  "characteristics": {
+    "might": 0,
+    "agility": 3,
+    "reason": 1,
+    "intuition": 0,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Exploit Opening",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The shadow deals an extra <span class=\"damage-value damage-generic\">7</span> damage to any bleeding target.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Rivalry",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the start of an encounter, the shadow chooses one creature within their line of effect. Both the shadow and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Ambuscade",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "10 damage"
+            },
+            {
+              "tier": 2,
+              "display": "15 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "18 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "The shadow can teleport up to 6 squares, then can attempt to hide.",
+          "value": 1,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The shadow can teleport up to 6 squares, then can attempt to hide."
+        }
+      }
+    },
+    {
+      "name": "Poison the Blade",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "maneuver",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "agility"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The shadow coats their weapon with poison. They gain an edge on their next strike, and any potency for that strike increases by 1.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Calling the Shots",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Check Out Our Loot",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "A rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Coordinated Takedown",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 10,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A Rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "We Just Do It Better",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a <span class=\"roll-formula\">d3</span> and add it to the power roll.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Work as One",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 3,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "A rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "237",
+    "license": "Draw Steel Creator License"
+  }
+}

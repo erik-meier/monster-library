@@ -11,7 +11,7 @@
           {{ formatKeywords(monster.keywords) }}
         </p>
         <p class="monster-meta-right">
-          EV {{ monster.ev }}
+          {{ formatMonsterEV(monster) }}
         </p>
       </div>
     </div>
@@ -60,9 +60,18 @@
 
     <div class="divider"></div>
 
+    <!-- With Captain Features -->
+    <div v-if="getWithCaptainAbilities().length > 0" class="with-captain-section">
+      <div v-for="ability in getWithCaptainAbilities()" :key="ability.name" class="with-captain-ability">
+        <span class="with-captain-label">With Captain:</span>
+        <span class="with-captain-text" v-html="ability.system?.description?.value || ability.description || ''"></span>
+      </div>
+      <div class="divider"></div>
+    </div>
+
     <!-- Abilities -->
-    <div v-if="(monster.items || []).length > 0" title="Abilities" :expanded="true" id="abilities-section">
-      <ActionsList :title="'Abilities'" :actions="monster.items || []" :chr="String(getMaxCharacteristic())"
+    <div v-if="getRegularAbilities().length > 0" title="Abilities" :expanded="true" id="abilities-section">
+      <ActionsList :title="'Abilities'" :actions="getRegularAbilities()" :chr="String(getMaxCharacteristic())"
         :monster="monster" />
     </div>
 
@@ -84,6 +93,7 @@ import ActionsList from './ActionsList.vue'
 import {
   formatKeywords,
   formatMonsterRole,
+  formatMonsterEV,
   formatImmunity,
   formatWeakness,
   formatMovement
@@ -107,9 +117,22 @@ export default {
       const values = Object.values(this.monster.characteristics);
       return values.length > 0 ? Math.max(...values) : 0;
     },
+    getWithCaptainAbilities() {
+      if (!this.monster.items || !Array.isArray(this.monster.items)) return [];
+      return this.monster.items.filter(item =>
+        item.name && item.name.toLowerCase() === 'with captain'
+      );
+    },
+    getRegularAbilities() {
+      if (!this.monster.items || !Array.isArray(this.monster.items)) return [];
+      return this.monster.items.filter(item =>
+        !item.name || item.name.toLowerCase() !== 'with captain'
+      );
+    },
     // Use imported formatters from shared utilities
     formatKeywords,
     formatMonsterRole,
+    formatMonsterEV,
     formatImmunity,
     formatWeakness,
     formatMovement
@@ -174,6 +197,7 @@ export default {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary-600);
+  text-transform: none;
 }
 
 .divider {
@@ -248,6 +272,37 @@ export default {
   color: var(--color-neutral-500);
   text-align: center;
   font-style: italic;
+}
+
+.with-captain-section {
+  margin: var(--space-4) 0;
+}
+
+.with-captain-ability {
+  margin-bottom: var(--space-2);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.with-captain-label {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
+  white-space: nowrap;
+}
+
+.with-captain-text {
+  color: var(--color-neutral-800);
+  margin-left: var(--space-1);
+  display: inline;
+}
+
+.with-captain-text * {
+  display: inline;
+  margin: 0;
 }
 
 .abilities-section {
@@ -328,6 +383,12 @@ export default {
 
   .stat-separator {
     display: none;
+  }
+
+  .with-captain-ability {
+    font-size: var(--font-size-xs);
+    text-align: left;
+    justify-content: flex-start;
   }
 }
 

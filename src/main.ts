@@ -15,6 +15,7 @@ import Home from './views/Home.vue'
 import MonsterCreate from './views/MonsterCreate.vue'
 import MyMonsters from './views/MyMonsters.vue'
 import About from './views/About.vue'
+import MonsterRandom from './views/MonsterRandom.vue'
 
 // Define routes
 const routes = [
@@ -32,6 +33,11 @@ const routes = [
     path: '/monster/create',
     name: 'MonsterCreate',
     component: MonsterCreate
+  },
+  {
+    path: '/monster-random',
+    name: 'MonsterRandom',
+    component: MonsterRandom
   },
   {
     path: '/monster/:monsterId',
@@ -54,7 +60,15 @@ const routes = [
 // Create router instance
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Always scroll to top when navigating between routes
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  }
 })
 
 // Create and mount the app

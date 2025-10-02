@@ -8,6 +8,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { processMonsterText } from './text-processors.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -30,14 +31,16 @@ for (const [monsterId] of Object.entries(monsterIndex.card)) {
   try {
     // Direct file mapping for simplified monster structure
     const fullPath = path.join(MONSTERS_DIR, `${monsterId}.json`)
-    
+
     if (!fs.existsSync(fullPath)) {
       console.warn(`⚠️  File not found: ${fullPath}`)
       continue
     }
-    
+
     const monsterData = JSON.parse(fs.readFileSync(fullPath, 'utf8'))
-    monsters[monsterId] = monsterData
+    // Process the monster text (includes table extraction, power effects flattening, etc.)
+    const processedMonster = processMonsterText(monsterData)
+    monsters[monsterId] = processedMonster
     successCount++
   } catch (error) {
     console.error(`❌ Failed to load ${monsterId}:`, error.message)

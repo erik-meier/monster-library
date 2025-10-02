@@ -1,0 +1,218 @@
+{
+  "id": "war-dog-doomthief",
+  "name": "War Dog Doomthief",
+  "level": 5,
+  "ev": 7,
+  "role": "Defender",
+  "organization": "Horde",
+  "keywords": [
+    "humanoid",
+    "soulless"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "L"
+  },
+  "speed": 5,
+  "stamina": 40,
+  "stability": 2,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 3,
+    "agility": -1,
+    "reason": 0,
+    "intuition": 3,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "Doom Magnet",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>The doomthief emits a 3 aura of warped fate that blocks line of effect for any enemy ability that doesn't include them as a target</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Loyalty Collar",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>When the doomthief is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">2d6</span> damage to each adjacent enemy and object.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Ripper Shrikegun",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "area",
+          "weapon"
+        ],
+        "distance": {
+          "type": "line",
+          "primary": 10,
+          "secondary": 3,
+          "tertiary": 1
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage; push 1"
+            },
+            {
+              "tier": 2,
+              "display": "5 damage; push 3"
+            },
+            {
+              "tier": 3,
+              "display": "6 damage; push 5; <strong class=\"potency-value\">A&lt;3</strong> slowed (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The doomthief can't willingly move on the same turn they use this ability.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Expanding Doom",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 4,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The doomthief has damage immunity 4 and the size of the aura from their Doom Magnet trait increases by 3, both until the start of their next turn.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Loyalty Unto Death",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 5,
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10,
+          "secondary": null
+        },
+        "target": {
+          "type": "ally",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 3",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p><strong>Note:</strong> Targets Two War Dogs</p><p>Each target who has a loyalty collar shifts up to their speed, then is reduced to 0 Stamina. After each target’s Loyalty Collar trait is resolved, each enemy adjacent to either target makes a <strong>Presence test.</strong></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>Push 4; the enemy is frightened of the nearest non-minion war dog (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>Push 2; the enemy is frightened of the nearest non-minion war dog (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "306",
+    "license": "Draw Steel Creator License"
+  }
+}

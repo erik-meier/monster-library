@@ -1,8 +1,8 @@
 {
   "id": "rival-fury",
   "name": "Rival Fury",
-  "level": 10,
-  "ev": 48,
+  "level": 2,
+  "ev": 16,
   "role": "Brute",
   "organization": "Elite",
   "keywords": [
@@ -13,15 +13,15 @@
     "letter": "M"
   },
   "speed": 5,
-  "stamina": 260,
+  "stamina": 100,
   "stability": 3,
-  "freeStrike": 10,
+  "freeStrike": 5,
   "characteristics": {
-    "might": 5,
-    "agility": 4,
+    "might": 2,
+    "agility": 1,
     "reason": 0,
-    "intuition": 2,
-    "presence": 3
+    "intuition": 0,
+    "presence": 0
   },
   "immunities": {},
   "weaknesses": {},
@@ -30,14 +30,54 @@
   ],
   "items": [
     {
-      "name": "Devastate",
-      "type": "feature",
+      "name": "Brutal Impact",
+      "type": "ability",
       "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Once per turn, when the fury force moves a creature or object, or shifts adjacent to a creature or object, they can use a signature ability against that creature or object that has a double edge.</p>",
-          "director": ""
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "melee",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "melee",
+          "primary": 1,
+          "secondary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
+            },
+            {
+              "tier": 2,
+              "display": "11 damage"
+            },
+            {
+              "tier": 3,
+              "display": "14 damage"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "Each target who has m<1 is slowed (save ends).",
+          "value": 2,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target who has <strong class=\"potency-value\">M&lt;1</strong> is slowed (save ends)."
         }
       }
     },
@@ -54,63 +94,12 @@
       }
     },
     {
-      "name": "Seismic Crush",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "15 damage; push 4"
-            },
-            {
-              "tier": 2,
-              "display": "21 damage; push 5"
-            },
-            {
-              "tier": 3,
-              "display": "25 damage; push 6"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "Each target who has M < 4 is bleeding and slowed (save ends).",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target who has M < 4 is bleeding and slowed (save ends)."
-        }
-      }
-    },
-    {
-      "name": "Death Grip",
+      "name": "Let's Tussle",
       "type": "ability",
       "system": {
         "category": "heroic",
         "type": "main",
-        "resource": 4,
+        "resource": 2,
         "keywords": [
           "melee",
           "strike",
@@ -127,7 +116,7 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
+            "formula": "2d10 + 2",
             "characteristics": [
               "might"
             ]
@@ -135,24 +124,36 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "15 damage; <strong class=\"potency-value\">M&lt;3</strong> grabbed"
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;0</strong> grabbed"
             },
             {
               "tier": 2,
-              "display": "21 damage; <strong class=\"potency-value\">M&lt;4</strong> grabbed"
+              "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> grabbed"
             },
             {
               "tier": 3,
-              "display": "25 damage; <strong class=\"potency-value\">M&lt;5</strong> grabbed"
+              "display": "16 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed"
             }
           ]
         },
         "effect": {
-          "text": "<p>The target must be the fury's size or smaller. While the target is grabbed this way, the fury and their allies have a double edge on strikes against them.</p>"
+          "text": "<p>The target must be the fury’s size or smaller. While the target is grabbed this way, the fury gains an edge on strikes against them.</p>"
         },
         "spend": {
           "text": "",
           "value": null
+        }
+      }
+    },
+    {
+      "name": "Overwhelm",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>Once per turn, when the fury force moves a creature or object, or shifts adjacent to a creature or object, they can make a free strike against that creature or object.</p>",
+          "director": ""
         }
       }
     },
@@ -173,44 +174,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
           "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Check Out Our Loot",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -235,7 +205,7 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -266,7 +236,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -297,7 +267,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -310,11 +280,42 @@
           "value": null
         }
       }
+    },
+    {
+      "name": "Check Out Our Loot",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "A rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "244",
+    "page": "234",
     "license": "Draw Steel Creator License"
   }
 }

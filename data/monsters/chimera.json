@@ -139,15 +139,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 fire damage; 3 fire damage"
+              "display": "3 fire damage; <strong class=\"potency-value\">A&lt;1</strong> 3 fire damage"
             },
             {
               "tier": 2,
-              "display": "5 fire damage; 5 fire damage"
+              "display": "5 fire damage; <strong class=\"potency-value\">A&lt;2</strong> 5 fire damage"
             },
             {
               "tier": 3,
-              "display": "7 fire damage; 7 fire damage"
+              "display": "7 fire damage; <strong class=\"potency-value\">A&lt;3</strong> 7 fire damage"
             }
           ]
         },

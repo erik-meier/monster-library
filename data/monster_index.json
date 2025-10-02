@@ -215,6 +215,27 @@
     "rival-shadow": "Rival Shadow",
     "rival-tactician": "Rival Tactician",
     "rival-talent": "Rival Talent",
+    "rival-conduit-2": "Rival Conduit",
+    "rival-elementalist-2": "Rival Elementalist",
+    "rival-fury-2": "Rival Fury",
+    "rival-null-2": "Rival Null",
+    "rival-shadow-2": "Rival Shadow",
+    "rival-tactician-2": "Rival Tactician",
+    "rival-talent-2": "Rival Talent",
+    "rival-conduit-3": "Rival Conduit",
+    "rival-elementalist-3": "Rival Elementalist",
+    "rival-fury-3": "Rival Fury",
+    "rival-null-3": "Rival Null",
+    "rival-shadow-3": "Rival Shadow",
+    "rival-tactician-3": "Rival Tactician",
+    "rival-talent-3": "Rival Talent",
+    "rival-conduit-4": "Rival Conduit",
+    "rival-elementalist-4": "Rival Elementalist",
+    "rival-fury-4": "Rival Fury",
+    "rival-null-4": "Rival Null",
+    "rival-shadow-4": "Rival Shadow",
+    "rival-tactician-4": "Rival Tactician",
+    "rival-talent-4": "Rival Talent",
     "familiar": "Familiar",
     "time-raider-archon": "Time Raider Archon",
     "time-raider-armiger": "Time Raider Armiger",
@@ -273,6 +294,38 @@
     "war-dog-subcommander": "War Dog Subcommander",
     "war-dog-teletalite": "War Dog Teletalite",
     "war-dog-tetherite": "War Dog Tetherite",
+    "war-dog-arachnite": "War Dog Arachnite",
+    "war-dog-doomthief": "War Dog Doomthief",
+    "war-dog-equivite": "War Dog Equivite",
+    "war-dog-hypokrite": "War Dog Hypokrite",
+    "war-dog-mischievite": "War Dog Mischievite",
+    "war-dog-sparkslinger": "War Dog Sparkslinger",
+    "war-dog-sweeper": "War Dog Sweeper",
+    "war-dog-tetrarch": "War Dog Tetrarch",
+    "war-dog-thanatite": "War Dog Thanatite",
+    "war-dog-tormentite": "War Dog Tormentite",
+    "war-dog-war-doc": "War Dog War Doc",
+    "war-dog-war-frog": "War Dog War Frog",
+    "war-dog-aerocite": "War Dog Aerocite",
+    "war-dog-ballistite": "War Dog Ballistite",
+    "war-dog-blackcap": "War Dog Blackcap",
+    "war-dog-breaker": "War Dog Breaker",
+    "war-dog-draconite": "War Dog Draconite",
+    "war-dog-firestarter": "War Dog Firestarter",
+    "war-dog-geomancer": "War Dog Geomancer",
+    "war-dog-iron-priest": "War Dog Iron Priest",
+    "war-dog-prismite": "War Dog Prismite",
+    "war-dog-saboteur": "War Dog Saboteur",
+    "war-dog-shriketroop": "War Dog Shriketroop",
+    "war-dog-taxiarch": "War Dog Taxiarch",
+    "castellan-hoplon": "Castellan Hoplon",
+    "iron-champion-doru": "Iron Champion Doru",
+    "logostician-vesper": "Logostician Vesper",
+    "soulbinder-psyche": "Soulbinder Psyche",
+    "strategos-alkestis": "Strategos Alkestis",
+    "war-dog-blood-jumper": "War Dog Blood Jumper",
+    "war-dog-hunter-killer": "War Dog Hunter-killer",
+    "war-dog-socialite": "War Dog Socialite",
     "werewolf": "Werewolf",
     "wyvern-lurker": "Wyvern Lurker",
     "wyvern-predator": "Wyvern Predator"
@@ -401,27 +454,27 @@
       "rival-shadow",
       "rival-tactician",
       "rival-talent",
-      "rival-conduit",
-      "rival-elementalist",
-      "rival-fury",
-      "rival-null",
-      "rival-shadow",
-      "rival-tactician",
-      "rival-talent",
-      "rival-conduit",
-      "rival-elementalist",
-      "rival-fury",
-      "rival-null",
-      "rival-shadow",
-      "rival-tactician",
-      "rival-talent",
-      "rival-conduit",
-      "rival-elementalist",
-      "rival-fury",
-      "rival-null",
-      "rival-shadow",
-      "rival-tactician",
-      "rival-talent",
+      "rival-conduit-2",
+      "rival-elementalist-2",
+      "rival-fury-2",
+      "rival-null-2",
+      "rival-shadow-2",
+      "rival-tactician-2",
+      "rival-talent-2",
+      "rival-conduit-3",
+      "rival-elementalist-3",
+      "rival-fury-3",
+      "rival-null-3",
+      "rival-shadow-3",
+      "rival-tactician-3",
+      "rival-talent-3",
+      "rival-conduit-4",
+      "rival-elementalist-4",
+      "rival-fury-4",
+      "rival-null-4",
+      "rival-shadow-4",
+      "rival-tactician-4",
+      "rival-talent-4",
       "time-raider-archon",
       "time-raider-armiger",
       "time-raider-cannonfall",
@@ -445,6 +498,34 @@
       "war-dog-subcommander",
       "war-dog-teletalite",
       "war-dog-tetherite",
+      "war-dog-arachnite",
+      "war-dog-doomthief",
+      "war-dog-hypokrite",
+      "war-dog-mischievite",
+      "war-dog-sparkslinger",
+      "war-dog-sweeper",
+      "war-dog-tetrarch",
+      "war-dog-thanatite",
+      "war-dog-tormentite",
+      "war-dog-war-doc",
+      "war-dog-war-frog",
+      "war-dog-aerocite",
+      "war-dog-blackcap",
+      "war-dog-breaker",
+      "war-dog-draconite",
+      "war-dog-firestarter",
+      "war-dog-geomancer",
+      "war-dog-iron-priest",
+      "war-dog-saboteur",
+      "war-dog-shriketroop",
+      "war-dog-taxiarch",
+      "castellan-hoplon",
+      "iron-champion-doru",
+      "soulbinder-psyche",
+      "strategos-alkestis",
+      "war-dog-blood-jumper",
+      "war-dog-hunter-killer",
+      "war-dog-socialite",
       "werewolf"
     ],
     "animal": [
@@ -638,7 +719,35 @@
       "war-dog-sharpshooter",
       "war-dog-subcommander",
       "war-dog-teletalite",
-      "war-dog-tetherite"
+      "war-dog-tetherite",
+      "war-dog-arachnite",
+      "war-dog-doomthief",
+      "war-dog-equivite",
+      "war-dog-hypokrite",
+      "war-dog-mischievite",
+      "war-dog-sparkslinger",
+      "war-dog-sweeper",
+      "war-dog-tetrarch",
+      "war-dog-thanatite",
+      "war-dog-tormentite",
+      "war-dog-war-doc",
+      "war-dog-war-frog",
+      "war-dog-aerocite",
+      "war-dog-ballistite",
+      "war-dog-blackcap",
+      "war-dog-breaker",
+      "war-dog-draconite",
+      "war-dog-firestarter",
+      "war-dog-geomancer",
+      "war-dog-iron-priest",
+      "war-dog-prismite",
+      "war-dog-saboteur",
+      "war-dog-shriketroop",
+      "war-dog-taxiarch",
+      "castellan-hoplon",
+      "iron-champion-doru",
+      "logostician-vesper",
+      "soulbinder-psyche"
     ],
     "accursed": [
       "minotaur",
@@ -795,13 +904,22 @@
       "hollowbone-launcher",
       "mummy",
       "vampire-spawn",
-      "wraith"
+      "wraith",
+      "war-dog-equivite",
+      "war-dog-hypokrite",
+      "war-dog-sparkslinger",
+      "war-dog-sweeper",
+      "war-dog-war-frog"
     ],
     "7": [
       "bugbear-mob",
       "bugbear-snare",
       "bale-eye",
-      "fiktin"
+      "fiktin",
+      "war-dog-doomthief",
+      "war-dog-mischievite",
+      "war-dog-tormentite",
+      "war-dog-war-doc"
     ],
     "8": [
       "tormenauk",
@@ -814,7 +932,9 @@
       "human-death-cultist",
       "human-knave",
       "orc-rampart",
-      "orc-terranova"
+      "orc-terranova",
+      "war-dog-arachnite",
+      "war-dog-thanatite"
     ],
     "9": [
       "blight-phage",
@@ -832,7 +952,11 @@
       "koptourok",
       "mummy-rotwrap",
       "vampire",
-      "waxen"
+      "waxen",
+      "war-dog-blackcap",
+      "war-dog-draconite",
+      "war-dog-saboteur",
+      "war-dog-shriketroop"
     ],
     "10": [
       "bugbear-knightmare",
@@ -855,7 +979,13 @@
       "time-raider-hijack",
       "time-raider-mind-punk",
       "time-raider-nemesis",
-      "time-raider-vertex"
+      "time-raider-vertex",
+      "war-dog-aerocite",
+      "war-dog-ballistite",
+      "war-dog-firestarter",
+      "war-dog-geomancer",
+      "war-dog-iron-priest",
+      "war-dog-prismite"
     ],
     "12": [
       "angulotl-daybringer",
@@ -888,7 +1018,10 @@
       "giant-shambler-zombie",
       "lithgekh",
       "skeleton-knight",
-      "wraith-skulker"
+      "wraith-skulker",
+      "war-dog-blood-jumper",
+      "war-dog-hunter-killer",
+      "war-dog-socialite"
     ],
     "16": [
       "big-animal-b",
@@ -938,45 +1071,53 @@
     ],
     "28": [
       "field-of-growth",
-      "rival-conduit",
-      "rival-elementalist",
-      "rival-fury",
-      "rival-null",
-      "rival-shadow",
-      "rival-tactician",
-      "rival-talent"
+      "rival-conduit-2",
+      "rival-elementalist-2",
+      "rival-fury-2",
+      "rival-null-2",
+      "rival-shadow-2",
+      "rival-tactician-2",
+      "rival-talent-2"
     ],
     "32": [
-      "lumbering-egress"
+      "lumbering-egress",
+      "war-dog-tetrarch"
     ],
     "36": [
       "arixx",
       "vampire-lord",
+      "war-dog-breaker",
       "werewolf"
     ],
     "40": [
-      "rival-conduit",
-      "rival-elementalist",
-      "rival-fury",
-      "rival-null",
-      "rival-shadow",
-      "rival-tactician",
-      "rival-talent"
+      "rival-conduit-3",
+      "rival-elementalist-3",
+      "rival-fury-3",
+      "rival-null-3",
+      "rival-shadow-3",
+      "rival-tactician-3",
+      "rival-talent-3"
     ],
     "44": [
-      "soulraker-hivequeen"
+      "soulraker-hivequeen",
+      "war-dog-taxiarch"
     ],
     "48": [
       "aurumvas",
       "thorn-dragon",
       "fossil-cryptic",
-      "rival-conduit",
-      "rival-elementalist",
-      "rival-fury",
-      "rival-null",
-      "rival-shadow",
-      "rival-tactician",
-      "rival-talent"
+      "rival-conduit-4",
+      "rival-elementalist-4",
+      "rival-fury-4",
+      "rival-null-4",
+      "rival-shadow-4",
+      "rival-tactician-4",
+      "rival-talent-4",
+      "castellan-hoplon",
+      "iron-champion-doru",
+      "logostician-vesper",
+      "soulbinder-psyche",
+      "strategos-alkestis"
     ],
     "60": [
       "bredbeddle",
@@ -1011,14 +1152,18 @@
       "orc-garotter",
       "radenwight-mischiever",
       "rival-shadow",
-      "rival-shadow",
-      "rival-shadow",
-      "rival-shadow",
+      "rival-shadow-2",
+      "rival-shadow-3",
+      "rival-shadow-4",
       "time-raider-hijack",
       "shade",
       "umbral-stalker",
       "war-dog-commando",
       "war-dog-teletalite",
+      "war-dog-hypokrite",
+      "war-dog-war-frog",
+      "war-dog-blackcap",
+      "war-dog-saboteur",
       "wyvern-lurker"
     ],
     "artillery": [
@@ -1046,15 +1191,19 @@
       "orc-eye-of-grole",
       "radenwight-redeye",
       "rival-tactician",
-      "rival-tactician",
-      "rival-tactician",
-      "rival-tactician",
+      "rival-tactician-2",
+      "rival-tactician-3",
+      "rival-tactician-4",
       "time-raider-cannonfall",
       "decrepit-skeleton",
       "skeleton",
       "waxen",
       "war-dog-crucibite",
-      "war-dog-sharpshooter"
+      "war-dog-sharpshooter",
+      "war-dog-arachnite",
+      "war-dog-sparkslinger",
+      "war-dog-ballistite",
+      "war-dog-shriketroop"
     ],
     "leader": [
       "angulotl-daybringer",
@@ -1078,7 +1227,10 @@
       "ghost",
       "mummy-lord",
       "vampire-lord",
-      "war-dog-ground-commander"
+      "war-dog-ground-commander",
+      "war-dog-tetrarch",
+      "war-dog-taxiarch",
+      "strategos-alkestis"
     ],
     "harrier": [
       "angulotl-pollywog",
@@ -1114,16 +1266,19 @@
       "radenwight-ratcrobat",
       "radenwight-swiftpaw",
       "rival-null",
-      "rival-null",
-      "rival-null",
-      "rival-null",
+      "rival-null-2",
+      "rival-null-3",
+      "rival-null-4",
       "time-raider-archon",
       "time-raider-nemesis",
       "crawling-claw",
       "ghoul",
       "vampire-spawn",
       "war-dog-conscript",
-      "war-dog-eviscerite"
+      "war-dog-eviscerite",
+      "war-dog-mischievite",
+      "war-dog-sweeper",
+      "war-dog-aerocite"
     ],
     "controller": [
       "angulotl-wave",
@@ -1146,14 +1301,17 @@
       "orc-glorifier",
       "orc-terranova",
       "rival-elementalist",
-      "rival-elementalist",
-      "rival-elementalist",
-      "rival-elementalist",
+      "rival-elementalist-2",
+      "rival-elementalist-3",
+      "rival-elementalist-4",
       "time-raider-helix",
       "dirt-mournling",
       "haunt",
       "bonecage",
-      "war-dog-pestilite"
+      "war-dog-pestilite",
+      "war-dog-thanatite",
+      "war-dog-geomancer",
+      "logostician-vesper"
     ],
     "brute": [
       "clawfish",
@@ -1189,9 +1347,9 @@
       "orc-razor",
       "radenwight-bruxer",
       "rival-fury",
-      "rival-fury",
-      "rival-fury",
-      "rival-fury",
+      "rival-fury-2",
+      "rival-fury-3",
+      "rival-fury-4",
       "time-raider-myriad",
       "rotting-zombie",
       "zombie",
@@ -1199,6 +1357,10 @@
       "mummy",
       "war-dog-amalgamite",
       "war-dog-tetherite",
+      "war-dog-equivite",
+      "war-dog-breaker",
+      "war-dog-draconite",
+      "iron-champion-doru",
       "wyvern-predator"
     ],
     "hexer": [
@@ -1221,9 +1383,9 @@
       "lizardfolk-bloodeye",
       "orc-chainlock",
       "rival-talent",
-      "rival-talent",
-      "rival-talent",
-      "rival-talent",
+      "rival-talent-2",
+      "rival-talent-3",
+      "rival-talent-4",
       "time-raider-mind-punk",
       "soulwight",
       "specter",
@@ -1231,7 +1393,10 @@
       "koptourok",
       "vampire",
       "lithgekh",
-      "war-dog-phosphorite"
+      "war-dog-phosphorite",
+      "war-dog-tormentite",
+      "war-dog-firestarter",
+      "soulbinder-psyche"
     ],
     "mount": [
       "big-animal-a",
@@ -1273,12 +1438,14 @@
       "orc-godcaller",
       "radenwight-piper",
       "rival-conduit",
-      "rival-conduit",
-      "rival-conduit",
-      "rival-conduit",
+      "rival-conduit-2",
+      "rival-conduit-3",
+      "rival-conduit-4",
       "familiar",
       "time-raider-vertex",
-      "war-dog-subcommander"
+      "war-dog-subcommander",
+      "war-dog-war-doc",
+      "war-dog-iron-priest"
     ],
     "minion": [
       "soulraker-scout",
@@ -1292,7 +1459,10 @@
       "mummy-rotwrap",
       "giant-shambler-zombie",
       "skeleton-knight",
-      "wraith-skulker"
+      "wraith-skulker",
+      "war-dog-blood-jumper",
+      "war-dog-hunter-killer",
+      "war-dog-socialite"
     ],
     "defender": [
       "dwarf-axethrower",
@@ -1308,7 +1478,10 @@
       "radenwight-scrapper",
       "time-raider-armiger",
       "flesh-mournling",
-      "war-dog-neuronite"
+      "war-dog-neuronite",
+      "war-dog-doomthief",
+      "war-dog-prismite",
+      "castellan-hoplon"
     ],
     "unknown": [
       "hag-hut",
@@ -3430,6 +3603,216 @@
     },
     "rival-conduit": {
       "name": "Rival Conduit",
+      "level": 2,
+      "ev": 16,
+      "role": "Support",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-elementalist": {
+      "name": "Rival Elementalist",
+      "level": 2,
+      "ev": 16,
+      "role": "Controller",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-fury": {
+      "name": "Rival Fury",
+      "level": 2,
+      "ev": 16,
+      "role": "Brute",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-null": {
+      "name": "Rival Null",
+      "level": 2,
+      "ev": 16,
+      "role": "Harrier",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-shadow": {
+      "name": "Rival Shadow",
+      "level": 2,
+      "ev": 16,
+      "role": "Ambusher",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-tactician": {
+      "name": "Rival Tactician",
+      "level": 2,
+      "ev": 16,
+      "role": "Artillery",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-talent": {
+      "name": "Rival Talent",
+      "level": 2,
+      "ev": 16,
+      "role": "Hexer",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-conduit-2": {
+      "name": "Rival Conduit",
+      "level": 5,
+      "ev": 28,
+      "role": "Support",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-elementalist-2": {
+      "name": "Rival Elementalist",
+      "level": 5,
+      "ev": 28,
+      "role": "Controller",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-fury-2": {
+      "name": "Rival Fury",
+      "level": 5,
+      "ev": 28,
+      "role": "Brute",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-null-2": {
+      "name": "Rival Null",
+      "level": 5,
+      "ev": 28,
+      "role": "Harrier",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-shadow-2": {
+      "name": "Rival Shadow",
+      "level": 5,
+      "ev": 28,
+      "role": "Ambusher",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-tactician-2": {
+      "name": "Rival Tactician",
+      "level": 5,
+      "ev": 28,
+      "role": "Artillery",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-talent-2": {
+      "name": "Rival Talent",
+      "level": 5,
+      "ev": 28,
+      "role": "Hexer",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-conduit-3": {
+      "name": "Rival Conduit",
+      "level": 8,
+      "ev": 40,
+      "role": "Support",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-elementalist-3": {
+      "name": "Rival Elementalist",
+      "level": 8,
+      "ev": 40,
+      "role": "Controller",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-fury-3": {
+      "name": "Rival Fury",
+      "level": 8,
+      "ev": 40,
+      "role": "Brute",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-null-3": {
+      "name": "Rival Null",
+      "level": 8,
+      "ev": 40,
+      "role": "Harrier",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-shadow-3": {
+      "name": "Rival Shadow",
+      "level": 8,
+      "ev": 40,
+      "role": "Ambusher",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-tactician-3": {
+      "name": "Rival Tactician",
+      "level": 8,
+      "ev": 40,
+      "role": "Artillery",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-talent-3": {
+      "name": "Rival Talent",
+      "level": 8,
+      "ev": 40,
+      "role": "Hexer",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "rival-conduit-4": {
+      "name": "Rival Conduit",
       "level": 10,
       "ev": 48,
       "role": "Support",
@@ -3438,7 +3821,7 @@
         "humanoid"
       ]
     },
-    "rival-elementalist": {
+    "rival-elementalist-4": {
       "name": "Rival Elementalist",
       "level": 10,
       "ev": 48,
@@ -3448,7 +3831,7 @@
         "humanoid"
       ]
     },
-    "rival-fury": {
+    "rival-fury-4": {
       "name": "Rival Fury",
       "level": 10,
       "ev": 48,
@@ -3458,7 +3841,7 @@
         "humanoid"
       ]
     },
-    "rival-null": {
+    "rival-null-4": {
       "name": "Rival Null",
       "level": 10,
       "ev": 48,
@@ -3468,7 +3851,7 @@
         "humanoid"
       ]
     },
-    "rival-shadow": {
+    "rival-shadow-4": {
       "name": "Rival Shadow",
       "level": 10,
       "ev": 48,
@@ -3478,7 +3861,7 @@
         "humanoid"
       ]
     },
-    "rival-tactician": {
+    "rival-tactician-4": {
       "name": "Rival Tactician",
       "level": 10,
       "ev": 48,
@@ -3488,7 +3871,7 @@
         "humanoid"
       ]
     },
-    "rival-talent": {
+    "rival-talent-4": {
       "name": "Rival Talent",
       "level": 10,
       "ev": 48,
@@ -4083,6 +4466,350 @@
       "keywords": [
         "humanoid",
         "soulless"
+      ]
+    },
+    "war-dog-arachnite": {
+      "name": "War Dog Arachnite",
+      "level": 6,
+      "ev": 8,
+      "role": "Artillery",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-doomthief": {
+      "name": "War Dog Doomthief",
+      "level": 5,
+      "ev": 7,
+      "role": "Defender",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-equivite": {
+      "name": "War Dog Equivite",
+      "level": 4,
+      "ev": 6,
+      "role": "Brute",
+      "organization": "Horde",
+      "keywords": [
+        "soulless"
+      ]
+    },
+    "war-dog-hypokrite": {
+      "name": "War Dog Hypokrite",
+      "level": 4,
+      "ev": 6,
+      "role": "Ambusher",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-mischievite": {
+      "name": "War Dog Mischievite",
+      "level": 5,
+      "ev": 7,
+      "role": "Harrier",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-sparkslinger": {
+      "name": "War Dog Sparkslinger",
+      "level": 4,
+      "ev": 6,
+      "role": "Artillery",
+      "organization": "Minion",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-sweeper": {
+      "name": "War Dog Sweeper",
+      "level": 4,
+      "ev": 6,
+      "role": "Harrier",
+      "organization": "Minion",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-tetrarch": {
+      "name": "War Dog Tetrarch",
+      "level": 6,
+      "ev": 32,
+      "role": "",
+      "organization": "Leader",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-thanatite": {
+      "name": "War Dog Thanatite",
+      "level": 6,
+      "ev": 8,
+      "role": "Controller",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-tormentite": {
+      "name": "War Dog Tormentite",
+      "level": 5,
+      "ev": 7,
+      "role": "Hexer",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-war-doc": {
+      "name": "War Dog War Doc",
+      "level": 5,
+      "ev": 7,
+      "role": "Support",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-war-frog": {
+      "name": "War Dog War Frog",
+      "level": 4,
+      "ev": 6,
+      "role": "Ambusher",
+      "organization": "Minion",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-aerocite": {
+      "name": "War Dog Aerocite",
+      "level": 8,
+      "ev": 10,
+      "role": "Harrier",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-ballistite": {
+      "name": "War Dog Ballistite",
+      "level": 8,
+      "ev": 10,
+      "role": "Artillery",
+      "organization": "Horde",
+      "keywords": [
+        "soulless"
+      ]
+    },
+    "war-dog-blackcap": {
+      "name": "War Dog Blackcap",
+      "level": 7,
+      "ev": 9,
+      "role": "Ambusher",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-breaker": {
+      "name": "War Dog Breaker",
+      "level": 7,
+      "ev": 36,
+      "role": "Brute",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-draconite": {
+      "name": "War Dog Draconite",
+      "level": 7,
+      "ev": 9,
+      "role": "Brute",
+      "organization": "Minion",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-firestarter": {
+      "name": "War Dog Firestarter",
+      "level": 8,
+      "ev": 10,
+      "role": "Hexer",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-geomancer": {
+      "name": "War Dog Geomancer",
+      "level": 8,
+      "ev": 10,
+      "role": "Controller",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-iron-priest": {
+      "name": "War Dog Iron Priest",
+      "level": 8,
+      "ev": 10,
+      "role": "Support",
+      "organization": "Horde",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-prismite": {
+      "name": "War Dog Prismite",
+      "level": 8,
+      "ev": 10,
+      "role": "Defender",
+      "organization": "Horde",
+      "keywords": [
+        "soulless"
+      ]
+    },
+    "war-dog-saboteur": {
+      "name": "War Dog Saboteur",
+      "level": 7,
+      "ev": 9,
+      "role": "Ambusher",
+      "organization": "Minion",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-shriketroop": {
+      "name": "War Dog Shriketroop",
+      "level": 7,
+      "ev": 9,
+      "role": "Artillery",
+      "organization": "Minion",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "war-dog-taxiarch": {
+      "name": "War Dog Taxiarch",
+      "level": 9,
+      "ev": 44,
+      "role": "",
+      "organization": "Leader",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "castellan-hoplon": {
+      "name": "Castellan Hoplon",
+      "level": 10,
+      "ev": 48,
+      "role": "Defender",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "iron-champion-doru": {
+      "name": "Iron Champion Doru",
+      "level": 10,
+      "ev": 48,
+      "role": "Brute",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "logostician-vesper": {
+      "name": "Logostician Vesper",
+      "level": 10,
+      "ev": 48,
+      "role": "Controller",
+      "organization": "Elite",
+      "keywords": [
+        "soulless"
+      ]
+    },
+    "soulbinder-psyche": {
+      "name": "Soulbinder Psyche",
+      "level": 10,
+      "ev": 48,
+      "role": "Hexer",
+      "organization": "Elite",
+      "keywords": [
+        "humanoid",
+        "soulless"
+      ]
+    },
+    "strategos-alkestis": {
+      "name": "Strategos Alkestis",
+      "level": 10,
+      "ev": 48,
+      "role": "",
+      "organization": "Leader",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "war-dog-blood-jumper": {
+      "name": "War Dog Blood Jumper",
+      "level": 10,
+      "ev": 12,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "war-dog-hunter-killer": {
+      "name": "War Dog Hunter-killer",
+      "level": 10,
+      "ev": 12,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "humanoid"
+      ]
+    },
+    "war-dog-socialite": {
+      "name": "War Dog Socialite",
+      "level": 10,
+      "ev": 12,
+      "role": "",
+      "organization": "Minion",
+      "keywords": [
+        "humanoid"
       ]
     },
     "werewolf": {

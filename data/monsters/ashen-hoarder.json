@@ -64,7 +64,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>When the ashen hoarder is reduced to 0 Stamina, they explode in a swirling singularity of bone shards and soul energy. Each creature within 5 squares of the ashen hoarder who has M &lt; 3 takes <span class=\"damage-value damage-generic\">11</span> corruption damage. A creature killed by this damage has their soul sucked into the vortex and lost somewhere in the Abyssal Wasteland, and can't be brought back to life until their soul is recovered.</p>",
+          "value": "<p>When the ashen hoarder is reduced to 0 Stamina, they explode in a swirling singularity of bone shards and soul energy. Each creature within 5 squares of the ashen hoarder who has <strong class=\"potency-value\">M&lt;3</strong> takes <span class=\"damage-value damage-generic\">11</span> corruption damage. A creature killed by this damage has their soul sucked into the vortex and lost somewhere in the Abyssal Wasteland, and can't be brought back to life until their soul is recovered.</p>",
           "director": ""
         }
       }
@@ -254,7 +254,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The ashen hoarder moves up to twice their speed in a straight line. Each creature or object in the path of this movement is either pushed into the nearest unoccupied space outside the path, or if they have M &lt; 3 is pushed forward until the movement ends. Any creature who is force moved forward into an obstacle is dazed (save ends).</p>"
+          "text": "<p>The ashen hoarder moves up to twice their speed in a straight line. Each creature or object in the path of this movement is either pushed into the nearest unoccupied space outside the path, or if they have <strong class=\"potency-value\">M&lt;3</strong> is pushed forward until the movement ends. Any creature who is force moved forward into an obstacle is dazed (save ends).</p>"
         },
         "spend": {
           "text": "",

@@ -164,7 +164,7 @@ export default {
       }));
     },
     availableOrganizations() {
-      const orgs = [...new Set(this.monsters.map(m => m.organization).filter(o => o))];
+      const orgs = [...new Set(this.monsters.map(m => m.organization.toLowerCase()).filter(o => o))];
       return orgs.sort().map(org => ({
         value: org,
         label: org.charAt(0).toUpperCase() + org.slice(1)
@@ -209,7 +209,7 @@ export default {
 
       // Organization filter
       if (this.selectedOrganization) {
-        filtered = filtered.filter(monster => monster.organization === this.selectedOrganization)
+        filtered = filtered.filter(monster => monster.organization.toLowerCase() === this.selectedOrganization)
       }
 
       // Sorting

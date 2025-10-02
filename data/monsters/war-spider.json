@@ -101,7 +101,7 @@
         "spend": {
           "text": "For any tier outcome, if the target has M < 3, they are  weakened (save ends).",
           "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> For any tier outcome, if the target has M < 3, they are  weakened (save ends)."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> For any tier outcome, if the target has <strong class=\"potency-value\">M&lt;3</strong>, they are  weakened (save ends)."
         }
       }
     },

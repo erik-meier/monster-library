@@ -1,8 +1,8 @@
 {
   "id": "rival-elementalist",
   "name": "Rival Elementalist",
-  "level": 10,
-  "ev": 48,
+  "level": 2,
+  "ev": 16,
   "role": "Controller",
   "organization": "Elite",
   "keywords": [
@@ -13,15 +13,15 @@
     "letter": "M"
   },
   "speed": 5,
-  "stamina": 220,
+  "stamina": 60,
   "stability": 1,
-  "freeStrike": 10,
+  "freeStrike": 5,
   "characteristics": {
-    "might": 1,
-    "agility": 3,
-    "reason": 5,
-    "intuition": 4,
-    "presence": 1
+    "might": 0,
+    "agility": 0,
+    "reason": 2,
+    "intuition": 1,
+    "presence": 0
   },
   "immunities": {},
   "weaknesses": {},
@@ -29,6 +29,58 @@
     "walk"
   ],
   "items": [
+    {
+      "name": "The Writhing Green",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "magic",
+          "ranged",
+          "strike",
+          "green"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10,
+          "secondary": 10
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": [
+              "reason"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage; slide 1"
+            },
+            {
+              "tier": 2,
+              "display": "10 damage; slide 2"
+            },
+            {
+              "tier": 3,
+              "display": "13 damage; slide 3"
+            }
+          ]
+        },
+        "effect": {},
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
     {
       "name": "Rivalry",
       "type": "feature",
@@ -42,65 +94,12 @@
       }
     },
     {
-      "name": "Viridescent Storm",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "green",
-          "magic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "15 damage; slide 3; 5 acid damage"
-            },
-            {
-              "tier": 2,
-              "display": "20 damage; slide 4; 7 acid damage"
-            },
-            {
-              "tier": 3,
-              "display": "24 damage; slide 5; 9 acid damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>One ally within distance ends all conditions on themself.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "The World Consumes",
+      "name": "The Earth Devours",
       "type": "ability",
       "system": {
         "category": "heroic",
         "type": "main",
-        "resource": 5,
+        "resource": 3,
         "keywords": [
           "area",
           "magic",
@@ -119,15 +118,28 @@
         "trigger": "",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
+            "formula": "2d10 + 2",
             "characteristics": [
               "reason"
             ]
           },
-          "effects": {}
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "3 damage"
+            },
+            {
+              "tier": 2,
+              "display": "5 damage; restrained (EoT)"
+            },
+            {
+              "tier": 3,
+              "display": "8 damage; restrained (save ends)"
+            }
+          ]
         },
         "effect": {
-          "text": "<p>The area becomes overgrown with caustic vines until the end of the encounter. While in the area, any enemy has acid weakness 5 and is slowed. Any enemy who ends their turn in the area and has M &lt; 4 is restrained (save ends).</p>"
+          "text": "<p>The area is difficult terrain for enemies until the end of the encounter. Any enemy in the area has acid weakness 2.</p>"
         },
         "spend": {
           "text": "",
@@ -136,7 +148,7 @@
       }
     },
     {
-      "name": "Breach of Nihility",
+      "name": "Jaws of the Void",
       "type": "ability",
       "system": {
         "category": "",
@@ -150,21 +162,18 @@
           "type": "self"
         },
         "target": {
-          "type": "self",
-          "value": null
+          "type": "self"
         },
         "trigger": "The elementalist takes damage.",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "reason"
-            ]
+            "formula": "2d10 + 2",
+            "characteristics": []
           },
           "effects": {}
         },
         "effect": {
-          "text": "<p>The elementalist can teleport up to 5 squares. Each creature adjacent to the space they leave or appear in takes <span class=\"damage-value damage-generic\">5</span> corruption damage.</p>"
+          "text": "<p>The elementalist can teleport up to 2 squares. Each creature adjacent to the space they leave takes 2 corruption damage.</p>"
         },
         "spend": {
           "text": "",
@@ -189,44 +198,13 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
         },
         "effect": {
           "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Check Out Our Loot",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -251,7 +229,7 @@
         "trigger": "A Rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -282,7 +260,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -313,7 +291,7 @@
         "trigger": "A rival's turn starts",
         "power": {
           "roll": {
-            "formula": "2d10 + 5",
+            "formula": "2d10 + 2",
             "characteristics": []
           },
           "effects": {}
@@ -326,11 +304,42 @@
           "value": null
         }
       }
+    },
+    {
+      "name": "Check Out Our Loot",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": 5,
+        "keywords": [],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self"
+        },
+        "trigger": "A rival's turn starts",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 2",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "243",
+    "page": "233",
     "license": "Draw Steel Creator License"
   }
 }

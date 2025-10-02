@@ -141,15 +141,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage; 0 damage"
+              "display": "6 damage"
             },
             {
               "tier": 2,
-              "display": "9 damage; 3 damage"
+              "display": "9 damage; <strong class=\"potency-value\">A&lt;1</strong> 3 damage"
             },
             {
               "tier": 3,
-              "display": "12 damage; 3 damage"
+              "display": "12 damage; <strong class=\"potency-value\">A&lt;2</strong> 3 damage"
             }
           ]
         },

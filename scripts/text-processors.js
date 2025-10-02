@@ -173,15 +173,49 @@ function processPotencyText(text, potencyValue, characteristic, monster) {
     return potencyMap[type].toString();
   });
 
-  // Step 3: Format standalone potency patterns like "M<5" with proper styling
-  // Avoid double-wrapping by checking if already formatted
-  if (!processed.includes('<strong class="potency-value">')) {
-    processed = processed.replace(/([A-Z]&lt;\d+|[A-Z]<\d+)/g, (match) => {
-      // Ensure consistent &lt; encoding
-      const normalized = match.replace('<', '&lt;');
-      return `<strong class="potency-value">${normalized}</strong>`;
-    });
-  }
+  // Step 3: Format standalone potency patterns like "M<5", "R<-1", "m<2", "P < 0" with proper styling
+  // Use a more compatible approach without lookbehind since it's not supported in all JS environments
+
+  // First handle uppercase patterns with optional spaces: "P < 0", "M<5", etc.
+  // But skip patterns already wrapped in strong tags
+  processed = processed.replace(/([A-Z])\s*(&lt;|<)\s*(-?\d+)/g, (match, char, operator, number, offset, string) => {
+    // Check if this match is already inside a potency-value strong tag
+    const beforeMatch = string.substring(0, offset);
+    const afterMatch = string.substring(offset + match.length);
+
+    // Look for strong tag with potency-value class before this match
+    const strongOpenBefore = beforeMatch.lastIndexOf('<strong class="potency-value">');
+    const strongCloseBefore = beforeMatch.lastIndexOf('</strong>');
+    const strongCloseAfter = afterMatch.indexOf('</strong>');
+
+    // If we're inside a potency-value strong tag, don't modify
+    if (strongOpenBefore > strongCloseBefore && strongCloseAfter !== -1) {
+      return match;
+    }
+
+    // Ensure consistent &lt; encoding
+    return `<strong class="potency-value">${char}&lt;${number}</strong>`;
+  });
+
+  // Then handle lowercase patterns and convert to uppercase: "m<2" -> "M<2"
+  processed = processed.replace(/([a-z])\s*(&lt;|<)\s*(-?\d+)/g, (match, char, operator, number, offset, string) => {
+    // Check if this match is already inside a potency-value strong tag
+    const beforeMatch = string.substring(0, offset);
+    const afterMatch = string.substring(offset + match.length);
+
+    // Look for strong tag with potency-value class before this match
+    const strongOpenBefore = beforeMatch.lastIndexOf('<strong class="potency-value">');
+    const strongCloseBefore = beforeMatch.lastIndexOf('</strong>');
+    const strongCloseAfter = afterMatch.indexOf('</strong>');
+
+    // If we're inside a potency-value strong tag, don't modify
+    if (strongOpenBefore > strongCloseBefore && strongCloseAfter !== -1) {
+      return match;
+    }
+
+    // Convert to uppercase and ensure consistent &lt; encoding
+    return `<strong class="potency-value">${char.toUpperCase()}&lt;${number}</strong>`;
+  });
 
   return processed;
 }
@@ -210,6 +244,72 @@ function processForcedPlaceholders(text, forcedData) {
   }
 
   return text.replace(/\{\{forced\}\}/g, forcedText);
+}
+
+/**
+ * Extract HTML table with power roll results and convert to tier structure
+ * Used for malice features that have power roll results in table format
+ */
+function extractTableToTiers(htmlText) {
+  if (!htmlText) return { tiers: [], cleanText: htmlText };
+
+  // Look for table with tbody structure
+  const tableRegex = /<table[^>]*>[\s\S]*?<tbody[^>]*>([\s\S]*?)<\/tbody>[\s\S]*?<\/table>/i;
+  const tableMatch = htmlText.match(tableRegex);
+
+  if (!tableMatch) {
+    return { tiers: [], cleanText: htmlText };
+  }
+
+  const tableContent = tableMatch[1];
+  const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+  const rows = [];
+  let rowMatch;
+
+  while ((rowMatch = rowRegex.exec(tableContent)) !== null) {
+    rows.push(rowMatch[1]);
+  }
+
+  const tiers = [];
+
+  rows.forEach((rowHtml, index) => {
+    // Extract cells from the row
+    const cellRegex = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+    const cells = [];
+    let cellMatch;
+
+    while ((cellMatch = cellRegex.exec(rowHtml)) !== null) {
+      // Clean up the cell content - remove paragraph tags and spans but keep inner text
+      let cellContent = cellMatch[1];
+
+      // Remove paragraph tags but keep content
+      cellContent = cellContent.replace(/<\/?p[^>]*>/gi, '');
+
+      // Handle damage spans by extracting just the number
+      cellContent = cellContent.replace(/<span class="damage-value[^"]*">(\d+)<\/span>/gi, '$1');
+
+      // Remove any other HTML tags but keep content
+      cellContent = cellContent.replace(/<[^>]+>/gi, '');
+
+      // Clean up whitespace
+      cellContent = cellContent.trim();
+
+      cells.push(cellContent);
+    }
+
+    // Assume the second cell contains the effect description
+    if (cells.length >= 2 && cells[1].trim()) {
+      tiers.push({
+        tier: index + 1,
+        display: cells[1].trim()
+      });
+    }
+  });
+
+  // Remove the table from the original text
+  const cleanText = htmlText.replace(tableRegex, '').trim();
+
+  return { tiers, cleanText };
 }
 
 
@@ -260,7 +360,36 @@ function processPowerRollFormula(formula, monster) {
  * Flatten power effects structure into simple tier display arrays
  */
 function flattenPowerEffects(item, monster) {
-  if (!item.system?.power?.effects && !item.system?.power?.tiers) {
+  // Check if this item has table-based power results in effect text
+  const hasTableInEffect = item.system?.effect?.text && item.system.effect.text.includes('<table');
+  const hasEmptyEffects = !item.system?.power?.effects || Object.keys(item.system.power.effects).length === 0;
+  const hasNoTiers = !item.system?.power?.tiers;
+
+  // If we have a table in effect text and no existing power effects/tiers, extract the table
+  if (hasTableInEffect && hasEmptyEffects && hasNoTiers && item.system.power) {
+    const tableExtraction = extractTableToTiers(item.system.effect.text);
+
+    if (tableExtraction.tiers.length > 0) {
+      // Create new item with extracted tiers and cleaned effect text
+      const newItem = { ...item };
+      newItem.system = { ...item.system };
+      newItem.system.power = { ...item.system.power };
+      newItem.system.effect = { ...item.system.effect };
+
+      newItem.system.power.tiers = tableExtraction.tiers;
+      newItem.system.effect.text = tableExtraction.cleanText;
+
+      return newItem;
+    }
+  }
+
+  // Only return early if there's truly nothing to process (no power structure at all)
+  if (!item.system?.power) {
+    return item;
+  }
+
+  // If no effects and no tiers, but also no table to extract, return early
+  if (!item.system.power.effects && !item.system.power.tiers && !hasTableInEffect) {
     return item;
   }
 
@@ -298,12 +427,51 @@ function flattenPowerEffects(item, monster) {
       if (!tierData) return;
 
       if (effectType === 'damage') {
+        // Skip zero damage effects entirely
+        if (tierData.value === '0') {
+          return; // Don't add anything to tierParts for zero damage
+        }
+
         // Handle damage effects
         let damageText = `${tierData.value}`;
         if (tierData.types?.length > 0) {
           damageText += ` ${tierData.types.join('/')}`;
         }
         damageText += ' damage';
+
+        // Handle potency for named damage effects (only if there's a meaningful characteristic)
+        if (effect.name && effect.name.trim() && tierData.potency) {
+          let characteristic = tierData.potency.characteristic;
+          let potencyValue = tierData.potency.value;
+
+          // Inherit characteristic from earlier tiers if current tier has empty/missing characteristic
+          if (!characteristic || characteristic === 'none' || characteristic === '' || characteristic.trim() === '') {
+            // Look for characteristic in earlier tiers for this same effect
+            for (let inheritTierNum = tierNum - 1; inheritTierNum >= 1; inheritTierNum--) {
+              const inheritTierKey = `tier${inheritTierNum}`;
+              const inheritTierData = effect[effectType]?.[inheritTierKey];
+              if (inheritTierData?.potency?.characteristic &&
+                inheritTierData.potency.characteristic !== 'none' &&
+                inheritTierData.potency.characteristic !== '' &&
+                inheritTierData.potency.characteristic.trim() !== '') {
+                characteristic = inheritTierData.potency.characteristic;
+                break;
+              }
+            }
+          }
+
+          // Only process potency if we have a real characteristic and meaningful potency value
+          if (potencyValue && potencyValue !== '0' && characteristic && characteristic !== 'none' && characteristic !== '' && characteristic.trim() !== '') {
+            // Apply potency processing to get the formatted potency display
+            const processedPotency = processPotencyText('{{potency}}', potencyValue, characteristic, monster);
+
+            // If we got a formatted potency back, use it; otherwise fall back to simple display
+            if (processedPotency && processedPotency !== '{{potency}}') {
+              damageText = processedPotency + ' ' + damageText;
+            }
+          }
+        }
+
         tierParts.push(damageText);
       } else if (effectType === 'applied' || effectType === 'forced' || effectType === 'other') {
         // Handle effects with display templates
@@ -405,9 +573,10 @@ function processMonsterText(monster) {
 
   // Process all items (abilities, features, etc.)
   processedMonster.items = processedMonster.items.map(item => {
-    // First, flatten power effects if they exist, OR process existing tiers
+    // First, flatten power effects if they exist, OR process existing tiers, OR extract tables
     let processedItem = item;
-    if (item.system?.power?.effects || item.system?.power?.tiers) {
+    const hasTableToExtract = item.system?.effect?.text && item.system.effect.text.includes('<table');
+    if (item.system?.power?.effects || item.system?.power?.tiers || (item.system?.power && hasTableToExtract)) {
       processedItem = flattenPowerEffects(item, monster);
     }
 
@@ -443,6 +612,12 @@ function processMonsterText(monster) {
       // Store in unified text field and remove old fields
       if (combinedEffectText) {
         processedItem.system.effect.text = combinedEffectText;
+      } else if (processedItem.system.effect.text) {
+        // Process existing effect.text if it exists and we didn't create combined text
+        processedItem.system.effect.text = processFoundryText(
+          processedItem.system.effect.text,
+          monster
+        );
       }
 
       // Clean up old fields
@@ -459,12 +634,19 @@ function processMonsterText(monster) {
     }
 
     // Process spend effects (Malice costs)
-    if (processedItem.system?.spend?.text && processedItem.system?.spend?.value) {
+    if (processedItem.system?.spend?.text) {
       const spendText = processFoundryText(
         processedItem.system.spend.text,
         monster
       );
-      processedItem.system.spend.formattedText = `<strong class="malice-cost-emphasis">${processedItem.system.spend.value} Malice:</strong> ${spendText}`;
+
+      // If value exists, create formatted text with malice cost emphasis
+      if (processedItem.system.spend.value) {
+        processedItem.system.spend.formattedText = `<strong class="malice-cost-emphasis">${processedItem.system.spend.value} Malice:</strong> ${spendText}`;
+      } else {
+        // Even without a value, process the text for formatting
+        processedItem.system.spend.text = spendText;
+      }
     }
 
     return processedItem;
@@ -484,5 +666,6 @@ export {
   processFoundryText,
   processPowerRollFormula,
   flattenPowerEffects,
-  processMonsterText
+  processMonsterText,
+  extractTableToTiers
 };

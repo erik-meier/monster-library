@@ -312,7 +312,7 @@
           ]
         },
         "effect": {
-          "text": "<p>A target who has p&lt;2 is reduced to 1 Stamina if they are winded after taking this damage.</p>"
+          "text": "<p>A target who has <strong class=\"potency-value\">P&lt;2</strong> is reduced to 1 Stamina if they are winded after taking this damage.</p>"
         },
         "spend": {
           "text": "",

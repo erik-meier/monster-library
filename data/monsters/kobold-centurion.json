@@ -256,7 +256,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>A target who has P &lt; 2 is taunted (save ends). Each ally within distance can make a <span class=\"damage-value damage-generic\">2</span> damage free strike. Additionally, until the end of the encounter, the centurion has damage immunity 2.</p>"
+          "text": "<p>A target who has <strong class=\"potency-value\">P&lt;2</strong> is taunted (save ends). Each ally within distance can make a <span class=\"damage-value damage-generic\">2</span> damage free strike. Additionally, until the end of the encounter, the centurion has damage immunity 2.</p>"
         },
         "spend": {
           "text": "",

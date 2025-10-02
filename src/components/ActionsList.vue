@@ -38,13 +38,13 @@
                 </svg>
                 Range: {{ formatActionDistance(action.system.distance) }}
               </span>
-              <span v-if="formatActionTargets(action.system.target)" class="action-target">
+              <span v-if="formatActionTargets(action.system.target, monster?.organization)" class="action-target">
                 <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                   <circle cx="12" cy="12" r="10" />
                   <circle cx="12" cy="12" r="6" />
                   <circle cx="12" cy="12" r="2" />
                 </svg>
-                Target: {{ formatActionTargets(action.system.target) }}
+                Target: {{ formatActionTargets(action.system.target, monster?.organization) }}
               </span>
             </div>
           </div>
@@ -321,6 +321,15 @@ export default {
   font-weight: var(--font-weight-semibold);
 }
 
+.action-effect-text :deep(.potency-value) {
+  font-weight: bold;
+  color: #2563eb;
+  background: #dbeafe;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
 .action-spend {
   margin: var(--space-3) 0;
   padding: var(--space-3);
@@ -339,6 +348,15 @@ export default {
   color: var(--color-primary-600);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-base);
+}
+
+.action-spend :deep(.potency-value) {
+  font-weight: bold;
+  color: #2563eb;
+  background: #dbeafe;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
 }
 
 .action-description :deep(em) {

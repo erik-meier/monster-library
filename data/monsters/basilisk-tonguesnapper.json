@@ -38,7 +38,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Any creature who starts their turn adjacent to the tonguesnapper and has M &lt; 1 is slowed (save ends).</p>",
+          "value": "<p>Any creature who starts their turn adjacent to the tonguesnapper and has <strong class=\"potency-value\">M&lt;1</strong> is slowed (save ends).</p>",
           "director": ""
         }
       }
@@ -231,7 +231,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">4</span> acid damage. Any target who has M &lt; 2 is also slowed (save ends).</p>"
+          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">4</span> acid damage. Any target who has <strong class=\"potency-value\">M&lt;2</strong> is also slowed (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -293,15 +293,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; 0 damage"
+              "display": "4 damage"
             },
             {
               "tier": 2,
-              "display": "4 damage; 2 damage; Prone"
+              "display": "4 damage; <strong class=\"potency-value\">A&lt;1</strong> 2 damage; Prone"
             },
             {
               "tier": 3,
-              "display": "4 damage; 5 damage; prone and can't stand (save ends)"
+              "display": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> 5 damage; prone and can't stand (save ends)"
             }
           ]
         },

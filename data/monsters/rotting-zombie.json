@@ -37,7 +37,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>When the rotting zombie is reduced to 0 Stamina, their space is difficult terrain. The first time any enemy who has M &lt;2 enters this space, they are slowed (save ends) and the effect ends.</p>",
+          "value": "<p>When the rotting zombie is reduced to 0 Stamina, their space is difficult terrain. The first time any enemy who has <strong class=\"potency-value\">M&lt;2</strong> enters this space, they are slowed (save ends) and the effect ends.</p>",
           "director": ""
         }
       }

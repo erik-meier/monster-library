@@ -63,7 +63,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Once per turn, the dragon can shift up to their speed, leaving behind a 4 cube area of magical darkness in their starting space that lasts until the end of the encounter. The dragon ignores concealment created by this darkness. Any enemy who ends their turn in the area and has I &lt; 3 is frightened of the dragon until the end of their next turn.</p>",
+          "value": "<p>Once per turn, the dragon can shift up to their speed, leaving behind a 4 cube area of magical darkness in their starting space that lasts until the end of the encounter. The dragon ignores concealment created by this darkness. Any enemy who ends their turn in the area and has <strong class=\"potency-value\">I&lt;3</strong> is frightened of the dragon until the end of their next turn.</p>",
           "director": ""
         }
       }
@@ -190,7 +190,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each target must be dragonsealed. Each target takes <span class=\"damage-value damage-generic\">3</span> psychic damage, and if they have I &lt; 3 they immediately make a free strike against one ally of the dragon's choice.</p>"
+          "text": "<p>Each target must be dragonsealed. Each target takes <span class=\"damage-value damage-generic\">3</span> psychic damage, and if they have <strong class=\"potency-value\">I&lt;3</strong> they immediately make a free strike against one ally of the dragon's choice.</p>"
         },
         "spend": {
           "text": "",
@@ -324,7 +324,7 @@
           ]
         },
         "effect": {
-          "text": "<p>Each target must be dragonsealed. Any target who has I &lt; 3 is also dazed (save ends).</p>"
+          "text": "<p>Each target must be dragonsealed. Any target who has <strong class=\"potency-value\">I&lt;3</strong> is also dazed (save ends).</p>"
         },
         "spend": {
           "text": "",

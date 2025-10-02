@@ -177,7 +177,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The target takes <span class=\"damage-value damage-generic\">6</span> damage, and if they have A &lt; 2, they are bleeding (save ends).</p>"
+          "text": "<p>The target takes <span class=\"damage-value damage-generic\">6</span> damage, and if they have <strong class=\"potency-value\">A&lt;2</strong>, they are bleeding (save ends).</p>"
         },
         "spend": {
           "text": "",

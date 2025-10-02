@@ -1,0 +1,388 @@
+{
+  "id": "war-dog-tetrarch",
+  "name": "War Dog Tetrarch",
+  "level": 6,
+  "ev": 32,
+  "role": "",
+  "organization": "Leader",
+  "keywords": [
+    "humanoid",
+    "soulless"
+  ],
+  "size": {
+    "value": 1,
+    "letter": "M"
+  },
+  "speed": 7,
+  "stamina": 180,
+  "stability": 2,
+  "freeStrike": 7,
+  "characteristics": {
+    "might": 4,
+    "agility": 3,
+    "reason": 2,
+    "intuition": 3,
+    "presence": 4
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "name": "End Effect",
+      "type": "feature",
+      "system": {
+        "keywords": [],
+        "power": null,
+        "description": {
+          "value": "<p>At the end of each of their turns, the tetrarch can take <span class=\"damage-value damage-generic\">10</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
+          "director": ""
+        }
+      }
+    },
+    {
+      "name": "Houndblade",
+      "type": "ability",
+      "system": {
+        "category": "signature",
+        "type": "main",
+        "resource": null,
+        "keywords": [
+          "charge",
+          "melee",
+          "ranged",
+          "strike",
+          "weapon"
+        ],
+        "distance": {
+          "type": "meleeRanged",
+          "primary": 1,
+          "secondary": 3
+        },
+        "target": {
+          "type": "creatureObject",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "11 damage"
+            },
+            {
+              "tier": 2,
+              "display": "16 damage; taunted (EoT)"
+            },
+            {
+              "tier": 3,
+              "display": "19 damage; taunted (EoT)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>A creature taunted this way takes a bane on strikes.</p><p><span class=\"roll-formula\">1d3</span>{1d3 recovery loss}</p>"
+        },
+        "spend": {
+          "text": "Each target loses 1d3 Recoveries.",
+          "value": 3,
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Each target loses 1d3 Recoveries."
+        }
+      }
+    },
+    {
+      "name": "Get Them, You Dolts!",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 1,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creature",
+          "value": 3
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Note: Costs 1 Malice per target</p><p>Each target shifts up to their speed and can make a free strike. If the free strike targets an enemy taunted by the tetrarch, it deals an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Sneering Disregard",
+      "type": "ability",
+      "system": {
+        "category": "",
+        "type": "triggered",
+        "resource": null,
+        "keywords": [
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10
+        },
+        "target": {
+          "type": "creature",
+          "value": 1
+        },
+        "trigger": "A creature within distance who is not taunted by the tetrarch targets the tetrarch with a power roll.",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The power roll has a double bane. If the target obtains a tier 1 outcome, the tetrarch ignores any of the power roll's effects other than damage and the target is frightened of the tetrarch (save ends).</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Enter the Fray",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area"
+        ],
+        "distance": {
+          "type": "burst",
+          "primary": 2
+        },
+        "target": {
+          "type": "enemy",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "push 2; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
+            },
+            {
+              "tier": 2,
+              "display": "push 4; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "push 5; <strong class=\"potency-value\">I&lt;4</strong> frightened (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The tetrarch can jump up to 7 squares before using this ability.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Lay Waste",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "area",
+          "ranged",
+          "weapon"
+        ],
+        "distance": {
+          "type": "cube",
+          "primary": 2,
+          "secondary": 20
+        },
+        "target": {
+          "type": "creature",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 fire damage; <strong class=\"potency-value\">A&lt;2</strong> slowed (EoT)"
+            },
+            {
+              "tier": 2,
+              "display": "13 fire damage; <strong class=\"potency-value\">A&lt;3</strong> slowed (save ends)"
+            },
+            {
+              "tier": 3,
+              "display": "16 fire damage; <strong class=\"potency-value\">A&lt;4</strong> slowed (save ends)"
+            }
+          ]
+        },
+        "effect": {
+          "text": "<p>The area is set ablaze until the end of the encounter. While ablaze, the area is difficult terrain, and any creature takes <span class=\"damage-value damage-generic\">2</span> fire damage for each square in the area they enter for the first time in a round</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "You Would Dare?!",
+      "type": "ability",
+      "system": {
+        "category": "villain",
+        "type": "villain",
+        "resource": null,
+        "keywords": [
+          "-"
+        ],
+        "distance": {
+          "type": "self"
+        },
+        "target": {
+          "type": "self",
+          "value": null
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": [
+              "might"
+            ]
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>Until the end of the encounter, the tetrarch has damage immunity 2, and their Houndblade ability targets three creatures or objects.</p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Prior Malice Features",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "none",
+        "resource": null,
+        "keywords": [],
+        "distance": {
+          "type": "special"
+        },
+        "target": {
+          "type": "special"
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    },
+    {
+      "name": "Loyalty Unto Death",
+      "type": "ability",
+      "system": {
+        "category": "heroic",
+        "type": "maneuver",
+        "resource": 5,
+        "keywords": [
+          "magic",
+          "ranged"
+        ],
+        "distance": {
+          "type": "ranged",
+          "primary": 10,
+          "secondary": null
+        },
+        "target": {
+          "type": "ally",
+          "value": 2
+        },
+        "trigger": "",
+        "power": {
+          "roll": {
+            "formula": "2d10 + 4",
+            "characteristics": []
+          },
+          "effects": {}
+        },
+        "effect": {
+          "text": "<p><strong>Note:</strong> Targets Two War Dogs</p><p>Each target who has a loyalty collar shifts up to their speed, then is reduced to 0 Stamina. After each target’s Loyalty Collar trait is resolved, each enemy adjacent to either target makes a <strong>Presence test.</strong></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>Push 4; the enemy is frightened of the nearest non-minion war dog (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>Push 2; the enemy is frightened of the nearest non-minion war dog (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>"
+        },
+        "spend": {
+          "text": "",
+          "value": null
+        }
+      }
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "309",
+    "license": "Draw Steel Creator License"
+  }
+}

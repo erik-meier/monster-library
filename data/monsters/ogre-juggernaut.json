@@ -101,7 +101,7 @@
         "spend": {
           "text": "Each target who has m<1 is bleeding (save ends).",
           "value": 1,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> Each target who has m<1 is bleeding (save ends)."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> Each target who has <strong class=\"potency-value\">M&lt;1</strong> is bleeding (save ends)."
         }
       }
     },

@@ -126,7 +126,7 @@
         "spend": {
           "text": "If the target has P < 0, they are afflicted with lycanthropy. Each time the target is unaffected by the potency effect, the potency increases by 1 the next time the werewolf uses the ability against the same target. A creature afflicted with lycanthropy gains 2 rage at the end of each of their turns whenever they’re in combat. Their rage doesn’t disappear after finishing a respite, and they must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect.",
           "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If the target has P < 0, they are afflicted with lycanthropy. Each time the target is unaffected by the potency effect, the potency increases by 1 the next time the werewolf uses the ability against the same target. A creature afflicted with lycanthropy gains 2 rage at the end of each of their turns whenever they’re in combat. Their rage doesn’t disappear after finishing a respite, and they must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If the target has <strong class=\"potency-value\">P&lt;0</strong>, they are afflicted with lycanthropy. Each time the target is unaffected by the potency effect, the potency increases by 1 the next time the werewolf uses the ability against the same target. A creature afflicted with lycanthropy gains 2 rage at the end of each of their turns whenever they’re in combat. Their rage doesn’t disappear after finishing a respite, and they must complete the Find a Cure downtime project in Draw Steel: Heroes to end this effect."
         }
       }
     },
@@ -252,7 +252,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The werewolf jumps up to 4 squares. If they end this jump at a wall, the werewolf jumps off the wall up to 4 squares and can make a melee free strike. If the target of the free strike has m&lt;2, they are knocked prone.</p>"
+          "text": "<p>The werewolf jumps up to 4 squares. If they end this jump at a wall, the werewolf jumps off the wall up to 4 squares and can make a melee free strike. If the target of the free strike has <strong class=\"potency-value\">M&lt;2</strong>, they are knocked prone.</p>"
         },
         "spend": {
           "text": "",

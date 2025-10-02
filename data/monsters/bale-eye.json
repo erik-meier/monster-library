@@ -105,7 +105,7 @@
         "spend": {
           "text": "If the target has i<2, they have corruption weakness 5  (save ends).",
           "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If the target has i<2, they have corruption weakness 5  (save ends)."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If the target has <strong class=\"potency-value\">I&lt;2</strong>, they have corruption weakness 5  (save ends)."
         }
       }
     },
