@@ -30,13 +30,9 @@
 
           <div class="form-group">
             <label for="ability-type" class="form-label required">Type</label>
-            <select id="ability-type" v-model="formData.type" class="form-select" :class="{ invalid: errors.type }"
-              @change="onTypeChange" :aria-invalid="!!errors.type"
-              :aria-describedby="errors.type ? 'ability-type-error' : undefined" required>
-              <option value="ability">Ability (Active)</option>
-              <option value="feature">Feature (Passive)</option>
-            </select>
-            <div v-if="errors.type" id="ability-type-error" class="error-message" role="alert">{{ errors.type }}</div>
+            <div class="type-display" title="Type is set when creating and cannot be changed">
+              {{ formData.type === 'ability' ? 'Ability (Active)' : 'Feature (Passive)' }}
+            </div>
           </div>
         </div>
       </CollapsibleSection>
@@ -474,62 +470,6 @@ const validateFields = () => {
   } else {
     errors.description = ''
   }
-}
-
-const onTypeChange = () => {
-  isInternalUpdate = true
-
-  nextTick(() => {
-    if (formData.type === 'feature') {
-      // Initialize feature fields
-      formData.system = {
-        keywords: formData.system.keywords || [],
-        power: null,
-        description: {
-          value: formData.system.description?.value || '',
-          director: formData.system.description?.director || ''
-        }
-      }
-    } else {
-      // Initialize ability fields
-      formData.system = {
-        keywords: formData.system.keywords || [],
-        category: formData.system.category || '',
-        type: formData.system.type || 'main',
-        resource: formData.system.resource || null,
-        distance: formData.system.distance || {
-          type: 'melee',
-          primary: 1
-        },
-        target: formData.system.target || {
-          type: 'creatureObject',
-          value: 1
-        },
-        trigger: formData.system.trigger || '',
-        power: formData.system.power || {
-          roll: {
-            formula: '2d10',
-            characteristics: ['might']
-          },
-          tiers: [
-            { tier: 1, display: '' },
-            { tier: 2, display: '' },
-            { tier: 3, display: '' }
-          ]
-        },
-        effect: formData.system.effect || {
-          text: ''
-        },
-        spend: formData.system.spend || {
-          text: '',
-          value: null
-        }
-      }
-    }
-
-    validateFields()
-    isInternalUpdate = false
-  })
 }
 
 
@@ -1048,6 +988,16 @@ validateFields()
   font-size: var(--font-size-sm);
   margin-top: var(--space-1);
   line-height: var(--line-height-relaxed);
+}
+
+.type-display {
+  padding: 0.5rem;
+  background: var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--color-neutral-700);
+  font-weight: var(--font-weight-medium);
 }
 
 /* Mobile responsiveness */
