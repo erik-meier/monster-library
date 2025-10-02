@@ -212,6 +212,72 @@ function processForcedPlaceholders(text, forcedData) {
   return text.replace(/\{\{forced\}\}/g, forcedText);
 }
 
+/**
+ * Extract HTML table with power roll results and convert to tier structure
+ * Used for malice features that have power roll results in table format
+ */
+function extractTableToTiers(htmlText) {
+  if (!htmlText) return { tiers: [], cleanText: htmlText };
+
+  // Look for table with tbody structure
+  const tableRegex = /<table[^>]*>[\s\S]*?<tbody[^>]*>([\s\S]*?)<\/tbody>[\s\S]*?<\/table>/i;
+  const tableMatch = htmlText.match(tableRegex);
+
+  if (!tableMatch) {
+    return { tiers: [], cleanText: htmlText };
+  }
+
+  const tableContent = tableMatch[1];
+  const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+  const rows = [];
+  let rowMatch;
+
+  while ((rowMatch = rowRegex.exec(tableContent)) !== null) {
+    rows.push(rowMatch[1]);
+  }
+
+  const tiers = [];
+
+  rows.forEach((rowHtml, index) => {
+    // Extract cells from the row
+    const cellRegex = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+    const cells = [];
+    let cellMatch;
+
+    while ((cellMatch = cellRegex.exec(rowHtml)) !== null) {
+      // Clean up the cell content - remove paragraph tags and spans but keep inner text
+      let cellContent = cellMatch[1];
+
+      // Remove paragraph tags but keep content
+      cellContent = cellContent.replace(/<\/?p[^>]*>/gi, '');
+
+      // Handle damage spans by extracting just the number
+      cellContent = cellContent.replace(/<span class="damage-value[^"]*">(\d+)<\/span>/gi, '$1');
+
+      // Remove any other HTML tags but keep content
+      cellContent = cellContent.replace(/<[^>]+>/gi, '');
+
+      // Clean up whitespace
+      cellContent = cellContent.trim();
+
+      cells.push(cellContent);
+    }
+
+    // Assume the second cell contains the effect description
+    if (cells.length >= 2 && cells[1].trim()) {
+      tiers.push({
+        tier: index + 1,
+        display: cells[1].trim()
+      });
+    }
+  });
+
+  // Remove the table from the original text
+  const cleanText = htmlText.replace(tableRegex, '').trim();
+
+  return { tiers, cleanText };
+}
+
 
 /**
  * Comprehensive text processing function that applies all transformations
@@ -260,7 +326,36 @@ function processPowerRollFormula(formula, monster) {
  * Flatten power effects structure into simple tier display arrays
  */
 function flattenPowerEffects(item, monster) {
-  if (!item.system?.power?.effects && !item.system?.power?.tiers) {
+  // Check if this item has table-based power results in effect text
+  const hasTableInEffect = item.system?.effect?.text && item.system.effect.text.includes('<table');
+  const hasEmptyEffects = !item.system?.power?.effects || Object.keys(item.system.power.effects).length === 0;
+  const hasNoTiers = !item.system?.power?.tiers;
+
+  // If we have a table in effect text and no existing power effects/tiers, extract the table
+  if (hasTableInEffect && hasEmptyEffects && hasNoTiers && item.system.power) {
+    const tableExtraction = extractTableToTiers(item.system.effect.text);
+
+    if (tableExtraction.tiers.length > 0) {
+      // Create new item with extracted tiers and cleaned effect text
+      const newItem = { ...item };
+      newItem.system = { ...item.system };
+      newItem.system.power = { ...item.system.power };
+      newItem.system.effect = { ...item.system.effect };
+
+      newItem.system.power.tiers = tableExtraction.tiers;
+      newItem.system.effect.text = tableExtraction.cleanText;
+
+      return newItem;
+    }
+  }
+
+  // Only return early if there's truly nothing to process (no power structure at all)
+  if (!item.system?.power) {
+    return item;
+  }
+
+  // If no effects and no tiers, but also no table to extract, return early
+  if (!item.system.power.effects && !item.system.power.tiers && !hasTableInEffect) {
     return item;
   }
 
@@ -444,9 +539,10 @@ function processMonsterText(monster) {
 
   // Process all items (abilities, features, etc.)
   processedMonster.items = processedMonster.items.map(item => {
-    // First, flatten power effects if they exist, OR process existing tiers
+    // First, flatten power effects if they exist, OR process existing tiers, OR extract tables
     let processedItem = item;
-    if (item.system?.power?.effects || item.system?.power?.tiers) {
+    const hasTableToExtract = item.system?.effect?.text && item.system.effect.text.includes('<table');
+    if (item.system?.power?.effects || item.system?.power?.tiers || (item.system?.power && hasTableToExtract)) {
       processedItem = flattenPowerEffects(item, monster);
     }
 
@@ -523,5 +619,6 @@ export {
   processFoundryText,
   processPowerRollFormula,
   flattenPowerEffects,
-  processMonsterText
+  processMonsterText,
+  extractTableToTiers
 };

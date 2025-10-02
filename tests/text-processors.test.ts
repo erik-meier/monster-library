@@ -13,7 +13,8 @@ import {
   processForcedPlaceholders,
   processFoundryText,
   processPowerRollFormula,
-  flattenPowerEffects
+  flattenPowerEffects,
+  extractTableToTiers
 } from '../scripts/text-processors.js';
 
 describe('Text Processing Functions', () => {
@@ -402,7 +403,181 @@ describe('Text Processing Functions', () => {
     });
   });
 
+  describe('extractTableToTiers', () => {
+    it('should extract HTML table with power roll results to tier structure', () => {
+      const htmlWithTable = `<p>Each angulotl makes an <strong>Intuition test.</strong></p>
+        <table><tbody>
+          <tr><td><p>11 or less</p></td><td><p>5 sonic damage; slowed (EoT)</p></td></tr>
+          <tr><td><p>12-16</p></td><td><p>4 sonic damage</p></td></tr>
+          <tr><td><p>17+</p></td><td><p>No effect.</p></td></tr>
+        </tbody></table>`;
+
+      const result = extractTableToTiers(htmlWithTable);
+      
+      expect(result.tiers).toBeDefined();
+      expect(result.tiers).toHaveLength(3);
+      expect(result.tiers[0]).toEqual({ tier: 1, display: '5 sonic damage; slowed (EoT)' });
+      expect(result.tiers[1]).toEqual({ tier: 2, display: '4 sonic damage' });
+      expect(result.tiers[2]).toEqual({ tier: 3, display: 'No effect.' });
+      expect(result.cleanText).toBe('<p>Each angulotl makes an <strong>Intuition test.</strong></p>');
+    });
+
+    it('should handle table with damage spans correctly', () => {
+      const htmlWithSpans = `<p>Roll test:</p>
+        <table><tbody>
+          <tr><td><p>11 or less</p></td><td><p><span class="damage-value damage-generic">5</span> sonic damage; slowed (EoT)</p></td></tr>
+          <tr><td><p>12-16</p></td><td><p><span class="damage-value damage-generic">4</span> sonic damage</p></td></tr>
+          <tr><td><p>17+</p></td><td><p>No effect.</p></td></tr>
+        </tbody></table>`;
+
+      const result = extractTableToTiers(htmlWithSpans);
+      
+      expect(result.tiers).toHaveLength(3);
+      expect(result.tiers[0].display).toBe('5 sonic damage; slowed (EoT)');
+      expect(result.tiers[1].display).toBe('4 sonic damage');
+    });
+
+    it('should handle table with varying number of rows', () => {
+      const htmlWithTwoRows = `<p>Simple test:</p>
+        <table><tbody>
+          <tr><td><p>Failure</p></td><td><p>Take damage</p></td></tr>
+          <tr><td><p>Success</p></td><td><p>No effect</p></td></tr>
+        </tbody></table>`;
+
+      const result = extractTableToTiers(htmlWithTwoRows);
+      
+      expect(result.tiers).toHaveLength(2);
+      expect(result.tiers[0]).toEqual({ tier: 1, display: 'Take damage' });
+      expect(result.tiers[1]).toEqual({ tier: 2, display: 'No effect' });
+    });
+
+    it('should handle malformed table gracefully', () => {
+      const htmlWithBadTable = `<p>Test</p><table><tr><td>Missing tbody</td></tr></table>`;
+      
+      const result = extractTableToTiers(htmlWithBadTable);
+      
+      expect(result.tiers).toHaveLength(0);
+      expect(result.cleanText).toBe('<p>Test</p><table><tr><td>Missing tbody</td></tr></table>');
+    });
+
+    it('should return original text if no table present', () => {
+      const htmlWithoutTable = '<p>No table here, just regular text.</p>';
+      
+      const result = extractTableToTiers(htmlWithoutTable);
+      
+      expect(result.tiers).toHaveLength(0);
+      expect(result.cleanText).toBe(htmlWithoutTable);
+    });
+
+    it('should handle empty or null input', () => {
+      expect(extractTableToTiers('')).toEqual({ tiers: [], cleanText: '' });
+      expect(extractTableToTiers(null)).toEqual({ tiers: [], cleanText: null });
+      expect(extractTableToTiers(undefined)).toEqual({ tiers: [], cleanText: undefined });
+    });
+  });
+
   describe('flattenPowerEffects', () => {
+    describe('table extraction integration', () => {
+      it('should extract table from effect text and create tiers when no power effects exist', () => {
+        const itemWithTable = {
+          system: {
+            effect: {
+              text: `<p>Each angulotl makes an <strong>Intuition test.</strong></p>
+                <table><tbody>
+                  <tr><td><p>11 or less</p></td><td><p>5 sonic damage; slowed (EoT)</p></td></tr>
+                  <tr><td><p>12-16</p></td><td><p>4 sonic damage</p></td></tr>
+                  <tr><td><p>17+</p></td><td><p>No effect.</p></td></tr>
+                </tbody></table>`
+            },
+            power: {
+              roll: { formula: '2d10 + 2', characteristics: [] },
+              effects: {}
+            }
+          }
+        };
+
+        const result = flattenPowerEffects(itemWithTable, sampleMonster);
+        
+        expect(result.system.power.tiers).toBeDefined();
+        expect(result.system.power.tiers).toHaveLength(3);
+        expect(result.system.power.tiers[0]).toEqual({ tier: 1, display: '5 sonic damage; slowed (EoT)' });
+        expect(result.system.power.tiers[1]).toEqual({ tier: 2, display: '4 sonic damage' });
+        expect(result.system.power.tiers[2]).toEqual({ tier: 3, display: 'No effect.' });
+        expect(result.system.effect.text).toBe('<p>Each angulotl makes an <strong>Intuition test.</strong></p>');
+      });
+
+      it('should not extract table if power effects already exist', () => {
+        const itemWithBothTableAndEffects = {
+          system: {
+            effect: {
+              text: `<p>Test</p><table><tbody><tr><td>11 or less</td><td>5 damage</td></tr></tbody></table>`
+            },
+            power: {
+              roll: { formula: '2d10 + 2', characteristics: [] },
+              effects: {
+                'existing': {
+                  type: 'damage',
+                  damage: {
+                    tier1: { value: '3', types: ['fire'] }
+                  }
+                }
+              }
+            }
+          }
+        };
+
+        const result = flattenPowerEffects(itemWithBothTableAndEffects, sampleMonster);
+        
+        // Should process existing effects, not extract table
+        expect(result.system.power.tiers).toBeDefined();
+        expect(result.system.power.tiers[0].display).toContain('3 fire damage');
+        // Table should remain in effect text since effects took precedence
+        expect(result.system.effect.text).toContain('<table>');
+      });
+
+      it('should handle real Angulotl Cleaver Resonating Croak ability correctly', () => {
+        const resonatingCroakItem = {
+          name: "Resonating Croak",
+          type: "ability",
+          system: {
+            category: "heroic",
+            type: "none",
+            resource: 5,
+            keywords: [],
+            distance: { type: "special" },
+            target: { type: "special" },
+            trigger: "",
+            power: {
+              roll: {
+                formula: "2d10 + 2",
+                characteristics: []
+              },
+              effects: {}
+            },
+            effect: {
+              text: `<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth="103"><p>11 or less</p></td><td><p><span class="damage-value damage-generic">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth="103"><p>12-16</p></td><td><p><span class="damage-value damage-generic">4</span> sonic damage</p></td></tr><tr><td data-colwidth="103"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>`
+            },
+            spend: {
+              text: "",
+              value: null
+            }
+          }
+        };
+
+        const result = flattenPowerEffects(resonatingCroakItem, sampleMonster);
+
+        expect(result.system.power.tiers).toBeDefined();
+        expect(result.system.power.tiers).toHaveLength(3);
+        expect(result.system.power.tiers[0]).toEqual({ tier: 1, display: '5 sonic damage; slowed (EoT)' });
+        expect(result.system.power.tiers[1]).toEqual({ tier: 2, display: '4 sonic damage' });
+        expect(result.system.power.tiers[2]).toEqual({ tier: 3, display: 'No effect.' });
+        
+        // Check that table was removed from effect text but description remains
+        expect(result.system.effect.text).toBe('<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p>');
+        expect(result.system.effect.text).not.toContain('<table>');
+      });
+    });
+
     describe('named damage effects with potency', () => {
       it('should process named damage effect with agility potency correctly', () => {
         const item = {
