@@ -104,8 +104,11 @@
 
       <section class="about-section">
         <h2>🎨 Art Credits</h2>
-        <a href="https://www.flaticon.com/free-icons/cauldron" title="cauldron icons">Cauldron icons created by Ashok
-          creative - Flaticon</a>
+        <p><a href="https://www.flaticon.com/free-icons/cauldron" title="cauldron icons">Cauldron icons created by
+            Ashok
+            creative - Flaticon</a></p>
+        <p><a href="https://mrmattdollar.itch.io/draw-steel-symbols-font" title="Draw Steel Glyphs">Draw Steel Glyphs
+            by MrMattDollar</a></p>
       </section>
 
       <section class="about-section">

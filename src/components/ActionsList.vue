@@ -13,8 +13,10 @@
         <div class="action-header">
           <div class="action-title-row">
             <h4 class="action-name">
-              {{ action.name }}
+              <img v-if="getActionIcon(action)" :src="getActionIcon(action)" :alt="getActionIconAlt(action)"
+                class="action-type-icon" />
               <span v-if="action.type === 'feature'" class="feature-badge">★</span>
+              {{ action.name }}
               <span v-if="action.system.category === 'signature'" class="signature-badge">SIGNATURE</span>
               <span v-if="action.system.resource" class="malice-cost">{{ action.system.resource }} Malice</span>
             </h4>
@@ -33,18 +35,12 @@
             </div>
             <div class="action-mechanics">
               <span v-if="formatActionDistance(action.system.distance)" class="action-distance">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L13.09 8.26L22 9L13.09 15.74L12 22L10.91 15.74L2 9L10.91 8.26L12 2Z" />
-                </svg>
-                Range: {{ formatActionDistance(action.system.distance) }}
+                <img src="/assets/distance.svg" alt="Distance" class="icon" />
+                {{ formatActionDistance(action.system.distance) }}
               </span>
               <span v-if="formatActionTargets(action.system.target, monster?.organization)" class="action-target">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <circle cx="12" cy="12" r="10" />
-                  <circle cx="12" cy="12" r="6" />
-                  <circle cx="12" cy="12" r="2" />
-                </svg>
-                Target: {{ formatActionTargets(action.system.target, monster?.organization) }}
+                <img src="/assets/target.svg" alt="Target" class="icon" />
+                {{ formatActionTargets(action.system.target, monster?.organization) }}
               </span>
             </div>
           </div>
@@ -143,6 +139,83 @@ export default {
     formatDescription(description) {
       // Text is now pre-processed in the data pipeline, so just return as-is
       return description;
+    },
+    getActionIcon(action) {
+      if (!action.system) return null;
+
+      // Check for triggered actions first
+      if (action.system.type === 'triggered' || action.system.type === 'freeTriggered') {
+        return '/assets/triggered-action.svg';
+      }
+
+      // Check for villain actions
+      if (action.system.type === 'villain') {
+        return '/assets/villain-action.svg';
+      }
+
+      // Check distance-based icons
+      if (action.system.distance && action.system.distance.type) {
+        const distance = action.system.distance.type.toLowerCase();
+
+        // Self distance
+        if (distance === 'self') {
+          return '/assets/self.svg';
+        }
+
+        // Melee or ranged
+        if (distance.includes('melee') || distance.includes('ranged')) {
+          return '/assets/melee-or-ranged.svg';
+        }
+
+        // Area effects
+        if (distance.includes('burst') || distance.includes('aura')) {
+          return '/assets/burst-aura.svg';
+        }
+
+        if (distance.includes('cube') || distance.includes('line') || distance.includes('wall')) {
+          return '/assets/cube-line-wall.svg';
+        }
+
+        // Other distance types
+        return '/assets/unique-distance.svg';
+      }
+
+      return null;
+    },
+    getActionIconAlt(action) {
+      if (!action.system) return '';
+
+      if (action.system.type === 'triggered' || action.system.type === 'freeTriggered') {
+        return 'Triggered Action';
+      }
+
+      if (action.system.type === 'villain') {
+        return 'Villain Action';
+      }
+
+      if (action.system.distance && action.system.distance.type) {
+        const distance = action.system.distance.type;
+
+        if (distance === 'self') {
+          return 'Self';
+        }
+
+        if (distance.includes('melee') && distance.includes('ranged')) {
+          return 'Melee or Ranged';
+        }
+
+        if (distance.includes('burst') || distance.includes('aura')) {
+          return 'Burst or Aura';
+        }
+
+        if (distance.includes('cube') || distance.includes('line') || distance.includes('wall')) {
+          return 'Area Effect';
+        }
+
+        return 'Distance Effect';
+      }
+
+      return 'Action';
     }
   }
 }
@@ -202,6 +275,13 @@ export default {
   align-items: center;
   gap: var(--space-2);
   flex: 1;
+}
+
+.action-type-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  opacity: 0.8;
 }
 
 .feature-badge {
@@ -286,9 +366,9 @@ export default {
 }
 
 .icon {
-  width: 14px;
-  height: 14px;
-  opacity: 0.7;
+  width: 18px;
+  height: 18px;
+  opacity: 1;
 }
 
 .action-trigger {
