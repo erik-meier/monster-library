@@ -161,15 +161,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 damage; <strong class=\"potency-value\">A&lt;3</strong> 3 damage"
+              "display": "3 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> 3 damage"
             },
             {
               "tier": 2,
-              "display": "6 damage; push 3; <strong class=\"potency-value\">A&lt;4</strong> 4 damage"
+              "display": "6 damage; push 3; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> 4 damage"
             },
             {
               "tier": 3,
-              "display": "7 damage; prone; <strong class=\"potency-value\">A&lt;5</strong> 5 damage; and restrained (save ends)"
+              "display": "7 damage; prone; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> 5 damage; and restrained (save ends)"
             }
           ]
         },

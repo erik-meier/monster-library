@@ -85,15 +85,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (EoT)"
+              "display": "9 damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> dazed (EoT)"
             },
             {
               "tier": 2,
-              "display": "14 damage; <strong class=\"potency-value\">R&lt;2</strong> dazed (save ends)"
+              "display": "14 damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "17 damage; <strong class=\"potency-value\">R&lt;3</strong> dazed and restrained (save ends)"
+              "display": "17 damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> dazed and restrained (save ends)"
             }
           ]
         },
@@ -290,15 +290,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; the null shifts up to 3 squares; <strong class=\"potency-value\">A&lt;1</strong> 6 damage"
+              "display": "9 damage; the null shifts up to 3 squares; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> 6 damage"
             },
             {
               "tier": 2,
-              "display": "14 damage; the null shifts up to 4 squares; <strong class=\"potency-value\">A&lt;2</strong> 11 damage"
+              "display": "14 damage; the null shifts up to 4 squares; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> 11 damage"
             },
             {
               "tier": 3,
-              "display": "17 damage; the null shifts up to 5 squares; <strong class=\"potency-value\">A&lt;3</strong> 11 damage"
+              "display": "17 damage; the null shifts up to 5 squares; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> 11 damage"
             }
           ]
         },

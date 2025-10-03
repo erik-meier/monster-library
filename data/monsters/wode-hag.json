@@ -84,15 +84,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 corruption damage; <strong class=\"potency-value\">A&lt;1</strong> weakened (save ends)"
+              "display": "9 corruption damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "13 corruption damage; <strong class=\"potency-value\">A&lt;2</strong> weakened (save ends)"
+              "display": "13 corruption damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 corruption damage; <strong class=\"potency-value\">A&lt;3</strong> weakened (save ends)"
+              "display": "16 corruption damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> weakened (save ends)"
             }
           ]
         },
@@ -134,15 +134,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 corruption damage; <strong class=\"potency-value\">P&lt;1</strong> 4 corruption damage"
+              "display": "5 corruption damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> 4 corruption damage"
             },
             {
               "tier": 2,
-              "display": "8 corruption damage; <strong class=\"potency-value\">P&lt;2</strong> 5 corruption damage"
+              "display": "8 corruption damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> 5 corruption damage"
             },
             {
               "tier": 3,
-              "display": "10 corruption damage; <strong class=\"potency-value\">P&lt;3</strong> 6 corruption damage"
+              "display": "10 corruption damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> 6 corruption damage"
             }
           ]
         },
@@ -223,15 +223,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "slide 2; <strong class=\"potency-value\">I&lt;1</strong> the slide is vertical"
+              "display": "slide 2; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> the slide is vertical"
             },
             {
               "tier": 2,
-              "display": "slide 3; <strong class=\"potency-value\">R&lt;2</strong> the slide is vertical, and the target is restrained (EoT)"
+              "display": "slide 3; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> the slide is vertical, and the target is restrained (EoT)"
             },
             {
               "tier": 3,
-              "display": "vertical slide 5; <strong class=\"potency-value\">R&lt;3</strong> restrained (EoT)"
+              "display": "vertical slide 5; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> restrained (EoT)"
             }
           ]
         },
@@ -287,7 +287,7 @@
           ]
         },
         "effect": {
-          "text": "<p>The hag attaches an ornate explosive pastry to each target who has <strong class=\"potency-value\">A&lt;2</strong>. At the end of the round, the hag makes one power roll against each creature with a pastry attached to them.</p><p></p> <p>Special: A creature wearing a pastry or adjacent to a creature wearing a pastry can attempt an Agility test to remove the pastry as a maneuver.</p><table><tbody><tr><td data-colwidth=\"109\"><p>11 or less</p></td><td><p>The hag makes the power roll for all pastries.</p></td></tr><tr><td data-colwidth=\"109\"><p>12-16</p></td><td><p>The pastry is not removed.</p></td></tr><tr><td data-colwidth=\"109\"><p>17+</p></td><td><p>The pastry is removed and can no longer explode.</p></td></tr></tbody></table>"
+          "text": "<p>The hag attaches an ornate explosive pastry to each target who has <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span>. At the end of the round, the hag makes one power roll against each creature with a pastry attached to them.</p><p></p> <p>Special: A creature wearing a pastry or adjacent to a creature wearing a pastry can attempt an Agility test to remove the pastry as a maneuver.</p><table><tbody><tr><td data-colwidth=\"109\"><p>11 or less</p></td><td><p>The hag makes the power roll for all pastries.</p></td></tr><tr><td data-colwidth=\"109\"><p>12-16</p></td><td><p>The pastry is not removed.</p></td></tr><tr><td data-colwidth=\"109\"><p>17+</p></td><td><p>The pastry is removed and can no longer explode.</p></td></tr></tbody></table>"
         },
         "spend": {
           "text": "",
@@ -364,15 +364,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 fire damage; <strong class=\"potency-value\">A&lt;1</strong> weakened (save ends)"
+              "display": "6 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 fire damage; <strong class=\"potency-value\">A&lt;2</strong> weakened (save ends)"
+              "display": "10 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "13 fire damage; <strong class=\"potency-value\">A&lt;3</strong> weakened (save ends)"
+              "display": "13 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> weakened (save ends)"
             }
           ]
         },
@@ -446,15 +446,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 cold/fire/lightning damage; <strong class=\"potency-value\">R&lt;1</strong> frightened (save ends)"
+              "display": "5 cold/fire/lightning damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 cold/fire/lightning damage; <strong class=\"potency-value\">R&lt;2</strong> frightened (save ends)"
+              "display": "8 cold/fire/lightning damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 cold/fire/lightning damage; <strong class=\"potency-value\">R&lt;3</strong> frightened (save ends)"
+              "display": "11 cold/fire/lightning damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> frightened (save ends)"
             }
           ]
         },

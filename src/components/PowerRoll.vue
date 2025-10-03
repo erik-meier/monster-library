@@ -2,7 +2,7 @@
   <div class="power-roll">
     <div v-if="tiers && tiers.length > 0" class="outcomes">
       <div v-for="tierData in tiers" :key="tierData.tier" class="outcome" :class="`tier-${tierData.tier}`">
-        <span class="tier-number">{{ formatTierNumber(tierData.tier) }}</span>
+        <span class="tier-number" v-html="formatTierNumber(tierData.tier)"></span>
         <span class="outcome-text" v-html="tierData.display"></span>
       </div>
     </div>
@@ -28,6 +28,11 @@ export default {
   },
   methods: {
     formatTierNumber(tier) {
+      // Use alternative tier SVG icons instead of text
+      if (tier >= 1 && tier <= 3) {
+        return `<img src="/assets/tier-${tier}-alt.svg" alt="Tier ${tier}" class="tier-icon" />`
+      }
+      // Fallback for invalid tier values
       const tierMap = { 1: '<=11', 2: '12-16', 3: '17+' }
       return tierMap[tier] || tier
     }
@@ -40,13 +45,13 @@ export default {
   background: var(--color-neutral-50);
   border: 1px solid var(--color-neutral-200);
   border-radius: var(--radius-md);
-  padding: var(--space-4);
+  padding: var(--space-2);
   margin: var(--space-2) 0;
 }
 
 .outcome {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: var(--space-2);
   padding: var(--space-2);
   border-radius: var(--radius-base);
@@ -70,34 +75,40 @@ export default {
 
 .tier-number {
   background: white;
-  color: var(--color-neutral-700);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xs);
   min-width: 3rem;
   height: 1.5rem;
-  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: var(--space-3);
   flex-shrink: 0;
-  border: 2px solid;
   padding: 0 var(--space-1);
 }
 
 .tier-1 .tier-number {
   border-color: var(--color-error-600);
   color: var(--color-error-600);
+  background: var(--color-error-50);
 }
 
 .tier-2 .tier-number {
   border-color: var(--color-warning-600);
   color: var(--color-warning-600);
+  background: var(--color-warning-50);
 }
 
 .tier-3 .tier-number {
   border-color: var(--color-success-600);
   color: var(--color-success-600);
+  background: var(--color-success-50);
+}
+
+.tier-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .outcome-text {
@@ -128,15 +139,47 @@ export default {
   margin-bottom: var(--space-1);
 }
 
-/* Potency value styling */
-.outcome-text :deep(.potency-value),
-.effect-text :deep(.potency-value) {
-  font-weight: var(--font-weight-bold);
-  color: #2563eb;
-  background: #dbeafe;
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--radius-sm);
-  font-size: var(--font-size-sm);
+/* Potency display styling */
+.outcome-text :deep(.potency-display),
+.effect-text :deep(.potency-display) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-weight: normal;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  vertical-align: middle;
+}
+
+.outcome-text :deep(.potency-char-icon),
+.effect-text :deep(.potency-char-icon) {
+  width: 1.38em;
+  height: 1.38em;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.outcome-text :deep(.potency-icon),
+.effect-text :deep(.potency-icon) {
+  width: 1.78em;
+  height: 1.78em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -0.24em;
+}
+
+.outcome-text :deep(.potency-fallback),
+.effect-text :deep(.potency-fallback) {
+  font-weight: normal;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
 }
 
 /* Damage type styling */

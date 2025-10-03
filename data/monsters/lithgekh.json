@@ -75,15 +75,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
+              "display": "9 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "12 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> frightened (save ends)"
+              "display": "12 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 corruption damage; <strong class=\"potency-value\">I&lt;5</strong> frightened (save ends)"
+              "display": "14 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> frightened (save ends)"
             }
           ]
         },

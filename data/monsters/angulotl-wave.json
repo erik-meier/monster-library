@@ -236,11 +236,11 @@
             },
             {
               "tier": 2,
-              "display": "4 holy damage; <strong class=\"potency-value\">R&lt;1</strong> the target is illuminated (save ends)"
+              "display": "4 holy damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> the target is illuminated (save ends)"
             },
             {
               "tier": 3,
-              "display": "5 holy damage; <strong class=\"potency-value\">R&lt;2</strong> the target is illuminated (save ends)"
+              "display": "5 holy damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> the target is illuminated (save ends)"
             }
           ]
         },

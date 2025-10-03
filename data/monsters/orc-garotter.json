@@ -252,11 +252,11 @@
             },
             {
               "tier": 2,
-              "display": "9 damage; <strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
+              "display": "9 damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 damage; grabbed; <strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
+              "display": "12 damage; grabbed; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> dazed (save ends)"
             }
           ]
         },
