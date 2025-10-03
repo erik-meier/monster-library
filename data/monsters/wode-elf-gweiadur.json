@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
+              "display": "14 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> restrained (save ends)"
             }
           ]
         },
@@ -127,15 +127,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; <strong class=\"potency-value\">R&lt;0</strong> the target is marked (save ends)"
+              "display": "4 damage; <span class=\"potency-fallback\">R&lt;0</span> the target is marked (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 damage; <strong class=\"potency-value\">R&lt;1</strong> slowed and the target is marked (save ends)"
+              "display": "6 damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> slowed and the target is marked (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; <strong class=\"potency-value\">R&lt;2</strong> slowed and the target is marked (save ends)"
+              "display": "9 damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> slowed and the target is marked (save ends)"
             }
           ]
         },

@@ -74,15 +74,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "14 lightning damage; the lightning spreads 1 square; <strong class=\"potency-value\">I&lt;3</strong> dazed (save ends)"
+              "display": "14 lightning damage; the lightning spreads 1 square; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "19 lightning damage; the lightning spreads 2 square; <strong class=\"potency-value\">I&lt;4</strong> dazed (save ends)"
+              "display": "19 lightning damage; the lightning spreads 2 square; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "23 lightning damage; the lightning spreads 3 square; <strong class=\"potency-value\">I&lt;5</strong> dazed (save ends)"
+              "display": "23 lightning damage; the lightning spreads 3 square; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> dazed (save ends)"
             }
           ]
         },
@@ -92,7 +92,7 @@
         "spend": {
           "text": "The lighting spread increases by 2 squares. Additionally,  any creature who takes lightning damage from this ability and who has M<4 is slowed until the end of their next turn",
           "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The lighting spread increases by 2 squares. Additionally,  any creature who takes lightning damage from this ability and who has <strong class=\"potency-value\">M&lt;4</strong> is slowed until the end of their next turn"
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The lighting spread increases by 2 squares. Additionally,  any creature who takes lightning damage from this ability and who has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> is slowed until the end of their next turn"
         }
       }
     },
@@ -204,7 +204,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Slide 5, and if the the target has <strong class=\"potency-value\">M&lt;4</strong>, they fall prone.</p>"
+          "text": "<p>Slide 5, and if the the target has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span>, they fall prone.</p>"
         },
         "spend": {
           "text": "",

@@ -143,11 +143,11 @@
             },
             {
               "tier": 2,
-              "display": "3 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
+              "display": "3 psychic damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "4 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
+              "display": "4 psychic damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> frightened (save ends)"
             }
           ]
         },

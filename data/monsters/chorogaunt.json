@@ -97,15 +97,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 psychic damage; <strong class=\"potency-value\">I&lt;1</strong> slowed (save ends)"
+              "display": "4 psychic damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> slowed (save ends)"
+              "display": "7 psychic damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> slowed (save ends)"
+              "display": "10 psychic damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> slowed (save ends)"
             }
           ]
         },

@@ -61,11 +61,11 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; <strong class=\"potency-value\">A&lt;0+1</strong> grabbed"
+              "display": "8 damage; <span class=\"potency-fallback\">A&lt;0+1</span> grabbed"
             },
             {
               "tier": 2,
-              "display": "13 damage; <strong class=\"potency-value\">A&lt;1+1</strong> grabbed"
+              "display": "13 damage; <span class=\"potency-fallback\">A&lt;1+1</span> grabbed"
             },
             {
               "tier": 3,
@@ -112,15 +112,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; <strong class=\"potency-value\">I&lt;0</strong> the sneak has concealment from the target (save ends)"
+              "display": "2 damage; <span class=\"potency-fallback\">I&lt;0</span> the sneak has concealment from the target (save ends)"
             },
             {
               "tier": 2,
-              "display": "3 damage; <strong class=\"potency-value\">I&lt;1</strong> the sneak has concealment from the target (save ends)"
+              "display": "3 damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> the sneak has concealment from the target (save ends)"
             },
             {
               "tier": 3,
-              "display": "4 damage; <strong class=\"potency-value\">I&lt;2</strong> the sneak has concealment from the target (save ends)"
+              "display": "4 damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> the sneak has concealment from the target (save ends)"
             }
           ]
         },
@@ -164,15 +164,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
+              "display": "7 damage; <span class=\"potency-fallback\">M&lt;0</span> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
+              "display": "11 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
+              "display": "14 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> bleeding (save ends)"
             }
           ]
         },
@@ -349,7 +349,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have <strong class=\"potency-value\">M&lt;1</strong> they are slowed (save ends).</p>"
+          "text": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> they are slowed (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -380,7 +380,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>"
+          "text": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>"
         },
         "spend": {
           "text": "",
@@ -411,7 +411,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have <strong class=\"potency-value\">M&lt;1</strong> they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>"
+          "text": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>"
         },
         "spend": {
           "text": "",

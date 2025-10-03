@@ -96,7 +96,7 @@
             },
             {
               "tier": 3,
-              "display": "11 acid/cold/fire/lightning/poison/psychic/sonic damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
+              "display": "11 acid/cold/fire/lightning/poison/psychic/sonic damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> bleeding (save ends)"
             }
           ]
         },

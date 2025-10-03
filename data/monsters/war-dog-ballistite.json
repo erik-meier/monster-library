@@ -97,7 +97,7 @@
           ]
         },
         "effect": {
-          "text": "<p>Any target pushed into an obstacle is knocked prone, and if they have <strong class=\"potency-value\">M&lt;3</strong> they are restrained (save ends).</p>"
+          "text": "<p>Any target pushed into an obstacle is knocked prone, and if they have <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> they are restrained (save ends).</p>"
         },
         "spend": {
           "text": "",

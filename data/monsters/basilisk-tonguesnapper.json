@@ -38,7 +38,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Any creature who starts their turn adjacent to the tonguesnapper and has <strong class=\"potency-value\">M&lt;1</strong> is slowed (save ends).</p>",
+          "value": "<p>Any creature who starts their turn adjacent to the tonguesnapper and has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> is slowed (save ends).</p>",
           "director": ""
         }
       }
@@ -128,15 +128,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
+              "display": "<span class=\"potency-fallback\">A&lt;0</span> restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
+              "display": "<span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "Slowed (save ends); or if <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
+              "display": "Slowed (save ends); or if <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> restrained (save ends)"
             }
           ]
         },
@@ -181,15 +181,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 corruption damage; <strong class=\"potency-value\">R&lt;0</strong> dazed (save ends)"
+              "display": "8 corruption damage; <span class=\"potency-fallback\">R&lt;0</span> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 corruption damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
+              "display": "10 corruption damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 corruption damage; <strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (save ends)"
+              "display": "14 corruption damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> dazed and slowed (save ends)"
             }
           ]
         },
@@ -231,7 +231,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">4</span> acid damage. Any target who has <strong class=\"potency-value\">M&lt;2</strong> is also slowed (save ends).</p>"
+          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">4</span> acid damage. Any target who has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> is also slowed (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -297,11 +297,11 @@
             },
             {
               "tier": 2,
-              "display": "4 damage; <strong class=\"potency-value\">A&lt;1</strong> 2 damage; Prone"
+              "display": "4 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> 2 damage; Prone"
             },
             {
               "tier": 3,
-              "display": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> 5 damage; prone and can't stand (save ends)"
+              "display": "4 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> 5 damage; prone and can't stand (save ends)"
             }
           ]
         },

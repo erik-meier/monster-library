@@ -180,15 +180,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "push 2; <strong class=\"potency-value\">M&lt;0</strong> the forced movement is vertical"
+              "display": "push 2; <span class=\"potency-fallback\">M&lt;0</span> the forced movement is vertical"
             },
             {
               "tier": 2,
-              "display": "push 4; <strong class=\"potency-value\">M&lt;1</strong> the forced movement is vertical"
+              "display": "push 4; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> the forced movement is vertical"
             },
             {
               "tier": 3,
-              "display": "push 6; <strong class=\"potency-value\">M&lt;2</strong> the forced movement is vertical"
+              "display": "push 6; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> the forced movement is vertical"
             }
           ]
         },
@@ -228,7 +228,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The griffon dives down onto the target, taking no damage from falling if they reach the ground. The target takes <span class=\"damage-value damage-generic\">3</span> damage for each square the griffon dove, and if they have <strong class=\"potency-value\">A&lt;2</strong> they are grabbed or knocked prone.</p>"
+          "text": "<p>The griffon dives down onto the target, taking no damage from falling if they reach the ground. The target takes <span class=\"damage-value damage-generic\">3</span> damage for each square the griffon dove, and if they have <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> they are grabbed or knocked prone.</p>"
         },
         "spend": {
           "text": "",

@@ -110,7 +110,7 @@
           ]
         },
         "effect": {
-          "text": "<p>The distance increases to melee 2. If the mohler is 1 or more squares beneath the target before they use this ability, a target who has [[<strong class=\"potency-value\">M&lt;1</strong>]] is also knocked prone.</p>"
+          "text": "<p>The distance increases to melee 2. If the mohler is 1 or more squares beneath the target before they use this ability, a target who has [[<span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span>]] is also knocked prone.</p>"
         },
         "spend": {
           "text": "",

@@ -139,15 +139,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 fire damage; <strong class=\"potency-value\">A&lt;1</strong> 3 fire damage"
+              "display": "3 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> 3 fire damage"
             },
             {
               "tier": 2,
-              "display": "5 fire damage; <strong class=\"potency-value\">A&lt;2</strong> 5 fire damage"
+              "display": "5 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> 5 fire damage"
             },
             {
               "tier": 3,
-              "display": "7 fire damage; <strong class=\"potency-value\">A&lt;3</strong> 7 fire damage"
+              "display": "7 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> 7 fire damage"
             }
           ]
         },
@@ -192,11 +192,11 @@
             },
             {
               "tier": 2,
-              "display": "8 psychic damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
+              "display": "8 psychic damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
+              "display": "10 psychic damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> frightened (save ends)"
             }
           ]
         },
@@ -287,15 +287,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
+              "display": "6 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> slowed"
+              "display": "8 damage; prone; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> slowed"
             },
             {
               "tier": 3,
-              "display": "10 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> slowed"
+              "display": "10 damage; prone; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> slowed"
             }
           ]
         },
@@ -438,7 +438,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has <strong class=\"potency-value\">I&lt;2</strong> Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has</p>"
+          "text": "<p>Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> Until the start of the chimera’s next turn, all areas of the encoun ter map are shrouded in a thick cloud of ash. All creatures and objects on the map have concealment that the chimera ignores. Additionally, each enemy in the cloud who has</p>"
         },
         "spend": {
           "text": "",
@@ -531,7 +531,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The chimera shakes the ground, causing an eruption of loose rocks and debris that creates three size 2 stone objects anywhere on the encounter map. Each creature adjacent to one or more objects when they appear who has <strong class=\"potency-value\">A&lt;2</strong> takes <span class=\"damage-value damage-generic\">5</span> damage.</p>"
+          "text": "<p>The chimera shakes the ground, causing an eruption of loose rocks and debris that creates three size 2 stone objects anywhere on the encounter map. Each creature adjacent to one or more objects when they appear who has <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> takes <span class=\"damage-value damage-generic\">5</span> damage.</p>"
         },
         "spend": {
           "text": "",

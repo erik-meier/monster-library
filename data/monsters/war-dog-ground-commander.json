@@ -104,7 +104,7 @@
         "spend": {
           "text": "A target who has i<2 and who is adjacent to the ground commander after this ability is resolved is grabbed (save ends). This grab can’t be escaped using the Escape Grab maneuver. The ground commander can grab up to two creatures at a time.",
           "value": 1,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> A target who has <strong class=\"potency-value\">I&lt;2</strong> and who is adjacent to the ground commander after this ability is resolved is grabbed (save ends). This grab can’t be escaped using the Escape Grab maneuver. The ground commander can grab up to two creatures at a time."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> A target who has <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> and who is adjacent to the ground commander after this ability is resolved is grabbed (save ends). This grab can’t be escaped using the Escape Grab maneuver. The ground commander can grab up to two creatures at a time."
         }
       }
     },
@@ -251,7 +251,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each ally within 5 squares of the target moves up to their speed and can make a free strike against the target. If the target has <strong class=\"potency-value\">I&lt;2</strong>, they are frightened of the ground commander (save ends).</p>"
+          "text": "<p>Each ally within 5 squares of the target moves up to their speed and can make a free strike against the target. If the target has <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span>, they are frightened of the ground commander (save ends).</p>"
         },
         "spend": {
           "text": "",

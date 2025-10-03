@@ -198,15 +198,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">A&lt;2</strong> slowed (save ends)"
+              "display": "<span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "Slowed (EoT) or <strong class=\"potency-value\">A&lt;3</strong> 3 damage and restrained (EoT)"
+              "display": "Slowed (EoT) or <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> 3 damage and restrained (EoT)"
             },
             {
               "tier": 3,
-              "display": "Restrained (EoT) or <strong class=\"potency-value\">A&lt;4</strong> 3 damage and restrained (save ends)"
+              "display": "Restrained (EoT) or <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> 3 damage and restrained (save ends)"
             }
           ]
         },

@@ -401,13 +401,37 @@ export default {
   font-weight: var(--font-weight-semibold);
 }
 
-.action-effect-text :deep(.potency-value) {
-  font-weight: bold;
-  color: #2563eb;
-  background: #dbeafe;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
-  font-size: 0.9rem;
+.action-effect-text :deep(.potency-display) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-weight: normal;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+.action-effect-text :deep(.potency-char-icon) {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.action-effect-text :deep(.potency-icon) {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.action-effect-text :deep(.potency-fallback) {
+  font-weight: normal;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
 }
 
 .action-spend {
@@ -430,13 +454,37 @@ export default {
   font-size: var(--font-size-base);
 }
 
-.action-spend :deep(.potency-value) {
-  font-weight: bold;
-  color: #2563eb;
-  background: #dbeafe;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
-  font-size: 0.9rem;
+.action-spend :deep(.potency-display) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-weight: normal;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+.action-spend :deep(.potency-char-icon) {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.action-spend :deep(.potency-icon) {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.action-spend :deep(.potency-fallback) {
+  font-weight: normal;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
 }
 
 .action-description :deep(em) {
@@ -451,14 +499,38 @@ export default {
   margin-bottom: 0.5rem;
 }
 
-/* Potency value styling */
-.action-description :deep(.potency-value) {
-  font-weight: bold;
-  color: #2563eb;
-  background: #dbeafe;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
-  font-size: 0.9rem;
+/* Potency display styling */
+.action-description :deep(.potency-display) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-weight: normal;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+.action-description :deep(.potency-char-icon) {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.action-description :deep(.potency-icon) {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.action-description :deep(.potency-fallback) {
+  font-weight: normal;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
 }
 
 /* Damage type styling */

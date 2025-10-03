@@ -89,11 +89,11 @@
             },
             {
               "tier": 2,
-              "display": "10 damage; <strong class=\"potency-value\">A&lt;1</strong> vertical push 2"
+              "display": "10 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> vertical push 2"
             },
             {
               "tier": 3,
-              "display": "13 damage; <strong class=\"potency-value\">A&lt;2</strong> vertical slide 3"
+              "display": "13 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> vertical slide 3"
             }
           ]
         },
@@ -101,7 +101,7 @@
         "spend": {
           "text": "Each target who has m<1 is bleeding (save ends).",
           "value": 1,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> Each target who has <strong class=\"potency-value\">M&lt;1</strong> is bleeding (save ends)."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> Each target who has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> is bleeding (save ends)."
         }
       }
     },
@@ -139,11 +139,11 @@
             },
             {
               "tier": 2,
-              "display": "6 damage; push 2; <strong class=\"potency-value\">M&lt;1</strong> prone"
+              "display": "6 damage; push 2; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> prone"
             },
             {
               "tier": 3,
-              "display": "9 damage; push 4; <strong class=\"potency-value\">M&lt;2</strong> prone"
+              "display": "9 damage; push 4; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> prone"
             }
           ]
         },
@@ -185,15 +185,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">I&lt;0</strong> frightened (save ends)"
+              "display": "<span class=\"potency-fallback\">I&lt;0</span> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">I&lt;1</strong> frightened (save ends)"
+              "display": "<span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "<strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
+              "display": "<span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> frightened (save ends)"
             }
           ]
         },

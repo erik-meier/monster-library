@@ -88,11 +88,11 @@
             },
             {
               "tier": 2,
-              "display": "15 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+              "display": "15 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "18 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
+              "display": "18 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> bleeding (save ends)"
             }
           ]
         },

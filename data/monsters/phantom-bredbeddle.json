@@ -98,15 +98,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 damage; <strong class=\"potency-value\">A&lt;1</strong> bleeding (save ends)"
+              "display": "2 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+              "display": "4 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "5 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends); <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
+              "display": "5 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> bleeding (save ends); <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> dazed (save ends)"
             }
           ]
         },
@@ -150,15 +150,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;1</strong> they are beheaded"
+              "display": "9 damage; bleeding (save ends); or if the target has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> they are beheaded"
             },
             {
               "tier": 2,
-              "display": "13 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;2</strong> they are beheaded"
+              "display": "13 damage; bleeding (save ends); or if the target has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> they are beheaded"
             },
             {
               "tier": 3,
-              "display": "16 damage; bleeding (save ends); or if the target has <strong class=\"potency-value\">M&lt;3</strong> they are beheaded"
+              "display": "16 damage; bleeding (save ends); or if the target has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> they are beheaded"
             }
           ]
         },
@@ -236,15 +236,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
+              "display": "9 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "13 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
+              "display": "13 damage; prone; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
+              "display": "16 damage; prone; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> dazed (save ends)"
             }
           ]
         },

@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "12 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
+              "display": "12 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> bleeding (save ends)"
             }
           ]
         },
@@ -129,11 +129,11 @@
             },
             {
               "tier": 2,
-              "display": "8 damage; slide 2; <strong class=\"potency-value\">M&lt;1</strong> grabbed if within 2 squares of the scaletooth"
+              "display": "8 damage; slide 2; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> grabbed if within 2 squares of the scaletooth"
             },
             {
               "tier": 3,
-              "display": "10 damage; slide 3; <strong class=\"potency-value\">M&lt;2</strong> grabbed if within 2 squares of the scaletooth"
+              "display": "10 damage; slide 3; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> grabbed if within 2 squares of the scaletooth"
             }
           ]
         },

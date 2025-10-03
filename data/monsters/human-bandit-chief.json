@@ -139,15 +139,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "push 1; <strong class=\"potency-value\">M&lt;1</strong> prone"
+              "display": "push 1; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> prone"
             },
             {
               "tier": 2,
-              "display": "push 2; <strong class=\"potency-value\">M&lt;2</strong> prone"
+              "display": "push 2; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> prone"
             },
             {
               "tier": 3,
-              "display": "push 4; <strong class=\"potency-value\">M&lt;3</strong> prone"
+              "display": "push 4; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> prone"
             }
           ]
         },
@@ -323,15 +323,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 corruption damage; <strong class=\"potency-value\">X&lt;1</strong>, slowed (save ends)"
+              "display": "4 corruption damage; <span class=\"potency-display\">X<img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span>, slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 corruption damage; <strong class=\"potency-value\">X&lt;2</strong>, slowed (save ends)"
+              "display": "6 corruption damage; <span class=\"potency-display\">X<img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span>, slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; <strong class=\"potency-value\">X&lt;3</strong>, restrained (save ends)"
+              "display": "9 corruption damage; <span class=\"potency-display\">X<img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span>, restrained (save ends)"
             }
           ]
         },
