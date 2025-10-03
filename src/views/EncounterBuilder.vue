@@ -24,7 +24,7 @@
 
     <!-- Page Header -->
     <div class="page-header">
-      <h1>Encounter Builder</h1>
+      <h1>Encounter Builder (WIP)</h1>
       <p class="page-description">
         Create balanced encounters for your Draw Steel adventures
       </p>
@@ -59,17 +59,10 @@
         </div>
 
         <div class="cta-section">
-          <button 
-            class="btn btn-primary btn-lg" 
-            @click="startEncounter"
-            aria-label="Start building new encounter"
-          >
+          <button class="btn btn-primary btn-lg" @click="startEncounter" aria-label="Start building new encounter">
             <span class="btn-icon">✨</span>
             Start New Encounter
           </button>
-          <p class="hint-text">
-            <span class="keyboard-hint">Keyboard shortcut: <kbd>Alt</kbd> + <kbd>N</kbd></span>
-          </p>
         </div>
       </section>
 
@@ -116,7 +109,7 @@ const handleKeydown = (event: KeyboardEvent) => {
     event.preventDefault()
     startEncounter()
   }
-  
+
   // Escape to go back (future: return to home)
   if (event.key === 'Escape') {
     event.preventDefault()
