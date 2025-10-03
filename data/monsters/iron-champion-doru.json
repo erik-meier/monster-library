@@ -101,11 +101,11 @@
             },
             {
               "tier": 2,
-              "display": "21 damage; Doru gains an edge on his next power roll; <strong class=\"potency-value\">M&lt;4</strong> slide 3"
+              "display": "21 damage; Doru gains an edge on his next power roll; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> slide 3"
             },
             {
               "tier": 3,
-              "display": "25 damage; Doru gains a double edge on his next power roll; <strong class=\"potency-value\">M&lt;5</strong> slide 5"
+              "display": "25 damage; Doru gains a double edge on his next power roll; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> slide 5"
             }
           ]
         },
@@ -149,15 +149,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)"
+              "display": "5 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 damage; <strong class=\"potency-value\">A&lt;4</strong> bleeding (save ends)"
+              "display": "11 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "15 damage; <strong class=\"potency-value\">A&lt;5</strong> bleeding (save ends)"
+              "display": "15 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> bleeding (save ends)"
             }
           ]
         },

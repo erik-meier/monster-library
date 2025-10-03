@@ -74,15 +74,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "11 corruption damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
+              "display": "11 corruption damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "16 corruption damage; <strong class=\"potency-value\">A&lt;3</strong> restrained (save ends)"
+              "display": "16 corruption damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "19 corruption damage; <strong class=\"potency-value\">A&lt;4</strong> restrained (save ends)"
+              "display": "19 corruption damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> restrained (save ends)"
             }
           ]
         },
@@ -291,15 +291,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 corruption damage; <strong class=\"potency-value\">R&lt;2</strong> weakened (save ends)"
+              "display": "6 corruption damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "11 corruption damage; <strong class=\"potency-value\">R&lt;3</strong> weakened (save ends)"
+              "display": "11 corruption damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 corruption damage; <strong class=\"potency-value\">R&lt;4</strong> weakened (save ends)"
+              "display": "14 corruption damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> weakened (save ends)"
             }
           ]
         },

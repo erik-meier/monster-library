@@ -201,15 +201,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "push 2; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
+              "display": "push 2; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "push 4; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
+              "display": "push 4; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "push 5; <strong class=\"potency-value\">I&lt;4</strong> frightened (save ends)"
+              "display": "push 5; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> frightened (save ends)"
             }
           ]
         },
@@ -254,15 +254,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 fire damage; <strong class=\"potency-value\">A&lt;2</strong> slowed (EoT)"
+              "display": "7 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> slowed (EoT)"
             },
             {
               "tier": 2,
-              "display": "13 fire damage; <strong class=\"potency-value\">A&lt;3</strong> slowed (save ends)"
+              "display": "13 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 fire damage; <strong class=\"potency-value\">A&lt;4</strong> slowed (save ends)"
+              "display": "16 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> slowed (save ends)"
             }
           ]
         },

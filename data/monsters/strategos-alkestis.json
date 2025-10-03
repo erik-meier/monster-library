@@ -86,15 +86,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "15 damage; <strong class=\"potency-value\">M&lt;3+1</strong> bleeding (save ends)"
+              "display": "15 damage; <span class=\"potency-fallback\">M&lt;3+1</span> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "21 damage; <strong class=\"potency-value\">M&lt;4+1</strong> bleeding (save ends)"
+              "display": "21 damage; <span class=\"potency-fallback\">M&lt;4+1</span> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "25 damage; <strong class=\"potency-value\">M&lt;5+1</strong> bleeding (save ends)"
+              "display": "25 damage; <span class=\"potency-fallback\">M&lt;5+1</span> bleeding (save ends)"
             }
           ]
         },
@@ -178,15 +178,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; <strong class=\"potency-value\">A&lt;3+1</strong> slowed (save ends)"
+              "display": "8 damage; <span class=\"potency-fallback\">A&lt;3+1</span> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "13 damage; <strong class=\"potency-value\">A&lt;4+1</strong> slowed (save ends)"
+              "display": "13 damage; <span class=\"potency-fallback\">A&lt;4+1</span> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 damage; <strong class=\"potency-value\">A&lt;5+1</strong> slowed (save ends)"
+              "display": "16 damage; <span class=\"potency-fallback\">A&lt;5+1</span> slowed (save ends)"
             }
           ]
         },
@@ -300,7 +300,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Until the start of the next round, each target enemy who has <strong class=\"potency-value\">I&lt;4</strong> is dazed, each target enemy who has <strong class=\"potency-value\">M&lt;4</strong> is restrained, and each target enemy who has <strong class=\"potency-value\">A&lt;4</strong> can't use triggered actions. Additionally, until the end of the encounter, Alkestis and each target ally have damage immunity 3 and deal an extra 5 damage with strikes.</p>"
+          "text": "<p>Until the start of the next round, each target enemy who has <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> is dazed, each target enemy who has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> is restrained, and each target enemy who has <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> can't use triggered actions. Additionally, until the end of the encounter, Alkestis and each target ally have damage immunity 3 and deal an extra 5 damage with strikes.</p>"
         },
         "spend": {
           "text": "",
@@ -371,11 +371,11 @@
             },
             {
               "tier": 2,
-              "display": "11 psychic damage; <strong class=\"potency-value\">P&lt;4</strong> frightened (save ends)"
+              "display": "11 psychic damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 psychic damage; <strong class=\"potency-value\">P&lt;5</strong> frightened (save ends)"
+              "display": "14 psychic damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> frightened (save ends)"
             }
           ]
         },

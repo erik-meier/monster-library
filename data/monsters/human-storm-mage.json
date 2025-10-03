@@ -51,7 +51,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Any melee ability targeting the storm mage takes a bane. Additionally, whenever the mage takes damage from an adjacent enemy, the enemy takes 2 lightning damage, and if they have <strong class=\"potency-value\">R&lt;1</strong> they are pushed up to 2 squares.</p>",
+          "value": "<p>Any melee ability targeting the storm mage takes a bane. Additionally, whenever the mage takes damage from an adjacent enemy, the enemy takes 2 lightning damage, and if they have <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> they are pushed up to 2 squares.</p>",
           "director": ""
         }
       }
@@ -138,15 +138,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 corruption damage; <strong class=\"potency-value\">X&lt;0</strong>, slowed (save ends)"
+              "display": "4 corruption damage; <span class=\"potency-fallback\">X&lt;0</span>, slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 corruption damage; <strong class=\"potency-value\">X&lt;1</strong>, slowed (save ends)"
+              "display": "6 corruption damage; <span class=\"potency-display\">X<img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span>, slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; <strong class=\"potency-value\">X&lt;2</strong>, restrained (save ends)"
+              "display": "9 corruption damage; <span class=\"potency-display\">X<img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span>, restrained (save ends)"
             }
           ]
         },
@@ -252,15 +252,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)"
+              "display": "<span class=\"potency-fallback\">M&lt;0</span> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
+              "display": "<span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "<strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
+              "display": "<span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> slowed (save ends)"
             }
           ]
         },

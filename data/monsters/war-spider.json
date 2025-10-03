@@ -93,7 +93,7 @@
             },
             {
               "tier": 3,
-              "display": "14 poison damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
+              "display": "14 poison damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> weakened (save ends)"
             }
           ]
         },
@@ -101,7 +101,7 @@
         "spend": {
           "text": "For any tier outcome, if the target has M < 3, they are  weakened (save ends).",
           "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> For any tier outcome, if the target has <strong class=\"potency-value\">M&lt;3</strong>, they are  weakened (save ends)."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> For any tier outcome, if the target has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span>, they are  weakened (save ends)."
         }
       }
     },
@@ -217,15 +217,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
+              "display": "<span class=\"potency-fallback\">A&lt;0</span> restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "<strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
+              "display": "<span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "<strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
+              "display": "<span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> restrained (save ends)"
             }
           ]
         },

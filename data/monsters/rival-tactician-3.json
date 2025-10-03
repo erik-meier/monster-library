@@ -76,11 +76,11 @@
             },
             {
               "tier": 2,
-              "display": "18 damage; <strong class=\"potency-value\">A&lt;3</strong> prone"
+              "display": "18 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> prone"
             },
             {
               "tier": 3,
-              "display": "22 damage; <strong class=\"potency-value\">A&lt;4</strong> prone"
+              "display": "22 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> prone"
             }
           ]
         },
@@ -123,15 +123,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "15 damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
+              "display": "15 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "21 damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
+              "display": "21 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "26 damage; <strong class=\"potency-value\">M&lt;4</strong> weakened (save ends)"
+              "display": "26 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> weakened (save ends)"
             }
           ]
         },

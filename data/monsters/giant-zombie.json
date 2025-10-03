@@ -91,11 +91,11 @@
             },
             {
               "tier": 2,
-              "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
+              "display": "14 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> grabbed"
             },
             {
               "tier": 3,
-              "display": "17 damage; <strong class=\"potency-value\">A&lt;3</strong> grabbed"
+              "display": "17 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> grabbed"
             }
           ]
         },

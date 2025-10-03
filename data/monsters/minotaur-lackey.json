@@ -87,7 +87,7 @@
           ]
         },
         "effect": {
-          "text": "<p>A target who is force moved into an obstacle and has <strong class=\"potency-value\">M&lt;3</strong> is bleeding (save ends).</p>"
+          "text": "<p>A target who is force moved into an obstacle and has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> is bleeding (save ends).</p>"
         },
         "spend": {
           "text": "",

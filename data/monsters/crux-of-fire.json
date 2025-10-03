@@ -78,11 +78,11 @@
             },
             {
               "tier": 2,
-              "display": "12 fire damage; <strong class=\"potency-value\">A&lt;1</strong> the target is burning (save ends)"
+              "display": "12 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> the target is burning (save ends)"
             },
             {
               "tier": 3,
-              "display": "15 fire damage; <strong class=\"potency-value\">A&lt;2</strong> the target is burning (save ends)"
+              "display": "15 fire damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> the target is burning (save ends)"
             }
           ]
         },

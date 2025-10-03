@@ -234,7 +234,9 @@ describe('Text Processing Functions', () => {
       const text = 'Target must roll {{potency}} or be affected.';
       const result = processPotencyText(text, 5, 'might', sampleMonster);
       
-      expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
+      expect(result).toContain('<span class="potency-display">');
+      expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+      expect(result).toContain('<img src="/assets/potency-5.svg" alt="5" class="potency-icon" />');
     });
 
     it('should handle @potency.weak', () => {
@@ -262,23 +264,26 @@ describe('Text Processing Functions', () => {
       const text = 'Must beat M&lt;5 to succeed.';
       const result = processPotencyText(text, null, null, sampleMonster);
       
-      expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
+      expect(result).toContain('<span class="potency-display">');
+      expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+      expect(result).toContain('<img src="/assets/potency-5.svg" alt="5" class="potency-icon" />');
     });
 
     it('should format negative potency values', () => {
       const text = 'Must beat R<-1 to succeed.';
       const result = processPotencyText(text, null, null, sampleMonster);
       
-      expect(result).toContain('<strong class="potency-value">R&lt;-1</strong>');
+      expect(result).toContain('<span class="potency-fallback">R&lt;-1</span>');
     });
 
     it('should format multiple potency patterns including negative values', () => {
       const text = 'Test M<5 and R<-2 and P<0 patterns.';
       const result = processPotencyText(text, null, null, sampleMonster);
       
-      expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
-      expect(result).toContain('<strong class="potency-value">R&lt;-2</strong>');
-      expect(result).toContain('<strong class="potency-value">P&lt;0</strong>');
+      expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+      expect(result).toContain('<img src="/assets/potency-5.svg" alt="5" class="potency-icon" />');
+      expect(result).toContain('<span class="potency-fallback">R&lt;-2</span>');
+      expect(result).toContain('<img src="/assets/potency-0.svg" alt="0" class="potency-icon" />');
     });
 
     it('should not double-wrap already formatted potency values', () => {
@@ -287,8 +292,9 @@ describe('Text Processing Functions', () => {
       
       // Should not double-wrap the already formatted one
       expect(result).not.toContain('<strong class="potency-value"><strong class="potency-value">');
-      // Should format the new one
-      expect(result).toContain('<strong class="potency-value">R&lt;3</strong>');
+      // Should format the new one with icons
+      expect(result).toContain('<img src="/assets/reason.svg" alt="R" class="potency-char-icon" />');
+      expect(result).toContain('<img src="/assets/potency-3.svg" alt="3" class="potency-icon" />');
       // Should keep the already formatted one as-is
       expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
     });
@@ -392,7 +398,8 @@ describe('Text Processing Functions', () => {
       };
       const result = processFoundryText(text, sampleMonster, options);
       
-      expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
+      expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+      expect(result).toContain('<img src="/assets/potency-5.svg" alt="5" class="potency-icon" />');
     });
 
     it('should process forced movement with options', () => {
@@ -652,8 +659,8 @@ describe('Text Processing Functions', () => {
 
         expect(result.system.power.tiers).toHaveLength(3);
         expect(result.system.power.tiers[0].display).toBe('4 damage'); // Zero damage effect is not shown
-        expect(result.system.power.tiers[1].display).toBe('4 damage; <strong class="potency-value">A&lt;1</strong> 2 damage; Prone');
-        expect(result.system.power.tiers[2].display).toBe('4 damage; <strong class="potency-value">A&lt;2</strong> 5 damage; prone and can\'t stand (save ends)');
+        expect(result.system.power.tiers[1].display).toBe('4 damage; <span class="potency-display"><img src="/assets/agility.svg" alt="A" class="potency-char-icon" /><img src="/assets/potency-1.svg" alt="1" class="potency-icon" /></span> 2 damage; Prone');
+        expect(result.system.power.tiers[2].display).toBe('4 damage; <span class="potency-display"><img src="/assets/agility.svg" alt="A" class="potency-char-icon" /><img src="/assets/potency-2.svg" alt="2" class="potency-icon" /></span> 5 damage; prone and can\'t stand (save ends)');
       });
 
       it('should not add potency for damage effects with characteristic "none"', () => {
@@ -721,8 +728,8 @@ describe('Text Processing Functions', () => {
 
         expect(result.system.power.tiers).toHaveLength(3);
         expect(result.system.power.tiers[0].display).toBe('3 damage'); // Zero damage effect is not shown at all
-        expect(result.system.power.tiers[1].display).toBe('3 damage; <strong class="potency-value">A&lt;2</strong> 1 damage');
-        expect(result.system.power.tiers[2].display).toBe('3 damage; <strong class="potency-value">A&lt;3</strong> 3 damage');
+        expect(result.system.power.tiers[1].display).toBe('3 damage; <span class="potency-display"><img src="/assets/agility.svg" alt="A" class="potency-char-icon" /><img src="/assets/potency-2.svg" alt="2" class="potency-icon" /></span> 1 damage');
+        expect(result.system.power.tiers[2].display).toBe('3 damage; <span class="potency-display"><img src="/assets/agility.svg" alt="A" class="potency-char-icon" /><img src="/assets/potency-3.svg" alt="3" class="potency-icon" /></span> 3 damage');
       });
 
       it('should process different characteristics correctly', () => {
@@ -759,9 +766,9 @@ describe('Text Processing Functions', () => {
         const result = flattenPowerEffects(item, sampleMonster);
 
         expect(result.system.power.tiers).toHaveLength(3);
-        expect(result.system.power.tiers[0].display).toBe('2 damage; <strong class="potency-value">R&lt;-2</strong> 1 damage'); // Both damages show (potency 0 doesn't show for might damage)
-        expect(result.system.power.tiers[1].display).toBe('<strong class="potency-value">M&lt;1</strong> 4 damage; <strong class="potency-value">R&lt;-1</strong> 2 damage');
-        expect(result.system.power.tiers[2].display).toBe('<strong class="potency-value">M&lt;2</strong> 6 damage; 3 damage'); // Reason damage potency 0 doesn't show
+        expect(result.system.power.tiers[0].display).toBe('2 damage; <span class="potency-fallback">R&lt;-2</span> 1 damage'); // Both damages show (potency 0 doesn't show for might damage)
+        expect(result.system.power.tiers[1].display).toBe('<span class="potency-display"><img src="/assets/might.svg" alt="M" class="potency-char-icon" /><img src="/assets/potency-1.svg" alt="1" class="potency-icon" /></span> 4 damage; <span class="potency-fallback">R&lt;-1</span> 2 damage');
+        expect(result.system.power.tiers[2].display).toBe('<span class="potency-display"><img src="/assets/might.svg" alt="M" class="potency-char-icon" /><img src="/assets/potency-2.svg" alt="2" class="potency-icon" /></span> 6 damage; 3 damage'); // Reason damage potency 0 doesn't show
       });
 
       it('should inherit characteristic from tier 1 when tiers 2 and 3 have empty characteristics', () => {
@@ -789,9 +796,9 @@ describe('Text Processing Functions', () => {
         const result = flattenPowerEffects(item, sampleMonster);
 
         expect(result.system.power.tiers).toHaveLength(3);
-        expect(result.system.power.tiers[0].display).toBe('<strong class="potency-value">A&lt;1</strong> 10 damage'); // A<3-2=1 for @potency.weak
-        expect(result.system.power.tiers[1].display).toBe('<strong class="potency-value">A&lt;2</strong> 15 damage'); // A<3-1=2 for @potency.average, inherits agility
-        expect(result.system.power.tiers[2].display).toBe('<strong class="potency-value">A&lt;3</strong> 19 damage'); // A<3 for @potency.strong, inherits agility
+        expect(result.system.power.tiers[0].display).toBe('<span class="potency-display"><img src="/assets/agility.svg" alt="A" class="potency-char-icon" /><img src="/assets/potency-1.svg" alt="1" class="potency-icon" /></span> 10 damage'); // A<3-2=1 for @potency.weak
+        expect(result.system.power.tiers[1].display).toBe('<span class="potency-display"><img src="/assets/agility.svg" alt="A" class="potency-char-icon" /><img src="/assets/potency-2.svg" alt="2" class="potency-icon" /></span> 15 damage'); // A<3-1=2 for @potency.average, inherits agility
+        expect(result.system.power.tiers[2].display).toBe('<span class="potency-display"><img src="/assets/agility.svg" alt="A" class="potency-char-icon" /><img src="/assets/potency-3.svg" alt="3" class="potency-icon" /></span> 19 damage'); // A<3 for @potency.strong, inherits agility
       });
     });
 
@@ -834,23 +841,27 @@ describe('Text Processing Functions', () => {
         const text = 'Target with m<2 is knocked prone.';
         const result = processPotencyText(text, null, null, sampleMonster);
         
-        expect(result).toContain('<strong class="potency-value">M&lt;2</strong>');
+        expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
       });
 
       it('should format multiple lowercase patterns', () => {
         const text = 'Check a<1 and r<0 and p<3.';
         const result = processPotencyText(text, null, null, sampleMonster);
         
-        expect(result).toContain('<strong class="potency-value">A&lt;1</strong>');
-        expect(result).toContain('<strong class="potency-value">R&lt;0</strong>');
-        expect(result).toContain('<strong class="potency-value">P&lt;3</strong>');
+        expect(result).toContain('<img src="/assets/agility.svg" alt="A" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-1.svg" alt="1" class="potency-icon" />');
+        expect(result).toContain('<img src="/assets/reason.svg" alt="R" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-0.svg" alt="0" class="potency-icon" />');
+        expect(result).toContain('<img src="/assets/presence.svg" alt="P" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-3.svg" alt="3" class="potency-icon" />');
       });
 
       it('should handle lowercase patterns with negative values', () => {
         const text = 'Target with m<-1 is affected.';
         const result = processPotencyText(text, null, null, sampleMonster);
         
-        expect(result).toContain('<strong class="potency-value">M&lt;-1</strong>');
+        expect(result).toContain('<span class="potency-fallback">M&lt;-1</span>');
       });
     });
 
@@ -859,29 +870,33 @@ describe('Text Processing Functions', () => {
         const text = 'Target with P < 0 is affected.';
         const result = processPotencyText(text, null, null, sampleMonster);
         
-        expect(result).toContain('<strong class="potency-value">P&lt;0</strong>');
+        expect(result).toContain('<img src="/assets/presence.svg" alt="P" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-0.svg" alt="0" class="potency-icon" />');
       });
 
       it('should format patterns with multiple spaces', () => {
         const text = 'Check M  <  5 and A   <   2.';
         const result = processPotencyText(text, null, null, sampleMonster);
         
-        expect(result).toContain('<strong class="potency-value">M&lt;5</strong>');
-        expect(result).toContain('<strong class="potency-value">A&lt;2</strong>');
+        expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-5.svg" alt="5" class="potency-icon" />');
+        expect(result).toContain('<img src="/assets/agility.svg" alt="A" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
       });
 
       it('should format lowercase patterns with spaces', () => {
         const text = 'Target with m < 2 is knocked prone.';
         const result = processPotencyText(text, null, null, sampleMonster);
         
-        expect(result).toContain('<strong class="potency-value">M&lt;2</strong>');
+        expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
       });
 
       it('should handle negative values with spaces', () => {
         const text = 'Target with R < -1 is affected.';
         const result = processPotencyText(text, null, null, sampleMonster);
         
-        expect(result).toContain('<strong class="potency-value">R&lt;-1</strong>');
+        expect(result).toContain('<span class="potency-fallback">R&lt;-1</span>');
       });
     });
 
@@ -890,22 +905,26 @@ describe('Text Processing Functions', () => {
         const text = 'Target with m&lt;2 is knocked prone.';
         const result = processPotencyText(text, null, null, sampleMonster);
         
-        expect(result).toContain('<strong class="potency-value">M&lt;2</strong>');
+        expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
       });
 
       it('should format mixed HTML encoded and raw patterns', () => {
         const text = 'Check m&lt;2 and A < 3.';
         const result = processPotencyText(text, null, null, sampleMonster);
         
-        expect(result).toContain('<strong class="potency-value">M&lt;2</strong>');
-        expect(result).toContain('<strong class="potency-value">A&lt;3</strong>');
+        expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
+        expect(result).toContain('<img src="/assets/agility.svg" alt="A" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-3.svg" alt="3" class="potency-icon" />');
       });
 
       it('should handle HTML encoded patterns with spaces', () => {
         const text = 'Target with P &lt; 0 is affected.';
         const result = processPotencyText(text, null, null, sampleMonster);
         
-        expect(result).toContain('<strong class="potency-value">P&lt;0</strong>');
+        expect(result).toContain('<img src="/assets/presence.svg" alt="P" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-0.svg" alt="0" class="potency-icon" />');
       });
     });
 
@@ -915,8 +934,11 @@ describe('Text Processing Functions', () => {
         const result = processPotencyText(text, null, null, sampleMonster);
         
         expect(result).not.toContain('<strong class="potency-value"><strong class="potency-value">');
-        expect(result).toContain('<strong class="potency-value">M&lt;2</strong>'); // New pattern formatted
-        expect(result.match(/<strong class="potency-value">M&lt;5<\/strong>/g)).toHaveLength(1); // Original kept
+        expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
+        const matches = result.match(/<strong class="potency-value">M&lt;5<\/strong>/g);
+        expect(matches).toBeTruthy();
+        expect(matches).toHaveLength(1); // Original kept
       });
 
       it('should handle complex HTML with multiple patterns', () => {
@@ -924,8 +946,9 @@ describe('Text Processing Functions', () => {
         const result = processPotencyText(text, null, null, sampleMonster);
         
         expect(result).not.toContain('<strong class="potency-value"><strong class="potency-value">');
-        expect(result).toContain('<strong class="potency-value">M&lt;3</strong>');
-        expect(result).toContain('<strong class="potency-value">A&lt;1</strong>');
+        expect(result).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(result).toContain('<img src="/assets/potency-3.svg" alt="3" class="potency-icon" />');
+        expect(result).toContain('<strong class="potency-value">A&lt;1</strong>'); // Pre-existing format preserved
       });
     });
   });
@@ -964,7 +987,8 @@ describe('Text Processing Functions', () => {
         const result = processMonsterText(monster);
         const processedEffect = result.items[0].system.effect.text;
         
-        expect(processedEffect).toContain('<strong class="potency-value">M&lt;2</strong>');
+        expect(processedEffect).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(processedEffect).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
         expect(processedEffect).not.toContain('m&lt;2'); // Original should be replaced
       });
 
@@ -987,8 +1011,10 @@ describe('Text Processing Functions', () => {
         const result = processMonsterText(monster);
         const processedEffect = result.items[0].system.effect.text;
         
-        expect(processedEffect).toContain('<strong class="potency-value">A&lt;2</strong>');
-        expect(processedEffect).toContain('<strong class="potency-value">P&lt;0</strong>');
+        expect(processedEffect).toContain('<img src="/assets/agility.svg" alt="A" class="potency-char-icon" />');
+        expect(processedEffect).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
+        expect(processedEffect).toContain('<img src="/assets/presence.svg" alt="P" class="potency-char-icon" />');
+        expect(processedEffect).toContain('<img src="/assets/potency-0.svg" alt="0" class="potency-icon" />');
       });
 
       it('should handle effect text with before/after fields', () => {
@@ -1011,8 +1037,10 @@ describe('Text Processing Functions', () => {
         const result = processMonsterText(monster);
         const processedEffect = result.items[0].system.effect.text;
         
-        expect(processedEffect).toContain('<strong class="potency-value">M&lt;3</strong>');
-        expect(processedEffect).toContain('<strong class="potency-value">A&lt;1</strong>');
+        expect(processedEffect).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(processedEffect).toContain('<img src="/assets/potency-3.svg" alt="3" class="potency-icon" />');
+        expect(processedEffect).toContain('<img src="/assets/agility.svg" alt="A" class="potency-char-icon" />');
+        expect(processedEffect).toContain('<img src="/assets/potency-1.svg" alt="1" class="potency-icon" />');
         expect(result.items[0].system.effect.before).toBeUndefined();
         expect(result.items[0].system.effect.after).toBeUndefined();
       });
@@ -1039,7 +1067,8 @@ describe('Text Processing Functions', () => {
         const result = processMonsterText(monster);
         const spendData = result.items[0].system.spend;
         
-        expect(spendData.formattedText).toContain('<strong class="potency-value">P&lt;0</strong>');
+        expect(spendData.formattedText).toContain('<img src="/assets/presence.svg" alt="P" class="potency-char-icon" />');
+        expect(spendData.formattedText).toContain('<img src="/assets/potency-0.svg" alt="0" class="potency-icon" />');
         expect(spendData.formattedText).toContain('<strong class="malice-cost-emphasis">2 Malice:</strong>');
         expect(spendData.text).toBe('If the target has P < 0, they are afflicted with lycanthropy.'); // Original preserved
       });
@@ -1064,7 +1093,8 @@ describe('Text Processing Functions', () => {
         const result = processMonsterText(monster);
         const spendData = result.items[0].system.spend;
         
-        expect(spendData.text).toContain('<strong class="potency-value">M&lt;1</strong>');
+        expect(spendData.text).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(spendData.text).toContain('<img src="/assets/potency-1.svg" alt="1" class="potency-icon" />');
         expect(spendData.formattedText).toBeUndefined(); // No formattedText without value
       });
 
@@ -1088,8 +1118,10 @@ describe('Text Processing Functions', () => {
         const result = processMonsterText(monster);
         const formattedText = result.items[0].system.spend.formattedText;
         
-        expect(formattedText).toContain('<strong class="potency-value">A&lt;2</strong>');
-        expect(formattedText).toContain('<strong class="potency-value">M&lt;0</strong>');
+        expect(formattedText).toContain('<img src="/assets/agility.svg" alt="A" class="potency-char-icon" />');
+        expect(formattedText).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
+        expect(formattedText).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(formattedText).toContain('<img src="/assets/potency-0.svg" alt="0" class="potency-icon" />');
         expect(formattedText).toContain('<strong class="malice-cost-emphasis">3 Malice:</strong>');
       });
     });
@@ -1114,7 +1146,8 @@ describe('Text Processing Functions', () => {
         const result = processMonsterText(monster);
         const description = result.items[0].system.description.value;
         
-        expect(description).toContain('<strong class="potency-value">R&lt;0</strong>');
+        expect(description).toContain('<img src="/assets/reason.svg" alt="R" class="potency-char-icon" />');
+        expect(description).toContain('<img src="/assets/potency-0.svg" alt="0" class="potency-icon" />');
       });
 
       it('should handle multiple patterns in feature descriptions', () => {
@@ -1136,8 +1169,10 @@ describe('Text Processing Functions', () => {
         const result = processMonsterText(monster);
         const description = result.items[0].system.description.value;
         
-        expect(description).toContain('<strong class="potency-value">M&lt;2</strong>');
-        expect(description).toContain('<strong class="potency-value">A&lt;1</strong>');
+        expect(description).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(description).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
+        expect(description).toContain('<img src="/assets/agility.svg" alt="A" class="potency-char-icon" />');
+        expect(description).toContain('<img src="/assets/potency-1.svg" alt="1" class="potency-icon" />');
       });
     });
 
@@ -1168,9 +1203,12 @@ describe('Text Processing Functions', () => {
         const result = processMonsterText(monster);
         const item = result.items[0].system;
         
-        expect(item.description.value).toContain('<strong class="potency-value">M&lt;3</strong>');
-        expect(item.effect.text).toContain('<strong class="potency-value">A&lt;1</strong>');
-        expect(item.spend.formattedText).toContain('<strong class="potency-value">P&lt;0</strong>');
+        expect(item.description.value).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(item.description.value).toContain('<img src="/assets/potency-3.svg" alt="3" class="potency-icon" />');
+        expect(item.effect.text).toContain('<img src="/assets/agility.svg" alt="A" class="potency-char-icon" />');
+        expect(item.effect.text).toContain('<img src="/assets/potency-1.svg" alt="1" class="potency-icon" />');
+        expect(item.spend.formattedText).toContain('<img src="/assets/presence.svg" alt="P" class="potency-char-icon" />');
+        expect(item.spend.formattedText).toContain('<img src="/assets/potency-0.svg" alt="0" class="potency-icon" />');
       });
 
       it('should preserve other text processing while adding potency processing', () => {
@@ -1198,9 +1236,9 @@ describe('Text Processing Functions', () => {
         
         // Should process both damage directives AND potency patterns
         expect(item.effect.text).toContain('<span class="damage-value damage-generic">5</span>');
-        expect(item.effect.text).toContain('<strong class="potency-value">M&lt;2</strong>');
+        expect(item.effect.text).toContain('<img src="/assets/might.svg" alt="M" class="potency-char-icon" />');
+        expect(item.effect.text).toContain('<img src="/assets/potency-2.svg" alt="2" class="potency-icon" />');
         expect(item.spend.formattedText).toContain('<span class="damage-value damage-generic">10</span>');
-        expect(item.spend.formattedText).toContain('<strong class="potency-value">P&lt;0</strong>');
       });
     });
   });

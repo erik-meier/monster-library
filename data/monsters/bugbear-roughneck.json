@@ -114,15 +114,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; <strong class=\"potency-value\">M&lt;0</strong> prone"
+              "display": "8 damage; <span class=\"potency-fallback\">M&lt;0</span> prone"
             },
             {
               "tier": 2,
-              "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> prone"
+              "display": "13 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> prone"
             },
             {
               "tier": 3,
-              "display": "16 damage; <strong class=\"potency-value\">M&lt;2</strong> prone"
+              "display": "16 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> prone"
             }
           ]
         },
@@ -337,7 +337,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have <strong class=\"potency-value\">M&lt;1</strong> they are slowed (save ends).</p>"
+          "text": "<p>For every 3 Malice spent, one non-minion bugbear acting this turn grabs an iron ball and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 8 – the number of squares the iron ball was thrown, and if they have <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> they are slowed (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -368,7 +368,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have <strong class=\"potency-value\">M&lt;1</strong> they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>"
+          "text": "<p>For every 5 Malice spent, one non-minion bugbear acting this turn grabs a javelin and can use a maneuver to throw it at a creature within 5 squares of them. The creature takes damage equal to 12 – the number of squares the javelin was thrown, and if they have <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> they are bleeding (save ends). While a creature is bleeding this way, any ally of the bugbear within 2 squares of them can use a free maneuver to pull the bleeding creature up to 2 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -399,7 +399,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <strong class=\"potency-value\">I&lt;1</strong> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>"
+          "text": "<p>A bugbear infuses the encounter map with bu’gathic magic. Until the end of the encounter, all bugbears and allies have their speed doubled and can automatically climb at full speed while moving. Additionally, if the target of any bugbear or ally’s strike has <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> the target is also frightened (save ends) and must move their speed in a straight line away from the creature who made the strike.</p>"
         },
         "spend": {
           "text": "",
