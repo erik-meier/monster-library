@@ -16,22 +16,46 @@
         <MonsterSelector />
       </div>
 
-      <!-- Right: Encounter Summary -->
+      <!-- Right: Encounter Panel with Tabs -->
       <aside class="summary-panel">
-        <EncounterSummary />
+        <div class="panel-tabs">
+          <button 
+            class="tab-btn"
+            :class="{ active: currentTab === 'summary' }"
+            @click="currentTab = 'summary'"
+          >
+            Summary
+          </button>
+          <button 
+            class="tab-btn"
+            :class="{ active: currentTab === 'initiative' }"
+            @click="currentTab = 'initiative'"
+          >
+            Initiative Groups
+          </button>
+        </div>
+
+        <div class="tab-content">
+          <EncounterSummary v-if="currentTab === 'summary'" />
+          <InitiativeTracker v-else-if="currentTab === 'initiative'" />
+        </div>
       </aside>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import MonsterSelector from '@/components/MonsterSelector.vue'
 import EncounterSummary from '@/components/EncounterSummary.vue'
+import InitiativeTracker from '@/components/InitiativeTracker.vue'
 
 defineOptions({
   name: 'EncounterBuilder'
 })
+
+// Tab state
+const currentTab = ref<'summary' | 'initiative'>('summary')
 
 // Keyboard navigation support
 const handleKeydown = (event: KeyboardEvent) => {
@@ -39,6 +63,15 @@ const handleKeydown = (event: KeyboardEvent) => {
   if (event.key === 'Escape') {
     event.preventDefault()
     console.log('Escape pressed')
+  }
+  
+  // Tab navigation with Ctrl/Cmd + 1/2
+  if ((event.ctrlKey || event.metaKey) && event.key === '1') {
+    event.preventDefault()
+    currentTab.value = 'summary'
+  } else if ((event.ctrlKey || event.metaKey) && event.key === '2') {
+    event.preventDefault()
+    currentTab.value = 'initiative'
   }
 }
 
@@ -101,6 +134,60 @@ onUnmounted(() => {
 
 .summary-panel {
   min-width: 0;
+  position: sticky;
+  top: var(--space-4);
+  height: fit-content;
+  max-height: calc(100vh - var(--space-8));
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tabs */
+.panel-tabs {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background: white;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border: 1px solid var(--color-neutral-200);
+  border-bottom: none;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-neutral-50);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-all);
+}
+
+.tab-btn:hover {
+  background: var(--color-neutral-100);
+  border-color: var(--color-neutral-300);
+}
+
+.tab-btn.active {
+  background: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+  color: white;
+  font-weight: var(--font-weight-semibold);
+}
+
+.tab-btn:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+}
+
+.tab-content {
+  flex: 1;
+  overflow-y: auto;
+  background: white;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 /* Responsive Design */
