@@ -8,7 +8,6 @@
           type="text" 
           placeholder="Search monsters..." 
           class="search-input"
-          @input="resetPagination"
         >
       </div>
 
@@ -61,7 +60,7 @@
             type="text" 
             placeholder="Filter by keywords..." 
             class="filter-input"
-            @input="resetPagination"
+            @change="resetPagination"
           >
         </div>
       </div>
@@ -133,17 +132,28 @@
           </div>
 
           <div class="monster-card-footer">
-            <button 
-              @click="addToEncounter(monster)" 
-              class="btn btn-add"
-              :class="{ 'btn-added': encounterStore.hasMonster(monster.id) }"
-              :aria-label="`Add ${monster.name} to encounter`"
-            >
-              <span v-if="encounterStore.hasMonster(monster.id)">
-                ✓ Added ({{ encounterStore.getMonsterCount(monster.id) }})
-              </span>
-              <span v-else>+ Add to Encounter</span>
-            </button>
+            <div class="add-buttons">
+              <button 
+                @click="addToEncounter(monster)" 
+                class="btn btn-add"
+                :class="{ 'btn-added': encounterStore.hasMonster(monster.id) }"
+                :aria-label="`Add ${monster.name} to encounter`"
+              >
+                <span v-if="encounterStore.hasMonster(monster.id)">
+                  ✓ Added ({{ encounterStore.getMonsterCount(monster.id) }})
+                </span>
+                <span v-else>+ Add to Encounter</span>
+              </button>
+              <button 
+                v-if="monster.organization?.toLowerCase() === 'minion'"
+                @click="addMultipleToEncounter(monster, 4)" 
+                class="btn btn-add-multiple"
+                :aria-label="`Add 4 ${monster.name} to encounter`"
+                title="Add 4 minions at once"
+              >
+                +4
+              </button>
+            </div>
             <button 
               @click="viewMonster(monster.id)" 
               class="btn btn-view"
@@ -182,7 +192,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useEncounterStore } from '@/stores/encounter'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
@@ -217,6 +227,7 @@ const monsters = ref<Monster[]>([])
 const loading = ref(true)
 const error = ref<string | null>(null)
 const searchTerm = ref('')
+const debouncedSearchTerm = ref('')
 const selectedKeywords = ref('')
 const selectedLevel = ref('')
 const selectedEV = ref('')
@@ -224,6 +235,18 @@ const selectedRole = ref('')
 const selectedOrganization = ref('')
 const currentPage = ref(1)
 const itemsPerPage = 12
+
+// Debounce search term for performance
+let searchDebounceTimer: ReturnType<typeof setTimeout> | null = null
+watch(searchTerm, (newValue) => {
+  if (searchDebounceTimer) {
+    clearTimeout(searchDebounceTimer)
+  }
+  searchDebounceTimer = setTimeout(() => {
+    debouncedSearchTerm.value = newValue
+    resetPagination()
+  }, 300)
+})
 
 // Computed
 const availableLevels = computed(() => {
@@ -255,9 +278,9 @@ const availableOrganizations = computed(() => {
 const filteredMonsters = computed(() => {
   let filtered = monsters.value
 
-  // Search filter
-  if (searchTerm.value) {
-    const term = searchTerm.value.toLowerCase()
+  // Search filter - using debounced search term
+  if (debouncedSearchTerm.value) {
+    const term = debouncedSearchTerm.value.toLowerCase()
     filtered = filtered.filter(monster =>
       monster.name.toLowerCase().includes(term)
     )
@@ -276,12 +299,14 @@ const filteredMonsters = computed(() => {
 
   // Level filter
   if (selectedLevel.value !== '') {
-    filtered = filtered.filter(monster => monster.level === parseInt(selectedLevel.value))
+    const levelNum = parseInt(selectedLevel.value)
+    filtered = filtered.filter(monster => monster.level === levelNum)
   }
 
   // EV filter
   if (selectedEV.value) {
-    filtered = filtered.filter(monster => monster.ev === parseInt(selectedEV.value))
+    const evNum = parseInt(selectedEV.value)
+    filtered = filtered.filter(monster => monster.ev === evNum)
   }
 
   // Role filter
@@ -358,6 +383,19 @@ const addToEncounter = (monster: Monster) => {
     role: monster.role || '',
     organization: monster.organization || ''
   })
+}
+
+const addMultipleToEncounter = (monster: Monster, count: number) => {
+  for (let i = 0; i < count; i++) {
+    encounterStore.addMonster({
+      id: monster.id,
+      name: monster.name,
+      level: monster.level,
+      ev: monster.ev || 0,
+      role: monster.role || '',
+      organization: monster.organization || ''
+    })
+  }
 }
 
 const viewMonster = (monsterId: string) => {
@@ -603,6 +641,12 @@ onMounted(() => {
   margin-top: auto;
 }
 
+.add-buttons {
+  flex: 1;
+  display: flex;
+  gap: var(--space-2);
+}
+
 /* Buttons */
 .btn {
   padding: var(--space-2) var(--space-4);
@@ -638,6 +682,20 @@ onMounted(() => {
 
 .btn-added {
   background: var(--color-success-700);
+}
+
+.btn-add-multiple {
+  background: var(--color-success-600);
+  color: white;
+  padding: var(--space-2) var(--space-3);
+  font-weight: var(--font-weight-bold);
+  min-width: 44px;
+}
+
+.btn-add-multiple:hover {
+  background: var(--color-success-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-view {
