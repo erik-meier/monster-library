@@ -64,7 +64,7 @@
             <div class="monster-meta">
               <span class="meta-badge">Level {{ monster.level }}</span>
               <span v-if="monster.role" class="meta-badge">{{ monster.role }}</span>
-              <span class="meta-badge ev-badge">EV {{ monster.ev }}</span>
+              <span v-if="monster.organization" class="meta-badge">{{ monster.organization }}</span>
             </div>
           </div>
           
