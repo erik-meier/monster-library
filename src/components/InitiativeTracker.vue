@@ -21,7 +21,6 @@
           :key="group.id"
           :group="group"
           :can-reorder="true"
-          :show-initiative="true"
           @delete="handleDeleteGroup"
           @reorder="handleReorderGroups"
           @monster-moved="handleMonsterMoved"
