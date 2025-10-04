@@ -11,6 +11,8 @@
           <router-link to="/" class="nav-link" title="Home" aria-label="Go to Home page">Home</router-link>
           <router-link to="/monsters" class="nav-link" title="Browse Monsters"
             aria-label="Browse monster library">Browse Monsters</router-link>
+          <router-link to="/encounters" class="nav-link" title="Encounter Builder"
+            aria-label="Build encounters">Encounters</router-link>
           <router-link to="/my-monsters" class="nav-link" title="My Monsters" aria-label="View my custom monsters">My
             Monsters</router-link>
           <router-link to="/about" class="nav-link" title="About" aria-label="About Steel Cauldron">About</router-link>
@@ -375,6 +377,11 @@ button:disabled,
     font-size: var(--font-size-lg);
   }
 
+  .nav-link[href="/encounters"]::after {
+    content: "⚔️";
+    font-size: var(--font-size-lg);
+  }
+
   .nav-link[href="/my-monsters"]::after {
     content: "⭐";
     font-size: var(--font-size-lg);
@@ -405,6 +412,11 @@ button:disabled,
 
   .nav-link.router-link-active[href="/monsters"]::after {
     content: "📚";
+    font-size: var(--font-size-lg);
+  }
+
+  .nav-link.router-link-active[href="/encounters"]::after {
+    content: "⚔️";
     font-size: var(--font-size-lg);
   }
 
