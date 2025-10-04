@@ -21,11 +21,11 @@
           <p>Create custom monsters from existing templates or start from scratch</p>
         </router-link>
 
-        <div class="feature-card feature-card-disabled">
+        <router-link to="/encounter-builder" class="feature-card">
           <div class="feature-icon">⚔️</div>
           <h3>Encounter Builder</h3>
-          <p>Create balanced encounters for your Draw Steel adventures (Coming Soon)</p>
-        </div>
+          <p>Create balanced encounters for your Draw Steel adventures</p>
+        </router-link>
       </div>
     </div>
 
