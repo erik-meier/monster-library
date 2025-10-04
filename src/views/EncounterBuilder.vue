@@ -14,10 +14,26 @@
 
       <div class="builder-main">
         <div class="section-card">
-          <h2>Encounter Monsters</h2>
+          <div class="section-header-with-toggle">
+            <h2>Encounter Monsters</h2>
+            <button
+              v-if="encounterMonsters.length > 0"
+              type="button"
+              class="btn btn-sm toggle-button"
+              @click="encounterMonstersExpanded = !encounterMonstersExpanded"
+              :aria-label="encounterMonstersExpanded ? 'Collapse encounter monsters' : 'Expand encounter monsters'"
+            >
+              {{ encounterMonstersExpanded ? '−' : '+' }}
+            </button>
+          </div>
           <p v-if="encounterMonsters.length === 0" class="empty-state">
             No monsters added yet. Use the search below to add monsters to your encounter.
           </p>
+
+          <div v-else-if="!encounterMonstersExpanded" class="encounter-summary">
+            {{ encounterMonsters.length }} monster type{{ encounterMonsters.length !== 1 ? 's' : '' }} added
+            ({{ encounterMonsters.reduce((sum, m) => sum + m.count, 0) }} total creatures)
+          </div>
 
           <div v-else class="monster-list">
             <div v-for="monster in encounterMonsters" :key="monster.id" class="monster-entry">
@@ -128,6 +144,7 @@ const encounterMonsters = ref<MonsterInEncounter[]>([])
 const searchQuery = ref('')
 const filterLevel = ref<string>('')
 const filterOrg = ref<string>('')
+const encounterMonstersExpanded = ref(true)
 
 interface SimpleMonster {
   id: string
@@ -291,6 +308,37 @@ function calculateCost(monster: MonsterInEncounter): string {
   color: var(--color-primary-600);
 }
 
+.section-header-with-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.section-header-with-toggle h2 {
+  margin: 0;
+}
+
+.toggle-button {
+  font-size: var(--font-size-xl);
+  min-width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.encounter-summary {
+  padding: var(--space-4);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  text-align: center;
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
 .empty-state {
   padding: var(--space-8);
   text-align: center;
@@ -414,6 +462,12 @@ function calculateCost(monster: MonsterInEncounter): string {
   gap: var(--space-3);
   max-height: 600px;
   overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .available-monsters {
+    max-height: 50vh;
+  }
 }
 
 .available-monster {
