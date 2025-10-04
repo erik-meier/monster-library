@@ -104,14 +104,6 @@ describe('Initiative Groups', () => {
       store.updateGroupName(groupId, 'New Name')
       expect(store.initiativeGroups[0].name).toBe('New Name')
     })
-
-    it('should update group initiative', () => {
-      const groupId = store.createGroup()
-      expect(store.initiativeGroups[0].initiative).toBeUndefined()
-      
-      store.updateGroupInitiative(groupId, 15)
-      expect(store.initiativeGroups[0].initiative).toBe(15)
-    })
   })
 
   describe('Monster to Group Management', () => {

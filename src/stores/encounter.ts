@@ -14,7 +14,6 @@ export interface EncounterMonster {
 export interface InitiativeGroup {
   id: string
   name: string
-  initiative?: number
   monsterIds: string[]  // Array of monster IDs in this group
   order: number  // Display order
 }
@@ -167,13 +166,6 @@ export const useEncounterStore = defineStore('encounter', {
       const group = this.initiativeGroups.find(g => g.id === groupId)
       if (group) {
         group.name = name
-      }
-    },
-
-    updateGroupInitiative(groupId: string, initiative: number) {
-      const group = this.initiativeGroups.find(g => g.id === groupId)
-      if (group) {
-        group.initiative = initiative
       }
     },
 

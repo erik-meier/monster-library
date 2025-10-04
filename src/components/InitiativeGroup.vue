@@ -47,18 +47,6 @@
         >
           {{ group.name }}
         </h3>
-        
-        <input
-          v-if="showInitiative"
-          type="number"
-          v-model.number="localInitiative"
-          class="initiative-input"
-          placeholder="Init"
-          @change="updateInitiative"
-          :aria-label="`Initiative for ${group.name}`"
-          min="1"
-          max="99"
-        />
       </div>
       
       <div class="group-stats">
@@ -167,24 +155,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, nextTick, watch } from 'vue'
+import { ref, computed, nextTick } from 'vue'
 import { useEncounterStore, type EncounterMonster } from '@/stores/encounter'
 
 interface Props {
   group: {
     id: string
     name: string
-    initiative?: number
     monsterIds: string[]
     order: number
   }
   canReorder?: boolean
-  showInitiative?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  canReorder: true,
-  showInitiative: true
+  canReorder: true
 })
 
 const emit = defineEmits<{
@@ -200,12 +185,6 @@ const isDraggingOver = ref(false)
 const isEditingName = ref(false)
 const editedName = ref(props.group.name)
 const nameInput = ref<HTMLInputElement | null>(null)
-const localInitiative = ref(props.group.initiative)
-
-// Watch for changes to group initiative from parent
-watch(() => props.group.initiative, (newVal) => {
-  localInitiative.value = newVal
-})
 
 // Computed
 const monstersInGroup = computed(() => {
@@ -254,13 +233,6 @@ const saveGroupName = () => {
 const cancelEditName = () => {
   editedName.value = props.group.name
   isEditingName.value = false
-}
-
-// Initiative handling
-const updateInitiative = () => {
-  if (localInitiative.value !== undefined) {
-    encounterStore.updateGroupInitiative(props.group.id, localInitiative.value)
-  }
 }
 
 // Monster drag and drop
@@ -522,23 +494,6 @@ const handleMonsterKeyboard = (monster: EncounterMonster, event: KeyboardEvent) 
 
 .group-name-input:focus {
   outline: none;
-  box-shadow: var(--focus-ring);
-}
-
-.initiative-input {
-  width: 60px;
-  padding: var(--space-1) var(--space-2);
-  border: 2px solid var(--color-neutral-200);
-  border-radius: var(--radius-base);
-  font-size: var(--font-size-sm);
-  font-family: var(--font-family-sans);
-  text-align: center;
-  transition: var(--transition-colors);
-}
-
-.initiative-input:focus {
-  outline: none;
-  border-color: var(--color-primary-500);
   box-shadow: var(--focus-ring);
 }
 
