@@ -28,13 +28,10 @@ export default {
   },
   methods: {
     formatTierNumber(tier) {
-      // Use alternative tier SVG icons instead of text
+      // Use glyph font icons for tier display
       if (tier >= 1 && tier <= 3) {
-        return `<img src="/assets/tier-${tier}-alt.svg" alt="Tier ${tier}" class="tier-icon" />`
+        return `<span class="glyph-icon glyph-tier-${tier}" aria-label="Tier ${tier}"></span>`
       }
-      // Fallback for invalid tier values
-      const tierMap = { 1: '<=11', 2: '12-16', 3: '17+' }
-      return tierMap[tier] || tier
     }
   }
 }
@@ -89,26 +86,27 @@ export default {
 
 .tier-1 .tier-number {
   border-color: var(--color-error-600);
-  color: var(--color-error-600);
+  color: var(--color-neutral-800);
   background: var(--color-error-50);
 }
 
 .tier-2 .tier-number {
   border-color: var(--color-warning-600);
-  color: var(--color-warning-600);
+  color: var(--color-neutral-800);
   background: var(--color-warning-50);
 }
 
 .tier-3 .tier-number {
   border-color: var(--color-success-600);
-  color: var(--color-success-600);
+  color: var(--color-neutral-800);
   background: var(--color-success-50);
 }
 
-.tier-icon {
-  width: 100%;
-  height: 100%;
-  display: block;
+.tier-number {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .outcome-text {
