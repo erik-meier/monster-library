@@ -84,7 +84,20 @@
               "agility"
             ]
           },
-          "effects": {}
+          "tiers": [
+            {
+              "tier": 1,
+              "display": "7 damage"
+            },
+            {
+              "tier": 2,
+              "display": "10 damage"
+            },
+            {
+              "tier": 3,
+              "display": "13 damage"
+            }
+          ]
         },
         "effect": {
           "text": "<p>One ally within 10 squares of the monarch can make a <span class=\"damage-value damage-generic\">4</span> damage free strike.</p>"

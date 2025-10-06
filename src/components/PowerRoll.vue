@@ -2,7 +2,7 @@
   <div class="power-roll">
     <div v-if="tiers && tiers.length > 0" class="outcomes">
       <div v-for="tierData in tiers" :key="tierData.tier" class="outcome" :class="`tier-${tierData.tier}`">
-        <span class="tier-number">{{ formatTierNumber(tierData.tier) }}</span>
+        <span class="tier-number" v-html="formatTierNumber(tierData.tier)"></span>
         <span class="outcome-text" v-html="tierData.display"></span>
       </div>
     </div>
@@ -28,8 +28,10 @@ export default {
   },
   methods: {
     formatTierNumber(tier) {
-      const tierMap = { 1: '<=11', 2: '12-16', 3: '17+' }
-      return tierMap[tier] || tier
+      // Use glyph font icons for tier display
+      if (tier >= 1 && tier <= 3) {
+        return `<span class="glyph-icon glyph-tier-${tier}" aria-label="Tier ${tier}"></span>`
+      }
     }
   }
 }
@@ -40,7 +42,7 @@ export default {
   background: var(--color-neutral-50);
   border: 1px solid var(--color-neutral-200);
   border-radius: var(--radius-md);
-  padding: var(--space-4);
+  padding: var(--space-2);
   margin: var(--space-2) 0;
 }
 
@@ -70,34 +72,41 @@ export default {
 
 .tier-number {
   background: white;
-  color: var(--color-neutral-700);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xs);
   min-width: 3rem;
   height: 1.5rem;
-  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: var(--space-3);
   flex-shrink: 0;
-  border: 2px solid;
   padding: 0 var(--space-1);
 }
 
 .tier-1 .tier-number {
   border-color: var(--color-error-600);
-  color: var(--color-error-600);
+  color: var(--color-neutral-800);
+  background: var(--color-error-50);
 }
 
 .tier-2 .tier-number {
   border-color: var(--color-warning-600);
-  color: var(--color-warning-600);
+  color: var(--color-neutral-800);
+  background: var(--color-warning-50);
 }
 
 .tier-3 .tier-number {
   border-color: var(--color-success-600);
-  color: var(--color-success-600);
+  color: var(--color-neutral-800);
+  background: var(--color-success-50);
+}
+
+.tier-number {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .outcome-text {
@@ -132,9 +141,9 @@ export default {
 .outcome-text :deep(.potency-value),
 .effect-text :deep(.potency-value) {
   font-weight: var(--font-weight-bold);
-  color: #2563eb;
-  background: #dbeafe;
-  padding: var(--space-1) var(--space-2);
+  color: var(--color-neutral-800);
+  background: transparent;
+  padding: var(--space-1) var(--space-1);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-sm);
 }

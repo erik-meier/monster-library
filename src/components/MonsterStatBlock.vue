@@ -20,19 +20,19 @@
 
     <!-- Core Stats Grid -->
     <div class="core-stats-grid">
-      <div class="stat-labels">
-        <div class="stat-label">Size</div>
-        <div class="stat-label">Speed</div>
-        <div class="stat-label">Stamina</div>
-        <div class="stat-label">Stability</div>
-        <div class="stat-label">Free Strike</div>
-      </div>
       <div class="stat-values">
         <div class="stat-value">{{ monster.size.value }}{{ monster.size.value > 1 ? '' : monster.size.letter }}</div>
         <div class="stat-value">{{ monster.speed }}</div>
         <div class="stat-value">{{ monster.stamina }}</div>
         <div class="stat-value">{{ monster.stability }}</div>
         <div class="stat-value">{{ monster.freeStrike }}</div>
+      </div>
+      <div class="stat-labels">
+        <div class="stat-label">Size</div>
+        <div class="stat-label">Speed</div>
+        <div class="stat-label">Stamina</div>
+        <div class="stat-label">Stability</div>
+        <div class="stat-label">Free Strike</div>
       </div>
     </div>
 
@@ -56,18 +56,16 @@
       <span class="stat-item">
         <strong>Movement</strong> {{ formatMovement(monster.movementTypes) }}
       </span>
+      <template v-if="getWithCaptainAbilities().length > 0">
+        <span class="stat-separator">•</span>
+        <span v-for="ability in getWithCaptainAbilities()" :key="ability.name" class="stat-item">
+          <span class="with-captain-label">With Captain:</span>
+          <span class="with-captain-text"
+            v-html="ability.system?.description?.value || ability.description || ''"></span>
+        </span>
+      </template>
     </div>
-
     <div class="divider"></div>
-
-    <!-- With Captain Features -->
-    <div v-if="getWithCaptainAbilities().length > 0" class="with-captain-section">
-      <div v-for="ability in getWithCaptainAbilities()" :key="ability.name" class="with-captain-ability">
-        <span class="with-captain-label">With Captain:</span>
-        <span class="with-captain-text" v-html="ability.system?.description?.value || ability.description || ''"></span>
-      </div>
-      <div class="divider"></div>
-    </div>
 
     <!-- Abilities -->
     <div v-if="getRegularAbilities().length > 0" title="Abilities" :expanded="true" id="abilities-section">

@@ -13,8 +13,11 @@
         <div class="action-header">
           <div class="action-title-row">
             <h4 class="action-name">
+              <span v-if="getActionGlyph(action)" :class="getActionGlyph(action)" :aria-label="getActionIconAlt(action)"
+                class="glyph-icon action-type-icon"></span>
+              <span v-if="action.type === 'feature'" class="glyph-icon glyph-feature action-type-icon"
+                aria-label="Feature"></span>
               {{ action.name }}
-              <span v-if="action.type === 'feature'" class="feature-badge">★</span>
               <span v-if="action.system.category === 'signature'" class="signature-badge">SIGNATURE</span>
               <span v-if="action.system.resource" class="malice-cost">{{ action.system.resource }} Malice</span>
             </h4>
@@ -33,18 +36,12 @@
             </div>
             <div class="action-mechanics">
               <span v-if="formatActionDistance(action.system.distance)" class="action-distance">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L13.09 8.26L22 9L13.09 15.74L12 22L10.91 15.74L2 9L10.91 8.26L12 2Z" />
-                </svg>
-                Range: {{ formatActionDistance(action.system.distance) }}
+                <span class="glyph-icon glyph-distance icon" aria-label="Distance"></span>
+                {{ formatActionDistance(action.system.distance) }}
               </span>
               <span v-if="formatActionTargets(action.system.target, monster?.organization)" class="action-target">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <circle cx="12" cy="12" r="10" />
-                  <circle cx="12" cy="12" r="6" />
-                  <circle cx="12" cy="12" r="2" />
-                </svg>
-                Target: {{ formatActionTargets(action.system.target, monster?.organization) }}
+                <span class="glyph-icon glyph-target icon" aria-label="Target"></span>
+                {{ formatActionTargets(action.system.target, monster?.organization) }}
               </span>
             </div>
           </div>
@@ -143,6 +140,93 @@ export default {
     formatDescription(description) {
       // Text is now pre-processed in the data pipeline, so just return as-is
       return description;
+    },
+    getActionGlyph(action) {
+      if (!action.system) return null;
+
+      // Check for triggered actions first
+      if (action.system.type === 'triggered' || action.system.type === 'freeTriggered') {
+        return 'glyph-triggered-action';
+      }
+
+      // Check for villain actions
+      if (action.system.type === 'villain') {
+        return 'glyph-villain-action';
+      }
+
+      // Check distance-based icons
+      if (action.system.distance && action.system.distance.type) {
+        const distance = action.system.distance.type.toLowerCase();
+
+        // Self distance
+        if (distance === 'self') {
+          return 'glyph-self';
+        }
+
+        // Melee distance
+        if (distance.includes('melee') && !distance.includes('ranged')) {
+          return 'glyph-melee';
+        }
+
+        // Ranged distance
+        if (distance.includes('ranged') && !distance.includes('melee')) {
+          return 'glyph-ranged';
+        }
+
+        // Melee or ranged
+        if (distance.includes('melee') && distance.includes('ranged')) {
+          return 'glyph-melee-or-ranged';
+        }
+
+        // Area effects
+        if (distance.includes('burst') || distance.includes('aura')) {
+          return 'glyph-burst';
+        }
+
+        if (distance.includes('cube') || distance.includes('line') || distance.includes('wall')) {
+          return 'glyph-cube-line-wall';
+        }
+
+        // Other distance types
+        return 'glyph-unique-distance';
+      }
+
+      return null;
+    },
+    getActionIconAlt(action) {
+      if (!action.system) return '';
+
+      if (action.system.type === 'triggered' || action.system.type === 'freeTriggered') {
+        return 'Triggered Action';
+      }
+
+      if (action.system.type === 'villain') {
+        return 'Villain Action';
+      }
+
+      if (action.system.distance && action.system.distance.type) {
+        const distance = action.system.distance.type;
+
+        if (distance === 'self') {
+          return 'Self';
+        }
+
+        if (distance.includes('melee') && distance.includes('ranged')) {
+          return 'Melee or Ranged';
+        }
+
+        if (distance.includes('burst') || distance.includes('aura')) {
+          return 'Burst or Aura';
+        }
+
+        if (distance.includes('cube') || distance.includes('line') || distance.includes('wall')) {
+          return 'Area Effect';
+        }
+
+        return 'Distance Effect';
+      }
+
+      return 'Action';
     }
   }
 }
@@ -202,6 +286,12 @@ export default {
   align-items: center;
   gap: var(--space-2);
   flex: 1;
+}
+
+.action-type-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  opacity: 0.8;
 }
 
 .feature-badge {
@@ -286,9 +376,8 @@ export default {
 }
 
 .icon {
-  width: 14px;
-  height: 14px;
-  opacity: 0.7;
+  font-size: 1rem;
+  opacity: 1;
 }
 
 .action-trigger {
@@ -322,12 +411,12 @@ export default {
 }
 
 .action-effect-text :deep(.potency-value) {
-  font-weight: bold;
-  color: #2563eb;
-  background: #dbeafe;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-800);
+  background: transparent;
+  padding: var(--space-1) var(--space-1);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
 }
 
 .action-spend {
@@ -351,12 +440,12 @@ export default {
 }
 
 .action-spend :deep(.potency-value) {
-  font-weight: bold;
-  color: #2563eb;
-  background: #dbeafe;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-800);
+  background: transparent;
+  padding: var(--space-1) var(--space-1);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
 }
 
 .action-description :deep(em) {
@@ -373,17 +462,17 @@ export default {
 
 /* Potency value styling */
 .action-description :deep(.potency-value) {
-  font-weight: bold;
-  color: #2563eb;
-  background: #dbeafe;
-  padding: 0.1rem 0.3rem;
-  border-radius: 3px;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-800);
+  background: transparent;
+  padding: var(--space-1) var(--space-1);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
 }
 
 /* Damage type styling */
 .action-description :deep(.damage-value) {
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   font-size: 0.9rem;
 }
 
