@@ -94,7 +94,7 @@
             },
             {
               "tier": 3,
-              "display": "9 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">A&lt;5</strong> bleeding (save ends)"
             }
           ]
         },

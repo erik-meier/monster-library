@@ -77,11 +77,11 @@
             },
             {
               "tier": 2,
-              "display": "11 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> prone"
+              "display": "11 damage; <strong class=\"potency-value\">A&lt;1</strong> prone"
             },
             {
               "tier": 3,
-              "display": "14 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> prone"
+              "display": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> prone"
             }
           ]
         },
@@ -128,11 +128,11 @@
             },
             {
               "tier": 2,
-              "display": "7 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> the target is dazzled (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">A&lt;1</strong> the target is dazzled (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> the target is dazzled (save ends)"
+              "display": "10 damage; <strong class=\"potency-value\">A&lt;2</strong> the target is dazzled (save ends)"
             }
           ]
         },
@@ -177,15 +177,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<span class=\"potency-fallback\">I&lt;0</span> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;0</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "<span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "<span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
             }
           ]
         },

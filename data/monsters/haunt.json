@@ -126,15 +126,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> prone"
+              "display": "3 damage; <strong class=\"potency-value\">I&lt;2</strong> prone"
             },
             {
               "tier": 2,
-              "display": "6 damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> prone"
+              "display": "6 damage; <strong class=\"potency-value\">I&lt;3</strong> prone"
             },
             {
               "tier": 3,
-              "display": "7 damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> prone"
+              "display": "7 damage; <strong class=\"potency-value\">I&lt;4</strong> prone"
             }
           ]
         },

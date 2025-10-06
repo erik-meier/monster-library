@@ -128,11 +128,11 @@
             },
             {
               "tier": 2,
-              "display": "12 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "12 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "15 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "15 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             }
           ]
         },
@@ -175,15 +175,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<span class=\"potency-fallback\">I&lt;0</span> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;0</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "<span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "<span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> dazed (save ends)"
+              "display": "<strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
             }
           ]
         },

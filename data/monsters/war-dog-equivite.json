@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "10 damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "10 damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
             }
           ]
         },
@@ -132,7 +132,7 @@
             },
             {
               "tier": 3,
-              "display": "5 damage; push 3; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> prone"
+              "display": "5 damage; push 3; <strong class=\"potency-value\">M&lt;3</strong> prone"
             }
           ]
         },

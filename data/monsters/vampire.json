@@ -76,15 +76,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 corruption damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> 5 corruption damage; and bleeding (save ends)"
+              "display": "10 corruption damage; <strong class=\"potency-value\">M&lt;3</strong> 5 corruption damage; and bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 corruption damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> 7 corruption damage; and bleeding (save ends)"
+              "display": "11 corruption damage; <strong class=\"potency-value\">M&lt;4</strong> 7 corruption damage; and bleeding (save ends)"
             }
           ]
         },
@@ -128,15 +128,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> slowed (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">A&lt;2</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "10 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> slowed (save ends)"
+              "display": "10 damage; <strong class=\"potency-value\">A&lt;3</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> slowed (save ends)"
+              "display": "11 damage; <strong class=\"potency-value\">A&lt;4</strong> slowed (save ends)"
             }
           ]
         },

@@ -114,7 +114,7 @@
             },
             {
               "tier": 3,
-              "display": "9 cold damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> slowed (save ends); the wraith shifts up to  3 squares"
+              "display": "9 cold damage; <strong class=\"potency-value\">P&lt;5</strong> slowed (save ends); the wraith shifts up to  3 squares"
             }
           ]
         },

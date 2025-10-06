@@ -95,7 +95,7 @@
             },
             {
               "tier": 3,
-              "display": "13 damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> weakened (save ends)"
+              "display": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> weakened (save ends)"
             }
           ]
         },

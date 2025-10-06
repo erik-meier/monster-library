@@ -80,11 +80,11 @@
             },
             {
               "tier": 2,
-              "display": "7 corruption damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "7 corruption damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "9 corruption damage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)"
             }
           ]
         },

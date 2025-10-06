@@ -77,15 +77,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "10 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "10 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "14 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "14 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "17 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "17 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> bleeding (save ends)"
             }
           ]
         },
@@ -128,15 +128,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "7 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "12 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "12 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "16 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> frightened (save ends)"
             }
           ]
         },
@@ -301,15 +301,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "5 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "8 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> frightened and restrained (save ends)"
+              "display": "10 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> frightened and restrained (save ends)"
             }
           ]
         },

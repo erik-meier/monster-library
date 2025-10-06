@@ -4,7 +4,6 @@
       :class="{ 'clickable': !editMode }" @click="!editMode && handleRoll(characteristic)">
       <div class="characteristic-row">
         <div class="characteristic-name">
-          <img :src="getCharacteristicIcon(characteristic)" :alt="characteristic" class="characteristic-icon" />
           <span class="characteristic-text">{{ getCharacteristicText(characteristic) }}</span>
         </div>
         <div v-if="!editMode" class="characteristic-value">
@@ -72,24 +71,13 @@ const getCharacteristicName = (characteristic: string): string => {
   return names[characteristic] || characteristic
 }
 
-const getCharacteristicIcon = (characteristic: string): string => {
-  const icons: Record<string, string> = {
-    might: '/assets/might.svg',
-    agility: '/assets/agility.svg',
-    reason: '/assets/reason.svg',
-    intuition: '/assets/intuition.svg',
-    presence: '/assets/presence.svg'
-  }
-  return icons[characteristic] || '/assets/might.svg'
-}
-
 const getCharacteristicText = (characteristic: string): string => {
   const texts: Record<string, string> = {
-    might: 'ight',
-    agility: 'gility',
-    reason: 'eason',
-    intuition: 'ntuition',
-    presence: 'resence'
+    might: 'Might',
+    agility: 'Agility',
+    reason: 'Reason',
+    intuition: 'Intuition',
+    presence: 'Presence'
   }
   return texts[characteristic] || characteristic
 }

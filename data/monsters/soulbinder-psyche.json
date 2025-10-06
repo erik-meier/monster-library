@@ -73,15 +73,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "15 holy damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> the target is soulbound (save ends)"
+              "display": "15 holy damage; <strong class=\"potency-value\">R&lt;3</strong> the target is soulbound (save ends)"
             },
             {
               "tier": 2,
-              "display": "20 holy damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> the target is soulbound (save ends)"
+              "display": "20 holy damage; <strong class=\"potency-value\">R&lt;4</strong> the target is soulbound (save ends)"
             },
             {
               "tier": 3,
-              "display": "24 holy damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> the target is soulbound (save ends)"
+              "display": "24 holy damage; <strong class=\"potency-value\">R&lt;5</strong> the target is soulbound (save ends)"
             }
           ]
         },
@@ -126,15 +126,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 corruption damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> weakened (EoT)"
+              "display": "8 corruption damage; <strong class=\"potency-value\">P&lt;3</strong> weakened (EoT)"
             },
             {
               "tier": 2,
-              "display": "12 corruption damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> weakened (EoT)"
+              "display": "12 corruption damage; <strong class=\"potency-value\">P&lt;4</strong> weakened (EoT)"
             },
             {
               "tier": 3,
-              "display": "15 corruption damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> weakened (EoT)"
+              "display": "15 corruption damage; <strong class=\"potency-value\">P&lt;5</strong> weakened (EoT)"
             }
           ]
         },
@@ -178,7 +178,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">5</span> damage from a self-inflicted wound, and if they have <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> Psyche slides them up to 5 squares.</p>"
+          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">5</span> damage from a self-inflicted wound, and if they have <strong class=\"potency-value\">M&lt;4</strong> Psyche slides them up to 5 squares.</p>"
         },
         "spend": {
           "text": "",
@@ -320,11 +320,11 @@
             },
             {
               "tier": 2,
-              "display": "11 psychic damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "11 psychic damage; <strong class=\"potency-value\">P&lt;4</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 psychic damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "14 psychic damage; <strong class=\"potency-value\">P&lt;5</strong> frightened (save ends)"
             }
           ]
         },

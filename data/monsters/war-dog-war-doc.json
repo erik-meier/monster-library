@@ -81,7 +81,7 @@
             },
             {
               "tier": 3,
-              "display": "9 poison damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> weakened (save ends)"
+              "display": "9 poison damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
             }
           ]
         },

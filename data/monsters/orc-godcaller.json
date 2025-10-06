@@ -82,7 +82,7 @@
             },
             {
               "tier": 3,
-              "display": "9 sonic damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> weakened (save ends)"
+              "display": "9 sonic damage; <strong class=\"potency-value\">P&lt;2</strong> weakened (save ends)"
             }
           ]
         },

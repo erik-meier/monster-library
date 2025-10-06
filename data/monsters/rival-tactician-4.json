@@ -76,11 +76,11 @@
             },
             {
               "tier": 2,
-              "display": "21 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> prone and can't stand (EoT)"
+              "display": "21 damage; <strong class=\"potency-value\">A&lt;4</strong> prone and can't stand (EoT)"
             },
             {
               "tier": 3,
-              "display": "25 damage; prone; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> and can't stand (EoT)"
+              "display": "25 damage; prone; <strong class=\"potency-value\">M&lt;5</strong> and can't stand (EoT)"
             }
           ]
         },
@@ -124,15 +124,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "10 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> weakened (save ends)"
+              "display": "10 damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "16 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> weakened (save ends)"
+              "display": "16 damage; <strong class=\"potency-value\">M&lt;4</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "20 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> weakened (save ends)"
+              "display": "20 damage; <strong class=\"potency-value\">M&lt;5</strong> weakened (save ends)"
             }
           ]
         },

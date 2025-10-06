@@ -75,15 +75,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "2 poison damage; <span class=\"potency-fallback\">I&lt;0</span> frightened (save ends)"
+              "display": "2 poison damage; <strong class=\"potency-value\">I&lt;0</strong> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "4 poison damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "4 poison damage; <strong class=\"potency-value\">I&lt;1</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "5 poison damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "5 poison damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
             }
           ]
         },

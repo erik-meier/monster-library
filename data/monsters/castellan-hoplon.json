@@ -174,15 +174,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "<span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> taunted (EoT)"
+              "display": "<strong class=\"potency-value\">R&lt;3</strong> taunted (EoT)"
             },
             {
               "tier": 2,
-              "display": "<span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> taunted (EoT)"
+              "display": "<strong class=\"potency-value\">R&lt;4</strong> taunted (EoT)"
             },
             {
               "tier": 3,
-              "display": "<span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> taunted (EoT)"
+              "display": "<strong class=\"potency-value\">R&lt;5</strong> taunted (EoT)"
             }
           ]
         },
@@ -223,7 +223,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Hoplon teleports to an unoccupied space adjacent to the enemy and becomes the new target of the ability. He can then make a free strike against the enemy, and if that enemy has <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> they are taunted until the end of their next turn.</p>"
+          "text": "<p>Hoplon teleports to an unoccupied space adjacent to the enemy and becomes the new target of the ability. He can then make a free strike against the enemy, and if that enemy has <strong class=\"potency-value\">R&lt;4</strong> they are taunted until the end of their next turn.</p>"
         },
         "spend": {
           "text": "",
@@ -294,11 +294,11 @@
             },
             {
               "tier": 2,
-              "display": "11 psychic damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "11 psychic damage; <strong class=\"potency-value\">P&lt;4</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "14 psychic damage; <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-5.svg\" alt=\"5\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "14 psychic damage; <strong class=\"potency-value\">P&lt;5</strong> frightened (save ends)"
             }
           ]
         },

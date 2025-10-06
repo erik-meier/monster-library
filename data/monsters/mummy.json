@@ -73,7 +73,7 @@
             },
             {
               "tier": 3,
-              "display": "10 corruption damage; pull 2; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> restrained (save ends)"
+              "display": "10 corruption damage; pull 2; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
             }
           ]
         },
@@ -116,15 +116,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> the target is cursed (save ends)"
+              "display": "3 corruption damage; <strong class=\"potency-value\">I&lt;1</strong> the target is cursed (save ends)"
             },
             {
               "tier": 2,
-              "display": "5 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> the target is cursed (save ends)"
+              "display": "5 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> the target is cursed (save ends)"
             },
             {
               "tier": 3,
-              "display": "7 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> the target is cursed (save ends)"
+              "display": "7 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> the target is cursed (save ends)"
             }
           ]
         },

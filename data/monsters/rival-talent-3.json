@@ -124,15 +124,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 psychic damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> dazed (save ends)"
+              "display": "8 psychic damage; <strong class=\"potency-value\">R&lt;2</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 psychic damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> dazed and slowed (save ends)"
+              "display": "8 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> dazed and slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "8 psychic damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> dazed and slowed (save ends)"
+              "display": "8 psychic damage; <strong class=\"potency-value\">R&lt;4</strong> dazed and slowed (save ends)"
             }
           ]
         },

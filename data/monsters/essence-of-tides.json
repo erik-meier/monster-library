@@ -100,7 +100,7 @@
           ]
         },
         "effect": {
-          "text": "<p>If a target has <span class=\"potency-display\"><img src=\"/assets/presence.svg\" alt=\"P\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span>, their stability is reduced to 0 and they move 2 additional squares whenever they are force moved (save ends).</p>"
+          "text": "<p>If a target has <strong class=\"potency-value\">P&lt;2</strong>, their stability is reduced to 0 and they move 2 additional squares whenever they are force moved (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -143,7 +143,7 @@
         "spend": {
           "text": "Until the end of the encounter, the ground within 1  square of the target is a pool of water that is difficult terrain. This  water extends out behind the target as they move, creating a  stream that lasts until the end of the encounter. Any enemy who  ends their turn in the stream and has M<2 is slowed (save ends).",
           "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the ground within 1  square of the target is a pool of water that is difficult terrain. This  water extends out behind the target as they move, creating a  stream that lasts until the end of the encounter. Any enemy who  ends their turn in the stream and has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> is slowed (save ends)."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the ground within 1  square of the target is a pool of water that is difficult terrain. This  water extends out behind the target as they move, creating a  stream that lasts until the end of the encounter. Any enemy who  ends their turn in the stream and has <strong class=\"potency-value\">M&lt;2</strong> is slowed (save ends)."
         }
       }
     },

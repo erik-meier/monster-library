@@ -72,15 +72,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; <span class=\"potency-fallback\">M&lt;0</span> slowed (save ends)"
+              "display": "5 damage; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> slowed (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> slowed (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
             }
           ]
         },

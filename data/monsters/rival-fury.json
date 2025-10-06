@@ -77,7 +77,7 @@
         "spend": {
           "text": "Each target who has m<1 is slowed (save ends).",
           "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target who has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> is slowed (save ends)."
+          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target who has <strong class=\"potency-value\">M&lt;1</strong> is slowed (save ends)."
         }
       }
     },
@@ -124,15 +124,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "8 damage; <span class=\"potency-fallback\">M&lt;0</span> grabbed"
+              "display": "8 damage; <strong class=\"potency-value\">M&lt;0</strong> grabbed"
             },
             {
               "tier": 2,
-              "display": "13 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> grabbed"
+              "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> grabbed"
             },
             {
               "tier": 3,
-              "display": "16 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> grabbed"
+              "display": "16 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed"
             }
           ]
         },

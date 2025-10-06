@@ -91,11 +91,11 @@
             },
             {
               "tier": 2,
-              "display": "13 damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> prone and can't stand (save ends)"
+              "display": "13 damage; <strong class=\"potency-value\">R&lt;1</strong> prone and can't stand (save ends)"
             },
             {
               "tier": 3,
-              "display": "16 damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> prone and can't stand (save ends)"
+              "display": "16 damage; <strong class=\"potency-value\">R&lt;2</strong> prone and can't stand (save ends)"
             }
           ]
         },
@@ -177,7 +177,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The target takes <span class=\"damage-value damage-generic\">6</span> damage, and if they have <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span>, they are bleeding (save ends).</p>"
+          "text": "<p>The target takes <span class=\"damage-value damage-generic\">6</span> damage, and if they have <strong class=\"potency-value\">A&lt;2</strong>, they are bleeding (save ends).</p>"
         },
         "spend": {
           "text": "",

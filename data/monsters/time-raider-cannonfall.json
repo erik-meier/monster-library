@@ -84,7 +84,7 @@
             },
             {
               "tier": 3,
-              "display": "10 sonic damage; prone; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> slowed (save ends)"
+              "display": "10 sonic damage; prone; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
             }
           ]
         },

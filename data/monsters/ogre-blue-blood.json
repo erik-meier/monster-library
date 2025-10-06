@@ -88,7 +88,7 @@
             },
             {
               "tier": 2,
-              "display": "7 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> prone"
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;3</strong> prone"
             },
             {
               "tier": 3,
