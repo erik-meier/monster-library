@@ -83,7 +83,7 @@
             },
             {
               "tier": 3,
-              "display": "12 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> slowed (save ends)"
+              "display": "12 damage; <strong class=\"potency-value\">A&lt;4</strong> slowed (save ends)"
             }
           ]
         },

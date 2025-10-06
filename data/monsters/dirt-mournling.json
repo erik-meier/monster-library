@@ -101,11 +101,11 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> grabbed"
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;3</strong> grabbed"
             },
             {
               "tier": 2,
-              "display": "10 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> grabbed"
+              "display": "10 damage; <strong class=\"potency-value\">M&lt;4</strong> grabbed"
             },
             {
               "tier": 3,
@@ -152,15 +152,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "3 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "3 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "6 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "7 corruption damage; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "7 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> frightened (save ends)"
             }
           ]
         },

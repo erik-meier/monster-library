@@ -120,43 +120,6 @@ function processCharacteristicReferences(text, monster) {
 }
 
 /**
- * Generate potency icon HTML for a given characteristic and potency value
- */
-function generatePotencyIcon(characteristic, potencyValue) {
-  // Get characteristic abbreviation 
-  let charAbbrev = 'X'; // Default fallback
-  if (characteristic && characteristic !== 'none' && characteristic !== '') {
-    charAbbrev = characteristic.charAt(0).toUpperCase();
-  }
-
-  // Determine which potency icon to use based on the value
-  let potencyIconSrc;
-  const numericPotency = parseInt(potencyValue);
-
-  if (numericPotency >= 0 && numericPotency <= 6) {
-    potencyIconSrc = `/assets/potency-${numericPotency}.svg`;
-  } else {
-    // For values outside 0-6 range, fall back to text
-    return `<span class="potency-fallback">${charAbbrev}&lt;${potencyValue}</span>`;
-  }
-
-  // Also determine characteristic icon
-  const charIconMap = {
-    'M': '/assets/might.svg',
-    'A': '/assets/agility.svg',
-    'R': '/assets/reason.svg',
-    'I': '/assets/intuition.svg',
-    'P': '/assets/presence.svg'
-  };
-
-  const charIconSrc = charIconMap[charAbbrev];
-
-  return `<span class="potency-display">` +
-    (charIconSrc ? `<img src="${charIconSrc}" alt="${charAbbrev}" class="potency-char-icon" />` : charAbbrev) +
-    `<img src="${potencyIconSrc}" alt="${potencyValue}" class="potency-icon" /></span>`;
-}
-
-/**
  * Comprehensive potency processing function
  * Handles @potency.* values, {{potency}} placeholders, and formats potency patterns
  */
@@ -195,8 +158,8 @@ function processPotencyText(text, potencyValue, characteristic, monster) {
       numericValue = potencyMap[potencyValue] || potencyValue;
     }
 
-    // Create formatted potency pattern with icons
-    const potencyPattern = generatePotencyIcon(characteristic, numericValue);
+    // Create formatted potency pattern
+    const potencyPattern = `<strong class="potency-value">${charAbbrev}&lt;${numericValue}</strong>`;
     processed = processed.replace(/\{\{potency\}\}/g, potencyPattern);
   }
 
@@ -210,66 +173,48 @@ function processPotencyText(text, potencyValue, characteristic, monster) {
     return potencyMap[type].toString();
   });
 
-  // Step 3: Format standalone potency patterns like "M<5", "R<-1", "m<2", "P < 0" with icons
+  // Step 3: Format standalone potency patterns like "M<5", "R<-1", "m<2", "P < 0" with proper styling
   // Use a more compatible approach without lookbehind since it's not supported in all JS environments
 
   // First handle uppercase patterns with optional spaces: "P < 0", "M<5", etc.
-  // But skip patterns already wrapped in any potency-related spans
+  // But skip patterns already wrapped in strong tags
   processed = processed.replace(/([A-Z])\s*(&lt;|<)\s*(-?\d+)/g, (match, char, operator, number, offset, string) => {
-    // Check if this match is already inside any potency-related span
+    // Check if this match is already inside a potency-value strong tag
     const beforeMatch = string.substring(0, offset);
     const afterMatch = string.substring(offset + match.length);
 
-    // Look for any potency-related spans before this match
-    const potencyDisplayOpenBefore = beforeMatch.lastIndexOf('<span class="potency-display">');
-    const potencyValueOpenBefore = beforeMatch.lastIndexOf('<strong class="potency-value">');
-    const potencyFallbackOpenBefore = beforeMatch.lastIndexOf('<span class="potency-fallback">');
-    const spanCloseBefore = Math.max(
-      beforeMatch.lastIndexOf('</span>'),
-      beforeMatch.lastIndexOf('</strong>')
-    );
-    const spanCloseAfter = Math.min(
-      afterMatch.indexOf('</span>') !== -1 ? afterMatch.indexOf('</span>') : Infinity,
-      afterMatch.indexOf('</strong>') !== -1 ? afterMatch.indexOf('</strong>') : Infinity
-    );
+    // Look for strong tag with potency-value class before this match
+    const strongOpenBefore = beforeMatch.lastIndexOf('<strong class="potency-value">');
+    const strongCloseBefore = beforeMatch.lastIndexOf('</strong>');
+    const strongCloseAfter = afterMatch.indexOf('</strong>');
 
-    // If we're inside any potency-related span, don't modify
-    const latestOpen = Math.max(potencyDisplayOpenBefore, potencyValueOpenBefore, potencyFallbackOpenBefore);
-    if (latestOpen > spanCloseBefore && spanCloseAfter !== Infinity) {
+    // If we're inside a potency-value strong tag, don't modify
+    if (strongOpenBefore > strongCloseBefore && strongCloseAfter !== -1) {
       return match;
     }
 
-    // Generate icon-based potency display
-    return generatePotencyIcon(char, number);
+    // Ensure consistent &lt; encoding
+    return `<strong class="potency-value">${char}&lt;${number}</strong>`;
   });
 
   // Then handle lowercase patterns and convert to uppercase: "m<2" -> "M<2"
   processed = processed.replace(/([a-z])\s*(&lt;|<)\s*(-?\d+)/g, (match, char, operator, number, offset, string) => {
-    // Check if this match is already inside any potency-related span
+    // Check if this match is already inside a potency-value strong tag
     const beforeMatch = string.substring(0, offset);
     const afterMatch = string.substring(offset + match.length);
 
-    // Look for any potency-related spans before this match
-    const potencyDisplayOpenBefore = beforeMatch.lastIndexOf('<span class="potency-display">');
-    const potencyValueOpenBefore = beforeMatch.lastIndexOf('<strong class="potency-value">');
-    const potencyFallbackOpenBefore = beforeMatch.lastIndexOf('<span class="potency-fallback">');
-    const spanCloseBefore = Math.max(
-      beforeMatch.lastIndexOf('</span>'),
-      beforeMatch.lastIndexOf('</strong>')
-    );
-    const spanCloseAfter = Math.min(
-      afterMatch.indexOf('</span>') !== -1 ? afterMatch.indexOf('</span>') : Infinity,
-      afterMatch.indexOf('</strong>') !== -1 ? afterMatch.indexOf('</strong>') : Infinity
-    );
+    // Look for strong tag with potency-value class before this match
+    const strongOpenBefore = beforeMatch.lastIndexOf('<strong class="potency-value">');
+    const strongCloseBefore = beforeMatch.lastIndexOf('</strong>');
+    const strongCloseAfter = afterMatch.indexOf('</strong>');
 
-    // If we're inside any potency-related span, don't modify
-    const latestOpen = Math.max(potencyDisplayOpenBefore, potencyValueOpenBefore, potencyFallbackOpenBefore);
-    if (latestOpen > spanCloseBefore && spanCloseAfter !== Infinity) {
+    // If we're inside a potency-value strong tag, don't modify
+    if (strongOpenBefore > strongCloseBefore && strongCloseAfter !== -1) {
       return match;
     }
 
-    // Generate icon-based potency display with uppercase characteristic
-    return generatePotencyIcon(char.toUpperCase(), number);
+    // Convert to uppercase and ensure consistent &lt; encoding
+    return `<strong class="potency-value">${char.toUpperCase()}&lt;${number}</strong>`;
   });
 
   return processed;

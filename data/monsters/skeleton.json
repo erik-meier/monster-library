@@ -117,15 +117,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "1 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-0.svg\" alt=\"0\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "1 damage; <strong class=\"potency-value\">M&lt;0</strong> bleeding (save ends)"
             },
             {
               "tier": 2,
-              "display": "2 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "2 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)"
             },
             {
               "tier": 3,
-              "display": "3 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "3 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
             }
           ]
         },

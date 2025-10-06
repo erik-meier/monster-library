@@ -94,7 +94,7 @@
             },
             {
               "tier": 3,
-              "display": "13 cold/fire/sonic damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> bleeding, dazed, or slowed (save ends)"
+              "display": "13 cold/fire/sonic damage; <strong class=\"potency-value\">M&lt;4</strong> bleeding, dazed, or slowed (save ends)"
             }
           ]
         },

@@ -39,7 +39,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>The first time the koptourok is made winded by damage that isn't fire damage or holy damage, each enemy within 3 squares of them takes <span class=\"damage-value damage-generic\">8</span> corruption damage. Any enemy who takes this damage and has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> is also weakened (save ends)</p>",
+          "value": "<p>The first time the koptourok is made winded by damage that isn't fire damage or holy damage, each enemy within 3 squares of them takes <span class=\"damage-value damage-generic\">8</span> corruption damage. Any enemy who takes this damage and has <strong class=\"potency-value\">M&lt;3</strong> is also weakened (save ends)</p>",
           "director": ""
         }
       }
@@ -75,15 +75,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "7 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> grabbed"
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed"
             },
             {
               "tier": 2,
-              "display": "10 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> grabbed"
+              "display": "10 damage; <strong class=\"potency-value\">M&lt;3</strong> grabbed"
             },
             {
               "tier": 3,
-              "display": "11 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> grabbed"
+              "display": "11 damage; <strong class=\"potency-value\">M&lt;4</strong> grabbed"
             }
           ]
         },

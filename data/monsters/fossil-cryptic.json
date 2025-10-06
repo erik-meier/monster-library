@@ -395,15 +395,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; prone; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> restrained (save ends)"
+              "display": "5 damage; prone; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 damage; prone; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> restrained (save ends)"
+              "display": "9 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 damage; prone; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> restrained (save ends)"
+              "display": "12 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
             }
           ]
         },
@@ -485,7 +485,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Two pillars of stone 1 square wide either thrust up out of the ground or jut down from the ceiling anywhere on the encounter map, to a height of up to 5 squares. A creature in the area of a pillar before it appears is knocked prone on its surface. If the creature comes into contact with the ceiling above or the floor beneath the pillar and has <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> they are restrained (save ends).</p>"
+          "text": "<p>Two pillars of stone 1 square wide either thrust up out of the ground or jut down from the ceiling anywhere on the encounter map, to a height of up to 5 squares. A creature in the area of a pillar before it appears is knocked prone on its surface. If the creature comes into contact with the ceiling above or the floor beneath the pillar and has <strong class=\"potency-value\">M&lt;2</strong> they are restrained (save ends).</p>"
         },
         "spend": {
           "text": "",

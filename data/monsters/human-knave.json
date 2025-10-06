@@ -109,7 +109,7 @@
             },
             {
               "tier": 3,
-              "display": "12 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> the target has a double bane on their next  power roll"
+              "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> the target has a double bane on their next  power roll"
             }
           ]
         },
@@ -152,15 +152,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 corruption damage; <span class=\"potency-fallback\">X&lt;0</span>, slowed (save ends)"
+              "display": "4 corruption damage; <strong class=\"potency-value\">X&lt;0</strong>, slowed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 corruption damage; <span class=\"potency-display\">X<img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span>, slowed (save ends)"
+              "display": "6 corruption damage; <strong class=\"potency-value\">X&lt;1</strong>, slowed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 corruption damage; <span class=\"potency-display\">X<img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span>, restrained (save ends)"
+              "display": "9 corruption damage; <strong class=\"potency-value\">X&lt;2</strong>, restrained (save ends)"
             }
           ]
         },

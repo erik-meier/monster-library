@@ -85,15 +85,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage; <span class=\"potency-fallback\">A&lt;0</span> prone and can’t stand (save ends)"
+              "display": "6 damage; <strong class=\"potency-value\">A&lt;0</strong> prone and can’t stand (save ends)"
             },
             {
               "tier": 2,
-              "display": "9 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> prone and can’t stand (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">A&lt;1</strong> prone and can’t stand (save ends)"
             },
             {
               "tier": 3,
-              "display": "12 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> prone and can’t stand (save ends)"
+              "display": "12 damage; <strong class=\"potency-value\">A&lt;2</strong> prone and can’t stand (save ends)"
             }
           ]
         },
@@ -229,15 +229,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; <span class=\"potency-fallback\">M&lt;0</span> restrained (save ends)"
+              "display": "4 damage; <strong class=\"potency-value\">M&lt;0</strong> restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> restrained (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "10 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> restrained (save ends)"
+              "display": "10 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
             }
           ]
         },

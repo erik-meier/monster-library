@@ -63,7 +63,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>Once per turn, the dragon can shift up to their speed, leaving behind a 4 cube area of magical darkness in their starting space that lasts until the end of the encounter. The dragon ignores concealment created by this darkness. Any enemy who ends their turn in the area and has <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> is frightened of the dragon until the end of their next turn.</p>",
+          "value": "<p>Once per turn, the dragon can shift up to their speed, leaving behind a 4 cube area of magical darkness in their starting space that lasts until the end of the encounter. The dragon ignores concealment created by this darkness. Any enemy who ends their turn in the area and has <strong class=\"potency-value\">I&lt;3</strong> is frightened of the dragon until the end of their next turn.</p>",
           "director": ""
         }
       }
@@ -190,7 +190,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>Each target must be dragonsealed. Each target takes <span class=\"damage-value damage-generic\">3</span> psychic damage, and if they have <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> they immediately make a free strike against one ally of the dragon's choice.</p>"
+          "text": "<p>Each target must be dragonsealed. Each target takes <span class=\"damage-value damage-generic\">3</span> psychic damage, and if they have <strong class=\"potency-value\">I&lt;3</strong> they immediately make a free strike against one ally of the dragon's choice.</p>"
         },
         "spend": {
           "text": "",
@@ -262,15 +262,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "pull 2; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> frightened (EoT)"
+              "display": "pull 2; <strong class=\"potency-value\">I&lt;2</strong> frightened (EoT)"
             },
             {
               "tier": 2,
-              "display": "pull 4; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "pull 4; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
             },
             {
               "tier": 3,
-              "display": "pull 6; <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> frightened (save ends)"
+              "display": "pull 6; <strong class=\"potency-value\">I&lt;4</strong> frightened (save ends)"
             }
           ]
         },
@@ -324,7 +324,7 @@
           ]
         },
         "effect": {
-          "text": "<p>Each target must be dragonsealed. Any target who has <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> is also dazed (save ends).</p>"
+          "text": "<p>Each target must be dragonsealed. Any target who has <strong class=\"potency-value\">I&lt;3</strong> is also dazed (save ends).</p>"
         },
         "spend": {
           "text": "",

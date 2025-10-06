@@ -128,7 +128,7 @@
           ]
         },
         "effect": {
-          "text": "<p>The scyza roars, and if the target has <span class=\"potency-display\"><img src=\"/assets/intuition.svg\" alt=\"I\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> they are frightened (save ends).</p>"
+          "text": "<p>The scyza roars, and if the target has <strong class=\"potency-value\">I&lt;2</strong> they are frightened (save ends).</p>"
         },
         "spend": {
           "text": "",
@@ -175,7 +175,7 @@
             },
             {
               "tier": 3,
-              "display": "16 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> bleeding (save ends)"
+              "display": "16 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)"
             }
           ]
         },
@@ -220,15 +220,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "4 damage; 1 sonic damage; <span class=\"potency-fallback\">M&lt;0</span> dazed (save ends)"
+              "display": "4 damage; 1 sonic damage; <strong class=\"potency-value\">M&lt;0</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 damage; 2 sonic damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> dazed (save ends)"
+              "display": "7 damage; 2 sonic damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; 3 sonic damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> dazed (save ends)"
+              "display": "9 damage; 3 sonic damage; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
             }
           ]
         },

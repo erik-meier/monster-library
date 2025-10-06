@@ -72,15 +72,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; <span class=\"potency-fallback\">A&lt;0</span> restrained (save ends)"
+              "display": "5 damage; <strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> restrained (save ends)"
+              "display": "7 damage; <strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> restrained (save ends)"
+              "display": "9 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
             }
           ]
         },
@@ -122,15 +122,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 acid damage; <span class=\"potency-fallback\">M&lt;0</span> the target has line of effect only within 4 squares (save ends)"
+              "display": "5 acid damage; <strong class=\"potency-value\">M&lt;0</strong> the target has line of effect only within 4 squares (save ends)"
             },
             {
               "tier": 2,
-              "display": "7 acid damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> the target has line of effect only within 3 squares (save ends)"
+              "display": "7 acid damage; <strong class=\"potency-value\">M&lt;1</strong> the target has line of effect only within 3 squares (save ends)"
             },
             {
               "tier": 3,
-              "display": "9 acid damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> the target has line of effect only within 2 squares (save ends)"
+              "display": "9 acid damage; <strong class=\"potency-value\">M&lt;2</strong> the target has line of effect only within 2 squares (save ends)"
             }
           ]
         },

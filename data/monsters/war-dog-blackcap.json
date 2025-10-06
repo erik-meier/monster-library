@@ -50,7 +50,7 @@
         "keywords": [],
         "power": null,
         "description": {
-          "value": "<p>When the blackcap or any of their ash clones is reduced to 0 Stamina, that creature's loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> poison damage to each adjacent enemy and object. If any adjacent enemy has <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> they are also weakened (save ends)</p>",
+          "value": "<p>When the blackcap or any of their ash clones is reduced to 0 Stamina, that creature's loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> poison damage to each adjacent enemy and object. If any adjacent enemy has <strong class=\"potency-value\">A&lt;3</strong> they are also weakened (save ends)</p>",
           "director": ""
         }
       }
@@ -97,7 +97,7 @@
             },
             {
               "tier": 3,
-              "display": "12 damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> bleeding and weakened (save ends)"
+              "display": "12 damage; <strong class=\"potency-value\">M&lt;4</strong> bleeding and weakened (save ends)"
             }
           ]
         },

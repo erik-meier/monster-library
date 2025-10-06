@@ -59,15 +59,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 damage; push 3; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> prone"
+              "display": "6 damage; push 3; <strong class=\"potency-value\">M&lt;1</strong> prone"
             },
             {
               "tier": 2,
-              "display": "10 damage; push 4; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> prone"
+              "display": "10 damage; push 4; <strong class=\"potency-value\">M&lt;2</strong> prone"
             },
             {
               "tier": 3,
-              "display": "13 damage; push 5; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> prone"
+              "display": "13 damage; push 5; <strong class=\"potency-value\">M&lt;3</strong> prone"
             }
           ]
         },

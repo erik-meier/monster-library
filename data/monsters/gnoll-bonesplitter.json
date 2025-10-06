@@ -80,7 +80,7 @@
             },
             {
               "tier": 3,
-              "display": "8 damage; push 1; grabbed; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> the target takes a bane on the Escape Grab maneuver."
+              "display": "8 damage; push 1; grabbed; <strong class=\"potency-value\">M&lt;2</strong> the target takes a bane on the Escape Grab maneuver."
             }
           ]
         },

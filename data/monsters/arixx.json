@@ -149,15 +149,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> grabbed"
+              "display": "5 damage; <strong class=\"potency-value\">A&lt;1</strong> grabbed"
             },
             {
               "tier": 2,
-              "display": "8 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> grabbed"
+              "display": "8 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed"
             },
             {
               "tier": 3,
-              "display": "11 damage; <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> grabbed"
+              "display": "11 damage; <strong class=\"potency-value\">A&lt;3</strong> grabbed"
             }
           ]
         },
@@ -451,15 +451,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "5 acid damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> weakened (save ends)"
+              "display": "5 acid damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
             },
             {
               "tier": 2,
-              "display": "8 acid damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> weakened (save ends)"
+              "display": "8 acid damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
             },
             {
               "tier": 3,
-              "display": "11 acid damage; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> weakened (save ends)"
+              "display": "11 acid damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
             }
           ]
         },
@@ -524,7 +524,7 @@
           "effects": {}
         },
         "effect": {
-          "text": "<p>The encounter map suddenly quakes, then begins to sink. Each creature on the ground who has <span class=\"potency-display\"><img src=\"/assets/agility.svg\" alt=\"A\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> is knocked prone. Until the end of the encounter, each creature who starts their turn on the ground and can’t burrow must spend 1 additional square of move ment to leave their starting position, or 2 squares if they start their turn prone or underground. A creature who starts and ends their turn in the same space on the ground and can’t burrow sinks 1 square into the ground.</p>"
+          "text": "<p>The encounter map suddenly quakes, then begins to sink. Each creature on the ground who has <strong class=\"potency-value\">A&lt;1</strong> is knocked prone. Until the end of the encounter, each creature who starts their turn on the ground and can’t burrow must spend 1 additional square of move ment to leave their starting position, or 2 squares if they start their turn prone or underground. A creature who starts and ends their turn in the same space on the ground and can’t burrow sinks 1 square into the ground.</p>"
         },
         "spend": {
           "text": "",

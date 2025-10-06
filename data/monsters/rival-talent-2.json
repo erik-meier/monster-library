@@ -73,15 +73,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "9 psychic damage; push 2; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> prone"
+              "display": "9 psychic damage; push 2; <strong class=\"potency-value\">M&lt;1</strong> prone"
             },
             {
               "tier": 2,
-              "display": "14 psychic damage; push 3; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> prone"
+              "display": "14 psychic damage; push 3; <strong class=\"potency-value\">M&lt;2</strong> prone"
             },
             {
               "tier": 3,
-              "display": "17 psychic damage; push 4; <span class=\"potency-display\"><img src=\"/assets/might.svg\" alt=\"M\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> prone"
+              "display": "17 psychic damage; push 4; <strong class=\"potency-value\">M&lt;3</strong> prone"
             }
           ]
         },
@@ -123,15 +123,15 @@
           "tiers": [
             {
               "tier": 1,
-              "display": "6 psychic damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-1.svg\" alt=\"1\" class=\"potency-icon\" /></span> dazed (save ends)"
+              "display": "6 psychic damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
             },
             {
               "tier": 2,
-              "display": "6 psychic damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-2.svg\" alt=\"2\" class=\"potency-icon\" /></span> dazed (save ends)"
+              "display": "6 psychic damage; <strong class=\"potency-value\">R&lt;2</strong> dazed (save ends)"
             },
             {
               "tier": 3,
-              "display": "6 psychic damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> dazed and slowed (save ends)"
+              "display": "6 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> dazed and slowed (save ends)"
             }
           ]
         },

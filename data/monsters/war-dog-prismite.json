@@ -77,11 +77,11 @@
             },
             {
               "tier": 2,
-              "display": "6 psychic damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-3.svg\" alt=\"3\" class=\"potency-icon\" /></span> grabbed; pull 2"
+              "display": "6 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> grabbed; pull 2"
             },
             {
               "tier": 3,
-              "display": "8 psychic damage; <span class=\"potency-display\"><img src=\"/assets/reason.svg\" alt=\"R\" class=\"potency-char-icon\" /><img src=\"/assets/potency-4.svg\" alt=\"4\" class=\"potency-icon\" /></span> grabbed and the target takes a bane on the Escape Grab maneuver; pull 2"
+              "display": "8 psychic damage; <strong class=\"potency-value\">R&lt;4</strong> grabbed and the target takes a bane on the Escape Grab maneuver; pull 2"
             }
           ]
         },
