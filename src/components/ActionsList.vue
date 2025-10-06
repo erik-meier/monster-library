@@ -13,9 +13,10 @@
         <div class="action-header">
           <div class="action-title-row">
             <h4 class="action-name">
-              <img v-if="getActionIcon(action)" :src="getActionIcon(action)" :alt="getActionIconAlt(action)"
-                class="action-type-icon" />
-              <span v-if="action.type === 'feature'" class="feature-badge">★</span>
+              <span v-if="getActionGlyph(action)" :class="getActionGlyph(action)" :aria-label="getActionIconAlt(action)"
+                class="glyph-icon action-type-icon"></span>
+              <span v-if="action.type === 'feature'" class="glyph-icon glyph-feature action-type-icon"
+                aria-label="Feature"></span>
               {{ action.name }}
               <span v-if="action.system.category === 'signature'" class="signature-badge">SIGNATURE</span>
               <span v-if="action.system.resource" class="malice-cost">{{ action.system.resource }} Malice</span>
@@ -35,11 +36,11 @@
             </div>
             <div class="action-mechanics">
               <span v-if="formatActionDistance(action.system.distance)" class="action-distance">
-                <img src="/assets/distance.svg" alt="Distance" class="icon" />
+                <span class="glyph-icon glyph-distance icon" aria-label="Distance"></span>
                 {{ formatActionDistance(action.system.distance) }}
               </span>
               <span v-if="formatActionTargets(action.system.target, monster?.organization)" class="action-target">
-                <img src="/assets/target.svg" alt="Target" class="icon" />
+                <span class="glyph-icon glyph-target icon" aria-label="Target"></span>
                 {{ formatActionTargets(action.system.target, monster?.organization) }}
               </span>
             </div>
@@ -140,17 +141,17 @@ export default {
       // Text is now pre-processed in the data pipeline, so just return as-is
       return description;
     },
-    getActionIcon(action) {
+    getActionGlyph(action) {
       if (!action.system) return null;
 
       // Check for triggered actions first
       if (action.system.type === 'triggered' || action.system.type === 'freeTriggered') {
-        return '/assets/triggered-action.svg';
+        return 'glyph-triggered-action';
       }
 
       // Check for villain actions
       if (action.system.type === 'villain') {
-        return '/assets/villain-action.svg';
+        return 'glyph-villain-action';
       }
 
       // Check distance-based icons
@@ -159,25 +160,35 @@ export default {
 
         // Self distance
         if (distance === 'self') {
-          return '/assets/self.svg';
+          return 'glyph-self';
+        }
+
+        // Melee distance
+        if (distance.includes('melee') && !distance.includes('ranged')) {
+          return 'glyph-melee';
+        }
+
+        // Ranged distance
+        if (distance.includes('ranged') && !distance.includes('melee')) {
+          return 'glyph-ranged';
         }
 
         // Melee or ranged
-        if (distance.includes('melee') || distance.includes('ranged')) {
-          return '/assets/melee-or-ranged.svg';
+        if (distance.includes('melee') && distance.includes('ranged')) {
+          return 'glyph-melee-or-ranged';
         }
 
         // Area effects
         if (distance.includes('burst') || distance.includes('aura')) {
-          return '/assets/burst-aura.svg';
+          return 'glyph-burst';
         }
 
         if (distance.includes('cube') || distance.includes('line') || distance.includes('wall')) {
-          return '/assets/cube-line-wall.svg';
+          return 'glyph-cube-line-wall';
         }
 
         // Other distance types
-        return '/assets/unique-distance.svg';
+        return 'glyph-unique-distance';
       }
 
       return null;
@@ -278,8 +289,7 @@ export default {
 }
 
 .action-type-icon {
-  width: 20px;
-  height: 20px;
+  font-size: 1.25rem;
   flex-shrink: 0;
   opacity: 0.8;
 }
@@ -366,8 +376,7 @@ export default {
 }
 
 .icon {
-  width: 18px;
-  height: 18px;
+  font-size: 1rem;
   opacity: 1;
 }
 
