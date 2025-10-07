@@ -148,7 +148,7 @@ interface MonsterTemplate {
   organization: string
   keywords: string[]
   description: string
-  size: { value: number; letter: string }
+  size: string
   speed: number
   stamina: number
   stability: number
@@ -160,7 +160,7 @@ interface MonsterTemplate {
     intuition: number
     presence: number
   }
-  movementTypes: string[]
+  movementTypes: Set<string>
   items: MonsterItem[]
 }
 

@@ -3,15 +3,13 @@
   "name": "Blood-starved Vampire",
   "level": 7,
   "ev": 9,
-  "role": "",
+  "role": "Harrier",
   "organization": "Minion",
   "keywords": [
-    "undead"
+    "Undead",
+    "Vampire"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 6,
   "stamina": 12,
   "stability": 0,
@@ -29,140 +27,47 @@
   },
   "weaknesses": {},
   "movementTypes": [
-    "walk",
     "climb"
   ],
   "items": [
     {
-      "name": "Unslakable Bloodthirst",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The blood-starved vampire has speed 10 while any creature within 10 squares of them is bleeding. The vampire must use Feeding Frenzy against a bleeding creature on their turn if they are able to.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Feeding Frenzy",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "3 damage",
+          "tier2": "6 damage",
+          "tier3": "7 damage; <strong class=\"potency-value\">M&lt;4</strong> bleeding (EoT)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "3 damage"
-            },
-            {
-              "tier": 2,
-              "display": "6 damage"
-            },
-            {
-              "tier": 3,
-              "display": "7 damage; <strong class=\"potency-value\">M&lt;4</strong> bleeding (EoT)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>If a target made bleeding this way is already bleeding, they are instead knocked prone and can't stand until the end of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "If a target made bleeding this way is already bleeding, they are instead knocked prone and can't stand until the end of their next turn."
         }
-      }
+      ]
     },
     {
-      "name": "Necrotic Rupture",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever an undead is reduced to 0 Stamina, they deal <span class=\"damage-value damage-generic\">8</span> corruption damage to each enemy within 3 squares of them</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Unslakable Bloodthirst",
+      "effects": [
+        {
+          "effect": "The blood-starved vampire has speed 10 while any creature within 10 squares of them is bleeding. The vampire must use Feeding Frenzy against a bleeding creature on their turn if they are able to."
         }
-      }
-    },
-    {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p><p><span class=\"reference-text\">Blood Hunger</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "269",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

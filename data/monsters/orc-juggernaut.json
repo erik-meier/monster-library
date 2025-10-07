@@ -6,12 +6,10 @@
   "role": "Brute",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Orc"
   ],
-  "size": {
-    "value": 1,
-    "letter": "L"
-  },
+  "size": "1L",
   "speed": 6,
   "stamina": 60,
   "stability": 0,
@@ -30,207 +28,70 @@
   ],
   "items": [
     {
-      "name": "Relentless",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>If the juggernaut is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">5</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the juggernaut is reduced to 1 Stamina instead.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Haymaker Greataxe",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 damage",
+          "tier2": "11 damage; prone",
+          "tier3": "14 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "A target who is already prone takes an extra 6 damage."
+        }
+      ]
+    },
+    {
       "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage"
-            },
-            {
-              "tier": 2,
-              "display": "11 damage; Prone"
-            },
-            {
-              "tier": 3,
-              "display": "14 damage; Prone; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Blood in the Water",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Whenever the juggernaut willingly moves, they can move 3 additional squares if they end their movement closer to a prone creature.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
       "name": "Hrraaaaaagh!",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "freeTriggered",
-        "resource": 1,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "The juggernaut takes damage.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The juggernaut moves up to their speed and can make a <span class=\"damage-value damage-generic\">5</span> damage free strike</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Free triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "The juggernaut takes damage.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The juggernaut moves up to their speed and can make a free strike."
         }
-      }
+      ]
     },
     {
-      "name": "Mohler Trench",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Blood in the Water",
+      "effects": [
+        {
+          "effect": "Whenever the juggernaut willingly moves, they can move 3 additional squares if they end their movement closer to a prone creature."
         }
-      }
+      ]
     },
     {
-      "name": "Mohler Cavity",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Relentless",
+      "effects": [
+        {
+          "effect": "If the juggernaut is reduced to 0 Stamina, they can make a free strike before dying. If the target of the free strike is reduced to 0 Stamina, the juggernaut is reduced to 1 Stamina instead."
         }
-      }
-    },
-    {
-      "name": "Overwhelming March",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "219",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

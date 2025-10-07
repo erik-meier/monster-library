@@ -2,16 +2,14 @@
   "id": "angulotl-slink",
   "name": "Angulotl Slink",
   "level": 1,
-  "ev": 4,
+  "ev": 3,
   "role": "Ambusher",
   "organization": "Horde",
   "keywords": [
-    "humanoid"
+    "Angulotl",
+    "Humanoid"
   ],
-  "size": {
-    "value": 1,
-    "letter": "S"
-  },
+  "size": "1S",
   "speed": 5,
   "stamina": 15,
   "stability": 0,
@@ -28,278 +26,74 @@
   },
   "weaknesses": {},
   "movementTypes": [
-    "walk",
     "climb",
     "swim"
   ],
   "items": [
     {
-      "name": "Toxiferous",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Whenever an adjacent enemy grabs the slink or uses a melee ability against them, that enemy takes <span class=\"damage-value damage-generic\">2</span> poison damage.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Wet",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Angulotls make use of a unique effect called “wet.” While wet, an angulotl doesn’t provoke opportunity attacks by moving. At the same time, any non-angulotl who is wet and ends their turn with none of their movement remaining slips and falls prone. Several angulotl abilities can impose this effect, but a creature in an encounter featuring angulotls can also become wet by entering water, as the Director determines.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Adhesive",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The slink excretes a sticky residue into their square at the end of each of their turns. Any non-angulotl who enters or leaves the square is stuck, and must use a maneuver to break free or be restrained until the end of their turn. Objects are likewise affected, and a creature must use a maneuver to remove an object from the square.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Tonguelash",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 6
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 6",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "4 damage; pull 2",
+          "tier2": "6 damage; pull 4",
+          "tier3": "7 damage; pull 6"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 damage"
-            },
-            {
-              "tier": 2,
-              "display": "6 damage"
-            },
-            {
-              "tier": 3,
-              "display": "7 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The target is wet (save ends). Any ally targeted by this ability ignores the damage, is wet until the end of the encounter, and is pulled up to 6 squares, ignoring stability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The target is wet (save ends). Any ally targeted by this ability ignores the damage, is wet until the end of the encounter, and is pulled up to 6 squares, ignoring stability."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Hop To It",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "freeManeuver",
-        "resource": 2,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The slink jumps up to 3 squares. If they have cover or conceal ment when they land, they can attempt to hide.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "2 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Free maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The slink jumps up to 3 squares. If they have cover or concealment when they land, they can attempt to hide."
         }
-      }
+      ]
     },
     {
-      "name": "Leapfrog",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Adhesive",
+      "effects": [
+        {
+          "effect": "The slink excretes a sticky residue into their square at the end of each of their turns. Any non-angulotl who enters or leaves the square is stuck, and must use a maneuver to break free or be restrained until the end of their turn. Objects are likewise affected, and a creature must use a maneuver to remove an object from the square."
         }
-      }
+      ]
     },
     {
-      "name": "Resonating Croak",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> sonic damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Toxiferous",
+      "effects": [
+        {
+          "effect": "Whenever an adjacent enemy grabs the slink or uses a melee ability against them, that enemy takes 2 poison damage."
         }
-      }
-    },
-    {
-      "name": "Rainfall",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {
-            "g8BNA1tbnI9d59oQ": {
-              "name": "Wet",
-              "img": null,
-              "type": "applied",
-              "_id": "g8BNA1tbnI9d59oQ",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
-            }
-          }
-        },
-        "effect": {
-          "text": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "36",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

@@ -6,12 +6,10 @@
   "role": "Brute",
   "organization": "Elite",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Rival"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 100,
   "stability": 3,
@@ -30,292 +28,77 @@
   ],
   "items": [
     {
+      "type": "ability",
       "name": "Brutal Impact",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 damage; push 1",
+          "tier2": "11 damage; push 2",
+          "tier3": "14 damage; push 3"
+        },
+        {
+          "cost": "2 Malice",
+          "effect": "Each target who has <strong class=\"potency-value\">M&lt;1</strong> is slowed (save ends)."
+        }
+      ]
+    },
+    {
       "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1,
-          "secondary": 10
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage"
-            },
-            {
-              "tier": 2,
-              "display": "11 damage"
-            },
-            {
-              "tier": 3,
-              "display": "14 damage"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "Each target who has m<1 is slowed (save ends).",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> Each target who has <strong class=\"potency-value\">M&lt;1</strong> is slowed (save ends)."
-        }
-      }
-    },
-    {
-      "name": "Rivalry",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the start of an encounter, the fury chooses one creature within their line of effect. Both the fury and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
       "name": "Let's Tussle",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 2,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "cost": "2 Malice",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "8 damage; <strong class=\"potency-value\">M&lt;0</strong> grabbed",
+          "tier2": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> grabbed",
+          "tier3": "16 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "8 damage; <strong class=\"potency-value\">M&lt;0</strong> grabbed"
-            },
-            {
-              "tier": 2,
-              "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> grabbed"
-            },
-            {
-              "tier": 3,
-              "display": "16 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The target must be the fury’s size or smaller. While the target is grabbed this way, the fury gains an edge on strikes against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The target must be the fury's size or smaller. While the target is grabbed this way, the fury gains an edge on strikes against them."
         }
-      }
+      ]
     },
     {
-      "name": "Overwhelm",
       "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Once per turn, when the fury force moves a creature or object, or shifts adjacent to a creature or object, they can make a free strike against that creature or object.</p>",
-          "director": ""
+      "name": "Overwhelm",
+      "effects": [
+        {
+          "effect": "Once per turn, when the fury force moves a creature or object, or shifts adjacent to a creature or object, they can make a free strike against that creature or object."
         }
-      }
+      ]
     },
     {
-      "name": "Calling the Shots",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Rivalry",
+      "effects": [
+        {
+          "effect": "At the start of an encounter, the fury chooses one creature within their line of effect. Both the fury and the creature can add a d3 roll to power rolls they make against each other."
         }
-      }
-    },
-    {
-      "name": "Coordinated Takedown",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 10,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A Rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "We Just Do It Better",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a <span class=\"roll-formula\">d3</span> and add it to the power roll.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Work as One",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Check Out Our Loot",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "234",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

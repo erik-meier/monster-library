@@ -1,0 +1,147 @@
+{
+  "id": "mindkiller",
+  "name": "Mindkiller",
+  "level": 6,
+  "ev": 32,
+  "role": "Hexer",
+  "organization": "Elite",
+  "keywords": [
+    "Horror",
+    "Voiceless Talker"
+  ],
+  "size": "1S",
+  "speed": 6,
+  "stamina": 140,
+  "stability": 2,
+  "freeStrike": 7,
+  "characteristics": {
+    "might": -1,
+    "agility": 3,
+    "reason": 3,
+    "intuition": 2,
+    "presence": 0
+  },
+  "immunities": {
+    "psychic": 6
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly",
+    "hover"
+  ],
+  "items": [
+    {
+      "type": "feature",
+      "name": "Brain Latch",
+      "effects": [
+        {
+          "effect": "The mindkiller can grab creatures who are size 4 or smaller, using their Reason score in place of Might. A creature grabbed by the mindkiller takes a bane on ability rolls made to escape the grab."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Killer Claws",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "11 damage",
+          "tier2": "17 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed",
+          "tier3": "21 damage; <strong class=\"potency-value\">A&lt;3</strong> grabbed"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Concealing Strike",
+      "cost": "2 Malice",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 5",
+      "target": "Two creatures",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "10 damage; <strong class=\"potency-value\">R&lt;1</strong> the mindkiller is invisible to the target (save ends)",
+          "tier2": "15 damage; <strong class=\"potency-value\">R&lt;2</strong> the mindkiller is invisible to the target (save ends)",
+          "tier3": "18 damage; <strong class=\"potency-value\">R&lt;3</strong> the mindkiller is invisible to the target (save ends)"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Mindwipe",
+      "keywords": [
+        "Melee",
+        "Psionic",
+        "Strike"
+      ],
+      "usage": "Maneuver",
+      "distance": "Melee 1",
+      "target": "One creature",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target must be grabbed by the mindkiller. If the target has <strong class=\"potency-value\">R&lt;2</strong>, they take a −1 penalty to their Reason, Intuition, or Presence score and the mindkiller has a +1 bonus to the same score, all until the end of the encounter."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Meat Shield",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "The mindkiller takes damage.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The mindkiller halves the damage. If the mindkiller has a creature grabbed, that creature takes the other half of the damage."
+        },
+        {
+          "cost": "3 Malice",
+          "effect": "A grabbed creature takes the damage instead of the mindkiller."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Psionic Conductor",
+      "effects": [
+        {
+          "effect": "Whenever a non-minion voiceless talker within 5 squares of the mindkiller uses a psionic ability, they can do so as if they were in the mindkiller's space."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Nimble",
+      "effects": [
+        {
+          "effect": "The mindkiller can move through enemies' spaces at their usual speed."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

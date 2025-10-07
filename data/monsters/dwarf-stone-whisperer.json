@@ -6,12 +6,10 @@
   "role": "Controller",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Dwarf",
+    "Humanoid"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 52,
   "stability": 2,
@@ -26,230 +24,71 @@
   "immunities": {},
   "weaknesses": {},
   "movementTypes": [
-    "walk",
     "burrow"
   ],
   "items": [
     {
+      "type": "ability",
       "name": "Tile Slide",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 2,
-          "secondary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Main action",
+      "distance": "2 cube within 1",
+      "target": "Each creature and object in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage; slide 1; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)",
+          "tier2": "8 damage; slide 3; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)",
+          "tier3": "11 damage; slide 5; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "11 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A target restrained by a dwarf can be force moved by this ability. This forced movement doesn’t end the restrained condition unless the Director determines otherwise.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Stone Wave",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 3,
-          "secondary": 10
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "3 cube within 10",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "4 damage; push 2; <strong class=\"potency-value\">R&lt;1</strong> slowed (save ends)",
+          "tier2": "6 damage; push 3; <strong class=\"potency-value\">R&lt;2</strong> slowed (save ends)",
+          "tier3": "9 damage; push 3; <strong class=\"potency-value\">R&lt;3</strong> slowed (save ends)"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 damage; push 2; <strong class=\"potency-value\">R&lt;1</strong> slowed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "6 damage; push 3; <strong class=\"potency-value\">R&lt;2</strong> slowed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 damage; push 3; <strong class=\"potency-value\">R&lt;3</strong> slowed (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The area is difficult terrain for enemies. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn’t end the restrained condition unless the Director determines otherwise.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The area is difficult terrain for enemies. A target restrained by a dwarf can be force moved by this ability. This forced movement doesn't end the restrained condition unless the Director determines otherwise."
         }
-      }
+      ]
     },
     {
-      "name": "Stone Walker",
       "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Whenever the stone whisperer willingly moves, they can phase through up to 2 squares of stone as part of that movement. If they end their movement inside stone, they are shunted out into the space from which they entered it.</p>",
-          "director": ""
+      "name": "Stone Walker",
+      "effects": [
+        {
+          "effect": "Whenever the stone whisperer willingly moves, they can phase through up to 2 squares of stone as part of that movement. If they end their movement inside stone, they are shunted out into the space from which they entered it."
         }
-      }
-    },
-    {
-      "name": "Rappelling Barrage",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A dwarf starts their turn",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each dwarf acting this turn can automatically climb at full speed while moving. At any point during this movement, they can make a free strike.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Snaring Line",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 7,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "line",
-          "primary": 10,
-          "secondary": 1,
-          "tertiary": 10
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target makes an Agility Test.</p><table><tbody><tr><td><p>11 or less</p></td><td><p>8 damage; restrained (EoT)</p></td></tr><tr><td><p>12-16</p></td><td><p>6 damage; slowed (EoT)</p></td></tr><tr><td><p>17</p></td><td><p>No effect.</p></td></tr></tbody></table> <p>The snaring line remains until the end of the encounter. Any enemy who moves into the area for the first time in a round or starts their turn there must make the test.</p><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability canʼt be used by a minion.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Breaching Charge",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A dwarf starts their turn",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A dwarf can destroy one adjacent object or square of wall for each 3 Malice spent. Each enemy adjacent to the destroyed object or square takes the object’s Stamina in damage (<span class=\"damage-value damage-generic\">3</span> for wood, <span class=\"damage-value damage-generic\">6</span> for stone, or <span class=\"damage-value damage-generic\">9</span> for metal).</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "109",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="power-roll">
-    <div v-if="tiers && tiers.length > 0" class="outcomes">
-      <div v-for="tierData in tiers" :key="tierData.tier" class="outcome" :class="`tier-${tierData.tier}`">
+    <div v-if="formattedTiers && formattedTiers.length > 0" class="outcomes">
+      <div v-for="tierData in formattedTiers" :key="tierData.tier" class="outcome" :class="`tier-${tierData.tier}`">
         <span class="tier-number" v-html="formatTierNumber(tierData.tier)"></span>
         <span class="outcome-text" v-html="tierData.display"></span>
       </div>
@@ -17,13 +17,43 @@
 export default {
   name: 'PowerRoll',
   props: {
+    // Old format: array of tier objects
     tiers: {
       type: Array,
       default: () => []
     },
+    // New format: individual tier properties
+    tier1: {
+      type: String,
+      default: ''
+    },
+    tier2: {
+      type: String,
+      default: ''
+    },
+    tier3: {
+      type: String,
+      default: ''
+    },
     effect: {
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    formattedTiers() {
+      // If we have the old tiers array format, use it
+      if (this.tiers && this.tiers.length > 0) {
+        return this.tiers;
+      }
+
+      // Otherwise, construct tiers from the new format
+      const tiers = [];
+      if (this.tier1) tiers.push({ tier: 1, display: this.tier1 });
+      if (this.tier2) tiers.push({ tier: 2, display: this.tier2 });
+      if (this.tier3) tiers.push({ tier: 3, display: this.tier3 });
+
+      return tiers;
     }
   },
   methods: {
@@ -113,6 +143,7 @@ export default {
   flex: 1;
   line-height: var(--line-height-snug);
   color: var(--color-neutral-800);
+  transform: translateY(1px);
 }
 
 .effect-text {

@@ -3,15 +3,13 @@
   "name": "Hollowbone Launcher",
   "level": 4,
   "ev": 6,
-  "role": "",
+  "role": "Artillery",
   "organization": "Minion",
   "keywords": [
-    "undead"
+    "Soulless",
+    "Undead"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 7,
   "stability": 0,
@@ -33,135 +31,43 @@
   ],
   "items": [
     {
-      "name": "Brittle Revenge",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The hollowbone launcher explodes when they are reduced to 0 Stamina, dealing <span class=\"damage-value damage-generic\">2</span> damage to each adjacent creature</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Hollowbone Slug",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 damage",
+          "tier2": "5 damage",
+          "tier3": "7 damage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "3 damage"
-            },
-            {
-              "tier": 2,
-              "display": "5 damage"
-            },
-            {
-              "tier": 3,
-              "display": "7 damage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Each creature adjacent to the target takes <span class=\"damage-value damage-generic\">2</span> damage.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Each creature adjacent to the target takes 2 damage."
         }
-      }
+      ]
     },
     {
-      "name": "Blood Hunger",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One undead acting this turn uses a signature ability against a creature who is bleeding. As a free triggered action, each undead within 5 squares of the first undead moves up to their speed and can make a free strike against the same target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Brittle Revenge",
+      "effects": [
+        {
+          "effect": "The hollowbone launcher explodes when they are reduced to 0 Stamina, dealing 2 damage to each adjacent creature."
         }
-      }
-    },
-    {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "265",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

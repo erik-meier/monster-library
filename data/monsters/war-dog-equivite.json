@@ -6,12 +6,10 @@
   "role": "Brute",
   "organization": "Horde",
   "keywords": [
-    "soulless"
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 8,
   "stamina": 53,
   "stability": 2,
@@ -30,193 +28,71 @@
   ],
   "items": [
     {
-      "name": "Loyalty Collar",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When the equivite is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">2d6</span> damage to each adjacent enemy and object.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Fuse-Iron Lance",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "charge",
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 2
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Charge",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "6 damage",
+          "tier2": "8 damage",
+          "tier3": "10 damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
+        {
+          "name": "Effect",
+          "effect": "This ability gains an edge while charging."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "6 damage"
-            },
-            {
-              "tier": 2,
-              "display": "8 damage"
-            },
-            {
-              "tier": 3,
-              "display": "10 damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>This ability gains an edge while charging.</p><p><span class=\"damage-value damage-generic\">3</span> fire</p>"
-        },
-        "spend": {
-          "text": "The ability deals an extra 3 fire damage to the target and  each enemy adjacent to the target.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ability deals an extra 3 fire damage to the target and  each enemy adjacent to the target."
+        {
+          "cost": "2 Malice",
+          "effect": "The ability deals an extra 3 fire damage to the target and each enemy adjacent to the target."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Blazing Charge",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "weapon"
-        ],
-        "distance": {
-          "type": "special"
+      "keywords": [
+        "Melee",
+        "Weapon"
+      ],
+      "usage": "Maneuver",
+      "distance": "Special; see below",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The equivite moves up to their speed and ignores difficult terrain. Any mundane size 1 object whose space they move through is destroyed. The equivite makes one power roll against each enemy whose space they move through for the first time."
         },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "2 damage; push 1"
-            },
-            {
-              "tier": 2,
-              "display": "4 damage; push 2"
-            },
-            {
-              "tier": 3,
-              "display": "5 damage; push 3; <strong class=\"potency-value\">M&lt;3</strong> prone"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The equivite moves up to their speed and ignores difficult terrain. Any mundane size 1 object whose space they move through is destroyed. The equivite makes one power roll against each enemy whose space they move through for the first time</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "roll": "2d10 + 3",
+          "tier1": "2 damage; push 1",
+          "tier2": "4 damage; push 2",
+          "tier3": "5 damage; push 3; <strong class=\"potency-value\">M&lt;3</strong> prone"
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Loyalty Collar",
+      "effects": [
+        {
+          "effect": "When the equivite is reduced to 0 Stamina, their loyalty collar explodes, dealing 2d6 damage to each adjacent enemy and object."
         }
-      }
-    },
-    {
-      "name": "Loyalty Unto Death",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 5,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10,
-          "secondary": null
-        },
-        "target": {
-          "type": "ally",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p><strong>Note:</strong> Targets Two War Dogs</p><p>Each target who has a loyalty collar shifts up to their speed, then is reduced to 0 Stamina. After each target’s Loyalty Collar trait is resolved, each enemy adjacent to either target makes a <strong>Presence test.</strong></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>Push 4; the enemy is frightened of the nearest non-minion war dog (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>Push 2; the enemy is frightened of the nearest non-minion war dog (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "306",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

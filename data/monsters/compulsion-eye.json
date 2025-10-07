@@ -1,0 +1,72 @@
+{
+  "id": "compulsion-eye",
+  "name": "Compulsion Eye",
+  "level": 6,
+  "ev": 0,
+  "role": "Controller",
+  "organization": "",
+  "keywords": [
+    "Eyestalk",
+    "Horror",
+    "Overmind"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 30,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": -1,
+    "agility": 1,
+    "reason": 4,
+    "intuition": 1,
+    "presence": -1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "fly",
+    "hover"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Compulsion Beam",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 6",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "<strong class=\"potency-value\">I&lt;2</strong> the target is charmed",
+          "tier2": "<strong class=\"potency-value\">I&lt;3</strong> the target is charmed",
+          "tier3": "<strong class=\"potency-value\">I&lt;4</strong> the target is charmed"
+        },
+        {
+          "name": "Effect",
+          "effect": "As a free triggered action, a charmed target immediately moves up to their speed and can make a free strike against an enemy of Xorannox's choice. The target is then no longer charmed."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Psionic Barrier",
+      "effects": [
+        {
+          "effect": "The compulsion eye has damage immunity 15. When they use a main action, they lose this immunity until the end of the round."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -6,12 +6,10 @@
   "role": "",
   "organization": "Leader",
   "keywords": [
-    "undead"
+    "Mummy",
+    "Undead"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 6,
   "stamina": 155,
   "stability": 4,
@@ -35,357 +33,157 @@
   ],
   "items": [
     {
-      "name": "Cursed Transference",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the end of each of their turns, the mummy lord can take <span class=\"damage-value damage-generic\">10</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p>The effect that is ended is transferred to another creature within 10 squares.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Accursed Slam",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "10 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> bleeding (save ends)",
+          "tier2": "14 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> bleeding (save ends)",
+          "tier3": "17 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> bleeding (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "10 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> bleeding (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "14 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> bleeding (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "17 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> bleeding (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>While the target is bleeding this way, the potency of any ability used against them increases by 1 for the target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "While the target is bleeding this way, the potency of any ability used against them increases by 1 for the target."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Binding Curse",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 1,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 20
+      "cost": "1 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 20",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "7 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)",
+          "tier2": "12 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)",
+          "tier3": "16 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> frightened (save ends)"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
+        {
+          "name": "Effect",
+          "effect": "While frightened this way, a target takes 4 psychic damage whenever they use a move action."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "12 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "16 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> frightened (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>While frightened this way, a target takes <span class=\"damage-value damage-generic\">4</span> psychic damage whenever they use a move action.</p>"
-        },
-        "spend": {
-          "text": "This ability targets one additional target for each 2 Malice spent.",
-          "value": null
+        {
+          "cost": "2+ Malice",
+          "effect": "This ability targets one additional target for each 2 Malice spent."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Summon My Guard",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 2,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "The mummy lord is made winded for the first time in the encounter.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One mummy or four ghoul cravers appear within distance.</p><p><a href=\"/monster/ghoul-craver\" class=\"monster-link\">Ghoul Craver</a></p><p><a href=\"/monster/mummy\" class=\"monster-link\">Mummy</a></p><p></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "2 Malice",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 10",
+      "target": "Special",
+      "trigger": "The mummy lord is made winded for the first time in the encounter.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "One mummy or four ghoul cravers appear within distance."
         }
-      }
+      ]
     },
     {
+      "type": "feature",
+      "name": "Cursed Transference",
+      "effects": [
+        {
+          "effect": "At the end of each of their turns, the mummy lord can take 10 damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way."
+        },
+        {
+          "cost": "5 Malice",
+          "effect": "The effect that is ended is transferred to another creature within 10 squares."
+        }
+      ]
+    },
+    {
+      "type": "ability",
       "name": "Plague of Flies",
-      "type": "ability",
-      "system": {
-        "category": "villain",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
+      "ability_type": "Villain Action 1",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "-",
+      "distance": "5 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "5 poison damage",
+          "tier2": "8 poison damage",
+          "tier3": "10 poison damage"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 poison damage"
-            },
-            {
-              "tier": 2,
-              "display": "8 poison damage"
-            },
-            {
-              "tier": 3,
-              "display": "10 poison damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Each target takes a bane on their next strike.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Each target takes a bane on their next strike."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Land's Guardian",
-      "type": "ability",
-      "system": {
-        "category": "villain",
-        "type": "villain",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The mummy lord gains a +2 bonus to speed and can automatically burrow at full speed while moving. They can then use the Dig maneuver. The next time the mummy lord breaches the surface, each enemy within 2 squares of the mummy lord makes an <strong>Agility test</strong>.</p><table><tbody><tr><td data-colwidth=\"91\"><p>11 or less</p></td><td><p>Prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"91\"><p>12-16</p></td><td><p>Prone</p></td></tr><tr><td data-colwidth=\"91\"><p>17+</p></td><td><p>No effect</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 2",
+      "keywords": [
+        "-"
+      ],
+      "usage": "-",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The mummy lord gains a +2 bonus to speed and can automatically burrow at full speed while moving. They can then use the Dig maneuver. The next time the mummy lord breaches the surface, each enemy within 2 squares of the mummy lord makes an **Agility test**.",
+          "tier1": "Prone and can't stand (EoT)",
+          "tier2": "Prone",
+          "tier3": "No effect"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Unbound Horrors",
-      "type": "ability",
-      "system": {
-        "category": "villain",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "8 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "10 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> frightened and restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 3",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "-",
+      "distance": "5 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "5 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> frightened (save ends)",
+          "tier2": "8 corruption damage; <strong class=\"potency-value\">I&lt;3</strong> frightened (save ends)",
+          "tier3": "10 corruption damage; <strong class=\"potency-value\">I&lt;4</strong> frightened and restrained (save ends)"
         }
-      }
-    },
-    {
-      "name": "Blood Hunger",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One undead acting this turn uses a signature ability against a creature who is bleeding. As a free triggered action, each undead within 5 squares of the first undead moves up to their speed and can make a free strike against the same target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "268",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

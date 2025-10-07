@@ -22,7 +22,7 @@ describe('Export/Import Utilities', () => {
     role: 'Brute',
     organization: 'Minion',
     keywords: ['humanoid'],
-    size: { value: 1, letter: 'S' },
+    size: '1S',
     speed: 6,
     stamina: 10,
     stability: 0,
@@ -36,7 +36,7 @@ describe('Export/Import Utilities', () => {
     },
     immunities: {},
     weaknesses: {},
-    movementTypes: ['walk'],
+    movementTypes: new Set(['walk']),
     items: [],
     isCustom: true,
     createdAt: '2024-01-01T00:00:00.000Z',
@@ -51,7 +51,7 @@ describe('Export/Import Utilities', () => {
     role: 'Artillery',
     organization: 'Elite',
     keywords: ['undead'],
-    size: { value: 2, letter: 'M' },
+    size: '2M',
     speed: 8,
     stamina: 15,
     stability: 1,
@@ -65,7 +65,7 @@ describe('Export/Import Utilities', () => {
     },
     immunities: { poison: 5 },
     weaknesses: { fire: 3 },
-    movementTypes: ['walk', 'fly'],
+    movementTypes: new Set(['walk']),
     items: [],
     isCustom: true,
     createdAt: '2024-01-01T00:00:00.000Z',
@@ -75,7 +75,12 @@ describe('Export/Import Utilities', () => {
   describe('Single Monster Export', () => {
     it('should export a single monster correctly', () => {
       const jsonString = exportMonster(sampleMonster)
-      const exportData: ExportData = JSON.parse(jsonString)
+      const exportData: ExportData = JSON.parse(jsonString, (key: string, value: any) => {
+        if (key === 'movementTypes' && Array.isArray(value)) {
+          return new Set(value)
+        }
+        return value
+      })
 
       expect(exportData.metadata.application).toBe('Steel Cauldron Monster Library')
       expect(exportData.metadata.totalMonsters).toBe(1)
@@ -149,7 +154,7 @@ describe('Data Validation', () => {
       role: 'Brute',
       organization: 'Minion',
       keywords: ['humanoid'],
-      size: { value: 1, letter: 'S' },
+      size: '1S',
       speed: 6,
       stamina: 10,
       stability: 0,
@@ -163,7 +168,7 @@ describe('Data Validation', () => {
       },
       immunities: {},
       weaknesses: {},
-      movementTypes: ['walk'],
+      movementTypes: new Set(['walk']),
       items: [],
       isCustom: true,
       createdAt: '2024-01-01T00:00:00.000Z',

@@ -6,12 +6,11 @@
   "role": "Hexer",
   "organization": "Minion",
   "keywords": [
-    "elemental"
+    "Elemental",
+    "High Elf",
+    "Soulless"
   ],
-  "size": {
-    "value": 1,
-    "letter": "T"
-  },
+  "size": "1T",
   "speed": 5,
   "stamina": 3,
   "stability": 0,
@@ -26,150 +25,43 @@
   "immunities": {},
   "weaknesses": {},
   "movementTypes": [
-    "fly",
-    "walk"
+    "fly"
   ],
   "items": [
     {
-      "name": "With Captain",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p><strong>With Captain:</strong> +2 bonus to speed</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Spark of Life",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>On their turn, the mote can leave the encounter in a flash of light to revive one adjacent dead soot crow, brambleguard, or ceramic horse. The revived creature returns with <span class=\"heal-value\">3</span>  stamina.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Dweomer Plume",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "melee",
-          "strike"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 2
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "1 damage"
-            },
-            {
-              "tier": 2,
-              "display": "1 damage; <strong class=\"potency-value\">R&lt;1</strong> damage weakness 3 (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "2 damage; <strong class=\"potency-value\">R&lt;2</strong> damage weakness 3 (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Melee",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "1 damage",
+          "tier2": "2 damage; <strong class=\"potency-value\">R&lt;1</strong> damage weakness 3 (save ends)",
+          "tier3": "3 damage; <strong class=\"potency-value\">R&lt;2</strong> damage weakness 3 (save ends)"
         }
-      }
+      ]
     },
     {
-      "name": "Chaincast",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Spark of Life",
+      "effects": [
+        {
+          "effect": "On their turn, the mote can leave the encounter in a flash of light to revive one adjacent dead soot crow, brambleguard, or ceramic horse. The revived creature returns with 3 Stamina."
         }
-      }
-    },
-    {
-      "name": "In Defiance of Time",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "120",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

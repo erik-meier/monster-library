@@ -6,12 +6,9 @@
   "role": "",
   "organization": "Solo",
   "keywords": [
-    "elemental"
+    "Elemental"
   ],
-  "size": {
-    "value": 1,
-    "letter": "L"
-  },
+  "size": "1L",
   "speed": 8,
   "stamina": 250,
   "stability": 3,
@@ -26,570 +23,232 @@
   "immunities": {},
   "weaknesses": {},
   "movementTypes": [
-    "walk",
     "burrow"
   ],
   "items": [
     {
+      "type": "feature",
       "name": "Solo Monster",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the end of each of their turns, the cryptic can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p><p>The cryptic can take two turns each round. They can't take turns consecutively.</p>",
-          "director": ""
+      "effects": [
+        {
+          "name": "End Effect",
+          "effect": "At the end of each of their turns, the cryptic can take 5 damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way."
+        },
+        {
+          "name": "Solo Turns",
+          "effect": "The cryptic can take two turns each round. They can't take turns consecutively."
         }
-      }
+      ]
     },
     {
+      "type": "feature",
       "name": "Churning Trunk",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The cryptic is constantly surrounded by a 1 aura of swirling debris that obscures their form. Ranged abilities that target the cryptic take a bane. Additionally, any enemy who enters the aura for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">5</span> damage</p>",
-          "director": ""
+      "effects": [
+        {
+          "effect": "The cryptic is constantly surrounded by a 1 aura of swirling debris that obscures their form. Ranged abilities that target the cryptic take a bane. Additionally, any enemy who enters the aura for the first time in a round or starts their turn there takes 5 damage."
         }
-      }
+      ]
     },
     {
+      "type": "feature",
       "name": "Seismic Step",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The cryptic ignores difficult terrain. Additionally, they have line of effect to any creature with concealment if that creature is touching the ground.</p>",
-          "director": ""
+      "effects": [
+        {
+          "effect": "The cryptic ignores difficult terrain. Additionally, they have line of effect to any creature with concealment if that creature is touching the ground."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Sand Slam",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 2
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "8 damage; <strong class=\"potency-value\">A&lt;1</strong> slide 2",
+          "tier2": "12 damage; <strong class=\"potency-value\">A&lt;2</strong> slide 2, prone",
+          "tier3": "15 damage; <strong class=\"potency-value\">A&lt;3</strong> slide 3, prone and can't stand (EoT)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "8 damage; slide 2"
-            },
-            {
-              "tier": 2,
-              "display": "12 damage; slide 2; prone"
-            },
-            {
-              "tier": 3,
-              "display": "15 damage; slide 3; prone and can't stand (EoT)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>If a target made prone this way is already prone, they are instead restrained (EoT).</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "If a target made prone this way is already prone, they are instead restrained (EoT)."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Stone Bone Storm",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "line",
-          "primary": 6,
-          "secondary": 1,
-          "tertiary": 1
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Main action",
+      "distance": "6 x 1 line within 1",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "4 damage; <strong class=\"potency-value\">M&lt;1</strong> push 2",
+          "tier2": "7 damage; <strong class=\"potency-value\">M&lt;2</strong> prone",
+          "tier3": "10 damage; <strong class=\"potency-value\">M&lt;3</strong> prone"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 damage; push 2"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage; push 1"
-            },
-            {
-              "tier": 3,
-              "display": "10 damage; push 1"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The cryptic reforms their body and appears in an unoccupied space in the area.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The cryptic reforms their body and appears in an unoccupied space in the area."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Stoneshift",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 5",
+      "target": "One creature or object on the ground",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The cryptic slides the target up to 3 squares."
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The cryptic slides the target up to 3 squares.</p>"
-        },
-        "spend": {
-          "text": "The ability targets one additional target.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ability targets one additional target."
+        {
+          "cost": "2 Malice",
+          "effect": "The ability targets one additional target."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Dissipate",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 1,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "The cryptic takes damage.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The cryptic halves the damage, ignores any nondamaging effects associated with it, and shifts up to 3 squares</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "The cryptic takes damage.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The cryptic halves the damage, ignores any nondamaging effects associated with it, and shifts up to 3 squares."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Shatterstone",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 5,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 2
+      "cost": "5 Malice",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Triggered action",
+      "distance": "2 burst",
+      "target": "Each enemy in the area",
+      "trigger": "The cryptic uses the Dig maneuver to resurface.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Before using the Dig maneuver, the cryptic moves up to their speed. They then create the burst when they breach the surface."
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "The cryptic uses the Dig maneuver to resurface.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 damage; push 2"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage; push 3; prone"
-            },
-            {
-              "tier": 3,
-              "display": "10 damage; push 4; prone"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Before using the Dig maneuver, the cryptic moves up to their speed. They then create the burst when they breach the surface.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "roll": "2d10 + 3",
+          "tier1": "4 damage; push 2",
+          "tier2": "7 damage; push 3, prone",
+          "tier3": "10 damage; push 4, prone"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "First Warning Quake",
-      "type": "ability",
-      "system": {
-        "category": "villain",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 10
+      "ability_type": "Villain Action 1",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "-",
+      "distance": "10 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "name": "Special",
+          "effect": "A target must be on the ground."
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Special: A target must be on the ground.</p><p>Each target makes a Might test.</p><table><tbody><tr><td data-colwidth=\"95\"><p>11 or less</p></td><td><p>Prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"95\"><p>12-16</p></td><td><p>Prone</p></td></tr><tr><td data-colwidth=\"95\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Each target makes a **Might test**.",
+          "tier1": "Prone and can't stand (EoT)",
+          "tier2": "Prone",
+          "tier3": "No effect"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Final Warning Fissure",
-      "type": "ability",
-      "system": {
-        "category": "villain",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
+      "ability_type": "Villain Action 2",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "-",
+      "distance": "5 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "name": "Special",
+          "effect": "A target must be on the ground."
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p><strong>Special</strong>: A target must be on the ground.</p><p>The area drops 2 squares and is difficult terrain. Each target enemy falls, while each target ally drops safely. Additionally, each target enemy makes an <strong>Agility test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"91\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">9</span> damage; prone</p></td></tr><tr><td data-colwidth=\"91\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage</p></td></tr><tr><td data-colwidth=\"91\"><p>17+</p></td><td><p>The target moves to the nearest unoccupied space outside the area.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The area drops 2 squares and is difficult terrain. Each target enemy falls, while each target ally drops safely. Additionally, each target enemy makes an **Agility test**.",
+          "tier1": "9 damage; prone",
+          "tier2": "5 damage",
+          "tier3": "The target moves to the nearest unoccupied space outside the area."
         }
-      }
+      ]
     },
     {
-      "name": "No Escape (Power Roll 1)",
       "type": "ability",
-      "system": {
-        "category": "villain",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "name": "No Escape",
+      "ability_type": "Villain Action 3",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "-",
+      "distance": "Ranged 10",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The cryptic makes an initial power roll that calls down stone pillars from the ceiling."
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
+        {
+          "effect": "The cryptic then makes a second power roll that raises stone pillars from the floor (**📏 Ranged 10** | **🎯 Two creatures or objects on the ground**)",
+          "roll": "2d10 + 3",
+          "tier1": "5 damage; prone; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)",
+          "tier2": "9 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)",
+          "tier3": "12 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage; prone; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "9 damage; prone; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "12 damage; prone; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The cryptic makes an initial power roll that calls down stone pillars from the ceiling.</p> <p>The cryptic then makes a second power roll that raises stone pillars from the floor.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "roll": "2d10 + 3",
+          "tier1": "2 damage; vertical slide 2",
+          "tier2": "3 damage; vertical slide 4",
+          "tier3": "4 damage; vertical slide 6; if this movement brings the target into contact with the ceiling, they are restrained (save ends)."
         }
-      }
-    },
-    {
-      "name": "No Escape (Power Roll 2)",
-      "type": "ability",
-      "system": {
-        "category": "villain",
-        "type": "villain",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "2 damage; vertical slide 2"
-            },
-            {
-              "tier": 2,
-              "display": "3 damage; vertical slide 4"
-            },
-            {
-              "tier": 3,
-              "display": "4 damage; vertical slide 6; if this movement brings the target  into contact with the ceiling, they are restrained (save ends)."
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Stone Pillars",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two pillars of stone 1 square wide either thrust up out of the ground or jut down from the ceiling anywhere on the encounter map, to a height of up to 5 squares. A creature in the area of a pillar before it appears is knocked prone on its surface. If the creature comes into contact with the ceiling above or the floor beneath the pillar and has <strong class=\"potency-value\">M&lt;2</strong> they are restrained (save ends).</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Solo Action",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The fossil cryptic takes an additional main action on their turn. They can use this feature even if they are dazed.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Floor Mosaic",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The fossil cryptic slides one creature on the ground up to 5 squares. If the creature is prone, this forced movement ignores stability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Choking Dust",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 10,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The air across the encounter map is thick with dust until the end of the encounter. Each enemy in the dust is suffocating. Additionally, at the end of each round, each enemy in the dust makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"94\"><p>11 or less</p></td><td><p>Until the end of the enemy’s next turn, their stability is reduced to 0, and any forced movement effects targeting them gain a +2 bonus to the distance moved.</p></td></tr><tr><td data-colwidth=\"94\"><p>12-16</p></td><td><p>The enemy’s stability is halved (EoT).</p></td></tr><tr><td data-colwidth=\"94\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "143",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

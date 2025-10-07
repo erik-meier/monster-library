@@ -1,0 +1,71 @@
+{
+  "id": "shadow-elf-sniper",
+  "name": "Shadow Elf Sniper",
+  "level": 4,
+  "ev": 6,
+  "role": "Artillery",
+  "organization": "Minion",
+  "keywords": [
+    "Fey",
+    "Humanoid",
+    "Shadow Elf"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 7,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 1,
+    "agility": 3,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "climb"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Lumina Arrow",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 7",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 damage",
+          "tier2": "5 damage",
+          "tier3": "7 damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "The next strike made against the target gains an edge."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Of the Umbra",
+      "effects": [
+        {
+          "effect": "The sniper ignores concealment created by darkness. While the sniper is in direct sunlight, they have damage weakness 3. While the sniper has concealment, they have damage immunity 3."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

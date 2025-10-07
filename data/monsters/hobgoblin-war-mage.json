@@ -1,0 +1,138 @@
+{
+  "id": "hobgoblin-war-mage",
+  "name": "Hobgoblin War Mage",
+  "level": 5,
+  "ev": 28,
+  "role": "Controller",
+  "organization": "Elite",
+  "keywords": [
+    "Goblin",
+    "Hobgoblin",
+    "Humanoid",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 120,
+  "stability": 0,
+  "freeStrike": 6,
+  "characteristics": {
+    "might": 0,
+    "agility": 2,
+    "reason": 3,
+    "intuition": 2,
+    "presence": 2
+  },
+  "immunities": {
+    "fire": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "hover",
+    "teleport"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Hellfire",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Area",
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "3 cube within 10",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "5 fire damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)",
+          "tier2": "9 fire damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)",
+          "tier3": "11 fire damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "Before using this ability, the war mage can teleport a creature within 10 squares of them up to 2 squares."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Enchantments of War",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "Two allies",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target gains 10 temporary Stamina and has a double edge on their next power roll. The war mage can spend any amount of their current Stamina to increase the temporary Stamina each target gains by an equivalent amount."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Unhallowed Ground",
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "5 cube within 10",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The war mage consecrates the area and causes it to smolder until the end of the encounter. The area is difficult terrain and an enemy in the area has fire weakness 10."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Magic Siphon",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 10",
+      "target": "The triggering creature",
+      "trigger": "A creature within distance uses a magic ability.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Any damage dealt or Stamina regained from the creature's ability is halved. The war mage regains Stamina equal to the remaining damage dealt or Stamina regained."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Infernal Ichor",
+      "effects": [
+        {
+          "effect": "When the war mage is reduced to 0 Stamina, they spray burning blood. Each creature adjacent to the war mage takes 3 fire damage."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Despair, You Who Face Death",
+      "effects": [
+        {
+          "effect": "Any enemy within 2 squares of the war mage has a −2 penalty to saving throws."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

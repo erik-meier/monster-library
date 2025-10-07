@@ -6,12 +6,11 @@
   "role": "Hexer",
   "organization": "Elite",
   "keywords": [
-    "soulless"
+    "Kobold",
+    "Ooze",
+    "Soulless"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 5,
   "stamina": 40,
   "stability": 2,
@@ -32,199 +31,64 @@
   ],
   "items": [
     {
-      "name": "Translucent Brick",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The brick completely occupies their space, blocking line of effect for enemies. The brick is hidden until they act.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Engulf",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 acid damage; <strong class=\"potency-value\">A&lt;0</strong> dazed (save ends)",
+          "tier2": "10 acid damage; <strong class=\"potency-value\">A&lt;1</strong> dazed (save ends)",
+          "tier3": "14 acid damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
+        {
+          "name": "Effect",
+          "effect": "A size 2 or smaller creature restrained this way is pulled into the brick's space, moves with the brick, and takes 4 acid damage at the start of each of their turns. An engulfed creature who is no longer restrained moves to the nearest unoccupied space adjacent to the brick. The brick can have as many creatures or objects engulfed as will fit within their space."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 acid damage; <strong class=\"potency-value\">A&lt;0</strong> dazed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "10 acid damage; <strong class=\"potency-value\">A&lt;1</strong> dazed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "14 acid damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A size 2 or smaller creature restrained this way is pulled into the brick’s space, moves with the brick, and takes <span class=\"damage-value damage-generic\">4</span> acid damage at the start of each of their turns. An engulfed creature who is no longer restrained moves to the nearest unoccupied space adtjacent to the brick. The brick can have as many creatures or objects engulfed as will fit within their space.</p>"
-        },
-        "spend": {
-          "text": "This ability targets one additional target.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> This ability targets one additional target."
+        {
+          "cost": "2 Malice",
+          "effect": "This ability targets one additional target."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "You Didn't Pay Attention!",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "freeTriggered",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "A creature moves or is force moved adjacent to the brick.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The brick uses Engulf against the triggering creature and has a double edge.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "-"
+      ],
+      "usage": "Free triggered action",
+      "distance": "Self",
+      "target": "One creature or object",
+      "trigger": "A creature moves or is force moved adjacent to the brick.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The brick uses Engulf against the triggering creature and has a double edge."
         }
-      }
+      ]
     },
     {
-      "name": "Maniple Tactics",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">4</span> damage free strike</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Translucent Brick",
+      "effects": [
+        {
+          "effect": "The brick completely occupies their space, blocking line of effect for enemies. The brick is hidden until they act."
         }
-      }
-    },
-    {
-      "name": "Set the Initiative",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two kobolds take their turns in a row.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Shield Wall",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "194",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }
