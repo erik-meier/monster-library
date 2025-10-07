@@ -55,7 +55,7 @@ export interface ImportPreview {
 /**
  * JSON replacer function to handle Sets and other special types
  */
-function jsonReplacer(key: string, value: any): any {
+function jsonReplacer(key: string, value: unknown): unknown {
   if (value instanceof Set) {
     return Array.from(value)
   }
@@ -65,7 +65,7 @@ function jsonReplacer(key: string, value: any): any {
 /**
  * JSON reviver function to reconstruct Sets from arrays
  */
-function jsonReviver(key: string, value: any): any {
+function jsonReviver(key: string, value: unknown): unknown {
   // Reconstruct Sets for movementTypes field
   if (key === 'movementTypes' && Array.isArray(value)) {
     return new Set(value)

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-// @ts-ignore - Dynamic import for data bundle
+// @ts-expect-error - Dynamic import for data bundle
 import { getMaliceFeature, getMonsterIndex } from '@/data/monsters-bundle.js'
 
 export interface CustomMaliceFeature {
@@ -80,7 +80,7 @@ export const useCustomMaliceStore = defineStore('customMalice', {
     },
 
     // Get malice feature (custom or official)
-    getMaliceFeature(maliceId: string): CustomMaliceFeature | any {
+    getMaliceFeature(maliceId: string): CustomMaliceFeature | unknown {
       // Check custom first
       const custom = this.customMaliceFeatures.get(maliceId)
       if (custom) return custom
@@ -163,7 +163,7 @@ export const useCustomMaliceStore = defineStore('customMalice', {
     },
 
     // Get monsters linked to malice (both official and custom)
-    getLinkedMonsters(maliceId: string): any[] {
+    getLinkedMonsters(maliceId: string): unknown[] {
       // Check custom mappings first
       const customMonsterIds = this.customMaliceMappings.get(maliceId) || []
       
@@ -237,13 +237,13 @@ export const useCustomMaliceStore = defineStore('customMalice', {
         for (const [id, maliceData] of Object.entries(data.maliceFeatures)) {
           try {
             // Validate malice data
-            if (!this.validateMaliceData(maliceData as any)) {
+            if (!this.validateMaliceData(maliceData as unknown)) {
               result.errors.push(`Invalid malice data for ${id}`)
               continue
             }
 
             // Generate new ID to avoid conflicts
-            const newId = this.createMaliceFeature(maliceData as any)
+            this.createMaliceFeature(maliceData as Omit<CustomMaliceFeature, 'id' | 'isCustom' | 'createdAt' | 'updatedAt'>)
             result.imported++
           } catch (error) {
             result.errors.push(`Error importing ${id}: ${error}`)
@@ -259,12 +259,16 @@ export const useCustomMaliceStore = defineStore('customMalice', {
     },
 
     // Validate malice feature data
-    validateMaliceData(data: any): boolean {
+    validateMaliceData(data: unknown): boolean {
       return (
         typeof data === 'object' &&
-        typeof data.name === 'string' &&
-        typeof data.featureblockType === 'string' &&
-        Array.isArray(data.features)
+        data !== null &&
+        'name' in data &&
+        'featureblockType' in data &&
+        'features' in data &&
+        typeof (data as Record<string, unknown>).name === 'string' &&
+        typeof (data as Record<string, unknown>).featureblockType === 'string' &&
+        Array.isArray((data as Record<string, unknown>).features)
       )
     }
   }

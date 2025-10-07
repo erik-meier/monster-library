@@ -445,7 +445,6 @@ function generateAbilitiesHTML(items: MonsterItem[], organization?: string): str
   
   return items.map(item => {
     const isFeature = item.type === 'feature'
-    const isSignature = item.system?.category === 'signature'
     const hasPowerRoll = actionHasPowerRoll(item)
     
     return `

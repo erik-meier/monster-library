@@ -75,7 +75,7 @@
       <div v-else class="stat-edit-values">
         <div class="stat-edit-item">
           <div class="size-edit">
-            <input v-model.string="editableData.size" type="string" class="size-input" @blur="updateField('size')" />
+            <input v-model="editableData.size" type="text" class="size-input" @blur="updateField('size')" />
           </div>
         </div>
         <div class="stat-edit-item">

@@ -61,7 +61,7 @@ export function convertItemToSimplifiedFormat(item: MonsterItem): MonsterItem {
 
     // Add power roll effect if present
     if (item.system.power?.tiers && item.system.power.tiers.length > 0) {
-      const rollEffect: any = {};
+      const rollEffect: Record<string, unknown> = {};
       
       if (item.system.power.roll?.formula) {
         rollEffect.roll = item.system.power.roll.formula;
@@ -118,7 +118,7 @@ export function convertItemToSimplifiedFormat(item: MonsterItem): MonsterItem {
 /**
  * Convert distance object to string format
  */
-function convertDistanceToString(distance: any): string {
+function convertDistanceToString(distance: Record<string, unknown>): string {
   switch (distance.type) {
     case 'melee':
       return `Melee ${distance.primary || 1}`;
@@ -139,23 +139,24 @@ function convertDistanceToString(distance: any): string {
     case 'special':
       return 'Special';
     default:
-      return distance.type || 'Special';
+      return String(distance.type) || 'Special';
   }
 }
 
 /**
  * Convert target object to string format
  */
-function convertTargetToString(target: any): string {
+function convertTargetToString(target: Record<string, unknown>): string {
+  const value = typeof target.value === 'number' ? target.value : 1;
   switch (target.type) {
     case 'creature':
-      return target.value > 1 ? `${target.value} creatures` : 'One creature';
+      return value > 1 ? `${value} creatures` : 'One creature';
     case 'creatureObject':
-      return target.value > 1 ? `${target.value} creatures or objects` : 'One creature or object';
+      return value > 1 ? `${value} creatures or objects` : 'One creature or object';
     case 'enemy':
-      return target.value > 1 ? `${target.value} enemies` : 'One enemy';
+      return value > 1 ? `${value} enemies` : 'One enemy';
     case 'ally':
-      return target.value > 1 ? `${target.value} allies` : 'One ally';
+      return value > 1 ? `${value} allies` : 'One ally';
     case 'selfAlly':
       return 'Self and one ally';
     case 'selfOrAlly':
@@ -165,7 +166,7 @@ function convertTargetToString(target: any): string {
     case 'special':
       return 'Special';
     default:
-      return target.type || 'Special';
+      return String(target.type) || 'Special';
   }
 }
 

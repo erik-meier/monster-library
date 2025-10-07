@@ -61,7 +61,7 @@
             :class="{ invalid: errors.freeStrike }" min="0" placeholder="2" :aria-invalid="!!errors.freeStrike"
             :aria-describedby="errors.freeStrike ? 'free-strike-error' : 'free-strike-help'" required />
           <div v-if="errors.freeStrike" id="free-strike-error" class="error-message" role="alert">{{ errors.freeStrike
-          }}</div>
+            }}</div>
           <div id="free-strike-help" class="help-text">Free strike damage</div>
         </div>
       </div>
@@ -84,7 +84,7 @@
 
 <script setup lang="ts">
 import { reactive, computed, watch, onMounted } from 'vue'
-import type { MonsterFormData, SizeLetter } from '@/types/monster-forms'
+import type { MonsterFormData } from '@/types/monster-forms'
 import { SIZE_LETTERS, MOVEMENT_TYPES } from '@/types/monster-forms'
 
 interface Props {
