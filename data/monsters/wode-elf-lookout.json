@@ -6,13 +6,11 @@
   "role": "Support",
   "organization": "Minion",
   "keywords": [
-    "fey",
-    "humanoid"
+    "Fey",
+    "Humanoid",
+    "Wode Elf"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 7,
   "stamina": 4,
   "stability": 0,
@@ -27,193 +25,52 @@
   "immunities": {},
   "weaknesses": {},
   "movementTypes": [
-    "climb",
-    "walk"
+    "climb"
   ],
   "items": [
     {
-      "name": "With Captain",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p><strong>With Captain:</strong> +2 bonus to speed</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "There!",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any wode elf within 5 squares of the lookout can make ranged strikes as if occupying the lookout's space.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Masking Glamor",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Abilities targeting the lookout that would take a bane from cover or concealment have a double bane instead.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Longbow",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 8
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "1 damage"
-            },
-            {
-              "tier": 2,
-              "display": "2 damage"
-            },
-            {
-              "tier": 3,
-              "display": "3 damage"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 8",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "1 damage",
+          "tier2": "2 damage",
+          "tier3": "3 damage"
         }
-      }
+      ]
     },
     {
-      "name": "Forest Network",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "There!",
+      "effects": [
+        {
+          "effect": "Any wode elf within 5 squares of the lookout can make ranged strikes as if occupying the lookout's space."
         }
-      }
+      ]
     },
     {
-      "name": "Punishing Regrowth",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Masking Glamor",
+      "effects": [
+        {
+          "effect": "Abilities targeting the lookout that would take a bane from cover or concealment have a double bane instead."
         }
-      }
-    },
-    {
-      "name": "Vines Everywhere",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "136",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

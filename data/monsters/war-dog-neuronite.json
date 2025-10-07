@@ -6,13 +6,11 @@
   "role": "Defender",
   "organization": "Horde",
   "keywords": [
-    "humanoid",
-    "soulless"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 20,
   "stability": 0,
@@ -29,251 +27,77 @@
   },
   "weaknesses": {},
   "movementTypes": [
-    "fly",
-    "walk"
+    "fly"
   ],
   "items": [
     {
-      "name": "Loyalty Collar",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When the neuronite is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">1d6</span> damage to each adjacent enemy and object.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Synlirii Grafts",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "area",
-          "psionic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 1
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "1 psychic damage; vertical slide 1"
-            },
-            {
-              "tier": 2,
-              "display": "2 psychic damage; vertical slide 2"
-            },
-            {
-              "tier": 3,
-              "display": "3 psychic damage; vertical slide 3"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Area",
+        "Psionic"
+      ],
+      "usage": "Main action",
+      "distance": "1 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "1 psychic damage; vertical slide 1",
+          "tier2": "2 psychic damage; vertical slide 2",
+          "tier3": "3 psychic damage; vertical slide 3"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Posthumous Promotion",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "special",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "One war dog",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "If the target has a loyalty collar, they are reduced to 0 Stamina."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "The Voice",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 1,
-        "keywords": [
-          "area",
-          "psionic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The neuronite chooses one ally within 10 squares. Each target is either taunted by the ally, or the ally has damage immunity 3 whenever any target makes a strike against them (the neuronite's choice). Either effect lasts until the start of the neuronite's next turn</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "Area",
+        "Psionic"
+      ],
+      "usage": "Maneuver",
+      "distance": "5 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The neuronite chooses one ally within 10 squares. Each target is either taunted by the ally, or the ally has damage immunity 3 whenever any target makes a strike against them (the neuronite's choice). Either effect lasts until the start of the neuronite's next turn."
         }
-      }
+      ]
     },
     {
-      "name": "Fire for Effect",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 5,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 4,
-          "secondary": 10
-        },
-        "target": {
-          "type": "creature",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> fire damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> fire damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> fire damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Loyalty Collar",
+      "effects": [
+        {
+          "effect": "When the neuronite is reduced to 0 Stamina, their loyalty collar explodes, dealing 1d6 damage to each adjacent enemy and object."
         }
-      }
-    },
-    {
-      "name": "Fodder Run",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Reconstitute",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "301",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

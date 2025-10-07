@@ -6,12 +6,10 @@
   "role": "Artillery",
   "organization": "Minion",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Orc"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 6,
   "stamina": 3,
   "stability": 0,
@@ -30,83 +28,39 @@
   ],
   "items": [
     {
-      "name": "With Captain",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p><strong>With Captain:</strong> +2 bonus to forced movement distance</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Explosive Mote",
       "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "2 damage; or the bloodspark can shift 1 square away from the target."
-            },
-            {
-              "tier": 2,
-              "display": "4 damage; or the bloodspark can shift 2 square away from the target."
-            },
-            {
-              "tier": 3,
-              "display": "5 damage; or the bloodspark can shift 4 square away from the target."
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "name": "Explosive Mote",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "2 damage; push 1, or the bloodspark can shift 1 square away from the target",
+          "tier2": "4 damage; push 2, or the bloodspark shifts up to 2 squares away from the target",
+          "tier3": "5 damage; push 4, or the bloodspark shifts up to 4 squares away from the target"
         }
-      }
+      ]
     },
     {
-      "name": "Bloodfire Burn",
       "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>If the bloodspark is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">2</span> damage free strike before dying.</p>",
-          "director": ""
+      "name": "Bloodfire Bur",
+      "effects": [
+        {
+          "effect": "If the bloodspark is reduced to 0 Stamina, they can make a free strike before dying."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "216",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

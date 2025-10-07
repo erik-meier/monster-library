@@ -6,12 +6,10 @@
   "role": "Harrier",
   "organization": "Minion",
   "keywords": [
-    "elemental"
+    "Elemental",
+    "High Elf"
   ],
-  "size": {
-    "value": 1,
-    "letter": "T"
-  },
+  "size": "1T",
   "speed": 7,
   "stamina": 4,
   "stability": 0,
@@ -26,140 +24,38 @@
   "immunities": {},
   "weaknesses": {},
   "movementTypes": [
-    "fly",
-    "walk"
+    "fly"
   ],
   "items": [
     {
-      "name": "With Captain",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p><strong>With Captain:</strong> Gain an edge on strikes</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Heckle",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "1 damage",
+          "tier2": "2 damage",
+          "tier3": "3 damage; taunted (EoT)"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "1 damage"
-            },
-            {
-              "tier": 2,
-              "display": "2 damage"
-            },
-            {
-              "tier": 3,
-              "display": "3 damage; taunted (EoT)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Until the end of their turn, the soot crow ignores opportunity attacks from the target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Until the end of their turn, the soot crow ignores opportunity attacks from the target."
         }
-      }
-    },
-    {
-      "name": "Chaincast",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "In Defiance of Time",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "120",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

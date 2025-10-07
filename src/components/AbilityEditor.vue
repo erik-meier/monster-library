@@ -4,16 +4,6 @@
       <h2 id="editor-title" class="editor-title">
         {{ isFeature ? 'Edit Feature' : 'Edit Ability' }}: {{ formData.name || 'New Item' }}
       </h2>
-      <div class="editor-actions">
-        <button type="button" class="btn btn-secondary" @click="$emit('cancel')"
-          aria-label="Cancel editing and close dialog">
-          Cancel
-        </button>
-        <button type="button" class="btn btn-primary" @click="handleSave" :disabled="!isValid"
-          :aria-label="isValid ? 'Save changes' : 'Please fix validation errors before saving'">
-          Save
-        </button>
-      </div>
     </header>
 
     <div class="editor-content">
@@ -41,7 +31,7 @@
       <CollapsibleSection v-if="isFeature" title="Feature Description" :expanded="true" id="feature-description">
         <div class="form-group">
           <label for="feature-description" class="form-label required">Description</label>
-          <textarea id="feature-description" v-model="formData.system.description!.value" class="form-textarea"
+          <textarea id="feature-description" v-model="featureDescription" class="form-textarea"
             :class="{ invalid: errors.description }" rows="4" placeholder="Describe what this feature does..." />
           <div v-if="errors.description" class="error-message">{{ errors.description }}</div>
           <div class="help-text">HTML is supported for formatting</div>
@@ -50,236 +40,77 @@
 
       <!-- Ability-specific fields -->
       <template v-if="!isFeature">
-        <!-- System Properties -->
-        <CollapsibleSection title="Action Properties" :expanded="true" id="action-properties">
+        <!-- Ability Properties -->
+        <CollapsibleSection title="Ability Properties" :expanded="true" id="ability-properties">
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-checkbox-label">
-                <input type="checkbox" v-model="isSignature" class="form-checkbox" />
-                <span class="checkbox-text">Signature Ability</span>
-              </label>
-              <div class="help-text">Signature abilities are always available (only one per monster)</div>
-              <div v-if="errors.signature" class="error-message">{{ errors.signature }}</div>
+              <label for="ability-type-select" class="form-label">Ability Type</label>
+              <select id="ability-type-select" v-model="formData.ability_type" class="form-select">
+                <option value="">Regular Ability</option>
+                <option value="Signature Ability">Signature Ability</option>
+                <option value="Villain Action 1">Villain Action 1</option>
+                <option value="Villain Action 2">Villain Action 2</option>
+                <option value="Villain Action 3">Villain Action 3</option>
+              </select>
+              <div v-if="errors.signature" class="error-message" role="alert">{{ errors.signature }}</div>
             </div>
 
-            <div class="form-group">
-              <label for="action-type" class="form-label">Action Type</label>
-              <select id="action-type" v-model="formData.system.type" class="form-select">
-                <option value="main">Main Action</option>
-                <option value="maneuver">Maneuver</option>
-                <option value="triggered">Triggered Action</option>
-                <option value="freeTriggered">Free Triggered Action</option>
-                <option value="villain">Villain Action</option>
-                <option value="move">Move Action</option>
+            <div v-if="!(formData.ability_type && formData.ability_type.startsWith('Villain Action'))"
+              class="form-group">
+              <label for="usage-type" class="form-label">Usage</label>
+              <select id="usage-type" v-model="formData.usage" class="form-select">
+                <option value="Main action">Main Action</option>
+                <option value="Maneuver">Maneuver</option>
+                <option value="Triggered action">Triggered Action</option>
+                <option value="Free triggered action">Free Triggered Action</option>
+                <option value="Move action">Move Action</option>
               </select>
             </div>
 
             <div class="form-group">
               <label for="malice-cost" class="form-label">Malice Cost</label>
-              <input id="malice-cost" v-model="formData.system.resource" type="number" class="form-input" min="0"
-                placeholder="0" />
+              <input id="malice-cost" v-model="formData.cost" type="text" class="form-input"
+                placeholder="e.g., '2 Malice'" />
               <div class="help-text">Leave empty if no cost</div>
             </div>
           </div>
         </CollapsibleSection>
 
         <!-- Targeting -->
-        <section class="editor-section">
-          <h3 class="section-title">Targeting</h3>
+        <CollapsibleSection title="Targeting" :expanded="true" id="targeting">
           <div class="form-grid">
             <div class="form-group">
-              <label for="range-type" class="form-label">Range Type</label>
-              <select id="range-type" v-model="rangeType" class="form-select">
-                <option value="melee">Melee</option>
-                <option value="ranged">Ranged</option>
-                <option value="meleeRanged">Melee or Ranged</option>
-                <option value="line">Line</option>
-                <option value="cube">Cube</option>
-                <option value="wall">Wall</option>
-                <option value="burst">Burst</option>
-                <option value="self">Self</option>
-                <option value="special">Special</option>
-              </select>
-            </div>
-
-            <!-- Melee Range -->
-            <div class="form-group" v-if="rangeType === 'melee' || rangeType === 'meleeRanged'">
-              <label for="melee-range" class="form-label">Melee Range</label>
-              <input id="melee-range" v-model.number="formData.system.distance!.primary" type="number"
-                class="form-input" min="1" placeholder="1" />
-            </div>
-
-            <!-- Ranged Distance -->
-            <div class="form-group" v-if="rangeType === 'ranged' || rangeType === 'meleeRanged'">
-              <label for="ranged-distance" class="form-label">Ranged Distance</label>
-              <input id="ranged-distance" v-model.number="formData.system.distance!.secondary" type="number"
-                class="form-input" min="1" placeholder="5" />
-            </div>
-
-            <!-- Line Range -->
-            <div class="form-group-row" v-if="rangeType === 'line'">
-              <input v-model.number="formData.system.distance!.primary" type="number" class="form-input inline-input"
-                min="1" placeholder="5" />
-              <span class="range-text">x</span>
-              <input v-model.number="formData.system.distance!.secondary" type="number" class="form-input inline-input"
-                min="1" placeholder="5" />
-              <span class="range-text">line within</span>
-              <input v-model.number="formData.system.distance!.tertiary" type="number" class="form-input inline-input"
-                min="1" placeholder="10" />
-            </div>
-
-            <!-- Cube Range -->
-            <div class="form-group-row" v-if="rangeType === 'cube'">
-              <input v-model.number="formData.system.distance!.primary" type="number" class="form-input inline-input"
-                min="1" placeholder="3" />
-              <span class="range-text">cube within</span>
-              <input v-model.number="formData.system.distance!.secondary" type="number" class="form-input inline-input"
-                min="1" placeholder="10" />
-            </div>
-
-            <!-- Wall Range -->
-            <div class="form-group-row" v-if="rangeType === 'wall'">
-              <input v-model.number="formData.system.distance!.primary" type="number" class="form-input inline-input"
-                min="1" placeholder="6" />
-              <span class="range-text">wall within</span>
-              <input v-model.number="formData.system.distance!.secondary" type="number" class="form-input inline-input"
-                min="1" placeholder="10" />
-            </div>
-
-            <!-- Burst Range -->
-            <div class="form-group-row" v-if="rangeType === 'burst'">
-              <input v-model.number="formData.system.distance!.primary" type="number" class="form-input inline-input"
-                min="1" placeholder="2" />
-              <span class="range-text">burst</span>
-              <span class="range-spacer"></span>
+              <label for="distance-input" class="form-label">Distance</label>
+              <input id="distance-input" v-model="formData.distance" type="text" class="form-input"
+                placeholder="e.g., 'Melee 2', 'Ranged 10', '4 cube within 20'" />
+              <div class="help-text">Examples: Melee 1, Ranged 10, 4 cube within 20, Self</div>
             </div>
 
             <div class="form-group">
-              <label for="target-type" class="form-label">Target Type</label>
-              <select id="target-type" v-model="formData.system.target!.type" class="form-select">
-                <option value="creature">Creature</option>
-                <option value="creatureObject">Creature or Object</option>
-                <option value="enemy">Enemy</option>
-                <option value="ally">Ally</option>
-                <option value="selfAlly">Self and Ally</option>
-                <option value="selfOrAlly">Self or Ally</option>
-                <option value="self">Self</option>
-                <option value="special">Special</option>
-              </select>
-              <div class="help-text">What can be targeted by this ability</div>
-            </div>
-
-            <div class="form-group"
-              v-if="formData.system.target!.type !== 'self' && formData.system.target!.type !== 'special'">
-              <label for="target-count" class="form-label">Target Count</label>
-              <input id="target-count" v-model.number="formData.system.target!.value" type="number" class="form-input"
-                min="1" placeholder="1" />
-              <div class="help-text">Number of targets</div>
+              <label for="target-input" class="form-label">Target</label>
+              <input id="target-input" v-model="formData.target" type="text" class="form-input"
+                placeholder="e.g., 'Two creatures or objects', 'Self'" />
+              <div class="help-text">Describe what can be targeted</div>
             </div>
           </div>
-        </section>
+        </CollapsibleSection>
 
-        <!-- Power Roll (Optional) -->
-        <section class="editor-section">
-          <div class="section-header-with-toggle">
-            <h3 class="section-title">Power Roll (Optional)</h3>
-            <label class="toggle-switch">
-              <input type="checkbox" v-model="hasPowerRoll" />
-              <span class="toggle-slider"></span>
-              <span class="toggle-label">{{ hasPowerRoll ? 'Has Power Roll' : 'No Power Roll' }}</span>
-            </label>
-          </div>
-
-          <template v-if="hasPowerRoll">
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="power-characteristic" class="form-label">Characteristic</label>
-                <select id="power-characteristic" v-model="selectedCharacteristic" class="form-select">
-                  <option value="">Custom Formula</option>
-                  <option v-for="char in characteristicsList" :key="char.value" :value="char.value">
-                    {{ char.label }}
-                  </option>
-                </select>
-                <div class="help-text">Select characteristic for 2d10 + characteristic formula, or use custom</div>
-              </div>
-
-              <div class="form-group" v-if="!selectedCharacteristic">
-                <label for="power-formula" class="form-label">Custom Formula</label>
-                <input id="power-formula" v-model="formData.system.power!.roll!.formula" type="text" class="form-input"
-                  placeholder="2d10 + 2" />
-                <div class="help-text">e.g., 2d10, 2d10 + 3</div>
-              </div>
-
-              <div class="form-group" v-else>
-                <label class="form-label">Generated Formula</label>
-                <div class="formula-display">{{ generatedFormula }}</div>
-                <div class="help-text">Formula automatically generated from selected characteristic</div>
-              </div>
-            </div>
-
-            <!-- Power Tiers -->
-            <div class="power-tiers">
-              <h4 class="subsection-title">Power Tiers</h4>
-              <div class="tier-list">
-                <div v-for="tierNum in 3" :key="tierNum" class="tier-row">
-                  <div class="tier-number">{{ tierNum }}</div>
-                  <input v-model="getTierDisplay(tierNum).value" type="text" class="tier-input"
-                    :placeholder="`Tier ${tierNum} effect`" />
-                </div>
-              </div>
-            </div>
-          </template>
-        </section>
-
-        <!-- Effects -->
-        <section class="editor-section">
-          <h3 class="section-title">Effect</h3>
+        <!-- Trigger (for triggered abilities) -->
+        <CollapsibleSection v-if="isTriggeredAction" title="Trigger" :expanded="true" id="trigger">
           <div class="form-group">
-            <label for="effect-text" class="form-label">Effect Description</label>
-            <textarea id="effect-text" v-model="formData.system.effect!.text" class="form-textarea" rows="3"
-              placeholder="Describe what this ability does..." />
-            <div class="help-text">HTML is supported for formatting</div>
-          </div>
-        </section>
-
-        <!-- Spend Effects -->
-        <section class="editor-section">
-          <h3 class="section-title">Spend Effects</h3>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="spend-value" class="form-label">Malice Cost</label>
-              <input id="spend-value" v-model.number="formData.system.spend!.value" type="number" class="form-input"
-                min="0" placeholder="0" />
-              <div class="help-text">Cost in Malice to activate the spend effect (leave empty if no cost)</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="spend-text" class="form-label">Spend Effect Description</label>
-            <textarea id="spend-text" v-model="formData.system.spend!.text" class="form-textarea" rows="2"
-              placeholder="Effect when spending resources..." />
-            <div class="help-text">Describes what happens when the character spends Malice for this ability</div>
-          </div>
-        </section>
-
-        <!-- Trigger -->
-        <section class="editor-section"
-          v-if="formData.system.type === 'triggered' || formData.system.type === 'freeTriggered'">
-          <h3 class="section-title">Trigger</h3>
-          <div class="form-group">
-            <label for="trigger-text" class="form-label">Trigger Condition</label>
-            <textarea id="trigger-text" v-model="formData.system.trigger" class="form-textarea" rows="2"
+            <label for="trigger-input" class="form-label">Trigger Condition</label>
+            <textarea id="trigger-input" v-model="formData.trigger" class="form-textarea" rows="2"
               placeholder="When this ability triggers..." />
           </div>
-        </section>
+        </CollapsibleSection>
       </template>
 
       <!-- Keywords (for both abilities and features) -->
-      <section class="editor-section">
-        <h3 class="section-title">Keywords</h3>
+      <CollapsibleSection title="Keywords" :expanded="true" id="keywords" ref="keywordsSection">
         <div class="keywords-editor">
-          <div class="selected-keywords" v-if="formData.system.keywords.length > 0">
-            <span v-for="keyword in formData.system.keywords" :key="keyword" class="keyword-tag">
-              {{ keyword }}
+          <div class="selected-keywords" v-if="formData.keywords && formData.keywords.length > 0">
+            <span v-for="keyword in formData.keywords" :key="keyword" class="keyword-tag">
+              {{ capitalize(keyword) }}
               <button type="button" class="remove-keyword" @click="removeKeyword(keyword)">
                 ×
               </button>
@@ -297,13 +128,108 @@
           <!-- Quick Add Common Keywords -->
           <div class="quick-keywords">
             <button v-for="keyword in quickKeywords" :key="keyword" type="button" class="quick-keyword-btn"
-              :class="{ selected: formData.system.keywords.includes(keyword) }" @click="toggleQuickKeyword(keyword)">
-              {{ keyword }}
+              :class="{ selected: formData.keywords?.includes(keyword.toLowerCase()) }"
+              @click="toggleQuickKeyword(keyword)">
+              {{ capitalize(keyword) }}
             </button>
           </div>
         </div>
-      </section>
+      </CollapsibleSection>
+
+      <!-- Power Roll Section (for abilities only) -->
+      <CollapsibleSection v-if="!isFeature" title="Power Roll" :expanded="true" id="power-roll" ref="powerRollSection">
+        <div class="power-roll-section">
+          <div class="power-roll-toggle">
+            <label class="toggle-switch">
+              <input type="checkbox" v-model="hasPowerRoll" @change="handlePowerRollToggle" />
+              <span class="toggle-label">Use Power Roll?</span>
+            </label>
+            <div class="help-text">Power rolls determine variable effects based on dice results</div>
+          </div>
+
+          <div v-if="hasPowerRoll" class="power-roll-content">
+            <div class="form-group">
+              <label class="form-label required">Power Roll Formula</label>
+              <input v-model="powerRollFormula" type="text" class="form-input" placeholder="e.g., '2d10 + 2'"
+                required />
+              <div class="help-text">The dice formula or description for the power roll</div>
+            </div>
+
+            <!-- Power Roll Tiers -->
+            <div class="power-tiers">
+              <h5 class="subsection-title">Power Roll Tiers</h5>
+              <div class="tier-list">
+                <div class="tier-row">
+                  <div class="tier-number">1</div>
+                  <input v-model="powerRollTiers.tier1" type="text" class="tier-input" placeholder="Tier 1 effect" />
+                </div>
+                <div class="tier-row">
+                  <div class="tier-number">2</div>
+                  <input v-model="powerRollTiers.tier2" type="text" class="tier-input" placeholder="Tier 2 effect" />
+                </div>
+                <div class="tier-row">
+                  <div class="tier-number">3</div>
+                  <input v-model="powerRollTiers.tier3" type="text" class="tier-input" placeholder="Tier 3 effect" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </CollapsibleSection>
+
+      <!-- Effects -->
+      <CollapsibleSection title="Effects" :expanded="true" id="effects" ref="effectsSection">
+        <div class="effects-list">
+          <div v-for="(effect, index) in formData.effects" :key="`effect-${index}`" class="effect-item">
+            <div class="effect-header">
+              <h4 class="effect-title">Effect {{ index + 1 }}</h4>
+              <button type="button" class="btn-remove-effect" @click="removeEffect(index)"
+                :disabled="formData.effects!.length <= 1">
+                Remove
+              </button>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Effect Name (Optional)</label>
+                <input v-model="effect.name" type="text" class="form-input" placeholder="e.g., 'End Effect', 'Spend'" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Cost (Optional)</label>
+                <input v-model="effect.cost" type="text" class="form-input" placeholder="e.g., '2 Malice'" />
+              </div>
+            </div>
+
+            <!-- Effect Text -->
+            <div class="form-group">
+              <label class="form-label">Effect Description</label>
+              <textarea v-model="effect.effect" class="form-textarea" rows="3"
+                placeholder="Describe what this effect does..." />
+              <div class="help-text">HTML is supported for formatting</div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-add-effect" @click="addEffect">
+            Add Another Effect
+          </button>
+        </div>
+      </CollapsibleSection>
     </div>
+
+    <!-- Footer Actions -->
+    <footer class="editor-footer">
+      <div class="editor-actions">
+        <button type="button" class="btn btn-secondary" @click="$emit('cancel')"
+          aria-label="Cancel editing and close dialog">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-primary" @click="handleSave" :disabled="!isValid"
+          :aria-label="isValid ? 'Save changes' : 'Please fix validation errors before saving'">
+          Save
+        </button>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -314,16 +240,6 @@ import { ABILITY_KEYWORDS } from '@/types/monster-forms'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import { useToast } from '@/composables/useToast'
 
-// Debounce utility for performance optimization
-function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(fn: T, delay: number): T {
-  let timeoutId: ReturnType<typeof setTimeout>
-  return ((...args: Parameters<T>) => {
-    clearTimeout(timeoutId)
-    timeoutId = setTimeout(() => fn(...args), delay)
-  }) as T
-}
-
-// Initialize toast notifications
 const { success, error } = useToast()
 
 interface Props {
@@ -341,171 +257,254 @@ interface Emits {
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
 
-const formData = reactive<MonsterItem>(JSON.parse(JSON.stringify(props.modelValue)))
+// Initialize form data with new simplified structure
+const formData = reactive<MonsterItem>({
+  name: props.modelValue.name || '',
+  type: props.modelValue.type || 'ability',
+  ability_type: props.modelValue.ability_type || '',
+  usage: props.modelValue.usage || 'Main action',
+  distance: props.modelValue.distance || '',
+  target: props.modelValue.target || '',
+  keywords: props.modelValue.keywords ? [...props.modelValue.keywords] : [],
+  cost: props.modelValue.cost || '',
+  trigger: props.modelValue.trigger || '',
+  effects: props.modelValue.effects && props.modelValue.effects.length > 0
+    ? props.modelValue.effects.map(e => ({ ...e }))
+    : [{ name: '', roll: '', tier1: '', tier2: '', tier3: '', effect: '', cost: '' }]
+})
+
 const newKeyword = ref('')
+const quickKeywords = ABILITY_KEYWORDS.slice(0, 10)
+const effectsSection = ref<{ updateHeight: () => void } | null>(null)
+const keywordsSection = ref<{ updateHeight: () => void } | null>(null)
+const powerRollSection = ref<{ updateHeight: () => void } | null>(null)
 
-// Determine if this ability has a power roll based on existing data
-const hasPowerRoll = ref(
-  !!(formData.system.power?.tiers?.length && formData.system.power.tiers.length > 0)
-)
-
-const characteristicsList = [
-  { value: 'might', label: 'Might' },
-  { value: 'agility', label: 'Agility' },
-  { value: 'reason', label: 'Reason' },
-  { value: 'intuition', label: 'Intuition' },
-  { value: 'presence', label: 'Presence' }
-]
-
-const quickKeywords = ABILITY_KEYWORDS.slice(0, 10) // Show first 10 for quick access
+// Power roll state
+const hasPowerRoll = ref(false)
+const powerRollFormula = ref('')
+const powerRollTiers = reactive({
+  tier1: '',
+  tier2: '',
+  tier3: ''
+})
 
 const errors = reactive({
   name: '',
-  type: '',
   description: '',
   signature: ''
 })
 
 const isFeature = computed(() => formData.type === 'feature')
+const isTriggeredAction = computed(() => formData.usage?.includes('Triggered'))
 
-const isSignature = computed({
-  get: () => formData.system.category === 'signature',
-  set: (value: boolean) => {
-    formData.system.category = value ? 'signature' : ''
-  }
-})
-
-const rangeType = computed({
-  get: () => formData.system.distance?.type || 'melee',
-  set: (value: string) => {
-    if (formData.system.distance) {
-      formData.system.distance.type = value as 'line' | 'melee' | 'ranged' | 'meleeRanged' | 'special' | 'cube' | 'wall' | 'burst' | 'self'
-      // Reset range values when type changes
-      if (value === 'self') {
-        // Self range doesn't need any distance values
-        formData.system.distance.primary = undefined
-        formData.system.distance.secondary = undefined
-        formData.system.distance.tertiary = undefined
-      } else {
-        formData.system.distance.primary = value === 'burst' ? 2 : 1
-        formData.system.distance.secondary = undefined
-        formData.system.distance.tertiary = undefined
-      }
-    }
-  }
-})
-
-const selectedCharacteristic = computed({
+// Feature description computed property 
+const featureDescription = computed({
   get: () => {
-    // Check if formula matches 2d10 + {characteristic} pattern
-    const chars = formData.system.power?.roll?.characteristics || []
-    return chars.length === 1 ? chars[0] : ''
+    if (formData.effects && formData.effects.length > 0) {
+      return formData.effects[0].effect || ''
+    }
+    return ''
   },
   set: (value: string) => {
-    if (value) {
-      // Set characteristic and generate formula
-      formData.system.power!.roll!.characteristics = [value]
-      formData.system.power!.roll!.formula = `2d10 + ${value}`
+    if (!formData.effects) {
+      formData.effects = []
+    }
+    if (formData.effects.length === 0) {
+      formData.effects.push({ effect: value })
     } else {
-      // Clear characteristic for custom formula
-      formData.system.power!.roll!.characteristics = []
+      formData.effects[0].effect = value
     }
   }
-})
-
-const generatedFormula = computed(() => {
-  return selectedCharacteristic.value ? `2d10 + ${selectedCharacteristic.value}` : ''
 })
 
 const isValid = computed(() => {
   return Object.values(errors).every(error => error === '') &&
     formData.name.trim() !== '' &&
-    (isFeature.value ? formData.system.description?.value?.trim() !== '' : true)
+    (isFeature.value ? featureDescription.value.trim() !== '' : true)
 })
 
-const getTierDisplay = (tierNum: number) => {
-  return computed({
-    get: () => {
-      if (!formData.system.power?.tiers) return ''
-      const tier = formData.system.power.tiers.find(t => t.tier === tierNum)
-      return tier?.display || ''
-    },
-    set: (value: string) => {
-      if (!formData.system.power?.tiers) return
-
-      isInternalUpdate = true
-      nextTick(() => {
-        // Find existing tier or create new one
-        let tier = formData.system.power!.tiers!.find(t => t.tier === tierNum)
-        if (!tier) {
-          tier = { tier: tierNum, display: value }
-          formData.system.power!.tiers!.push(tier)
-          // Sort tiers by tier number
-          formData.system.power!.tiers!.sort((a, b) => a.tier - b.tier)
-        } else {
-          tier.display = value
-        }
-        isInternalUpdate = false
-      })
-    }
-  })
+// Helper function to capitalize strings
+const capitalize = (str: string) => {
+  if (!str) return str
+  return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
 const validateFields = () => {
   errors.name = formData.name.trim() === '' ? 'Name is required' : ''
-  errors.type = !formData.type ? 'Type is required' : ''
 
-  // Validate signature uniqueness
-  if (isSignature.value && props.existingItems) {
+  // Validate signature uniqueness  
+  if (formData.ability_type === 'Signature Ability' && props.existingItems) {
     const otherSignatureExists = props.existingItems.some((item, index) =>
-      item.system.category === 'signature' && index !== props.editingIndex
+      item.ability_type === 'Signature Ability' && index !== props.editingIndex
     )
     errors.signature = otherSignatureExists ? 'Only one signature ability allowed per monster' : ''
   } else {
     errors.signature = ''
   }
 
+  // No longer need power roll validation since we handle it separately
+
   if (isFeature.value) {
-    errors.description = (!formData.system.description?.value || formData.system.description.value.trim() === '') ? 'Description is required for features' : ''
+    errors.description = featureDescription.value.trim() === '' ? 'Description is required for features' : ''
   } else {
     errors.description = ''
   }
 }
 
-
-
-const addKeyword = () => {
+const addKeyword = async () => {
   const keyword = newKeyword.value.toLowerCase().trim()
-  if (keyword && !formData.system.keywords.includes(keyword)) {
-    isInternalUpdate = true
-    formData.system.keywords.push(keyword)
+  if (keyword && !formData.keywords?.includes(keyword)) {
+    if (!formData.keywords) formData.keywords = []
+    formData.keywords.push(keyword)
     newKeyword.value = ''
-    nextTick(() => {
-      isInternalUpdate = false
-    })
+
+    // Update the collapsible section height after adding keyword
+    await nextTick()
+    if (keywordsSection.value && keywordsSection.value.updateHeight) {
+      keywordsSection.value.updateHeight()
+    }
   }
 }
 
-const removeKeyword = (keyword: string) => {
-  const index = formData.system.keywords.indexOf(keyword)
-  if (index > -1) {
-    isInternalUpdate = true
-    formData.system.keywords.splice(index, 1)
-    nextTick(() => {
-      isInternalUpdate = false
-    })
+const removeKeyword = async (keyword: string) => {
+  if (formData.keywords) {
+    const index = formData.keywords.indexOf(keyword)
+    if (index > -1) {
+      formData.keywords.splice(index, 1)
+
+      // Update the collapsible section height after removing keyword
+      await nextTick()
+      if (keywordsSection.value && keywordsSection.value.updateHeight) {
+        keywordsSection.value.updateHeight()
+      }
+    }
   }
 }
 
-const toggleQuickKeyword = (keyword: string) => {
-  if (formData.system.keywords.includes(keyword)) {
-    removeKeyword(keyword)
+const toggleQuickKeyword = async (keyword: string) => {
+  if (!formData.keywords) formData.keywords = []
+
+  const lowerKeyword = keyword.toLowerCase()
+  if (formData.keywords.includes(lowerKeyword)) {
+    await removeKeyword(lowerKeyword)
   } else {
-    isInternalUpdate = true
-    formData.system.keywords.push(keyword)
-    nextTick(() => {
-      isInternalUpdate = false
-    })
+    formData.keywords.push(lowerKeyword)
+    // Update the collapsible section height after adding keyword
+    await nextTick()
+    if (keywordsSection.value && keywordsSection.value.updateHeight) {
+      keywordsSection.value.updateHeight()
+    }
+  }
+}
+
+// Power roll handling
+const handlePowerRollToggle = async () => {
+  if (hasPowerRoll.value) {
+    // Power roll enabled - ensure we have a power roll effect
+    ensurePowerRollEffect()
+  } else {
+    // Power roll disabled - remove power roll from effects
+    removePowerRollFromEffects()
+  }
+
+  // Update the collapsible section height after toggling power roll
+  await nextTick()
+  if (powerRollSection.value && powerRollSection.value.updateHeight) {
+    powerRollSection.value.updateHeight()
+  }
+}
+
+const ensurePowerRollEffect = () => {
+  if (!formData.effects) {
+    formData.effects = []
+  }
+
+  // Find existing power roll effect or create one
+  let powerRollEffect = formData.effects.find(effect => effect.roll)
+  if (!powerRollEffect) {
+    // Add power roll effect as first effect
+    powerRollEffect = {
+      name: '',
+      roll: powerRollFormula.value || 'Power Roll + 2',
+      tier1: powerRollTiers.tier1,
+      tier2: powerRollTiers.tier2,
+      tier3: powerRollTiers.tier3,
+      effect: '',
+      cost: ''
+    }
+    formData.effects.unshift(powerRollEffect)
+  } else {
+    // Update existing power roll effect
+    powerRollEffect.roll = powerRollFormula.value
+    powerRollEffect.tier1 = powerRollTiers.tier1
+    powerRollEffect.tier2 = powerRollTiers.tier2
+    powerRollEffect.tier3 = powerRollTiers.tier3
+  }
+}
+
+const removePowerRollFromEffects = () => {
+  if (formData.effects) {
+    // Remove all effects that have power rolls
+    formData.effects = formData.effects.filter(effect => !effect.roll)
+
+    // Ensure we have at least one effect
+    if (formData.effects.length === 0) {
+      formData.effects.push({
+        name: '',
+        roll: '',
+        tier1: '',
+        tier2: '',
+        tier3: '',
+        effect: '',
+        cost: ''
+      })
+    }
+  }
+}
+
+const initializePowerRollState = () => {
+  // Check if we have a power roll in effects
+  if (formData.effects) {
+    const powerRollEffect = formData.effects.find(effect => effect.roll && effect.roll.trim() !== '')
+    if (powerRollEffect) {
+      hasPowerRoll.value = true
+      powerRollFormula.value = powerRollEffect.roll || ''
+      powerRollTiers.tier1 = powerRollEffect.tier1 || ''
+      powerRollTiers.tier2 = powerRollEffect.tier2 || ''
+      powerRollTiers.tier3 = powerRollEffect.tier3 || ''
+    }
+  }
+}
+
+const addEffect = async () => {
+  if (!formData.effects) {
+    formData.effects = []
+  }
+
+  const newEffect = {
+    name: '',
+    effect: '',
+    cost: ''
+  }
+
+  formData.effects.push(newEffect)
+
+  // Update the collapsible section height after adding the effect
+  await nextTick()
+  if (effectsSection.value && effectsSection.value.updateHeight) {
+    effectsSection.value.updateHeight()
+  }
+}
+
+const removeEffect = async (index: number) => {
+  if (formData.effects && formData.effects.length > 1) {
+    formData.effects.splice(index, 1)
+
+    // Update the collapsible section height after removing the effect
+    await nextTick()
+    if (effectsSection.value && effectsSection.value.updateHeight) {
+      effectsSection.value.updateHeight()
+    }
   }
 }
 
@@ -513,6 +512,24 @@ const handleSave = () => {
   validateFields()
   if (isValid.value) {
     try {
+      // Ensure power roll is properly handled
+      if (hasPowerRoll.value && !isFeature.value) {
+        ensurePowerRollEffect()
+      }
+
+      // Clean up empty effects
+      if (formData.effects) {
+        formData.effects = formData.effects.filter(effect =>
+          effect.name || effect.roll || effect.tier1 || effect.tier2 || effect.tier3 || effect.effect || effect.cost
+        )
+      }
+
+      // Ensure we have at least one effect
+      if (!formData.effects || formData.effects.length === 0) {
+        formData.effects = [{ effect: featureDescription.value || '' }]
+      }
+
+      emit('update:modelValue', { ...formData })
       emit('save')
       success(`${isFeature.value ? 'Feature' : 'Ability'} "${formData.name}" saved successfully!`)
     } catch (err) {
@@ -524,7 +541,7 @@ const handleSave = () => {
   }
 }
 
-// Handle escape key to close editor
+// Handle escape key
 const handleEscape = (event: KeyboardEvent) => {
   if (event.key === 'Escape') {
     event.preventDefault()
@@ -533,76 +550,59 @@ const handleEscape = (event: KeyboardEvent) => {
   }
 }
 
-// Add event listener when component mounts
 onMounted(() => {
-  document.addEventListener('keydown', handleEscape, true) // Use capture phase
+  document.addEventListener('keydown', handleEscape, true)
+  initializePowerRollState()
+  validateFields()
 })
 
-// Remove event listener when component unmounts
 onUnmounted(() => {
   document.removeEventListener('keydown', handleEscape, true)
 })
 
-// Debounced validation and emit to prevent performance issues on mobile
-const debouncedUpdate = debounce(() => {
-  validateFields()
-  // Only emit if there are actual changes to prevent circular updates
-  emit('update:modelValue', JSON.parse(JSON.stringify(formData)))
-}, 300) // 300ms debounce
-
-let isInternalUpdate = false
-
-// Watch for changes and validate (debounced for performance)
+// Watch for changes and validate
 watch(formData, () => {
-  if (!isInternalUpdate) {
-    debouncedUpdate()
-  }
-}, { deep: true, flush: 'post' })
+  validateFields()
+  emit('update:modelValue', { ...formData })
+}, { deep: true })
 
-// Watch for hasPowerRoll toggle changes
-watch(hasPowerRoll, (newValue) => {
-  isInternalUpdate = true
-  nextTick(() => {
-    if (!newValue) {
-      // Clear power roll data when disabled
-      if (formData.system.power) {
-        formData.system.power.roll = {
-          formula: '',
-          characteristics: []
-        }
-        formData.system.power.tiers = []
-      }
-    } else {
-      // Initialize with three tiers when enabled
-      if (formData.system.power) {
-        formData.system.power.tiers = [
-          { tier: 1, display: '' },
-          { tier: 2, display: '' },
-          { tier: 3, display: '' }
-        ]
-      }
-    }
-    isInternalUpdate = false
-  })
+// Watch power roll formula and update effects
+watch(powerRollFormula, (newFormula) => {
+  if (hasPowerRoll.value) {
+    ensurePowerRollEffect()
+  }
 })
 
-// Watch for external changes (debounced to prevent conflicts)
-const debouncedExternalUpdate = debounce((newValue: MonsterItem) => {
-  isInternalUpdate = true
-  Object.assign(formData, JSON.parse(JSON.stringify(newValue)))
-  nextTick(() => {
-    isInternalUpdate = false
-  })
-}, 100)
-
-watch(() => props.modelValue, (newValue) => {
-  if (!isInternalUpdate) {
-    debouncedExternalUpdate(newValue)
+// Watch power roll tiers and update effects
+watch(powerRollTiers, () => {
+  if (hasPowerRoll.value) {
+    ensurePowerRollEffect()
   }
 }, { deep: true })
 
-// Initial validation
-validateFields()
+// Watch hasPowerRoll and update section height
+watch(hasPowerRoll, async () => {
+  await nextTick()
+  if (powerRollSection.value && powerRollSection.value.updateHeight) {
+    powerRollSection.value.updateHeight()
+  }
+})
+
+// Watch keywords array and update section height
+watch(() => formData.keywords, async () => {
+  await nextTick()
+  if (keywordsSection.value && keywordsSection.value.updateHeight) {
+    keywordsSection.value.updateHeight()
+  }
+}, { deep: true })
+
+// Watch effects array changes and update CollapsibleSection height
+watch(() => formData.effects, async () => {
+  await nextTick()
+  if (effectsSection.value && effectsSection.value.updateHeight) {
+    effectsSection.value.updateHeight()
+  }
+}, { deep: true })
 </script>
 
 <style scoped>
@@ -610,12 +610,12 @@ validateFields()
   padding: 1.5rem;
   max-height: 90vh;
   overflow-y: auto;
+  padding-bottom: 3rem;
+  /* Extra padding at bottom for better scrolling */
 }
 
 .editor-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e9ecef;
   margin-bottom: 1.5rem;
@@ -632,6 +632,20 @@ validateFields()
   display: flex;
   gap: var(--space-3);
   align-items: center;
+}
+
+.editor-footer {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid #e9ecef;
+  background: var(--color-neutral-50);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  display: flex;
+  justify-content: center;
+}
+
+.editor-footer .editor-actions {
+  justify-content: center;
 }
 
 .btn {
@@ -696,6 +710,8 @@ validateFields()
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+  padding-bottom: var(--space-8);
+  /* Ensure content doesn't get cut off */
 }
 
 .editor-section {
@@ -878,6 +894,8 @@ validateFields()
   background: white;
   border-radius: 4px;
   padding: 1rem;
+  overflow: hidden;
+  /* Prevent content overflow */
 }
 
 .selected-keywords {
@@ -885,6 +903,10 @@ validateFields()
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  max-height: 120px;
+  /* Limit height to prevent excessive growth */
+  overflow-y: auto;
+  /* Allow scrolling if many keywords */
 }
 
 .keyword-tag {
@@ -946,6 +968,10 @@ validateFields()
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
+  max-height: 100px;
+  /* Limit height of quick keywords */
+  overflow-y: auto;
+  /* Allow scrolling if many options */
 }
 
 .quick-keyword-btn {
@@ -1007,13 +1033,13 @@ validateFields()
   }
 
   .editor-header {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: stretch;
+    text-align: center;
   }
 
-  .editor-actions {
-    justify-content: center;
+  .editor-footer .editor-actions {
+    flex-direction: column;
+    gap: var(--space-2);
+    width: 100%;
   }
 
   .form-grid {
@@ -1033,6 +1059,23 @@ validateFields()
   }
 }
 
+/* Power Roll Section Styles */
+.power-roll-section {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.power-roll-toggle {
+  margin-bottom: var(--space-4);
+}
+
+.power-roll-content {
+  border-top: 1px solid var(--color-neutral-200);
+  padding-top: var(--space-4);
+  margin-top: var(--space-4);
+}
+
 /* Toggle Switch Styles */
 .section-header-with-toggle {
   display: flex;
@@ -1050,25 +1093,29 @@ validateFields()
 .toggle-switch {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-3);
   cursor: pointer;
   user-select: none;
 }
 
 .toggle-switch input[type="checkbox"] {
   position: relative;
-  width: 40px;
-  height: 20px;
+  width: 44px;
+  height: 24px;
   appearance: none;
-  background: #ccc;
-  border-radius: 20px;
+  background: var(--color-neutral-300);
+  border-radius: 24px;
   outline: none;
-  transition: background 0.3s;
+  transition: background var(--transition-base);
   cursor: pointer;
 }
 
 .toggle-switch input[type="checkbox"]:checked {
-  background: #28a745;
+  background: var(--color-primary-600);
+}
+
+.toggle-switch input[type="checkbox"]:focus-visible {
+  box-shadow: var(--focus-ring);
 }
 
 .toggle-switch input[type="checkbox"]::before {
@@ -1076,11 +1123,12 @@ validateFields()
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   background: white;
   border-radius: 50%;
-  transition: transform 0.3s;
+  transition: transform var(--transition-base);
+  box-shadow: var(--shadow-sm);
 }
 
 .toggle-switch input[type="checkbox"]:checked::before {
@@ -1088,8 +1136,88 @@ validateFields()
 }
 
 .toggle-label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #495057;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-800);
+}
+
+/* Effects Section Styles */
+.effects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.effect-item {
+  background: white;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.effect-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.effect-title {
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-800);
+  margin: 0;
+}
+
+.btn-remove-effect {
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-error-600);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-button);
+}
+
+.btn-remove-effect:hover:not(:disabled) {
+  background-color: var(--color-error-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-remove-effect:disabled {
+  background-color: var(--color-neutral-400);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-add-effect {
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-primary-600);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-button);
+  align-self: flex-start;
+  margin-top: var(--space-4);
+}
+
+.btn-add-effect:hover {
+  background-color: var(--color-primary-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-add-effect:active {
+  transform: translateY(0);
+  transition-duration: var(--duration-fast);
 }
 </style>

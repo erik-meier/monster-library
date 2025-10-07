@@ -1,0 +1,74 @@
+{
+  "id": "troll-crack-trooper",
+  "name": "Troll Crack Trooper",
+  "level": 9,
+  "ev": 11,
+  "role": "Brute",
+  "organization": "Minion",
+  "keywords": [
+    "Giant",
+    "Troll"
+  ],
+  "size": "2",
+  "speed": 6,
+  "stamina": 15,
+  "stability": 4,
+  "freeStrike": 5,
+  "characteristics": {
+    "might": 4,
+    "agility": 1,
+    "reason": -1,
+    "intuition": 0,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {
+    "acid": 5,
+    "fire": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Charging Chomp",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Charge",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "5 damage; push 2",
+          "tier2": "7 damage; push 3; <strong class=\"potency-value\">A&lt;3</strong> 3 damage",
+          "tier3": "9 damage; push 4; <strong class=\"potency-value\">A&lt;4</strong> 5 damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "The crack trooper's squad's Stamina pool regains Stamina equal to half the damage dealt."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Group Appetite",
+      "effects": [
+        {
+          "effect": "The crack trooper dies only if their squad's Stamina pool is reduced to 0 Stamina by acid or fire damage, if they end their turn with 0 Stamina in their squad's Stamina pool, or if they take acid or fire damage while their squad's Stamina pool is at 0 Stamina."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

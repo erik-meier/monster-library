@@ -6,12 +6,10 @@
   "role": "Ambusher",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Human",
+    "Humanoid"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 30,
   "stability": 0,
@@ -33,216 +31,59 @@
   ],
   "items": [
     {
-      "name": "With Captain",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The scoundrel ignores concealment if it’s granted by a supernatural effect.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Rapier and Dagger",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "6 damage",
+          "tier2": "9 damage",
+          "tier3": "12 damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "6 damage"
-            },
-            {
-              "tier": 2,
-              "display": "9 damage"
-            },
-            {
-              "tier": 3,
-              "display": "12 damage"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "If this ability gains an edge or has a double edge, it deals an extra 2 damage.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> If this ability gains an edge or has a double edge, it deals an extra 2 damage."
+        {
+          "cost": "2 Malice",
+          "effect": "If this ability gains an edge or has a double edge, it deals an extra 2 damage."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Dagger Storm",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The scoundrel uses Rapier and Dagger against up to three targets. They shift up to 2 squares before or after each strike.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "5 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Main action",
+      "distance": "-",
+      "target": "-",
+      "effects": [
+        {
+          "effect": "The scoundrel uses Rapier and Dagger against up to three targets. They shift up to 2 squares before or after each strike."
         }
-      }
+      ]
     },
     {
-      "name": "Alchemical Device",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 3,
-          "secondary": 10
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 corruption damage; <strong class=\"potency-value\">X&lt;0</strong>, slowed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "6 corruption damage; <strong class=\"potency-value\">X&lt;1</strong>, slowed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 corruption damage; <strong class=\"potency-value\">X&lt;2</strong>, restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p> <p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Supernatural Insight",
+      "effects": [
+        {
+          "effect": "The scoundrel ignores concealment if it's granted by a supernatural effect."
         }
-      }
-    },
-    {
-      "name": "Exploit Opening",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A human's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Exploit Opening",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A human's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "182",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

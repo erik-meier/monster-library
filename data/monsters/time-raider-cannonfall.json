@@ -6,12 +6,10 @@
   "role": "Artillery",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Time Raider"
   ],
-  "size": {
-    "value": 1,
-    "letter": "L"
-  },
+  "size": "1L",
   "speed": 5,
   "stamina": 40,
   "stability": 3,
@@ -32,213 +30,63 @@
   ],
   "items": [
     {
-      "name": "Foresight Squared",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The cannonfall doesn't take a bane on strikes against creatures with concealment or cover.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Sunderbuss",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "area",
-          "psionic",
-          "ranged",
-          "weapon"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 3,
-          "secondary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Area",
+        "Psionic",
+        "Ranged",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "3 cube within 10",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "4 sonic damage",
+          "tier2": "7 sonic damage",
+          "tier3": "10 sonic damage; prone; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 sonic damage"
-            },
-            {
-              "tier": 2,
-              "display": "7 sonic damage"
-            },
-            {
-              "tier": 3,
-              "display": "10 sonic damage; prone; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A layer of ground beneath the area that is 1 square deep is destroyed.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A layer of ground beneath the area that is 1 square deep is destroyed."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Buss Buffe",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "freeTriggered",
-        "resource": 1,
-        "keywords": [
-          "area",
-          "psionic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
-        },
-        "target": {
-          "type": "ally",
-          "value": null
-        },
-        "trigger": "A creature damages the cannonfall with a ranged or area ability.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The damage is halved for the cannonfall and each target also affected by the triggering ability</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "Area",
+        "Psionic"
+      ],
+      "usage": "Free triggered action",
+      "distance": "5 burst",
+      "target": "Self and each ally in the area",
+      "trigger": "A creature damages the cannonfall with a ranged or area ability.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The damage is halved for the cannonfall and each target also affected by the triggering ability."
         }
-      }
+      ]
     },
     {
-      "name": "Gravity Well",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "psionic",
-          "ranged",
-          "weapon"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 5,
-          "secondary": 3
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Foresight Squared",
+      "effects": [
+        {
+          "effect": "The cannonfall doesn't take a bane on strikes against creatures with concealment or cover."
         }
-      }
-    },
-    {
-      "name": "Recall Module",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Psi-Cage",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 10,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> psychic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> psychic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "250",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

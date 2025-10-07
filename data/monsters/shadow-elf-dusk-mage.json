@@ -1,0 +1,67 @@
+{
+  "id": "shadow-elf-dusk-mage",
+  "name": "Shadow Elf Dusk Mage",
+  "level": 4,
+  "ev": 6,
+  "role": "Hexer",
+  "organization": "Minion",
+  "keywords": [
+    "Fey",
+    "Humanoid",
+    "Shadow Elf"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 7,
+  "stability": 0,
+  "freeStrike": 2,
+  "characteristics": {
+    "might": 0,
+    "agility": 3,
+    "reason": 2,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "climb"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Gloom Bolt",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 5",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "2 damage",
+          "tier2": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> slowed (save ends)",
+          "tier3": "6 damage; <strong class=\"potency-value\">A&lt;3</strong> slowed (save ends)"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Of the Umbra",
+      "effects": [
+        {
+          "effect": "The dusk mage ignores concealment created by darkness. While the dusk mage is in direct sunlight, they have damage weakness 3. While the dusk mage has concealment, they have damage immunity 3."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

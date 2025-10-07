@@ -21,7 +21,7 @@
     <!-- Core Stats Grid -->
     <div class="core-stats-grid">
       <div class="stat-values">
-        <div class="stat-value">{{ monster.size.value }}{{ monster.size.value > 1 ? '' : monster.size.letter }}</div>
+        <div class="stat-value">{{ monster.size }}</div>
         <div class="stat-value">{{ monster.speed }}</div>
         <div class="stat-value">{{ monster.stamina }}</div>
         <div class="stat-value">{{ monster.stability }}</div>
@@ -73,6 +73,17 @@
         :monster="monster" />
     </div>
 
+    <!-- Malice Features Button -->
+    <div v-if="hasMaliceFeatures()" class="malice-features-section">
+      <div class="divider"></div>
+      <div class="malice-features-button-container">
+        <button @click="viewMaliceFeatures" class="btn btn-outline">
+          <span class="glyph-icon glyph-villain-action" aria-label="Villain Action"></span>
+          View Malice Features
+        </button>
+      </div>
+    </div>
+
     <!-- Source Information -->
     <div v-if="monster.source" class="source-info">
       <div class="divider"></div>
@@ -96,6 +107,7 @@ import {
   formatWeakness,
   formatMovement
 } from '@/utils/formatters'
+import { getMaliceForMonster } from '@/data/monsters-bundle.js'
 
 export default {
   name: 'MonsterStatBlock',
@@ -126,6 +138,21 @@ export default {
       return this.monster.items.filter(item =>
         !item.name || item.name.toLowerCase() !== 'with captain'
       );
+    },
+    getMaliceFeatures() {
+      return getMaliceForMonster(this.monster.id);
+    },
+    hasMaliceFeatures() {
+      return this.getMaliceFeatures() !== null;
+    },
+    viewMaliceFeatures() {
+      const maliceBlock = this.getMaliceFeatures();
+      if (maliceBlock) {
+        this.$router.push({
+          path: `/malice/${maliceBlock.id}`,
+          query: { from: this.monster.id }
+        });
+      }
     },
     // Use imported formatters from shared utilities
     formatKeywords,
@@ -306,6 +333,31 @@ export default {
 .abilities-section {
   margin: var(--space-4) 0;
 }
+
+.malice-features-section {
+  margin: var(--space-4) 0;
+}
+
+.malice-features-button-container {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-2) 0;
+}
+
+.btn {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+
 
 .ability {
   margin-bottom: var(--space-4);

@@ -6,12 +6,10 @@
   "role": "Artillery",
   "organization": "Elite",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Rival"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 120,
   "stability": 2,
@@ -30,317 +28,85 @@
   ],
   "items": [
     {
-      "name": "Rivalry",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the start of an encounter, the tactician chooses one creature within their line of effect. Both the tactician and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Mark Targets",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "10 damage",
+          "tier2": "15 damage",
+          "tier3": "18 damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "10 damage"
-            },
-            {
-              "tier": 2,
-              "display": "15 damage"
-            },
-            {
-              "tier": 3,
-              "display": "18 damage"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "Two allies within distance can use a signature ability against the same target.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Two allies within distance can use a signature ability against the same target."
+        {
+          "cost": "3 Malice",
+          "effect": "Two allies within distance can use a signature ability against the same target."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Preserve and Protect",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 3,
-        "keywords": [
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
+      "cost": "3 Malice",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 5",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "11 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)",
+          "tier2": "16 damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)",
+          "tier3": "21 damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "11 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "16 damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "21 damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p><span class=\"heal-value\">7</span>  stamina{Heal 7 Stamina}</p>"
-        },
-        "spend": {
-          "text": "One ally adjacent to the target regains 7 Stamina.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> One ally adjacent to the target regains 7 Stamina."
+        {
+          "name": "Effect",
+          "effect": "One ally adjacent to the target regains 7 Stamina."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Take the Opening",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "An enemy within distance willingly moves.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>At any point during the movement, the tactician and one ally within distance can each make a free strike against the target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 10",
+      "target": "The triggering enemy",
+      "trigger": "An enemy within distance willingly moves.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "At any point during the movement, the tactician and one ally within distance can each make a free strike against the target."
         }
-      }
+      ]
     },
     {
-      "name": "Calling the Shots",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Rivalry",
+      "effects": [
+        {
+          "effect": "At the start of an encounter, the tactician chooses one creature within their line of effect. Both the tactician and the creature can add a d3 roll to power rolls they make against each other."
         }
-      }
-    },
-    {
-      "name": "Check Out Our Loot",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Coordinated Takedown",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 10,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A Rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "We Just Do It Better",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a <span class=\"roll-formula\">d3</span> and add it to the power roll.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Work as One",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "238",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

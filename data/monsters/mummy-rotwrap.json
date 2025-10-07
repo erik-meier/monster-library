@@ -3,15 +3,13 @@
   "name": "Mummy Rotwrap",
   "level": 7,
   "ev": 9,
-  "role": "",
+  "role": "Brute",
   "organization": "Minion",
   "keywords": [
-    "undead"
+    "Mummy",
+    "Undead"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 15,
   "stability": 1,
@@ -35,123 +33,34 @@
   ],
   "items": [
     {
+      "type": "ability",
       "name": "Fetid Wrappings",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "4 damage",
+          "tier2": "7 damage; pull 1",
+          "tier3": "8 damage; pull 3"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 damage"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage; pull 1"
-            },
-            {
-              "tier": 3,
-              "display": "8 damage; pull 3"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Each ally gains an edge on strikes made against the target until the end of the round</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Each ally gains an edge on strikes made against the target until the end of the round."
         }
-      }
-    },
-    {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p><p><span class=\"reference-text\">Blood Hunger</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Necrotic Rupture",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever an undead is reduced to 0 Stamina, they deal <span class=\"damage-value damage-generic\">8</span> corruption damage to each enemy within 3 squares of them</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "269",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

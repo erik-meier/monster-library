@@ -6,12 +6,11 @@
   "role": "Harrier",
   "organization": "Horde",
   "keywords": [
-    "abyssal"
+    "Abyssal",
+    "Demon",
+    "Soulraker"
   ],
-  "size": {
-    "value": 1,
-    "letter": "L"
-  },
+  "size": "1L",
   "speed": 8,
   "stamina": 45,
   "stability": 0,
@@ -32,181 +31,70 @@
   ],
   "items": [
     {
-      "name": "Lethe",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While the praetorian is winded, they gain an edge on strikes, and any strike made against them gains an edge.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Praetorian Buzzing",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any creature who starts their turn with two or more praetorians adjacent to them takes <span class=\"damage-value damage-generic\">6</span> sonic damage.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Barbed Stinger",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 2
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "7 poison damage; push 2",
+          "tier2": "10 poison damage; push 2",
+          "tier3": "11 poison damage; push 4; <strong class=\"potency-value\">A&lt;4</strong> grabbed"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 poison damage; push 2"
-            },
-            {
-              "tier": 2,
-              "display": "10 poison damage; push 2"
-            },
-            {
-              "tier": 3,
-              "display": "11 poison damage; push 4; <strong class=\"potency-value\">A&lt;4</strong> grabbed"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The praetorian can shift into each square the target leaves.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The praetorian can shift into each square the target leaves."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Stinging Departure",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 2,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "A creature ends the praetorian's grab.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The praetorian makes a free strike against the target, breaks off part of their stinger in the target, and shifts up to half their speed. The target is bleeding until they remove the stinger fragment as a free maneuver, taking <span class=\"damage-value damage-generic\">6</span> damage in the process.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "2 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "The triggering creature",
+      "trigger": "A creature ends the praetorian's grab.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The praetorian makes a free strike against the target, breaks off part of their stinger in the target, and shifts up to half their speed. The target is bleeding until they remove the stinger fragment as a free maneuver, taking 6 damage in the process."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The demon activates a Malice feature available to demons of level 6 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p><p><span class=\"reference-text\">Abyssal Jaunt</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Lethe",
+      "effects": [
+        {
+          "effect": "While the praetorian is winded, they gain an edge on strikes, and any strike made against them gains an edge."
         }
-      }
+      ]
     },
     {
-      "name": "Seeping Blight",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One demon acting this turn expels blight—digested soul juice— onto the ground around them in a 3 burst that lingers until the start of their next turn. Any enemy who enters the area or starts their turn there takes <span class=\"damage-value damage-generic\">6</span> corruption damage, and has a double bane on power rolls until the start of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Praetorian Buzzing",
+      "effects": [
+        {
+          "effect": "Any creature who starts their turn with two or more praetorians adjacent to them takes 6 sonic damage."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "71",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

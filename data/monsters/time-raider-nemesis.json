@@ -6,12 +6,10 @@
   "role": "Harrier",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Time Raider"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 7,
   "stamina": 50,
   "stability": 0,
@@ -28,231 +26,73 @@
   },
   "weaknesses": {},
   "movementTypes": [
-    "fly",
-    "walk"
+    "fly"
   ],
   "items": [
     {
-      "name": "Foresight",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The nemesis doesn't take a bane on strikes against creatures with concealment.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Golden Scythe",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "psionic",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Psionic",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 damage; pull 1",
+          "tier2": "10 damage; pull 2",
+          "tier3": "13 damage; pull 3; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage; pull 1"
-            },
-            {
-              "tier": 2,
-              "display": "10 damage; pull 2"
-            },
-            {
-              "tier": 3,
-              "display": "13 damage; pull 3; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>This ability can target creatures on parallel planes of existence and pull them onto the nemesis's plane.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "This ability can target creatures on parallel planes of existence and pull them onto the nemesis's plane."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Kinetic Crush",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 2,
-        "keywords": [
-          "psionic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "cost": "2 Malice",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 psychic damage; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)",
+          "tier2": "10 psychic damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)",
+          "tier3": "13 psychic damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 psychic damage; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "10 psychic damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "13 psychic damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Any creature slowed this way takes <span class=\"damage-value damage-generic\">2</span> damage for each square they move or are force moved until that condition ends.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Any creature slowed this way takes 2 damage for each square they move or are force moved until that condition ends."
         }
-      }
+      ]
     },
     {
-      "name": "Gravity Well",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "psionic",
-          "ranged",
-          "weapon"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 5,
-          "secondary": 3
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Foresight",
+      "effects": [
+        {
+          "effect": "The nemesis doesn't take a bane on strikes against creatures with concealment."
         }
-      }
-    },
-    {
-      "name": "Recall Module",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Psi-Cage",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 10,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> psychic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> psychic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "251",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

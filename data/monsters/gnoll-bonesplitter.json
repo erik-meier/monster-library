@@ -6,12 +6,10 @@
   "role": "Brute",
   "organization": "Horde",
   "keywords": [
-    "abyssal"
+    "Abyssal",
+    "Gnoll"
   ],
-  "size": {
-    "value": 1,
-    "letter": "L"
-  },
+  "size": "1L",
   "speed": 5,
   "stamina": 25,
   "stability": 1,
@@ -30,209 +28,60 @@
   ],
   "items": [
     {
-      "name": "Death Frenzy",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Whenever a non-minion ally within 5 squares of the bonesplitter is reduced to 0 Stamina, the bonesplitter moves up to their speed and can make a melee free strike.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Three-Tail Flail",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage; push 2",
+          "tier2": "6 damage; push 2",
+          "tier3": "8 damage; grabbed; <strong class=\"potency-value\">M&lt;2</strong> the target takes a bane on the Escape Grab maneuver"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage; push 2"
-            },
-            {
-              "tier": 2,
-              "display": "6 damage; push 2"
-            },
-            {
-              "tier": 3,
-              "display": "8 damage; push 1; grabbed; <strong class=\"potency-value\">M&lt;2</strong> the target takes a bane on the Escape Grab maneuver."
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>While the bonesplitter has a target grabbed, they can't use Three-Tail Flail against another target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "While the bonesplitter has a target grabbed, they can't use Three-Tail Flail against another target."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Bonesplitter's Cackletongue",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 4,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 2
-        },
-        "target": {
-          "type": "ally",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Up to three targets can make a free strike. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "4 Malice",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Maneuver",
+      "distance": "2 burst",
+      "target": "Self and each ally in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Up to three targets can make a free strike. If any target hasn't used their own Cackletongue maneuver on this turn, they can use it immediately at no cost."
         }
-      }
+      ]
     },
     {
-      "name": "Bloodpool",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One gnoll minion suddenly explodes into a pool of blood, splattering the area within 3 squares of them. Any gnoll who starts their turn in this area deals an extra <span class=\"damage-value damage-generic\">5</span> damage on their next strike before the end of their turn. Once per round, an abyssal hyena who starts their turn in the area turns into a <a href=\"/monster/gnoll-marauder\" class=\"monster-link\">gnoll marauder</a>, keeping their current Stamina</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Death Frenzy",
+      "effects": [
+        {
+          "effect": "Whenever a non-minion ally within 5 squares of the bonesplitter is reduced to 0 Stamina, the bonesplitter moves up to their speed and can make a melee free strike."
         }
-      }
-    },
-    {
-      "name": "Echoes of Laughter",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the encounter, the encounter map is encased in a soundscape of laughter and howling. Each enemy takes a bane on the first power roll they make each round. Whenever a gnoll is killed, this effect is suppressed until the start of the next round.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Iron Jaws",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "ranged",
-          "weapon"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 1,
-          "secondary": 3
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A gnoll acting this turn drops an iron-jawed snare into the area. The first time any enemy moves into the area, they make an <strong>Agility test</strong>. If they were unaware of the snare, the test takes a bane.</p><p></p><table><tbody><tr><td data-colwidth=\"107\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; bleeding (save ends)</p></td></tr><tr><td data-colwidth=\"107\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; bleeding (EoT)</p></td></tr><tr><td data-colwidth=\"107\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table> <p>While an enemy is bleeding this way, each gnoll in the en counter gains an edge on strikes made against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "156",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

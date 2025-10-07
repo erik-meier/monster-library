@@ -1,0 +1,66 @@
+{
+  "id": "voiceless-talker-graywarper",
+  "name": "Voiceless Talker Graywarper",
+  "level": 6,
+  "ev": 8,
+  "role": "Controller",
+  "organization": "Minion",
+  "keywords": [
+    "Horror",
+    "Voiceless Talker"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 9,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": -1,
+    "agility": 0,
+    "reason": 3,
+    "intuition": 1,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Phase Chant",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 8",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 psychic damage",
+          "tier2": "5 psychic damage; slide 2",
+          "tier3": "7 psychic damage; slide 4"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Psionic Conductor",
+      "effects": [
+        {
+          "effect": "Whenever a non-minion voiceless talker within 5 squares of the graywarper uses a psionic ability, they can do so as if they were in the graywarper's space."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

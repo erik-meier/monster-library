@@ -1,0 +1,108 @@
+{
+  "id": "hobgoblin-incendiarist",
+  "name": "Hobgoblin Incendiarist",
+  "level": 5,
+  "ev": 14,
+  "role": "Artillery",
+  "organization": "Platoon",
+  "keywords": [
+    "Goblin",
+    "Hobgoblin",
+    "Humanoid",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 60,
+  "stability": 0,
+  "freeStrike": 6,
+  "characteristics": {
+    "might": 1,
+    "agility": 3,
+    "reason": 0,
+    "intuition": 2,
+    "presence": 1
+  },
+  "immunities": {
+    "fire": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Fire Crossbow",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "9 fire damage",
+          "tier2": "14 fire damage",
+          "tier3": "17 fire damage; <strong class=\"potency-value\">A&lt;3</strong> burning (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "A burning creature takes 1d6 fire damage at the start of each of their turns. A burning object takes 1d6 fire damage at the end of each round."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Fireball Volley",
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "4 cube within 10",
+      "target": "Each enemy or object in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "5 fire damage; <strong class=\"potency-value\">A&lt;1</strong> burning (save ends)",
+          "tier2": "9 fire damage; <strong class=\"potency-value\">A&lt;2</strong> burning (save ends)",
+          "tier3": "11 fire damage; prone; <strong class=\"potency-value\">A&lt;3</strong> burning (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "A burning creature takes 1d6 fire damage at the start of each of their turns. A burning object takes 1d6 fire damage at the end of each round."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Raining Cinders",
+      "effects": [
+        {
+          "effect": "The ranged free strike of each ally within 3 squares of the incendiarist has a distance of 10 and deals fire damage."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Infernal Ichor",
+      "effects": [
+        {
+          "effect": "When the incendiarist is reduced to 0 Stamina, they spray burning blood. Each creature adjacent to the incendiarist takes 3 fire damage."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -3,15 +3,14 @@
   "name": "War Dog Socialite",
   "level": 10,
   "ev": 12,
-  "role": "",
+  "role": "Hexer",
   "organization": "Minion",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 14,
   "stability": 0,
@@ -32,104 +31,43 @@
   ],
   "items": [
     {
-      "name": "Loyalty Collar",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When the socialite is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> damage to each adjacent enemy and object.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Call to Self-Sabotage",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "psionic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 5",
+      "target": "One creature per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "The target makes a free strike (tier 1 result) against themself",
+          "tier2": "The target makes a free strike (tier 2 result) against themself",
+          "tier3": "The target makes a free strike (tier 3 result) against themself"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "The target makes a free strike (tier 1 result) against themself"
-            },
-            {
-              "tier": 2,
-              "display": "The target makes a free strike (tier 2 result) against themself"
-            },
-            {
-              "tier": 3,
-              "display": "The target makes a free strike (tier 3 result) against themself"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The target takes an extra <span class=\"damage-value damage-generic\">5</span> damage for each surge they have.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The target takes an extra 5 damage for each surge they have."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p><p><span class=\"reference-text\">Loyalty Unto Death</span></p><p><span class=\"reference-text\">Alchemical Cloud</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Loyalty Collar",
+      "effects": [
+        {
+          "effect": "When the socialite is reduced to 0 Stamina, their loyalty collar explodes, dealing 3d6 damage to each adjacent enemy and object."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "315",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

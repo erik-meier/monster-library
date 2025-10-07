@@ -6,13 +6,11 @@
   "role": "Support",
   "organization": "Horde",
   "keywords": [
-    "humanoid",
-    "soulless"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 1,
-    "letter": "L"
-  },
+  "size": "1L",
   "speed": 5,
   "stamina": 35,
   "stability": 1,
@@ -31,217 +29,79 @@
   ],
   "items": [
     {
-      "name": "Body Bank Branch Manager",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>If the war doc uses the <span class=\"reference-text\">Reconstitute</span> war dog Malice feature, it costs 1 Malice less. Additionally, allies can treat the living war doc as a corpse when using the Reconstitute feature.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Syringe Crossbow",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "6 poison damage",
+          "tier2": "8 poison damage",
+          "tier3": "9 poison damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "6 poison damage"
-            },
-            {
-              "tier": 2,
-              "display": "8 poison damage"
-            },
-            {
-              "tier": 3,
-              "display": "9 poison damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A target enemy is subject to this ability's power roll. A target ally instead gains [[/heal 5 temp]] and can make a free strike.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A target enemy is subject to this ability's power roll. A target ally instead gains 5 temporary Stamina and can make a free strike."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Posthumous Promotion",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "special",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "One war dog",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "If the target has a loyalty collar, they are reduced to 0 Stamina."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Sanguine Stimulants",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 1,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 15
-        },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "One ally within distance dies.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each ally adjacent to the dead ally deals an extra 6 damage on their next strike.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 15",
+      "target": "Special",
+      "trigger": "One ally within distance dies.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each ally adjacent to the dead ally deals an extra 6 damage on their next strike."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Body Bank Branch Manager",
+      "effects": [
+        {
+          "effect": "If the war doc uses the Reconstitute war dog Malice feature, it costs 1 Malice less. Additionally, allies can treat the living war doc as a corpse when using the Reconstitute feature (see Reconstitute)."
         }
-      }
-    },
-    {
-      "name": "Loyalty Unto Death",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 5,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10,
-          "secondary": null
-        },
-        "target": {
-          "type": "ally",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p><strong>Note:</strong> Targets Two War Dogs</p><p>Each target who has a loyalty collar shifts up to their speed, then is reduced to 0 Stamina. After each target’s Loyalty Collar trait is resolved, each enemy adjacent to either target makes a <strong>Presence test.</strong></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>Push 4; the enemy is frightened of the nearest non-minion war dog (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>Push 2; the enemy is frightened of the nearest non-minion war dog (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "308",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

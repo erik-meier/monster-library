@@ -42,7 +42,7 @@
         <h3 class="subsection-title">Selected Keywords ({{ formData.keywords.length }})</h3>
         <div class="keyword-tags">
           <span v-for="keyword in formData.keywords" :key="keyword" class="keyword-tag selected">
-            {{ keyword }}
+            {{ capitalize(keyword) }}
             <button type="button" class="remove-keyword" @click="removeKeyword(keyword)" title="Remove keyword">
               ×
             </button>
@@ -109,7 +109,7 @@ const validateCustomKeyword = (keyword: string): string => {
 }
 
 const addCustomKeyword = () => {
-  const keyword = customKeyword.value.toLowerCase().trim()
+  const keyword = customKeyword.value.trim()
   const error = validateCustomKeyword(keyword)
 
   if (error) {
@@ -117,7 +117,7 @@ const addCustomKeyword = () => {
     return
   }
 
-  formData.keywords.push(keyword)
+  formData.keywords.push(keyword.toLowerCase())
   customKeyword.value = ''
   customKeywordError.value = ''
 }

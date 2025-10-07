@@ -1,0 +1,87 @@
+{
+  "id": "shadow-elf-mournblade",
+  "name": "Shadow Elf Mournblade",
+  "level": 6,
+  "ev": 16,
+  "role": "Ambusher",
+  "organization": "Platoon",
+  "keywords": [
+    "Fey",
+    "Humanoid",
+    "Shadow Elf"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 80,
+  "stability": 0,
+  "freeStrike": 7,
+  "characteristics": {
+    "might": 2,
+    "agility": 3,
+    "reason": 1,
+    "intuition": 2,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "climb"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Knife in the Dark",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "10 damage",
+          "tier2": "15 damage",
+          "tier3": "18 damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "The mournblade is invisible to the target until the start of the mournblade's next turn."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Shadow Step",
+      "keywords": [
+        "Magic"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "If the mournblade has concealment, they can teleport up to 10 squares to a space with concealment created by darkness."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Of the Umbra",
+      "effects": [
+        {
+          "effect": "The mournblade ignores concealment created by darkness. While the mournblade is in direct sunlight, they have damage weakness 3. While the mournblade has concealment, they have damage immunity 3."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

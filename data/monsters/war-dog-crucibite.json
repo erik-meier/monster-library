@@ -6,13 +6,11 @@
   "role": "Artillery",
   "organization": "Horde",
   "keywords": [
-    "humanoid",
-    "soulless"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 10,
   "stability": 0,
@@ -33,213 +31,63 @@
   ],
   "items": [
     {
-      "name": "Loyalty Collar",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When the crucibite is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">1d6</span> damage to each adjacent enemy and object.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Flamebelcher",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "area",
-          "weapon"
-        ],
-        "distance": {
-          "type": "line",
-          "primary": 5,
-          "secondary": 1,
-          "tertiary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Area",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "5 x 1 line within 1",
+      "target": "Each creature and object in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "2 fire damage",
+          "tier2": "4 fire damage",
+          "tier3": "5 fire damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
+        {
+          "name": "Effect",
+          "effect": "The area is covered in sticky fire until the start of the crucibite's next turn. Any creature who enters the area for the first time in a round or starts their turn there takes 2 fire damage."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "2 fire damage"
-            },
-            {
-              "tier": 2,
-              "display": "4 fire damage"
-            },
-            {
-              "tier": 3,
-              "display": "5 fire damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The area is covered in sticky fire until the start of the crucibite's next turn. Any creature who enters the area for the first time in a round or starts their turn there takes <span class=\"damage-value damage-generic\">2</span> fire damage</p><p><span class=\"damage-value damage-generic\">2</span></p>"
-        },
-        "spend": {
-          "text": "The area becomes a 10 × 1 line, and if any ally of the crucibite is in the area when it is created, the ability deals an extra 2 damage to each target.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The area becomes a 10 × 1 line, and if any ally of the crucibite is in the area when it is created, the ability deals an extra 2 damage to each target."
+        {
+          "cost": "3 Malice",
+          "effect": "The area becomes a 10 x 1 line, and if any ally of the crucibite is in the area when it is created, the ability deals an extra 2 damage to each target."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Posthumous Promotion",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "special",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>If the target has a loyalty collar, they are reduced to 0 Stamina.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "One war dog",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "If the target has a loyalty collar, they are reduced to 0 Stamina."
         }
-      }
+      ]
     },
     {
-      "name": "Fire for Effect",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 5,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 4,
-          "secondary": 10
-        },
-        "target": {
-          "type": "creature",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target makes an <strong>Agility test</strong>. The same condition is imposed on each affected target.</p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> fire damage; slowed or weakened (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> fire damage; slowed or weakened (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> fire damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Loyalty Collar",
+      "effects": [
+        {
+          "effect": "When the crucibite is reduced to 0 Stamina, their loyalty collar explodes, dealing 1d6 damage to each adjacent enemy and object."
         }
-      }
-    },
-    {
-      "name": "Fodder Run",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Reconstitute",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "300",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

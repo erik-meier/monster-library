@@ -6,12 +6,10 @@
   "role": "Defender",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Time Raider"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 60,
   "stability": 0,
@@ -32,234 +30,73 @@
   ],
   "items": [
     {
-      "name": "Foresight",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The armiger doesn't take a bane on strikes against creatures with concealment.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Kuran'zoi Heraldry",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any time raider who starts their turn with line of effect to the armiger can end one condition affecting the.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Serrated Saber",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "psionic",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Psionic",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 damage",
+          "tier2": "10 damage",
+          "tier3": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> weakened (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage"
-            },
-            {
-              "tier": 2,
-              "display": "10 damage"
-            },
-            {
-              "tier": 3,
-              "display": "13 damage; <strong class=\"potency-value\">R&lt;2</strong> weakened (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "A creature weakened this way is also bleeding.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> A creature weakened this way is also bleeding."
+        {
+          "cost": "2 Malice",
+          "effect": "A creature weakened this way is also bleeding."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Shared Sickness",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "psionic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 20
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "A creature deals damage to any ally of the armiger who the armiger has line of effect to",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 psychic damage; 5 poison damage"
-            },
-            {
-              "tier": 2,
-              "display": "6 psychic damage; 5 poison damage"
-            },
-            {
-              "tier": 3,
-              "display": "9 psychic damage; 5 poison damage"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Psionic",
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 20",
+      "target": "The triggering creature",
+      "trigger": "A creature deals damage to any ally of the armiger who the armiger has line of effect to.",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "4 psychic damage; <strong class=\"potency-value\">R&lt;0</strong> 5 poison damage",
+          "tier2": "6 psychic damage; <strong class=\"potency-value\">R&lt;1</strong> 5 poison damage",
+          "tier3": "9 psychic damage; <strong class=\"potency-value\">R&lt;2</strong> 5 poison damage"
         }
-      }
+      ]
     },
     {
-      "name": "Gravity Well",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "psionic",
-          "ranged",
-          "weapon"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 5,
-          "secondary": 3
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A time raider acting this turn activates a gravity well in the area. The gravity well sits at the center of the cube and lasts until the end of the encounter, or until a creature adjacent to the well uses a maneuver to deactivate it. The area is difficult terrain for enemies. Any enemy who ends their turn in the area is pulled up to 4 squares toward the well.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Foresight",
+      "effects": [
+        {
+          "effect": "The armiger doesn't take a bane on strikes against creatures with concealment."
         }
-      }
+      ]
     },
     {
-      "name": "Recall Module",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each time raider gains a +3 bonus to speed, and can teleport up to their speed as a move action.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Kuran'zoi Heraldry",
+      "effects": [
+        {
+          "effect": "Any time raider who starts their turn with line of effect to the armiger can end one condition affecting the."
         }
-      }
-    },
-    {
-      "name": "Psi-Cage",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 10,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>All time raiders in the encounter collectively create a psionic field over the encounter map, which lasts until the first time raider with the highest Stamina maximum drops to 0 Stamina or chooses to end the field (no action required). While the field is up, each non-time raider on the map makes a <strong>Reason test</strong> against this psionic effect at the start of each round.</p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> psychic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> psychic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "249",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

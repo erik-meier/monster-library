@@ -1,0 +1,89 @@
+{
+  "id": "shadow-elf-moondancer",
+  "name": "Shadow Elf Moondancer",
+  "level": 5,
+  "ev": 14,
+  "role": "Harrier",
+  "organization": "Platoon",
+  "keywords": [
+    "Fey",
+    "Humanoid",
+    "Shadow Elf"
+  ],
+  "size": "1M",
+  "speed": 7,
+  "stamina": 70,
+  "stability": 0,
+  "freeStrike": 6,
+  "characteristics": {
+    "might": 1,
+    "agility": 3,
+    "reason": 1,
+    "intuition": 2,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "climb"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Crescent Sweep",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Charge",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "9 damage",
+          "tier2": "13 damage",
+          "tier3": "16 damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "Until the end of the current turn, the moondancer ignores opportunity attacks from the target."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Dissolve",
+      "keywords": [
+        "Magic"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "The moondancer takes damage from a strike.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The moondancer can teleport up to 10 squares to a space with concealment created by darkness."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Of the Umbra",
+      "effects": [
+        {
+          "effect": "The moondancer ignores concealment created by darkness. While the moondancer is in direct sunlight, they have damage weakness 3. While the moondancer has concealment, they have damage immunity 3."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

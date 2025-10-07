@@ -1,0 +1,84 @@
+{
+  "id": "sand-stone-giant",
+  "name": "Sand Stone Giant",
+  "level": 8,
+  "ev": 10,
+  "role": "Controller",
+  "organization": "Minion",
+  "keywords": [
+    "Giant",
+    "Stone Giant"
+  ],
+  "size": "4",
+  "speed": 7,
+  "stamina": 14,
+  "stability": 10,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 4,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 3,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "burrow"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Buried in Sand",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Melee",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 3",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "3 damage; slide 2",
+          "tier2": "6 damage; slide 3; <strong class=\"potency-value\">A&lt;3</strong> restrained (save ends)",
+          "tier3": "8 damage; slide 4; <strong class=\"potency-value\">A&lt;4</strong> restrained (save ends)"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Stonebreaker Flesh",
+      "effects": [
+        {
+          "effect": "Whenever an enemy obtains a tier 1 outcome on a melee ability used against the sand stone giant, they take a bane on that ability until the end of the encounter."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Stone Steps",
+      "effects": [
+        {
+          "effect": "The sand stone giant ignores difficult terrain."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Stone Swim",
+      "effects": [
+        {
+          "effect": "The sand stone giant can burrow through stone, but can't drag other creatures underground when they do so."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

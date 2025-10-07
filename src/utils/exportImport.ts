@@ -1,6 +1,6 @@
 /**
  * Export/Import utilities for monster data
- * Handles JSON export/import with validation and collision avoidance
+ * Handles JSON export/import with validation and type safety
  */
 
 import { validateMonster, type ValidationResult } from '../../tests/helpers/validation-utils'
@@ -53,6 +53,27 @@ export interface ImportPreview {
 }
 
 /**
+ * JSON replacer function to handle Sets and other special types
+ */
+function jsonReplacer(key: string, value: any): any {
+  if (value instanceof Set) {
+    return Array.from(value)
+  }
+  return value
+}
+
+/**
+ * JSON reviver function to reconstruct Sets from arrays
+ */
+function jsonReviver(key: string, value: any): any {
+  // Reconstruct Sets for movementTypes field
+  if (key === 'movementTypes' && Array.isArray(value)) {
+    return new Set(value)
+  }
+  return value
+}
+
+/**
  * Export a single monster as JSON
  */
 export function exportMonster(monster: CustomMonster): string {
@@ -66,7 +87,7 @@ export function exportMonster(monster: CustomMonster): string {
     monsters: [monster]
   }
   
-  return JSON.stringify(exportData, null, 2)
+  return JSON.stringify(exportData, jsonReplacer, 2)
 }
 
 /**
@@ -83,7 +104,7 @@ export function exportAllMonsters(monsters: CustomMonster[]): string {
     monsters: monsters
   }
   
-  return JSON.stringify(exportData, null, 2)
+  return JSON.stringify(exportData, jsonReplacer, 2)
 }
 
 /**
@@ -183,7 +204,7 @@ export function previewImport(jsonContent: string, customMonstersStore?: ReturnT
   }
 
   try {
-    const data = JSON.parse(jsonContent)
+    const data = JSON.parse(jsonContent, jsonReviver)
     const validation = validateImportData(data)
     
     if (!validation.isValid) {
@@ -280,7 +301,7 @@ export function importMonsters(jsonContent: string, customMonstersStore?: Return
   }
 
   try {
-    const data = JSON.parse(jsonContent)
+    const data = JSON.parse(jsonContent, jsonReviver)
     const validation = validateImportData(data)
     
     if (!validation.isValid) {
@@ -402,7 +423,7 @@ export function createFullBackup(customMonstersStore?: ReturnType<typeof useCust
     }
   }
   
-  return JSON.stringify(backupData, null, 2)
+  return JSON.stringify(backupData, jsonReplacer, 2)
 }
 
 /**
@@ -420,7 +441,7 @@ export function restoreFromBackup(jsonContent: string, customMonstersStore?: Ret
   }
 
   try {
-    const backupData = JSON.parse(jsonContent)
+    const backupData = JSON.parse(jsonContent, jsonReviver)
     
     if (!backupData.customMonsters) {
       // Try to import as regular export data

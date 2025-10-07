@@ -1,0 +1,79 @@
+{
+  "id": "hobgoblin-recruit",
+  "name": "Hobgoblin Recruit",
+  "level": 4,
+  "ev": 6,
+  "role": "Brute",
+  "organization": "Minion",
+  "keywords": [
+    "Goblin",
+    "Hobgoblin",
+    "Humanoid",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 9,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 3,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 1
+  },
+  "immunities": {
+    "fire": 2
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Sword Lunge",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 damage",
+          "tier2": "5 damage",
+          "tier3": "7 damage; grabbed or prone"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Tactical Positioning",
+      "effects": [
+        {
+          "effect": "Any non-minion ally deals 1 extra damage for each recruit adjacent to them."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Infernal Ichor",
+      "effects": [
+        {
+          "effect": "When the recruit is reduced to 0 Stamina, they spray burning blood. Each creature adjacent to the recruit takes 2 fire damage."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

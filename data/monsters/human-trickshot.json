@@ -6,12 +6,10 @@
   "role": "Artillery",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Human",
+    "Humanoid"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 20,
   "stability": 0,
@@ -33,189 +31,48 @@
   ],
   "items": [
     {
-      "name": "Supernatural Insight",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The trickshot ignores concealment if it’s granted by a supernatural effect.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Trick Crossbow",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "meleeRanged",
-          "primary": 1,
-          "secondary": 15
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1 or ranged 15",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "6 damage",
+          "tier2": "9 damage",
+          "tier3": "12 damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "This ability ignores cover and concealment."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "6 damage"
-            },
-            {
-              "tier": 2,
-              "display": "9 damage"
-            },
-            {
-              "tier": 3,
-              "display": "12 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>This ability ignores cover and concealment.</p>"
-        },
-        "spend": {
-          "text": "This ability targets one additional target.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> This ability targets one additional target."
+        {
+          "cost": "3 Malice",
+          "effect": "This ability targets one additional target."
         }
-      }
+      ]
     },
     {
-      "name": "Alchemical Device",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 3,
-          "secondary": 10
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 corruption damage; <strong class=\"potency-value\">X&lt;0</strong>, slowed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "6 corruption damage; <strong class=\"potency-value\">X&lt;1</strong>, slowed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 corruption damage; <strong class=\"potency-value\">X&lt;2</strong>, restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p> <p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Supernatural Insight",
+      "effects": [
+        {
+          "effect": "The trickshot ignores concealment if it's granted by a supernatural effect."
         }
-      }
-    },
-    {
-      "name": "Exploit Opening",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A human's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Staying Power",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "a human's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "183",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

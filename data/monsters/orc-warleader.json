@@ -6,12 +6,10 @@
   "role": "",
   "organization": "Leader",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Orc"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 6,
   "stamina": 120,
   "stability": 2,
@@ -30,382 +28,160 @@
   ],
   "items": [
     {
-      "name": "Overwhelming March",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Mohler Trench",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Mohler Cavity",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Relentless",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>If the warleader is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">5</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the warleader is reduced to 1 Stamina instead.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "End Effect",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the end of each of their turns, the warleader can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
       "name": "Go.",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One ally",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target moves up to their speed and can use a main action."
         },
-        "target": {
-          "type": "ally",
-          "value": 1
+        {
+          "cost": "1 Malice",
+          "effect": "The warleader targets two allies."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The target moves up to their speed and can use a main action.</p> <p><strong>3 Malice:</strong> The warleader targets one ally and a minion squad.</p>"
-        },
-        "spend": {
-          "text": "The warleader targets two allies.",
-          "value": 1,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The warleader targets two allies."
+        {
+          "cost": "3 Malice",
+          "effect": "The warleader targets one ally and a minion squad."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Mace Lariat",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "10 damage; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "13 damage; <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Each enemy",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "7 damage; push 1; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)",
+          "tier2": "10 damage; push 3; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)",
+          "tier3": "13 damage; push 5; <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Lockdown",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 3,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "selfAlly",
-          "value": 3
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target moves up to their speed and can use the Grab maneuver, which gains an edge.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "3 Malice",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self and ranged 10",
+      "target": "Self and three allies",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target moves up to their speed and can use the Grab maneuver, which gains an edge."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Courtesy Call",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "The target obtains a tier 1 outcome on one power roll.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The target has a double edge on their next power roll before the end of the encounter.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 10",
+      "target": "One creature",
+      "trigger": "The target obtains a tier 1 outcome on one power roll.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target has a double edge on their next power roll before the end of the encounter."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Close In",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 10
-        },
-        "target": {
-          "type": "ally",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target moves up to their speed. Each enemy adjacent to a target after this move makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p>Frightened of the warleader (save ends)</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p>Frightened of the warleader (EoT)</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 1",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "-",
+      "distance": "10 burst",
+      "target": "Each ally in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target moves up to their speed. Each enemy adjacent to a target after this move makes an Intuition test.",
+          "tier1": "Frightened of the warleader (save ends)",
+          "tier2": "Frightened of the warleader (EoT)",
+          "tier3": "No effect"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Familial Reinforcements",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The warleader shifts up to their speed, and four orc blitzers appear in unoccupied spaces within distance.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 2",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "-",
+      "distance": "Ranged 10",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The warleader shifts up to their speed, and four orc blitzers appear in unoccupied spaces within distance."
         }
-      }
+      ]
     },
     {
-      "name": "I’ll Do This Myself",
       "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Three times in succession, the warleader shifts up to their speed and can use Mace Lariat.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "name": "I'll Do This Myself",
+      "ability_type": "Villain Action 3",
+      "keywords": [
+        "-"
+      ],
+      "usage": "-",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Three times in succession, the warleader shifts up to their speed and can use Mace Lariat."
         }
-      }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "End Effect",
+      "effects": [
+        {
+          "effect": "At the end of each of their turns, the warleader can take 5 damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Relentless",
+      "effects": [
+        {
+          "effect": "If the warleader is reduced to 0 Stamina, they can make a free strike before dying. If the target of the free strike is reduced to 0 Stamina, the warleader is reduced to 1 Stamina instead."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "221",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

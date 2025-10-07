@@ -1,0 +1,82 @@
+{
+  "id": "grilp",
+  "name": "Grilp",
+  "level": 4,
+  "ev": 6,
+  "role": "Ambusher",
+  "organization": "Minion",
+  "keywords": [
+    "Devil",
+    "Hobgoblin",
+    "Infernal"
+  ],
+  "size": "1T",
+  "speed": 7,
+  "stamina": 8,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": -1,
+    "agility": 3,
+    "reason": 0,
+    "intuition": 1,
+    "presence": 0
+  },
+  "immunities": {
+    "fire": 2
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Flyby Bite",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 damage",
+          "tier2": "5 damage",
+          "tier3": "7 damage; the grilp shifts up to 2 squares"
+        },
+        {
+          "name": "Effect",
+          "effect": "The grilp moves up to their speed and can attempt to hide."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Bat Out Of Hell",
+      "effects": [
+        {
+          "effect": "Any enemy who makes a saving throw takes a −1 penalty to the saving throw for each grilp adjacent to them."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Shifting Camouflage",
+      "effects": [
+        {
+          "effect": "The grilp has concealment from all creatures."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

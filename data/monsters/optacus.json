@@ -6,12 +6,10 @@
   "role": "Artillery",
   "organization": "Minion",
   "keywords": [
-    "abyssal"
+    "Abyssal",
+    "Demon"
   ],
-  "size": {
-    "value": 1,
-    "letter": "S"
-  },
+  "size": "1S",
   "speed": 6,
   "stamina": 14,
   "stability": 0,
@@ -28,129 +26,39 @@
     "holy": 5
   },
   "movementTypes": [
-    "walk",
     "climb"
   ],
   "items": [
     {
+      "type": "ability",
       "name": "Optical Flare",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 20
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 20",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "5 fire damage",
+          "tier2": "8 fire damage",
+          "tier3": "10 fire damage; this damage ignores immunity"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "intuition"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 fire damage"
-            },
-            {
-              "tier": 2,
-              "display": "8 fire damage"
-            },
-            {
-              "tier": 3,
-              "display": "10 fire damage; this damage ignores immunity"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>This ability ignores concealment. A winded target takes an extra <span class=\"damage-value damage-generic\">5</span> damage.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "This ability ignores concealment. A winded target takes an extra 5 damage."
         }
-      }
-    },
-    {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The demon activates a Malice feature available to demons of level 9 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p><p><span class=\"reference-text\">Abyssal Jaunt</span></p><p><span class=\"reference-text\">Seeping Blight</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Soul Flense",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One demon acting this turn unleashes their pent-up agony and pain on every non-demon in a 5 burst. Each target makes a <strong>Presence test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"92\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> corruption damage; the target is soul flensed</p></td></tr><tr><td data-colwidth=\"92\"><p>12-16</p></td><td><p>The target is soul flensed</p></td></tr><tr><td data-colwidth=\"92\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table> <p>The demon removes all conditions and effects on themself that can be ended by a saving throw, and transfers all those effects to each creature soul flensed this way.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "73",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

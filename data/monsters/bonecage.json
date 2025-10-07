@@ -6,12 +6,10 @@
   "role": "Controller",
   "organization": "Horde",
   "keywords": [
-    "undead"
+    "Soulless",
+    "Undead"
   ],
-  "size": {
-    "value": 3,
-    "letter": "M"
-  },
+  "size": "3",
   "speed": 6,
   "stamina": 55,
   "stability": 5,
@@ -29,170 +27,68 @@
   },
   "weaknesses": {},
   "movementTypes": [
-    "climb",
-    "walk"
+    "climb"
   ],
   "items": [
     {
+      "type": "ability",
       "name": "Ribcage Chomp",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 2
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "9 damage; <strong class=\"potency-value\">M&lt;4</strong> grabbed",
+          "tier2": "12 damage; <strong class=\"potency-value\">M&lt;5</strong> grabbed",
+          "tier3": "14 damage; grabbed"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
+        {
+          "name": "Effect",
+          "effect": "The bonecage can have up to four size 1 targets grabbed at once. Any creature grabbed by the bonecage takes a bane on the Escape Grab maneuver, and the bonecage has damage immunity 5 against that creature's abilities. When the bonecage is force moved, any creature or object they have grabbed moves with them."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "9 damage; <strong class=\"potency-value\">M&lt;3</strong> grabbed"
-            },
-            {
-              "tier": 2,
-              "display": "12 damage; <strong class=\"potency-value\">M&lt;4</strong> grabbed"
-            },
-            {
-              "tier": 3,
-              "display": "14 damage; grabbed"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The bonecage can have up to four size 1 targets grabbed at once. Any creature grabbed by the bonecage takes a bane on the Escape Grab maneuver, and the bonecage has damage immunity 5 against that creature's abilities. When the bonecage is force moved, any creature or object they have grabbed moves with them.</p>"
-        },
-        "spend": {
-          "text": "While grabbed this way, a target can’t teleport or be teleported.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> While grabbed this way, a target can’t teleport or be teleported."
+        {
+          "cost": "3 Malice",
+          "effect": "While grabbed this way, a target can't teleport or be teleported."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Labyrinth of Bone",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 5,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "line",
-          "primary": 10,
-          "secondary": 1,
-          "tertiary": 3
+      "cost": "5 Malice",
+      "keywords": [
+        "Area",
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "Four 10 x 1 lines within 3",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The bonecage can put up to two 90-degree bends in each of the lines. Each target makes an Agility test.",
+          "tier1": "9 damage",
+          "tier2": "7 damage",
+          "tier3": "4 damage"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The bonecage can put up to two 90-degree bends in each of the lines. Each target makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"97\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">9</span> damage</p></td></tr><tr><td data-colwidth=\"97\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> damage</p></td></tr><tr><td data-colwidth=\"97\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage</p></td></tr></tbody></table> <p>The area is difficult terrain for enemies. The effect ends at the end of the encounter or when the bonecage uses this ability again.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The area is difficult terrain for enemies. The effect ends at the end of the encounter or when the bonecage uses this ability again."
         }
-      }
-    },
-    {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p><p><span class=\"reference-text\">Blood Hunger</span></p><p><span class=\"reference-text\">Necrotic Rupture</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Death Tax",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The undead attempts to rend the vitality of their foes. Each ene my within 5 squares of the undead makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> corruption damage; the target loses 2 Recoveries</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span> corruption damage; the target loses 1 Recovery</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span> corruption damage</p></td></tr></tbody></table> <p>A target who has fewer Recoveries than they would lose is also weakened (save ends).</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "274",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }
