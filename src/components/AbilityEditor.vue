@@ -567,7 +567,7 @@ watch(formData, () => {
 }, { deep: true })
 
 // Watch power roll formula and update effects
-watch(powerRollFormula, (newFormula) => {
+watch(powerRollFormula, () => {
   if (hasPowerRoll.value) {
     ensurePowerRollEffect()
   }

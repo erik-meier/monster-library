@@ -75,7 +75,7 @@ describe('Export/Import Utilities', () => {
   describe('Single Monster Export', () => {
     it('should export a single monster correctly', () => {
       const jsonString = exportMonster(sampleMonster)
-      const exportData: ExportData = JSON.parse(jsonString, (key: string, value: any) => {
+      const exportData: ExportData = JSON.parse(jsonString, (key: string, value: unknown) => {
         if (key === 'movementTypes' && Array.isArray(value)) {
           return new Set(value)
         }

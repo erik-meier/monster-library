@@ -325,7 +325,7 @@ function startFromTemplate(template: MonsterTemplate) {
   router.push('/monster/create')
 }
 
-function deleteMaliceFeature(malice: any) {
+function deleteMaliceFeature(malice: { id: string; name: string }) {
   if (confirm(`Are you sure you want to delete "${malice.name}"? This action cannot be undone.`)) {
     const success = customMaliceStore.deleteMaliceFeature(malice.id)
 

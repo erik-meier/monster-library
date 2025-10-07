@@ -66,8 +66,8 @@ import { useRoute, useRouter } from 'vue-router'
 import MaliceFeatureBlockEditable from '@/components/MaliceFeatureBlockEditable.vue'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
 import { useCustomMaliceStore } from '@/stores/customMalice'
-// @ts-ignore - Dynamic import for data bundle
-import { getMaliceFeature, getMonsterIndex } from '@/data/monsters-bundle.js'
+// @ts-expect-error - Dynamic import for data bundle
+import { getMonsterIndex } from '@/data/monsters-bundle.js'
 
 const route = useRoute()
 const router = useRouter()
