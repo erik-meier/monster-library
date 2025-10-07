@@ -1,0 +1,144 @@
+{
+  "id": "hulking-brain",
+  "name": "Hulking Brain",
+  "level": 6,
+  "ev": 32,
+  "role": "Brute",
+  "organization": "Elite",
+  "keywords": [
+    "Horror",
+    "Voiceless Talker"
+  ],
+  "size": "1L",
+  "speed": 5,
+  "stamina": 180,
+  "stability": 4,
+  "freeStrike": 7,
+  "characteristics": {
+    "might": 3,
+    "agility": 1,
+    "reason": -2,
+    "intuition": -2,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Four-Way Grasp",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Four creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "7 damage",
+          "tier2": "10 damage; <strong class=\"potency-value\">A&lt;2</strong> grabbed",
+          "tier3": "11 damage; <strong class=\"potency-value\">A&lt;3</strong> grabbed"
+        },
+        {
+          "name": "Special",
+          "effect": "The hulking brain can have up to four size 1 creatures grabbed."
+        },
+        {
+          "cost": "2 Malice",
+          "effect": "The potency increases by 1."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Cerebral Suplex",
+      "keywords": [
+        "Melee",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Each enemy",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "A target must be grabbed by the hulking brain, and is no longer grabbed after the power roll is resolved."
+        },
+        {
+          "roll": "2d10 + 3",
+          "tier1": "7 damage; <strong class=\"potency-value\">M&lt;1</strong> 3 damage",
+          "tier2": "10 damage; <strong class=\"potency-value\">M&lt;2</strong> 3 damage",
+          "tier3": "13 damage; <strong class=\"potency-value\">M&lt;3</strong> 6 damage"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Lumber",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The hulking brain shifts up to 4 squares, ignoring difficu terrain."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Brawny Buffe",
+      "cost": "1 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Free triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "An ally voiceless talker within 5 squares takes damage from an enemy ability.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The hulking brain shifts adjacent to the ally and becomes the new target of the ability."
+        },
+        {
+          "cost": "2 Malice",
+          "effect": "The enemy is knocked prone."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Biceps to Spare",
+      "effects": [
+        {
+          "effect": "The hulking brain can carry up to four size 1 creatures they have grabbed, and takes no penalty to their speed while doing so."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Psionic Conductor",
+      "effects": [
+        {
+          "effect": "Whenever a non-minion voiceless talker within 5 squares of the hulking brain uses a psionic ability, they can do so as if they were in the hulking brain's space."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

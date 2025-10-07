@@ -1,15 +1,8 @@
 <template>
   <div class="actions-list" v-if="sortedActions.length > 0">
     <div v-for="action in sortedActions" :key="action.name || action.id || Math.random()" class="action">
-      <!-- Handle custom monster actions (simple structure) -->
-      <div v-if="!action.system" class="simple-action">
-        <h4 class="action-name">{{ action.name || action.title || 'Unnamed Action' }}</h4>
-        <div class="action-description" v-if="action.description">{{ action.description }}</div>
-        <div class="action-description" v-else-if="action.effect">{{ action.effect }}</div>
-      </div>
-
-      <!-- Handle official monster actions (complex structure) -->
-      <div v-else class="complex-action">
+      <!-- Handle all monster actions with unified template -->
+      <div class="complex-action">
         <div class="action-header">
           <div class="action-title-row">
             <h4 class="action-name">
@@ -18,50 +11,76 @@
               <span v-if="action.type === 'feature'" class="glyph-icon glyph-feature action-type-icon"
                 aria-label="Feature"></span>
               {{ action.name }}
-              <span v-if="action.system.category === 'signature'" class="signature-badge">SIGNATURE</span>
-              <span v-if="action.system.resource" class="malice-cost">{{ action.system.resource }} Malice</span>
+              <!-- Handle both new and old signature structure -->
+              <span v-if="action.ability_type?.includes('Signature') || action.system?.category === 'signature'"
+                class="signature-badge">SIGNATURE</span>
+              <!-- Handle both new cost format and old resource format -->
+              <span v-if="getResourceCost(action)" class="malice-cost">{{ getResourceCost(action) }}</span>
             </h4>
             <div class="action-power-info">
               <span v-if="actionHasPowerRoll(action)" class="action-power-roll">{{
-                formatPowerRoll(action.system.power.roll.formula, chr) }}</span>
-              <span class="action-type-badge" v-if="action.system.type && action.system.type !== 'none'">
-                {{ formatActionType(action.system.type) }}
+                formatPowerRoll(getPowerRoll(action), chr) }}</span>
+              <span class="action-type-badge" v-if="getActionType(action)">
+                {{ getActionType(action) }}
               </span>
             </div>
           </div>
 
           <div class="action-details">
-            <div class="action-keywords" v-if="action.system.keywords && action.system.keywords.length">
-              {{ action.system.keywords.join(', ') }}
+            <div class="action-keywords" v-if="getKeywords(action).length > 0">
+              {{ getKeywords(action).join(', ') }}
             </div>
             <div class="action-mechanics">
-              <span v-if="formatActionDistance(action.system.distance)" class="action-distance">
+              <span v-if="getDistance(action)" class="action-distance">
                 <span class="glyph-icon glyph-distance icon" aria-label="Distance"></span>
-                {{ formatActionDistance(action.system.distance) }}
+                {{ getDistance(action) }}
               </span>
-              <span v-if="formatActionTargets(action.system.target, monster?.organization)" class="action-target">
+              <span v-if="getTarget(action)" class="action-target">
                 <span class="glyph-icon glyph-target icon" aria-label="Target"></span>
-                {{ formatActionTargets(action.system.target, monster?.organization) }}
+                {{ getTarget(action) }}
               </span>
             </div>
           </div>
         </div>
 
-        <div v-if="action.system.type == 'triggered' || action.system.type == 'freeTriggered'" class="action-trigger">
-          <strong>Trigger:</strong> {{ action.system.trigger }}
+        <div v-if="getActionTrigger(action)" class="action-trigger">
+          <strong>Trigger:</strong> {{ getActionTrigger(action) }}
         </div>
 
-        <PowerRoll v-if="actionHasPowerRoll(action)" :tiers="action.system.power.tiers || []" />
-        <div v-if="!actionHasPowerRoll(action)" class="action-description"
-          v-html="formatDescription(extractDescription(action))"></div>
+        <PowerRoll v-if="actionHasPowerRoll(action)" :tiers="getTiers(action)" :tier1="getTier1(action)"
+          :tier2="getTier2(action)" :tier3="getTier3(action)" />
 
-        <div v-if="action.system.effect && action.system.effect.text && actionHasPowerRoll(action)"
+        <!-- Multiple effects for new structure -->
+        <div v-if="action.effects && action.effects.length > 0" class="action-effects-list">
+          <div v-for="(effect, index) in action.effects" :key="index">
+            <!-- Skip the power roll effect and effects with costs (those are handled separately) -->
+            <div v-if="!effect.roll && !effect.cost" class="effect-item">
+              <div v-if="effect.name || effect.effect" class="effect-content">
+                <span v-if="effect.name" class="effect-name"><strong>{{ effect.name }}:</strong></span>
+                <span v-if="effect.effect" class="effect-text" v-html="formatDescription(effect.effect)"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fallback for old structure description -->
+        <div v-else-if="!actionHasPowerRoll(action) && getActionDescription(action)" class="action-description"
+          v-html="formatDescription(getActionDescription(action))"></div>
+
+        <!-- Effect for old structure power-roll abilities (shown after power roll) -->
+        <div v-if="!action.effects && getActionEffect(action) && actionHasPowerRoll(action)" class="action-effect-text">
+          <strong>Effect:</strong> <span v-html="formatDescription(getActionEffect(action))"></span>
+        </div>
+
+        <!-- Effect for old structure non-power-roll abilities -->
+        <div v-if="!action.effects && getActionEffect(action) && !actionHasPowerRoll(action)"
           class="action-effect-text">
-          <strong>Effect:</strong> <span v-html="formatDescription(action.system.effect.text)"></span>
+          <strong>Effect:</strong> <span v-html="formatDescription(getActionEffect(action))"></span>
         </div>
 
-        <div v-if="action.system.spend && action.system.spend.formattedText" class="action-spend">
-          <span v-html="action.system.spend.formattedText"></span>
+        <!-- Handle spend effects (both new and old structure) -->
+        <div v-if="getSpendEffect(action)" class="action-spend">
+          <span v-html="getSpendEffect(action)"></span>
         </div>
       </div>
     </div>
@@ -106,22 +125,23 @@ export default {
       if (!this.actions || this.actions.length === 0) return [];
 
       return this.actions.slice().sort((a, b) => {
-        // Handle simple custom monster actions that don't have system property
-        if (!a.system && !b.system) return 0;
-        if (!a.system) return 1;
-        if (!b.system) return -1;
+        // Check for signature status in both structures
+        const aIsSignature = a.ability_type?.includes('Signature') || a.system?.category === 'signature';
+        const bIsSignature = b.ability_type?.includes('Signature') || b.system?.category === 'signature';
 
-        if (a.system.category === 'signature' && b.system.category !== 'signature') return -1;
-        if (a.system.category !== 'signature' && b.system.category === 'signature') return 1;
+        if (aIsSignature && !bIsSignature) return -1;
+        if (!aIsSignature && bIsSignature) return 1;
 
-        if (a.type === 'ability' && b.type !== 'ability') return -1;
-        if (a.type !== 'ability' && b.type === 'ability') return 1;
+        // Sort features before abilities
+        if (a.type === 'feature' && b.type !== 'feature') return -1;
+        if (a.type !== 'feature' && b.type === 'feature') return 1;
 
-        const aRes = a.system.resource;
-        const bRes = b.system.resource;
+        // Sort by resource cost (malice cost)
+        const aRes = this.getResourceCostValue(a);
+        const bRes = this.getResourceCostValue(b);
         if (aRes == null && bRes == null) return 0;
-        if (aRes == null) return -1;
-        if (bRes == null) return 1;
+        if (aRes == null) return 1;
+        if (bRes == null) return -1;
         return aRes - bRes;
       });
     }
@@ -133,6 +153,182 @@ export default {
     formatActionTargets,
     formatActionType,
     actionHasPowerRoll,
+
+    // Helper methods to handle both new and old data structures
+    getResourceCost(action) {
+      // Check for effects with cost field (new structure)
+      if (action.effects) {
+        const costEffect = action.effects.find(effect => effect.cost);
+        if (costEffect) return costEffect.cost;
+      }
+      // Check for old structure
+      return action.system?.resource ? `${action.system.resource} Malice` : null;
+    },
+
+    getResourceCostValue(action) {
+      // Extract numeric value for sorting
+      if (action.effects) {
+        const costEffect = action.effects.find(effect => effect.cost);
+        if (costEffect) {
+          // Extract number from cost string like "2 Malice"
+          const match = costEffect.cost.match(/(\d+)/);
+          return match ? parseInt(match[1]) : null;
+        }
+      }
+      // Check for old structure
+      return action.system?.resource || null;
+    },
+
+    getPowerRoll(action) {
+      // Check for effects with roll field (new structure)  
+      if (action.effects) {
+        const rollEffect = action.effects.find(effect => effect.roll);
+        if (rollEffect) return rollEffect.roll;
+      }
+      // Check for old structure
+      return action.system?.power?.roll?.formula || '';
+    },
+
+    getActionType(action) {
+      // Check for new structure fields
+      if (action.usage && action.usage !== '-') return action.usage;
+      if (action.ability_type?.includes('Villain')) return action.ability_type;
+      // Check for old structure
+      if (action.system?.type && action.system.type !== 'none') {
+        return this.formatActionType(action.system.type);
+      }
+      return null;
+    },
+
+    getKeywords(action) {
+      // Check for keywords at top level (new structure) or system level (old structure)
+      const keywords = action.keywords || action.system?.keywords || [];
+      // Filter out empty strings, '-', and falsy values, then capitalize for display
+      return keywords
+        .filter(keyword => keyword && keyword !== '-' && keyword.trim() !== '')
+        .map(keyword => this.capitalize(keyword));
+    },
+
+    capitalize(str) {
+      if (!str) return str;
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    },
+
+    getDistance(action) {
+      // Check for direct distance field (new structure)
+      if (action.distance) return action.distance;
+      // Check for old structure
+      return this.formatActionDistance(action.system?.distance);
+    },
+
+    getTarget(action) {
+      // Check for direct target field (new structure)
+      if (action.target) return action.target;
+      // Check for old structure  
+      return this.formatActionTargets(action.system?.target, this.monster?.organization);
+    },
+
+    getTiers(action) {
+      // Return old format tiers if they exist
+      return action.system?.power?.tiers || [];
+    },
+
+    getTier1(action) {
+      // Check for new format in effects array
+      if (action.effects) {
+        const rollEffect = action.effects.find(effect => effect.tier1);
+        if (rollEffect) return rollEffect.tier1;
+      }
+      return '';
+    },
+
+    getTier2(action) {
+      // Check for new format in effects array
+      if (action.effects) {
+        const rollEffect = action.effects.find(effect => effect.tier2);
+        if (rollEffect) return rollEffect.tier2;
+      }
+      return '';
+    },
+
+    getTier3(action) {
+      // Check for new format in effects array
+      if (action.effects) {
+        const rollEffect = action.effects.find(effect => effect.tier3);
+        if (rollEffect) return rollEffect.tier3;
+      }
+      return '';
+    },
+
+    getActionDescription(action) {
+      // For features, check effects first, then system description
+      if (action.type === 'feature') {
+        if (action.effects) {
+          const descEffect = action.effects.find(effect => effect.effect);
+          if (descEffect) return descEffect.effect;
+        }
+        return action.system?.description?.value;
+      }
+
+      // For abilities without power rolls, check for simple description
+      if (action.description) return action.description;
+      if (action.effect) return action.effect;
+
+      // Use extractDescription as fallback
+      return this.extractDescription(action);
+    },
+
+    getActionEffect(action) {
+      // Check for effects with just "effect" field (new structure)
+      if (action.effects) {
+        const effectData = action.effects.find(effect => effect.effect && !effect.roll);
+        if (effectData) return effectData.effect;
+      }
+      // Check for old structure
+      return action.system?.effect?.text;
+    },
+
+    getActionTrigger(action) {
+      // Check for new structure: top-level trigger field  
+      if (action.trigger) {
+        return action.trigger;
+      }
+      // Check for old structure
+      if (action.system?.type === 'triggered' || action.system?.type === 'freeTriggered') {
+        return action.system.trigger || '';
+      }
+      return '';
+    },
+
+    getSpendEffect(action) {
+      // Check for effects with costs in new structure
+      if (action.effects) {
+        const costEffects = action.effects.filter(effect => effect.cost && effect.effect);
+        if (costEffects.length > 0) {
+          // Format all cost effects into a single HTML string
+          return costEffects.map(effect => {
+            const costText = `<strong>${effect.cost}:</strong> ${this.formatSpendEffect(effect.effect)}`;
+            return costText;
+          }).join('<br><br>');
+        }
+      }
+
+      // Check for old structure
+      if (action.system && action.system.spend && action.system.spend.formattedText) {
+        return action.system.spend.formattedText;
+      }
+
+      return null;
+    },
+
+    formatSpendEffect(text) {
+      // Apply old formatting style for spend effects with malice costs
+      if (!text) return '';
+
+      // Add malice cost emphasis for patterns like "1 Malice", "2 Malice", etc.
+      return text.replace(/(\d+)\s+(Malice|malice)/g, '<span class="malice-cost-emphasis">$1 $2</span>');
+    },
+
     formatPowerRoll(formula) {
       // Power roll formulas are now pre-processed in the data pipeline
       return formula || '';
@@ -142,6 +338,57 @@ export default {
       return description;
     },
     getActionGlyph(action) {
+      // Handle new data structure first
+      if (action.usage || action.ability_type) {
+        // Check for triggered actions
+        if (action.usage && action.usage.toLowerCase().includes('triggered')) {
+          return 'glyph-triggered-action';
+        }
+
+        // Check for villain actions
+        if (action.ability_type && action.ability_type.includes('Villain Action')) {
+          return 'glyph-villain-action';
+        }
+      }
+
+      // Check distance-based icons (new structure)
+      if (action.distance) {
+        const distance = action.distance.toLowerCase();
+
+        // Self distance
+        if (distance.includes('self')) {
+          return 'glyph-self';
+        }
+
+        // Melee distance
+        if (distance.includes('melee') && !distance.includes('ranged')) {
+          return 'glyph-melee';
+        }
+
+        // Ranged distance
+        if (distance.includes('ranged') && !distance.includes('melee')) {
+          return 'glyph-ranged';
+        }
+
+        // Melee or ranged
+        if (distance.includes('melee') && distance.includes('ranged')) {
+          return 'glyph-melee-or-ranged';
+        }
+
+        // Area effects
+        if (distance.includes('burst') || distance.includes('aura')) {
+          return 'glyph-burst';
+        }
+
+        if (distance.includes('cube') || distance.includes('line') || distance.includes('wall')) {
+          return 'glyph-cube-line-wall';
+        }
+
+        // Other distance types
+        return 'glyph-unique-distance';
+      }
+
+      // Fall back to old structure
       if (!action.system) return null;
 
       // Check for triggered actions first
@@ -154,7 +401,7 @@ export default {
         return 'glyph-villain-action';
       }
 
-      // Check distance-based icons
+      // Check distance-based icons (old structure)
       if (action.system.distance && action.system.distance.type) {
         const distance = action.system.distance.type.toLowerCase();
 
@@ -194,6 +441,41 @@ export default {
       return null;
     },
     getActionIconAlt(action) {
+      // Handle new data structure first
+      if (action.usage || action.ability_type) {
+        if (action.usage && action.usage.toLowerCase().includes('triggered')) {
+          return 'Triggered Action';
+        }
+
+        if (action.ability_type && action.ability_type.includes('Villain Action')) {
+          return 'Villain Action';
+        }
+      }
+
+      // Check distance for new structure
+      if (action.distance) {
+        const distance = action.distance.toLowerCase();
+
+        if (distance.includes('self')) {
+          return 'Self';
+        }
+
+        if (distance.includes('melee') && distance.includes('ranged')) {
+          return 'Melee or Ranged';
+        }
+
+        if (distance.includes('burst') || distance.includes('aura')) {
+          return 'Burst or Aura';
+        }
+
+        if (distance.includes('cube') || distance.includes('line') || distance.includes('wall')) {
+          return 'Area Effect';
+        }
+
+        return 'Distance Effect';
+      }
+
+      // Fall back to old structure
       if (!action.system) return '';
 
       if (action.system.type === 'triggered' || action.system.type === 'freeTriggered') {
@@ -439,6 +721,11 @@ export default {
   font-size: var(--font-size-base);
 }
 
+.action-spend strong {
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-bold);
+}
+
 .action-spend :deep(.potency-value) {
   font-weight: var(--font-weight-bold);
   color: var(--color-neutral-800);
@@ -594,5 +881,42 @@ export default {
   .action-description {
     font-size: var(--font-size-sm);
   }
+}
+
+/* Effects list styling */
+.action-effects-list {
+  margin: var(--space-3) 0;
+}
+
+.effect-item {
+  margin-bottom: var(--space-2);
+}
+
+.effect-item:last-child {
+  margin-bottom: 0;
+}
+
+.effect-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1);
+  color: var(--color-neutral-800);
+  line-height: var(--line-height-relaxed);
+}
+
+.effect-name {
+  color: var(--color-primary-600);
+}
+
+.effect-text {
+  color: var(--color-neutral-800);
+  line-height: var(--line-height-relaxed);
+}
+
+.effect-cost {
+  color: var(--color-danger-600);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
 }
 </style>

@@ -6,12 +6,10 @@
   "role": "Brute",
   "organization": "Elite",
   "keywords": [
-    "giant"
+    "Giant",
+    "Ogre"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 5,
   "stamina": 100,
   "stability": 4,
@@ -30,307 +28,109 @@
   ],
   "items": [
     {
-      "name": "Defiant Anger",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While winded, the goon has damage immunity 2.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Club Swing",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 2
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 damage; push 2",
+          "tier2": "11 damage; push 4",
+          "tier3": "14 damage; push 6, prone"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage; push 2"
-            },
-            {
-              "tier": 2,
-              "display": "11 damage; push 4"
-            },
-            {
-              "tier": 3,
-              "display": "14 damage; push 6; prone"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Any target who takes damage from this forced movement takes an extra <span class=\"damage-value damage-generic\">4</span> damage.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Any target who takes damage from this forced movement takes an extra 4 damage."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Grabby Hand",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 1,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "cost": "1 Malice",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Maneuver",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 damage",
+          "tier2": "11 damage; grabbed",
+          "tier3": "14 damage; grabbed"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage"
-            },
-            {
-              "tier": 2,
-              "display": "11 damage; grabbed"
-            },
-            {
-              "tier": 3,
-              "display": "14 damage; grabbed"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A target grabbed this way takes a bane on the Escape Grab maneuver.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A target grabbed this way takes a bane on the Escape Grab maneuver."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "People Bowling",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "line",
-          "primary": 6,
-          "secondary": 1,
-          "tertiary": 1
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Weapon"
+      ],
+      "usage": "Maneuver",
+      "distance": "6 x 1 line within 1",
+      "target": "Each creature and object in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The goon must have a size 1 creature or object grabbed, which they hurl across the area, ending the grab. The hurled creature or object is targeted by the ability, and lands in the last square of the line or the nearest unoccupied square of the goon's choice."
         },
-        "target": {
-          "type": "creatureObject",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage"
-            },
-            {
-              "tier": 2,
-              "display": "9 damage"
-            },
-            {
-              "tier": 3,
-              "display": "12 damage; Prone"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The goon must have a size 1 creature or object grabbed, which they hurl across the area, ending the grab. The hurled creature or object is targeted by the ability, and lands in the last square of the line or the nearest unoccupied square of the goon’s choice.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage",
+          "tier2": "9 damage",
+          "tier3": "12 damage; prone"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Swat the Fly",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "melee"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "A creature or object within distance moves or shifts away  from the goon.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The goon slides the target up to 5 squares.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Melee"
+      ],
+      "usage": "Triggered action",
+      "distance": "Melee 1",
+      "target": "The triggering creature or object",
+      "trigger": "A creature or object within distance moves or shifts away from the goon.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The goon slides the target up to 5 squares."
         }
-      }
+      ]
     },
     {
-      "name": "Shockwave",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One ogre acting this turn jumps and lands on their rear, causing a 3 burst shockwave. Each size 1 creature in the area makes a Might test or Agility test.</p><p></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> damage; vertical push 3</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; vertical push 2</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>Push 1</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Defiant Anger",
+      "effects": [
+        {
+          "effect": "While winded, the goon has damage immunity 2."
         }
-      }
-    },
-    {
-      "name": "Bully",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each ogre in the encounter shifts up to their speed and can make a free strike. If they can, they gang up on the same target rather than picking different targets.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Rampage",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each ogre has damage immunity 5 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with abilities, and heroic abilities that target any ogre have their Heroic Resource cost reduced by 1 (to a minimum of 1).</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "210",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

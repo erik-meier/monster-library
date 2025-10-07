@@ -6,12 +6,10 @@
   "role": "Harrier",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Radenwight"
   ],
-  "size": {
-    "value": 1,
-    "letter": "S"
-  },
+  "size": "1S",
   "speed": 7,
   "stamina": 30,
   "stability": 0,
@@ -26,268 +24,81 @@
   "immunities": {},
   "weaknesses": {},
   "movementTypes": [
-    "climb",
-    "walk"
+    "climb"
   ],
   "items": [
     {
-      "name": "Gymratstics",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The ratcrobat gains an edge on strikes against larger creatures.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "En Garde",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "4 damage",
+          "tier2": "6 damage",
+          "tier3": "8 damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 damage"
-            },
-            {
-              "tier": 2,
-              "display": "6 damage"
-            },
-            {
-              "tier": 3,
-              "display": "8 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The ratcrobat shifts up to 2 squares after striking the first target, then can shift 1 square after striking the second target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The ratcrobat shifts up to 2 squares after striking the first target, then can shift 1 square after striking the second target."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Over Here, Thanks",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "melee"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "enemy",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The ratcrobat slides the target up to 3 squares, then can shift into any square the target left</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Melee"
+      ],
+      "usage": "Maneuver",
+      "distance": "Melee 1",
+      "target": "One enemy",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The ratcrobat slides the target up to 3 squares, then can shift into any square the target left."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Ready Rodent",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "An ally deals damage to the target.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The ratcrobat makes a free strike against the target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Melee",
+        "Weapon"
+      ],
+      "usage": "Triggered action",
+      "distance": "Melee 1",
+      "target": "One creature",
+      "trigger": "An ally deals damage to the target.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The ratcrobat makes a free strike against the target."
         }
-      }
+      ]
     },
     {
-      "name": "Rally the Rodents",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A Radenwight's turn starts.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">7</span> sonic damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Gymratstics",
+      "effects": [
+        {
+          "effect": "The ratcrobat gains an edge on strikes against larger creatures."
         }
-      }
-    },
-    {
-      "name": "Rat Race",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "A Radenwight's turn starts.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Trouser Cut",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 3,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1,
-          "secondary": null
-        },
-        "target": {
-          "type": "creature",
-          "value": 1,
-          "custom": ""
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage; push 3"
-            },
-            {
-              "tier": 2,
-              "display": "10 damage; push 3; taunted (EoT)"
-            },
-            {
-              "tier": 3,
-              "display": "13 damage; push 5; taunted (EoT)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>If the target is wearing clothing covering the lower half of their body, they must use a maneuver once to pull that clothing up before they can move.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "228",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

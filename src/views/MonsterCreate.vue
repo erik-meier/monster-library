@@ -11,6 +11,7 @@ import { useRouter } from 'vue-router'
 import MonsterFormLayout from '@/components/MonsterFormLayout.vue'
 import { useCustomMonstersStore, type CustomMonster } from '@/stores/customMonsters'
 import type { MonsterFormData } from '@/types/monster-forms'
+import { convertMonsterToSimplifiedFormat } from '@/utils/monsterFormatConverter'
 
 const router = useRouter()
 const customMonstersStore = useCustomMonstersStore()
@@ -24,15 +25,12 @@ const form = ref<MonsterFormData>({
   role: '',
   organization: '',
   keywords: [],
-  size: {
-    value: 1,
-    letter: 'M'
-  },
+  size: '1M',
   speed: 6,
   stamina: 10,
   stability: 0,
   freeStrike: 2,
-  movementTypes: ['walk'],
+  movementTypes: new Set(['walk']),
   characteristics: {
     might: 0,
     agility: 0,
@@ -60,13 +58,13 @@ onMounted(() => {
         role: template.role,
         organization: template.organization,
         keywords: template.keywords || [],
-        size: template.size || { value: 1, letter: 'M' },
+        size: template.size || '1M',
         speed: template.speed,
         stamina: template.stamina,
         stability: template.stability,
         freeStrike: template.freeStrike,
         characteristics: template.characteristics,
-        movementTypes: template.movementTypes || ['walk'],
+        movementTypes: template.movementTypes || new Set(['walk']),
         immunities: template.immunities || {},
         weaknesses: template.weaknesses || {},
         items: template.items || []
@@ -87,8 +85,11 @@ const updateForm = (newData: MonsterFormData) => {
 
 const handleSave = async (monsterData: MonsterFormData) => {
   try {
+    // Convert from old system format to new simplified format
+    const convertedMonsterData = convertMonsterToSimplifiedFormat(monsterData)
+
     // Create the monster using the store (convert form data to monster format)
-    const monsterId = customMonstersStore.createMonster(monsterData as Omit<CustomMonster, 'id' | 'isCustom' | 'createdAt' | 'updatedAt'>)
+    const monsterId = customMonstersStore.createMonster(convertedMonsterData as Omit<CustomMonster, 'id' | 'isCustom' | 'createdAt' | 'updatedAt'>)
 
     // Redirect to the new monster's view page
     router.push(`/monster/${monsterId}`)

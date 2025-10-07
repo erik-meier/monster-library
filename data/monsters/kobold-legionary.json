@@ -6,12 +6,10 @@
   "role": "Defender",
   "organization": "Horde",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Kobold"
   ],
-  "size": {
-    "value": 1,
-    "letter": "S"
-  },
+  "size": "1S",
   "speed": 5,
   "stamina": 20,
   "stability": 0,
@@ -30,215 +28,63 @@
   ],
   "items": [
     {
-      "name": "Shield? Shield!",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While adjacent to an ally who also has this trait, the legionary has stability 1, has cover, and grants cover to allies.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Maniple Tactics",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Set the Initiative",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two kobolds take their turns in a row.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Shield Wall",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
       "name": "Gladius",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 5
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "3 damage; taunted (EoT)",
+          "tier2": "4 damage; taunted (EoT)",
+          "tier3": "5 damage; taunted (EoT)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "3 damage; taunted (EoT)"
-            },
-            {
-              "tier": 2,
-              "display": "4 damage; taunted (EoT)"
-            },
-            {
-              "tier": 3,
-              "display": "5 damage; taunted (EoT)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "If the legionary is acting as a captain, they and each mem ber of their squad shift up to 2 squares before this ability is used.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> If the legionary is acting as a captain, they and each mem ber of their squad shift up to 2 squares before this ability is used."
+        {
+          "cost": "3 Malice",
+          "effect": "If the legionary is acting as a captain, they and each member of their squad shift up to 2 squares before this ability is used."
         }
-      }
+      ]
     },
     {
-      "name": "Shield Bash",
       "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "2 damage; <strong class=\"potency-value\">M&lt;0</strong> prone"
-            },
-            {
-              "tier": 2,
-              "display": "3 damage; <strong class=\"potency-value\">M&lt;1</strong> prone"
-            },
-            {
-              "tier": 3,
-              "display": "4 damage; <strong class=\"potency-value\">M&lt;2</strong> prone"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "name": "Shield Bash",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Maneuver",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "2 damage; push 1; <strong class=\"potency-value\">M&lt;0</strong> prone",
+          "tier2": "3 damage; push 1; <strong class=\"potency-value\">M&lt;1</strong> prone",
+          "tier3": "4 damage; push 1; <strong class=\"potency-value\">M&lt;2</strong> prone"
         }
-      }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Shield? Shield!",
+      "effects": [
+        {
+          "effect": "While adjacent to an ally who also has this trait, the legionary has stability 1, has cover, and grants cover to allies."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "192",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

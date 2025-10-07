@@ -1,0 +1,68 @@
+{
+  "id": "demolition",
+  "name": "Demolition",
+  "level": 6,
+  "ev": 0,
+  "role": "Artillery",
+  "organization": "",
+  "keywords": [
+    "Eyestalk",
+    "Horror",
+    "Overmind"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 30,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": -1,
+    "agility": 1,
+    "reason": 4,
+    "intuition": 1,
+    "presence": -1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "fly",
+    "hover"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Explosion",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "4 cube within 10",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "6 fire damage",
+          "tier2": "10 fire damage; <strong class=\"potency-value\">M&lt;3</strong> prone",
+          "tier3": "13 fire damage; <strong class=\"potency-value\">M&lt;4</strong> prone"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Psionic Barrier",
+      "effects": [
+        {
+          "effect": "The demolition eye has damage immunity 15. When they use a main action, they lose this immunity until the end of the round."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

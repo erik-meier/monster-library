@@ -21,7 +21,7 @@
     <!-- Core Stats Grid -->
     <div class="core-stats-grid">
       <div class="stat-values">
-        <div class="stat-value">{{ monster.size.value }}{{ monster.size.value > 1 ? '' : monster.size.letter }}</div>
+        <div class="stat-value">{{ monster.size }}</div>
         <div class="stat-value">{{ monster.speed }}</div>
         <div class="stat-value">{{ monster.stamina }}</div>
         <div class="stat-value">{{ monster.stability }}</div>

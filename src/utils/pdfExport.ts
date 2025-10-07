@@ -223,7 +223,7 @@ function generateStatBlockHTML(monster: Monster): string {
           font-size: 0.9rem;
           color: #262626;
         ">
-          <div>${monster.size?.value}${monster.size?.letter}</div>
+          <div>${monster.size}</div>
           <div>${monster.speed}</div>
           <div>${monster.stamina}</div>
           <div>${monster.stability}</div>
@@ -371,6 +371,72 @@ function generateStatBlockHTML(monster: Monster): string {
   `
 }
 
+// Helper functions to handle both old and new data structures
+function getPowerRoll(item: MonsterItem): string {
+  // Check for new format: effects array with roll field
+  if (item.effects) {
+    const rollEffect = item.effects.find(effect => effect.roll);
+    if (rollEffect) return rollEffect.roll || '';
+  }
+  // Check for old format
+  return item.system?.power?.roll?.formula || '';
+}
+
+function getResourceCost(item: MonsterItem): string {
+  // Check for new format: effects with cost field
+  if (item.effects) {
+    const costEffect = item.effects.find(effect => effect.cost);
+    if (costEffect) return costEffect.cost || '';
+  }
+  // Check for old format
+  return item.system?.resource ? `${item.system.resource} Malice` : '';
+}
+
+function getActionType(item: MonsterItem): string {
+  // Check for new format
+  if (item.usage) return item.usage;
+  if (item.ability_type?.includes('Villain Action')) return item.ability_type;
+  // Check for old format
+  if (item.system?.type && item.system.type !== 'none') {
+    return item.system.type.replace(/([A-Z])/g, ' $1').toLowerCase();
+  }
+  return '';
+}
+
+function getKeywords(item: MonsterItem): string[] {
+  return item.keywords || item.system?.keywords || [];
+}
+
+function getDistance(item: MonsterItem): string {
+  if (item.distance) return item.distance;
+  return formatActionDistance(item.system?.distance) || '';
+}
+
+function getTarget(item: MonsterItem, organization?: string): string {
+  if (item.target) return item.target;
+  return formatActionTargets(item.system?.target, organization) || '';
+}
+
+function isSignatureAbility(item: MonsterItem): boolean {
+  return item.ability_type?.includes('Signature') || item.system?.category === 'signature';
+}
+
+function getTiers(item: MonsterItem): Array<{tier: number, display: string}> {
+  // Check for new format: effects with tier fields
+  if (item.effects) {
+    const rollEffect = item.effects.find(effect => effect.tier1 || effect.tier2 || effect.tier3);
+    if (rollEffect) {
+      const tiers = [];
+      if (rollEffect.tier1) tiers.push({ tier: 1, display: rollEffect.tier1 });
+      if (rollEffect.tier2) tiers.push({ tier: 2, display: rollEffect.tier2 });
+      if (rollEffect.tier3) tiers.push({ tier: 3, display: rollEffect.tier3 });
+      return tiers;
+    }
+  }
+  // Check for old format
+  return item.system?.power?.tiers || [];
+}
+
 /**
  * Generate HTML for abilities section
  */
@@ -400,8 +466,8 @@ function generateAbilitiesHTML(items: MonsterItem[], organization?: string): str
             ">
               ${item.name}
               ${isFeature ? ' <span style="color: #f59e0b;">★</span>' : ''}
-              ${isSignature ? ' <span style="background: #8b4513; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 4px;">SIGNATURE</span>' : ''}
-              ${item.system?.resource ? ` <span style="color: #ef4444; font-weight: bold; margin-left: 4px;">${item.system.resource} Malice</span>` : ''}
+              ${isSignatureAbility(item) ? ' <span style="background: #8b4513; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 4px;">SIGNATURE</span>' : ''}
+              ${getResourceCost(item) ? ` <span style="color: #ef4444; font-weight: bold; margin-left: 4px;">${getResourceCost(item)}</span>` : ''}
             </h4>
             <div style="
               display: flex;
@@ -410,18 +476,18 @@ function generateAbilitiesHTML(items: MonsterItem[], organization?: string): str
               font-size: 0.9rem;
               color: #737373;
             ">
-              ${item.system?.power?.roll?.formula ? `<span style="font-weight: bold;">${item.system.power.roll.formula}</span>` : ''}
-              ${item.system?.type && item.system.type !== 'none' ? `<span>${item.system.type.replace(/([A-Z])/g, ' $1').toLowerCase()}</span>` : ''}
+              ${getPowerRoll(item) ? `<span style="font-weight: bold;">${getPowerRoll(item)}</span>` : ''}
+              ${getActionType(item) ? `<span>${getActionType(item)}</span>` : ''}
             </div>
           </div>
           
-          ${item.system?.keywords && item.system.keywords.length > 0 ? `
+          ${getKeywords(item).length > 0 ? `
             <div style="
               font-size: 0.8rem;
               color: #737373;
               font-style: italic;
               margin-bottom: 4px;
-            ">${item.system.keywords.join(', ')}</div>
+            ">${getKeywords(item).join(', ')}</div>
           ` : ''}
           
           <div style="
@@ -431,8 +497,8 @@ function generateAbilitiesHTML(items: MonsterItem[], organization?: string): str
             color: #737373;
             margin-bottom: 8px;
           ">
-            ${formatActionDistance(item.system?.distance) ? `<span><strong>Range:</strong> ${formatActionDistance(item.system?.distance)}</span>` : ''}
-            ${formatActionTargets(item.system?.target, organization) ? `<span><strong>Target:</strong> ${formatActionTargets(item.system?.target, organization)}</span>` : ''}
+            ${getDistance(item) ? `<span><strong>Range:</strong> ${getDistance(item)}</span>` : ''}
+            ${getTarget(item, organization) ? `<span><strong>Target:</strong> ${getTarget(item, organization)}</span>` : ''}
           </div>
         </div>
 
@@ -445,7 +511,7 @@ function generateAbilitiesHTML(items: MonsterItem[], organization?: string): str
             padding: 12px;
             margin: 8px 0;
           ">
-            ${item.system?.power?.tiers?.map(tier => `
+            ${getTiers(item).map(tier => `
               <div style="
                 display: flex;
                 align-items: flex-start;

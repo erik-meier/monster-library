@@ -3,24 +3,20 @@
 /**
  * Process Monster Data Script
  * 
- * Consolidated script that:
- * 1. Converts raw Foundry VTT monster files to simplified format
- * 2. Processes Foundry text directives into HTML
- * 3. Applies consistent formatting rules
+ * Processes simplified statblock format from monsters-original directory:
+ * 1. Recursively scans for JSON files with type "statblock"
+ * 2. Generates standardized IDs and processes the data
+ * 3. Saves processed files to data/monsters/<id>.json
  * 4. Creates the monster index for the application
- * 
- * This replaces the previous multi-step pipeline of:
- * - simplify-monster-data.js
- * - format-monster-data.js  
- * - create-monster-index.js
  */
 
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { execSync } from 'child_process'
-import { processMonsterText } from './text-processors.js'
-import { standardizeName, generateId, cleanDamageValues } from './data-processing-utils.js'
+import { standardizeName, generateId } from './data-processing-utils.js'
+import { processPotencyPatterns } from './text-processors.js'
+import { MONSTER_ROLES, MONSTER_ORGANIZATIONS } from '../src/types/monster-forms.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -85,7 +81,7 @@ function generateUniqueId(name) {
 }
 
 /**
- * Walk through directory structure to find all monster JSON files
+ * Walk through directory structure to find all JSON files with type "statblock"
  */
 function walkDirectory(dir) {
   const items = fs.readdirSync(dir)
@@ -97,109 +93,99 @@ function walkDirectory(dir) {
     if (stat.isDirectory()) {
       walkDirectory(itemPath)
     } else if (item.endsWith('.json')) {
-      processMonsterFile(itemPath)
+      processStatblockFile(itemPath)
     }
   }
 }
 
-
-
 /**
- * Process individual monster file
+ * Process individual statblock file
  */
-function processMonsterFile(filePath) {
+function processStatblockFile(filePath) {
   try {
     const rawData = JSON.parse(fs.readFileSync(filePath, 'utf8'))
+
+    // Only process files with type "statblock"
+    if (rawData.type !== 'statblock') {
+      return
+    }
 
     // Standardize name and generate unique ID
     const standardizedName = standardizeName(rawData.name)
     const monsterId = generateUniqueId(standardizedName)
 
-    // Extract and format core data
+    // Process ancestry into keywords
+    const keywords = [...(rawData.ancestry || [])].sort()
+
+    // Parse roles based on known roles and organizations
+    const roles = rawData.roles[0].split(' ')
+    let primaryRole = ''
+    let secondaryRole = ''
+    for (const role of roles) {
+      if (MONSTER_ROLES.includes(role)) {
+        primaryRole = role
+      }
+      else if (MONSTER_ORGANIZATIONS.includes(role)) {
+        secondaryRole = role
+      }
+    }
+
+    // Extract and format core data for the simplified format
     const monster = {
       // Basic info
       id: monsterId,
       name: standardizedName,
 
       // Core stats
-      level: rawData.system.monster.level,
-      ev: rawData.system.monster.ev,
-      role: rawData.system.monster.role?.charAt(0).toUpperCase() + (rawData.system.monster.role?.slice(1).toLowerCase() || ''),
-      organization: rawData.system.monster.organization?.charAt(0).toUpperCase() + (rawData.system.monster.organization?.slice(1).toLowerCase() || ''),
-      keywords: (rawData.system.monster.keywords || []).sort(), // Sort keywords alphabetically
+      level: rawData.level || 1,
+      ev: parseInt(rawData.ev) || 0,
+      role: primaryRole,
+      organization: secondaryRole,
+      keywords: keywords,
 
       // Combat stats
-      size: {
-        value: rawData.system.combat.size.value,
-        letter: rawData.system.combat.size.letter?.toUpperCase() || rawData.system.combat.size.letter
-      },
-      speed: rawData.system.movement.value,
-      stamina: rawData.system.stamina.max,
-      stability: rawData.system.combat.stability,
-      freeStrike: rawData.system.monster.freeStrike,
+      size: rawData.size || '',
+      speed: rawData.speed || 0,
+      stamina: parseInt(rawData.stamina) || 0,
+      stability: rawData.stability || 0,
+      freeStrike: rawData.free_strike || 0,
 
       // Characteristics
       characteristics: {
-        might: rawData.system.characteristics.might.value,
-        agility: rawData.system.characteristics.agility.value,
-        reason: rawData.system.characteristics.reason.value,
-        intuition: rawData.system.characteristics.intuition.value,
-        presence: rawData.system.characteristics.presence.value
+        might: rawData.might || 0,
+        agility: rawData.agility || 0,
+        reason: rawData.reason || 0,
+        intuition: rawData.intuition || 0,
+        presence: rawData.presence || 0
       },
 
-      // Damage/Defense (cleaned of zero values)
-      immunities: cleanDamageValues(rawData.system.damage.immunities || {}),
-      weaknesses: cleanDamageValues(rawData.system.damage.weaknesses || {}),
-      movementTypes: rawData.system.movement.types || [],
+      // Process immunities (convert array format to object)
+      immunities: processImmunitiesWeaknesses(rawData.immunities || []),
+      weaknesses: processImmunitiesWeaknesses(rawData.weaknesses || []),
 
-      // Actions/Abilities
-      items: rawData.items.map(item => ({
-        name: item.name,
-        type: item.type,
-        system: {
-          category: item.system?.category,
-          type: item.system?.type,
-          resource: item.system?.resource,
-          keywords: item.system?.keywords || [],
-          distance: item.system?.distance,
-          target: item.system?.target,
-          trigger: item.system?.trigger,
-          power: item.system?.power ? {
-            roll: item.system.power.roll,
-            effects: item.system.power.effects,
-            tiers: item.system.power.tiers // Include tiers if they exist
-          } : null,
-          description: item.system?.description,
-          effect: item.system?.effect,
-          spend: item.system?.spend
-        }
-      })),
+      // Parse movement types from movement string
+      movementTypes: (rawData.movement || 'walk').split(',').map(m => m.trim().toLowerCase()).filter(m => m),
 
-      // Source info
-      source: rawData.system.source ? {
-        book: rawData.system.source.book,
-        page: rawData.system.source.page,
-        license: rawData.system.source.license
-      } : null
+      // Directly copy features into items
+      items: (rawData.features || []).map(feature => processFeature(feature)),
+
+      // Source info (not in simplified format, so we'll add a default)
+      source: {
+        book: "Monsters",
+        page: "",
+        license: "Draw Steel Creator License"
+      }
     }
-
-    // Clear role if it's the same as organization (duplicate)
-    if (monster.role === monster.organization) {
-      monster.role = ''
-    }
-
-    // Process Foundry VTT text directives
-    const processedMonster = processMonsterText(monster)
 
     // Save processed monster
     const outputFilePath = path.join(OUTPUT_MONSTERS_DIR, `${monsterId}.json`)
-    fs.writeFileSync(outputFilePath, JSON.stringify(processedMonster, null, 2))
+    fs.writeFileSync(outputFilePath, JSON.stringify(monster, null, 2))
 
     // Update index
-    monsterIndex.name[monsterId] = processedMonster.name
+    monsterIndex.name[monsterId] = monster.name
 
     // Keyword index
-    processedMonster.keywords.forEach(keyword => {
+    monster.keywords.forEach(keyword => {
       const keywordLower = keyword.toLowerCase()
       if (!monsterIndex.keyword[keywordLower]) {
         monsterIndex.keyword[keywordLower] = []
@@ -208,13 +194,13 @@ function processMonsterFile(filePath) {
     })
 
     // EV index
-    if (!monsterIndex.ev[processedMonster.ev]) {
-      monsterIndex.ev[processedMonster.ev] = []
+    if (!monsterIndex.ev[monster.ev]) {
+      monsterIndex.ev[monster.ev] = []
     }
-    monsterIndex.ev[processedMonster.ev].push(monsterId)
+    monsterIndex.ev[monster.ev].push(monsterId)
 
     // Role index  
-    const role = processedMonster.role?.toLowerCase() || processedMonster.organization?.toLowerCase() || 'unknown'
+    const role = monster.role?.toLowerCase() || 'unknown'
     if (!monsterIndex.role[role]) {
       monsterIndex.role[role] = []
     }
@@ -222,12 +208,12 @@ function processMonsterFile(filePath) {
 
     // Card data for list view
     monsterIndex.card[monsterId] = {
-      name: processedMonster.name,
-      level: processedMonster.level,
-      ev: processedMonster.ev,
-      role: processedMonster.role,
-      organization: processedMonster.organization,
-      keywords: processedMonster.keywords
+      name: monster.name,
+      level: monster.level,
+      ev: monster.ev,
+      role: monster.role,
+      organization: monster.organization,
+      keywords: monster.keywords
     }
 
     processedCount++
@@ -239,6 +225,75 @@ function processMonsterFile(filePath) {
     console.error(`❌ Failed to process ${filePath}:`, error.message)
     errorCount++
   }
+}
+
+/**
+ * Convert immunities/weaknesses array format to object format
+ * Example: ["Poison 2", "Fire"] -> { poison: 2, fire: 0 }
+ */
+function processImmunitiesWeaknesses(array) {
+  const result = {}
+
+  if (!Array.isArray(array)) return result
+
+  array.forEach(item => {
+    if (typeof item === 'string') {
+      const match = item.match(/^(.+?)\s*(\d+)?$/)
+      if (match) {
+        const type = match[1].toLowerCase()
+        const value = match[2] ? parseInt(match[2]) : 0
+        result[type] = value
+      }
+    }
+  })
+
+  return result
+}
+
+/**
+ * Process a feature from simplified format to items format
+ */
+function processFeature(feature) {
+  delete feature.icon
+
+  if (feature.feature_type === 'trait') {
+    feature.type = 'feature'
+  }
+  else if (feature.feature_type === 'ability') {
+    feature.type = 'ability'
+  }
+  else {
+    feature.type = feature.feature_type
+  }
+  delete feature.feature_type
+
+  // Process effects array
+  if (feature.effects && feature.effects.length > 0) {
+    for (const effect of feature.effects) {
+      // Fix power roll formula
+      if (effect.roll) {
+        effect.roll = effect.roll.replace(/Power\s+Roll/g, '2d10')
+      }
+
+      // Process effect text for potency patterns
+      if (effect.effect) {
+        effect.effect = processPotencyPatterns(effect.effect)
+      }
+
+      // Process tier descriptions for potency patterns
+      if (effect.tier1) {
+        effect.tier1 = processPotencyPatterns(effect.tier1)
+      }
+      if (effect.tier2) {
+        effect.tier2 = processPotencyPatterns(effect.tier2)
+      }
+      if (effect.tier3) {
+        effect.tier3 = processPotencyPatterns(effect.tier3)
+      }
+    }
+  }
+
+  return feature
 }
 
 // Check if source directory exists
@@ -285,4 +340,10 @@ if (errorCount > 0) {
   process.exit(1)
 }
 
-export { processMonsterFile, walkDirectory, standardizeName, generateId, cleanDamageValues }
+export {
+  processStatblockFile,
+  walkDirectory,
+  generateUniqueId,
+  processImmunitiesWeaknesses,
+  processFeature
+}

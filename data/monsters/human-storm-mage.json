@@ -6,12 +6,10 @@
   "role": "Controller",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Human",
+    "Humanoid"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 40,
   "stability": 0,
@@ -33,250 +31,76 @@
   ],
   "items": [
     {
-      "name": "Supernatural Insight",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The storm mage ignores concealment if it’s granted by a supernatural effect.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Arcane Shield",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any melee ability targeting the storm mage takes a bane. Additionally, whenever the mage takes damage from an adjacent enemy, the enemy takes 2 lightning damage, and if they have <strong class=\"potency-value\">R&lt;1</strong> they are pushed up to 2 squares.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Lightning Bolt",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 15,
-          "secondary": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 15",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 lightning damage",
+          "tier2": "10 lightning damage",
+          "tier3": "13 lightning damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 lightning damage"
-            },
-            {
-              "tier": 2,
-              "display": "10 lightning damage"
-            },
-            {
-              "tier": 3,
-              "display": "13 lightning damage"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "The ability loses the Ranged and Strike keywords, takes the  Area keyword, and is a 10 × 1 line within 15 that targets each enemy  and object in the area.",
-          "value": 5,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">5 Malice:</strong> The ability loses the Ranged and Strike keywords, takes the  Area keyword, and is a 10 × 1 line within 15 that targets each enemy  and object in the area."
+        {
+          "cost": "5 Malice",
+          "effect": "The ability loses the Ranged and Strike keywords, takes the Area keyword, and is a 10 x 1 line within 15 that targets each enemy and object in the area."
         }
-      }
+      ]
     },
     {
-      "name": "Alchemical Device",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 3,
-          "secondary": 10
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 corruption damage; <strong class=\"potency-value\">X&lt;0</strong>, slowed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "6 corruption damage; <strong class=\"potency-value\">X&lt;1</strong>, slowed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 corruption damage; <strong class=\"potency-value\">X&lt;2</strong>, restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p> <p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Exploit Opening",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A human's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Staying Power",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "a human's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
       "name": "Gust of Wind",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 5,
-          "secondary": 1
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Maneuver",
+      "distance": "5 cube within 1",
+      "target": "Each enemy and object in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "Slide 2; <strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)",
+          "tier2": "Slide 4; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)",
+          "tier3": "Slide 6; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "<strong class=\"potency-value\">M&lt;0</strong> slowed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "<strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "<strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The gust of wind disperses gas or vapor and extinguishes any flames, including supernatural effects.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The gust of wind disperses gas or vapor and extinguishes any flames, including supernatural effects."
         }
-      }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Arcane Shield",
+      "effects": [
+        {
+          "effect": "Any melee ability targeting the storm mage takes a bane.\n\nAdditionally, whenever the mage takes damage from an adjacent enemy, the enemy takes 2 lightning damage, and if they have <strong class=\"potency-value\">R&lt;1</strong> they are pushed up to 2 squares."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Supernatural Insight",
+      "effects": [
+        {
+          "effect": "The storm mage ignores concealment if it's granted by a supernatural effect."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "183",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

@@ -3,15 +3,14 @@
   "name": "Soulraker Soldier",
   "level": 7,
   "ev": 9,
-  "role": "",
+  "role": "Brute",
   "organization": "Minion",
   "keywords": [
-    "abyssal"
+    "Abyssal",
+    "Demon",
+    "Soulraker"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 6,
   "stamina": 13,
   "stability": 2,
@@ -32,133 +31,39 @@
   ],
   "items": [
     {
-      "name": "Abyssal Buzzing",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any enemy who starts their turn with two or more soulraker minions adjacent to them takes 3 sonic damage.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Chitin Bash",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 damage; push 2"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage; push 2"
-            },
-            {
-              "tier": 3,
-              "display": "8 damage; push 4"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "4 damage; push 2",
+          "tier2": "7 damage; push 2",
+          "tier3": "8 damage; push 4"
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The demon activates a Malice feature available to demons of level 6 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p><p><span class=\"reference-text\">Abyssal Jaunt</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Abyssal Buzzing",
+      "effects": [
+        {
+          "effect": "Any enemy who starts their turn with two or more soulraker minions adjacent to them takes 3 sonic damage."
         }
-      }
-    },
-    {
-      "name": "Seeping Blight",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One demon acting this turn expels blight—digested soul juice— onto the ground around them in a 3 burst that lingers until the start of their next turn. Any enemy who enters the area or starts their turn there takes <span class=\"damage-value damage-generic\">6</span> corruption damage, and has a double bane on power rolls until the start of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "69",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

@@ -6,12 +6,9 @@
   "role": "Mount",
   "organization": "Elite",
   "keywords": [
-    "animal"
+    "Animal"
   ],
-  "size": {
-    "value": 3,
-    "letter": "M"
-  },
+  "size": "3",
   "speed": 6,
   "stamina": 80,
   "stability": 3,
@@ -30,152 +27,81 @@
   ],
   "items": [
     {
-      "name": "Beast of Burden",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While riding the animal, two size 1 allies can occupy the same space.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Nature's Spirit",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While outdoors or in a natural environment, the animal can negate a bane on their abilities or turn a double bane into a bane.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Natural Weapon",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 2
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage"
-            },
-            {
-              "tier": 2,
-              "display": "10 damage; push 1"
-            },
-            {
-              "tier": 3,
-              "display": "13 damage; push 2"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 damage",
+          "tier2": "10 damage; push 1",
+          "tier3": "13 damage; push 2"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Trundle",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The animal moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The animal moves up to their speed. They can make a free strike against each creature who makes an opportunity attack against them during this movement."
         }
-      }
+      ]
     },
     {
-      "name": "Animal Rally",
       "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "ranged",
-          "primary": 20
-        },
-        "target": {
-          "type": "ally",
-          "value": 1
-        },
-        "trigger": "The target is knocked prone.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The animal moves up to their speed. If they end their turn adjacent to the target, they can use the Stand Up maneuver to let the target stand, then get on to ride them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "name": "Animal Rally",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 20",
+      "target": "One ally",
+      "trigger": "The target is knocked prone.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The animal moves up to their speed. If they end their turn adjacent to the target, they can use the Stand Up maneuver to let the target stand, then get on to ride them."
         }
-      }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Beast of Burden",
+      "effects": [
+        {
+          "effect": "While riding the animal, two size 1 allies can occupy the same space."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Nature's Spirit",
+      "effects": [
+        {
+          "effect": "While outdoors or in a natural environment, the animal can negate a bane on their abilities or turn a double bane into a bane."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "42",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

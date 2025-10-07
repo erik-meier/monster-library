@@ -9,10 +9,7 @@
     "example",
     "test"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 6,
   "stamina": 10,
   "stability": 2,

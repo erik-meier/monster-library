@@ -1,0 +1,93 @@
+{
+  "id": "shadow-elf-duskcaller",
+  "name": "Shadow Elf Duskcaller",
+  "level": 5,
+  "ev": 14,
+  "role": "Controller",
+  "organization": "Platoon",
+  "keywords": [
+    "Fey",
+    "Humanoid",
+    "Shadow Elf"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 60,
+  "stability": 0,
+  "freeStrike": 6,
+  "characteristics": {
+    "might": 0,
+    "agility": 3,
+    "reason": 3,
+    "intuition": 2,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "climb"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Night Knife",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "9 damage",
+          "tier2": "13 damage",
+          "tier3": "16 damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "If the duskcaller has concealment, they can target one additional creature or object."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "The Lay of Cor'thoroth",
+      "keywords": [
+        "Area",
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "2 cube within 3",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Until the start of the duskcaller's next turn, the area is filled with darkness."
+        },
+        {
+          "cost": "2 Malice",
+          "effect": "The size of the cube increases by 3."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Of the Umbra",
+      "effects": [
+        {
+          "effect": "The duskcaller ignores concealment created by darkness. While the duskcaller is in direct sunlight, they have damage weakness 3. While the duskcaller has concealment, they have damage immunity 3."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

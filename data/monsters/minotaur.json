@@ -6,13 +6,11 @@
   "role": "Harrier",
   "organization": "Elite",
   "keywords": [
-    "accursed",
-    "humanoid"
+    "Accursed",
+    "Humanoid",
+    "Minotaur"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 8,
   "stamina": 100,
   "stability": 2,
@@ -31,291 +29,104 @@
   ],
   "items": [
     {
-      "name": "Minotaur Sense",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The minotaur can't obtain less than a tier 2 outcome when making tests to navigate, search, or seek.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Flail and Blade",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "charge",
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 2
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Charge",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 damage; push 1",
+          "tier2": "11 damage; push 2",
+          "tier3": "14 damage; push 3"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage; push 1"
-            },
-            {
-              "tier": 2,
-              "display": "11 damage; push 2"
-            },
-            {
-              "tier": 3,
-              "display": "14 damage; push 3"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The minotaur shifts up to 3 squares</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The minotaur shifts up to 3 squares."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Primal Bay",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of their next turn, the minotaur has damage immunity 2 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage with strikes. On their next turn, the minotaur can use one additional maneuver.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "3 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Main action",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Until the end of their next turn, the minotaur has damage immunity 2 and deals an extra 5 damage with strikes. On their next turn, the minotaur can use one additional maneuver."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Goring Horns",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 5,
-        "keywords": [
-          "charge",
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "cost": "5 Malice",
+      "keywords": [
+        "Charge",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Maneuver",
+      "distance": "Melee 2",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage; <strong class=\"potency-value\">I&lt;0</strong> dazed (save ends)",
+          "tier2": "8 damage; <strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)",
+          "tier3": "9 damage; <strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage; <strong class=\"potency-value\">I&lt;0</strong> dazed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "8 damage; <strong class=\"potency-value\">I&lt;1</strong> dazed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 damage; <strong class=\"potency-value\">I&lt;2</strong> dazed (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>If this ability is used as part of the Charge main action, its potency increases by 1.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "If this ability is used as part of the Charge main action, its potency increases by 1."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Retaliatory Strike",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 8
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "A creature within distance deals damage to the minotaur.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The minotaur uses the Charge main action and either Flail and Blade or Goring Horns against the target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 8",
+      "target": "The triggering creature",
+      "trigger": "A creature within distance deals damage to the minotaur.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The minotaur uses the Charge main action and either Flail and Blade or Goring Horns against the target."
         }
-      }
+      ]
     },
     {
-      "name": "Bull Rush",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "special",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A minotaur starts its turn.",
-        "power": {
-          "roll": {
-            "formula": "",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>For each 3 Malice spent, one minotaur acting this turn gains a +4 bonus to speed and ignores difficult terrain until the start of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Minotaur Sense",
+      "effects": [
+        {
+          "effect": "The minotaur can't obtain less than a tier 2 outcome when making tests to navigate, search, or seek."
         }
-      }
-    },
-    {
-      "name": "Cut the … Nonsense!",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "special",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A minotaur starts its turn.",
-        "power": {
-          "roll": {
-            "formula": "",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One minotaur acting this turn halves any damage they take, and can use the Knockback maneuver as a free triggered action whenever an enemy comes adjacent to them, all until the start of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Bullseye",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "special",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A minotaur starts its turn.",
-        "power": {
-          "roll": {
-            "formula": "",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>All minotaurs in the encounter fill the area around them with psychic impressions of feeling lost and isolated. Each enemy within 5 squares of a minotaur is teleported up to 5 squares and makes an <span style=\"text-decoration:underline\"><strong>Intuition test</strong></span>.</p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>The target has line of effect only within 3 squares and is frightened of all minotaurs (save ends).</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The target has line of effect only within 3 squares (EoT).</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "207",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

@@ -6,12 +6,10 @@
   "role": "Hexer",
   "organization": "Horde",
   "keywords": [
-    "humanoid"
+    "Goblin",
+    "Humanoid"
   ],
-  "size": {
-    "value": 1,
-    "letter": "S"
-  },
+  "size": "1S",
   "speed": 5,
   "stamina": 10,
   "stability": 0,
@@ -26,221 +24,64 @@
   "immunities": {},
   "weaknesses": {},
   "movementTypes": [
-    "walk",
     "climb"
   ],
   "items": [
     {
-      "name": "Crafty",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The cursespitter doesn’t provoke opportunity attacks by moving.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Eye of Surlach",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 15
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "intuition"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "3 corruption damage; <strong class=\"potency-value\">I&lt;0</strong> weakened (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "4 corruption damage; <strong class=\"potency-value\">I&lt;1</strong> weakened (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "5 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> weakened (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 15",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "3 corruption damage; <strong class=\"potency-value\">I&lt;0</strong> weakened (save ends)",
+          "tier2": "4 corruption damage; <strong class=\"potency-value\">I&lt;1</strong> weakened (save ends)",
+          "tier3": "5 corruption damage; <strong class=\"potency-value\">I&lt;2</strong> weakened (save ends)"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Dizzying Hex",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 1,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "intuition"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "<strong class=\"potency-value\">I&lt;0</strong> prone"
-            },
-            {
-              "tier": 2,
-              "display": "<strong class=\"potency-value\">I&lt;1</strong> prone and can't stand (EoT)"
-            },
-            {
-              "tier": 3,
-              "display": "prone, <strong class=\"potency-value\">I&lt;2</strong> can't stand (Save Ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "<strong class=\"potency-value\">I&lt;0</strong> prone",
+          "tier2": "<strong class=\"potency-value\">I&lt;1</strong> prone and can't stand (EoT)",
+          "tier3": "Prone; <strong class=\"potency-value\">I&lt;2</strong> can't stand (save ends)"
         }
-      }
+      ]
     },
     {
-      "name": "Goblin Mode",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A goblin starts its turn.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each goblin in the encounter gains a +2 bonus to speed until the end of the round.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Crafty",
+      "effects": [
+        {
+          "effect": "The cursespitter doesn't provoke opportunity attacks by moving."
         }
-      }
-    },
-    {
-      "name": "Swamp Stink",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A goblin starts its turn.",
-        "power": {
-          "roll": {
-            "formula": "",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The encounter map is covered in a green mist that lasts until the end of the round, and which can’t be dispersed by wind. All areas of the map are difficult terrain for non-goblins, and each non-goblin on the map makes a <span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Might test.</span></strong></span></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> poison damage; the creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>The creature is weakened until the mist disappears</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>No Effect</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Tiny Stabs",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A goblin starts its turn.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each enemy in the encounter takes 1 damage for each goblin adjacent to them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "162",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

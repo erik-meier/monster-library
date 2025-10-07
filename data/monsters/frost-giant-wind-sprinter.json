@@ -1,0 +1,132 @@
+{
+  "id": "frost-giant-wind-sprinter",
+  "name": "Frost Giant Wind Sprinter",
+  "level": 8,
+  "ev": 40,
+  "role": "Harrier",
+  "organization": "Elite",
+  "keywords": [
+    "Frost Giant",
+    "Giant"
+  ],
+  "size": "4",
+  "speed": 10,
+  "stamina": 200,
+  "stability": 5,
+  "freeStrike": 8,
+  "characteristics": {
+    "might": 4,
+    "agility": 4,
+    "reason": -1,
+    "intuition": 0,
+    "presence": 0
+  },
+  "immunities": {
+    "cold": 8
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Cold Axe",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Charge",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 3",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "12 damage",
+          "tier2": "17 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding (save ends)",
+          "tier3": "21 damage; <strong class=\"potency-value\">A&lt;4</strong> bleeding (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "A target who is already bleeding takes an extra 1d6 cold damage."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Blizzard Surge",
+      "cost": "5 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Main action",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The wind sprinter shifts up to their speed and uses Cold Axe against each enemy who comes within 2 squares of them during the move. The wind sprinter makes one power roll against all targets."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Ice Dance",
+      "keywords": [
+        "Melee"
+      ],
+      "usage": "Maneuver",
+      "distance": "Melee 1",
+      "target": "One giant ally",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The wind sprinter and the target each shift up to 6 squares while staying adjacent to each other. The target can then jump up to 5 squares and make a free strike."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Begone, Smallfolk!",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "The wind sprinter takes damage.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The wind sprinter moves up to their speed and uses Cold Axe against one target."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Crush Underfoot",
+      "effects": [
+        {
+          "effect": "The wind sprinter can move through enemies' spaces at their usual speed. The first time on a turn that a wind sprinter enters a creature's space, that creature can choose to fall prone or to take 8 damage."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Kingdom of Isolation",
+      "effects": [
+        {
+          "effect": "The wind sprinter is surrounded by a snowstorm. Any enemy who starts their turn within 2 squares of the wind sprinter can't shift."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

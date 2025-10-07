@@ -1,0 +1,149 @@
+{
+  "id": "basalt-stone-giant",
+  "name": "Basalt Stone Giant",
+  "level": 8,
+  "ev": 40,
+  "role": "Controller",
+  "organization": "Elite",
+  "keywords": [
+    "Giant",
+    "Stone Giant"
+  ],
+  "size": "4",
+  "speed": 7,
+  "stamina": 207,
+  "stability": 10,
+  "freeStrike": 8,
+  "characteristics": {
+    "might": 4,
+    "agility": 2,
+    "reason": 1,
+    "intuition": 2,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "burrow"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Rune-Signed Blade",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 3",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)",
+          "tier2": "17 damage; <strong class=\"potency-value\">M&lt;3</strong> slowed (save ends)",
+          "tier3": "21 damage; <strong class=\"potency-value\">M&lt;4</strong> slowed (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "If a target was already slowed, that condition continues but their speed is 0 until the end of their next turn."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Forked Knife",
+      "cost": "3 Malice",
+      "keywords": [
+        "Melee",
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 3 or ranged 12",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "10 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)",
+          "tier2": "16 damage; <strong class=\"potency-value\">A&lt;3</strong> restrained (save ends)",
+          "tier3": "20 damage; prone; <strong class=\"potency-value\">A&lt;4</strong> restrained (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "The knife lands in the target's square, and has 30 Stamina and damage immunity 5. Whenever the knife takes damage, it deals 4 sonic damage to each enemy within 3 squares. The knife lasts until the end of the encounter, and can't be picked up or manipulated."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Cobblestone Shape",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The basalt stone giant moves up to their speed. Each square that they leave during this move is difficult terrain for enemies. Giants ignore this difficult terrain."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Resonate Rune",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Triggered action",
+      "distance": "2 burst",
+      "target": "Each enemy in the area",
+      "trigger": "The basalt stone giant takes damage.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target is pushed up to 3 squares, or if they have <strong class=\"potency-value\">A&lt;3</strong>, they are pushed up to 6 squares and knocked prone."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Stonebreaker Flesh",
+      "effects": [
+        {
+          "effect": "Whenever an enemy obtains a tier 1 outcome on a melee ability used against the basalt stone giant, they take a bane on that ability until the end of the encounter."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Stone Steps",
+      "effects": [
+        {
+          "effect": "The basalt stone giant ignores difficult terrain."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Stone Swim",
+      "effects": [
+        {
+          "effect": "The basalt stone giant can burrow through stone, but can't drag other creatures underground when they do so."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

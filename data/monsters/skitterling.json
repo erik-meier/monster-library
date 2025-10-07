@@ -6,12 +6,10 @@
   "role": "Hexer",
   "organization": "Minion",
   "keywords": [
-    "animal"
+    "Animal",
+    "Goblin"
   ],
-  "size": {
-    "value": 1,
-    "letter": "T"
-  },
+  "size": "1T",
   "speed": 5,
   "stamina": 3,
   "stability": 0,
@@ -30,62 +28,34 @@
   ],
   "items": [
     {
-      "name": "Claws",
       "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1,
-          "secondary": null,
-          "tertiary": null
+      "name": "Claws",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "1 poison damage",
+          "tier2": "2 poison damage",
+          "tier3": "3 poison damage"
         },
-        "target": {
-          "type": "creature",
-          "value": 1,
-          "custom": "One creature per minion"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "1 poison damage"
-            },
-            {
-              "tier": 2,
-              "display": "2 poison damage"
-            },
-            {
-              "tier": 3,
-              "display": "3 poison damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The target takes a bane on their next strike.</p>"
-        },
-        "spend": {
-          "value": null,
-          "text": ""
+        {
+          "name": "Effect",
+          "effect": "The target takes a bane on their next strike."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "160",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

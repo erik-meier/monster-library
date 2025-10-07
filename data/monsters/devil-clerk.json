@@ -1,0 +1,72 @@
+{
+  "id": "devil-clerk",
+  "name": "Devil Clerk",
+  "level": 5,
+  "ev": 7,
+  "role": "Brute",
+  "organization": "Minion",
+  "keywords": [
+    "Devil",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 6,
+  "stamina": 10,
+  "stability": 0,
+  "freeStrike": 3,
+  "characteristics": {
+    "might": 3,
+    "agility": 0,
+    "reason": 1,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {
+    "fire": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Quill Pushing",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 damage; push 1",
+          "tier2": "6 damage; push 2",
+          "tier3": "7 damage; push 3"
+        },
+        {
+          "name": "Effect",
+          "effect": "Any target adjacent to two or more clerks is taunted until the end of their next turn."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "True Name",
+      "effects": [
+        {
+          "effect": "If a creature within 10 squares speaks the clerk's true name, the clerk loses their fire immunity and any nondamaging effects of their signature ability until the end of the encounter."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

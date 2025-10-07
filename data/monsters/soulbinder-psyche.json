@@ -6,13 +6,11 @@
   "role": "Hexer",
   "organization": "Elite",
   "keywords": [
-    "humanoid",
-    "soulless"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 220,
   "stability": 1,
@@ -27,358 +25,149 @@
   "immunities": {},
   "weaknesses": {},
   "movementTypes": [
-    "fly"
+    "fly",
+    "hover"
   ],
   "items": [
     {
-      "name": "Immortal Soul",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When Psyche is reduced to 0 Stamina, her spirit surrounds the nearest war dog, who has damage immunity 2, deals an extra <span class=\"damage-value damage-generic\">5</span> damage on strikes, and can use the following Immortal Flare maneuver until the end of the encounter. That war dog also gains the Immortal Soul trait, and transfers this effect to the nearest war dog when they die.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Soulbind",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "15 holy damage; <strong class=\"potency-value\">R&lt;3</strong> the target is soulbound (save ends)",
+          "tier2": "20 holy damage; <strong class=\"potency-value\">R&lt;4</strong> the target is soulbound (save ends)",
+          "tier3": "24 holy damage; <strong class=\"potency-value\">R&lt;5</strong> the target is soulbound (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "15 holy damage; <strong class=\"potency-value\">R&lt;3</strong> the target is soulbound (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "20 holy damage; <strong class=\"potency-value\">R&lt;4</strong> the target is soulbound (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "24 holy damage; <strong class=\"potency-value\">R&lt;5</strong> the target is soulbound (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A soulbound creature can't benefit from edges or double edges, and can't gain or use surges.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A soulbound creature can't benefit from edges or double edges, and can't gain or use surges."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Soulstorm",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 2,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 3,
-          "secondary": 10
+      "cost": "2 Malice",
+      "keywords": [
+        "Area",
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "3 cube within 10",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "8 corruption damage; <strong class=\"potency-value\">P&lt;3</strong> weakened (EoT)",
+          "tier2": "12 corruption damage; <strong class=\"potency-value\">P&lt;4</strong> weakened (EoT)",
+          "tier3": "15 corruption damage; <strong class=\"potency-value\">P&lt;5</strong> weakened (EoT)"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The area is difficult terrain until the start of Psyche's next turn At the start of each of her turns, Psyche can use a maneuver to maintain this effect, move the area up to 5 squares, and make the power roll against each creature in the area's new location."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "8 corruption damage; <strong class=\"potency-value\">P&lt;3</strong> weakened (EoT)"
-            },
-            {
-              "tier": 2,
-              "display": "12 corruption damage; <strong class=\"potency-value\">P&lt;4</strong> weakened (EoT)"
-            },
-            {
-              "tier": 3,
-              "display": "15 corruption damage; <strong class=\"potency-value\">P&lt;5</strong> weakened (EoT)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The area is difficult terrain until the start of Psyche's next turn At the start of each of her turns, Psyche can use a maneuver to maintain this effect, move the area up to 5 squares, and make the power roll against each creature in the area's new location.</p>"
-        },
-        "spend": {
-          "text": "Until the start of Psyche’s next turn, if this ability makes a  creature weakened, that creature is also soulbound (save ends; see Soulbind above).",
-          "value": 1,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> Until the start of Psyche’s next turn, if this ability makes a  creature weakened, that creature is also soulbound (save ends; see Soulbind above)."
+        {
+          "cost": "1 Malice",
+          "effect": "Until the start of Psyche's next turn, if this ability makes a creature weakened, that creature is also soulbound (save ends; see Soulbind above)."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Command the Awakened",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">5</span> damage from a self-inflicted wound, and if they have <strong class=\"potency-value\">M&lt;4</strong> Psyche slides them up to 5 squares.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "5 burst",
+      "target": "Each soulbound enemy in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target takes 5 damage from a self-inflicted wound, and if they have <strong class=\"potency-value\">M&lt;4</strong> Psyche slides them up to 5 squares."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Spirit Form",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "An enemy moves within 2 squares of Psyche.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Psyche moves up to 5 squares, and has damage immunity 5 and ignores difficult terrain during this movement. The first time she moves through any creature during this movement, that creature takes <span class=\"damage-value damage-generic\">5</span> corruption damage.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "-"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "An enemy moves within 2 squares of Psyche.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Psyche moves up to 5 squares, and has damage immunity 5 and ignores difficult terrain during this movement. The first time she moves through any creature during this movement, that creature takes 5 corruption damage."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Vengeance for the Slain",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "freeTriggered",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Free triggered action",
+      "distance": "Ranged 10",
+      "target": "One enemy",
+      "trigger": "A war dog within distance is made winded or reduced to 0 Stamina.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target loses all their surges and takes 5 corruption damage."
         },
-        "target": {
-          "type": "enemy",
-          "value": 1
-        },
-        "trigger": "A war dog within distance is made winded or reduced to 0 Stamina.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The target loses all their surges and takes <span class=\"damage-value damage-generic\">5</span> corruption damage.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "cost": "1 Malice",
+          "effect": "The target also takes a bane on their next strike."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p><p><span class=\"reference-text\">Loyalty Unto Death</span></p><p><span class=\"reference-text\">Alchemical Cloud</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Immortal Soul",
+      "effects": [
+        {
+          "effect": "When Psyche is reduced to 0 Stamina, her spirit surrounds the nearest war dog, who has damage immunity 2, deals an extra 5 damage on strikes, and can use the following Immortal Flare maneuver until the end of the encounter. That war dog also gains the Immortal Soul trait, and transfers this effect to the nearest war dog when they die."
         }
-      }
+      ]
     },
     {
-      "name": "Cry Havoc",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 7,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 3
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "5",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 psychic damage"
-            },
-            {
-              "tier": 2,
-              "display": "11 psychic damage; <strong class=\"potency-value\">P&lt;4</strong> frightened (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "14 psychic damage; <strong class=\"potency-value\">P&lt;5</strong> frightened (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Each war dog within distance deals an extra <span class=\"damage-value damage-generic\">15</span> damage with strikes until the end of their next turn. Additionally, they end any effect on them that can be ended by a saving throw or that ends at the end of their turn, then shift up to their speed and can make a free strike.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
       "name": "Immortal Flare",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>See <span class=\"reference-text\">Immortal Soul</span></p><p>The target takes <span class=\"damage-value damage-generic\">10</span> psychic damage.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target takes 10 psychic damage."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "319",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

@@ -6,12 +6,10 @@
   "role": "Defender",
   "organization": "Horde",
   "keywords": [
-    "soulless"
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 5,
   "stamina": 82,
   "stability": 2,
@@ -27,215 +25,80 @@
   "weaknesses": {},
   "movementTypes": [
     "fly",
-    "walk"
+    "hover"
   ],
   "items": [
     {
-      "name": "Prismacore Detonation",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When the prismite is reduced to 0 Stamina, they explode, dealing <span class=\"damage-value damage-generic\">3d6</span> psychic damage to each enemy within 2 squares of them.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Grasping Tonguetacles",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "area",
-          "psionic",
-          "weapon"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 2
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "3 psychic damage"
-            },
-            {
-              "tier": 2,
-              "display": "6 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> grabbed; pull 2"
-            },
-            {
-              "tier": 3,
-              "display": "8 psychic damage; <strong class=\"potency-value\">R&lt;4</strong> grabbed and the target takes a bane on the Escape Grab maneuver; pull 2"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Area",
+        "Psionic",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "2 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "3 psychic damage",
+          "tier2": "6 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> grabbed, pull 2",
+          "tier3": "8 psychic damage; <strong class=\"potency-value\">R&lt;4</strong> grabbed and the target takes a bane on the Escape Grab maneuver, pull 2"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Hard Light Field",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "area",
-          "psionic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 4,
-          "secondary": 10
-        },
-        "target": {
-          "type": "ally",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the start of the prismite's next turn, each target has cover and gains a +2 bonus to stability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Area",
+        "Psionic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "4 cube within 10",
+      "target": "Each ally in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Until the start of the prismite's next turn, each target has cover and gains a +2 bonus to stability."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Tractor Beam",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 1,
-        "keywords": [
-          "psionic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "An enemy within distance uses a melee ability against an ally.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The target is pulled up to 5 squares toward the prismite and any damage from the triggering ability is halved.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "Psionic",
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 10",
+      "target": "The triggering enemy",
+      "trigger": "An enemy within distance uses a melee ability against an ally.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target is pulled up to 5 squares toward the prismite and any damage from the triggering ability is halved."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p><p><span class=\"reference-text\">Loyalty Unto Death</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Prismacore Detonation",
+      "effects": [
+        {
+          "effect": "When the prismite is reduced to 0 Stamina, they explode, dealing 3d6 psychic damage to each enemy within 2 squares of them."
         }
-      }
-    },
-    {
-      "name": "Alchemical Cloud",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A bank of choking chemicals sweeps across the area of the en counter map. Each enemy in the encounter makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"96\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> poison damage; dazed (EoT)</p></td></tr><tr><td data-colwidth=\"96\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> poison damage; weakened (EoT)</p></td></tr><tr><td data-colwidth=\"96\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">4</span> poison damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "313",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

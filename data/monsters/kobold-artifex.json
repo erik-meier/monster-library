@@ -6,12 +6,10 @@
   "role": "Controller",
   "organization": "Horde",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Kobold"
   ],
-  "size": {
-    "value": 1,
-    "letter": "S"
-  },
+  "size": "1S",
   "speed": 5,
   "stamina": 10,
   "stability": 0,
@@ -30,202 +28,63 @@
   ],
   "items": [
     {
-      "name": "Shield? Shield!",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While adjacent to an ally who also has this trait, the artifex has stability 1, has cover, and grants cover to allies.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Activate Trap",
       "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "object",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>NOTE: Targets \"One Trap or Other Terrain Object\"</p><p>The trap or terrain object instantly triggers.</p>"
-        },
-        "spend": {
-          "text": "The artifex places a new trap in the encounter and can  instantly trigger it. The artifex prefers working with angry beehives, flammable oil, snare traps, and spike traps.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The artifex places a new trap in the encounter and can  instantly trigger it. The artifex prefers working with angry beehives, flammable oil, snare traps, and spike traps."
-        }
-      }
-    },
-    {
       "name": "Chain Hook",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 3
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 5",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "3 damage; pull 1",
+          "tier2": "4 damage; pull 2",
+          "tier3": "5 damage; pull 3"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "3 damage"
-            },
-            {
-              "tier": 2,
-              "display": "4 damage"
-            },
-            {
-              "tier": 3,
-              "display": "5 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>If this forced movement triggers a trap that uses a power roll, that roll has a double edge.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "If this forced movement triggers a trap that uses a power roll, that roll has a double edge."
         }
-      }
+      ]
     },
     {
-      "name": "Maniple Tactics",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
+      "name": "Activate Trap",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "One trap or other terrain object",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The trap or terrain object instantly triggers."
         },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "cost": "3 Malice",
+          "effect": "The artifex places a new trap in the encounter and can instantly trigger it. The artifex prefers working with angry beehives, flammable oil, snare traps, and spike traps (see Dynamic Terrain)."
         }
-      }
+      ]
     },
     {
-      "name": "Set the Initiative",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two kobolds take their turns in a row.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Shield? Shield!",
+      "effects": [
+        {
+          "effect": "While adjacent to an ally who also has this trait, the artifex has stability 1, has cover, and grants cover to allies."
         }
-      }
-    },
-    {
-      "name": "Shield Wall",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "192",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

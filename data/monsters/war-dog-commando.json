@@ -6,13 +6,11 @@
   "role": "Ambusher",
   "organization": "Minion",
   "keywords": [
-    "humanoid",
-    "soulless"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 4,
   "stability": 0,
@@ -31,74 +29,44 @@
   ],
   "items": [
     {
-      "name": "Loyalty Collar",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When the commando is reduced to 0 Stamina, their loyalty collar explodes, dealing 1d3 damage to each adjacent enemy and object.</p>",
-          "director": ""
+      "type": "ability",
+      "name": "Daggers",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1 or ranged 5",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "2 damage",
+          "tier2": "4 damage",
+          "tier3": "5 damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "After using this ability, the commando can attempt to hide even if observed."
         }
-      }
+      ]
     },
     {
-      "name": "Daggers",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 1
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "2 damage"
-            },
-            {
-              "tier": 2,
-              "display": "4 damage"
-            },
-            {
-              "tier": 3,
-              "display": "5 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>After using this ability, the commando can attempt to hide even if observed.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Loyalty Collar",
+      "effects": [
+        {
+          "effect": "When the commando is reduced to 0 Stamina, their loyalty collar explodes, dealing 1d3 damage to each adjacent enemy and object."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "299",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

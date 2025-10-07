@@ -6,13 +6,11 @@
   "role": "Brute",
   "organization": "Elite",
   "keywords": [
-    "humanoid",
-    "soulless"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 5,
   "stamina": 200,
   "stability": 4,
@@ -31,118 +29,65 @@
   ],
   "items": [
     {
-      "name": "Breaking Point",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When the breaker would be reduced to 0 Stamina, they delay that effect as they end any conditions affecting them and immediately take a turn, regardless of whether they have already taken a turn this round. The breaker's abilities deal an extra <span class=\"damage-value damage-generic\">5</span> damage during this turn, at the end of which they are reduced to 0 Stamina.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Loyalty Collar",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When the breaker is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> damage to each adjacent enemy and object.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Pile Bunker Gauntlet",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "charge",
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "12 damage; push 4; prone"
-            },
-            {
-              "tier": 2,
-              "display": "17 damage; slide 4; prone or <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "21 damage; slide 4; prone or <strong class=\"potency-value\">M&lt;4</strong> dazed (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Charge",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "12 damage; push 4; prone",
+          "tier2": "17 damage; slide 4; prone or <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)",
+          "tier3": "21 damage; slide 4; prone; <strong class=\"potency-value\">M&lt;4</strong> dazed (save ends)"
         }
-      }
+      ]
     },
     {
-      "name": "Surging Power",
       "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the start of their next turn, the breaker has a double edge on abilities and is automatically affected by all potency effect</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "name": "Surging Power",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Until the start of their next turn, the breaker has a double edge on abilities and is automatically affected by all potency effect."
         }
-      }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Breaking Point",
+      "effects": [
+        {
+          "effect": "When the breaker would be reduced to 0 Stamina, they delay that effect as they end any conditions affecting them and immediately take a turn, regardless of whether they have already taken a turn this round. The breaker's abilities deal an extra 5 damage during this turn, at the end of which they are reduced to 0 Stamina."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Loyalty Collar",
+      "effects": [
+        {
+          "effect": "When the breaker is reduced to 0 Stamina, their loyalty collar explodes, dealing 3d6 damage to each adjacent enemy and object."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "312",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }
