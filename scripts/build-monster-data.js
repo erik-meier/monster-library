@@ -13,6 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const DATA_DIR = path.join(__dirname, '../data')
 const MONSTERS_DIR = path.join(DATA_DIR, 'monsters')
+const MALICE_DIR = path.join(DATA_DIR, 'malice')
 const INDEX_FILE = path.join(DATA_DIR, 'monster_index.json')
 const OUTPUT_FILE = path.join(__dirname, '../src/data/monsters-bundle.js')
 
@@ -23,16 +24,19 @@ const monsterIndex = JSON.parse(fs.readFileSync(INDEX_FILE, 'utf8'))
 
 // Bundle all monster data
 const monsters = {}
+const maliceFeatures = {}
 let successCount = 0
+let maliceSuccessCount = 0
 let errorCount = 0
 
+// Bundle monster data
 for (const [monsterId] of Object.entries(monsterIndex.card)) {
   try {
     // Direct file mapping for simplified monster structure
     const fullPath = path.join(MONSTERS_DIR, `${monsterId}.json`)
 
     if (!fs.existsSync(fullPath)) {
-      console.warn(`⚠️  File not found: ${fullPath}`)
+      console.warn(`⚠️  Monster file not found: ${fullPath}`)
       continue
     }
 
@@ -47,6 +51,27 @@ for (const [monsterId] of Object.entries(monsterIndex.card)) {
   }
 }
 
+// Bundle malice feature data
+if (fs.existsSync(MALICE_DIR)) {
+  for (const [maliceId] of Object.entries(monsterIndex.malice || {})) {
+    try {
+      const fullPath = path.join(MALICE_DIR, `${maliceId}.json`)
+
+      if (!fs.existsSync(fullPath)) {
+        console.warn(`⚠️  Malice file not found: ${fullPath}`)
+        continue
+      }
+
+      const maliceData = JSON.parse(fs.readFileSync(fullPath, 'utf8'))
+      maliceFeatures[maliceId] = maliceData
+      maliceSuccessCount++
+    } catch (error) {
+      console.error(`❌ Failed to load malice ${maliceId}:`, error.message)
+      errorCount++
+    }
+  }
+}
+
 // Generate the bundle file
 const bundleContent = `// Auto-generated monster data bundle
 // Generated on: ${new Date().toISOString()}
@@ -54,6 +79,8 @@ const bundleContent = `// Auto-generated monster data bundle
 export const monsterIndex = ${JSON.stringify(monsterIndex, null, 2)};
 
 export const monsters = ${JSON.stringify(monsters, null, 2)};
+
+export const maliceFeatures = ${JSON.stringify(maliceFeatures, null, 2)};
 
 export function getMonsterIndex() {
   return monsterIndex;
@@ -67,11 +94,30 @@ export function getMonster(monsterId) {
   return monsters[monsterId] || null;
 }
 
+export function getAllMaliceFeatures() {
+  return maliceFeatures;
+}
+
+export function getMaliceFeature(maliceId) {
+  return maliceFeatures[maliceId] || null;
+}
+
+export function getMaliceForMonster(monsterId) {
+  const mappings = monsterIndex.maliceMappings || {};
+  for (const [maliceId, monsterIds] of Object.entries(mappings)) {
+    if (monsterIds.includes(monsterId)) {
+      return maliceFeatures[maliceId] || null;
+    }
+  }
+  return null;
+}
+
 // Export card data for easy access
 export const monsterCards = monsterIndex.card;
 
 console.log('✅ Monster data bundle loaded:', {
   totalMonsters: Object.keys(monsters).length,
+  totalMaliceFeatures: Object.keys(maliceFeatures).length,
   indexVersion: '${new Date().toISOString()}'
 });
 `
@@ -81,7 +127,8 @@ fs.writeFileSync(OUTPUT_FILE, bundleContent)
 
 console.log(`✅ Bundle created: ${OUTPUT_FILE}`)
 console.log(`📊 Successfully bundled: ${successCount} monsters`)
+console.log(`🎭 Successfully bundled: ${maliceSuccessCount} malice features`)
 if (errorCount > 0) {
-  console.log(`⚠️  Errors encountered: ${errorCount} monsters`)
+  console.log(`⚠️  Errors encountered: ${errorCount} files`)
 }
 console.log(`📦 Bundle size: ${(bundleContent.length / 1024 / 1024).toFixed(2)} MB`)

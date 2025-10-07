@@ -17,6 +17,7 @@ import MyMonsters from './views/MyMonsters.vue'
 import About from './views/About.vue'
 import MonsterRandom from './views/MonsterRandom.vue'
 import EncounterBuilder from './views/EncounterBuilder.vue'
+import MaliceView from './views/MaliceView.vue'
 
 // Define routes
 const routes = [
@@ -44,6 +45,12 @@ const routes = [
     path: '/monster/:monsterId',
     name: 'Monster',
     component: MonsterView,
+    props: true // This passes the route params as props
+  },
+  {
+    path: '/malice/:maliceId',
+    name: 'Malice',
+    component: MaliceView,
     props: true // This passes the route params as props
   },
   {

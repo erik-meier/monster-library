@@ -216,6 +216,17 @@
         :monster="monster" />
     </div>
 
+    <!-- Malice Features Button (Non-edit mode) -->
+    <div v-if="!editMode && hasMaliceFeatures()" class="malice-features-section">
+      <div class="divider"></div>
+      <div class="malice-features-button-container">
+        <button @click="viewMaliceFeatures" class="btn btn-malice">
+          <span class="malice-icon">🎭</span>
+          View Malice Features
+        </button>
+      </div>
+    </div>
+
     <!-- Editable Abilities -->
     <div v-else class="abilities-edit">
       <div class="abilities-edit-header">
@@ -325,6 +336,7 @@ import { ref, watch, onMounted, onUnmounted } from 'vue'
 import ActionsList from './ActionsList.vue'
 import AbilityEditor from './AbilityEditor.vue'
 import { DAMAGE_TYPES, MOVEMENT_TYPES } from '@/types/monster-forms'
+import { getMaliceForMonster } from '@/data/monsters-bundle.js'
 
 const props = defineProps({
   monster: {
@@ -494,6 +506,24 @@ const getRegularAbilities = () => {
   return items.filter(item =>
     !item.name || item.name.toLowerCase() !== 'with captain'
   )
+}
+
+// Malice features functionality
+const getMaliceFeatures = () => {
+  return getMaliceForMonster(props.monster.id);
+}
+
+const hasMaliceFeatures = () => {
+  return getMaliceFeatures() !== null;
+}
+
+const viewMaliceFeatures = () => {
+  const maliceBlock = getMaliceFeatures();
+  if (maliceBlock) {
+    // Use router.push to navigate to malice view
+    // This assumes we'll have a route set up for /malice/:id
+    window.location.href = `#/malice/${maliceBlock.id}`;
+  }
 }
 
 // Helper methods to handle both new and old data structures
@@ -1893,6 +1923,44 @@ onUnmounted(() => {
 /* Ensure modal is above other content */
 .editor-modal-overlay::backdrop {
   background: rgba(0, 0, 0, 0.75);
+}
+
+/* Malice Features styles */
+.malice-features-section {
+  margin: var(--space-4) 0;
+}
+
+.malice-features-button-container {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-2) 0;
+}
+
+.btn-malice {
+  background: var(--color-accent-600);
+  color: white;
+  border-color: var(--color-accent-600);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.btn-malice:hover {
+  background: var(--color-accent-700);
+  border-color: var(--color-accent-700);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.malice-icon {
+  font-size: var(--font-size-lg);
 }
 
 @media (max-width: 768px) {

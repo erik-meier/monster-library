@@ -1,8 +1,8 @@
 <template>
   <div class="my-monsters">
     <div class="header">
-      <h1>My Monsters</h1>
-      <p class="subtitle">Manage your custom monsters</p>
+      <h1>My Custom Content</h1>
+      <p class="subtitle">Manage your custom monsters and malice features</p>
     </div>
 
     <div class="dashboard">
@@ -11,6 +11,11 @@
         <div class="stat-card">
           <div class="stat-number">{{ customMonsterCount }}</div>
           <div class="stat-label">Custom Monsters</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">{{ customMaliceCount }}</div>
+          <div class="stat-label">Custom Malice Features</div>
         </div>
 
         <div class="stat-card">
@@ -25,6 +30,10 @@
           <span class="btn-icon">+</span>
           Create New Monster
         </router-link>
+        <button class="btn btn-primary" @click="createNewMalice">
+          <span class="btn-icon">+</span>
+          Create New Malice Features
+        </button>
         <button class="btn btn-secondary" @click="showTemplates = !showTemplates">
           <span class="btn-icon">📋</span>
           {{ showTemplates ? 'Hide Templates' : 'Browse Templates' }}
@@ -104,6 +113,50 @@
           </div>
         </div>
       </div>
+
+      <!-- Custom Malice Features Section -->
+      <div v-if="customMaliceFeatures.length > 0" class="malice-section">
+        <h2>Your Custom Malice Features ({{ customMaliceFeatures.length }})</h2>
+
+        <div class="malice-grid">
+          <div v-for="malice in customMaliceFeatures" :key="malice.id" class="malice-card">
+            <div class="malice-header">
+              <h3 class="malice-name">{{ malice.name }}</h3>
+              <div class="malice-level">Level {{ malice.level || 1 }}+</div>
+            </div>
+
+            <div class="malice-details">
+              <div class="detail-row">
+                <span class="detail-label">Features:</span>
+                <span class="detail-value">{{ malice.features?.length || 0 }}</span>
+              </div>
+            </div>
+
+            <div class="malice-meta">
+              <div class="created-date">
+                Created: {{ formatDate(malice.createdAt) }}
+              </div>
+              <div v-if="malice.updatedAt !== malice.createdAt" class="updated-date">
+                Updated: {{ formatDate(malice.updatedAt) }}
+              </div>
+            </div>
+
+            <div class="malice-actions">
+              <router-link :to="`/malice/${malice.id}`" class="btn btn-sm btn-secondary">
+                View
+              </router-link>
+
+              <router-link :to="`/malice/${malice.id}`" class="btn btn-sm btn-primary">
+                Edit
+              </router-link>
+
+              <button @click="deleteMaliceFeature(malice)" class="btn btn-sm btn-danger">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Export/Import Panel -->
@@ -134,6 +187,7 @@
 import { ref, computed, onMounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
+import { useCustomMaliceStore } from '@/stores/customMalice'
 import ExportImportPanel from '@/components/ExportImportPanel.vue'
 import MonsterTemplates from '@/components/MonsterTemplates.vue'
 import type { CustomMonster } from '@/stores/customMonsters'
@@ -166,6 +220,7 @@ interface MonsterTemplate {
 
 const router = useRouter()
 const customMonstersStore = useCustomMonstersStore()
+const customMaliceStore = useCustomMaliceStore()
 
 // Reactive state
 const loading = ref(true)
@@ -177,8 +232,10 @@ const showTemplates = ref(false)
 
 // Computed properties
 const customMonsters = computed(() => customMonstersStore.getAllCustomMonsters())
+const customMaliceFeatures = computed(() => customMaliceStore.getAllCustomMalice)
 
 const customMonsterCount = computed(() => customMonsters.value.length)
+const customMaliceCount = computed(() => customMaliceFeatures.value.length)
 
 const totalMonsters = computed(() => customMonstersStore.getAllMonsters().length)
 
@@ -268,14 +325,49 @@ function startFromTemplate(template: MonsterTemplate) {
   router.push('/monster/create')
 }
 
+function deleteMaliceFeature(malice: any) {
+  if (confirm(`Are you sure you want to delete "${malice.name}"? This action cannot be undone.`)) {
+    const success = customMaliceStore.deleteMaliceFeature(malice.id)
+
+    if (!success) {
+      alert('Failed to delete malice feature. Please try again.')
+    }
+  }
+}
+
+function createNewMalice() {
+  // Create a basic malice feature template
+  const newMaliceId = customMaliceStore.createMaliceFeature({
+    name: 'New Malice Features',
+    featureblockType: 'Malice Features',
+    level: 1,
+    features: [{
+      name: 'New Feature',
+      effects: [{
+        tier1: 'Tier 1 effect',
+        tier2: 'Tier 2 effect',
+        tier3: 'Tier 3 effect'
+      }]
+    }]
+  })
+
+  if (newMaliceId) {
+    // Navigate to the new malice for editing
+    router.push(`/malice/${newMaliceId}`)
+  } else {
+    alert('Failed to create new malice feature. Please try again.')
+  }
+}
+
 // Lifecycle
 onMounted(async () => {
   loading.value = true
   try {
-    // Load custom monsters from storage
+    // Load custom monsters and malice from storage
     customMonstersStore.loadFromStorage()
+    customMaliceStore.loadFromStorage()
   } catch (error) {
-    console.error('Error loading monsters:', error)
+    console.error('Error loading custom content:', error)
   } finally {
     loading.value = false
   }
@@ -568,6 +660,92 @@ onMounted(async () => {
   }
 }
 
+/* Malice Features Styling */
+.malice-section {
+  margin-top: var(--space-8);
+}
+
+.malice-section h2 {
+  color: var(--color-primary-700);
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.malice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.malice-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-neutral-200);
+  transition: all 0.2s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+.malice-card:hover {
+  border-color: var(--color-primary-300);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.malice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.malice-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-700);
+  margin: 0;
+  flex: 1;
+}
+
+.malice-level {
+  background: var(--color-primary-600);
+  color: white;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+
+.malice-details {
+  margin-bottom: var(--space-4);
+}
+
+.malice-flavor {
+  font-style: italic;
+  color: var(--color-neutral-600);
+  margin-top: var(--space-2);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-sm);
+}
+
+.malice-meta {
+  margin-bottom: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-neutral-200);
+  color: var(--color-neutral-700);
+}
+
+.malice-actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+}
+
 @media (max-width: 768px) {
   .my-monsters {
     padding: var(--space-4);
@@ -581,11 +759,13 @@ onMounted(async () => {
     grid-template-columns: 1fr;
   }
 
-  .monsters-grid {
+  .monsters-grid,
+  .malice-grid {
     grid-template-columns: 1fr;
   }
 
-  .monster-actions {
+  .monster-actions,
+  .malice-actions {
     justify-content: center;
   }
 

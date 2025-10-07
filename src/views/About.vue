@@ -118,7 +118,8 @@
           and is not affiliated with MCDM Productions, LLC. DRAW STEEL © 2024 MCDM Productions, LLC.
         </p>
         <p class="legal-text">
-          Monster data is sourced from the Draw Steel Foundry VTT module, which is available under
+          Monster data is sourced from the <a href="https://github.com/SteelCompendium/data-bestiary-json"
+            title="Steel Compendium Bestiary">Steel Compendium Bestiary</a>, which is available under
           the DRAW STEEL Creator License.
         </p>
       </section>

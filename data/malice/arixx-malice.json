@@ -1,0 +1,58 @@
+{
+  "id": "arixx-malice",
+  "name": "Arixx Malice",
+  "type": "featureblock",
+  "featureblockType": "Malice Features",
+  "level": 1,
+  "flavor": "At the start of an arixx's turn, you can spend Malice to activate one of the following features.",
+  "features": [
+    {
+      "type": "feature",
+      "name": "Burning Maw",
+      "cost": "3 Malice",
+      "effects": [
+        {
+          "effect": "The arixx dribbles acid over their mandibles, causing the next strike they make to gain an edge and deal an extra 3 acid damage."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Geyser",
+      "cost": "5 Malice",
+      "effects": [
+        {
+          "effect": "The arixx's underground tunnels swell with pressure, causing a sudden influx of hot gas to burst from a 3-square-by-3-square area anywhere on the surface. Each enemy in the area makes an **Agility test**.",
+          "tier1": "4 damage; vertical push 5",
+          "tier2": "4 damage; vertical push 3",
+          "tier3": "The target shifts to the nearest unoccupied space outside the area."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Solo Action",
+      "cost": "5 Malice",
+      "effects": [
+        {
+          "effect": "The arixx takes an additional main action on their turn. They can use this feature even if they are dazed."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Earth Sink",
+      "cost": "7 Malice",
+      "effects": [
+        {
+          "effect": "The encounter map suddenly quakes, then begins to sink. Each creature on the ground who has <strong class=\"potency-value\">A&lt;1</strong> is knocked prone. Until the end of the encounter, each creature who starts their turn on the ground and can't burrow must spend 1 additional square of movement to leave their starting position, or 2 squares if they start their turn prone or underground. A creature who starts and ends their turn in the same space on the ground and can't burrow sinks 1 square into the ground."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}
