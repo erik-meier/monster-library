@@ -1,0 +1,55 @@
+{
+  "id": "hobgoblin-malice",
+  "name": "Hobgoblin Malice",
+  "type": "featureblock",
+  "featureblockType": "Malice Features",
+  "level": 1,
+  "flavor": "At the start of any hobgoblin's turn, you can spend Malice to activate one of the following features.",
+  "features": [
+    {
+      "type": "feature",
+      "name": "Goblin Malice Features",
+      "cost": "3-7 Malice",
+      "effects": [
+        {
+          "effect": "The hobgoblin activates a Malice Feature available to goblins."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Operation Goblin Mode",
+      "cost": "3 Malice",
+      "effects": [
+        {
+          "effect": "Each goblin in the encounter gains a +3 bonus to speed until the end of the round."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Operation Tactical Swarm",
+      "cost": "5 Malice",
+      "effects": [
+        {
+          "effect": "Each hobgoblin in the encounter shifts up to their speed and can take the Defend main action."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Operation Earth Sear",
+      "cost": "7 Malice",
+      "effects": [
+        {
+          "effect": "Until the end of the round, the ground throughout the encounter map becomes blazing hot. Any enemy takes 1 fire damage for each square of the ground they enter. Any enemy who ends their turn on the ground has fire weakness 2 until the start of their next turn."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

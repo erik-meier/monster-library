@@ -7086,5 +7086,910 @@
         "Overmind"
       ]
     }
+  },
+  "malice": {
+    "ajax-s-malice": {
+      "name": "Ajax's Malice",
+      "level": 1,
+      "path": "Ajax the Invincible/Features/Ajaxs Malice.json",
+      "monsterGroup": "Ajax the Invincible"
+    },
+    "tactical-stance": {
+      "name": "Tactical Stance",
+      "level": 1,
+      "path": "Ajax the Invincible/Features/Tactical Stance.json",
+      "monsterGroup": "Ajax the Invincible"
+    },
+    "angulotl-malice": {
+      "name": "Angulotl Malice",
+      "level": 1,
+      "path": "Angulotls/Features/Angulotl Malice.json",
+      "monsterGroup": "Angulotls"
+    },
+    "arixx-malice": {
+      "name": "Arixx Malice",
+      "level": 1,
+      "path": "Arixx/Features/Arixx Malice.json",
+      "monsterGroup": "Arixx"
+    },
+    "ashen-hoarder-malice": {
+      "name": "Ashen Hoarder Malice",
+      "level": 1,
+      "path": "Ashen Hoarder/Features/Ashen Hoarder Malice.json",
+      "monsterGroup": "Ashen Hoarder"
+    },
+    "basilisk-malice": {
+      "name": "Basilisk Malice",
+      "level": 1,
+      "path": "Basilisks/Features/Basilisk Malice.json",
+      "monsterGroup": "Basilisks"
+    },
+    "bredbeddle-malice": {
+      "name": "Bredbeddle Malice",
+      "level": 1,
+      "path": "Bredbeddle/Features/Bredbeddle Malice.json",
+      "monsterGroup": "Bredbeddle"
+    },
+    "bugbear-malice": {
+      "name": "Bugbear Malice",
+      "level": 1,
+      "path": "Bugbears/Features/Bugbear Malice.json",
+      "monsterGroup": "Bugbears"
+    },
+    "chimera-malice": {
+      "name": "Chimera Malice",
+      "level": 1,
+      "path": "Chimera/Features/Chimera Malice.json",
+      "monsterGroup": "Chimera"
+    },
+    "rhodar-s-malice": {
+      "name": "Rhodar's Malice",
+      "level": 1,
+      "path": "Count Rhodar Von Glauer/Features/Rhodars Malice.json",
+      "monsterGroup": "Count Rhodar Von Glauer"
+    },
+    "demon-malice": {
+      "name": "Demon Malice",
+      "level": 1,
+      "path": "Demons/Features/Demon Malice Level 1 Malice Features.json",
+      "monsterGroup": "Demons"
+    },
+    "demon-malice-10": {
+      "name": "Demon Malice",
+      "level": 10,
+      "path": "Demons/Features/Demon Malice Level 10 Malice Features.json",
+      "monsterGroup": "Demons"
+    },
+    "demon-malice-4": {
+      "name": "Demon Malice",
+      "level": 4,
+      "path": "Demons/Features/Demon Malice Level 4 Malice Features.json",
+      "monsterGroup": "Demons"
+    },
+    "demon-malice-7": {
+      "name": "Demon Malice",
+      "level": 7,
+      "path": "Demons/Features/Demon Malice Level 7 Malice Features.json",
+      "monsterGroup": "Demons"
+    },
+    "devil-malice": {
+      "name": "Devil Malice",
+      "level": 1,
+      "path": "Devils/Features/Devil Malice.json",
+      "monsterGroup": "Devils"
+    },
+    "draconian-malice": {
+      "name": "Draconian Malice",
+      "level": 1,
+      "path": "Draconians/Features/Draconian Malice.json",
+      "monsterGroup": "Draconians"
+    },
+    "crucible-dragon-malice": {
+      "name": "Crucible Dragon Malice",
+      "level": 1,
+      "path": "Dragons/Features/Crucible Dragon Malice.json",
+      "monsterGroup": "Dragons"
+    },
+    "gloom-dragon-malice": {
+      "name": "Gloom Dragon Malice",
+      "level": 1,
+      "path": "Dragons/Features/Gloom Dragon Malice.json",
+      "monsterGroup": "Dragons"
+    },
+    "meteor-dragon-malice": {
+      "name": "Meteor Dragon Malice",
+      "level": 1,
+      "path": "Dragons/Features/Meteor Dragon Malice.json",
+      "monsterGroup": "Dragons"
+    },
+    "omen-dragon-malice": {
+      "name": "Omen Dragon Malice",
+      "level": 1,
+      "path": "Dragons/Features/Omen Dragon Malice.json",
+      "monsterGroup": "Dragons"
+    },
+    "thorn-dragon-malice": {
+      "name": "Thorn Dragon Malice",
+      "level": 1,
+      "path": "Dragons/Features/Thorn Dragon Malice.json",
+      "monsterGroup": "Dragons"
+    },
+    "dwarf-malice": {
+      "name": "Dwarf Malice",
+      "level": 1,
+      "path": "Dwarves/Features/Dwarf Malice.json",
+      "monsterGroup": "Dwarves"
+    },
+    "elemental-malice": {
+      "name": "Elemental Malice",
+      "level": 1,
+      "path": "Elementals/Features/Elemental Malice.json",
+      "monsterGroup": "Elementals"
+    },
+    "high-elf-malice": {
+      "name": "High Elf Malice",
+      "level": 1,
+      "path": "Elves High/Features/High Elf Malice.json",
+      "monsterGroup": "Elves High"
+    },
+    "shadow-elf-malice": {
+      "name": "Shadow Elf Malice",
+      "level": 1,
+      "path": "Elves Shadow/Features/Shadow Elf Malice.json",
+      "monsterGroup": "Elves Shadow"
+    },
+    "wode-elf-malice": {
+      "name": "Wode Elf Malice",
+      "level": 1,
+      "path": "Elves Wode/Features/Wode Elf Malice.json",
+      "monsterGroup": "Elves Wode"
+    },
+    "fossil-cryptic-malice": {
+      "name": "Fossil Cryptic Malice",
+      "level": 1,
+      "path": "Fossil Cryptic/Features/Fossil Cryptic Malice.json",
+      "monsterGroup": "Fossil Cryptic"
+    },
+    "giant-malice": {
+      "name": "Giant Malice",
+      "level": 1,
+      "path": "Giants/Features/Giant Malice.json",
+      "monsterGroup": "Giants"
+    },
+    "gnoll-malice": {
+      "name": "Gnoll Malice",
+      "level": 1,
+      "path": "Gnolls/Features/Gnoll Malice.json",
+      "monsterGroup": "Gnolls"
+    },
+    "goblin-malice": {
+      "name": "Goblin Malice",
+      "level": 1,
+      "path": "Goblins/Features/Goblin Malice.json",
+      "monsterGroup": "Goblins"
+    },
+    "griffon-malice": {
+      "name": "Griffon Malice",
+      "level": 1,
+      "path": "Griffons/Features/Griffon Malice.json",
+      "monsterGroup": "Griffons"
+    },
+    "hag-malice": {
+      "name": "Hag Malice",
+      "level": 1,
+      "path": "Hag/Features/Hag Malice.json",
+      "monsterGroup": "Hag"
+    },
+    "hobgoblin-malice": {
+      "name": "Hobgoblin Malice",
+      "level": 1,
+      "path": "Hobgoblins/Features/Hobgoblin Malice.json",
+      "monsterGroup": "Hobgoblins"
+    },
+    "human-malice": {
+      "name": "Human Malice",
+      "level": 1,
+      "path": "Humans/Features/Human Malice.json",
+      "monsterGroup": "Humans"
+    },
+    "kingfissure-worm-malice": {
+      "name": "Kingfissure Worm Malice",
+      "level": 1,
+      "path": "Kingfissure Worm/Features/Kingfissure Worm Malice.json",
+      "monsterGroup": "Kingfissure Worm"
+    },
+    "kobold-malice": {
+      "name": "Kobold Malice",
+      "level": 1,
+      "path": "Kobolds/Features/Kobold Malice.json",
+      "monsterGroup": "Kobolds"
+    },
+    "lich-malice": {
+      "name": "Lich Malice",
+      "level": 1,
+      "path": "Lich/Features/Lich Malice.json",
+      "monsterGroup": "Lich"
+    },
+    "lizardfolk-malice": {
+      "name": "Lizardfolk Malice",
+      "level": 1,
+      "path": "Lizardfolks/Features/Lizardfolk Malice.json",
+      "monsterGroup": "Lizardfolks"
+    },
+    "lord-syuul-s-malice": {
+      "name": "Lord Syuul's Malice",
+      "level": 1,
+      "path": "Lord Syuul/Features/Lord Syuuls Malice.json",
+      "monsterGroup": "Lord Syuul"
+    },
+    "manticore-malice": {
+      "name": "Manticore Malice",
+      "level": 1,
+      "path": "Manticores/Features/Manticore Malice.json",
+      "monsterGroup": "Manticores"
+    },
+    "medusa-malice": {
+      "name": "Medusa Malice",
+      "level": 1,
+      "path": "Medusas/Features/Medusa Malice.json",
+      "monsterGroup": "Medusas"
+    },
+    "minotaur-malice": {
+      "name": "Minotaur Malice",
+      "level": 1,
+      "path": "Minotaurs/Features/Minotaur Malice.json",
+      "monsterGroup": "Minotaurs"
+    },
+    "ogre-malice": {
+      "name": "Ogre Malice",
+      "level": 1,
+      "path": "Ogres/Features/Ogre Malice.json",
+      "monsterGroup": "Ogres"
+    },
+    "olothec-malice": {
+      "name": "Olothec Malice",
+      "level": 1,
+      "path": "Olothec/Features/Olothec Malice.json",
+      "monsterGroup": "Olothec"
+    },
+    "orc-malice": {
+      "name": "Orc Malice",
+      "level": 1,
+      "path": "Orcs/Features/Orc Malice.json",
+      "monsterGroup": "Orcs"
+    },
+    "radenwight-malice": {
+      "name": "Radenwight Malice",
+      "level": 1,
+      "path": "Radenwights/Features/Radenwight Malice.json",
+      "monsterGroup": "Radenwights"
+    },
+    "rival-malice": {
+      "name": "Rival Malice",
+      "level": 1,
+      "path": "Rivals/Features/Rival Malice Level 1 Malice Features.json",
+      "monsterGroup": "Rivals"
+    },
+    "shambling-mound-malice": {
+      "name": "Shambling Mound Malice",
+      "level": 1,
+      "path": "Shambling Mound/Features/Shambling Mound Malice.json",
+      "monsterGroup": "Shambling Mound"
+    },
+    "time-raider-malice": {
+      "name": "Time Raider Malice",
+      "level": 1,
+      "path": "Time Raiders/Features/Time Raider Malice.json",
+      "monsterGroup": "Time Raiders"
+    },
+    "troll-malice": {
+      "name": "Troll Malice",
+      "level": 1,
+      "path": "Trolls/Features/Troll Malice.json",
+      "monsterGroup": "Trolls"
+    },
+    "undead-malice": {
+      "name": "Undead Malice",
+      "level": 1,
+      "path": "Undead/Features/Undead Malice Level 1 Malice Features.json",
+      "monsterGroup": "Undead"
+    },
+    "undead-malice-10": {
+      "name": "Undead Malice",
+      "level": 10,
+      "path": "Undead/Features/Undead Malice Level 10 Malice Features.json",
+      "monsterGroup": "Undead"
+    },
+    "undead-malice-4": {
+      "name": "Undead Malice",
+      "level": 4,
+      "path": "Undead/Features/Undead Malice Level 4 Malice Features.json",
+      "monsterGroup": "Undead"
+    },
+    "undead-malice-7": {
+      "name": "Undead Malice",
+      "level": 7,
+      "path": "Undead/Features/Undead Malice Level 7 Malice Features.json",
+      "monsterGroup": "Undead"
+    },
+    "valok-malice": {
+      "name": "Valok Malice",
+      "level": 1,
+      "path": "Valok/Features/Valok Malice.json",
+      "monsterGroup": "Valok"
+    },
+    "voiceless-talker-malice": {
+      "name": "Voiceless Talker Malice",
+      "level": 1,
+      "path": "Voiceless Talkers/Features/Voiceless Talker Malice.json",
+      "monsterGroup": "Voiceless Talkers"
+    },
+    "war-dog-malice": {
+      "name": "War Dog Malice",
+      "level": 1,
+      "path": "War Dogs/Features/War Dog Malice Level 1 Malice Features.json",
+      "monsterGroup": "War Dogs"
+    },
+    "war-dog-malice-10": {
+      "name": "War Dog Malice",
+      "level": 10,
+      "path": "War Dogs/Features/War Dog Malice Level 10 Malice Features.json",
+      "monsterGroup": "War Dogs"
+    },
+    "war-dog-malice-4": {
+      "name": "War Dog Malice",
+      "level": 4,
+      "path": "War Dogs/Features/War Dog Malice Level 4 Malice Features.json",
+      "monsterGroup": "War Dogs"
+    },
+    "war-dog-malice-7": {
+      "name": "War Dog Malice",
+      "level": 7,
+      "path": "War Dogs/Features/War Dog Malice Level 7 Malice Features.json",
+      "monsterGroup": "War Dogs"
+    },
+    "werewolf-malice": {
+      "name": "Werewolf Malice",
+      "level": 1,
+      "path": "Werewolf/Features/Werewolf Malice.json",
+      "monsterGroup": "Werewolf"
+    },
+    "wyvern-malice": {
+      "name": "Wyvern Malice",
+      "level": 1,
+      "path": "Wyverns/Features/Wyvern Malice.json",
+      "monsterGroup": "Wyverns"
+    },
+    "xorannox-s-malice": {
+      "name": "Xorannox's Malice",
+      "level": 1,
+      "path": "Xorannox the Tyract/Features/Xorannoxs Malice.json",
+      "monsterGroup": "Xorannox the Tyract"
+    }
+  },
+  "maliceMappings": {
+    "ajax-s-malice": [
+      "ajax-the-invincible"
+    ],
+    "angulotl-malice": [
+      "angulotl-cleaver",
+      "angulotl-dart",
+      "angulotl-daybringer",
+      "angulotl-needler",
+      "angulotl-pollywog",
+      "angulotl-slink",
+      "angulotl-wave",
+      "clawfish"
+    ],
+    "arixx-malice": [
+      "arixx"
+    ],
+    "ashen-hoarder-malice": [
+      "ashen-hoarder"
+    ],
+    "basilisk-malice": [
+      "basilisk-tonguesnapper",
+      "basilisk"
+    ],
+    "bredbeddle-malice": [
+      "bredbeddle"
+    ],
+    "bugbear-malice": [
+      "bugbear-channeler",
+      "bugbear-commander",
+      "bugbear-knightmare",
+      "bugbear-mob",
+      "bugbear-roughneck",
+      "bugbear-snare",
+      "bugbear-sneak"
+    ],
+    "chimera-malice": [
+      "chimera"
+    ],
+    "rhodar-s-malice": [
+      "count-rhodar-von-glauer"
+    ],
+    "demon-malice-10": [
+      "aurumvas",
+      "izyak",
+      "optacus",
+      "tyburaki",
+      "unguloid",
+      "vicisitator"
+    ],
+    "demon-malice-4": [
+      "bale-eye",
+      "fangling",
+      "fiktin",
+      "grulqin",
+      "gunge",
+      "lumbering-egress",
+      "orliq",
+      "tormenauk",
+      "wobalas"
+    ],
+    "demon-malice": [
+      "bendrak",
+      "chorogaunt",
+      "ensnarer",
+      "frenzied",
+      "muceron",
+      "pitling",
+      "remasch",
+      "ruinant",
+      "torlas"
+    ],
+    "demon-malice-7": [
+      "blight-phage",
+      "chimeron",
+      "soulraker-handmaiden",
+      "soulraker-hivequeen",
+      "soulraker-praetorian",
+      "soulraker-scout",
+      "soulraker-soldier",
+      "soulraker-stinger",
+      "styrich"
+    ],
+    "devil-malice": [
+      "devil-adjudicator",
+      "devil-clerk",
+      "devil-high-judge",
+      "devil-jurist",
+      "devil-legate",
+      "devil-magistrate",
+      "devil-notary",
+      "devil-scrivener"
+    ],
+    "draconian-malice": [
+      "aeolyxria-the-uncanny",
+      "dorzinuuth-the-base",
+      "locratix-the-morningstar",
+      "lydixavus-the-deadeye",
+      "myxovidan-the-sintaker",
+      "phrrygalax-the-subduer"
+    ],
+    "crucible-dragon-malice": [
+      "crucible-dragon",
+      "gloom-dragon",
+      "meteor-dragon",
+      "omen-dragon",
+      "thorn-dragon"
+    ],
+    "dwarf-malice": [
+      "dwarf-axethrower",
+      "dwarf-catchpole",
+      "dwarf-driver",
+      "dwarf-gunner",
+      "dwarf-hunter",
+      "dwarf-launcher",
+      "dwarf-marauder",
+      "dwarf-reel-winch",
+      "dwarf-shieldwall",
+      "dwarf-stone-whisperer",
+      "dwarf-trapper",
+      "dwarf-warden",
+      "servitor-war-walker"
+    ],
+    "elemental-malice": [
+      "crux-of-fire",
+      "essence-of-storms",
+      "essence-of-tides",
+      "field-of-growth",
+      "force-of-earth"
+    ],
+    "high-elf-malice": [
+      "brambleguard",
+      "ceramic-horse",
+      "elemental-mote",
+      "high-elf-bloodletter",
+      "high-elf-dawn-mage",
+      "high-elf-deathtouch",
+      "high-elf-orbweaver",
+      "high-elf-ordinator",
+      "high-elf-palinode",
+      "high-elf-quiver",
+      "high-elf-wyrd",
+      "high-elf-zephyr",
+      "soot-crow"
+    ],
+    "shadow-elf-malice": [
+      "brush-stalker",
+      "shadow-elf-assassin",
+      "shadow-elf-cloak",
+      "shadow-elf-dusk-mage",
+      "shadow-elf-duskcaller",
+      "shadow-elf-eclipse",
+      "shadow-elf-knightfell",
+      "shadow-elf-luminator",
+      "shadow-elf-moondancer",
+      "shadow-elf-mournblade",
+      "shadow-elf-nightstrike",
+      "shadow-elf-noctis-mage",
+      "shadow-elf-panther",
+      "shadow-elf-sniper"
+    ],
+    "wode-elf-malice": [
+      "wode-elf-chirurgeon",
+      "wode-elf-druid",
+      "wode-elf-green-seer",
+      "wode-elf-greenskeeper",
+      "wode-elf-guerrilla",
+      "wode-elf-gweiadur",
+      "wode-elf-lookout",
+      "wode-elf-runner",
+      "wode-elf-scout",
+      "wode-elf-sentry",
+      "wode-elf-warleader",
+      "wode-elf-yeoman",
+      "wodenelg"
+    ],
+    "fossil-cryptic-malice": [
+      "fossil-cryptic"
+    ],
+    "giant-malice": [
+      "basalt-stone-giant",
+      "fire-giant-chief",
+      "fire-giant-fireballer",
+      "fire-giant-lightbearer",
+      "fire-giant-red-fist",
+      "frost-giant-snowblaster",
+      "frost-giant-storm-hurler",
+      "frost-giant-wind-sprinter",
+      "granite-stone-giant",
+      "hill-giant-clobberer",
+      "hill-giant-mosstooth",
+      "marble-stone-giant",
+      "sand-stone-giant"
+    ],
+    "gnoll-malice": [
+      "abyssal-hyena",
+      "gnoll-abyssal-archer",
+      "gnoll-abyssal-summoner",
+      "gnoll-bonesplitter",
+      "gnoll-cackler",
+      "gnoll-carnage",
+      "gnoll-chainflail",
+      "gnoll-mage-mauler",
+      "gnoll-marauder",
+      "gnoll-wildling",
+      "tusker-demon"
+    ],
+    "goblin-malice": [
+      "goblin-assassin",
+      "goblin-cursespitter",
+      "goblin-monarch",
+      "goblin-runner",
+      "goblin-sniper",
+      "goblin-spinecleaver",
+      "goblin-stinker",
+      "goblin-underboss",
+      "goblin-warrior",
+      "skitterling",
+      "war-spider",
+      "worg"
+    ],
+    "griffon-malice": [
+      "griffon",
+      "striped-condor-griffon"
+    ],
+    "hag-malice": [
+      "wode-hag"
+    ],
+    "hobgoblin-malice": [
+      "grilp",
+      "hobgoblin-bloodlord",
+      "hobgoblin-brandbearer",
+      "hobgoblin-burning-witch",
+      "hobgoblin-death-captain",
+      "hobgoblin-firerunner",
+      "hobgoblin-grandguard",
+      "hobgoblin-hell-trooper",
+      "hobgoblin-incendiarist",
+      "hobgoblin-lancer",
+      "hobgoblin-recruit",
+      "hobgoblin-redglare",
+      "hobgoblin-smokebinder",
+      "hobgoblin-war-mage",
+      "slaughter-demon"
+    ],
+    "human-malice": [
+      "giant-hawk",
+      "human-apprentice-mage",
+      "human-archer",
+      "human-bandit-chief",
+      "human-blackguard",
+      "human-brawler",
+      "human-death-acolyte",
+      "human-death-cultist",
+      "human-guard",
+      "human-knave",
+      "human-raider",
+      "human-rogue",
+      "human-scoundrel",
+      "human-storm-mage",
+      "human-trickshot"
+    ],
+    "kingfissure-worm-malice": [
+      "kingfissure-worm"
+    ],
+    "kobold-malice": [
+      "kobold-adeptus",
+      "kobold-artifex",
+      "kobold-centurion",
+      "kobold-legionary",
+      "kobold-princeps",
+      "kobold-sagittarion",
+      "kobold-signifer",
+      "kobold-tiro",
+      "kobold-veles",
+      "kobold-venator",
+      "shieldscale-drangolin",
+      "trained-gummy-brick"
+    ],
+    "lich-malice": [
+      "lich"
+    ],
+    "lizardfolk-malice": [
+      "lizardfolk-bloodeye",
+      "lizardfolk-deathrex",
+      "lizardfolk-grunt",
+      "lizardfolk-scaletooth",
+      "lizardfolk-shellguard",
+      "lizardfolk-skyterror",
+      "lizardfolk-tonguer"
+    ],
+    "lord-syuul-s-malice": [
+      "lord-syuul"
+    ],
+    "manticore-malice": [
+      "manticore"
+    ],
+    "medusa-malice": [
+      "medusa"
+    ],
+    "minotaur-malice": [
+      "minotaur-bully",
+      "minotaur-lackey",
+      "minotaur-stampede",
+      "minotaur-sunderer",
+      "minotaur"
+    ],
+    "ogre-malice": [
+      "cyclops",
+      "ogre-blue-blood",
+      "ogre-goon",
+      "ogre-juggernaut",
+      "ogre-tantrum"
+    ],
+    "olothec-malice": [
+      "olothec"
+    ],
+    "orc-malice": [
+      "mohler",
+      "orc-blitzer",
+      "orc-bloodrunner",
+      "orc-bloodspark",
+      "orc-chainlock",
+      "orc-eye-of-grole",
+      "orc-garotter",
+      "orc-glorifier",
+      "orc-godcaller",
+      "orc-juggernaut",
+      "orc-rampart",
+      "orc-razor",
+      "orc-terranova",
+      "orc-warleader",
+      "scyza"
+    ],
+    "radenwight-malice": [
+      "radenwight-bruxer",
+      "radenwight-maestro",
+      "radenwight-mischiever",
+      "radenwight-piper",
+      "radenwight-ratcrobat",
+      "radenwight-redeye",
+      "radenwight-scrapper",
+      "radenwight-swiftpaw"
+    ],
+    "rival-malice": [
+      "rival-conduit",
+      "rival-elementalist",
+      "rival-fury",
+      "rival-null",
+      "rival-shadow",
+      "rival-tactician",
+      "rival-talent",
+      "rival-conduit-2",
+      "rival-elementalist-2",
+      "rival-fury-2",
+      "rival-null-2",
+      "rival-shadow-2",
+      "rival-tactician-2",
+      "rival-talent-2",
+      "rival-conduit-3",
+      "rival-elementalist-3",
+      "rival-fury-3",
+      "rival-null-3",
+      "rival-shadow-3",
+      "rival-tactician-3",
+      "rival-talent-3",
+      "rival-conduit-4",
+      "rival-elementalist-4",
+      "rival-fury-4",
+      "rival-null-4",
+      "rival-shadow-4",
+      "rival-tactician-4",
+      "rival-talent-4"
+    ],
+    "shambling-mound-malice": [
+      "shambling-mound"
+    ],
+    "time-raider-malice": [
+      "time-raider-archon",
+      "time-raider-armiger",
+      "time-raider-cannonfall",
+      "time-raider-helix",
+      "time-raider-hijack",
+      "time-raider-mind-punk",
+      "time-raider-myriad",
+      "time-raider-nemesis",
+      "time-raider-tyrannis",
+      "time-raider-vertex"
+    ],
+    "troll-malice": [
+      "troll-butcher",
+      "troll-crack-trooper",
+      "troll-glutton",
+      "troll-limbjumble",
+      "troll-ravager",
+      "troll-whelp"
+    ],
+    "undead-malice-7": [
+      "blood-starved-vampire",
+      "dirt-mournling",
+      "faded-echo-spirit",
+      "haunt",
+      "koptourok",
+      "mummy-rotwrap",
+      "vampire-lord",
+      "vampire",
+      "waxen"
+    ],
+    "undead-malice-10": [
+      "bonecage",
+      "giant-shambler-zombie",
+      "lithgekh",
+      "skeleton-knight",
+      "wraith-skulker"
+    ],
+    "undead-malice": [
+      "crawling-claw",
+      "decrepit-skeleton",
+      "ghost",
+      "ghoul",
+      "rotting-zombie",
+      "shade",
+      "skeleton",
+      "soulwight",
+      "specter",
+      "umbral-stalker",
+      "zombie"
+    ],
+    "undead-malice-4": [
+      "flesh-mournling",
+      "fleshflayed-shambler-zombie",
+      "ghoul-craver",
+      "giant-zombie",
+      "hollowbone-launcher",
+      "mummy-lord",
+      "mummy",
+      "vampire-spawn",
+      "wraith"
+    ],
+    "valok-malice": [
+      "multivok-bodyguard",
+      "multivok-chief",
+      "servok-builder",
+      "servok-miner",
+      "servok-war-engine"
+    ],
+    "voiceless-talker-malice": [
+      "hulking-brain",
+      "mindkiller-whelp",
+      "mindkiller",
+      "voiceless-talker-artillerist",
+      "voiceless-talker-evolutionist",
+      "voiceless-talker-graywarper",
+      "voiceless-talker-invader"
+    ],
+    "war-dog-malice-10": [
+      "castellan-hoplon",
+      "iron-champion-doru",
+      "logostician-vesper",
+      "soulbinder-psyche",
+      "strategos-alkestis",
+      "war-dog-blood-jumper",
+      "war-dog-hunter-killer",
+      "war-dog-socialite"
+    ],
+    "war-dog-malice-7": [
+      "war-dog-aerocite",
+      "war-dog-ballistite",
+      "war-dog-blackcap",
+      "war-dog-breaker",
+      "war-dog-draconite",
+      "war-dog-firestarter",
+      "war-dog-geomancer",
+      "war-dog-iron-priest",
+      "war-dog-prismite",
+      "war-dog-saboteur",
+      "war-dog-shriketroop",
+      "war-dog-taxiarch"
+    ],
+    "war-dog-malice": [
+      "war-dog-amalgamite",
+      "war-dog-commando",
+      "war-dog-conscript",
+      "war-dog-crucibite",
+      "war-dog-eviscerite",
+      "war-dog-ground-commander",
+      "war-dog-neuronite",
+      "war-dog-pestilite",
+      "war-dog-phosphorite",
+      "war-dog-sharpshooter",
+      "war-dog-subcommander",
+      "war-dog-teletalite",
+      "war-dog-tetherite"
+    ],
+    "war-dog-malice-4": [
+      "war-dog-arachnite",
+      "war-dog-doomthief",
+      "war-dog-equivite",
+      "war-dog-hypokrite",
+      "war-dog-mischievite",
+      "war-dog-sparkslinger",
+      "war-dog-sweeper",
+      "war-dog-tetrarch",
+      "war-dog-thanatite",
+      "war-dog-tormentite",
+      "war-dog-war-doc",
+      "war-dog-war-frog"
+    ],
+    "werewolf-malice": [
+      "werewolf"
+    ],
+    "wyvern-malice": [
+      "wyvern-lurker",
+      "wyvern-predator"
+    ],
+    "xorannox-s-malice": [
+      "compulsion-eye",
+      "demolition",
+      "mover-eye",
+      "necrotic-eye",
+      "toxic-eye",
+      "xorannox-the-tyract",
+      "zapper-eye"
+    ]
   }
 }
