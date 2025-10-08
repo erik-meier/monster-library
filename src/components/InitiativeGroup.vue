@@ -51,7 +51,7 @@
       
       <div class="group-stats">
         <span class="stat-badge monster-count">
-          {{ monstersInGroup.length }} {{ monstersInGroup.length === 1 ? 'Monster' : 'Monsters' }}
+          {{ totalMonsterCount }} {{ totalMonsterCount === 1 ? 'Monster' : 'Monsters' }}
         </span>
         <span class="stat-badge total-ev">
           EV {{ totalEV }}
@@ -193,6 +193,10 @@ const monstersInGroup = computed(() => {
 
 const totalEV = computed(() => {
   return encounterStore.getGroupTotalEV(props.group.id)
+})
+
+const totalMonsterCount = computed(() => {
+  return encounterStore.getGroupMonsterCount(props.group.id)
 })
 
 // Helper functions

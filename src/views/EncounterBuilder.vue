@@ -13,14 +13,12 @@
 
       <div class="builder-main">
         <div class="section-card">
+          <h2>Encounter Summary</h2>
+
           <CollapsibleSection title="Initiative Groups" :expanded="initiativeTrackerExpanded"
             @toggle="initiativeTrackerExpanded = $event">
             <InitiativeTracker />
           </CollapsibleSection>
-        </div>
-
-        <div class="section-card">
-          <h2>Encounter Summary</h2>
 
           <CollapsibleSection title="Encounter Monsters" :expanded="encounterMonstersExpanded"
             @toggle="encounterMonstersExpanded = $event" ref="encounterMonstersSection">
