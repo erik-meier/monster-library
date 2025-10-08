@@ -13,6 +13,13 @@
 
       <div class="builder-main">
         <div class="section-card">
+          <CollapsibleSection title="Initiative Groups" :expanded="initiativeTrackerExpanded"
+            @toggle="initiativeTrackerExpanded = $event">
+            <InitiativeTracker />
+          </CollapsibleSection>
+        </div>
+
+        <div class="section-card">
           <h2>Encounter Summary</h2>
 
           <CollapsibleSection title="Encounter Monsters" :expanded="encounterMonstersExpanded"
@@ -175,16 +182,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick } from 'vue'
+import { ref, computed, onMounted, nextTick, watch } from 'vue'
 import PartyConfiguration from '@/components/PartyConfiguration.vue'
 import EncounterBudget from '@/components/EncounterBudget.vue'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
+import InitiativeTracker from '@/components/InitiativeTracker.vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
+import { useEncounterStore } from '@/stores/encounter'
 import {
   calculateMonsterCost,
   type PartyConfiguration as PartyConfig,
   type MonsterInEncounter
 } from '@/utils/encounterBalance'
+
+// Stores
+const customMonstersStore = useCustomMonstersStore()
+const encounterStore = useEncounterStore()
 
 // State
 const party = ref<PartyConfig>({
@@ -195,6 +208,7 @@ const encounterMalice = ref<SimpleMaliceFeature[]>([])
 const searchQuery = ref('')
 const filterLevel = ref<string>('')
 const filterOrg = ref<string>('')
+const initiativeTrackerExpanded = ref(true)
 const encounterMonstersExpanded = ref(true)
 const encounterMaliceExpanded = ref(true)
 const monstersListExpanded = ref(true)
@@ -224,7 +238,6 @@ interface SimpleMaliceFeature {
 // All available monsters
 const allMonsters = ref<SimpleMonster[]>([])
 const allMaliceFeatures = ref<SimpleMaliceFeature[]>([])
-const customMonstersStore = useCustomMonstersStore()
 
 onMounted(async () => {
   // Load all monsters and malice features using dynamic import
@@ -268,6 +281,66 @@ onMounted(async () => {
     }))
   }
 })
+
+// Sync local encounter monsters with Pinia store on mount
+onMounted(() => {
+  syncFromStore()
+})
+
+// Watch for changes in the encounter store and sync to local state
+watch(() => encounterStore.monsters, () => {
+  syncFromStore()
+}, { deep: true })
+
+// Watch for changes in local state and sync to store
+watch(encounterMonsters, (newMonsters) => {
+  syncToStore(newMonsters)
+}, { deep: true })
+
+function syncFromStore() {
+  encounterMonsters.value = encounterStore.monsters.map(m => ({
+    id: m.id,
+    name: m.name,
+    level: m.level,
+    ev: m.ev,
+    organization: m.organization,
+    role: m.role,
+    count: m.count
+  }))
+}
+
+function syncToStore(monsters: MonsterInEncounter[]) {
+  // Clear existing monsters in store if they don't exist locally
+  const localIds = new Set(monsters.map(m => m.id))
+  const storeMonsters = encounterStore.monsters
+  
+  for (const storeMonster of storeMonsters) {
+    if (!localIds.has(storeMonster.id)) {
+      encounterStore.removeMonster(storeMonster.id)
+    }
+  }
+  
+  // Update or add monsters from local state
+  for (const monster of monsters) {
+    const existingInStore = storeMonsters.find(m => m.id === monster.id)
+    if (existingInStore) {
+      // Update count if different
+      if (existingInStore.count !== monster.count) {
+        encounterStore.updateMonsterCount(monster.id, monster.count)
+      }
+    } else {
+      // Add new monster with defaults for optional fields
+      encounterStore.addMonster({
+        id: monster.id,
+        name: monster.name,
+        level: monster.level,
+        ev: monster.ev,
+        organization: monster.organization,
+        role: monster.role || ''
+      })
+    }
+  }
+}
 
 // Computed
 const filteredMonsters = computed(() => {
@@ -335,19 +408,15 @@ async function updateCollapsibleHeights() {
 
 // Methods
 function addMonsterToEncounter(monster: SimpleMonster, count: number = 1) {
-  const existing = encounterMonsters.value.find((m) => m.id === monster.id)
-
-  if (existing) {
-    existing.count += count
-  } else {
-    encounterMonsters.value.push({
+  // Add to encounter store directly
+  for (let i = 0; i < count; i++) {
+    encounterStore.addMonster({
       id: monster.id,
       name: monster.name,
       level: monster.level,
       ev: monster.ev,
       organization: monster.organization,
-      role: monster.role,
-      count: count
+      role: monster.role || ''
     })
   }
 
@@ -356,27 +425,24 @@ function addMonsterToEncounter(monster: SimpleMonster, count: number = 1) {
 }
 
 function incrementMonster(id: string) {
-  const monster = encounterMonsters.value.find((m) => m.id === id)
+  const monster = encounterStore.monsters.find((m) => m.id === id)
   if (monster) {
-    monster.count++
+    encounterStore.updateMonsterCount(id, monster.count + 1)
     updateCollapsibleHeights()
   }
 }
 
 function decrementMonster(id: string) {
-  const monster = encounterMonsters.value.find((m) => m.id === id)
+  const monster = encounterStore.monsters.find((m) => m.id === id)
   if (monster && monster.count > 1) {
-    monster.count--
+    encounterStore.updateMonsterCount(id, monster.count - 1)
     updateCollapsibleHeights()
   }
 }
 
 function removeMonster(id: string) {
-  const index = encounterMonsters.value.findIndex((m) => m.id === id)
-  if (index !== -1) {
-    encounterMonsters.value.splice(index, 1)
-    updateCollapsibleHeights()
-  }
+  encounterStore.removeMonster(id)
+  updateCollapsibleHeights()
 }
 
 function calculateCost(monster: MonsterInEncounter): string {
