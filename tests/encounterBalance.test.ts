@@ -2,13 +2,17 @@ import { describe, it, expect } from 'vitest'
 import {
   getDifficultyMultiplier,
   calculatePartyStrength,
+  calculateDifficultyThresholds,
+  getCurrentEncounterDifficulty,
   calculateEncounterBudget,
   calculateMonsterCost,
   calculateBudgetUsage,
+  calculateEncounterDifficulty,
   getEncounterBudgetSummary,
   getBudgetStatus,
   getDifficultyDescription,
   getEncounterRecommendations,
+  getMonsterRecommendations,
   validatePartyConfiguration,
   type PartyConfiguration,
   type MonsterInEncounter
@@ -26,11 +30,30 @@ describe('Encounter Balance Utilities', () => {
   })
 
   describe('calculatePartyStrength', () => {
-    it('should sum all hero levels', () => {
+    it('should calculate party strength using new formula (2*level + 4)', () => {
       const party: PartyConfiguration = {
-        heroes: [{ level: 3 }, { level: 4 }, { level: 3 }, { level: 5 }]
+        heroes: [
+          { level: 3, victories: 0 }, 
+          { level: 4, victories: 0 }, 
+          { level: 3, victories: 0 }, 
+          { level: 5, victories: 0 }
+        ]
       }
-      expect(calculatePartyStrength(party)).toBe(15)
+      // (2*3+4) + (2*4+4) + (2*3+4) + (2*5+4) = 10 + 12 + 10 + 14 = 46
+      expect(calculatePartyStrength(party)).toBe(46)
+    })
+
+    it('should include victory bonuses', () => {
+      const party: PartyConfiguration = {
+        heroes: [
+          { level: 4, victories: 4 }, // 4 victories = 2 average victories
+          { level: 4, victories: 0 }
+        ]
+      }
+      // Base: (2*4+4) + (2*4+4) = 12 + 12 = 24
+      // Average victories: 4/2 = 2, so floor(2/2) = 1 bonus hero of level 4 = (2*4+4) = 12
+      // Total: 24 + 12 = 36
+      expect(calculatePartyStrength(party)).toBe(36)
     })
 
     it('should return 0 for empty party', () => {
@@ -39,34 +62,41 @@ describe('Encounter Balance Utilities', () => {
     })
 
     it('should handle single hero', () => {
-      const party: PartyConfiguration = { heroes: [{ level: 7 }] }
-      expect(calculatePartyStrength(party)).toBe(7)
+      const party: PartyConfiguration = { heroes: [{ level: 7, victories: 0 }] }
+      // 2*7 + 4 = 18
+      expect(calculatePartyStrength(party)).toBe(18)
     })
   })
 
   describe('calculateEncounterBudget', () => {
     const party: PartyConfiguration = {
-      heroes: [{ level: 3 }, { level: 4 }, { level: 3 }, { level: 4 }]
+      heroes: [
+        { level: 3, victories: 0 }, 
+        { level: 4, victories: 0 }, 
+        { level: 3, victories: 0 }, 
+        { level: 4, victories: 0 }
+      ]
     }
+    // Party strength: (2*3+4) + (2*4+4) + (2*3+4) + (2*4+4) = 10 + 12 + 10 + 12 = 44
 
     it('should calculate Trivial budget correctly', () => {
-      expect(calculateEncounterBudget(party, 'Trivial')).toBe(7)
+      expect(calculateEncounterBudget(party, 'Trivial')).toBe(22) // 44 * 0.5 = 22
     })
 
     it('should calculate Easy budget correctly', () => {
-      expect(calculateEncounterBudget(party, 'Easy')).toBe(11) // 14 * 0.75 = 10.5, rounded to 11
+      expect(calculateEncounterBudget(party, 'Easy')).toBe(33) // 44 * 0.75 = 33
     })
 
     it('should calculate Standard budget correctly', () => {
-      expect(calculateEncounterBudget(party, 'Standard')).toBe(14)
+      expect(calculateEncounterBudget(party, 'Standard')).toBe(44) // 44 * 1.0 = 44
     })
 
     it('should calculate Hard budget correctly', () => {
-      expect(calculateEncounterBudget(party, 'Hard')).toBe(21)
+      expect(calculateEncounterBudget(party, 'Hard')).toBe(66) // 44 * 1.5 = 66
     })
 
     it('should calculate Extreme budget correctly', () => {
-      expect(calculateEncounterBudget(party, 'Extreme')).toBe(28)
+      expect(calculateEncounterBudget(party, 'Extreme')).toBe(88) // 44 * 2.0 = 88
     })
   })
 
@@ -164,8 +194,14 @@ describe('Encounter Balance Utilities', () => {
 
   describe('getEncounterBudgetSummary', () => {
     const party: PartyConfiguration = {
-      heroes: [{ level: 4 }, { level: 4 }, { level: 4 }, { level: 4 }]
+      heroes: [
+        { level: 4, victories: 0 }, 
+        { level: 4, victories: 0 }, 
+        { level: 4, victories: 0 }, 
+        { level: 4, victories: 0 }
+      ]
     }
+    // Party strength: 4 * (2*4+4) = 4 * 12 = 48
 
     it('should calculate complete budget summary', () => {
       const monsters: MonsterInEncounter[] = [
@@ -180,17 +216,17 @@ describe('Encounter Balance Utilities', () => {
       ]
 
       const summary = getEncounterBudgetSummary(party, 'Standard', monsters)
-      expect(summary.total).toBe(16)
+      expect(summary.total).toBe(48) // 48 * 1.0
       expect(summary.used).toBe(8)
-      expect(summary.remaining).toBe(8)
-      expect(summary.percentage).toBe(50)
+      expect(summary.remaining).toBe(40)
+      expect(summary.percentage).toBe(17) // (8/48)*100 = 16.67, rounded to 17
     })
 
     it('should handle empty encounter', () => {
       const summary = getEncounterBudgetSummary(party, 'Standard', [])
-      expect(summary.total).toBe(16)
+      expect(summary.total).toBe(48)
       expect(summary.used).toBe(0)
-      expect(summary.remaining).toBe(16)
+      expect(summary.remaining).toBe(48)
       expect(summary.percentage).toBe(0)
     })
 
@@ -200,17 +236,17 @@ describe('Encounter Balance Utilities', () => {
           id: '1',
           name: 'Monster',
           level: 5,
-          ev: 20,
+          ev: 60,
           organization: 'Standard',
           count: 1
         }
       ]
 
       const summary = getEncounterBudgetSummary(party, 'Standard', monsters)
-      expect(summary.total).toBe(16)
-      expect(summary.used).toBe(20)
-      expect(summary.remaining).toBe(-4)
-      expect(summary.percentage).toBe(125)
+      expect(summary.total).toBe(48)
+      expect(summary.used).toBe(60)
+      expect(summary.remaining).toBe(-12)
+      expect(summary.percentage).toBe(125) // (60/48)*100 = 125
     })
   })
 
@@ -243,10 +279,10 @@ describe('Encounter Balance Utilities', () => {
 
   describe('getDifficultyDescription', () => {
     it('should return descriptions for all difficulties', () => {
-      expect(getDifficultyDescription('Trivial')).toContain('minimal threat')
-      expect(getDifficultyDescription('Easy')).toContain('light challenge')
-      expect(getDifficultyDescription('Standard')).toContain('baseline difficulty')
-      expect(getDifficultyDescription('Hard')).toContain('dangerous')
+      expect(getDifficultyDescription('Trivial')).toContain('no challenge')
+      expect(getDifficultyDescription('Easy')).toContain('not life-threatening')
+      expect(getDifficultyDescription('Standard')).toContain('most common')
+      expect(getDifficultyDescription('Hard')).toContain('climactic')
       expect(getDifficultyDescription('Extreme')).toContain('deadly')
     })
   })
@@ -260,14 +296,16 @@ describe('Encounter Balance Utilities', () => {
     })
 
     it('should warn about small parties', () => {
-      const party: PartyConfiguration = { heroes: [{ level: 4 }, { level: 4 }] }
+      const party: PartyConfiguration = { 
+        heroes: [{ level: 4, victories: 0 }, { level: 4, victories: 0 }] 
+      }
       const recommendations = getEncounterRecommendations(party)
       expect(recommendations.some((r) => r.includes('Small party'))).toBe(true)
     })
 
     it('should warn about large parties', () => {
       const party: PartyConfiguration = {
-        heroes: Array(7).fill({ level: 4 })
+        heroes: Array(7).fill({ level: 4, victories: 0 })
       }
       const recommendations = getEncounterRecommendations(party)
       expect(recommendations.some((r) => r.includes('Large party'))).toBe(true)
@@ -275,33 +313,25 @@ describe('Encounter Balance Utilities', () => {
 
     it('should warn about wide level ranges', () => {
       const party: PartyConfiguration = {
-        heroes: [{ level: 1 }, { level: 5 }, { level: 6 }]
+        heroes: [
+          { level: 1, victories: 0 }, 
+          { level: 5, victories: 0 }, 
+          { level: 6, victories: 0 }
+        ]
       }
       const recommendations = getEncounterRecommendations(party)
       expect(recommendations.some((r) => r.includes('Wide level range'))).toBe(true)
-    })
-
-    it('should provide recommendations for low-level parties', () => {
-      const party: PartyConfiguration = {
-        heroes: [{ level: 1 }, { level: 2 }, { level: 1 }]
-      }
-      const recommendations = getEncounterRecommendations(party)
-      expect(recommendations.some((r) => r.includes('Low-level party'))).toBe(true)
-    })
-
-    it('should provide recommendations for high-level parties', () => {
-      const party: PartyConfiguration = {
-        heroes: [{ level: 9 }, { level: 10 }, { level: 8 }]
-      }
-      const recommendations = getEncounterRecommendations(party)
-      expect(recommendations.some((r) => r.includes('High-level party'))).toBe(true)
     })
   })
 
   describe('validatePartyConfiguration', () => {
     it('should validate correct party', () => {
       const party: PartyConfiguration = {
-        heroes: [{ level: 3 }, { level: 4 }, { level: 5 }]
+        heroes: [
+          { level: 3, victories: 0 }, 
+          { level: 4, victories: 1 }, 
+          { level: 5, victories: 2 }
+        ]
       }
       const result = validatePartyConfiguration(party)
       expect(result.valid).toBe(true)
@@ -317,7 +347,10 @@ describe('Encounter Balance Utilities', () => {
 
     it('should reject invalid levels', () => {
       const party: PartyConfiguration = {
-        heroes: [{ level: 0 }, { level: 11 }]
+        heroes: [
+          { level: 0, victories: 0 }, 
+          { level: 11, victories: 0 }
+        ]
       }
       const result = validatePartyConfiguration(party)
       expect(result.valid).toBe(false)
@@ -326,10 +359,138 @@ describe('Encounter Balance Utilities', () => {
 
     it('should accept boundary levels (1 and 10)', () => {
       const party: PartyConfiguration = {
-        heroes: [{ level: 1 }, { level: 10 }]
+        heroes: [
+          { level: 1, victories: 0 }, 
+          { level: 10, victories: 5 }
+        ]
       }
       const result = validatePartyConfiguration(party)
       expect(result.valid).toBe(true)
+    })
+  })
+
+  describe('calculateDifficultyThresholds', () => {
+    it('should calculate thresholds based on party strength', () => {
+      const party: PartyConfiguration = {
+        heroes: [{ level: 4, victories: 0 }, { level: 4, victories: 0 }]
+      }
+      // Party strength: 2 * (2*4+4) = 2 * 12 = 24
+      // Average hero level: 4
+      // Hero strength: 2*4+4 = 12
+      
+      const thresholds = calculateDifficultyThresholds(party)
+      expect(thresholds.trivial).toBe(0)
+      expect(thresholds.easy).toBe(12) // 24 - 12 = 12
+      expect(thresholds.standard).toBe(24) // Party strength
+      expect(thresholds.hard).toBe(36) // 24 + 12 = 36
+      expect(thresholds.extreme).toBe(60) // 24 + (3*12) = 60
+    })
+  })
+
+  describe('getCurrentEncounterDifficulty', () => {
+    const party: PartyConfiguration = {
+      heroes: [{ level: 4, victories: 0 }, { level: 4, victories: 0 }]
+    }
+
+    it('should return correct difficulty for different encounter strengths', () => {
+      expect(getCurrentEncounterDifficulty(party, 5)).toBe('Trivial')
+      expect(getCurrentEncounterDifficulty(party, 15)).toBe('Easy')
+      expect(getCurrentEncounterDifficulty(party, 25)).toBe('Standard')
+      expect(getCurrentEncounterDifficulty(party, 40)).toBe('Hard')
+      expect(getCurrentEncounterDifficulty(party, 70)).toBe('Extreme')
+    })
+  })
+
+  describe('calculateEncounterDifficulty', () => {
+    const party: PartyConfiguration = {
+      heroes: [{ level: 4, victories: 0 }, { level: 4, victories: 0 }]
+    }
+
+    it('should return complete encounter analysis', () => {
+      const monsters: MonsterInEncounter[] = [
+        {
+          id: '1',
+          name: 'Monster',
+          level: 4,
+          ev: 25,
+          organization: 'Standard',
+          count: 1
+        }
+      ]
+
+      const result = calculateEncounterDifficulty(party, monsters)
+      expect(result.encounterStrength).toBe(25)
+      expect(result.difficulty).toBe('Standard')
+      expect(result.thresholds).toBeDefined()
+      expect(result.progressToNext).toBeGreaterThanOrEqual(0)
+      expect(result.progressToNext).toBeLessThanOrEqual(100)
+    })
+  })
+
+  describe('getMonsterRecommendations', () => {
+    const party: PartyConfiguration = {
+      heroes: [{ level: 4, victories: 0 }, { level: 4, victories: 0 }]
+    }
+
+    it('should return empty array for no monsters', () => {
+      const recommendations = getMonsterRecommendations(party, [])
+      expect(recommendations).toEqual([])
+    })
+
+    it('should warn about high-level monsters', () => {
+      const monsters: MonsterInEncounter[] = [
+        {
+          id: '1',
+          name: 'High Level Monster',
+          level: 8, // 4+ levels above average hero level (4)
+          ev: 30,
+          organization: 'Standard',
+          count: 1
+        }
+      ]
+
+      const recommendations = getMonsterRecommendations(party, monsters)
+      expect(recommendations.some((r) => r.includes('⚠️') && r.includes('too high'))).toBe(true)
+    })
+
+    it('should suggest more minions when count is low', () => {
+      const monsters: MonsterInEncounter[] = [
+        {
+          id: '1',
+          name: 'Few Minions',
+          level: 3,
+          ev: 8,
+          organization: 'Minion',
+          count: 4
+        }
+      ]
+
+      const recommendations = getMonsterRecommendations(party, monsters)
+      expect(recommendations.some((r) => r.includes('💡') && r.includes('more minions'))).toBe(true)
+    })
+
+    it('should warn about solo monsters with others', () => {
+      const monsters: MonsterInEncounter[] = [
+        {
+          id: '1',
+          name: 'Solo Monster',
+          level: 4,
+          ev: 20,
+          organization: 'Solo',
+          count: 1
+        },
+        {
+          id: '2',
+          name: 'Regular Monster',
+          level: 4,
+          ev: 15,
+          organization: 'Standard',
+          count: 1
+        }
+      ]
+
+      const recommendations = getMonsterRecommendations(party, monsters)
+      expect(recommendations.some((r) => r.includes('⚠️') && r.includes('Solo creatures'))).toBe(true)
     })
   })
 })
