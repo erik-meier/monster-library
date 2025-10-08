@@ -22,6 +22,7 @@ export interface MonsterInEncounter {
   level: number
   ev: number
   organization: string
+  role?: string
   count: number
 }
 
