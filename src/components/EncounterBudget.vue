@@ -49,7 +49,7 @@
           <li>Extreme: {{ encounterInfo.thresholds.extreme.toFixed(1) }}+ EV</li>
         </ul>
       </div>
-      <br> </br>
+      <br />
       <h4>About Dynamic Difficulty</h4>
       <p>
         Encounter difficulty is determined by comparing the total Encounter Value (EV) of monsters

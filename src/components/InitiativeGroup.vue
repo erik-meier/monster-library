@@ -1,70 +1,40 @@
 <template>
-  <div 
-    class="initiative-group"
-    :class="{ 'dragging-over': isDraggingOver }"
-    :data-group-id="group.id"
-    @dragover.prevent="handleDragOver"
-    @dragleave="handleDragLeave"
-    @drop="handleDrop"
-    role="region"
-    :aria-label="`Initiative group: ${group.name}`"
-  >
+  <div class="initiative-group" :class="{ 'dragging-over': isDraggingOver }" :data-group-id="group.id"
+    @dragover.prevent="handleDragOver" @dragleave="handleDragLeave" @drop="handleDrop" role="region"
+    :aria-label="`Initiative group: ${group.name}`">
     <!-- Group Header -->
     <div class="group-header">
       <div class="group-title-section">
-        <button
-          v-if="canReorder"
-          class="drag-handle"
-          :aria-label="`Drag to reorder ${group.name}`"
-          @mousedown="startGroupDrag"
-          @keydown="handleGroupKeyboard"
-          tabindex="0"
-        >
+        <button v-if="canReorder" class="drag-handle" :aria-label="`Drag to reorder ${group.name}`"
+          @mousedown="startGroupDrag" @keydown="handleGroupKeyboard" tabindex="0">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </svg>
         </button>
-        
-        <input
-          v-if="isEditingName"
-          v-model="editedName"
-          type="text"
-          class="group-name-input"
-          @blur="saveGroupName"
-          @keydown.enter="saveGroupName"
-          @keydown.esc="cancelEditName"
-          ref="nameInput"
-          :aria-label="`Edit group name`"
-        />
-        <h3 
-          v-else 
-          class="group-name"
-          @click="startEditName"
-          @keydown.enter="startEditName"
-          @keydown.space.prevent="startEditName"
-          tabindex="0"
-          :aria-label="`Group name: ${group.name}. Press Enter to edit`"
-        >
+
+        <input v-if="isEditingName" v-model="editedName" type="text" class="group-name-input" @blur="saveGroupName"
+          @keydown.enter="saveGroupName" @keydown.esc="cancelEditName" ref="nameInput"
+          :aria-label="`Edit group name`" />
+        <h3 v-else class="group-name" @click="startEditName" tabindex="0"
+          :aria-label="`Group name: ${group.name}. Click to edit`">
           {{ group.name }}
         </h3>
       </div>
-      
+
       <div class="group-stats">
         <span class="stat-badge monster-count">
-          {{ monstersInGroup.length }} {{ monstersInGroup.length === 1 ? 'Monster' : 'Monsters' }}
+          {{ totalMonsterCount }} {{ totalMonsterCount === 1 ? 'Monster' : 'Monsters' }}
         </span>
         <span class="stat-badge total-ev">
           EV {{ totalEV }}
         </span>
-        <button
-          class="btn-icon btn-delete"
-          @click="confirmDelete"
-          :aria-label="`Delete ${group.name}`"
-          title="Delete group"
-        >
+        <button class="btn-icon btn-delete" @click="confirmDelete" :aria-label="`Delete ${group.name}`"
+          title="Delete group">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+            <path
+              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+            <path fill-rule="evenodd"
+              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
           </svg>
         </button>
       </div>
@@ -72,75 +42,58 @@
 
     <!-- Monster List -->
     <div class="monster-list" v-if="monstersInGroup.length > 0">
-      <div
-        v-for="monster in monstersInGroup"
-        :key="monster.id"
-        class="monster-item"
-        :class="{ 
-          'is-minion': isMinion(monster),
-          'has-captain': hasCapitalRelationship()
-        }"
-        draggable="true"
-        @dragstart="handleMonsterDragStart(monster, $event)"
-        @dragend="handleMonsterDragEnd"
-        @keydown="handleMonsterKeyboard(monster, $event)"
-        tabindex="0"
-        role="listitem"
-        :aria-label="`${monster.name}, Level ${monster.level}, ${monster.count} count`"
-      >
+      <div v-for="monster in monstersInGroup" :key="monster.id" class="monster-item" draggable="true"
+        @dragstart="handleMonsterDragStart(monster, $event)" @dragend="handleMonsterDragEnd"
+        @keydown="handleMonsterKeyboard(monster, $event)" tabindex="0" role="listitem"
+        :aria-label="`${monster.name}, Level ${monster.level}, ${monster.count} count`">
         <div class="monster-drag-handle" aria-hidden="true">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-            <circle cx="3" cy="3" r="1.5"/>
-            <circle cx="9" cy="3" r="1.5"/>
-            <circle cx="3" cy="9" r="1.5"/>
-            <circle cx="9" cy="9" r="1.5"/>
+            <circle cx="3" cy="3" r="1.5" />
+            <circle cx="9" cy="3" r="1.5" />
+            <circle cx="3" cy="9" r="1.5" />
+            <circle cx="9" cy="9" r="1.5" />
           </svg>
         </div>
-        
+
         <div class="monster-info">
           <div class="monster-header">
             <span class="monster-name">{{ monster.name }}</span>
-            <span v-if="isMinion(monster)" class="minion-badge" title="Minion">
-              👥
-            </span>
-            <span v-if="isCaptain(monster)" class="captain-badge" title="Captain">
-              ⭐
-            </span>
+            <label v-if="canBeCaptain(monster)" class="captain-checkbox">
+              <input type="checkbox" :checked="isCaptain(monster)" @change="toggleCaptain(monster)" @click.stop />
+              <span class="captain-label">Captain</span>
+            </label>
           </div>
           <div class="monster-details">
-            <span class="detail-badge">Lvl {{ monster.level }}</span>
-            <span class="detail-badge">{{ monster.role }}</span>
+            <span class="detail-badge">Level {{ monster.level }} {{ monster.organization }} {{ monster.role }}</span>
             <span class="detail-badge">EV {{ monster.ev }}</span>
           </div>
         </div>
-        
+
         <div class="monster-controls">
+          <button v-if="isSplittable(monster)" class="btn-icon btn-split" @click="splitMonster(monster)"
+            :aria-label="`Split ${isMinion(monster) ? '4' : '1'} ${monster.name} into a new group`"
+            :title="`Split ${isMinion(monster) ? '4' : '1'} ${monster.name} into a new group`">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+              <path d="M6 2L6 6L2 6L2 2L6 2ZM7 2L11 2L11 6L7 6L7 2ZM2 7L6 7L6 11L2 11L2 7ZM7 7L11 7L11 11L7 11L7 7Z"
+                stroke="currentColor" stroke-width="0.5" />
+            </svg>
+          </button>
           <div class="count-controls">
-            <button
-              class="btn-icon btn-count"
-              @click="decrementMonster(monster)"
-              :aria-label="`Decrease ${monster.name} count`"
-              :disabled="monster.count <= 1"
-            >
+            <button class="btn-icon btn-count" @click="decrementMonster(monster)"
+              :aria-label="`Decrease ${monster.name} count`" :disabled="monster.count <= 1">
               -
             </button>
             <span class="count-display">{{ monster.count }}</span>
-            <button
-              class="btn-icon btn-count"
-              @click="incrementMonster(monster)"
-              :aria-label="`Increase ${monster.name} count`"
-            >
+            <button class="btn-icon btn-count" @click="incrementMonster(monster)"
+              :aria-label="`Increase ${monster.name} count`">
               +
             </button>
           </div>
-          <button
-            class="btn-icon btn-remove"
-            @click="removeMonster(monster)"
-            :aria-label="`Remove ${monster.name} from group`"
-            title="Remove from group"
-          >
+          <button class="btn-icon btn-remove" @click="removeMonster(monster)"
+            :aria-label="`Remove ${monster.name} from group`" title="Remove from group">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-              <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"/>
+              <path
+                d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" />
             </svg>
           </button>
         </div>
@@ -155,7 +108,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, nextTick } from 'vue'
+import { ref, computed, nextTick, watch } from 'vue'
 import { useEncounterStore, type EncounterMonster } from '@/stores/encounter'
 
 interface Props {
@@ -176,6 +129,7 @@ const emit = defineEmits<{
   delete: [groupId: string]
   reorder: [draggedGroupId: string, targetGroupId: string]
   monsterMoved: [monsterId: string, targetGroupId: string]
+  'height-changed': []
 }>()
 
 const encounterStore = useEncounterStore()
@@ -195,23 +149,44 @@ const totalEV = computed(() => {
   return encounterStore.getGroupTotalEV(props.group.id)
 })
 
-// Helper functions
+const totalMonsterCount = computed(() => {
+  return encounterStore.getGroupMonsterCount(props.group.id)
+})
+
+// Helper functions for captain logic
 const isMinion = (monster: EncounterMonster) => {
   return monster.organization?.toLowerCase() === 'minion'
 }
 
-const isCaptain = (monster: EncounterMonster) => {
-  // Check if this monster could be a captain (has minions in same group)
-  const minions = monstersInGroup.value.filter(m => isMinion(m) && m.id !== monster.id)
-  return minions.length > 0 && !isMinion(monster)
+const hasMinionsInGroup = computed(() => {
+  return monstersInGroup.value.some(m => isMinion(m))
+})
+
+const canBeCaptain = (monster: EncounterMonster) => {
+  return !isMinion(monster) && hasMinionsInGroup.value
 }
 
-const hasCapitalRelationship = () => {
-  // Check if there are both minions and non-minions in the group
-  const hasMinions = monstersInGroup.value.some(m => isMinion(m))
-  const hasCaptains = monstersInGroup.value.some(m => !isMinion(m))
-  return hasMinions && hasCaptains
+// For now, we'll use local state for captain status
+// This would ideally be stored in the encounter store
+const captains = ref<Set<string>>(new Set())
+
+const isCaptain = (monster: EncounterMonster) => {
+  return captains.value.has(monster.id)
 }
+
+const toggleCaptain = (monster: EncounterMonster) => {
+  if (captains.value.has(monster.id)) {
+    captains.value.delete(monster.id)
+  } else {
+    captains.value.add(monster.id)
+  }
+}
+
+// Watch for changes that affect height
+watch([monstersInGroup, totalMonsterCount], async () => {
+  await nextTick()
+  emit('height-changed')
+}, { flush: 'post' })
 
 // Group name editing
 const startEditName = () => {
@@ -246,11 +221,11 @@ const handleMonsterDragStart = (monster: EncounterMonster, event: DragEvent) => 
     }))
   }
   // Add dragging class for visual feedback
-  ;(event.target as HTMLElement).classList.add('dragging')
+  ; (event.target as HTMLElement).classList.add('dragging')
 }
 
 const handleMonsterDragEnd = (event: DragEvent) => {
-  ;(event.target as HTMLElement).classList.remove('dragging')
+  ; (event.target as HTMLElement).classList.remove('dragging')
 }
 
 // Group drag and drop
@@ -272,11 +247,11 @@ const handleDragLeave = () => {
 const handleDrop = (event: DragEvent) => {
   event.preventDefault()
   isDraggingOver.value = false
-  
+
   if (event.dataTransfer) {
     try {
       const data = JSON.parse(event.dataTransfer.getData('text/plain'))
-      
+
       if (data.type === 'monster') {
         // Moving a monster to this group
         if (data.sourceGroupId !== props.group.id) {
@@ -299,10 +274,10 @@ const handleDrop = (event: DragEvent) => {
 const startGroupDrag = (event: MouseEvent) => {
   const target = event.currentTarget as HTMLElement
   const groupElement = target.closest('.initiative-group') as HTMLElement
-  
+
   if (groupElement) {
     groupElement.setAttribute('draggable', 'true')
-    
+
     groupElement.addEventListener('dragstart', (e: DragEvent) => {
       if (e.dataTransfer) {
         e.dataTransfer.effectAllowed = 'move'
@@ -313,7 +288,7 @@ const startGroupDrag = (event: MouseEvent) => {
       }
       groupElement.classList.add('dragging')
     })
-    
+
     groupElement.addEventListener('dragend', () => {
       groupElement.classList.remove('dragging')
       groupElement.removeAttribute('draggable')
@@ -336,15 +311,58 @@ const removeMonster = (monster: EncounterMonster) => {
   encounterStore.moveMonsterToGroup(monster.id, null)
 }
 
+const splitMonster = (monster: EncounterMonster) => {
+  if (monster.count <= 1) return
+
+  // Use default split amounts: 4 for minions, 1 for others
+  const isMinionMonster = isMinion(monster)
+  const defaultSplit = isMinionMonster ? 4 : 1
+  const count = Math.min(defaultSplit, monster.count - 1)
+
+  if (count < 1) return
+
+  // Create a new group first
+  const newGroupId = encounterStore.createGroup(`${monster.name} Group`)
+
+  // Reduce the current monster's count
+  encounterStore.updateMonsterCount(monster.id, monster.count - count)
+
+  // Create a new monster entry with the split count for the new group
+  const newMonster = {
+    id: `${monster.id}_${Date.now()}`, // Create a unique ID for the split monster
+    name: monster.name,
+    level: monster.level,
+    ev: monster.ev,
+    organization: monster.organization,
+    role: monster.role
+  }
+
+  // Add the split monsters to the encounter
+  for (let i = 0; i < count; i++) {
+    encounterStore.addMonster(newMonster)
+  }
+
+  // Move the newly added monsters to the new group
+  // Since they'll be the most recently added monsters, we can find them by matching properties
+  const allMonsters = encounterStore.monsters
+  const recentlyAdded = allMonsters
+    .filter(m =>
+      m.name === monster.name &&
+      m.level === monster.level &&
+      m.organization === monster.organization &&
+      m.role === monster.role &&
+      !m.groupId
+    )
+    .slice(-count)
+
+  recentlyAdded.forEach(newMon => {
+    encounterStore.moveMonsterToGroup(newMon.id, newGroupId)
+  })
+}
+
 // Group deletion
 const confirmDelete = () => {
-  if (monstersInGroup.value.length > 0) {
-    if (confirm(`Delete ${props.group.name}? Monsters will be moved to ungrouped.`)) {
-      emit('delete', props.group.id)
-    }
-  } else {
-    emit('delete', props.group.id)
-  }
+  emit('delete', props.group.id)
 }
 
 // Keyboard navigation
@@ -385,6 +403,13 @@ const handleMonsterKeyboard = (monster: EncounterMonster, event: KeyboardEvent) 
     event.preventDefault()
     decrementMonster(monster)
   }
+}
+
+const isSplittable = (monster: EncounterMonster) => {
+  if (isMinion(monster)) {
+    return monster.count > 4
+  }
+  return monster.count > 1
 }
 </script>
 
@@ -557,14 +582,6 @@ const handleMonsterKeyboard = (monster: EncounterMonster, event: KeyboardEvent) 
   opacity: 0.5;
 }
 
-.monster-item.is-minion {
-  border-left: 3px solid var(--color-info-500);
-}
-
-.monster-item.has-captain {
-  border-left: 3px solid var(--color-warning-500);
-}
-
 .monster-drag-handle {
   color: var(--color-neutral-400);
   display: flex;
@@ -593,12 +610,28 @@ const handleMonsterKeyboard = (monster: EncounterMonster, event: KeyboardEvent) 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex: 1;
 }
 
-.minion-badge,
-.captain-badge {
-  font-size: var(--font-size-sm);
+.captain-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  margin-left: var(--space-1);
   flex-shrink: 0;
+}
+
+.captain-checkbox input[type="checkbox"] {
+  margin: 0;
+  width: 14px;
+  height: 14px;
+}
+
+.captain-label {
+  color: var(--color-warning-700);
+  font-weight: var(--font-weight-medium);
 }
 
 .monster-details {
@@ -681,6 +714,15 @@ const handleMonsterKeyboard = (monster: EncounterMonster, event: KeyboardEvent) 
   color: var(--color-primary-700);
 }
 
+.btn-split {
+  color: var(--color-info-600);
+}
+
+.btn-split:hover {
+  background: var(--color-info-100);
+  color: var(--color-info-700);
+}
+
 .btn-remove {
   color: var(--color-error-600);
 }
@@ -728,10 +770,26 @@ const handleMonsterKeyboard = (monster: EncounterMonster, event: KeyboardEvent) 
 
   .monster-item {
     flex-wrap: wrap;
+    gap: var(--space-3);
   }
 
   .monster-info {
     flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .monster-header {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .monster-name {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .captain-checkbox {
+    flex-shrink: 0;
   }
 
   .monster-controls {
