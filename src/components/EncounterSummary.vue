@@ -2,12 +2,8 @@
   <div class="encounter-summary">
     <div class="summary-header">
       <h2>Current Encounter</h2>
-      <button 
-        v-if="encounterStore.monsters.length > 0"
-        @click="clearEncounter" 
-        class="btn btn-clear"
-        aria-label="Clear encounter"
-      >
+      <button v-if="encounterStore.monsters.length > 0" @click="clearEncounter" class="btn btn-clear"
+        aria-label="Clear encounter">
         Clear All
       </button>
     </div>
@@ -53,11 +49,7 @@
     </div>
 
     <div v-else class="monster-list">
-      <div 
-        v-for="monster in encounterStore.monsters" 
-        :key="monster.id" 
-        class="encounter-monster"
-      >
+      <div v-for="monster in encounterStore.monsters" :key="monster.id" class="encounter-monster">
         <div class="monster-info">
           <div class="monster-main">
             <h4 class="monster-name">{{ monster.name }}</h4>
@@ -67,30 +59,18 @@
               <span v-if="monster.organization" class="meta-badge">{{ monster.organization }}</span>
             </div>
           </div>
-          
+
           <div class="monster-controls">
             <div class="count-controls">
-              <button 
-                @click="decreaseCount(monster.id)"
-                class="count-btn"
-                aria-label="Decrease count"
-              >
+              <button @click="decreaseCount(monster.id)" class="count-btn" aria-label="Decrease count">
                 −
               </button>
               <span class="count-display">{{ monster.count }}</span>
-              <button 
-                @click="increaseCount(monster.id)"
-                class="count-btn"
-                aria-label="Increase count"
-              >
+              <button @click="increaseCount(monster.id)" class="count-btn" aria-label="Increase count">
                 +
               </button>
             </div>
-            <button 
-              @click="removeMonster(monster.id)"
-              class="btn-remove"
-              aria-label="Remove monster"
-            >
+            <button @click="removeMonster(monster.id)" class="btn-remove" aria-label="Remove monster">
               ×
             </button>
           </div>

@@ -6,7 +6,7 @@
 export type EncounterDifficulty = 'Trivial' | 'Easy' | 'Standard' | 'Hard' | 'Extreme'
 
 export interface PartyConfiguration {
-  heroes: Array<{ level: number }>
+  heroes: Array<{ level: number; victories: number }>
 }
 
 export interface EncounterBudget {
@@ -41,10 +41,63 @@ export function getDifficultyMultiplier(difficulty: EncounterDifficulty): number
 }
 
 /**
- * Calculate party strength (sum of hero levels)
+ * Calculate party strength (sum of hero levels plus victory bonuses)
+ * Every 2 victories on average increases party strength as if there was an additional hero
  */
 export function calculatePartyStrength(party: PartyConfiguration): number {
-  return party.heroes.reduce((sum, hero) => sum + hero.level, 0)
+  // Base strength from hero levels
+  const baseStrength = party.heroes.reduce((sum, hero) => sum + (2 * hero.level + 4), 0)
+  
+  // Victory bonus: every 2 victories on average adds strength equivalent to one additional hero
+  const totalVictories = party.heroes.reduce((sum, hero) => sum + hero.victories, 0)
+  const averageVictories = party.heroes.length > 0 ? totalVictories / party.heroes.length : 0
+  const averageHeroLevel = party.heroes.length > 0 ? 
+    party.heroes.reduce((sum, hero) => sum + hero.level, 0) / party.heroes.length : 1
+  
+  // Each 2 victories on average = strength of one additional hero of average level
+  const victoryBonus = Math.floor(averageVictories / 2) * (2 * averageHeroLevel + 4)
+  
+  return baseStrength + victoryBonus
+}
+
+/**
+ * Calculate the strength thresholds for each difficulty level
+ */
+export function calculateDifficultyThresholds(party: PartyConfiguration): {
+  trivial: number
+  easy: number
+  standard: number
+  hard: number
+  extreme: number
+} {
+  const partyStrength = calculatePartyStrength(party)
+  const averageHeroLevel = party.heroes.length > 0 ? 
+    party.heroes.reduce((sum, hero) => sum + hero.level, 0) / party.heroes.length : 1
+  const heroStrength = 2 * averageHeroLevel + 4
+  
+  return {
+    trivial: 0, // Starts at 0
+    easy: Math.max(0, partyStrength - heroStrength), // Less than party strength - 1 hero
+    standard: partyStrength, // Party strength
+    hard: partyStrength + heroStrength, // Party strength + 1 hero
+    extreme: partyStrength + (3 * heroStrength) // Party strength + 3 heroes
+  }
+}
+
+/**
+ * Determine the current difficulty of an encounter based on encounter strength
+ */
+export function getCurrentEncounterDifficulty(
+  party: PartyConfiguration,
+  encounterStrength: number
+): EncounterDifficulty {
+  const thresholds = calculateDifficultyThresholds(party)
+  
+  if (encounterStrength < thresholds.easy) return 'Trivial'
+  if (encounterStrength < thresholds.standard) return 'Easy'
+  if (encounterStrength < thresholds.hard) return 'Standard'
+  if (encounterStrength < thresholds.extreme) return 'Hard'
+  return 'Extreme'
 }
 
 /**
@@ -79,6 +132,56 @@ export function calculateMonsterCost(monster: MonsterInEncounter): number {
  */
 export function calculateBudgetUsage(monsters: MonsterInEncounter[]): number {
   return monsters.reduce((sum, monster) => sum + calculateMonsterCost(monster), 0)
+}
+
+/**
+ * Calculate encounter strength (total monster EV) and determine difficulty
+ */
+export function calculateEncounterDifficulty(
+  party: PartyConfiguration,
+  monsters: MonsterInEncounter[]
+): {
+  encounterStrength: number
+  difficulty: EncounterDifficulty
+  thresholds: ReturnType<typeof calculateDifficultyThresholds>
+  progressToNext: number
+} {
+  const encounterStrength = calculateBudgetUsage(monsters)
+  const difficulty = getCurrentEncounterDifficulty(party, encounterStrength)
+  const thresholds = calculateDifficultyThresholds(party)
+  
+  // Calculate progress to next difficulty level
+  let currentThreshold = 0
+  let nextThreshold = thresholds.easy
+  
+  if (difficulty === 'Trivial') {
+    currentThreshold = 0
+    nextThreshold = thresholds.easy
+  } else if (difficulty === 'Easy') {
+    currentThreshold = thresholds.easy
+    nextThreshold = thresholds.standard
+  } else if (difficulty === 'Standard') {
+    currentThreshold = thresholds.standard
+    nextThreshold = thresholds.hard
+  } else if (difficulty === 'Hard') {
+    currentThreshold = thresholds.hard
+    nextThreshold = thresholds.extreme
+  } else {
+    // Extreme - no next level
+    currentThreshold = thresholds.extreme
+    nextThreshold = thresholds.extreme
+  }
+  
+  const progressToNext = nextThreshold > currentThreshold
+    ? Math.min(100, Math.round(((encounterStrength - currentThreshold) / (nextThreshold - currentThreshold)) * 100))
+    : 100
+  
+  return {
+    encounterStrength,
+    difficulty,
+    thresholds,
+    progressToNext: Math.max(0, progressToNext)
+  }
 }
 
 /**
@@ -118,21 +221,21 @@ export function getBudgetStatus(budget: EncounterBudget): 'safe' | 'warning' | '
 export function getDifficultyDescription(difficulty: EncounterDifficulty): string {
   const descriptions: Record<EncounterDifficulty, string> = {
     Trivial:
-      'Trivial encounters pose minimal threat. Heroes should easily overcome these challenges with few resources spent.',
+      'Trivial encounters should pose no challenge to the heroes and should be used sparingly to highlight the heroes\' strengths.',
     Easy:
-      'Easy encounters provide a light challenge. Heroes will likely succeed without expending significant resources.',
+      'Easy encounters are not life-threatening unless the heroes are very low on stamina or recoveries.',
     Standard:
-      'Standard encounters are the baseline difficulty. Heroes should win but may need to use some abilities and tactics.',
+      'Standard encounters are the most common, and should deplete some stamina and recoveries.',
     Hard:
-      'Hard encounters are dangerous. Heroes will need to work together strategically and use resources wisely.',
+      'Hard encounters are typically climactic encounters with a villain or major threat that should put the heroes in real danger.',
     Extreme:
-      'Extreme encounters are deadly. Heroes face serious risk of defeat and should approach with caution and planning.'
+      'Extreme encounters are deadly, with a fight to the bitter end likely resulting in hero deaths.'
   }
   return descriptions[difficulty]
 }
 
 /**
- * Get recommendations for encounter difficulty based on party composition
+ * Get recommendations for party configuration
  */
 export function getEncounterRecommendations(party: PartyConfiguration): string[] {
   const heroCount = party.heroes.length
@@ -143,7 +246,6 @@ export function getEncounterRecommendations(party: PartyConfiguration): string[]
     return recommendations
   }
 
-  const avgLevel = calculatePartyStrength(party) / heroCount
   const levels = party.heroes.map(h => h.level)
   const minLevel = Math.min(...levels)
   const maxLevel = Math.max(...levels)
@@ -167,10 +269,66 @@ export function getEncounterRecommendations(party: PartyConfiguration): string[]
     )
   }
 
-  if (avgLevel <= 2) {
-    recommendations.push('Low-level party: Trivial and Easy encounters recommended for new heroes.')
-  } else if (avgLevel >= 8) {
-    recommendations.push('High-level party: Consider Hard and Extreme encounters for worthy challenges.')
+  return recommendations
+}
+
+/**
+ * Get recommendations based on encounter composition (monsters vs party)
+ */
+export function getMonsterRecommendations(
+  party: PartyConfiguration,
+  monsters: MonsterInEncounter[]
+): string[] {
+  const heroCount = party.heroes.length
+  const recommendations: string[] = []
+
+  if (heroCount === 0 || monsters.length === 0) {
+    return recommendations // No recommendations if no party or no monsters
+  }
+
+  const avgHeroLevel = party.heroes.reduce((sum, hero) => sum + hero.level, 0) / heroCount
+  const maxMonsterLevel = Math.max(...monsters.map(m => m.level))
+  const totalMonsterCount = monsters.reduce((sum, monster) => sum + monster.count, 0)
+  const monsterCountPerHero = totalMonsterCount / heroCount
+  const uniqueMonsterTypes = monsters.length
+  
+  const minionMonsters = monsters.filter(m => m.organization.toLowerCase() === 'minion')
+  const soloMonsters = monsters.filter(m => m.organization.toLowerCase() === 'solo')
+  const totalMinionCount = minionMonsters.reduce((sum, monster) => sum + monster.count, 0)
+
+  // Check monster level vs hero level
+  if (maxMonsterLevel >= avgHeroLevel + 3) {
+    recommendations.push('⚠️ Monster levels may be too high - highest monster is 3+ levels above average hero level.')
+  }
+
+  // Check for solo monsters with high level difference
+  if (maxMonsterLevel >= avgHeroLevel + 1 && soloMonsters.length > 0 && monsters.every(m => m.organization.toLowerCase() === 'solo')) {
+    recommendations.push('⚠️ Monster levels may be too high - solo monsters are 1+ levels above average hero level.')
+  }
+
+  // Check minion count
+  if (totalMinionCount > 0 && totalMinionCount < 8) {
+    recommendations.push('💡 Consider adding more minions - they are more effective in larger numbers (8+).')
+  }
+
+  // Check total monster count per hero
+  if (monsterCountPerHero > 8) {
+    recommendations.push('⚠️ Many monsters per hero - this encounter may be difficult to run effectively.')
+  }
+
+  // Check non-minion density
+  if (monsterCountPerHero > 3 && totalMinionCount < totalMonsterCount / 2) {
+    recommendations.push('⚠️ Many non-minion monsters per hero - encounter may be challenging or difficult to run.')
+  }
+
+  // Check monster variety
+  if (uniqueMonsterTypes > 6) {
+    recommendations.push('⚠️ Many different monster types - variety could make the encounter challenging to run.')
+  }
+
+  // Check solo monsters with others
+  if (soloMonsters.length > 0 && monsters.length > soloMonsters.length) {
+    recommendations.push('⚠️ Solo creatures work best when encountered alone, not with other monsters.')
   }
 
   return recommendations

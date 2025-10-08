@@ -1,96 +1,88 @@
 <template>
   <div class="encounter-budget">
-    <div class="section-header">
-      <h3>Encounter Budget</h3>
-      <p class="section-description">Track EV budget as you build your encounter</p>
-    </div>
+    <!-- Prominent EV and Difficulty Display -->
+    <div class="encounter-summary">
+      <div class="ev-badge" :class="`difficulty-${encounterInfo.difficulty.toLowerCase()}`">
+        <div class="ev-value">{{ encounterInfo.encounterStrength.toFixed(0) }}</div>
+        <div class="ev-label">EV</div>
+      </div>
 
-    <div class="difficulty-selector">
-      <label for="difficulty-select">Difficulty:</label>
-      <select id="difficulty-select" v-model="selectedDifficulty" class="form-input" @change="updateDifficulty">
-        <option value="Trivial">Trivial</option>
-        <option value="Easy">Easy</option>
-        <option value="Standard">Standard</option>
-        <option value="Hard">Hard</option>
-        <option value="Extreme">Extreme</option>
-      </select>
-      <button
-        type="button"
-        class="help-button"
-        @click="showTooltip = !showTooltip"
-        :title="showTooltip ? 'Hide difficulty info' : 'Show difficulty info'"
-      >
+      <div class="difficulty-info">
+        <div class="difficulty-name" :class="`difficulty-${encounterInfo.difficulty.toLowerCase()}`">
+          {{ encounterInfo.difficulty }}
+        </div>
+        <div class="difficulty-subtitle">Encounter Difficulty</div>
+      </div>
+
+      <button type="button" class="help-button" @click="showTooltip = !showTooltip"
+        :title="showTooltip ? 'Hide difficulty info' : 'Show difficulty info'">
         ?
       </button>
     </div>
 
+    <!-- Clean Progress Bar (no labels) -->
+    <div class="difficulty-progress-bar">
+      <div class="difficulty-levels">
+        <div v-for="zone in difficultyLevels" :key="zone.name" :class="`difficulty-zone ${zone.color}`"
+          :style="{ width: `${zone.width}%` }">
+        </div>
+      </div>
+      <div class="progress-indicator" :style="{ left: `${progressPosition}%` }">
+        <div class="progress-line"></div>
+      </div>
+    </div>
+
+    <!-- Detailed Info Tooltip -->
     <div v-if="showTooltip" class="difficulty-tooltip">
-      <h4>{{ selectedDifficulty }} Encounter</h4>
+      <h4>{{ encounterInfo.difficulty }} Encounter</h4>
       <p>{{ difficultyDescription }}</p>
-      <p class="multiplier-info">
-        <strong>Budget Multiplier:</strong> {{ difficultyMultiplier }}×
-      </p>
-    </div>
-
-    <div class="budget-display" :class="`budget-${budgetStatus}`">
-      <div class="budget-bar-container">
-        <div class="budget-bar" :style="{ width: `${Math.min(budget.percentage, 100)}%` }"></div>
-        <div v-if="budget.percentage > 100" class="budget-bar-overflow"></div>
+      <div class="threshold-info">
+        <p><strong>Difficulty Thresholds (based on party strength):</strong></p>
+        <ul>
+          <li>Trivial: 0 - {{ encounterInfo.thresholds.easy.toFixed(1) }} EV</li>
+          <li>Easy: {{ encounterInfo.thresholds.easy.toFixed(1) }} - {{ encounterInfo.thresholds.standard.toFixed(1) }}
+            EV</li>
+          <li>Standard: {{ encounterInfo.thresholds.standard.toFixed(1) }} - {{ encounterInfo.thresholds.hard.toFixed(1)
+          }} EV</li>
+          <li>Hard: {{ encounterInfo.thresholds.hard.toFixed(1) }} - {{ encounterInfo.thresholds.extreme.toFixed(1) }}
+            EV</li>
+          <li>Extreme: {{ encounterInfo.thresholds.extreme.toFixed(1) }}+ EV</li>
+        </ul>
       </div>
-      <div class="budget-stats">
-        <div class="budget-stat">
-          <span class="stat-label">Used</span>
-          <span class="stat-value">{{ budget.used }} EV</span>
-        </div>
-        <div class="budget-stat">
-          <span class="stat-label">Total Budget</span>
-          <span class="stat-value">{{ budget.total }} EV</span>
-        </div>
-        <div class="budget-stat">
-          <span class="stat-label">Remaining</span>
-          <span class="stat-value">{{ budget.remaining }} EV</span>
-        </div>
-        <div class="budget-stat budget-percentage">
-          <span class="stat-value-large">{{ budget.percentage }}%</span>
-        </div>
-      </div>
-    </div>
-
-    <div v-if="budgetStatus === 'warning'" class="budget-warning warning">
-      ⚠️ Budget usage at {{ budget.percentage }}%. Consider balancing the encounter.
-    </div>
-
-    <div v-if="budgetStatus === 'danger'" class="budget-warning danger">
-      ⚠️ Budget usage at {{ budget.percentage }}%. You're approaching the limit!
-    </div>
-
-    <div v-if="budgetStatus === 'over'" class="budget-warning over">
-      🛑 Budget exceeded! This encounter is over budget by {{ Math.abs(budget.remaining) }} EV.
-    </div>
-
-    <div class="budget-help">
-      <h4>About Encounter Budget</h4>
+      <br> </br>
+      <h4>About Dynamic Difficulty</h4>
       <p>
-        The encounter budget is calculated based on your party's strength (sum of hero levels) multiplied
-        by the difficulty multiplier. Add monsters to your encounter, and their combined EV will count
-        against this budget.
+        Encounter difficulty is determined by comparing the total Encounter Value (EV) of monsters
+        to your party's strength. The difficulty automatically updates as you add or remove monsters.
       </p>
       <p class="help-note">
-        <strong>Note:</strong> Minion EV represents 4 minions. When adding individual minions, the cost
-        is divided accordingly.
+        <strong>Party Strength:</strong> Based on hero levels {{party.heroes.length > 0 && party.heroes.some(h =>
+          h.victories > 0) ? 'and victory bonuses' : ''}}.
+        Heroes with victories increase the party's effective strength.
       </p>
     </div>
+
+    <div v-if="encounterInfo.difficulty === 'Extreme'" class="progress-info extreme-warning">
+      ⚠️ Extreme encounter! This may be deadly for the heroes.
+    </div>
+
+    <div v-if="monsterRecommendations.length > 0" class="encounter-recommendations">
+      <h4>Encounter Recommendations</h4>
+      <ul>
+        <li v-for="(rec, index) in monsterRecommendations" :key="index">{{ rec }}</li>
+      </ul>
+    </div>
+
+
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import {
-  getEncounterBudgetSummary,
-  getBudgetStatus,
+  calculateEncounterDifficulty,
   getDifficultyDescription,
-  getDifficultyMultiplier,
-  type EncounterDifficulty,
+  getMonsterRecommendations,
   type PartyConfiguration,
   type MonsterInEncounter
 } from '@/utils/encounterBalance'
@@ -98,38 +90,61 @@ import {
 interface Props {
   party: PartyConfiguration
   monsters: MonsterInEncounter[]
-  difficulty: EncounterDifficulty
-}
-
-interface Emits {
-  (e: 'update:difficulty', value: EncounterDifficulty): void
 }
 
 const props = defineProps<Props>()
-const emit = defineEmits<Emits>()
 
 const showTooltip = ref(false)
-const selectedDifficulty = ref<EncounterDifficulty>(props.difficulty)
 
-const budget = computed(() => {
-  return getEncounterBudgetSummary(props.party, props.difficulty, props.monsters)
-})
-
-const budgetStatus = computed(() => {
-  return getBudgetStatus(budget.value)
+const encounterInfo = computed(() => {
+  return calculateEncounterDifficulty(props.party, props.monsters)
 })
 
 const difficultyDescription = computed(() => {
-  return getDifficultyDescription(selectedDifficulty.value)
+  return getDifficultyDescription(encounterInfo.value.difficulty)
 })
 
-const difficultyMultiplier = computed(() => {
-  return getDifficultyMultiplier(selectedDifficulty.value)
+const difficultyLevels = computed(() => {
+  const thresholds = encounterInfo.value.thresholds
+
+  // Set hard threshold to be at 80% of the bar
+  const maxThreshold = thresholds.extreme / 0.8
+
+  return [
+    {
+      name: 'Green Zone',
+      description: 'Trivial-Standard',
+      width: (thresholds.hard / maxThreshold) * 100,
+      color: 'green'
+    },
+    {
+      name: 'Yellow Zone',
+      description: 'Hard',
+      width: ((thresholds.extreme - thresholds.hard) / maxThreshold) * 100,
+      color: 'yellow'
+    },
+    {
+      name: 'Red Zone',
+      description: 'Extreme',
+      width: ((maxThreshold - thresholds.extreme) / maxThreshold) * 100,
+      color: 'red'
+    }
+  ]
 })
 
-function updateDifficulty() {
-  emit('update:difficulty', selectedDifficulty.value)
-}
+const progressPosition = computed(() => {
+  const strength = encounterInfo.value.encounterStrength
+  const thresholds = encounterInfo.value.thresholds
+  const maxThreshold = thresholds.extreme / 0.8
+
+  // Ensure minimum position of 3% to align with the start of the green zone
+  const position = (strength / maxThreshold) * 100
+  return Math.max(3, Math.min(98, position))
+})
+
+const monsterRecommendations = computed(() => {
+  return getMonsterRecommendations(props.party, props.monsters)
+})
 </script>
 
 <style scoped>
@@ -146,26 +161,93 @@ function updateDifficulty() {
   color: var(--color-primary-600);
 }
 
-.section-description {
-  margin: 0;
-  font-size: var(--font-size-sm);
-  color: var(--color-neutral-600);
-}
-
-.difficulty-selector {
+/* Encounter Summary - Prominent EV and Difficulty */
+.encounter-summary {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-5);
+  padding: var(--space-5);
+  background: white;
+  border: 2px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-4);
 }
 
-.difficulty-selector label {
+.ev-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ev-badge.difficulty-trivial,
+.ev-badge.difficulty-easy,
+.ev-badge.difficulty-standard {
+  background: linear-gradient(135deg, var(--color-success-500), var(--color-success-600));
+  color: white;
+}
+
+.ev-badge.difficulty-hard {
+  background: linear-gradient(135deg, var(--color-warning-500), var(--color-warning-600));
+  color: white;
+}
+
+.ev-badge.difficulty-extreme {
+  background: linear-gradient(135deg, var(--color-error-500), var(--color-error-600));
+  color: white;
+}
+
+.ev-value {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.ev-label {
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  color: var(--color-neutral-700);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
 }
 
-.difficulty-selector select {
+.difficulty-info {
   flex: 1;
-  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.difficulty-name {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+.difficulty-name.difficulty-trivial,
+.difficulty-name.difficulty-easy,
+.difficulty-name.difficulty-standard {
+  color: var(--color-success-700);
+}
+
+.difficulty-name.difficulty-hard {
+  color: var(--color-warning-700);
+}
+
+.difficulty-name.difficulty-extreme {
+  color: var(--color-error-700);
+}
+
+.difficulty-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .help-button {
@@ -213,178 +295,120 @@ function updateDifficulty() {
   margin-bottom: 0;
 }
 
-.multiplier-info {
+.threshold-info {
+  margin-top: var(--space-3);
+}
+
+.threshold-info p {
+  margin: 0 0 var(--space-2) 0;
+}
+
+.threshold-info ul {
+  margin: 0;
+  padding-left: var(--space-4);
   font-size: var(--font-size-sm);
-  color: var(--color-primary-600);
 }
 
-.budget-display {
-  padding: var(--space-5);
-  background: white;
-  border-radius: var(--radius-lg);
-  border: 2px solid var(--color-neutral-200);
-  transition: border-color 0.3s;
+.threshold-info li {
+  margin-bottom: var(--space-1);
+  color: var(--color-neutral-700);
 }
 
-.budget-display.budget-safe {
-  border-color: var(--color-success-600);
-}
-
-.budget-display.budget-warning {
-  border-color: var(--color-warning-600);
-}
-
-.budget-display.budget-danger {
-  border-color: var(--color-error-600);
-}
-
-.budget-display.budget-over {
-  border-color: var(--color-error-700);
-  background: var(--color-error-50);
-}
-
-.budget-bar-container {
+.difficulty-progress-bar {
   position: relative;
-  height: 24px;
-  background: var(--color-neutral-200);
-  border-radius: var(--radius-base);
-  overflow: hidden;
+  padding: var(--space-3);
+  background: white;
+  border: 2px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
   margin-bottom: var(--space-4);
 }
 
-.budget-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: linear-gradient(90deg, var(--color-success-600), var(--color-success-500));
-  transition: all 0.3s ease;
+.difficulty-levels {
+  display: flex;
+  height: 32px;
   border-radius: var(--radius-base);
+  overflow: hidden;
+  background: var(--color-neutral-200);
 }
 
-.budget-display.budget-warning .budget-bar {
-  background: linear-gradient(90deg, var(--color-warning-600), var(--color-warning-500));
+.difficulty-zone {
+  position: relative;
+  transition: all 0.3s ease;
+  border-right: 2px solid white;
 }
 
-.budget-display.budget-danger .budget-bar,
-.budget-display.budget-over .budget-bar {
-  background: linear-gradient(90deg, var(--color-error-600), var(--color-error-500));
+.difficulty-zone:last-child {
+  border-right: none;
 }
 
-.budget-bar-overflow {
+.difficulty-zone.green {
+  background: linear-gradient(90deg, var(--color-success-500), var(--color-success-600));
+}
+
+.difficulty-zone.yellow {
+  background: linear-gradient(90deg, var(--color-warning-500), var(--color-warning-600));
+}
+
+.difficulty-zone.red {
+  background: linear-gradient(90deg, var(--color-error-500), var(--color-error-600));
+}
+
+.progress-indicator {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    var(--color-error-600),
-    var(--color-error-600) 10px,
-    var(--color-error-700) 10px,
-    var(--color-error-700) 20px
-  );
-  animation: slideStripes 1s linear infinite;
+  top: 12px;
+  transform: translateX(-50%);
+  z-index: 15;
+  pointer-events: none;
+  transition: left 0.3s ease;
 }
 
-@keyframes slideStripes {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 28px 28px;
-  }
+.progress-line {
+  width: 4px;
+  height: 32px;
+  background: var(--color-neutral-900);
+  border-radius: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.budget-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: var(--space-4);
-}
-
-.budget-stat {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.budget-percentage {
-  grid-column: 1 / -1;
-  align-items: center;
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--color-neutral-200);
-}
-
-.stat-label {
-  font-size: var(--font-size-xs);
-  text-transform: uppercase;
-  font-weight: var(--font-weight-medium);
-  color: var(--color-neutral-600);
-}
-
-.stat-value {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-neutral-900);
-}
-
-.stat-value-large {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary-600);
-}
-
-.budget-warning {
-  padding: var(--space-4);
-  border-radius: var(--radius-md);
+.progress-info {
   font-size: var(--font-size-sm);
+  color: var(--color-neutral-700);
+  text-align: center;
+  margin: var(--space-3) 0;
+}
+
+.next-threshold {
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-xs);
+}
+
+.extreme-warning {
+  color: var(--color-error-700);
   font-weight: var(--font-weight-medium);
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
 }
 
-.budget-warning.warning {
-  background: var(--color-warning-50);
-  border: 1px solid var(--color-warning-600);
-  color: var(--color-warning-800);
-}
-
-.budget-warning.danger {
-  background: var(--color-error-50);
-  border: 1px solid var(--color-error-600);
-  color: var(--color-error-800);
-}
-
-.budget-warning.over {
-  background: var(--color-error-50);
-  border: 2px solid var(--color-error-700);
-  color: var(--color-error-900);
-  font-weight: var(--font-weight-bold);
-}
-
-.budget-help {
+.encounter-help {
   padding: var(--space-4);
   background: var(--color-neutral-50);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-neutral-200);
 }
 
-.budget-help h4 {
+.encounter-help h4 {
   margin: 0 0 var(--space-3) 0;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   color: var(--color-neutral-800);
 }
 
-.budget-help p {
+.encounter-help p {
   margin: 0 0 var(--space-3) 0;
   font-size: var(--font-size-sm);
   color: var(--color-neutral-700);
   line-height: var(--line-height-relaxed);
 }
 
-.budget-help p:last-child {
+.encounter-help p:last-child {
   margin-bottom: 0;
 }
 
@@ -393,22 +417,65 @@ function updateDifficulty() {
   color: var(--color-neutral-600);
 }
 
+.encounter-recommendations {
+  padding: var(--space-4);
+  background: var(--color-warning-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-warning-600);
+  margin-bottom: var(--space-4);
+}
+
+.encounter-recommendations h4 {
+  margin: 0 0 var(--space-3) 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-warning-700);
+}
+
+.encounter-recommendations ul {
+  margin: 0;
+  padding-left: var(--space-5);
+  list-style: none;
+}
+
+.encounter-recommendations li {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-700);
+  line-height: var(--line-height-relaxed);
+  position: relative;
+}
+
+.encounter-recommendations li:last-child {
+  margin-bottom: 0;
+}
+
 /* Mobile responsive */
 @media (max-width: 640px) {
-  .difficulty-selector {
-    flex-wrap: wrap;
+  .encounter-summary {
+    padding: var(--space-4);
+    gap: var(--space-3);
   }
 
-  .difficulty-selector select {
-    max-width: 100%;
+  .ev-badge {
+    width: 60px;
+    height: 60px;
   }
 
-  .budget-stats {
-    grid-template-columns: 1fr 1fr;
+  .ev-value {
+    font-size: var(--font-size-xl);
   }
 
-  .budget-percentage {
-    grid-column: 1 / -1;
+  .difficulty-name {
+    font-size: var(--font-size-xl);
+  }
+
+  .difficulty-subtitle {
+    font-size: var(--font-size-xs);
+  }
+
+  .progress-info {
+    font-size: var(--font-size-xs);
   }
 }
 </style>
