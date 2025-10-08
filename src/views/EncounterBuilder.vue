@@ -40,8 +40,7 @@
               <div class="monster-info">
                 <h3 class="monster-name">{{ monster.name }}</h3>
                 <div class="monster-stats">
-                  <span class="stat-badge">Level {{ monster.level }}</span>
-                  <span class="stat-badge">{{ monster.organization }}</span>
+                  <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' + monster.role : '' }}</span>
                   <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
                 </div>
               </div>
@@ -102,15 +101,24 @@
               <div class="monster-info">
                 <h4 class="monster-name">{{ monster.name }}</h4>
                 <div class="monster-stats">
-                  <span class="stat-badge">Level {{ monster.level }}</span>
-                  <span class="stat-badge">{{ monster.organization }}</span>
-                  <span class="stat-badge">{{ monster.role }}</span>
+                  <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' + monster.role : '' }}</span>
                   <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
                 </div>
               </div>
-              <button type="button" class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster)">
-                + Add
-              </button>
+              <div class="monster-add-buttons">
+                <button type="button" class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster)">
+                  + Add
+                </button>
+                <button 
+                  v-if="monster.organization.toLowerCase() === 'minion'" 
+                  type="button" 
+                  class="btn btn-primary btn-sm" 
+                  @click="addMonsterToEncounter(monster, 4)"
+                  title="Add a full group of 4 minions"
+                >
+                  + Add 4
+                </button>
+              </div>
             </div>
           </div>
 
@@ -127,6 +135,7 @@
 import { ref, computed, onMounted } from 'vue'
 import PartyConfiguration from '@/components/PartyConfiguration.vue'
 import EncounterBudget from '@/components/EncounterBudget.vue'
+import { useCustomMonstersStore } from '@/stores/customMonsters'
 import {
   calculateMonsterCost,
   type PartyConfiguration as PartyConfig,
@@ -157,6 +166,7 @@ interface SimpleMonster {
 
 // All available monsters
 const allMonsters = ref<SimpleMonster[]>([])
+const customMonstersStore = useCustomMonstersStore()
 
 onMounted(async () => {
   // Load all monsters using dynamic import
@@ -164,7 +174,7 @@ onMounted(async () => {
   const indexData = getMonsterIndex() as { card: Record<string, SimpleMonster> }
 
   // Transform the card data into simplified monster data
-  allMonsters.value = Object.entries(indexData.card).map(([id, cardData]) => ({
+  const officialMonsters = Object.entries(indexData.card).map(([id, cardData]) => ({
     id,
     name: cardData.name,
     level: cardData.level,
@@ -172,6 +182,20 @@ onMounted(async () => {
     role: cardData.role,
     organization: cardData.organization
   }))
+
+  // Load custom monsters from store
+  customMonstersStore.loadFromStorage()
+  const customMonsters = customMonstersStore.allCustomMonsters.map(monster => ({
+    id: monster.id,
+    name: monster.name,
+    level: monster.level,
+    ev: monster.ev,
+    role: monster.role,
+    organization: monster.organization
+  }))
+
+  // Combine official and custom monsters
+  allMonsters.value = [...officialMonsters, ...customMonsters]
 })
 
 // Computed
@@ -207,11 +231,11 @@ const filteredMonsters = computed(() => {
 })
 
 // Methods
-function addMonsterToEncounter(monster: SimpleMonster) {
+function addMonsterToEncounter(monster: SimpleMonster, count: number = 1) {
   const existing = encounterMonsters.value.find((m) => m.id === monster.id)
 
   if (existing) {
-    existing.count++
+    existing.count += count
   } else {
     encounterMonsters.value.push({
       id: monster.id,
@@ -219,7 +243,8 @@ function addMonsterToEncounter(monster: SimpleMonster) {
       level: monster.level,
       ev: monster.ev,
       organization: monster.organization,
-      count: 1
+      role: monster.role,
+      count: count
     })
   }
 }
@@ -490,6 +515,12 @@ function calculateCost(monster: MonsterInEncounter): string {
 .available-monster .monster-name {
   font-size: var(--font-size-base);
   margin-bottom: var(--space-1);
+}
+
+.monster-add-buttons {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
 }
 
 .results-note {
