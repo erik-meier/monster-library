@@ -59,7 +59,7 @@ const routes = [
     component: MyMonsters
   },
   {
-    path: '/encounters',
+    path: '/encounter-builder',
     name: 'EncounterBuilder',
     component: EncounterBuilder
   },
@@ -67,6 +67,11 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/encounter-builder',
+    name: 'EncounterBuilder',
+    component: EncounterBuilder
   }
 ]
 

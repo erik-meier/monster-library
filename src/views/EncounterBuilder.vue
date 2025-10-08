@@ -1,231 +1,758 @@
 <template>
   <div class="encounter-builder">
-    <!-- Page Header -->
     <div class="page-header">
       <h1>Encounter Builder</h1>
-      <p class="page-description">
-        Build balanced encounters for your Draw Steel adventures
-      </p>
+      <p class="page-subtitle">Create balanced encounters using Draw Steel rules</p>
     </div>
 
-    <!-- Main Content Area -->
-    <div class="encounter-layout">
-      <!-- Left: Monster Selection -->
-      <div class="selection-panel">
-        <h2 class="panel-title">Select Monsters</h2>
-        <MonsterSelector />
+    <div class="builder-layout">
+      <div class="builder-sidebar">
+        <EncounterBudget :party="party" :monsters="encounterMonsters" />
+        <PartyConfiguration v-model="party" />
       </div>
 
-      <!-- Right: Encounter Panel with Tabs -->
-      <aside class="summary-panel">
-        <div class="panel-tabs">
-          <button 
-            class="tab-btn"
-            :class="{ active: currentTab === 'summary' }"
-            @click="currentTab = 'summary'"
-          >
-            Summary
-          </button>
-          <button 
-            class="tab-btn"
-            :class="{ active: currentTab === 'initiative' }"
-            @click="currentTab = 'initiative'"
-          >
-            Initiative Groups
-          </button>
+      <div class="builder-main">
+        <div class="section-card">
+          <h2>Encounter Summary</h2>
+
+          <CollapsibleSection title="Encounter Monsters" :expanded="encounterMonstersExpanded"
+            @toggle="encounterMonstersExpanded = $event" ref="encounterMonstersSection">
+            <p v-if="encounterMonsters.length === 0" class="empty-state">
+              No monsters added yet. Use the search below to add monsters to your encounter.
+            </p>
+
+            <div v-else class="monster-list">
+              <div v-for="monster in encounterMonsters" :key="monster.id" class="monster-entry">
+                <div class="monster-info">
+                  <h3 class="monster-name">{{ monster.name }}</h3>
+                  <div class="monster-stats">
+                    <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' +
+                      monster.role : '' }}</span>
+                    <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
+                  </div>
+                </div>
+
+                <div class="monster-controls">
+                  <div class="quantity-control">
+                    <button type="button" class="btn btn-sm" @click="decrementMonster(monster.id)"
+                      :disabled="monster.count <= 1">
+                      −
+                    </button>
+                    <span class="quantity-display">{{ monster.count }}</span>
+                    <button type="button" class="btn btn-sm" @click="incrementMonster(monster.id)">
+                      +
+                    </button>
+                  </div>
+                  <div class="monster-cost">
+                    <span class="cost-label">Cost:</span>
+                    <span class="cost-value">{{ calculateCost(monster) }} EV</span>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-danger" @click="removeMonster(monster.id)"
+                    title="Remove from encounter">
+                    ✕
+                  </button>
+                </div>
+              </div>
+            </div>
+          </CollapsibleSection>
+
+          <CollapsibleSection title="Malice Features" :expanded="encounterMaliceExpanded"
+            @toggle="encounterMaliceExpanded = $event" ref="encounterMaliceSection">
+            <p v-if="encounterMalice.length === 0" class="empty-state">
+              No malice features added yet. Use the search below to add malice features to your encounter.
+            </p>
+
+            <div v-else class="malice-list">
+              <div v-for="malice in encounterMalice" :key="malice.id" class="malice-entry">
+                <div class="malice-info">
+                  <h3 class="malice-name">{{ malice.name }}</h3>
+                  <div class="malice-stats">
+                    <span class="stat-badge">Level {{ malice.level }}</span>
+                  </div>
+                  <p v-if="malice.flavor" class="malice-flavor">{{ malice.flavor }}</p>
+                </div>
+                <button type="button" class="btn btn-sm btn-danger" @click="removeMalice(malice.id)"
+                  title="Remove from encounter">
+                  ✕
+                </button>
+              </div>
+            </div>
+          </CollapsibleSection>
         </div>
 
-        <div class="tab-content">
-          <EncounterSummary v-if="currentTab === 'summary'" />
-          <InitiativeTracker v-else-if="currentTab === 'initiative'" />
+        <div class="section-card">
+          <CollapsibleSection title="Add Monsters" :expanded="monstersListExpanded"
+            @toggle="monstersListExpanded = $event">
+            <div class="search-section">
+              <input v-model="searchQuery" type="text" placeholder="Search monsters by name, level, or role..."
+                class="form-input search-input" />
+
+              <div class="filter-controls">
+                <select v-model="filterLevel" class="form-input filter-select">
+                  <option value="">All Levels</option>
+                  <option v-for="level in 10" :key="level" :value="level">Level {{ level }}</option>
+                </select>
+
+                <select v-model="filterOrg" class="form-input filter-select">
+                  <option value="">All Organizations</option>
+                  <option value="Minion">Minion</option>
+                  <option value="Standard">Standard</option>
+                  <option value="Elite">Elite</option>
+                  <option value="Leader">Leader</option>
+                  <option value="Solo">Solo</option>
+                </select>
+              </div>
+            </div>
+
+            <div v-if="filteredMonsters.length === 0" class="no-results">
+              No monsters match your search criteria.
+            </div>
+
+            <div v-else class="available-monsters">
+              <div v-for="monster in filteredMonsters.slice(0, 20)" :key="monster.id" class="available-monster">
+                <div class="monster-info">
+                  <h4 class="monster-name">{{ monster.name }}</h4>
+                  <div class="monster-stats">
+                    <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' +
+                      monster.role : '' }}</span>
+                    <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
+                  </div>
+                </div>
+                <div class="monster-add-buttons">
+                  <button type="button" class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster)">
+                    + Add
+                  </button>
+                  <button v-if="monster.organization.toLowerCase() === 'minion'" type="button"
+                    class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster, 4)"
+                    title="Add a full group of 4 minions">
+                    + Add 4
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <p v-if="filteredMonsters.length > 20" class="results-note">
+              Showing 20 of {{ filteredMonsters.length }} results. Refine your search to see more.
+            </p>
+          </CollapsibleSection>
         </div>
-      </aside>
+
+        <div class="section-card">
+          <CollapsibleSection title="Add Malice Features" :expanded="maliceListExpanded"
+            @toggle="maliceListExpanded = $event">
+            <div class="search-section">
+              <input v-model="maliceSearchQuery" type="text" placeholder="Search malice features by name or level..."
+                class="form-input search-input" />
+            </div>
+
+            <div v-if="filteredMaliceFeatures.length === 0" class="no-results">
+              No malice features match your search criteria.
+            </div>
+
+            <div v-else class="available-malice">
+              <div v-for="malice in filteredMaliceFeatures.slice(0, 20)" :key="malice.id" class="available-malice-item">
+                <div class="malice-info">
+                  <h4 class="malice-name">{{ malice.name }}</h4>
+                  <div class="malice-stats">
+                    <span class="stat-badge">Level {{ malice.level }}</span>
+                  </div>
+                  <p v-if="malice.flavor" class="malice-flavor-preview">{{ malice.flavor }}</p>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" @click="addMaliceToEncounter(malice)">
+                  + Add
+                </button>
+              </div>
+            </div>
+
+            <p v-if="filteredMaliceFeatures.length > 20" class="results-note">
+              Showing 20 of {{ filteredMaliceFeatures.length }} results. Refine your search to see more.
+            </p>
+          </CollapsibleSection>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import MonsterSelector from '@/components/MonsterSelector.vue'
-import EncounterSummary from '@/components/EncounterSummary.vue'
-import InitiativeTracker from '@/components/InitiativeTracker.vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
+import PartyConfiguration from '@/components/PartyConfiguration.vue'
+import EncounterBudget from '@/components/EncounterBudget.vue'
+import CollapsibleSection from '@/components/CollapsibleSection.vue'
+import { useCustomMonstersStore } from '@/stores/customMonsters'
+import {
+  calculateMonsterCost,
+  type PartyConfiguration as PartyConfig,
+  type MonsterInEncounter
+} from '@/utils/encounterBalance'
 
-defineOptions({
-  name: 'EncounterBuilder'
+// State
+const party = ref<PartyConfig>({
+  heroes: [{ level: 3, victories: 0 }, { level: 3, victories: 0 }, { level: 3, victories: 0 }, { level: 3, victories: 0 }]
+})
+const encounterMonsters = ref<MonsterInEncounter[]>([])
+const encounterMalice = ref<SimpleMaliceFeature[]>([])
+const searchQuery = ref('')
+const filterLevel = ref<string>('')
+const filterOrg = ref<string>('')
+const encounterMonstersExpanded = ref(true)
+const encounterMaliceExpanded = ref(true)
+const monstersListExpanded = ref(true)
+const maliceListExpanded = ref(true)
+const maliceSearchQuery = ref('')
+
+// Template refs for CollapsibleSection components
+const encounterMonstersSection = ref()
+const encounterMaliceSection = ref()
+
+interface SimpleMonster {
+  id: string
+  name: string
+  level: number
+  ev: number
+  role: string
+  organization: string
+}
+
+interface SimpleMaliceFeature {
+  id: string
+  name: string
+  level: number
+  flavor: string
+}
+
+// All available monsters
+const allMonsters = ref<SimpleMonster[]>([])
+const allMaliceFeatures = ref<SimpleMaliceFeature[]>([])
+const customMonstersStore = useCustomMonstersStore()
+
+onMounted(async () => {
+  // Load all monsters and malice features using dynamic import
+  const monstersModule = await import('@/data/monsters.js')
+  const { getMonsterIndex } = monstersModule
+  const indexData = getMonsterIndex() as { card: Record<string, SimpleMonster> }
+
+  // Transform the card data into simplified monster data
+  const officialMonsters = Object.entries(indexData.card).map(([id, cardData]) => ({
+    id,
+    name: cardData.name,
+    level: cardData.level,
+    ev: cardData.ev,
+    role: cardData.role,
+    organization: cardData.organization
+  }))
+
+  // Load custom monsters from store
+  customMonstersStore.loadFromStorage()
+  const customMonsters = customMonstersStore.allCustomMonsters.map(monster => ({
+    id: monster.id,
+    name: monster.name,
+    level: monster.level,
+    ev: monster.ev,
+    role: monster.role,
+    organization: monster.organization
+  }))
+
+  // Combine official and custom monsters
+  allMonsters.value = [...officialMonsters, ...customMonsters]
+
+  // Load malice features
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const maliceData = (monstersModule as any).maliceFeatures as Record<string, any>
+  if (maliceData) {
+    allMaliceFeatures.value = Object.entries(maliceData).map(([id, data]) => ({
+      id,
+      name: data.name,
+      level: data.level,
+      flavor: data.flavor || ''
+    }))
+  }
 })
 
-// Tab state
-const currentTab = ref<'summary' | 'initiative'>('summary')
+// Computed
+const filteredMonsters = computed(() => {
+  let results = allMonsters.value
 
-// Keyboard navigation support
-const handleKeydown = (event: KeyboardEvent) => {
-  // Escape to go back (future: could navigate to home or show save dialog)
-  if (event.key === 'Escape') {
-    event.preventDefault()
-    console.log('Escape pressed')
+  // Filter by search query
+  if (searchQuery.value) {
+    const query = searchQuery.value.toLowerCase()
+    results = results.filter(
+      (m) =>
+        m.name.toLowerCase().includes(query) ||
+        m.role?.toLowerCase().includes(query) ||
+        m.level.toString().includes(query)
+    )
   }
-  
-  // Tab navigation with Ctrl/Cmd + 1/2
-  if ((event.ctrlKey || event.metaKey) && event.key === '1') {
-    event.preventDefault()
-    currentTab.value = 'summary'
-  } else if ((event.ctrlKey || event.metaKey) && event.key === '2') {
-    event.preventDefault()
-    currentTab.value = 'initiative'
+
+  // Filter by level
+  if (filterLevel.value) {
+    results = results.filter((m) => m.level === parseInt(filterLevel.value))
+  }
+
+  // Filter by organization
+  if (filterOrg.value) {
+    results = results.filter((m) => m.organization.toLowerCase() === filterOrg.value.toLowerCase())
+  }
+
+  // Sort by level then name
+  return results.sort((a, b) => {
+    if (a.level !== b.level) return a.level - b.level
+    return a.name.localeCompare(b.name)
+  })
+})
+
+const filteredMaliceFeatures = computed(() => {
+  let results = allMaliceFeatures.value
+
+  // Filter by search query
+  if (maliceSearchQuery.value) {
+    const query = maliceSearchQuery.value.toLowerCase()
+    results = results.filter(
+      (m) =>
+        m.name.toLowerCase().includes(query) ||
+        m.flavor?.toLowerCase().includes(query) ||
+        m.level.toString().includes(query)
+    )
+  }
+
+  // Sort by level then name
+  return results.sort((a, b) => {
+    if (a.level !== b.level) return a.level - b.level
+    return a.name.localeCompare(b.name)
+  })
+})
+
+// Helper function to update collapsible heights
+async function updateCollapsibleHeights() {
+  await nextTick()
+  if (encounterMonstersSection.value?.updateHeight) {
+    encounterMonstersSection.value.updateHeight()
+  }
+  if (encounterMaliceSection.value?.updateHeight) {
+    encounterMaliceSection.value.updateHeight()
   }
 }
 
-onMounted(() => {
-  document.addEventListener('keydown', handleKeydown)
-})
+// Methods
+function addMonsterToEncounter(monster: SimpleMonster, count: number = 1) {
+  const existing = encounterMonsters.value.find((m) => m.id === monster.id)
 
-onUnmounted(() => {
-  document.removeEventListener('keydown', handleKeydown)
-})
+  if (existing) {
+    existing.count += count
+  } else {
+    encounterMonsters.value.push({
+      id: monster.id,
+      name: monster.name,
+      level: monster.level,
+      ev: monster.ev,
+      organization: monster.organization,
+      role: monster.role,
+      count: count
+    })
+  }
+
+  // Update heights after content changes
+  updateCollapsibleHeights()
+}
+
+function incrementMonster(id: string) {
+  const monster = encounterMonsters.value.find((m) => m.id === id)
+  if (monster) {
+    monster.count++
+    updateCollapsibleHeights()
+  }
+}
+
+function decrementMonster(id: string) {
+  const monster = encounterMonsters.value.find((m) => m.id === id)
+  if (monster && monster.count > 1) {
+    monster.count--
+    updateCollapsibleHeights()
+  }
+}
+
+function removeMonster(id: string) {
+  const index = encounterMonsters.value.findIndex((m) => m.id === id)
+  if (index !== -1) {
+    encounterMonsters.value.splice(index, 1)
+    updateCollapsibleHeights()
+  }
+}
+
+function calculateCost(monster: MonsterInEncounter): string {
+  return (Math.round(calculateMonsterCost(monster) * 10) / 10).toString()
+}
+
+function addMaliceToEncounter(malice: SimpleMaliceFeature) {
+  const existing = encounterMalice.value.find((m) => m.id === malice.id)
+  if (!existing) {
+    encounterMalice.value.push(malice)
+    updateCollapsibleHeights()
+  }
+}
+
+function removeMalice(id: string) {
+  const index = encounterMalice.value.findIndex((m) => m.id === id)
+  if (index !== -1) {
+    encounterMalice.value.splice(index, 1)
+    updateCollapsibleHeights()
+  }
+}
 </script>
 
 <style scoped>
 .encounter-builder {
   max-width: 1400px;
   margin: 0 auto;
-  padding: var(--space-4);
+  padding: var(--space-6);
 }
 
-/* Page Header */
 .page-header {
+  margin-bottom: var(--space-8);
   text-align: center;
-  padding: var(--space-6) var(--space-4);
-  margin-bottom: var(--space-6);
 }
 
 .page-header h1 {
-  color: var(--color-primary-700);
+  margin: 0 0 var(--space-2) 0;
   font-size: var(--font-size-4xl);
-  margin-bottom: var(--space-2);
   font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-serif);
+  color: var(--color-primary-600);
 }
 
-.page-description {
-  color: var(--color-neutral-600);
-  font-size: var(--font-size-lg);
+.page-subtitle {
   margin: 0;
+  font-size: var(--font-size-lg);
+  color: var(--color-neutral-600);
+}
+
+.builder-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: var(--space-6);
+}
+
+.builder-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.builder-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.section-card {
+  padding: var(--space-6);
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.section-card h2 {
+  margin: 0 0 var(--space-4) 0;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
+}
+
+.empty-state {
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--color-neutral-500);
+  font-style: italic;
+}
+
+.monster-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.monster-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-200);
+  gap: var(--space-4);
+}
+
+.monster-info {
+  flex: 1;
+}
+
+.monster-name {
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+}
+
+.monster-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.stat-badge {
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-neutral-200);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-700);
+}
+
+.ev-badge {
+  background: var(--color-primary-200);
+  color: var(--color-primary-700);
+}
+
+.monster-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.quantity-display {
+  min-width: 30px;
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--color-neutral-800);
+}
+
+.monster-cost {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 70px;
+}
+
+.cost-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-600);
+}
+
+.cost-value {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
+}
+
+.search-section {
+  margin-bottom: var(--space-4);
+}
+
+.search-input {
+  width: 100%;
+  margin-bottom: var(--space-3);
+}
+
+.filter-controls {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.filter-select {
+  flex: 1;
+}
+
+.no-results {
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--color-neutral-500);
+  font-style: italic;
+}
+
+.available-monsters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .available-monsters {
+    max-height: 60vh;
+  }
+}
+
+.available-monster {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-200);
+  gap: var(--space-3);
+  transition: all 0.2s;
+}
+
+.available-monster:hover {
+  border-color: var(--color-primary-400);
+  box-shadow: var(--shadow-sm);
+}
+
+.available-monster .monster-name {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-1);
+}
+
+.monster-add-buttons {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.results-note {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+}
+
+/* Malice Features Styling */
+.malice-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.malice-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-4);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-200);
+  gap: var(--space-4);
+}
+
+.malice-info {
+  flex: 1;
+}
+
+.malice-name {
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+}
+
+.malice-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.malice-flavor {
+  margin: var(--space-2) 0 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+  font-style: italic;
   line-height: var(--line-height-relaxed);
 }
 
-/* Layout */
-.encounter-layout {
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: var(--space-6);
-  align-items: start;
-}
-
-.selection-panel {
-  min-width: 0;
-}
-
-.panel-title {
-  color: var(--color-primary-700);
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  margin: 0 0 var(--space-6) 0;
-}
-
-.summary-panel {
-  min-width: 0;
-  position: sticky;
-  top: var(--space-4);
-  height: fit-content;
-  max-height: calc(100vh - var(--space-8));
+.available-malice {
   display: flex;
   flex-direction: column;
-}
-
-/* Tabs */
-.panel-tabs {
-  display: flex;
-  gap: var(--space-2);
-  padding: var(--space-2);
-  background: white;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  border: 1px solid var(--color-neutral-200);
-  border-bottom: none;
-}
-
-.tab-btn {
-  flex: 1;
-  padding: var(--space-3) var(--space-4);
-  background: var(--color-neutral-50);
-  border: 1px solid var(--color-neutral-200);
-  border-radius: var(--radius-md);
-  color: var(--color-neutral-700);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  cursor: pointer;
-  transition: var(--transition-all);
-}
-
-.tab-btn:hover {
-  background: var(--color-neutral-100);
-  border-color: var(--color-neutral-300);
-}
-
-.tab-btn.active {
-  background: var(--color-primary-600);
-  border-color: var(--color-primary-600);
-  color: white;
-  font-weight: var(--font-weight-semibold);
-}
-
-.tab-btn:focus-visible {
-  outline: 2px solid var(--color-primary-600);
-  outline-offset: 2px;
-}
-
-.tab-content {
-  flex: 1;
+  gap: var(--space-3);
+  max-height: 80vh;
   overflow-y: auto;
-  background: white;
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
-  .encounter-layout {
+  .available-malice {
+    max-height: 60vh;
+  }
+}
+
+.available-malice-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-200);
+  gap: var(--space-3);
+  transition: all 0.2s;
+}
+
+.available-malice-item:hover {
+  border-color: var(--color-primary-400);
+  box-shadow: var(--shadow-sm);
+}
+
+.available-malice-item .malice-name {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-1);
+}
+
+.malice-flavor-preview {
+  margin: var(--space-1) 0 0 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-600);
+  font-style: italic;
+  line-height: var(--line-height-normal);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .builder-layout {
     grid-template-columns: 1fr;
   }
 
-  .summary-panel {
-    order: -1;
+  .builder-sidebar {
+    order: 2;
+  }
+
+  .builder-main {
+    order: 1;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .encounter-builder {
-    padding: var(--space-2);
+    padding: var(--space-4);
   }
 
-  .page-header {
-    padding: var(--space-4) var(--space-2);
+  .monster-entry,
+  .available-monster {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .page-header h1 {
-    font-size: var(--font-size-3xl);
+  .monster-controls {
+    justify-content: space-between;
   }
 
-  .page-description {
-    font-size: var(--font-size-base);
-  }
-
-  .panel-title {
-    font-size: var(--font-size-xl);
-  }
-}
-
-@media (max-width: 480px) {
-  .page-header h1 {
-    font-size: var(--font-size-2xl);
+  .filter-controls {
+    flex-direction: column;
   }
 }
 </style>
