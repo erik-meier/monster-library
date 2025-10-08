@@ -7,63 +7,57 @@
 
     <div class="builder-layout">
       <div class="builder-sidebar">
+        <EncounterBudget :party="party" :monsters="encounterMonsters" />
         <PartyConfiguration v-model="party" />
-        <EncounterBudget :party="party" :monsters="encounterMonsters" :difficulty="difficulty"
-          @update:difficulty="difficulty = $event" />
       </div>
 
       <div class="builder-main">
         <div class="section-card">
           <h2>Encounter Summary</h2>
-          
-          <CollapsibleSection 
-            title="Encounter Monsters" 
-            :expanded="encounterMonstersExpanded" 
-            @toggle="encounterMonstersExpanded = $event"
-          >
-          <p v-if="encounterMonsters.length === 0" class="empty-state">
-            No monsters added yet. Use the search below to add monsters to your encounter.
-          </p>
 
-          <div v-else class="monster-list">
-            <div v-for="monster in encounterMonsters" :key="monster.id" class="monster-entry">
-              <div class="monster-info">
-                <h3 class="monster-name">{{ monster.name }}</h3>
-                <div class="monster-stats">
-                  <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' + monster.role : '' }}</span>
-                  <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
-                </div>
-              </div>
+          <CollapsibleSection title="Encounter Monsters" :expanded="encounterMonstersExpanded"
+            @toggle="encounterMonstersExpanded = $event" ref="encounterMonstersSection">
+            <p v-if="encounterMonsters.length === 0" class="empty-state">
+              No monsters added yet. Use the search below to add monsters to your encounter.
+            </p>
 
-              <div class="monster-controls">
-                <div class="quantity-control">
-                  <button type="button" class="btn btn-sm" @click="decrementMonster(monster.id)"
-                    :disabled="monster.count <= 1">
-                    −
-                  </button>
-                  <span class="quantity-display">{{ monster.count }}</span>
-                  <button type="button" class="btn btn-sm" @click="incrementMonster(monster.id)">
-                    +
+            <div v-else class="monster-list">
+              <div v-for="monster in encounterMonsters" :key="monster.id" class="monster-entry">
+                <div class="monster-info">
+                  <h3 class="monster-name">{{ monster.name }}</h3>
+                  <div class="monster-stats">
+                    <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' +
+                      monster.role : '' }}</span>
+                    <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
+                  </div>
+                </div>
+
+                <div class="monster-controls">
+                  <div class="quantity-control">
+                    <button type="button" class="btn btn-sm" @click="decrementMonster(monster.id)"
+                      :disabled="monster.count <= 1">
+                      −
+                    </button>
+                    <span class="quantity-display">{{ monster.count }}</span>
+                    <button type="button" class="btn btn-sm" @click="incrementMonster(monster.id)">
+                      +
+                    </button>
+                  </div>
+                  <div class="monster-cost">
+                    <span class="cost-label">Cost:</span>
+                    <span class="cost-value">{{ calculateCost(monster) }} EV</span>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-danger" @click="removeMonster(monster.id)"
+                    title="Remove from encounter">
+                    ✕
                   </button>
                 </div>
-                <div class="monster-cost">
-                  <span class="cost-label">Cost:</span>
-                  <span class="cost-value">{{ calculateCost(monster) }} EV</span>
-                </div>
-                <button type="button" class="btn btn-sm btn-danger" @click="removeMonster(monster.id)"
-                  title="Remove from encounter">
-                  ✕
-                </button>
               </div>
             </div>
-          </div>
           </CollapsibleSection>
 
-          <CollapsibleSection 
-            title="Malice Features" 
-            :expanded="encounterMonstersExpanded" 
-            @toggle="encounterMonstersExpanded = $event"
-          >
+          <CollapsibleSection title="Malice Features" :expanded="encounterMaliceExpanded"
+            @toggle="encounterMaliceExpanded = $event" ref="encounterMaliceSection">
             <p v-if="encounterMalice.length === 0" class="empty-state">
               No malice features added yet. Use the search below to add malice features to your encounter.
             </p>
@@ -87,101 +81,92 @@
         </div>
 
         <div class="section-card">
-          <CollapsibleSection 
-            title="Add Monsters" 
-            :expanded="monstersListExpanded" 
-            @toggle="monstersListExpanded = $event"
-          >
-          <div class="search-section">
-            <input v-model="searchQuery" type="text" placeholder="Search monsters by name, level, or role..."
-              class="form-input search-input" />
+          <CollapsibleSection title="Add Monsters" :expanded="monstersListExpanded"
+            @toggle="monstersListExpanded = $event">
+            <div class="search-section">
+              <input v-model="searchQuery" type="text" placeholder="Search monsters by name, level, or role..."
+                class="form-input search-input" />
 
-            <div class="filter-controls">
-              <select v-model="filterLevel" class="form-input filter-select">
-                <option value="">All Levels</option>
-                <option v-for="level in 10" :key="level" :value="level">Level {{ level }}</option>
-              </select>
+              <div class="filter-controls">
+                <select v-model="filterLevel" class="form-input filter-select">
+                  <option value="">All Levels</option>
+                  <option v-for="level in 10" :key="level" :value="level">Level {{ level }}</option>
+                </select>
 
-              <select v-model="filterOrg" class="form-input filter-select">
-                <option value="">All Organizations</option>
-                <option value="Minion">Minion</option>
-                <option value="Standard">Standard</option>
-                <option value="Elite">Elite</option>
-                <option value="Leader">Leader</option>
-                <option value="Solo">Solo</option>
-              </select>
+                <select v-model="filterOrg" class="form-input filter-select">
+                  <option value="">All Organizations</option>
+                  <option value="Minion">Minion</option>
+                  <option value="Standard">Standard</option>
+                  <option value="Elite">Elite</option>
+                  <option value="Leader">Leader</option>
+                  <option value="Solo">Solo</option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div v-if="filteredMonsters.length === 0" class="no-results">
-            No monsters match your search criteria.
-          </div>
+            <div v-if="filteredMonsters.length === 0" class="no-results">
+              No monsters match your search criteria.
+            </div>
 
-          <div v-else class="available-monsters">
-            <div v-for="monster in filteredMonsters.slice(0, 20)" :key="monster.id" class="available-monster">
-              <div class="monster-info">
-                <h4 class="monster-name">{{ monster.name }}</h4>
-                <div class="monster-stats">
-                  <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' + monster.role : '' }}</span>
-                  <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
+            <div v-else class="available-monsters">
+              <div v-for="monster in filteredMonsters.slice(0, 20)" :key="monster.id" class="available-monster">
+                <div class="monster-info">
+                  <h4 class="monster-name">{{ monster.name }}</h4>
+                  <div class="monster-stats">
+                    <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' +
+                      monster.role : '' }}</span>
+                    <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
+                  </div>
+                </div>
+                <div class="monster-add-buttons">
+                  <button type="button" class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster)">
+                    + Add
+                  </button>
+                  <button v-if="monster.organization.toLowerCase() === 'minion'" type="button"
+                    class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster, 4)"
+                    title="Add a full group of 4 minions">
+                    + Add 4
+                  </button>
                 </div>
               </div>
-              <div class="monster-add-buttons">
-                <button type="button" class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster)">
-                  + Add
-                </button>
-                <button 
-                  v-if="monster.organization.toLowerCase() === 'minion'" 
-                  type="button" 
-                  class="btn btn-primary btn-sm" 
-                  @click="addMonsterToEncounter(monster, 4)"
-                  title="Add a full group of 4 minions"
-                >
-                  + Add 4
-                </button>
-              </div>
             </div>
-          </div>
 
-          <p v-if="filteredMonsters.length > 20" class="results-note">
-            Showing 20 of {{ filteredMonsters.length }} results. Refine your search to see more.
-          </p>
+            <p v-if="filteredMonsters.length > 20" class="results-note">
+              Showing 20 of {{ filteredMonsters.length }} results. Refine your search to see more.
+            </p>
           </CollapsibleSection>
         </div>
 
         <div class="section-card">
-          <CollapsibleSection 
-            title="Add Malice Features" 
-            :expanded="maliceListExpanded" 
-            @toggle="maliceListExpanded = $event"
-          >
-          <div class="search-section">
-            <input v-model="maliceSearchQuery" type="text" placeholder="Search malice features by name or level..."
-              class="form-input search-input" />
-          </div>
-
-          <div v-if="filteredMaliceFeatures.length === 0" class="no-results">
-            No malice features match your search criteria.
-          </div>
-
-          <div v-else class="available-malice">
-            <div v-for="malice in filteredMaliceFeatures.slice(0, 20)" :key="malice.id" class="available-malice-item">
-              <div class="malice-info">
-                <h4 class="malice-name">{{ malice.name }}</h4>
-                <div class="malice-stats">
-                  <span class="stat-badge">Level {{ malice.level }}</span>
-                </div>
-                <p v-if="malice.flavor" class="malice-flavor-preview">{{ malice.flavor }}</p>
-              </div>
-              <button type="button" class="btn btn-primary btn-sm" @click="addMaliceToEncounter(malice)">
-                + Add
-              </button>
+          <CollapsibleSection title="Add Malice Features" :expanded="maliceListExpanded"
+            @toggle="maliceListExpanded = $event">
+            <div class="search-section">
+              <input v-model="maliceSearchQuery" type="text" placeholder="Search malice features by name or level..."
+                class="form-input search-input" />
             </div>
-          </div>
 
-          <p v-if="filteredMaliceFeatures.length > 20" class="results-note">
-            Showing 20 of {{ filteredMaliceFeatures.length }} results. Refine your search to see more.
-          </p>
+            <div v-if="filteredMaliceFeatures.length === 0" class="no-results">
+              No malice features match your search criteria.
+            </div>
+
+            <div v-else class="available-malice">
+              <div v-for="malice in filteredMaliceFeatures.slice(0, 20)" :key="malice.id" class="available-malice-item">
+                <div class="malice-info">
+                  <h4 class="malice-name">{{ malice.name }}</h4>
+                  <div class="malice-stats">
+                    <span class="stat-badge">Level {{ malice.level }}</span>
+                  </div>
+                  <p v-if="malice.flavor" class="malice-flavor-preview">{{ malice.flavor }}</p>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" @click="addMaliceToEncounter(malice)">
+                  + Add
+                </button>
+              </div>
+            </div>
+
+            <p v-if="filteredMaliceFeatures.length > 20" class="results-note">
+              Showing 20 of {{ filteredMaliceFeatures.length }} results. Refine your search to see more.
+            </p>
           </CollapsibleSection>
         </div>
       </div>
@@ -190,7 +175,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 import PartyConfiguration from '@/components/PartyConfiguration.vue'
 import EncounterBudget from '@/components/EncounterBudget.vue'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
@@ -198,25 +183,27 @@ import { useCustomMonstersStore } from '@/stores/customMonsters'
 import {
   calculateMonsterCost,
   type PartyConfiguration as PartyConfig,
-  type MonsterInEncounter,
-  type EncounterDifficulty
+  type MonsterInEncounter
 } from '@/utils/encounterBalance'
 
 // State
 const party = ref<PartyConfig>({
-  heroes: [{ level: 3 }, { level: 3 }, { level: 3 }, { level: 3 }]
+  heroes: [{ level: 3, victories: 0 }, { level: 3, victories: 0 }, { level: 3, victories: 0 }, { level: 3, victories: 0 }]
 })
-
-const difficulty = ref<EncounterDifficulty>('Standard')
 const encounterMonsters = ref<MonsterInEncounter[]>([])
 const encounterMalice = ref<SimpleMaliceFeature[]>([])
 const searchQuery = ref('')
 const filterLevel = ref<string>('')
 const filterOrg = ref<string>('')
 const encounterMonstersExpanded = ref(true)
+const encounterMaliceExpanded = ref(true)
 const monstersListExpanded = ref(true)
 const maliceListExpanded = ref(true)
 const maliceSearchQuery = ref('')
+
+// Template refs for CollapsibleSection components
+const encounterMonstersSection = ref()
+const encounterMaliceSection = ref()
 
 interface SimpleMonster {
   id: string
@@ -335,6 +322,17 @@ const filteredMaliceFeatures = computed(() => {
   })
 })
 
+// Helper function to update collapsible heights
+async function updateCollapsibleHeights() {
+  await nextTick()
+  if (encounterMonstersSection.value?.updateHeight) {
+    encounterMonstersSection.value.updateHeight()
+  }
+  if (encounterMaliceSection.value?.updateHeight) {
+    encounterMaliceSection.value.updateHeight()
+  }
+}
+
 // Methods
 function addMonsterToEncounter(monster: SimpleMonster, count: number = 1) {
   const existing = encounterMonsters.value.find((m) => m.id === monster.id)
@@ -352,12 +350,16 @@ function addMonsterToEncounter(monster: SimpleMonster, count: number = 1) {
       count: count
     })
   }
+
+  // Update heights after content changes
+  updateCollapsibleHeights()
 }
 
 function incrementMonster(id: string) {
   const monster = encounterMonsters.value.find((m) => m.id === id)
   if (monster) {
     monster.count++
+    updateCollapsibleHeights()
   }
 }
 
@@ -365,6 +367,7 @@ function decrementMonster(id: string) {
   const monster = encounterMonsters.value.find((m) => m.id === id)
   if (monster && monster.count > 1) {
     monster.count--
+    updateCollapsibleHeights()
   }
 }
 
@@ -372,6 +375,7 @@ function removeMonster(id: string) {
   const index = encounterMonsters.value.findIndex((m) => m.id === id)
   if (index !== -1) {
     encounterMonsters.value.splice(index, 1)
+    updateCollapsibleHeights()
   }
 }
 
@@ -383,6 +387,7 @@ function addMaliceToEncounter(malice: SimpleMaliceFeature) {
   const existing = encounterMalice.value.find((m) => m.id === malice.id)
   if (!existing) {
     encounterMalice.value.push(malice)
+    updateCollapsibleHeights()
   }
 }
 
@@ -390,6 +395,7 @@ function removeMalice(id: string) {
   const index = encounterMalice.value.findIndex((m) => m.id === id)
   if (index !== -1) {
     encounterMalice.value.splice(index, 1)
+    updateCollapsibleHeights()
   }
 }
 </script>
@@ -524,6 +530,7 @@ function removeMalice(id: string) {
   text-align: center;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-lg);
+  color: var(--color-neutral-800);
 }
 
 .monster-cost {
@@ -573,13 +580,13 @@ function removeMalice(id: string) {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  max-height: 600px;
+  max-height: 80vh;
   overflow-y: auto;
 }
 
 @media (max-width: 1024px) {
   .available-monsters {
-    max-height: 50vh;
+    max-height: 60vh;
   }
 }
 
@@ -669,13 +676,13 @@ function removeMalice(id: string) {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  max-height: 600px;
+  max-height: 80vh;
   overflow-y: auto;
 }
 
 @media (max-width: 1024px) {
   .available-malice {
-    max-height: 50vh;
+    max-height: 60vh;
   }
 }
 
@@ -709,6 +716,7 @@ function removeMalice(id: string) {
   line-height: var(--line-height-normal);
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

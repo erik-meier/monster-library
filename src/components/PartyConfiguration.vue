@@ -5,40 +5,10 @@
       <p class="section-description">Configure your party to calculate encounter budget</p>
     </div>
 
-    <div class="heroes-list">
-      <div v-for="(hero, index) in heroes" :key="index" class="hero-item">
-        <label :for="`hero-${index}`" class="hero-label">Hero {{ index + 1 }}</label>
-        <div class="hero-controls">
-          <input
-            :id="`hero-${index}`"
-            v-model.number="hero.level"
-            type="number"
-            min="1"
-            max="10"
-            class="form-input hero-level-input"
-            @input="updateParty"
-          />
-          <button
-            type="button"
-            class="btn btn-sm btn-danger"
-            @click="removeHero(index)"
-            :disabled="heroes.length === 1"
-            title="Remove hero"
-          >
-            ✕
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <button type="button" class="btn btn-secondary btn-full-width" @click="addHero">
-      + Add Hero
-    </button>
-
     <div v-if="partyStrength > 0" class="party-summary">
       <div class="summary-stat">
         <span class="stat-label">Party Size:</span>
-        <span class="stat-value">{{ heroes.length }} {{ heroes.length === 1 ? 'hero' : 'heroes' }}</span>
+        <span class="stat-value">{{ heroes.length }}</span>
       </div>
       <div class="summary-stat">
         <span class="stat-label">Party Strength:</span>
@@ -50,12 +20,37 @@
       </div>
     </div>
 
-    <div v-if="recommendations.length > 0" class="recommendations">
-      <h4>Recommendations</h4>
-      <ul>
-        <li v-for="(rec, index) in recommendations" :key="index">{{ rec }}</li>
-      </ul>
+    <div class="heroes-list">
+      <div class="heroes-header">
+        <span class="hero-name-header">Hero</span>
+        <span class="hero-stat-header">Level</span>
+        <span class="hero-stat-header">Victories</span>
+        <span class="hero-actions-header"></span>
+      </div>
+      <div v-for="(hero, index) in heroes" :key="index" class="hero-item">
+        <label :for="`hero-level-${index}`" class="hero-label">Hero {{ index + 1 }}</label>
+        <div class="hero-controls">
+          <div class="hero-input-group" data-label="Level">
+            <label :for="`hero-level-${index}`" class="sr-only">Level for Hero {{ index + 1 }}</label>
+            <input :id="`hero-level-${index}`" v-model.number="hero.level" type="number" min="1" max="10"
+              class="form-input hero-stat-input" @input="updateParty" />
+          </div>
+          <div class="hero-input-group" data-label="Victories">
+            <label :for="`hero-victories-${index}`" class="sr-only">Victories for Hero {{ index + 1 }}</label>
+            <input :id="`hero-victories-${index}`" v-model.number="hero.victories" type="number" min="0"
+              class="form-input hero-stat-input" @input="updateParty" />
+          </div>
+          <button type="button" class="btn btn-sm btn-danger" @click="removeHero(index)" :disabled="heroes.length === 1"
+            title="Remove hero">
+            ✕
+          </button>
+        </div>
+      </div>
     </div>
+
+    <button type="button" class="btn btn-secondary btn-full-width" @click="addHero">
+      + Add Hero
+    </button>
   </div>
 </template>
 
@@ -63,7 +58,6 @@
 import { ref, computed, watch } from 'vue'
 import {
   calculatePartyStrength,
-  getEncounterRecommendations,
   type PartyConfiguration as PartyConfig
 } from '@/utils/encounterBalance'
 
@@ -79,23 +73,34 @@ const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
 
 // Local state for heroes
-const heroes = ref(props.modelValue.heroes.map((h) => ({ ...h })))
+const heroes = ref(props.modelValue.heroes.map((h) => ({ level: h.level, victories: h.victories || 0 })))
 
 // Computed properties
 const partyStrength = computed(() => calculatePartyStrength({ heroes: heroes.value }))
 
 const avgLevel = computed(() => {
   if (heroes.value.length === 0) return 0
-  return Math.round((partyStrength.value / heroes.value.length) * 10) / 10
-})
-
-const recommendations = computed(() => {
-  return getEncounterRecommendations({ heroes: heroes.value })
+  return Math.round((heroes.value.map((h) => h.level).reduce((sum, lvl) => sum + lvl, 0) / heroes.value.length) * 10) / 10
 })
 
 // Methods
 function addHero() {
-  heroes.value.push({ level: 1 })
+  let newLevel = 1
+  let newVictories = 0
+
+  if (heroes.value.length > 0) {
+    // Calculate average level and victories, rounding down
+    const totalLevel = heroes.value.reduce((sum, hero) => sum + hero.level, 0)
+    const totalVictories = heroes.value.reduce((sum, hero) => sum + hero.victories, 0)
+
+    newLevel = Math.floor(totalLevel / heroes.value.length)
+    newVictories = Math.floor(totalVictories / heroes.value.length)
+
+    // Ensure level is at least 1
+    if (newLevel < 1) newLevel = 1
+  }
+
+  heroes.value.push({ level: newLevel, victories: newVictories })
   updateParty()
 }
 
@@ -107,13 +112,14 @@ function removeHero(index: number) {
 }
 
 function updateParty() {
-  // Validate and clamp levels
+  // Validate and clamp levels and victories
   heroes.value.forEach((hero) => {
     if (hero.level < 1) hero.level = 1
     if (hero.level > 10) hero.level = 10
+    if (hero.victories < 0) hero.victories = 0
   })
 
-  emit('update:modelValue', { heroes: heroes.value.map((h) => ({ ...h })) })
+  emit('update:modelValue', { heroes: heroes.value.map((h) => ({ level: h.level, victories: h.victories })) })
 }
 
 // Watch for external changes
@@ -121,7 +127,7 @@ watch(
   () => props.modelValue,
   (newValue) => {
     if (JSON.stringify(newValue.heroes) !== JSON.stringify(heroes.value)) {
-      heroes.value = newValue.heroes.map((h) => ({ ...h }))
+      heroes.value = newValue.heroes.map((h) => ({ level: h.level, victories: h.victories || 0 }))
     }
   },
   { deep: true }
@@ -154,8 +160,34 @@ watch(
   gap: var(--space-3);
 }
 
+.heroes-header {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  color: var(--color-neutral-600);
+  border-bottom: 1px solid var(--color-neutral-300);
+}
+
+.hero-name-header {
+  text-align: left;
+}
+
+.hero-stat-header {
+  text-align: center;
+  min-width: 80px;
+}
+
+.hero-actions-header {
+  min-width: 32px;
+}
+
 .hero-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
   align-items: center;
   gap: var(--space-3);
 }
@@ -163,20 +195,33 @@ watch(
 .hero-label {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  min-width: 70px;
   color: var(--color-neutral-700);
 }
 
 .hero-controls {
-  display: flex;
-  gap: var(--space-2);
-  flex: 1;
+  display: contents;
 }
 
-.hero-level-input {
+.hero-input-group {
+  display: flex;
+}
+
+.hero-stat-input {
   width: 80px;
   text-align: center;
   font-weight: var(--font-weight-medium);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .btn-full-width {
@@ -212,46 +257,46 @@ watch(
   color: var(--color-primary-600);
 }
 
-.recommendations {
-  padding: var(--space-4);
-  background: var(--color-info-50);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-info-600);
-}
-
-.recommendations h4 {
-  margin: 0 0 var(--space-3) 0;
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-info-700);
-}
-
-.recommendations ul {
-  margin: 0;
-  padding-left: var(--space-5);
-  list-style: disc;
-}
-
-.recommendations li {
-  margin-bottom: var(--space-2);
-  font-size: var(--font-size-sm);
-  color: var(--color-neutral-700);
-  line-height: var(--line-height-relaxed);
-}
-
-.recommendations li:last-child {
-  margin-bottom: 0;
-}
-
 /* Mobile responsive */
 @media (max-width: 640px) {
-  .hero-item {
-    flex-direction: column;
-    align-items: stretch;
+  .heroes-header {
+    display: none;
   }
 
-  .hero-label {
-    min-width: auto;
+  .hero-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--color-neutral-50);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-neutral-200);
+  }
+
+  .hero-controls {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+  }
+
+  .hero-input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .hero-input-group::before {
+    content: attr(data-label);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-600);
+    text-transform: uppercase;
+  }
+
+  .hero-stat-input {
+    width: 100%;
   }
 
   .party-summary {
