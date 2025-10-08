@@ -11,7 +11,7 @@
           <router-link to="/" class="nav-link" title="Home" aria-label="Go to Home page">Home</router-link>
           <router-link to="/monsters" class="nav-link" title="Browse Monsters"
             aria-label="Browse monster library">Browse Monsters</router-link>
-          <router-link to="/encounters" class="nav-link" title="Encounter Builder"
+          <router-link to="/encounter-builder" class="nav-link" title="Encounter Builder"
             aria-label="Build encounters">Encounters</router-link>
           <router-link to="/my-monsters" class="nav-link" title="My Monsters" aria-label="View my custom monsters">My
             Monsters</router-link>
@@ -377,7 +377,7 @@ button:disabled,
     font-size: var(--font-size-lg);
   }
 
-  .nav-link[href="/encounters"]::after {
+  .nav-link[href="/encounter-builder"]::after {
     content: "⚔️";
     font-size: var(--font-size-lg);
   }
@@ -415,7 +415,7 @@ button:disabled,
     font-size: var(--font-size-lg);
   }
 
-  .nav-link.router-link-active[href="/encounters"]::after {
+  .nav-link.router-link-active[href="/encounter-builder"]::after {
     content: "⚔️";
     font-size: var(--font-size-lg);
   }
