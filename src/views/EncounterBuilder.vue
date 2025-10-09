@@ -9,9 +9,34 @@
       <div class="builder-sidebar">
         <EncounterBudget :party="party" :monsters="encounterStore.monsters" />
         <PartyConfiguration v-model="party" />
+        
+        <div class="encounter-management">
+          <div class="management-actions">
+            <button type="button" class="btn btn-primary" @click="showSaveModal = true"
+              :disabled="encounterStore.monsters.length === 0">
+              Save Encounter
+            </button>
+            <button type="button" class="btn btn-secondary" @click="showLoadModal = !showLoadModal">
+              {{ showLoadModal ? 'Hide' : 'Load' }} Saved
+            </button>
+            <button type="button" class="btn btn-secondary" @click="showTemplatesModal = !showTemplatesModal">
+              {{ showTemplatesModal ? 'Hide' : 'Show' }} Templates
+            </button>
+          </div>
+        </div>
       </div>
 
       <div class="builder-main">
+        <!-- Encounter Templates (collapsible) -->
+        <div v-if="showTemplatesModal" class="section-card">
+          <EncounterTemplates @template-selected="handleTemplateSelected" />
+        </div>
+
+        <!-- Saved Encounters List (collapsible) -->
+        <div v-if="showLoadModal" class="section-card">
+          <SavedEncountersList @load="handleLoadEncounter" @export="handleExportEncounter" />
+        </div>
+
         <div class="section-card">
           <h2>Encounter Summary</h2>
 
@@ -135,6 +160,14 @@
         </div>
       </div>
     </div>
+
+    <!-- Save Encounter Modal -->
+    <SaveEncounterModal 
+      :is-open="showSaveModal" 
+      :existing-encounter-id="currentEncounterId"
+      @close="showSaveModal = false" 
+      @saved="handleEncounterSaved" 
+    />
   </div>
 </template>
 
@@ -144,6 +177,9 @@ import PartyConfiguration from '@/components/PartyConfiguration.vue'
 import EncounterBudget from '@/components/EncounterBudget.vue'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import InitiativeTracker from '@/components/InitiativeTracker.vue'
+import SaveEncounterModal from '@/components/SaveEncounterModal.vue'
+import SavedEncountersList from '@/components/SavedEncountersList.vue'
+import EncounterTemplates from '@/components/EncounterTemplates.vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
 import { useEncounterStore } from '@/stores/encounter'
 import {
@@ -167,6 +203,10 @@ const encounterMaliceExpanded = ref(true)
 const monstersListExpanded = ref(true)
 const maliceListExpanded = ref(true)
 const maliceSearchQuery = ref('')
+const showSaveModal = ref(false)
+const showLoadModal = ref(false)
+const showTemplatesModal = ref(false)
+const currentEncounterId = ref<string | undefined>(undefined)
 
 // Template refs for CollapsibleSection components
 const initiativeTrackerSection = ref()
@@ -336,6 +376,100 @@ function removeMalice(id: string) {
     updateCollapsibleHeights()
   }
 }
+
+// Encounter management handlers
+function handleEncounterSaved(encounterId: string) {
+  // Track the current encounter ID so future saves update it
+  currentEncounterId.value = encounterId
+  console.log('Encounter saved:', encounterId)
+  // Optionally show a success message
+}
+
+function handleLoadEncounter(encounterId: string) {
+  const success = encounterStore.loadEncounter(encounterId)
+  if (success) {
+    // Track the loaded encounter ID
+    currentEncounterId.value = encounterId
+    // Update heights after loading
+    updateCollapsibleHeights()
+    // Optionally close the load modal
+    showLoadModal.value = false
+  } else {
+    alert('Failed to load encounter')
+  }
+}
+
+function handleExportEncounter(encounterId: string) {
+  console.log('Encounter exported:', encounterId)
+}
+
+function handleTemplateSelected(template: { monsters: Array<{ id: string, name: string, level: number, ev: number, role: string, organization: string, count: number }>, targetEV: number }) {
+  // Ask if user wants to replace or add to current encounter
+  const hasMonstersAlready = encounterStore.monsters.length > 0
+  
+  let shouldProceed = true
+  if (hasMonstersAlready) {
+    shouldProceed = confirm('This will replace your current encounter. Continue?')
+  }
+  
+  if (shouldProceed) {
+    // Clear current encounter and tracking
+    encounterStore.clearEncounter()
+    currentEncounterId.value = undefined
+    
+    // Add all monsters from template
+    template.monsters.forEach(monster => {
+      for (let i = 0; i < monster.count; i++) {
+        encounterStore.addMonster({
+          id: monster.id,
+          name: monster.name,
+          level: monster.level,
+          ev: monster.ev,
+          role: monster.role,
+          organization: monster.organization
+        })
+      }
+    })
+    
+    // Set target EV
+    encounterStore.setTargetEV(template.targetEV)
+    
+    // Update heights and close templates
+    updateCollapsibleHeights()
+    showTemplatesModal.value = false
+  }
+}
+
+// Auto-save functionality - save work in progress every 30 seconds
+let autoSaveInterval: number | undefined
+
+onMounted(() => {
+  // Check for auto-save on mount
+  const hasAutoSave = localStorage.getItem('encounterAutosave')
+  if (hasAutoSave) {
+    const shouldRestore = confirm('Found a saved work-in-progress encounter. Would you like to restore it?')
+    if (shouldRestore) {
+      encounterStore.loadAutoSave()
+    } else {
+      encounterStore.clearAutoSave()
+    }
+  }
+
+  // Set up auto-save
+  autoSaveInterval = window.setInterval(() => {
+    if (encounterStore.monsters.length > 0) {
+      encounterStore.autoSaveEncounter()
+    }
+  }, 30000) // Every 30 seconds
+})
+
+// Clean up interval on unmount
+import { onUnmounted } from 'vue'
+onUnmounted(() => {
+  if (autoSaveInterval) {
+    clearInterval(autoSaveInterval)
+  }
+})
 </script>
 
 <style scoped>
@@ -608,6 +742,25 @@ function removeMalice(id: string) {
   .builder-main {
     order: 1;
   }
+}
+
+/* Encounter Management */
+.encounter-management {
+  padding: var(--space-6);
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.management-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.management-actions .btn {
+  width: 100%;
 }
 
 @media (max-width: 640px) {

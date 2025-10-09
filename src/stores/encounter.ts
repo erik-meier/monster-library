@@ -25,12 +25,39 @@ export interface EncounterState {
   nextGroupId: number
 }
 
+export interface SavedEncounter {
+  id: string
+  name: string
+  description?: string
+  monsters: EncounterMonster[]
+  targetEV: number
+  initiativeGroups: InitiativeGroup[]
+  nextGroupId: number
+  createdAt: string
+  updatedAt: string
+}
+
+export interface EncounterValidationError {
+  field: string
+  message: string
+}
+
+export interface EncounterValidationResult {
+  isValid: boolean
+  errors: EncounterValidationError[]
+}
+
+const STORAGE_KEY = 'savedEncounters'
+const AUTOSAVE_KEY = 'encounterAutosave'
+
 export const useEncounterStore = defineStore('encounter', {
-  state: (): EncounterState => ({
+  state: (): EncounterState & { savedEncounters: Record<string, SavedEncounter>, isLoaded: boolean } => ({
     monsters: [],
     targetEV: 0,
     initiativeGroups: [],
-    nextGroupId: 1
+    nextGroupId: 1,
+    savedEncounters: {},
+    isLoaded: false
   }),
 
   getters: {
@@ -85,6 +112,21 @@ export const useEncounterStore = defineStore('encounter', {
     getGroupMonsterCount: (state) => (groupId: string) => {
       const monsters = state.monsters.filter(m => m.groupId === groupId)
       return monsters.reduce((sum, monster) => sum + monster.count, 0)
+    },
+
+    // Saved encounters getters
+    allSavedEncounters: (state) => {
+      return Object.values(state.savedEncounters).sort((a, b) => 
+        new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+      )
+    },
+
+    savedEncounterCount: (state) => {
+      return Object.keys(state.savedEncounters).length
+    },
+
+    getSavedEncounter: (state) => (id: string) => {
+      return state.savedEncounters[id] || null
     }
   },
 
@@ -125,6 +167,7 @@ export const useEncounterStore = defineStore('encounter', {
       this.monsters = []
       this.initiativeGroups = []
       this.nextGroupId = 1
+      this.targetEV = 0
     },
 
     setTargetEV(ev: number) {
@@ -202,6 +245,301 @@ export const useEncounterStore = defineStore('encounter', {
           group.order = index
         }
       })
+    },
+
+    // Persistence actions
+    loadSavedEncounters() {
+      if (this.isLoaded) return
+
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY)
+        if (stored) {
+          const parsed = JSON.parse(stored)
+          this.savedEncounters = parsed
+        }
+      } catch (error) {
+        console.error('Error loading saved encounters from storage:', error)
+        this.savedEncounters = {}
+      }
+      this.isLoaded = true
+    },
+
+    saveSavedEncountersToStorage() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(this.savedEncounters))
+      } catch (error) {
+        console.error('Error saving encounters to storage:', error)
+        throw error
+      }
+    },
+
+    // Validation
+    validateEncounter(): EncounterValidationResult {
+      const errors: EncounterValidationError[] = []
+
+      // Check if encounter has monsters
+      if (this.monsters.length === 0) {
+        errors.push({
+          field: 'monsters',
+          message: 'Encounter must have at least one monster'
+        })
+      }
+
+      // Validate each monster
+      this.monsters.forEach((monster, index) => {
+        if (!monster.id || !monster.name) {
+          errors.push({
+            field: `monsters[${index}]`,
+            message: 'Monster must have id and name'
+          })
+        }
+        if (monster.count <= 0) {
+          errors.push({
+            field: `monsters[${index}].count`,
+            message: 'Monster count must be greater than 0'
+          })
+        }
+        if (monster.level < 1 || monster.level > 10) {
+          errors.push({
+            field: `monsters[${index}].level`,
+            message: 'Monster level must be between 1 and 10'
+          })
+        }
+      })
+
+      // Validate initiative groups
+      this.initiativeGroups.forEach((group, index) => {
+        if (!group.id || !group.name) {
+          errors.push({
+            field: `initiativeGroups[${index}]`,
+            message: 'Initiative group must have id and name'
+          })
+        }
+      })
+
+      return {
+        isValid: errors.length === 0,
+        errors
+      }
+    },
+
+    // Generate unique ID for saved encounter
+    generateEncounterId(name: string): string {
+      const baseId = name.toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
+      
+      let id = `encounter-${baseId}`
+      let counter = 1
+      
+      while (this.savedEncounters[id]) {
+        id = `encounter-${baseId}-${counter}`
+        counter++
+      }
+      
+      return id
+    },
+
+    // Save current encounter with a name
+    saveEncounter(name: string, description?: string): string {
+      this.loadSavedEncounters()
+
+      // Validate before saving
+      const validation = this.validateEncounter()
+      if (!validation.isValid) {
+        throw new Error(`Encounter validation failed: ${validation.errors.map(e => e.message).join(', ')}`)
+      }
+
+      const id = this.generateEncounterId(name)
+      const now = new Date().toISOString()
+
+      const savedEncounter: SavedEncounter = {
+        id,
+        name,
+        description,
+        monsters: JSON.parse(JSON.stringify(this.monsters)), // Deep copy
+        targetEV: this.targetEV,
+        initiativeGroups: JSON.parse(JSON.stringify(this.initiativeGroups)), // Deep copy
+        nextGroupId: this.nextGroupId,
+        createdAt: now,
+        updatedAt: now
+      }
+
+      this.savedEncounters[id] = savedEncounter
+      this.saveSavedEncountersToStorage()
+
+      return id
+    },
+
+    // Update existing saved encounter
+    updateSavedEncounter(id: string, name: string, description?: string): boolean {
+      this.loadSavedEncounters()
+
+      if (!this.savedEncounters[id]) {
+        return false
+      }
+
+      // Validate before updating
+      const validation = this.validateEncounter()
+      if (!validation.isValid) {
+        throw new Error(`Encounter validation failed: ${validation.errors.map(e => e.message).join(', ')}`)
+      }
+
+      this.savedEncounters[id] = {
+        ...this.savedEncounters[id],
+        name,
+        description,
+        monsters: JSON.parse(JSON.stringify(this.monsters)), // Deep copy
+        targetEV: this.targetEV,
+        initiativeGroups: JSON.parse(JSON.stringify(this.initiativeGroups)), // Deep copy
+        nextGroupId: this.nextGroupId,
+        updatedAt: new Date().toISOString()
+      }
+
+      this.saveSavedEncountersToStorage()
+      return true
+    },
+
+    // Load a saved encounter into current state
+    loadEncounter(id: string): boolean {
+      this.loadSavedEncounters()
+
+      const encounter = this.savedEncounters[id]
+      if (!encounter) {
+        return false
+      }
+
+      // Deep copy to avoid reference issues
+      this.monsters = JSON.parse(JSON.stringify(encounter.monsters))
+      this.targetEV = encounter.targetEV
+      this.initiativeGroups = JSON.parse(JSON.stringify(encounter.initiativeGroups))
+      this.nextGroupId = encounter.nextGroupId
+
+      return true
+    },
+
+    // Delete a saved encounter
+    deleteSavedEncounter(id: string): boolean {
+      this.loadSavedEncounters()
+
+      if (!this.savedEncounters[id]) {
+        return false
+      }
+
+      delete this.savedEncounters[id]
+      this.saveSavedEncountersToStorage()
+      return true
+    },
+
+    // Auto-save current encounter to a temporary slot
+    autoSaveEncounter() {
+      try {
+        const autoSaveData = {
+          monsters: this.monsters,
+          targetEV: this.targetEV,
+          initiativeGroups: this.initiativeGroups,
+          nextGroupId: this.nextGroupId,
+          savedAt: new Date().toISOString()
+        }
+        localStorage.setItem(AUTOSAVE_KEY, JSON.stringify(autoSaveData))
+      } catch (error) {
+        console.error('Error auto-saving encounter:', error)
+      }
+    },
+
+    // Load auto-saved encounter
+    loadAutoSave(): boolean {
+      try {
+        const stored = localStorage.getItem(AUTOSAVE_KEY)
+        if (stored) {
+          const autoSaveData = JSON.parse(stored)
+          this.monsters = autoSaveData.monsters || []
+          this.targetEV = autoSaveData.targetEV || 0
+          this.initiativeGroups = autoSaveData.initiativeGroups || []
+          this.nextGroupId = autoSaveData.nextGroupId || 1
+          return true
+        }
+      } catch (error) {
+        console.error('Error loading auto-saved encounter:', error)
+      }
+      return false
+    },
+
+    // Clear auto-save
+    clearAutoSave() {
+      try {
+        localStorage.removeItem(AUTOSAVE_KEY)
+      } catch (error) {
+        console.error('Error clearing auto-save:', error)
+      }
+    },
+
+    // Export encounter as JSON
+    exportEncounter(id?: string): string {
+      let encounterData: SavedEncounter
+
+      if (id) {
+        this.loadSavedEncounters()
+        const encounter = this.savedEncounters[id]
+        if (!encounter) {
+          throw new Error('Encounter not found')
+        }
+        encounterData = encounter
+      } else {
+        // Export current encounter
+        const validation = this.validateEncounter()
+        if (!validation.isValid) {
+          throw new Error(`Encounter validation failed: ${validation.errors.map(e => e.message).join(', ')}`)
+        }
+
+        encounterData = {
+          id: 'exported-encounter',
+          name: 'Exported Encounter',
+          monsters: this.monsters,
+          targetEV: this.targetEV,
+          initiativeGroups: this.initiativeGroups,
+          nextGroupId: this.nextGroupId,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        }
+      }
+
+      return JSON.stringify(encounterData, null, 2)
+    },
+
+    // Import encounter from JSON
+    importEncounter(jsonData: string): string {
+      try {
+        const encounterData = JSON.parse(jsonData) as SavedEncounter
+
+        // Validate the imported data
+        if (!encounterData.monsters || !Array.isArray(encounterData.monsters)) {
+          throw new Error('Invalid encounter data: missing monsters array')
+        }
+
+        this.loadSavedEncounters()
+
+        // Generate new ID to avoid conflicts
+        const id = this.generateEncounterId(encounterData.name || 'Imported Encounter')
+        const now = new Date().toISOString()
+
+        const savedEncounter: SavedEncounter = {
+          ...encounterData,
+          id,
+          createdAt: now,
+          updatedAt: now
+        }
+
+        this.savedEncounters[id] = savedEncounter
+        this.saveSavedEncountersToStorage()
+
+        return id
+      } catch (error) {
+        console.error('Error importing encounter:', error)
+        throw new Error(`Failed to import encounter: ${error instanceof Error ? error.message : 'Unknown error'}`)
+      }
     }
   }
 })
