@@ -58,77 +58,9 @@ const emit = defineEmits<{
 }>()
 
 // Pre-defined encounter templates
+// TODO: Add encounter templates here
 const templates = computed<EncounterTemplate[]>(() => {
-  const templateList: EncounterTemplate[] = [
-    {
-      id: 'template-goblin-ambush',
-      name: 'Goblin Ambush',
-      description: 'A classic low-level encounter with goblins attacking from multiple sides',
-      targetEV: 12,
-      monsters: [
-        { id: 'goblin', name: 'Goblin', level: 1, ev: 2, role: 'Harrier', organization: 'Minion', count: 4 },
-        { id: 'goblin-sharpshooter', name: 'Goblin Sharpshooter', level: 1, ev: 4, role: 'Artillery', organization: 'Standard', count: 1 }
-      ],
-      totalEV: 12
-    },
-    {
-      id: 'template-undead-horde',
-      name: 'Undead Horde',
-      description: 'Waves of undead creatures with a powerful leader',
-      targetEV: 30,
-      monsters: [
-        { id: 'skeleton', name: 'Skeleton', level: 2, ev: 2, role: 'Brute', organization: 'Minion', count: 8 },
-        { id: 'ghoul', name: 'Ghoul', level: 2, ev: 6, role: 'Harrier', organization: 'Standard', count: 2 },
-        { id: 'wight', name: 'Wight', level: 3, ev: 8, role: 'Leader', organization: 'Elite', count: 1 }
-      ],
-      totalEV: 30
-    },
-    {
-      id: 'template-dragon-lair',
-      name: 'Dragon Lair',
-      description: 'Face a young dragon with its kobold servants',
-      targetEV: 40,
-      monsters: [
-        { id: 'young-dragon', name: 'Young Dragon', level: 5, ev: 30, role: 'Solo', organization: 'Solo', count: 1 },
-        { id: 'kobold-dragonshield', name: 'Kobold Dragonshield', level: 3, ev: 5, role: 'Defender', organization: 'Standard', count: 2 }
-      ],
-      totalEV: 40
-    },
-    {
-      id: 'template-bandit-camp',
-      name: 'Bandit Camp',
-      description: 'A diverse group of bandits with ranged and melee fighters',
-      targetEV: 20,
-      monsters: [
-        { id: 'bandit', name: 'Bandit', level: 2, ev: 3, role: 'Harrier', organization: 'Minion', count: 4 },
-        { id: 'bandit-captain', name: 'Bandit Captain', level: 3, ev: 8, role: 'Leader', organization: 'Elite', count: 1 }
-      ],
-      totalEV: 20
-    },
-    {
-      id: 'template-elemental-chaos',
-      name: 'Elemental Chaos',
-      description: 'Multiple elemental creatures causing havoc',
-      targetEV: 25,
-      monsters: [
-        { id: 'fire-elemental', name: 'Fire Elemental', level: 3, ev: 7, role: 'Brute', organization: 'Standard', count: 2 },
-        { id: 'air-elemental', name: 'Air Elemental', level: 3, ev: 6, role: 'Harrier', organization: 'Standard', count: 1 },
-        { id: 'earth-elemental', name: 'Earth Elemental', level: 3, ev: 5, role: 'Defender', organization: 'Standard', count: 1 }
-      ],
-      totalEV: 25
-    },
-    {
-      id: 'template-spider-nest',
-      name: 'Spider Nest',
-      description: 'Giant spiders and their swarm of smaller offspring',
-      targetEV: 18,
-      monsters: [
-        { id: 'giant-spider', name: 'Giant Spider', level: 2, ev: 6, role: 'Ambusher', organization: 'Standard', count: 2 },
-        { id: 'spider-swarm', name: 'Spider Swarm', level: 1, ev: 2, role: 'Harrier', organization: 'Minion', count: 3 }
-      ],
-      totalEV: 18
-    }
-  ]
+  const templateList: EncounterTemplate[] = []
 
   return templateList
 })

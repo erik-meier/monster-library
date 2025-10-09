@@ -164,6 +164,7 @@
     <!-- Save Encounter Modal -->
     <SaveEncounterModal 
       :is-open="showSaveModal" 
+      :existing-encounter-id="currentEncounterId"
       @close="showSaveModal = false" 
       @saved="handleEncounterSaved" 
     />
@@ -205,6 +206,7 @@ const maliceSearchQuery = ref('')
 const showSaveModal = ref(false)
 const showLoadModal = ref(false)
 const showTemplatesModal = ref(false)
+const currentEncounterId = ref<string | undefined>(undefined)
 
 // Template refs for CollapsibleSection components
 const initiativeTrackerSection = ref()
@@ -377,6 +379,8 @@ function removeMalice(id: string) {
 
 // Encounter management handlers
 function handleEncounterSaved(encounterId: string) {
+  // Track the current encounter ID so future saves update it
+  currentEncounterId.value = encounterId
   console.log('Encounter saved:', encounterId)
   // Optionally show a success message
 }
@@ -384,6 +388,8 @@ function handleEncounterSaved(encounterId: string) {
 function handleLoadEncounter(encounterId: string) {
   const success = encounterStore.loadEncounter(encounterId)
   if (success) {
+    // Track the loaded encounter ID
+    currentEncounterId.value = encounterId
     // Update heights after loading
     updateCollapsibleHeights()
     // Optionally close the load modal
@@ -407,8 +413,9 @@ function handleTemplateSelected(template: { monsters: Array<{ id: string, name: 
   }
   
   if (shouldProceed) {
-    // Clear current encounter
+    // Clear current encounter and tracking
     encounterStore.clearEncounter()
+    currentEncounterId.value = undefined
     
     // Add all monsters from template
     template.monsters.forEach(monster => {
