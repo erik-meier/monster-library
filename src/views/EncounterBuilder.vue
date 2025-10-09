@@ -17,13 +17,21 @@
               Save Encounter
             </button>
             <button type="button" class="btn btn-secondary" @click="showLoadModal = !showLoadModal">
-              {{ showLoadModal ? 'Hide' : 'Load' }} Saved Encounters
+              {{ showLoadModal ? 'Hide' : 'Load' }} Saved
+            </button>
+            <button type="button" class="btn btn-secondary" @click="showTemplatesModal = !showTemplatesModal">
+              {{ showTemplatesModal ? 'Hide' : 'Show' }} Templates
             </button>
           </div>
         </div>
       </div>
 
       <div class="builder-main">
+        <!-- Encounter Templates (collapsible) -->
+        <div v-if="showTemplatesModal" class="section-card">
+          <EncounterTemplates @template-selected="handleTemplateSelected" />
+        </div>
+
         <!-- Saved Encounters List (collapsible) -->
         <div v-if="showLoadModal" class="section-card">
           <SavedEncountersList @load="handleLoadEncounter" @export="handleExportEncounter" />
@@ -170,6 +178,7 @@ import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import InitiativeTracker from '@/components/InitiativeTracker.vue'
 import SaveEncounterModal from '@/components/SaveEncounterModal.vue'
 import SavedEncountersList from '@/components/SavedEncountersList.vue'
+import EncounterTemplates from '@/components/EncounterTemplates.vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
 import { useEncounterStore } from '@/stores/encounter'
 import {
@@ -195,6 +204,7 @@ const maliceListExpanded = ref(true)
 const maliceSearchQuery = ref('')
 const showSaveModal = ref(false)
 const showLoadModal = ref(false)
+const showTemplatesModal = ref(false)
 
 // Template refs for CollapsibleSection components
 const initiativeTrackerSection = ref()
@@ -385,6 +395,42 @@ function handleLoadEncounter(encounterId: string) {
 
 function handleExportEncounter(encounterId: string) {
   console.log('Encounter exported:', encounterId)
+}
+
+function handleTemplateSelected(template: { monsters: Array<{ id: string, name: string, level: number, ev: number, role: string, organization: string, count: number }>, targetEV: number }) {
+  // Ask if user wants to replace or add to current encounter
+  const hasMonstersAlready = encounterStore.monsters.length > 0
+  
+  let shouldProceed = true
+  if (hasMonstersAlready) {
+    shouldProceed = confirm('This will replace your current encounter. Continue?')
+  }
+  
+  if (shouldProceed) {
+    // Clear current encounter
+    encounterStore.clearEncounter()
+    
+    // Add all monsters from template
+    template.monsters.forEach(monster => {
+      for (let i = 0; i < monster.count; i++) {
+        encounterStore.addMonster({
+          id: monster.id,
+          name: monster.name,
+          level: monster.level,
+          ev: monster.ev,
+          role: monster.role,
+          organization: monster.organization
+        })
+      }
+    })
+    
+    // Set target EV
+    encounterStore.setTargetEV(template.targetEV)
+    
+    // Update heights and close templates
+    updateCollapsibleHeights()
+    showTemplatesModal.value = false
+  }
 }
 
 // Auto-save functionality - save work in progress every 30 seconds
