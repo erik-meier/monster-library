@@ -3,7 +3,8 @@
     <div class="encounters-header">
       <h3>Saved Encounters</h3>
       <p v-if="encounters.length === 0" class="empty-message">No saved encounters yet</p>
-      <p v-else class="count-message">{{ encounters.length }} saved encounter{{ encounters.length !== 1 ? 's' : '' }}</p>
+      <p v-else class="count-message">{{ encounters.length }} saved encounter{{ encounters.length !== 1 ? 's' : '' }}
+      </p>
     </div>
 
     <div v-if="encounters.length > 0" class="encounters-list">
@@ -11,9 +12,10 @@
         <div class="encounter-info">
           <h4 class="encounter-name">{{ encounter.name }}</h4>
           <p v-if="encounter.description" class="encounter-description">{{ encounter.description }}</p>
-          
+
           <div class="encounter-stats">
-            <span class="stat-badge">{{ encounter.monsters.length }} monster{{ encounter.monsters.length !== 1 ? 's' : '' }}</span>
+            <span class="stat-badge">{{ encounter.monsters.length }} monster{{ encounter.monsters.length !== 1 ? 's' :
+              '' }}</span>
             <span class="stat-badge ev-badge">EV {{ calculateTotalEV(encounter) }}</span>
             <span v-if="encounter.targetEV > 0" class="stat-badge target-badge">Target: {{ encounter.targetEV }}</span>
           </div>
@@ -26,28 +28,16 @@
         </div>
 
         <div class="encounter-actions">
-          <button 
-            type="button"
-            class="btn btn-primary btn-sm" 
-            @click="handleLoad(encounter.id)"
-            title="Load this encounter"
-          >
+          <button type="button" class="btn btn-primary btn-sm" @click="handleLoad(encounter.id)"
+            title="Load this encounter">
             Load
           </button>
-          <button 
-            type="button"
-            class="btn btn-secondary btn-sm" 
-            @click="handleExport(encounter.id)"
-            title="Export as JSON"
-          >
+          <button type="button" class="btn btn-secondary btn-sm" @click="handleExport(encounter.id)"
+            title="Export as JSON">
             Export
           </button>
-          <button 
-            type="button"
-            class="btn btn-danger btn-sm" 
-            @click="handleDelete(encounter.id)"
-            title="Delete this encounter"
-          >
+          <button type="button" class="btn btn-danger btn-sm" @click="handleDelete(encounter.id)"
+            title="Delete this encounter">
             Delete
           </button>
         </div>
@@ -56,12 +46,27 @@
 
     <div v-if="showImport" class="import-section">
       <h4>Import Encounter</h4>
-      <textarea
-        v-model="importData"
-        class="form-input import-textarea"
-        rows="6"
-        placeholder="Paste encounter JSON data here..."
-      />
+
+      <div class="import-options">
+        <div class="import-option">
+          <label class="import-label">Select JSON File:</label>
+          <div class="file-input-wrapper">
+            <input ref="fileInput" type="file" accept=".json,application/json" @change="handleFileChange"
+              class="file-input-hidden" />
+            <button type="button" class="btn btn-secondary file-select-btn" @click="handleFileSelect">
+              Choose File
+            </button>
+            <span class="file-help-text">or</span>
+          </div>
+        </div>
+
+        <div class="import-option">
+          <label class="import-label" for="import-textarea">Paste JSON Data:</label>
+          <textarea id="import-textarea" v-model="importData" class="form-input import-textarea" rows="6"
+            placeholder="Paste encounter JSON data here..." />
+        </div>
+      </div>
+
       <div class="import-actions">
         <button type="button" class="btn btn-secondary" @click="cancelImport">Cancel</button>
         <button type="button" class="btn btn-primary" @click="handleImport" :disabled="!importData.trim()">
@@ -71,7 +76,7 @@
       <p v-if="importError" class="error-message">{{ importError }}</p>
     </div>
 
-    <div v-if="!showImport && encounters.length > 0" class="footer-actions">
+    <div v-if="!showImport" class="footer-actions">
       <button type="button" class="btn btn-secondary btn-sm" @click="showImport = true">
         Import Encounter
       </button>
@@ -112,10 +117,51 @@ const encounters = computed(() => encounterStore.allSavedEncounters)
 const showImport = ref(false)
 const importData = ref('')
 const importError = ref<string | null>(null)
+const fileInput = ref<HTMLInputElement | null>(null)
 
 // Delete confirmation state
 const showConfirmDialog = ref(false)
 const encounterToDelete = ref<SavedEncounter | null>(null)
+
+function handleFileSelect() {
+  fileInput.value?.click()
+}
+
+function handleFileChange(event: Event) {
+  const target = event.target as HTMLInputElement
+  const file = target.files?.[0]
+
+  if (!file) return
+
+  // Validate file type
+  if (!file.name.endsWith('.json') && file.type !== 'application/json') {
+    importError.value = 'Please select a JSON file (.json)'
+    return
+  }
+
+  // Read file content
+  const reader = new FileReader()
+  reader.onload = (e) => {
+    const content = e.target?.result as string
+    try {
+      // Validate JSON format by parsing it
+      JSON.parse(content)
+      importData.value = content
+      importError.value = null
+    } catch {
+      importError.value = 'Invalid JSON file format'
+    }
+  }
+
+  reader.onerror = () => {
+    importError.value = 'Failed to read file'
+  }
+
+  reader.readAsText(file)
+
+  // Reset the file input so the same file can be selected again
+  target.value = ''
+}
 
 function calculateTotalEV(encounter: SavedEncounter): number {
   return encounter.monsters.reduce((sum, monster) => sum + (monster.ev * monster.count), 0)
@@ -138,7 +184,7 @@ function formatRelativeTime(dateString: string): string {
   if (diffMins < 60) return `${diffMins} minute${diffMins !== 1 ? 's' : ''} ago`
   if (diffHours < 24) return `${diffHours} hour${diffHours !== 1 ? 's' : ''} ago`
   if (diffDays < 30) return `${diffDays} day${diffDays !== 1 ? 's' : ''} ago`
-  
+
   return formatDate(dateString)
 }
 
@@ -149,7 +195,7 @@ function handleLoad(id: string) {
 function handleExport(id: string) {
   try {
     const json = encounterStore.exportEncounter(id)
-    
+
     // Create download
     const blob = new Blob([json], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
@@ -191,7 +237,7 @@ function cancelDelete() {
 
 function handleImport() {
   importError.value = null
-  
+
   try {
     encounterStore.importEncounter(importData.value)
     importData.value = ''
@@ -337,11 +383,51 @@ function cancelImport() {
   color: var(--color-neutral-700);
 }
 
+.import-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.import-option {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.import-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-700);
+}
+
+.file-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.file-input-hidden {
+  display: none;
+}
+
+.file-select-btn {
+  flex-shrink: 0;
+}
+
+.file-help-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-500);
+  font-style: italic;
+}
+
 .import-textarea {
   width: 100%;
   font-family: monospace;
   font-size: var(--font-size-sm);
-  margin-bottom: var(--space-3);
+  resize: vertical;
+  min-height: 120px;
 }
 
 .import-actions {
@@ -429,6 +515,16 @@ function cancelImport() {
 
   .encounter-actions .btn {
     flex: 1;
+  }
+
+  .file-input-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+  }
+
+  .file-help-text {
+    text-align: center;
   }
 
   .import-actions,
