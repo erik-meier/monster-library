@@ -14,6 +14,7 @@ import MonsterList from './views/MonsterList.vue'
 import Home from './views/Home.vue'
 import MonsterCreate from './views/MonsterCreate.vue'
 import MyMonsters from './views/MyMonsters.vue'
+import MyEncounters from './views/MyEncounters.vue'
 import About from './views/About.vue'
 import MonsterRandom from './views/MonsterRandom.vue'
 import EncounterBuilder from './views/EncounterBuilder.vue'
@@ -59,6 +60,11 @@ const routes = [
     component: MyMonsters
   },
   {
+    path: '/my-encounters',
+    name: 'MyEncounters',
+    component: MyEncounters
+  },
+  {
     path: '/encounter-builder',
     name: 'EncounterBuilder',
     component: EncounterBuilder
@@ -67,11 +73,6 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
-  },
-  {
-    path: '/encounter-builder',
-    name: 'EncounterBuilder',
-    component: EncounterBuilder
   }
 ]
 
