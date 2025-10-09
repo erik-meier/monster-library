@@ -3,93 +3,90 @@
     <div class="tracker-header">
       <h2>Initiative Groups</h2>
       <div class="header-actions">
-        <button 
-          class="btn btn-primary"
-          @click="createNewGroup"
-          :aria-label="'Create new initiative group'"
-        >
+        <button class="btn btn-secondary btn-sm" @click="showHelp = !showHelp"
+          :aria-label="showHelp ? 'Hide tips' : 'Show tips'" title="Tips and keyboard shortcuts">
+          {{ showHelp ? '✕' : '?' }}
+        </button>
+        <button class="btn btn-primary" @click="createNewGroup" :aria-label="'Create new initiative group'">
           + New Group
         </button>
       </div>
     </div>
 
+    <!-- Help Text -->
+    <div class="help-text" v-if="showHelp">
+      <h4>Tips</h4>
+      <ul>
+        <li>Drag to reorder groups or monsters</li>
+        <li><kbd>+</kbd> / <kbd>-</kbd> on monster: Adjust count</li>
+        <li><kbd>Delete</kbd> / <kbd>Backspace</kbd> on monster: Remove from group</li>
+        <li>Click group name to edit</li>
+        <li>Split button (4-square grid): Split monsters (4 minions, 1 others by default)</li>
+        <li>Splitting ungrouped monsters keeps both sets ungrouped</li>
+      </ul>
+    </div>
+
     <!-- Initiative Groups -->
     <div class="groups-container" v-if="sortedGroups.length > 0">
       <TransitionGroup name="group-list" tag="div" class="groups-list">
-        <InitiativeGroup
-          v-for="group in sortedGroups"
-          :key="group.id"
-          :group="group"
-          :can-reorder="true"
-          @delete="handleDeleteGroup"
-          @reorder="handleReorderGroups"
-          @monster-moved="handleMonsterMoved"
-        />
+        <InitiativeGroup v-for="group in sortedGroups" :key="group.id" :group="group" :can-reorder="true"
+          @delete="handleDeleteGroup" @reorder="handleReorderGroups" @monster-moved="handleMonsterMoved"
+          @height-changed="emit('height-changed')" />
       </TransitionGroup>
     </div>
 
     <!-- Ungrouped Monsters Section -->
-    <div 
-      v-if="ungroupedMonsters.length > 0" 
-      class="ungrouped-section"
-      @dragover.prevent="handleUngroupedDragOver"
-      @drop="handleUngroupedDrop"
-      :class="{ 'dragging-over': isDraggingOverUngrouped }"
-    >
+    <div v-if="ungroupedMonsters.length > 0" class="ungrouped-section" @dragover.prevent="handleUngroupedDragOver"
+      @drop="handleUngroupedDrop" :class="{ 'dragging-over': isDraggingOverUngrouped }">
       <div class="ungrouped-header">
         <h3>Ungrouped Monsters</h3>
-        <button 
-          class="btn btn-secondary btn-sm"
-          @click="groupAllUngrouped"
-          :aria-label="'Create group with all ungrouped monsters'"
-        >
+        <button class="btn btn-secondary btn-sm" @click="groupAllUngrouped"
+          :aria-label="'Create group with all ungrouped monsters'">
           Group All
         </button>
       </div>
-      
+
       <div class="monster-grid">
-        <div
-          v-for="monster in ungroupedMonsters"
-          :key="monster.id"
-          class="ungrouped-monster"
-          draggable="true"
-          @dragstart="handleUngroupedMonsterDragStart(monster, $event)"
-          @dragend="handleMonsterDragEnd"
-          tabindex="0"
-          role="listitem"
-          :aria-label="`${monster.name}, Level ${monster.level}`"
-        >
+        <div v-for="monster in ungroupedMonsters" :key="monster.id" class="ungrouped-monster" draggable="true"
+          @dragstart="handleUngroupedMonsterDragStart(monster, $event)" @dragend="handleMonsterDragEnd" tabindex="0"
+          role="listitem" :aria-label="`${monster.name}, Level ${monster.level}`">
           <div class="monster-drag-icon">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-              <circle cx="3" cy="3" r="1.5"/>
-              <circle cx="9" cy="3" r="1.5"/>
-              <circle cx="3" cy="9" r="1.5"/>
-              <circle cx="9" cy="9" r="1.5"/>
+              <circle cx="3" cy="3" r="1.5" />
+              <circle cx="9" cy="3" r="1.5" />
+              <circle cx="3" cy="9" r="1.5" />
+              <circle cx="9" cy="9" r="1.5" />
             </svg>
           </div>
-          
+
           <div class="monster-content">
             <div class="monster-name-row">
               <span class="monster-name">{{ monster.name }}</span>
               <span class="monster-count-badge">×{{ monster.count }}</span>
             </div>
             <div class="monster-stats-row">
-              <span class="stat">Lvl {{ monster.level }}</span>
-              <span class="stat">{{ monster.role }}</span>
+              <span class="stat">Level {{ monster.level }} {{ monster.organization }} {{ monster.role }}</span>
               <span class="stat">EV {{ monster.ev }}</span>
             </div>
           </div>
-          
-          <button
-            class="btn-icon btn-remove"
-            @click.stop="removeUngroupedMonster(monster)"
-            :aria-label="`Remove ${monster.name} from encounter`"
-            title="Remove from encounter"
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-              <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"/>
-            </svg>
-          </button>
+
+          <div class="ungrouped-controls">
+            <button v-if="isSplittable(monster)" class="btn-icon btn-split" @click.stop="splitUngroupedMonster(monster)"
+              :aria-label="`Split ${isMinion(monster) ? '4' : '1'} ${monster.name} (keeps both ungrouped)`"
+              :title="`Split ${isMinion(monster) ? '4' : '1'} ${monster.name} (keeps both ungrouped)`">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+                <path d="M6 2L6 6L2 6L2 2L6 2ZM7 2L11 2L11 6L7 6L7 2ZM2 7L6 7L6 11L2 11L2 7ZM7 7L11 7L11 11L7 11L7 7Z"
+                  stroke="currentColor" stroke-width="0.5" />
+              </svg>
+            </button>
+            <button class="btn-icon btn-remove" @click.stop="removeUngroupedMonster(monster)"
+              :aria-label="`Remove ${monster.name} from encounter`" title="Remove from encounter">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+                <path
+                  d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -100,29 +97,24 @@
       <h3>No Monsters in Encounter</h3>
       <p>Add monsters from the monster selector to organize them into initiative groups.</p>
     </div>
-
-    <!-- Help Text -->
-    <div class="help-text" v-if="sortedGroups.length > 0 || ungroupedMonsters.length > 0">
-      <h4>Keyboard Shortcuts</h4>
-      <ul>
-        <li><kbd>↑</kbd> / <kbd>↓</kbd> on group drag handle: Reorder groups</li>
-        <li><kbd>+</kbd> / <kbd>-</kbd> on monster: Adjust count</li>
-        <li><kbd>Delete</kbd> / <kbd>Backspace</kbd> on monster: Remove from group</li>
-        <li><kbd>Enter</kbd> / <kbd>Space</kbd> on group name: Edit name</li>
-      </ul>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch, nextTick } from 'vue'
 import { useEncounterStore, type EncounterMonster } from '@/stores/encounter'
 import InitiativeGroup from './InitiativeGroup.vue'
 
 const encounterStore = useEncounterStore()
 
+// Define emit function for height updates
+const emit = defineEmits<{
+  'height-changed': []
+}>()
+
 // State
 const isDraggingOverUngrouped = ref(false)
+const showHelp = ref(false)
 
 // Computed
 const sortedGroups = computed(() => {
@@ -132,6 +124,53 @@ const sortedGroups = computed(() => {
 const ungroupedMonsters = computed(() => {
   return encounterStore.ungroupedMonsters
 })
+
+// Helper functions for ungrouped monster operations
+const isMinion = (monster: EncounterMonster) => {
+  return monster.organization?.toLowerCase() === 'minion'
+}
+
+const isSplittable = (monster: EncounterMonster) => {
+  if (isMinion(monster)) {
+    return monster.count > 4
+  }
+  return monster.count > 1
+}
+
+const splitUngroupedMonster = (monster: EncounterMonster) => {
+  if (monster.count <= 1) return
+
+  // Use default split amounts: 4 for minions, 1 for others
+  const isMinionMonster = isMinion(monster)
+  const defaultSplit = isMinionMonster ? 4 : 1
+  const count = Math.min(defaultSplit, monster.count - 1)
+
+  if (count < 1) return
+
+  // Reduce the current monster's count
+  encounterStore.updateMonsterCount(monster.id, monster.count - count)
+
+  // Create a new monster entry with the split count (stays ungrouped)
+  const newMonster = {
+    id: `${monster.id}_${Date.now()}`, // Create a unique ID for the split monster
+    name: monster.name,
+    level: monster.level,
+    ev: monster.ev,
+    organization: monster.organization,
+    role: monster.role
+  }
+
+  // Add the split monsters to the encounter (they'll remain ungrouped)
+  for (let i = 0; i < count; i++) {
+    encounterStore.addMonster(newMonster)
+  }
+}
+
+// Watch for changes that affect height and emit events
+watch([sortedGroups, ungroupedMonsters, showHelp], async () => {
+  await nextTick()
+  emit('height-changed')
+}, { flush: 'post' })
 
 // Actions
 const createNewGroup = () => {
@@ -146,11 +185,11 @@ const handleReorderGroups = (draggedGroupId: string, targetGroupId: string) => {
   const allGroups = encounterStore.sortedGroups
   const draggedGroup = allGroups.find(g => g.id === draggedGroupId)
   const targetGroup = allGroups.find(g => g.id === targetGroupId)
-  
+
   if (draggedGroup && targetGroup) {
     const draggedOrder = draggedGroup.order
     const targetOrder = targetGroup.order
-    
+
     // Swap orders
     const newOrder = allGroups.map(g => {
       if (g.id === draggedGroupId) {
@@ -160,7 +199,7 @@ const handleReorderGroups = (draggedGroupId: string, targetGroupId: string) => {
       }
       return g
     }).sort((a, b) => a.order - b.order)
-    
+
     // Update all group orders
     const groupIds = newOrder.map(g => g.id)
     encounterStore.reorderGroups(groupIds)
@@ -189,11 +228,11 @@ const handleUngroupedMonsterDragStart = (monster: EncounterMonster, event: DragE
       sourceGroupId: null
     }))
   }
-  ;(event.target as HTMLElement).classList.add('dragging')
+  ; (event.target as HTMLElement).classList.add('dragging')
 }
 
 const handleMonsterDragEnd = (event: DragEvent) => {
-  ;(event.target as HTMLElement).classList.remove('dragging')
+  ; (event.target as HTMLElement).classList.remove('dragging')
 }
 
 const handleUngroupedDragOver = (event: DragEvent) => {
@@ -207,11 +246,11 @@ const handleUngroupedDragOver = (event: DragEvent) => {
 const handleUngroupedDrop = (event: DragEvent) => {
   event.preventDefault()
   isDraggingOverUngrouped.value = false
-  
+
   if (event.dataTransfer) {
     try {
       const data = JSON.parse(event.dataTransfer.getData('text/plain'))
-      
+
       if (data.type === 'monster' && data.sourceGroupId) {
         // Moving a monster back to ungrouped
         encounterStore.moveMonsterToGroup(data.monsterId, null)
@@ -404,10 +443,16 @@ const removeUngroupedMonster = (monster: EncounterMonster) => {
 .stat {
   font-size: var(--font-size-xs);
   color: var(--color-neutral-600);
-  background: white;
+  background: var(--color-neutral-100);
   padding: 2px var(--space-2);
   border-radius: var(--radius-base);
-  border: 1px solid var(--color-neutral-200);
+}
+
+.ungrouped-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
 }
 
 /* Buttons */
@@ -480,6 +525,15 @@ const removeUngroupedMonster = (monster: EncounterMonster) => {
   outline-offset: 2px;
 }
 
+.btn-split {
+  color: var(--color-info-600);
+}
+
+.btn-split:hover {
+  background: var(--color-info-100);
+  color: var(--color-info-700);
+}
+
 .btn-remove {
   color: var(--color-error-600);
 }
@@ -525,7 +579,7 @@ const removeUngroupedMonster = (monster: EncounterMonster) => {
 
 .help-text h4 {
   margin: 0 0 var(--space-2) 0;
-  color: var(--color-info-800);
+  color: var(--color-info-700);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
 }

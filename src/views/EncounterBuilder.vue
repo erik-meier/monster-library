@@ -7,7 +7,7 @@
 
     <div class="builder-layout">
       <div class="builder-sidebar">
-        <EncounterBudget :party="party" :monsters="encounterMonsters" />
+        <EncounterBudget :party="party" :monsters="encounterStore.monsters" />
         <PartyConfiguration v-model="party" />
       </div>
 
@@ -15,50 +15,9 @@
         <div class="section-card">
           <h2>Encounter Summary</h2>
 
-          <CollapsibleSection title="Initiative Groups" :expanded="initiativeTrackerExpanded"
-            @toggle="initiativeTrackerExpanded = $event">
-            <InitiativeTracker />
-          </CollapsibleSection>
-
-          <CollapsibleSection title="Encounter Monsters" :expanded="encounterMonstersExpanded"
-            @toggle="encounterMonstersExpanded = $event" ref="encounterMonstersSection">
-            <p v-if="encounterMonsters.length === 0" class="empty-state">
-              No monsters added yet. Use the search below to add monsters to your encounter.
-            </p>
-
-            <div v-else class="monster-list">
-              <div v-for="monster in encounterMonsters" :key="monster.id" class="monster-entry">
-                <div class="monster-info">
-                  <h3 class="monster-name">{{ monster.name }}</h3>
-                  <div class="monster-stats">
-                    <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' +
-                      monster.role : '' }}</span>
-                    <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
-                  </div>
-                </div>
-
-                <div class="monster-controls">
-                  <div class="quantity-control">
-                    <button type="button" class="btn btn-sm" @click="decrementMonster(monster.id)"
-                      :disabled="monster.count <= 1">
-                      −
-                    </button>
-                    <span class="quantity-display">{{ monster.count }}</span>
-                    <button type="button" class="btn btn-sm" @click="incrementMonster(monster.id)">
-                      +
-                    </button>
-                  </div>
-                  <div class="monster-cost">
-                    <span class="cost-label">Cost:</span>
-                    <span class="cost-value">{{ calculateCost(monster) }} EV</span>
-                  </div>
-                  <button type="button" class="btn btn-sm btn-danger" @click="removeMonster(monster.id)"
-                    title="Remove from encounter">
-                    ✕
-                  </button>
-                </div>
-              </div>
-            </div>
+          <CollapsibleSection title="Encounter Monsters" :expanded="initiativeTrackerExpanded"
+            @toggle="initiativeTrackerExpanded = $event" ref="initiativeTrackerSection">
+            <InitiativeTracker @height-changed="updateCollapsibleHeights" />
           </CollapsibleSection>
 
           <CollapsibleSection title="Malice Features" :expanded="encounterMaliceExpanded"
@@ -180,7 +139,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick, watch } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 import PartyConfiguration from '@/components/PartyConfiguration.vue'
 import EncounterBudget from '@/components/EncounterBudget.vue'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
@@ -188,9 +147,7 @@ import InitiativeTracker from '@/components/InitiativeTracker.vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
 import { useEncounterStore } from '@/stores/encounter'
 import {
-  calculateMonsterCost,
-  type PartyConfiguration as PartyConfig,
-  type MonsterInEncounter
+  type PartyConfiguration as PartyConfig
 } from '@/utils/encounterBalance'
 
 // Stores
@@ -201,20 +158,18 @@ const encounterStore = useEncounterStore()
 const party = ref<PartyConfig>({
   heroes: [{ level: 3, victories: 0 }, { level: 3, victories: 0 }, { level: 3, victories: 0 }, { level: 3, victories: 0 }]
 })
-const encounterMonsters = ref<MonsterInEncounter[]>([])
 const encounterMalice = ref<SimpleMaliceFeature[]>([])
 const searchQuery = ref('')
 const filterLevel = ref<string>('')
 const filterOrg = ref<string>('')
 const initiativeTrackerExpanded = ref(true)
-const encounterMonstersExpanded = ref(true)
 const encounterMaliceExpanded = ref(true)
 const monstersListExpanded = ref(true)
 const maliceListExpanded = ref(true)
 const maliceSearchQuery = ref('')
 
 // Template refs for CollapsibleSection components
-const encounterMonstersSection = ref()
+const initiativeTrackerSection = ref()
 const encounterMaliceSection = ref()
 
 interface SimpleMonster {
@@ -280,65 +235,7 @@ onMounted(async () => {
   }
 })
 
-// Sync local encounter monsters with Pinia store on mount
-onMounted(() => {
-  syncFromStore()
-})
 
-// Watch for changes in the encounter store and sync to local state
-watch(() => encounterStore.monsters, () => {
-  syncFromStore()
-}, { deep: true })
-
-// Watch for changes in local state and sync to store
-watch(encounterMonsters, (newMonsters) => {
-  syncToStore(newMonsters)
-}, { deep: true })
-
-function syncFromStore() {
-  encounterMonsters.value = encounterStore.monsters.map(m => ({
-    id: m.id,
-    name: m.name,
-    level: m.level,
-    ev: m.ev,
-    organization: m.organization,
-    role: m.role,
-    count: m.count
-  }))
-}
-
-function syncToStore(monsters: MonsterInEncounter[]) {
-  // Clear existing monsters in store if they don't exist locally
-  const localIds = new Set(monsters.map(m => m.id))
-  const storeMonsters = encounterStore.monsters
-  
-  for (const storeMonster of storeMonsters) {
-    if (!localIds.has(storeMonster.id)) {
-      encounterStore.removeMonster(storeMonster.id)
-    }
-  }
-  
-  // Update or add monsters from local state
-  for (const monster of monsters) {
-    const existingInStore = storeMonsters.find(m => m.id === monster.id)
-    if (existingInStore) {
-      // Update count if different
-      if (existingInStore.count !== monster.count) {
-        encounterStore.updateMonsterCount(monster.id, monster.count)
-      }
-    } else {
-      // Add new monster with defaults for optional fields
-      encounterStore.addMonster({
-        id: monster.id,
-        name: monster.name,
-        level: monster.level,
-        ev: monster.ev,
-        organization: monster.organization,
-        role: monster.role || ''
-      })
-    }
-  }
-}
 
 // Computed
 const filteredMonsters = computed(() => {
@@ -396,8 +293,8 @@ const filteredMaliceFeatures = computed(() => {
 // Helper function to update collapsible heights
 async function updateCollapsibleHeights() {
   await nextTick()
-  if (encounterMonstersSection.value?.updateHeight) {
-    encounterMonstersSection.value.updateHeight()
+  if (initiativeTrackerSection.value?.updateHeight) {
+    initiativeTrackerSection.value.updateHeight()
   }
   if (encounterMaliceSection.value?.updateHeight) {
     encounterMaliceSection.value.updateHeight()
@@ -422,30 +319,7 @@ function addMonsterToEncounter(monster: SimpleMonster, count: number = 1) {
   updateCollapsibleHeights()
 }
 
-function incrementMonster(id: string) {
-  const monster = encounterStore.monsters.find((m) => m.id === id)
-  if (monster) {
-    encounterStore.updateMonsterCount(id, monster.count + 1)
-    updateCollapsibleHeights()
-  }
-}
 
-function decrementMonster(id: string) {
-  const monster = encounterStore.monsters.find((m) => m.id === id)
-  if (monster && monster.count > 1) {
-    encounterStore.updateMonsterCount(id, monster.count - 1)
-    updateCollapsibleHeights()
-  }
-}
-
-function removeMonster(id: string) {
-  encounterStore.removeMonster(id)
-  updateCollapsibleHeights()
-}
-
-function calculateCost(monster: MonsterInEncounter): string {
-  return (Math.round(calculateMonsterCost(monster) * 10) / 10).toString()
-}
 
 function addMaliceToEncounter(malice: SimpleMaliceFeature) {
   const existing = encounterMalice.value.find((m) => m.id === malice.id)
@@ -529,91 +403,7 @@ function removeMalice(id: string) {
   font-style: italic;
 }
 
-.monster-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
 
-.monster-entry {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-4);
-  background: var(--color-neutral-50);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-neutral-200);
-  gap: var(--space-4);
-}
-
-.monster-info {
-  flex: 1;
-}
-
-.monster-name {
-  margin: 0 0 var(--space-2) 0;
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-neutral-900);
-}
-
-.monster-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.stat-badge {
-  padding: var(--space-1) var(--space-2);
-  background: var(--color-neutral-200);
-  border-radius: var(--radius-sm);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-neutral-700);
-}
-
-.ev-badge {
-  background: var(--color-primary-200);
-  color: var(--color-primary-700);
-}
-
-.monster-controls {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.quantity-control {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.quantity-display {
-  min-width: 30px;
-  text-align: center;
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-lg);
-  color: var(--color-neutral-800);
-}
-
-.monster-cost {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  min-width: 70px;
-}
-
-.cost-label {
-  font-size: var(--font-size-xs);
-  color: var(--color-neutral-600);
-}
-
-.cost-value {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary-600);
-}
 
 .search-section {
   margin-bottom: var(--space-4);
@@ -646,6 +436,7 @@ function removeMalice(id: string) {
   gap: var(--space-3);
   max-height: 80vh;
   overflow-y: auto;
+  color: var(--color-neutral-900);
 }
 
 @media (max-width: 1024px) {
@@ -674,6 +465,25 @@ function removeMalice(id: string) {
 .available-monster .monster-name {
   font-size: var(--font-size-base);
   margin-bottom: var(--space-1);
+}
+
+.monster-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.stat-badge {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-600);
+  background: var(--color-neutral-100);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-base);
+}
+
+.ev-badge {
+  background: var(--color-primary-100);
+  color: var(--color-primary-700);
 }
 
 .monster-add-buttons {
@@ -805,14 +615,9 @@ function removeMalice(id: string) {
     padding: var(--space-4);
   }
 
-  .monster-entry,
   .available-monster {
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .monster-controls {
-    justify-content: space-between;
   }
 
   .filter-controls {
