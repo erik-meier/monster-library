@@ -6,24 +6,6 @@
     </div>
 
     <div class="dashboard">
-      <!-- Stats Cards -->
-      <div class="stats-cards">
-        <div class="stat-card">
-          <div class="stat-number">{{ encounterCount }}</div>
-          <div class="stat-label">Saved Encounters</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-number">{{ totalMonstersInEncounters }}</div>
-          <div class="stat-label">Total Monsters</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-number">{{ averageEV }}</div>
-          <div class="stat-label">Average EV</div>
-        </div>
-      </div>
-
       <!-- Actions -->
       <div class="actions">
         <router-link to="/encounter-builder" class="btn btn-primary">
@@ -41,15 +23,8 @@
         <div class="search-bar">
           <input v-model="searchTerm" type="text" placeholder="Search encounters..." class="search-input">
         </div>
-        
-        <div class="filter-controls">
-          <select v-model="filterDifficulty" class="filter-select">
-            <option value="">All Difficulties</option>
-            <option value="under">Under Budget</option>
-            <option value="balanced">Balanced</option>
-            <option value="over">Over Budget</option>
-          </select>
 
+        <div class="filter-controls">
           <select v-model="sortBy" class="filter-select">
             <option value="updated">Recently Updated</option>
             <option value="created">Recently Created</option>
@@ -80,9 +55,6 @@
           <div v-for="encounter in filteredEncounters" :key="encounter.id" class="encounter-card">
             <div class="encounter-header">
               <h3 class="encounter-name">{{ encounter.name }}</h3>
-              <span class="difficulty-badge" :class="getDifficultyClass(encounter)">
-                {{ getDifficultyLabel(encounter) }}
-              </span>
             </div>
 
             <div v-if="encounter.description" class="encounter-description">
@@ -97,10 +69,6 @@
               <div class="stat-item">
                 <span class="stat-label">Total EV:</span>
                 <span class="stat-value">{{ getTotalEV(encounter) }}</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Target EV:</span>
-                <span class="stat-value">{{ encounter.targetEV || 'Not set' }}</span>
               </div>
             </div>
 
@@ -153,17 +121,21 @@
 
     <!-- Delete Confirmation Dialog -->
     <div v-if="showDeleteDialog" class="dialog-overlay" @click.self="cancelDelete">
-      <div class="dialog" role="dialog" aria-labelledby="delete-dialog-title" aria-describedby="delete-dialog-desc"
-        @keydown.escape="cancelDelete" ref="deleteDialog">
+      <div class="dialog delete-dialog" role="dialog" aria-labelledby="delete-dialog-title"
+        aria-describedby="delete-dialog-desc" @keydown.escape="cancelDelete" ref="deleteDialog">
+        <div class="dialog-icon">⚠️</div>
         <h3 id="delete-dialog-title">Delete Encounter</h3>
-        <p id="delete-dialog-desc">Are you sure you want to delete "{{ encounterToDelete?.name }}"? This action cannot be
-          undone.</p>
+        <p id="delete-dialog-desc">
+          Are you sure you want to delete <strong>"{{ encounterToDelete?.name }}"</strong>?
+        </p>
+        <p class="warning-text">This action cannot be undone.</p>
         <div class="dialog-actions">
           <button @click="cancelDelete" class="btn btn-secondary">
             Cancel
           </button>
           <button @click="confirmDelete" class="btn btn-danger" ref="deleteButton">
-            Delete
+            <span class="btn-icon">🗑️</span>
+            Delete Encounter
           </button>
         </div>
       </div>
@@ -174,9 +146,10 @@
       <div class="dialog" role="dialog" aria-labelledby="import-dialog-title">
         <h3 id="import-dialog-title">Import Encounter</h3>
         <p>Select a JSON file containing encounter data to import.</p>
-        
+
         <div class="file-input-wrapper">
-          <input type="file" ref="fileInput" @change="handleFileImport" accept=".json" class="file-input" id="encounter-import" />
+          <input type="file" ref="fileInput" @change="handleFileImport" accept=".json" class="file-input"
+            id="encounter-import" />
           <label for="encounter-import" class="btn btn-secondary">
             <span class="btn-icon">📁</span>
             Choose File
@@ -200,7 +173,7 @@
       <div class="dialog share-dialog" role="dialog" aria-labelledby="share-dialog-title">
         <h3 id="share-dialog-title">Share Encounter</h3>
         <p>Copy the JSON data below to share this encounter:</p>
-        
+
         <textarea v-model="shareData" readonly class="share-textarea" @click="selectAllText"></textarea>
 
         <div class="dialog-actions">
@@ -229,7 +202,6 @@ const encounterStore = useEncounterStore()
 // Reactive state
 const loading = ref(true)
 const searchTerm = ref('')
-const filterDifficulty = ref('')
 const sortBy = ref('updated')
 const showDeleteDialog = ref(false)
 const encounterToDelete = ref<SavedEncounter | null>(null)
@@ -244,22 +216,6 @@ const importError = ref('')
 // Computed properties
 const encounters = computed(() => encounterStore.allSavedEncounters)
 
-const encounterCount = computed(() => encounters.value.length)
-
-const totalMonstersInEncounters = computed(() => {
-  return encounters.value.reduce((total, encounter) => {
-    return total + encounter.monsters.reduce((sum, monster) => sum + monster.count, 0)
-  }, 0)
-})
-
-const averageEV = computed(() => {
-  if (encounters.value.length === 0) return 0
-  const totalEV = encounters.value.reduce((sum, encounter) => {
-    return sum + encounter.monsters.reduce((evSum, monster) => evSum + (monster.ev * monster.count), 0)
-  }, 0)
-  return Math.round(totalEV / encounters.value.length)
-})
-
 const filteredEncounters = computed(() => {
   let filtered = [...encounters.value]
 
@@ -273,13 +229,7 @@ const filteredEncounters = computed(() => {
     )
   }
 
-  // Difficulty filter
-  if (filterDifficulty.value) {
-    filtered = filtered.filter(encounter => {
-      const status = getDifficultyStatus(encounter)
-      return status === filterDifficulty.value
-    })
-  }
+
 
   // Sort
   filtered.sort((a, b) => {
@@ -320,33 +270,7 @@ function getTotalEV(encounter: SavedEncounter): number {
   return encounter.monsters.reduce((sum, monster) => sum + (monster.ev * monster.count), 0)
 }
 
-function getDifficultyStatus(encounter: SavedEncounter): string {
-  if (encounter.targetEV === 0) return 'not-set'
-  const total = getTotalEV(encounter)
-  const ratio = total / encounter.targetEV
-  if (ratio < 0.8) return 'under'
-  if (ratio > 1.2) return 'over'
-  return 'balanced'
-}
 
-function getDifficultyClass(encounter: SavedEncounter): string {
-  const status = getDifficultyStatus(encounter)
-  return `difficulty-${status}`
-}
-
-function getDifficultyLabel(encounter: SavedEncounter): string {
-  const status = getDifficultyStatus(encounter)
-  switch (status) {
-    case 'under':
-      return 'Under Budget'
-    case 'over':
-      return 'Over Budget'
-    case 'balanced':
-      return 'Balanced'
-    default:
-      return 'No Target EV'
-  }
-}
 
 function loadEncounter(encounter: SavedEncounter) {
   encounterStore.loadEncounter(encounter.id)
@@ -357,13 +281,13 @@ function duplicateEncounter(encounter: SavedEncounter) {
   try {
     // Load the encounter into the current state
     encounterStore.loadEncounter(encounter.id)
-    
+
     // Save as a new encounter with a modified name
     const newName = `${encounter.name} (Copy)`
     const newDescription = encounter.description
-    
+
     encounterStore.saveEncounter(newName, newDescription)
-    
+
     // Refresh the list
     encounterStore.loadSavedEncounters()
   } catch (error) {
@@ -422,21 +346,21 @@ async function copyToClipboard() {
 function handleFileImport(event: Event) {
   const target = event.target as HTMLInputElement
   const file = target.files?.[0]
-  
+
   if (!file) return
-  
+
   const reader = new FileReader()
   reader.onload = (e) => {
     try {
       const content = e.target?.result as string
       encounterStore.importEncounter(content)
-      
+
       // Refresh the list
       encounterStore.loadSavedEncounters()
-      
+
       showImportModal.value = false
       importError.value = ''
-      
+
       // Clear the file input
       if (fileInput.value) {
         fileInput.value.value = ''
@@ -669,26 +593,27 @@ onMounted(async () => {
 }
 
 .encounter-card {
-  background: var(--color-neutral-50);
-  padding: var(--space-5);
-  border-radius: var(--radius-md);
+  background: white;
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
   border: 1px solid var(--color-neutral-200);
-  transition: var(--transition-all);
+  transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  height: 100%;
 }
 
 .encounter-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-300);
+  transform: translateY(-1px);
 }
 
 .encounter-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  gap: var(--space-3);
+  border-bottom: 1px solid var(--color-neutral-100);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-1);
 }
 
 .encounter-name {
@@ -696,35 +621,10 @@ onMounted(async () => {
   font-weight: var(--font-weight-bold);
   color: var(--color-neutral-900);
   margin: 0;
+  line-height: var(--line-height-tight);
 }
 
-.difficulty-badge {
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-base);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  white-space: nowrap;
-}
 
-.difficulty-under {
-  background: var(--color-success-100);
-  color: var(--color-success-700);
-}
-
-.difficulty-balanced {
-  background: var(--color-primary-100);
-  color: var(--color-primary-700);
-}
-
-.difficulty-over {
-  background: var(--color-danger-100);
-  color: var(--color-danger-700);
-}
-
-.difficulty-not-set {
-  background: var(--color-neutral-200);
-  color: var(--color-neutral-700);
-}
 
 .encounter-description {
   font-size: var(--font-size-sm);
@@ -734,55 +634,77 @@ onMounted(async () => {
 
 .encounter-stats {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  padding: var(--space-3);
-  background: white;
-  border-radius: var(--radius-base);
+  gap: var(--space-6);
+  padding: var(--space-4);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-200);
 }
 
 .stat-item {
   display: flex;
-  gap: var(--space-2);
-  font-size: var(--font-size-sm);
+  flex-direction: column;
+  gap: var(--space-1);
+  text-align: center;
 }
 
 .stat-label {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   color: var(--color-neutral-600);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .stat-value {
   color: var(--color-neutral-900);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
 }
 
 .encounter-monsters-preview {
   font-size: var(--font-size-sm);
+  flex-grow: 1;
+}
+
+.encounter-monsters-preview strong {
+  display: block;
+  color: var(--color-neutral-700);
+  margin-bottom: var(--space-2);
+  font-weight: var(--font-weight-semibold);
 }
 
 .monsters-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
-  margin-top: var(--space-2);
+  gap: var(--space-2);
 }
 
 .monster-preview {
-  color: var(--color-neutral-700);
-  padding: var(--space-1) 0;
+  color: var(--color-neutral-600);
+  padding: var(--space-2);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-base);
+  border-left: 3px solid var(--color-primary-400);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
 }
 
 .more-monsters {
   color: var(--color-primary-600);
   font-weight: var(--font-weight-medium);
   font-style: italic;
+  text-align: center;
+  padding: var(--space-1);
 }
 
 .encounter-meta {
   font-size: var(--font-size-xs);
   color: var(--color-neutral-500);
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--color-neutral-200);
+  padding: var(--space-3);
+  background: var(--color-neutral-25);
+  border-radius: var(--radius-base);
+  margin-top: auto;
 }
 
 .created-date,
@@ -794,6 +716,14 @@ onMounted(async () => {
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-neutral-200);
+  margin-top: var(--space-2);
+}
+
+.encounter-actions .btn {
+  flex: 1;
+  min-width: 80px;
 }
 
 /* Dialog Styles */
@@ -803,40 +733,61 @@ onMounted(async () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: var(--z-modal);
   padding: var(--space-4);
+  backdrop-filter: blur(4px);
 }
 
 .dialog {
   background: white;
-  padding: var(--space-6);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xl);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
   max-width: 500px;
   width: 100%;
+  text-align: center;
 }
 
 .dialog h3 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
   margin-bottom: var(--space-4);
   color: var(--color-neutral-900);
+  font-weight: var(--font-weight-bold);
 }
 
 .dialog p {
   margin-bottom: var(--space-4);
   color: var(--color-neutral-700);
   line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
 }
 
 .dialog-actions {
   display: flex;
   gap: var(--space-3);
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: var(--space-6);
+}
+
+/* Delete Dialog Specific Styles */
+.delete-dialog {
+  border-top: 4px solid var(--color-error-500);
+}
+
+.dialog-icon {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-4);
+}
+
+.warning-text {
+  color: var(--color-error-600);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-2);
 }
 
 /* Share Modal */
@@ -871,13 +822,13 @@ onMounted(async () => {
 }
 
 .error-message {
-  color: var(--color-danger-600);
+  color: var(--color-error-600);
   font-size: var(--font-size-sm);
   margin-top: var(--space-3);
   padding: var(--space-3);
-  background: var(--color-danger-50);
+  background: var(--color-error-50);
   border-radius: var(--radius-base);
-  border: 1px solid var(--color-danger-200);
+  border: 1px solid var(--color-error-200);
 }
 
 /* Responsive Design */
