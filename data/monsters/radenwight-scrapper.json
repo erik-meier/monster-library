@@ -14,6 +14,7 @@
   "stamina": 5,
   "stability": 1,
   "freeStrike": 1,
+  "withCaptain": "+2 bonus to melee distance",
   "characteristics": {
     "might": -1,
     "agility": 1,

@@ -8,8 +8,8 @@
     <div class="builder-layout">
       <div class="builder-sidebar">
         <EncounterBudget :party="party" :monsters="encounterStore.monsters" />
-        <PartyConfiguration v-model="party" />
-        
+        <PartyConfiguration :model-value="party" @update:model-value="updateParty" />
+
         <div class="encounter-management">
           <div class="management-actions">
             <button type="button" class="btn btn-primary" @click="showSaveModal = true"
@@ -162,17 +162,13 @@
     </div>
 
     <!-- Save Encounter Modal -->
-    <SaveEncounterModal 
-      :is-open="showSaveModal" 
-      :existing-encounter-id="currentEncounterId"
-      @close="showSaveModal = false" 
-      @saved="handleEncounterSaved" 
-    />
+    <SaveEncounterModal :is-open="showSaveModal" :existing-encounter-id="currentEncounterId ?? undefined"
+      @close="showSaveModal = false" @saved="handleEncounterSaved" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick } from 'vue'
+import { ref, computed, onMounted, nextTick, watch } from 'vue'
 import PartyConfiguration from '@/components/PartyConfiguration.vue'
 import EncounterBudget from '@/components/EncounterBudget.vue'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
@@ -190,10 +186,7 @@ import {
 const customMonstersStore = useCustomMonstersStore()
 const encounterStore = useEncounterStore()
 
-// State
-const party = ref<PartyConfig>({
-  heroes: [{ level: 3, victories: 0 }, { level: 3, victories: 0 }, { level: 3, victories: 0 }, { level: 3, victories: 0 }]
-})
+// State - party configuration is now stored in the encounter store
 const encounterMalice = ref<SimpleMaliceFeature[]>([])
 const searchQuery = ref('')
 const filterLevel = ref<string>('')
@@ -206,7 +199,6 @@ const maliceSearchQuery = ref('')
 const showSaveModal = ref(false)
 const showLoadModal = ref(false)
 const showTemplatesModal = ref(false)
-const currentEncounterId = ref<string | undefined>(undefined)
 
 // Template refs for CollapsibleSection components
 const initiativeTrackerSection = ref()
@@ -231,6 +223,25 @@ interface SimpleMaliceFeature {
 // All available monsters
 const allMonsters = ref<SimpleMonster[]>([])
 const allMaliceFeatures = ref<SimpleMaliceFeature[]>([])
+
+// Current encounter ID from store
+const currentEncounterId = computed(() => encounterStore.currentEncounterId)
+
+// Party configuration from store - using direct reference to avoid reactivity issues
+const party = computed(() => encounterStore.party)
+
+// Function to update party configuration
+function updateParty(newParty: PartyConfig) {
+  encounterStore.setParty(newParty)
+}
+
+// Watch for encounter being cleared and reset malice features
+watch(() => encounterStore.monsters.length, (newLength) => {
+  // If monsters array is cleared, also clear malice features
+  if (newLength === 0) {
+    encounterMalice.value = []
+  }
+})
 
 onMounted(async () => {
   // Load all monsters and malice features using dynamic import
@@ -379,17 +390,17 @@ function removeMalice(id: string) {
 
 // Encounter management handlers
 function handleEncounterSaved(encounterId: string) {
-  // Track the current encounter ID so future saves update it
-  currentEncounterId.value = encounterId
   console.log('Encounter saved:', encounterId)
+  // The store automatically tracks the current encounter ID
   // Optionally show a success message
 }
 
 function handleLoadEncounter(encounterId: string) {
   const success = encounterStore.loadEncounter(encounterId)
   if (success) {
-    // Track the loaded encounter ID
-    currentEncounterId.value = encounterId
+    // Clear any auto-save since we explicitly loaded an encounter
+    encounterStore.clearAutoSave()
+    // The store automatically tracks the loaded encounter ID
     // Update heights after loading
     updateCollapsibleHeights()
     // Optionally close the load modal
@@ -406,17 +417,16 @@ function handleExportEncounter(encounterId: string) {
 function handleTemplateSelected(template: { monsters: Array<{ id: string, name: string, level: number, ev: number, role: string, organization: string, count: number }>, targetEV: number }) {
   // Ask if user wants to replace or add to current encounter
   const hasMonstersAlready = encounterStore.monsters.length > 0
-  
+
   let shouldProceed = true
   if (hasMonstersAlready) {
     shouldProceed = confirm('This will replace your current encounter. Continue?')
   }
-  
+
   if (shouldProceed) {
-    // Clear current encounter and tracking
+    // Clear current encounter (this also clears the tracked encounter ID)
     encounterStore.clearEncounter()
-    currentEncounterId.value = undefined
-    
+
     // Add all monsters from template
     template.monsters.forEach(monster => {
       for (let i = 0; i < monster.count; i++) {
@@ -430,10 +440,10 @@ function handleTemplateSelected(template: { monsters: Array<{ id: string, name: 
         })
       }
     })
-    
+
     // Set target EV
     encounterStore.setTargetEV(template.targetEV)
-    
+
     // Update heights and close templates
     updateCollapsibleHeights()
     showTemplatesModal.value = false
@@ -444,15 +454,24 @@ function handleTemplateSelected(template: { monsters: Array<{ id: string, name: 
 let autoSaveInterval: number | undefined
 
 onMounted(() => {
-  // Check for auto-save on mount
+  // Check for auto-save on mount, but only if no encounter was explicitly loaded
   const hasAutoSave = localStorage.getItem('encounterAutosave')
-  if (hasAutoSave) {
-    const shouldRestore = confirm('Found a saved work-in-progress encounter. Would you like to restore it?')
+  const hasLoadedEncounter = encounterStore.currentEncounterId
+
+  if (hasAutoSave && !hasLoadedEncounter) {
+    const shouldRestore = confirm(
+      'Found a saved work-in-progress encounter. Would you like to restore it?\n\n' +
+      'Click "OK" to restore your work-in-progress encounter.\n' +
+      'Click "Cancel" to start with a blank encounter builder.'
+    )
     if (shouldRestore) {
       encounterStore.loadAutoSave()
     } else {
       encounterStore.clearAutoSave()
     }
+  } else if (hasAutoSave && hasLoadedEncounter) {
+    // Clear auto-save when an encounter was explicitly loaded
+    encounterStore.clearAutoSave()
   }
 
   // Set up auto-save

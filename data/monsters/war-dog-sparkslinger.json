@@ -15,6 +15,7 @@
   "stamina": 7,
   "stability": 0,
   "freeStrike": 3,
+  "withCaptain": "Lightning spread increases by 1 square",
   "characteristics": {
     "might": 0,
     "agility": 0,

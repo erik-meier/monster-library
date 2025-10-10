@@ -14,6 +14,7 @@
   "stamina": 17,
   "stability": 3,
   "freeStrike": 5,
+  "withCaptain": "Have a double edge on strikes",
   "characteristics": {
     "might": 5,
     "agility": 5,

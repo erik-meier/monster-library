@@ -16,6 +16,7 @@
   "stamina": 8,
   "stability": 0,
   "freeStrike": 2,
+  "withCaptain": "+2 damage bonus to strikes",
   "characteristics": {
     "might": 1,
     "agility": 3,

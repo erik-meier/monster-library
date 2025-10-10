@@ -102,6 +102,22 @@
   }
 }
 
+.btn-danger {
+  background-color: var(--color-error-600);
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background-color: var(--color-error-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
 /* === BUTTON SIZES === */
 .btn-sm {
   padding: var(--padding-btn-sm);

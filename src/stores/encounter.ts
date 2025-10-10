@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import type { PartyConfiguration } from '@/utils/encounterBalance'
 
 export interface EncounterMonster {
   id: string
@@ -23,6 +24,7 @@ export interface EncounterState {
   targetEV: number
   initiativeGroups: InitiativeGroup[]
   nextGroupId: number
+  party: PartyConfiguration
 }
 
 export interface SavedEncounter {
@@ -33,6 +35,7 @@ export interface SavedEncounter {
   targetEV: number
   initiativeGroups: InitiativeGroup[]
   nextGroupId: number
+  party: PartyConfiguration
   createdAt: string
   updatedAt: string
 }
@@ -51,13 +54,22 @@ const STORAGE_KEY = 'savedEncounters'
 const AUTOSAVE_KEY = 'encounterAutosave'
 
 export const useEncounterStore = defineStore('encounter', {
-  state: (): EncounterState & { savedEncounters: Record<string, SavedEncounter>, isLoaded: boolean } => ({
+  state: (): EncounterState & { savedEncounters: Record<string, SavedEncounter>, isLoaded: boolean, currentEncounterId: string | null } => ({
     monsters: [],
     targetEV: 0,
     initiativeGroups: [],
     nextGroupId: 1,
+    party: {
+      heroes: [
+        { level: 3, victories: 0 },
+        { level: 3, victories: 0 },
+        { level: 3, victories: 0 },
+        { level: 3, victories: 0 }
+      ]
+    },
     savedEncounters: {},
-    isLoaded: false
+    isLoaded: false,
+    currentEncounterId: null
   }),
 
   getters: {
@@ -168,10 +180,16 @@ export const useEncounterStore = defineStore('encounter', {
       this.initiativeGroups = []
       this.nextGroupId = 1
       this.targetEV = 0
+      this.currentEncounterId = null
+      // Note: Party configuration is preserved when clearing encounter
     },
 
     setTargetEV(ev: number) {
       this.targetEV = ev
+    },
+
+    setParty(party: PartyConfiguration) {
+      this.party = JSON.parse(JSON.stringify(party)) // Deep copy
     },
 
     // Initiative group actions
@@ -363,12 +381,16 @@ export const useEncounterStore = defineStore('encounter', {
         targetEV: this.targetEV,
         initiativeGroups: JSON.parse(JSON.stringify(this.initiativeGroups)), // Deep copy
         nextGroupId: this.nextGroupId,
+        party: JSON.parse(JSON.stringify(this.party)), // Deep copy
         createdAt: now,
         updatedAt: now
       }
 
       this.savedEncounters[id] = savedEncounter
       this.saveSavedEncountersToStorage()
+      
+      // Track this as the current encounter
+      this.currentEncounterId = id
 
       return id
     },
@@ -395,6 +417,7 @@ export const useEncounterStore = defineStore('encounter', {
         targetEV: this.targetEV,
         initiativeGroups: JSON.parse(JSON.stringify(this.initiativeGroups)), // Deep copy
         nextGroupId: this.nextGroupId,
+        party: JSON.parse(JSON.stringify(this.party)), // Deep copy
         updatedAt: new Date().toISOString()
       }
 
@@ -416,6 +439,15 @@ export const useEncounterStore = defineStore('encounter', {
       this.targetEV = encounter.targetEV
       this.initiativeGroups = JSON.parse(JSON.stringify(encounter.initiativeGroups))
       this.nextGroupId = encounter.nextGroupId
+      this.party = JSON.parse(JSON.stringify(encounter.party || {
+        heroes: [
+          { level: 3, victories: 0 },
+          { level: 3, victories: 0 },
+          { level: 3, victories: 0 },
+          { level: 3, victories: 0 }
+        ]
+      })) // Deep copy with fallback for old encounters
+      this.currentEncounterId = id
 
       return true
     },
@@ -441,6 +473,7 @@ export const useEncounterStore = defineStore('encounter', {
           targetEV: this.targetEV,
           initiativeGroups: this.initiativeGroups,
           nextGroupId: this.nextGroupId,
+          party: this.party,
           savedAt: new Date().toISOString()
         }
         localStorage.setItem(AUTOSAVE_KEY, JSON.stringify(autoSaveData))
@@ -459,6 +492,11 @@ export const useEncounterStore = defineStore('encounter', {
           this.targetEV = autoSaveData.targetEV || 0
           this.initiativeGroups = autoSaveData.initiativeGroups || []
           this.nextGroupId = autoSaveData.nextGroupId || 1
+          // Only restore party from auto-save if it exists in the auto-save data
+          // This preserves any party configuration the user has already set up
+          if (autoSaveData.party) {
+            this.party = autoSaveData.party
+          }
           return true
         }
       } catch (error) {
@@ -501,6 +539,7 @@ export const useEncounterStore = defineStore('encounter', {
           targetEV: this.targetEV,
           initiativeGroups: this.initiativeGroups,
           nextGroupId: this.nextGroupId,
+          party: this.party,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString()
         }

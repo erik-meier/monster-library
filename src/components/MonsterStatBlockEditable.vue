@@ -139,6 +139,13 @@
       <span class="stat-item">
         <strong>Movement</strong> {{ formatMovement(monster.movementTypes) }}
       </span>
+      <template v-if="editableData.withCaptain">
+        <span class="stat-separator">•</span>
+        <span class="stat-item with-captain-ability">
+          <span class="with-captain-label">With Captain:</span>
+          <span class="with-captain-text" v-html="editableData.withCaptain"></span>
+        </span>
+      </template>
     </div>
 
     <!-- Editable Defenses -->
@@ -197,18 +204,16 @@
           </label>
         </div>
       </div>
+
+      <!-- With Captain Edit -->
+      <div class="defense-edit-section">
+        <h4>With Captain</h4>
+        <textarea v-model="editableData.withCaptain" @input="updateField('withCaptain')" class="with-captain-textarea"
+          placeholder="Enter With Captain feature description..." rows="3"></textarea>
+      </div>
     </div>
 
     <div class="divider"></div>
-
-    <!-- With Captain Features (Non-edit mode) -->
-    <div v-if="!editMode && getWithCaptainAbilities().length > 0" class="with-captain-section">
-      <div v-for="ability in getWithCaptainAbilities()" :key="ability.name" class="with-captain-ability">
-        <span class="with-captain-label">With Captain:</span>
-        <span class="with-captain-text" v-html="ability.system?.description?.value || ability.description || ''"></span>
-      </div>
-      <div class="divider"></div>
-    </div>
 
     <!-- Abilities (Non-edit mode) -->
     <div v-if="!editMode && getRegularAbilities().length > 0">
@@ -402,7 +407,8 @@ const initializeEditableData = () => {
     immunities: props.monster.immunities || {},
     weaknesses: props.monster.weaknesses || {},
     movementTypes: props.monster.movementTypes || ['walk'],
-    items: props.monster.items || props.monster.abilities || []
+    items: props.monster.items || props.monster.abilities || [],
+    withCaptain: props.monster.withCaptain || ''
   }
 
   editableData.value = data
@@ -494,17 +500,10 @@ const getMaxCharacteristic = () => {
   return values.length > 0 ? Math.max(...values) : 0
 }
 
-const getWithCaptainAbilities = () => {
-  const items = editableData.value.items || props.monster.items || []
-  return items.filter(item =>
-    item.name && item.name.toLowerCase() === 'with captain'
-  )
-}
-
 const getRegularAbilities = () => {
   const items = editableData.value.items || props.monster.items || []
   return items.filter(item =>
-    !item.name || item.name.toLowerCase() !== 'with captain'
+    !item.name
   )
 }
 
@@ -1460,6 +1459,24 @@ onUnmounted(() => {
   margin: 0;
 }
 
+.with-captain-textarea {
+  width: 100%;
+  padding: var(--space-2);
+  border: 1px solid #007bff;
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-base);
+  background: white;
+  resize: vertical;
+  min-height: 60px;
+}
+
+.with-captain-textarea:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
 .divider {
   height: 2px;
   background: linear-gradient(to right, transparent, var(--color-primary-700), transparent);
@@ -1628,17 +1645,9 @@ onUnmounted(() => {
 }
 
 /* With Captain styles */
-.with-captain-section {
-  margin: var(--space-4) 0;
-}
-
 .with-captain-ability {
-  margin-bottom: var(--space-2);
-  text-align: center;
-  font-size: var(--font-size-sm);
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
+  display: inline-flex;
+  align-items: center;
   flex-wrap: wrap;
 }
 

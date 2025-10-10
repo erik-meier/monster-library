@@ -13,6 +13,7 @@
   "stamina": 10,
   "stability": 1,
   "freeStrike": 3,
+  "withCaptain": "Gain an edge on strikes",
   "characteristics": {
     "might": -3,
     "agility": 4,

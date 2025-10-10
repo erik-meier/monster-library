@@ -7,6 +7,10 @@
           :aria-label="showHelp ? 'Hide tips' : 'Show tips'" title="Tips and keyboard shortcuts">
           {{ showHelp ? '✕' : '?' }}
         </button>
+        <button class="btn btn-danger btn-sm" @click="handleClearEncounter"
+          :disabled="encounterStore.monsters.length === 0" title="Remove all monsters and reset encounter">
+          Clear All
+        </button>
         <button class="btn btn-primary" @click="createNewGroup" :aria-label="'Create new initiative group'">
           + New Group
         </button>
@@ -175,6 +179,25 @@ watch([sortedGroups, ungroupedMonsters, showHelp], async () => {
 // Actions
 const createNewGroup = () => {
   encounterStore.createGroup()
+}
+
+const handleClearEncounter = () => {
+  if (encounterStore.monsters.length === 0) {
+    return
+  }
+
+  const shouldClear = confirm(
+    'Are you sure you want to clear this encounter?\n\n' +
+    'This will remove all monsters and groups. This action cannot be undone.'
+  )
+
+  if (shouldClear) {
+    // Clear the encounter (this also resets currentEncounterId)
+    encounterStore.clearEncounter()
+
+    // Emit height change to update collapsible sections
+    emit('height-changed')
+  }
 }
 
 const handleDeleteGroup = (groupId: string) => {
