@@ -16,6 +16,11 @@
               :disabled="encounterStore.monsters.length === 0">
               Save Encounter
             </button>
+            <button type="button" class="btn btn-primary" @click="exportEncounterPDF"
+              :disabled="encounterStore.monsters.length === 0 || exportingPDF"
+              title="Export encounter sheet as PDF">
+              {{ exportingPDF ? 'Exporting...' : '📄 Export PDF' }}
+            </button>
             <button type="button" class="btn btn-secondary" @click="showLoadModal = !showLoadModal">
               {{ showLoadModal ? 'Hide' : 'Load' }} Saved
             </button>
@@ -181,6 +186,7 @@ import { useEncounterStore } from '@/stores/encounter'
 import {
   type PartyConfiguration as PartyConfig
 } from '@/utils/encounterBalance'
+import { exportEncounterToPDF } from '@/utils/encounterPdfExport'
 
 // Stores
 const customMonstersStore = useCustomMonstersStore()
@@ -199,6 +205,7 @@ const maliceSearchQuery = ref('')
 const showSaveModal = ref(false)
 const showLoadModal = ref(false)
 const showTemplatesModal = ref(false)
+const exportingPDF = ref(false)
 
 // Template refs for CollapsibleSection components
 const initiativeTrackerSection = ref()
@@ -412,6 +419,50 @@ function handleLoadEncounter(encounterId: string) {
 
 function handleExportEncounter(encounterId: string) {
   console.log('Encounter exported:', encounterId)
+}
+
+// PDF Export handler
+async function exportEncounterPDF() {
+  if (encounterStore.monsters.length === 0) {
+    alert('Cannot export empty encounter')
+    return
+  }
+
+  exportingPDF.value = true
+
+  try {
+    // Get the current encounter name or generate one
+    let encounterName = 'Encounter'
+    let encounterDescription = ''
+
+    // If we have a current encounter ID, get its name and description
+    if (encounterStore.currentEncounterId) {
+      const savedEncounter = encounterStore.getSavedEncounter(encounterStore.currentEncounterId)
+      if (savedEncounter) {
+        encounterName = savedEncounter.name
+        encounterDescription = savedEncounter.description || ''
+      }
+    }
+
+    // Prepare encounter data for export
+    const encounterData = {
+      name: encounterName,
+      description: encounterDescription,
+      monsters: encounterStore.monsters,
+      initiativeGroups: encounterStore.initiativeGroups,
+      targetEV: encounterStore.targetEV,
+      party: encounterStore.party,
+      objectives: '', // Could be extended to support user-entered objectives
+      specialRules: '' // Could be extended to support user-entered special rules
+    }
+
+    await exportEncounterToPDF(encounterData)
+  } catch (error) {
+    console.error('Failed to export encounter PDF:', error)
+    alert('Failed to export encounter PDF. Please try again.')
+  } finally {
+    exportingPDF.value = false
+  }
 }
 
 function handleTemplateSelected(template: { monsters: Array<{ id: string, name: string, level: number, ev: number, role: string, organization: string, count: number }>, targetEV: number }) {
