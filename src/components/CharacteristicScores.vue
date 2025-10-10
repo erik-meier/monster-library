@@ -1,28 +1,26 @@
 <template>
   <div class="characteristic-scores">
-    <div v-for="characteristic in characteristicOrder" :key="characteristic" 
-         class="characteristic-score" 
-         :class="{ 'clickable': !editMode }"
-         @click="!editMode && handleRoll(characteristic)">
-      <div class="characteristic-name">{{ getCharacteristicName(characteristic) }}</div>
-      <div v-if="!editMode" class="characteristic-value">
-        {{ formatModifier(characteristics[characteristic] || 0) }}
-      </div>
-      <div v-if="editMode" class="characteristic-edit">
-        <input :value="characteristics[characteristic] || 0"
-          @input="(event) => updateCharacteristic(characteristic, (event.target as HTMLInputElement).value)"
-          type="number" class="characteristic-input" :min="-9" :max="99"
-          :aria-label="`${getCharacteristicName(characteristic)} score`" :id="`characteristic-${characteristic}`" />
+    <div v-for="characteristic in characteristicOrder" :key="characteristic" class="characteristic-score"
+      :class="{ 'clickable': !editMode }" @click="!editMode && handleRoll(characteristic)">
+      <div class="characteristic-row">
+        <div class="characteristic-name">
+          <span class="characteristic-text">{{ getCharacteristicText(characteristic) }}</span>
+        </div>
+        <div v-if="!editMode" class="characteristic-value">
+          {{ formatModifier(characteristics[characteristic] || 0) }}
+        </div>
+        <div v-if="editMode" class="characteristic-edit">
+          <input :value="characteristics[characteristic] || 0"
+            @input="(event) => updateCharacteristic(characteristic, (event.target as HTMLInputElement).value)"
+            type="number" class="characteristic-input" :min="-9" :max="99"
+            :aria-label="`${getCharacteristicName(characteristic)} score`" :id="`characteristic-${characteristic}`" />
+        </div>
       </div>
     </div>
   </div>
-  
-  <RollResultModal 
-    :show="showRollModal" 
-    :result="rollResult" 
-    :characteristicName="rolledCharacteristicName"
-    @close="showRollModal = false"
-    @reroll="rerollCurrentCharacteristic" />
+
+  <RollResultModal :show="showRollModal" :result="rollResult" :characteristicName="rolledCharacteristicName"
+    @close="showRollModal = false" @reroll="rerollCurrentCharacteristic" />
 </template>
 
 <script setup lang="ts">
@@ -71,6 +69,17 @@ const getCharacteristicName = (characteristic: string): string => {
     presence: 'Presence'
   }
   return names[characteristic] || characteristic
+}
+
+const getCharacteristicText = (characteristic: string): string => {
+  const texts: Record<string, string> = {
+    might: 'Might',
+    agility: 'Agility',
+    reason: 'Reason',
+    intuition: 'Intuition',
+    presence: 'Presence'
+  }
+  return texts[characteristic] || characteristic
 }
 
 const updateCharacteristic = (characteristic: string, value: string): void => {
@@ -136,11 +145,30 @@ const rerollCurrentCharacteristic = (): void => {
   box-shadow: var(--focus-ring), var(--shadow-md);
 }
 
+.characteristic-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .characteristic-name {
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   color: var(--color-primary-700);
-  margin-bottom: var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.characteristic-icon {
+  width: 1.2em;
+  height: 1.2em;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.characteristic-text {
+  line-height: 1;
 }
 
 .characteristic-value {
@@ -148,11 +176,12 @@ const rerollCurrentCharacteristic = (): void => {
   color: var(--color-neutral-900);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
+  margin-left: var(--space-2);
 }
 
 .characteristic-edit {
   display: flex;
-  justify-content: center;
+  margin-left: var(--space-4);
 }
 
 .characteristic-input {

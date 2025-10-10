@@ -1,0 +1,83 @@
+{
+  "id": "medusa-malice",
+  "name": "Medusa Malice",
+  "type": "featureblock",
+  "featureblockType": "Malice Features",
+  "level": 1,
+  "flavor": "At the start of a medusa's turn, you can spend Malice to activate one of the following features.",
+  "features": [
+    {
+      "type": "ability",
+      "name": "Weakening Glare",
+      "cost": "4 Malice",
+      "keywords": [
+        "- Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "6 damage; weakened (EoT)",
+          "tier2": "10 damage; weakened (EoT)",
+          "tier3": "12 damage; weakened (save ends)"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Solo Action",
+      "cost": "5 Malice",
+      "effects": [
+        {
+          "effect": "The medusa takes an additional main action on their turn. They can use this feature even if they are dazed."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Ssstop and Lisssten",
+      "cost": "5 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "Three creatures",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "<strong class=\"potency-value\">I&lt;2</strong> the target is charmed",
+          "tier2": "<strong class=\"potency-value\">I&lt;3</strong> the target is charmed",
+          "tier3": "<strong class=\"potency-value\">I&lt;4</strong> the target is charmed"
+        },
+        {
+          "name": "Effect",
+          "effect": "At a time of the medusa's choosing, a charmed creature moves up to their speed and makes a free strike against an enemy of the medusa's choice as a free triggered action. The creature is then no longer charmed."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Shatter Victims",
+      "cost": "7 Malice",
+      "effects": [
+        {
+          "effect": "The medusa causes three stone statues within 10 squares of them to each shatter in a 2-cube explosion. Each enemy in one of those areas makes a **Might test**. An enemy restrained or slowed by the medusa's Petrify ability has a double bane on the test.",
+          "tier1": "12 damage; vertical push 3; bleeding (save ends)",
+          "tier2": "10 damage; vertical push 3",
+          "tier3": "6 damage"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "id": "slaughter-demon",
+  "name": "Slaughter Demon",
+  "level": 4,
+  "ev": 24,
+  "role": "Brute",
+  "organization": "Elite",
+  "keywords": [
+    "Abyssal",
+    "Demon",
+    "Hobgoblin"
+  ],
+  "size": "3",
+  "speed": 7,
+  "stamina": 140,
+  "stability": 3,
+  "freeStrike": 6,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 3,
+    "agility": 0,
+    "reason": -1,
+    "intuition": 1,
+    "presence": 0
+  },
+  "immunities": {
+    "fire": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "burrow"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Steely Skewer",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 3",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "9 damage",
+          "tier2": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> bleeding (save ends)",
+          "tier3": "17 damage; <strong class=\"potency-value\">A&lt;3</strong> bleeding and restrained (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "A creature restrained this way moves with the slaughter demon. The slaughter demon can have up to six creatures or objects restrained at once."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Tail Stinger",
+      "cost": "3 Malice",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 5",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "10 poison damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)",
+          "tier2": "16 poison damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)",
+          "tier3": "20 poison damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "A target weakened this way also has damage weakness 3."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Drag Below",
+      "effects": [
+        {
+          "effect": "The slaughter demon can make a free strike as part of using the Dig maneuver. If the target of the free strike has <strong class=\"potency-value\">M&lt;2</strong>, they are grabbed and take a bane on the Escape Grab maneuver."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Devour Soul",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Triggered action",
+      "distance": "5 burst",
+      "target": "The triggering creature",
+      "trigger": "A creature within distance who has a soul dies.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target can't be brought back to life. Until the end of the encounter, the slaughter demon gains an edge on power rolls."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Soulsight",
+      "effects": [
+        {
+          "effect": "Any creature within 2 squares of the slaughter demon can't be hidden from them."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Lethe",
+      "effects": [
+        {
+          "effect": "While the slaughter demon is winded, they gain an edge on strikes, and any strike made against them gains an edge."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

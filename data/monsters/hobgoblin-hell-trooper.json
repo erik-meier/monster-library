@@ -1,0 +1,92 @@
+{
+  "id": "hobgoblin-hell-trooper",
+  "name": "Hobgoblin Hell Trooper",
+  "level": 4,
+  "ev": 12,
+  "role": "Brute",
+  "organization": "Platoon",
+  "keywords": [
+    "Goblin",
+    "Hobgoblin",
+    "Humanoid",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 70,
+  "stability": 2,
+  "freeStrike": 6,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 3,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 1
+  },
+  "immunities": {
+    "fire": 4
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Fire Flail",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "7 fire damage",
+          "tier2": "10 fire damage",
+          "tier3": "13 fire damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "Until the end of their turn, the trooper doesn't provoke opportunity attacks from any target."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Fight Me, Coward!",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 5",
+      "target": "One creature",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "If the target has <strong class=\"potency-value\">P&lt;2</strong>, they are taunted (EoT). While taunted this way, the target takes 1d6 fire damage whenever they use an ability or strike that doesn't target the trooper."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Infernal Ichor",
+      "effects": [
+        {
+          "effect": "When the trooper is reduced to 0 Stamina, they spray burning blood. Each creature adjacent to the trooper takes 3 fire damage."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

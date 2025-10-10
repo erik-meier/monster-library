@@ -1,0 +1,57 @@
+{
+  "id": "war-dog-malice",
+  "name": "War Dog Malice",
+  "type": "featureblock",
+  "featureblockType": "+ Malice Features",
+  "level": 1,
+  "flavor": "At the start of any war dog's turn, you can spend Malice to activate one of the following features.",
+  "features": [
+    {
+      "type": "feature",
+      "name": "Reconstitute",
+      "cost": "3 Malice",
+      "effects": [
+        {
+          "effect": "One war dog acting this turn tears apart a nearby corpse of a humanoid and incorporates its body parts into their own. The war dog regains Stamina equal to 5 times their level."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Fire for Effect",
+      "cost": "5 Malice",
+      "keywords": [
+        "Area",
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "4 cube within 10",
+      "target": "Each creature in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target makes an **Agility test**. The same condition is imposed on each affected target.",
+          "tier1": "5 fire damage; slowed or weakened (save ends)",
+          "tier2": "5 fire damage; slowed or weakened (EoT)",
+          "tier3": "5 fire damage"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Fodder Run",
+      "cost": "7 Malice",
+      "effects": [
+        {
+          "effect": "Each war dog minion in the encounter shifts up to their speed and can make a free strike. A minion who does so is then reduced to 0 Stamina."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

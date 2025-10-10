@@ -20,19 +20,19 @@
 
     <!-- Core Stats Grid -->
     <div class="core-stats-grid">
+      <div class="stat-values">
+        <div class="stat-value">{{ monster.size }}</div>
+        <div class="stat-value">{{ monster.speed }}</div>
+        <div class="stat-value">{{ monster.stamina }}</div>
+        <div class="stat-value">{{ monster.stability }}</div>
+        <div class="stat-value">{{ monster.freeStrike }}</div>
+      </div>
       <div class="stat-labels">
         <div class="stat-label">Size</div>
         <div class="stat-label">Speed</div>
         <div class="stat-label">Stamina</div>
         <div class="stat-label">Stability</div>
         <div class="stat-label">Free Strike</div>
-      </div>
-      <div class="stat-values">
-        <div class="stat-value">{{ monster.size.value }}{{ monster.size.value > 1 ? '' : monster.size.letter }}</div>
-        <div class="stat-value">{{ monster.speed }}</div>
-        <div class="stat-value">{{ monster.stamina }}</div>
-        <div class="stat-value">{{ monster.stability }}</div>
-        <div class="stat-value">{{ monster.freeStrike }}</div>
       </div>
     </div>
 
@@ -56,23 +56,31 @@
       <span class="stat-item">
         <strong>Movement</strong> {{ formatMovement(monster.movementTypes) }}
       </span>
+      <template v-if="monster.withCaptain">
+        <span class="stat-separator">•</span>
+        <div class="with-captain-ability">
+          <span class="with-captain-label">With Captain:</span>
+          <span class="with-captain-text" v-html="monster.withCaptain"></span>
+        </div>
+      </template>
     </div>
-
     <div class="divider"></div>
-
-    <!-- With Captain Features -->
-    <div v-if="getWithCaptainAbilities().length > 0" class="with-captain-section">
-      <div v-for="ability in getWithCaptainAbilities()" :key="ability.name" class="with-captain-ability">
-        <span class="with-captain-label">With Captain:</span>
-        <span class="with-captain-text" v-html="ability.system?.description?.value || ability.description || ''"></span>
-      </div>
-      <div class="divider"></div>
-    </div>
 
     <!-- Abilities -->
     <div v-if="getRegularAbilities().length > 0" title="Abilities" :expanded="true" id="abilities-section">
       <ActionsList :title="'Abilities'" :actions="getRegularAbilities()" :chr="String(getMaxCharacteristic())"
         :monster="monster" />
+    </div>
+
+    <!-- Malice Features Button -->
+    <div v-if="hasMaliceFeatures()" class="malice-features-section">
+      <div class="divider"></div>
+      <div class="malice-features-button-container">
+        <button @click="viewMaliceFeatures" class="btn btn-outline">
+          <span class="glyph-icon glyph-villain-action" aria-label="Villain Action"></span>
+          View Malice Features
+        </button>
+      </div>
     </div>
 
     <!-- Source Information -->
@@ -98,6 +106,7 @@ import {
   formatWeakness,
   formatMovement
 } from '@/utils/formatters'
+import { getMaliceForMonster } from '@/data/monsters-bundle.js'
 
 export default {
   name: 'MonsterStatBlock',
@@ -128,6 +137,21 @@ export default {
       return this.monster.items.filter(item =>
         !item.name || item.name.toLowerCase() !== 'with captain'
       );
+    },
+    getMaliceFeatures() {
+      return getMaliceForMonster(this.monster.id);
+    },
+    hasMaliceFeatures() {
+      return this.getMaliceFeatures() !== null;
+    },
+    viewMaliceFeatures() {
+      const maliceBlock = this.getMaliceFeatures();
+      if (maliceBlock) {
+        this.$router.push({
+          path: `/malice/${maliceBlock.id}`,
+          query: { from: this.monster.id }
+        });
+      }
     },
     // Use imported formatters from shared utilities
     formatKeywords,
@@ -308,6 +332,31 @@ export default {
 .abilities-section {
   margin: var(--space-4) 0;
 }
+
+.malice-features-section {
+  margin: var(--space-4) 0;
+}
+
+.malice-features-button-container {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-2) 0;
+}
+
+.btn {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+
 
 .ability {
   margin-bottom: var(--space-4);

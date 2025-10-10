@@ -11,15 +11,12 @@ export interface MonsterFormData {
   keywords: string[]
   
   // Stats
-  size: {
-    value: number
-    letter: string
-  }
+  size: string
   speed: number
   stamina: number
   stability: number
   freeStrike: number
-  movementTypes: string[]
+  movementTypes: Set<string>
   
   // Characteristics
   characteristics: {
@@ -33,6 +30,9 @@ export interface MonsterFormData {
   // Defenses
   immunities: Record<string, number>
   weaknesses: Record<string, number>
+  
+  // Special Features
+  withCaptain?: string
   
   // Abilities & Items
   items: MonsterItem[]
@@ -48,11 +48,31 @@ export interface MonsterFormData {
 export interface MonsterItem {
   name: string
   type: 'feature' | 'ability'
-  system: {
+  
+  // Simplified structure fields (new format)
+  ability_type?: string  // e.g., "Signature Ability", "Villain Action 1"
+  usage?: string         // e.g., "Main action", "Triggered action"  
+  distance?: string      // e.g., "Melee 2", "Ranged 10"
+  target?: string        // e.g., "Two creatures or objects"
+  keywords?: string[]    // Direct keywords array
+  cost?: string          // e.g., "2 Malice" (for top-level costs)
+  trigger?: string       // For triggered abilities
+  effects?: Array<{      // Simplified effects structure
+    name?: string
+    roll?: string        // e.g., "2d10 + 4"
+    tier1?: string
+    tier2?: string
+    tier3?: string
+    effect?: string
+    cost?: string        // e.g., "2 Malice"
+  }>
+  
+  // Legacy system structure (for backward compatibility)
+  system?: {
     category?: 'signature' | string
     type?: 'main' | 'move' | 'none' | string
     resource?: number | null
-    keywords: string[]
+    keywords?: string[]
     distance?: {
       type: 'melee' | 'ranged' | 'meleeRanged' | 'special' | 'line' | 'cube' | 'wall' | 'burst' | 'self'
       primary?: number | string
@@ -111,12 +131,12 @@ export const MONSTER_ROLES = [
 
 // Common organization options
 export const MONSTER_ORGANIZATIONS = [
-  'minion',
-  'horde', 
-  'platoon',
-  'elite',
-  'leader',
-  'solo'
+  'Minion',
+  'Horde', 
+  'Platoon',
+  'Elite',
+  'Leader',
+  'Solo'
 ] as const
 
 // Common size letters - only for size 1, sizes above 1L are just numbers

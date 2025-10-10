@@ -15,10 +15,7 @@ export interface MonsterSchema {
   role: string;
   organization: string;
   keywords?: string[];
-  size: {
-    value: number;
-    letter: string;
-  };
+  size: string;
   speed: number;
   stamina: number;
   stability: number;
@@ -41,7 +38,7 @@ export function validateMonster(monster: any): ValidationResult {
   const errors: ValidationResult['errors'] = [];
 
   // Required string fields
-  const requiredStrings = ['id', 'name', 'organization'];
+  const requiredStrings = ['id', 'name', 'organization', 'size'];
   for (const field of requiredStrings) {
     if (!monster[field] || typeof monster[field] !== 'string') {
       errors.push({
@@ -72,29 +69,6 @@ export function validateMonster(monster: any): ValidationResult {
         field,
         message: `${field} is required and must be a number`,
         value: monster[field]
-      });
-    }
-  }
-
-  // Validate size object
-  if (!monster.size || typeof monster.size !== 'object') {
-    errors.push({
-      field: 'size',
-      message: 'size is required and must be an object'
-    });
-  } else {
-    if (typeof monster.size.value !== 'number') {
-      errors.push({
-        field: 'size.value',
-        message: 'size.value must be a number',
-        value: monster.size.value
-      });
-    }
-    if (typeof monster.size.letter !== 'string') {
-      errors.push({
-        field: 'size.letter',
-        message: 'size.letter must be a string',
-        value: monster.size.letter
       });
     }
   }

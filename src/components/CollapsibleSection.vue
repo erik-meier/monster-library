@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { ref, computed, nextTick, onMounted, watch } from 'vue'
+import { ref, computed, nextTick, onMounted, watch, onUpdated } from 'vue'
 
 export default {
     name: 'CollapsibleSection',
@@ -65,7 +65,10 @@ export default {
         const updateHeight = async () => {
             await nextTick()
             if (bodyEl.value) {
-                contentHeight.value = bodyEl.value.scrollHeight
+                const newHeight = bodyEl.value.scrollHeight
+                if (newHeight !== contentHeight.value) {
+                    contentHeight.value = newHeight
+                }
             }
         }
 
@@ -77,6 +80,14 @@ export default {
         // Update height when content changes or expands
         watch(isExpanded, updateHeight)
         onMounted(updateHeight)
+
+        // Watch for content changes and update height
+        onUpdated(updateHeight)
+
+        // Watch expanded prop changes from parent
+        watch(() => props.expanded, (newVal) => {
+            isExpanded.value = newVal
+        })
 
         // Expose updateHeight for external use (e.g., when content changes)
         return {

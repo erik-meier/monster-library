@@ -6,16 +6,14 @@
   "role": "Hexer",
   "organization": "Horde",
   "keywords": [
-    "undead"
+    "Undead"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 40,
   "stability": 1,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 4,
     "agility": 2,
@@ -33,186 +31,67 @@
   ],
   "items": [
     {
-      "name": "Exhale",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The first time the koptourok is made winded by damage that isn't fire damage or holy damage, each enemy within 3 squares of them takes <span class=\"damage-value damage-generic\">8</span> corruption damage. Any enemy who takes this damage and has <strong class=\"potency-value\">M&lt;3</strong> is also weakened (save ends)</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Choking Grasp",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 5
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 5",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "7 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed",
+          "tier2": "10 damage; <strong class=\"potency-value\">M&lt;3</strong> grabbed",
+          "tier3": "11 damage; <strong class=\"potency-value\">M&lt;4</strong> grabbed"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage; <strong class=\"potency-value\">M&lt;2</strong> grabbed"
-            },
-            {
-              "tier": 2,
-              "display": "10 damage; <strong class=\"potency-value\">M&lt;3</strong> grabbed"
-            },
-            {
-              "tier": 3,
-              "display": "11 damage; <strong class=\"potency-value\">M&lt;4</strong> grabbed"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A creature grabbed this way is suffocating. The koptourok can have up to two creatures grabbed at once.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A creature grabbed this way is suffocating. The koptourok can have up to two creatures grabbed at once."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Inhale",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Main action",
+      "distance": "5 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "Pull 3; <strong class=\"potency-value\">M&lt;2</strong> 5 corruption damage",
+          "tier2": "Pull 5; <strong class=\"potency-value\">M&lt;3</strong> 5 corruption damage",
+          "tier3": "Pull 7; <strong class=\"potency-value\">M&lt;4</strong> 5 corruption damage"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "pull 3; 5 corruption damage"
-            },
-            {
-              "tier": 2,
-              "display": "pull 5; 5 corruption damage"
-            },
-            {
-              "tier": 3,
-              "display": "pull 7; 5 corruption damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>This ability gains an edge against any target grabbed by the koptourok. If one or more targets are pulled adjacent to the kop- tourok, the koptourok can fly until the end of the encounter</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "This ability gains an edge against any target grabbed by the koptourok. If one or more targets are pulled adjacent to the koptourok, the koptourok can fly until the end of the encounter."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p><p><span class=\"reference-text\">Blood Hunger</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Exhale",
+      "effects": [
+        {
+          "effect": "The first time the koptourok is made winded by damage that isn't fire damage or holy damage, each enemy within 3 squares of them takes 8 corruption damage. Any enemy who takes this damage and has <strong class=\"potency-value\">M&lt;3</strong> is also weakened (save ends)"
         }
-      }
-    },
-    {
-      "name": "Necrotic Rupture",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever an undead is reduced to 0 Stamina, they deal <span class=\"damage-value damage-generic\">8</span> corruption damage to each enemy within 3 squares of them</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "271",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

@@ -1,0 +1,48 @@
+{
+  "id": "wyvern-malice",
+  "name": "Wyvern Malice",
+  "type": "featureblock",
+  "featureblockType": "Malice Features",
+  "level": 1,
+  "flavor": "At the start of any wyvern's turn, you can spend Malice to activate one of the following features.",
+  "features": [
+    {
+      "type": "feature",
+      "name": "Simmering Anger",
+      "cost": "3 Malice",
+      "effects": [
+        {
+          "effect": "One wyvern in the encounter can make a free strike against each enemy adjacent to them."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Boiling Fury",
+      "cost": "5 Malice",
+      "effects": [
+        {
+          "effect": "Until the end of the round, each wyvern in the encounter has a double edge on strikes and can use their signature ability instead of a free strike when making opportunity attacks."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Overflowing Rage",
+      "cost": "7 Malice",
+      "effects": [
+        {
+          "effect": "Every wyvern's anger fills the encounter map with a thick miasma of hatred. Each enemy in the encounter makes an **Intuition test**.",
+          "tier1": "The target is taunted by the nearest creature or object (save ends). While the target is taunted this way, power rolls against them have a double edge.",
+          "tier2": "The target is taunted by the nearest creature or object (save ends).",
+          "tier3": "No effect."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

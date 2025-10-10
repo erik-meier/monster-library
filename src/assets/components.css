@@ -102,6 +102,22 @@
   }
 }
 
+.btn-danger {
+  background-color: var(--color-error-600);
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background-color: var(--color-error-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
 /* === BUTTON SIZES === */
 .btn-sm {
   padding: var(--padding-btn-sm);
@@ -652,3 +668,31 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* === GLYPH ICONS === */
+.glyph-icon {
+  font-family: var(--font-family-glyphs);
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.glyph-tier-1::before { content: "{"; }
+.glyph-tier-2::before { content: "_"; }
+.glyph-tier-3::before { content: "}"; }
+
+/* Action type glyphs */
+.glyph-distance::before { content: "D"; }
+.glyph-target::before { content: "T"; }
+.glyph-feature::before { content: "*"; }
+.glyph-melee::before { content: "<"; }
+.glyph-ranged::before { content: ">"; }
+.glyph-melee-or-ranged::before { content: "="; }
+.glyph-self::before { content: "S"; }
+.glyph-burst::before { content: "B"; }
+.glyph-unique-distance::before { content: "U"; }
+.glyph-cube-line-wall::before { content: "C"; }
+.glyph-villain-action::before { content: "V"; }
+.glyph-triggered-action::before { content: "!"; }

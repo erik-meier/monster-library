@@ -6,17 +6,16 @@
   "role": "Support",
   "organization": "Horde",
   "keywords": [
-    "humanoid",
-    "soulless"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 50,
   "stability": 0,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": 1,
@@ -31,174 +30,60 @@
   ],
   "items": [
     {
-      "name": "Chosen of the Iron Saint",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The Director gains 1 Malice whenever an ally within 3 squares of the iron priest obtains a tier 3 outcome on a power roll.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Houndcannon",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "area",
-          "weapon"
-        ],
-        "distance": {
-          "type": "line",
-          "primary": 7,
-          "secondary": 1,
-          "tertiary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Area",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "7 x 1 line within 1",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "3 damage",
+          "tier2": "6 damage; <strong class=\"potency-value\">P&lt;3</strong> bleeding (save ends)",
+          "tier3": "8 damage; <strong class=\"potency-value\">P&lt;4</strong> the target loses 1 Recovery and is bleeding (save ends)"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "intuition"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "3 damage"
-            },
-            {
-              "tier": 2,
-              "display": "6 damage; <strong class=\"potency-value\">P&lt;3</strong> bleeding (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "8 damage; <strong class=\"potency-value\">P&lt;4</strong> the target loses 1 Recovery and is bleeding (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Any ally within 2 squares of the iron priest gains an edge on their next strike. If any target lost a Recovery, any affected ally has a double edge instead.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Any ally within 2 squares of the iron priest gains an edge on their next strike. If any target lost a Recovery, any affected ally has a double edge instead."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Iron Banner",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 2,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "aura",
-          "primary": 4
-        },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "intuition"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>For every 2 Malice spent, each target gains one of the following effects until the start of the iron priest's next turn - The target has damage immunity 2. - The target's strikes deal an extra 3 holy damage. - The target has a +3 bonus to speed.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "2+ Malice",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Maneuver",
+      "distance": "4 aura",
+      "target": "Each war dog in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "For every 2 Malice spent, each target gains one of the following effects until the start of the iron priest's next turn.\n- The target has damage immunity 2.\n- The target's strikes deal an extra 3 holy damage.\n- The target has a +3 bonus to speed."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p><p><span class=\"reference-text\">Loyalty Unto Death</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Chosen of the Iron Saint",
+      "effects": [
+        {
+          "effect": "The Director gains 1 Malice whenever an ally within 3 squares of the iron priest obtains a tier 3 outcome on a power roll."
         }
-      }
-    },
-    {
-      "name": "Alchemical Cloud",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A bank of choking chemicals sweeps across the area of the en counter map. Each enemy in the encounter makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"96\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> poison damage; dazed (EoT)</p></td></tr><tr><td data-colwidth=\"96\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> poison damage; weakened (EoT)</p></td></tr><tr><td data-colwidth=\"96\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">4</span> poison damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "313",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

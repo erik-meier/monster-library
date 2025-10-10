@@ -1,0 +1,73 @@
+{
+  "id": "troll-limbjumble",
+  "name": "Troll Limbjumble",
+  "level": 5,
+  "ev": 7,
+  "role": "Hexer",
+  "organization": "Minion",
+  "keywords": [
+    "Troll"
+  ],
+  "size": "1S",
+  "speed": 5,
+  "stamina": 8,
+  "stability": 0,
+  "freeStrike": 3,
+  "withCaptain": "Gain an edge on strikes",
+  "characteristics": {
+    "might": 3,
+    "agility": 1,
+    "reason": -2,
+    "intuition": -1,
+    "presence": -1
+  },
+  "immunities": {},
+  "weaknesses": {
+    "acid": 8,
+    "fire": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Arm and a Leg",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 damage; <strong class=\"potency-value\">A&lt;2</strong> prone",
+          "tier2": "5 damage; <strong class=\"potency-value\">A&lt;3</strong> prone",
+          "tier3": "6 damage; prone"
+        },
+        {
+          "name": "Effect",
+          "effect": "If a target made prone this way is already prone, they are grabbed instead."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Hyper-Regeneration",
+      "effects": [
+        {
+          "effect": "At the start of each of the limbjumble's squad's turns, the squad's Stamina pool increases as if each limbjumble were at full Stamina."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

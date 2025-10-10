@@ -226,10 +226,8 @@ export default {
           stamina: this.monster.stamina,
           stability: this.monster.stability,
           freeStrike: this.monster.freeStrike,
-          size: {
-            value: this.monster.size?.value || 1,
-            letter: this.monster.size?.letter || 'M'
-          },
+          withCaptain: this.monster.withCaptain,
+          size: this.monster.size,
           characteristics: {
             might: this.monster.characteristics.might,
             agility: this.monster.characteristics.agility,

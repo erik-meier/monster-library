@@ -1,0 +1,59 @@
+{
+  "id": "voiceless-talker-malice",
+  "name": "Voiceless Talker Malice",
+  "type": "featureblock",
+  "featureblockType": "Malice Features",
+  "level": 1,
+  "flavor": "At the start of any voiceless talker's turn, you can spend Malice to activate one of the following features.",
+  "features": [
+    {
+      "type": "feature",
+      "name": "Guise",
+      "cost": "3 Malice",
+      "effects": [
+        {
+          "effect": "One non-minion voiceless talker projects a psionic screen over their body, preventing other creatures from treating them as an enemy until the end of the voiceless talker's next turn."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Memory Thief",
+      "cost": "5 Malice",
+      "keywords": [
+        "Psionic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 5",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "6 psychic damage; <strong class=\"potency-value\">R&lt;1</strong> the target can't treat their allies as allies (save ends)",
+          "tier2": "10 psychic damage; <strong class=\"potency-value\">R&lt;2</strong> the target perceives their allies as enemies (save ends)",
+          "tier3": "13 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> the target perceives their allies as enemies (save ends)"
+        },
+        {
+          "name": "Special",
+          "effect": "This ability can't be used by a minion."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Evolutionary Circuit",
+      "cost": "10 Malice",
+      "effects": [
+        {
+          "effect": "All voiceless talkers link their minds, creating a circuit that empowers them while two or more voiceless talkers remain in the encounter. While this circuit is active, any psionic strike made by a voiceless talker deals an extra 5 damage. Additionally, when a non-minion voiceless talker takes damage, they can use a free triggered action to swap places with any voiceless talker minion on the encounter map. The minion takes the damage instead."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

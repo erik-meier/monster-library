@@ -1,0 +1,80 @@
+{
+  "id": "hobgoblin-brandbearer",
+  "name": "Hobgoblin Brandbearer",
+  "level": 4,
+  "ev": 6,
+  "role": "Hexer",
+  "organization": "Minion",
+  "keywords": [
+    "Goblin",
+    "Hobgoblin",
+    "Humanoid",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 7,
+  "stability": 0,
+  "freeStrike": 2,
+  "withCaptain": "Gain an edge on strikes",
+  "characteristics": {
+    "might": 0,
+    "agility": 1,
+    "reason": 2,
+    "intuition": 0,
+    "presence": 3
+  },
+  "immunities": {
+    "fire": 2
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Searing Grasp",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Melee",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "2 fire damage",
+          "tier2": "4 fire damage; <strong class=\"potency-value\">M&lt;2</strong> fire weakness 5 (save ends)",
+          "tier3": "6 fire damage; <strong class=\"potency-value\">M&lt;3</strong> fire weakness 5 (save ends)"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Open Furnace",
+      "effects": [
+        {
+          "effect": "Whenever an enemy takes fire damage, they take 1 extra fire damage for each brandbearer adjacent to them."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Infernal Ichor",
+      "effects": [
+        {
+          "effect": "When the brandbearer is reduced to 0 Stamina, they spray burning blood. Each creature adjacent to the brandbearer takes 2 fire damage."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

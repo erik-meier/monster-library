@@ -6,16 +6,15 @@
   "role": "Hexer",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Lizardfolk"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 20,
   "stability": 0,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 1,
     "agility": 1,
@@ -30,121 +29,60 @@
   ],
   "items": [
     {
-      "name": "Reptilian Escape",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While the bloodeye has a tail, whenever they are grabbed, prone, slowed, or weakened, they can lose their tail to immediately end that condition, then shift up to 2 squares.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Bola Knock",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "intuition"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage; <strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage; <strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 5",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage; <strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)",
+          "tier2": "7 damage; <strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)",
+          "tier3": "9 damage; <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
         }
-      }
+      ]
     },
     {
-      "name": "Bloodshot",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 2,
-        "keywords": [
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "intuition"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 acid damage; <strong class=\"potency-value\">M&lt;0</strong> the target has line of effect only within 4 squares (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "7 acid damage; <strong class=\"potency-value\">M&lt;1</strong> the target has line of effect only within 3 squares (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 acid damage; <strong class=\"potency-value\">M&lt;2</strong> the target has line of effect only within 2 squares (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "name": "Bloodshot",
+      "cost": "2 Malice",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 acid damage; <strong class=\"potency-value\">M&lt;0</strong> the target has line of effect only within 4 squares (save ends)",
+          "tier2": "7 acid damage; <strong class=\"potency-value\">M&lt;1</strong> the target has line of effect only within 3 squares (save ends)",
+          "tier3": "9 acid damage; <strong class=\"potency-value\">M&lt;2</strong> the target has line of effect only within 2 squares (save ends)"
         }
-      }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Reptilian Escape",
+      "effects": [
+        {
+          "effect": "While the bloodeye has a tail, whenever they are grabbed, prone, slowed, or weakened, they can lose their tail to immediately end that condition, then shift up to 2 squares."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "200",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

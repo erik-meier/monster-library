@@ -1,0 +1,105 @@
+{
+  "id": "hobgoblin-death-captain",
+  "name": "Hobgoblin Death Captain",
+  "level": 4,
+  "ev": 12,
+  "role": "Support",
+  "organization": "Platoon",
+  "keywords": [
+    "Goblin",
+    "Hobgoblin",
+    "Humanoid",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 60,
+  "stability": 2,
+  "freeStrike": 5,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 3,
+    "agility": 0,
+    "reason": 1,
+    "intuition": 0,
+    "presence": 2
+  },
+  "immunities": {
+    "fire": 4
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Blightblade",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "8 damage",
+          "tier2": "8 damage, 4 corruption damage",
+          "tier3": "8 damage, 7 corruption damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "The next strike made against the target has a double edge."
+        },
+        {
+          "cost": "3 Malice",
+          "effect": "One ally adjacent to the target can use their signature ability."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "On My Mark!",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 5",
+      "target": "One ally",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target moves up to their speed and can make a free strike."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Battle Ready",
+      "effects": [
+        {
+          "effect": "Any hidden creature who makes a strike against the death captain or any ally within 2 squares of the death captain takes a bane on the strike."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Infernal Ichor",
+      "effects": [
+        {
+          "effect": "When the death captain is reduced to 0 Stamina, they spray burning blood. Each creature adjacent to the death captain takes 3 fire damage."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

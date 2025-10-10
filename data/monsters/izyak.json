@@ -6,16 +6,15 @@
   "role": "Controller",
   "organization": "Horde",
   "keywords": [
-    "abyssal"
+    "Abyssal",
+    "Demon"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 6,
   "stamina": 55,
   "stability": 0,
   "freeStrike": 4,
+  "withCaptain": "",
   "characteristics": {
     "might": 0,
     "agility": 0,
@@ -28,207 +27,89 @@
     "holy": 5
   },
   "movementTypes": [
-    "teleport",
-    "walk"
+    "teleport"
   ],
   "items": [
     {
-      "name": "Lethe",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While the izyak is winded, they gain an edge on strikes, and any strike made against them gains an edge.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Soulsight",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any creature within 2 squares of the izyak can't be hidden from them.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Nostalgic Wanderlust",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "psionic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "9 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> restrained (save ends)",
+          "tier2": "12 psychic damage; <strong class=\"potency-value\">R&lt;4</strong> restrained (save ends)",
+          "tier3": "14 psychic damage; <strong class=\"potency-value\">R&lt;5</strong> restrained (save ends)"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
+        {
+          "name": "Effect",
+          "effect": "The izyak can slide any target restrained this way up to 3 squares."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "9 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> restrained (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "12 psychic damage; <strong class=\"potency-value\">R&lt;4</strong> restrained (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "14 psychic damage; <strong class=\"potency-value\">R&lt;5</strong> restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The izyak can slide any target restrained this way up to 3 squares.</p>"
-        },
-        "spend": {
-          "text": "The izyak can vertical slide any target restrained this way  up to 6 squares instead. A target left in midair doesn’t fall until the  restrained condition ends.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The izyak can vertical slide any target restrained this way  up to 6 squares instead. A target left in midair doesn’t fall until the  restrained condition ends."
+        {
+          "cost": "3 Malice",
+          "effect": "The izyak can vertical slide any target restrained this way up to 6 squares instead. A target left in midair doesn't fall until the restrained condition ends."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Ruinous Temptation",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "psionic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 4,
-          "secondary": 10
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Psionic",
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "4 cube within 10",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "4 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> dazed (save ends)",
+          "tier2": "7 psychic damage; <strong class=\"potency-value\">I&lt;4</strong> dazed (save ends)",
+          "tier3": "9 psychic damage; <strong class=\"potency-value\">I&lt;5</strong> dazed (save ends)"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Any target dazed this way must use a move action to move their speed toward the izyak on their next turn."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 psychic damage; <strong class=\"potency-value\">I&lt;3</strong> dazed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "7 psychic damage; <strong class=\"potency-value\">I&lt;4</strong> dazed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 psychic damage; <strong class=\"potency-value\">I&lt;5</strong> dazed (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Any target dazed this way must use a move action to move their speed toward the izyak on their next turn.</p>"
-        },
-        "spend": {
-          "text": "The area increases to a 6 cube.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The area increases to a 6 cube."
+        {
+          "cost": "2 Malice",
+          "effect": "The area increases to a 6 cube."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The demon activates a Malice feature available to demons of level 9 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p><p><span class=\"reference-text\">Abyssal Jaunt</span></p><p><span class=\"reference-text\">Seeping Blight</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Lethe",
+      "effects": [
+        {
+          "effect": "While the izyak is winded, they gain an edge on strikes, and any strike made against them gains an edge."
         }
-      }
+      ]
     },
     {
-      "name": "Soul Flense",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One demon acting this turn unleashes their pent-up agony and pain on every non-demon in a 5 burst. Each target makes a <strong>Presence test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"92\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> corruption damage; the target is soul flensed</p></td></tr><tr><td data-colwidth=\"92\"><p>12-16</p></td><td><p>The target is soul flensed</p></td></tr><tr><td data-colwidth=\"92\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table> <p>The demon removes all conditions and effects on themself that can be ended by a saving throw, and transfers all those effects to each creature soul flensed this way.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Soulsight",
+      "effects": [
+        {
+          "effect": "Any creature within 2 squares of the izyak can't be hidden from them."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "73",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

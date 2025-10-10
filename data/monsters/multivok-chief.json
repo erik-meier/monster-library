@@ -1,0 +1,145 @@
+{
+  "id": "multivok-chief",
+  "name": "Multivok Chief",
+  "level": 9,
+  "ev": 44,
+  "role": "Support",
+  "organization": "Elite",
+  "keywords": [
+    "Construct",
+    "Multivok",
+    "Soulless",
+    "Valok"
+  ],
+  "size": "1L",
+  "speed": 5,
+  "stamina": 220,
+  "stability": 3,
+  "freeStrike": 9,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 4,
+    "agility": 1,
+    "reason": -2,
+    "intuition": 1,
+    "presence": -3
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Pneumatic Punch",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "13 damage; push 3",
+          "tier2": "18 damage; push 5",
+          "tier3": "22 damage; push 8"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Targeting Beam",
+      "cost": "3 Malice",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "15 damage; <strong class=\"potency-value\">A&lt;2</strong> slowed (save ends)",
+          "tier2": "21 damage; <strong class=\"potency-value\">A&lt;3</strong> slowed (save ends)",
+          "tier3": "26 damage; <strong class=\"potency-value\">A&lt;4</strong> slowed (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "This damage can't be reduced in any way. While a target is slowed this way, any strike against them has a double edge."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Chief's Command",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 5",
+      "target": "One ally",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target shifts up to their speed and can use a main action."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Quick Shield",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 10",
+      "target": "The triggering creature",
+      "trigger": "The chief or an ally within distance is subject to an effect that can be ended by a saving throw or that ends at the end of their turn.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target gains 15 temporary Stamina. Each time this triggered action is used, the amount of temporary Stamina received decreases by 3 (to a minimum of 0)."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Multivok Maintenance",
+      "effects": [
+        {
+          "effect": "At the start of the chief's turn, each servok within 2 squares of them regains 15 Stamina."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Crafted to Perfection",
+      "effects": [
+        {
+          "effect": "The chief's shape can't be changed by any external effect."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Valiar Might",
+      "effects": [
+        {
+          "effect": "While the chief isn't bleeding, weakened, or winded, any power roll made against them is automatically a tier 1 outcome. A critical hit still grants its additional main action."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

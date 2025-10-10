@@ -6,16 +6,15 @@
   "role": "Hexer",
   "organization": "Elite",
   "keywords": [
-    "beast"
+    "Basilisk",
+    "Beast"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 8,
   "stamina": 40,
   "stability": 2,
   "freeStrike": 4,
+  "withCaptain": "",
   "characteristics": {
     "might": 1,
     "agility": 2,
@@ -24,6 +23,7 @@
     "presence": -1
   },
   "immunities": {
+    "acid": 2,
     "poison": 2
   },
   "weaknesses": {},
@@ -32,335 +32,117 @@
   ],
   "items": [
     {
-      "name": "Petrifying Fumes",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any creature who starts their turn adjacent to the tonguesnapper and has <strong class=\"potency-value\">M&lt;1</strong> is slowed (save ends).</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Prehensile Tongue",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 3",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "8 acid damage; pull 1",
+          "tier2": "10 acid damage; pull 2",
+          "tier3": "14 acid damage; pull 3"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
+        {
+          "name": "Effect",
+          "effect": "This ability can pull targets restrained by Petrifying Eye Beams, and ignores stability if it does so."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "8 acid damage; pull 1"
-            },
-            {
-              "tier": 2,
-              "display": "10 acid damage; pull 2"
-            },
-            {
-              "tier": 3,
-              "display": "14 acid damage; pull 3"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>This ability can pull targets restrained by Petrifying Eye Beams, and ignores stability if it does so.</p>"
-        },
-        "spend": {
-          "text": "The tonguesnapper targets two additional creatures or  objects.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The tonguesnapper targets two additional creatures or  objects."
+        {
+          "cost": "3 Malice",
+          "effect": "The tonguesnapper targets two additional creatures or objects."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Petrifying Eye Beams",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "line",
-          "primary": 5,
-          "secondary": 2,
-          "tertiary": 1
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Maneuver",
+      "distance": "5 x 2 line within 1",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Special",
+          "effect": "The area extends from both the tonguesnapper's eyes, and this ability targets the first creature without cover on either side of the area."
         },
-        "target": {
-          "type": "special",
-          "value": null
+        {
+          "roll": "2d10 + 2",
+          "tier1": "<strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)",
+          "tier2": "<strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)",
+          "tier3": "Slowed (save ends); or if <strong class=\"potency-value\">A&lt;2</strong> restrained (save ends)"
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "<strong class=\"potency-value\">A&lt;0</strong> restrained (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "<strong class=\"potency-value\">A&lt;1</strong> restrained (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "Slowed (save ends); or if <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The area extends from both the tonguesnapper's eyes, and this ability targets the first creature without cover on either side of the area.</p> <p>If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target’s body, dealing <span class=\"damage-value damage-generic\">8</span> damage to the target that can’t be reduced in any way and ending this effect.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "If a target is already slowed, the potency increases by 1 for that target. A target restrained this way magically begins to turn to stone, and a target who ends two consecutive turns restrained this way is petrified. A target restrained this way or a creature adjacent to them can use a main action to cut encroaching stone from the target's body, dealing 8 damage to the target that can't be reduced in any way and ending this effect."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Wink",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 2,
-        "keywords": [
-          "magic",
-          "melee",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 1
+      "cost": "2 Malice",
+      "keywords": [
+        "Magic",
+        "Melee",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1 or ranged 10",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "8 corruption damage; <strong class=\"potency-value\">R&lt;0</strong> dazed (save ends)",
+          "tier2": "10 corruption damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)",
+          "tier3": "14 corruption damage; <strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (save ends)"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "8 corruption damage; <strong class=\"potency-value\">R&lt;0</strong> dazed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "10 corruption damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "14 corruption damage; <strong class=\"potency-value\">R&lt;2</strong> dazed and slowed (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A creature dazed this way can't benefit from edges or double edges and can't gain or use surges.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A creature dazed this way can't benefit from edges or double edges and can't gain or use surges."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Neurotoxin Splash",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 2
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "The tonguesnapper takes damage from a melee ability.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target takes <span class=\"damage-value damage-generic\">4</span> acid damage. Any target who has <strong class=\"potency-value\">M&lt;2</strong> is also slowed (save ends).</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Triggered action",
+      "distance": "2 burst",
+      "target": "Each enemy in the area",
+      "trigger": "The tonguesnapper takes damage from a melee ability.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target takes 4 acid damage. Any target who has <strong class=\"potency-value\">M&lt;2</strong> is also slowed (save ends)."
         }
-      }
+      ]
     },
     {
-      "name": "Stone Swim",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A basilisk acting this turn can burrow until the start of their next turn, and moves up to their speed. They have damage immunity 2 while underground. The basilisk can burrow through stone, but can’t drag other creatures underground when they do so. At the start of each of the basilisk’s turns, the Director can spend 1 Malice to let the basilisk continue burrowing.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Upchuck",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 damage"
-            },
-            {
-              "tier": 2,
-              "display": "4 damage; <strong class=\"potency-value\">A&lt;1</strong> 2 damage; Prone"
-            },
-            {
-              "tier": 3,
-              "display": "4 damage; <strong class=\"potency-value\">A&lt;2</strong> 5 damage; prone and can't stand (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The basilisk spits up a chunk of partly digested stone.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Walleye",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A basilisk spews reflective spittle across an adjacent vertical surface in a 3-square-by-3-square area. The basilisk can use their Petrifying Eye Beams ability to target a square in the area, causing the area and distance of that ability to become a 20 × 3 line within 1 square of the wall.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Restorative Salve",
       "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>After a basilisk dies, a character can make a Reason test to claim oil from the basilisk’s mouth, which can be used to create a special salve. One dose of salve can be applied to a petrified creature as a main action, and 1 minute after the salve is applied, that creature is no longer petrified.</p><p></p><table><tbody><tr><td data-colwidth=\"130\"><p>11 or less</p></td><td><p>The character must complete the Find a Cure down time project in Draw Steel: Heroes to create one dose of salve.</p></td></tr><tr><td data-colwidth=\"130\"><p>12-16</p></td><td><p>The character creates one dose of salve and can cre ate two more doses by completing the Find a Cure downtime project.</p></td></tr><tr><td data-colwidth=\"130\"><p>17+</p></td><td><p>The character creates three doses of salve.</p></td></tr></tbody></table>",
-          "director": ""
+      "name": "Petrifying Fumes",
+      "effects": [
+        {
+          "effect": "Any creature who starts their turn adjacent to the tonguesnapper and has <strong class=\"potency-value\">M&lt;1</strong> is slowed (save ends)."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "49",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

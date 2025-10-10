@@ -6,16 +6,15 @@
   "role": "Hexer",
   "organization": "Elite",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Rival"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 120,
   "stability": 2,
   "freeStrike": 6,
+  "withCaptain": "",
   "characteristics": {
     "might": 0,
     "agility": 0,
@@ -30,313 +29,79 @@
   ],
   "items": [
     {
-      "name": "Rivalry",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the start of an encounter, the talent chooses one creature within their line of effect. Both the talent and the creature can add a <span class=\"roll-formula\">d3</span> roll to power rolls they make against each other.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Overwhelming Rend",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "psionic",
-          "ranged",
-          "strike",
-          "telekinesis"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "9 psychic damage; push 2; <strong class=\"potency-value\">M&lt;1</strong> prone"
-            },
-            {
-              "tier": 2,
-              "display": "14 psychic damage; push 3; <strong class=\"potency-value\">M&lt;2</strong> prone"
-            },
-            {
-              "tier": 3,
-              "display": "17 psychic damage; push 4; <strong class=\"potency-value\">M&lt;3</strong> prone"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike",
+        "Telekinesis"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "9 psychic damage; push 2; <strong class=\"potency-value\">M&lt;1</strong> prone",
+          "tier2": "14 psychic damage; push 3; <strong class=\"potency-value\">M&lt;2</strong> prone",
+          "tier3": "17 psychic damage; push 4; <strong class=\"potency-value\">M&lt;3</strong> prone"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Disarrange Thoughts",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 2,
-        "keywords": [
-          "psionic",
-          "ranged",
-          "telepathy"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "6 psychic damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "6 psychic damage; <strong class=\"potency-value\">R&lt;2</strong> dazed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "6 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> dazed and slowed (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "2 Malice",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Telepathy"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "6 psychic damage; <strong class=\"potency-value\">R&lt;1</strong> dazed (save ends)",
+          "tier2": "6 psychic damage; <strong class=\"potency-value\">R&lt;2</strong> dazed (save ends)",
+          "tier3": "6 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> dazed and slowed (save ends)"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Precognitive Shift",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 1,
-        "keywords": [
-          "psionic"
-        ],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "A creature deals damage to the talent.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The talent halves the damage and shifts up to 2 squares</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "Psionic"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "A creature deals damage to the talent.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The talent halves the damage and shifts up to 2 squares."
         }
-      }
+      ]
     },
     {
-      "name": "Calling the Shots",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each rival regains <span class=\"heal-value\">10</span>  stamina Until the end of the round, when ever a rival uses an ability against an enemy, each other rival adjacent to that enemy can make a free strike against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Rivalry",
+      "effects": [
+        {
+          "effect": "At the start of an encounter, the talent chooses one creature within their line of effect. Both the talent and the creature can add a d3 roll to power rolls they make against each other."
         }
-      }
-    },
-    {
-      "name": "Check Out Our Loot",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One rival pulls out a magic consumable and hurls it, targeting a 5 × 1 line within 1 square of them or a 3 cube within 10 squares of them. Each enemy in the area makes an Agility test. The rival chooses a damage type and a condition for the outcome of the test from one of the following pairs: sonic damage and dazed, poison damage and weakened, or fire damage and frightened.</p><table><tbody><tr><td><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> damage; the condition affects the target (save ends)</p></td></tr><tr><td><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span>  damage; the condition affects the target (EoT)</p></td></tr><tr><td><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">5</span>  damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Coordinated Takedown",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 10,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A Rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each rival moves up to their speed and uses a main action or maneuver that doesn’t cost Malice.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "We Just Do It Better",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever any rival makes a power roll against the target of their Rivalry trait, they roll a <span class=\"roll-formula\">d3</span> and add it to the power roll.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Work as One",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A rival's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each rival can impose a bane on a strike made against an adjacent rival as a free triggered action.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "238",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

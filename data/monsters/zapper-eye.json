@@ -1,0 +1,112 @@
+{
+  "id": "zapper-eye",
+  "name": "Zapper Eye",
+  "level": 6,
+  "ev": 0,
+  "role": "Artillery",
+  "organization": "",
+  "keywords": [
+    "Eyestalk",
+    "Horror",
+    "Overmind"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 30,
+  "stability": 0,
+  "freeStrike": 3,
+  "withCaptain": "",
+  "characteristics": {
+    "might": -1,
+    "agility": 1,
+    "reason": 4,
+    "intuition": 1,
+    "presence": -1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "fly",
+    "hover"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Lightning Beam",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Area",
+        "Psionic"
+      ],
+      "usage": "Main action",
+      "distance": "10 x 1 line within 1",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "6 lightning damage",
+          "tier2": "10 lightning damage",
+          "tier3": "13 lightning damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "Each target loses all their surges."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Psionic Barrier",
+      "effects": [
+        {
+          "effect": "The zapper eye has damage immunity 15. When they use a main action, they lose this immunity until the end of the round."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Gas Belch",
+      "cost": "3 Malice",
+      "effects": [
+        {
+          "effect": "Xorannox lets out a noxious belch. Each enemy within 2 squares of him who has <strong class=\"potency-value\">M&lt;3</strong> is weakened (save ends)."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Slime Trail",
+      "cost": "5 Malice",
+      "effects": [
+        {
+          "effect": "Until the end of Xorannox's next turn, whenever he or any of his eyes leave their space, they secrete a viscous slime onto the ground in that area. Any enemy who enters an affected square has lightning weakness 5 and fire weakness 5 until the end of the encounter."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Solo Action",
+      "cost": "5 Malice",
+      "effects": [
+        {
+          "effect": "Xorannox takes an additional main action on his turn. He can use this feature even if he is dazed."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Mind Over Matter",
+      "cost": "7 Malice",
+      "effects": [
+        {
+          "effect": "Xorannox fills the encounter map with a powerful telekinetic field. The Director chooses a cardinal direction (north, south, east, or west). Whenever a creature in the encounter willingly moves or is force moved, they are pulled 2 squares in the chosen direction, ignoring stability. Each time this feature is used, its previous effect ends."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

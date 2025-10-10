@@ -1,0 +1,96 @@
+{
+  "id": "shadow-elf-luminator",
+  "name": "Shadow Elf Luminator",
+  "level": 4,
+  "ev": 12,
+  "role": "Support",
+  "organization": "Platoon",
+  "keywords": [
+    "Fey",
+    "Humanoid",
+    "Shadow Elf"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 60,
+  "stability": 0,
+  "freeStrike": 5,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 0,
+    "agility": 1,
+    "reason": 1,
+    "intuition": 3,
+    "presence": 2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "climb"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Lumina Mark",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 3",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "8 lightning damage",
+          "tier2": "12 lightning damage",
+          "tier3": "15 lightning damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "The next strike made against the target deals an extra 5 damage."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Mourning Till Dusk",
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Main action",
+      "distance": "2 burst",
+      "target": "Each ally in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "The target regains 6 Stamina.",
+          "tier2": "The target regains 9 Stamina.",
+          "tier3": "The target regains 12 Stamina and the Director gains 3 Malice."
+        },
+        {
+          "name": "Effect",
+          "effect": "Each target gains an edge on their next strike."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Of the Umbra",
+      "effects": [
+        {
+          "effect": "The luminator ignores concealment created by darkness. While the luminator is in direct sunlight, they have damage weakness 3. While the luminator has concealment, they have damage immunity 3."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

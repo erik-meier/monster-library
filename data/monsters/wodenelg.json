@@ -6,16 +6,15 @@
   "role": "Mount",
   "organization": "Platoon",
   "keywords": [
-    "plant"
+    "Plant",
+    "Wode Elf"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 10,
   "stamina": 30,
   "stability": 1,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": 1,
@@ -30,225 +29,79 @@
   ],
   "items": [
     {
-      "name": "Sure-Footed",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The wodenelg ignores difficult terrain and doesn't provoke oppotunity attacks by moving.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Mounted Stability",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The wodenelg's rider has damage immunity 2.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Shared Glamor",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>If the wodenelg's rider has the Masking Glamor trait, the wodenelg also has that trait.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Gore",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "charge",
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Charge",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage",
+          "tier2": "7 damage",
+          "tier3": "9 damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage"
-            },
-            {
-              "tier": 3,
-              "display": "9 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The wodenelg's rider can make a free strike at any point during the charge.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The wodenelg's rider can make a free strike at any point during the charge."
         }
-      }
+      ]
     },
     {
+      "type": "feature",
+      "name": "Sure-Footed",
+      "effects": [
+        {
+          "effect": "The wodenelg ignores difficult terrain and doesn't provoke oppotunity attacks by moving."
+        }
+      ]
+    },
+    {
+      "type": "ability",
       "name": "Where I End the Woods Begin",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The wodenelg and their rider become invisible until the start of the wodenelg's next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "3 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The wodenelg and their rider become invisible until the start of the wodenelg's next turn."
         }
-      }
+      ]
     },
     {
-      "name": "Forest Network",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Mounted Stability",
+      "effects": [
+        {
+          "effect": "The wodenelg's rider has damage immunity 2."
         }
-      }
+      ]
     },
     {
-      "name": "Punishing Regrowth",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Shared Glamor",
+      "effects": [
+        {
+          "effect": "If the wodenelg's rider has the Masking Glamor trait, the wodenelg also has that trait."
         }
-      }
-    },
-    {
-      "name": "Vines Everywhere",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "141",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

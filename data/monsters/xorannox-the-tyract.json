@@ -1,0 +1,229 @@
+{
+  "id": "xorannox-the-tyract",
+  "name": "Xorannox The Tyract",
+  "level": 6,
+  "ev": 96,
+  "role": "",
+  "organization": "Solo",
+  "keywords": [
+    "Horror",
+    "Overmind"
+  ],
+  "size": "3",
+  "speed": 5,
+  "stamina": 450,
+  "stability": 2,
+  "freeStrike": 7,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 4,
+    "agility": 2,
+    "reason": 4,
+    "intuition": 3,
+    "presence": 3
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "fly",
+    "hover"
+  ],
+  "items": [
+    {
+      "type": "feature",
+      "name": "Solo Monster",
+      "effects": [
+        {
+          "name": "End Effect",
+          "effect": "At the end of each of his turns, Xorannox can take 10 damage to end one effect on him that can be ended by a saving throw. This damage can't be reduced in any way."
+        },
+        {
+          "name": "Solo Turns",
+          "effect": "Xorannox can take two turns each round. He can't take turns consecutively."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Eyes of the Tyract",
+      "effects": [
+        {
+          "effect": "Six unique eyestalks float around Xorannox, acting on his turn at his command until they are reduced to 0 Stamina. On each of Xorannox's turns, he directs one eyestalk to move and use a signature ability."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Toothful Thrashing",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "12 damage; slide 2; <strong class=\"potency-value\">M&lt;2</strong> bleeding (EoT)",
+          "tier2": "20 damage; slide 3; <strong class=\"potency-value\">M&lt;3</strong> bleeding (EoT)",
+          "tier3": "23 damage; vertical slide 3; <strong class=\"potency-value\">M&lt;4</strong> bleeding (EoT)"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Grav Spike",
+      "keywords": [
+        "Area",
+        "Psionic"
+      ],
+      "usage": "Main action",
+      "distance": "2 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "Vertical push 3",
+          "tier2": "Vertical push 5",
+          "tier3": "Vertical push 7"
+        },
+        {
+          "name": "Effect",
+          "effect": "Xorannox shifts up to his speed before or after using this ability."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Optical Collusion",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Xorannox commands all his eyestalks to move up to their speed."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Shutout",
+      "cost": "2 Malice",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Maneuver",
+      "distance": "5 x 2 line within 1",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Xorannox ends all ongoing supernatural effects and suppresses supernatural effects from treasures in the area. New supernatural effects can't be activated in the area until the end of Xorannox's next turn."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Cower!",
+      "keywords": [
+        "Psionic",
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 10",
+      "target": "The triggering creature",
+      "trigger": "A creature within distance deals damage to Xorannox.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "If the target has <strong class=\"potency-value\">I&lt;3</strong> they are frightened (save ends)"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Above It All",
+      "effects": [
+        {
+          "effect": "Xorannox can't be made frightened or knocked prone, and he can't be flanked."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Natural Enemies",
+      "effects": [
+        {
+          "effect": "If Xorannox perceives another overmind or a voiceless talker on the encounter map, he targets that threat one or more times on each of his turns."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Disruption Beam",
+      "ability_type": "Villain Action 1",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "-",
+      "distance": "Ranged 10",
+      "target": "Three creatures",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "11 psychic damage; <strong class=\"potency-value\">R&lt;2</strong> dazed (save ends)",
+          "tier2": "17 psychic damage; <strong class=\"potency-value\">R&lt;3</strong> dazed (save ends)",
+          "tier3": "20 psychic damage; <strong class=\"potency-value\">R&lt;4</strong> dazed (save ends)"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "All Eyes, All Rise",
+      "ability_type": "Villain Action 2",
+      "keywords": [
+        "-"
+      ],
+      "usage": "-",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Xorannox recreates any destroyed eyestalks, which return in unoccupied spaces on the encounter map with full Stamina."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Panoptibeam",
+      "ability_type": "Villain Action 3",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "-",
+      "distance": "2 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Xorannox directs each of his eyestalks to use a signature ability against any target."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

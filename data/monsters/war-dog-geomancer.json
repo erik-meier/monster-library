@@ -6,17 +6,16 @@
   "role": "Controller",
   "organization": "Horde",
   "keywords": [
-    "humanoid",
-    "soulless"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 45,
   "stability": 3,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": 1,
@@ -31,190 +30,74 @@
   ],
   "items": [
     {
-      "name": "Dust Cloud",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The geomancer is always surrounded by a 2 aura of swirling dust and earthen debris. The geomancer and any ally in the area have concealment.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Loyalty Collar",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When the geomancer is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">3d6</span> damage to each adjacent enemy and object.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Earthwave",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "line",
-          "primary": 7,
-          "secondary": 2,
-          "tertiary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Area",
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "7 x 2 line within 10",
+      "target": "Each creature in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "3 damage; <strong class=\"potency-value\">M&lt;2</strong> push (see effect)",
+          "tier2": "6 damage; <strong class=\"potency-value\">M&lt;3</strong> push",
+          "tier3": "8 damage; <strong class=\"potency-value\">M&lt;4</strong> push, prone"
         },
-        "target": {
-          "type": "creature",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "This ability ignores stability. The geomancer declares a direction for the area, and any creature pushed by this ability is pushed to the last space in the area in the chosen direction."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "3 damage; <strong class=\"potency-value\">M&lt;2</strong> push (see effect)"
-            },
-            {
-              "tier": 2,
-              "display": "6 damage; <strong class=\"potency-value\">M&lt;3</strong> push"
-            },
-            {
-              "tier": 3,
-              "display": "8 damage; <strong class=\"potency-value\">M&lt;4</strong> push; prone"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>This ability ignores stability. The geomancer declares a direction for the area, and any creature pushed by this ability is pushed to the last space in the area in the chosen direction.</p>"
-        },
-        "spend": {
-          "text": "The ground beneath the area becomes a 2-square-deep trench after the power roll is resolved.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The ground beneath the area becomes a 2-square-deep trench after the power roll is resolved."
+        {
+          "cost": "2 Malice",
+          "effect": "The ground beneath the area becomes a 2-square-deep trench after the power roll is resolved."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Siegeworks",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "wall",
-          "primary": 5,
-          "secondary": 10
-        },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The geomancer raises a wall of stone set with viewing gaps. Creatures have line of effect through the wall while adjacent to it.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Area",
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "5 wall within 10",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The geomancer raises a wall of stone set with viewing gaps. Creatures have line of effect through the wall while adjacent to it."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p><p><span class=\"reference-text\">Loyalty Unto Death</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Dust Cloud",
+      "effects": [
+        {
+          "effect": "The geomancer is always surrounded by a 2 aura of swirling dust and earthen debris. The geomancer and any ally in the area have concealment."
         }
-      }
+      ]
     },
     {
-      "name": "Alchemical Cloud",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A bank of choking chemicals sweeps across the area of the en counter map. Each enemy in the encounter makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"96\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> poison damage; dazed (EoT)</p></td></tr><tr><td data-colwidth=\"96\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">7</span> poison damage; weakened (EoT)</p></td></tr><tr><td data-colwidth=\"96\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">4</span> poison damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Loyalty Collar",
+      "effects": [
+        {
+          "effect": "When the geomancer is reduced to 0 Stamina, their loyalty collar explodes, dealing 3d6 damage to each adjacent enemy and object."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "313",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

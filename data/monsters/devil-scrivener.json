@@ -1,0 +1,74 @@
+{
+  "id": "devil-scrivener",
+  "name": "Devil Scrivener",
+  "level": 5,
+  "ev": 7,
+  "role": "Harrier",
+  "organization": "Minion",
+  "keywords": [
+    "Devil",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 6,
+  "stamina": 9,
+  "stability": 0,
+  "freeStrike": 3,
+  "withCaptain": "+3 bonus to speed",
+  "characteristics": {
+    "might": 0,
+    "agility": 3,
+    "reason": 1,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {
+    "fire": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Litigation",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Charge",
+        "Magic",
+        "Melee",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 corruption damage",
+          "tier2": "5 corruption damage; slowed (EoT)",
+          "tier3": "6 corruption damage; slowed (EoT)"
+        },
+        {
+          "name": "Effect",
+          "effect": "The scrivener can shift 1 square."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "True Name",
+      "effects": [
+        {
+          "effect": "If a creature within 10 squares speaks the scrivener's true name, the scrivener loses their fire immunity and any nondamaging effects of their signature ability until the end of the encounter."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

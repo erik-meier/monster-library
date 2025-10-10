@@ -4,7 +4,7 @@
 
     <div class="abilities-section">
       <p class="section-description">
-        Manage this monster's abilities, features, and actions. Features are passive traits, while abilities are active
+        Manage this monster's abilities and features. Features are passive traits, while abilities are active
         actions the monster can take.
       </p>
 
@@ -19,11 +19,11 @@
                 <span class="ability-type-badge" :class="item.type">
                   {{ capitalize(item.type) }}
                 </span>
-                <span v-if="item.system.category" class="category-badge" :class="item.system.category">
-                  {{ capitalize(item.system.category) }}
+                <span v-if="getAbilityCategory(item)" class="category-badge" :class="getAbilityCategory(item)">
+                  {{ capitalize(getAbilityCategory(item) || '') }}
                 </span>
-                <span v-if="item.system.resource" class="resource-badge">
-                  {{ item.system.resource }} Malice
+                <span v-if="getAbilityCost(item)" class="resource-badge">
+                  {{ getAbilityCost(item) }}
                 </span>
               </div>
             </div>
@@ -40,50 +40,73 @@
           <!-- Expanded Content -->
           <div v-if="expandedIndex === index" class="ability-content">
             <div class="ability-details">
-              <!-- System Properties -->
-              <div v-if="item.system.type && item.system.type !== 'none'" class="detail-row">
-                <strong>Type:</strong> {{ formatActionType(item.system.type) }}
+              <!-- Ability Properties -->
+              <div v-if="item.ability_type" class="detail-row">
+                <strong>Type:</strong> {{ item.ability_type }}
               </div>
-              <div v-if="item.system.keywords?.length" class="detail-row">
-                <strong>Keywords:</strong> {{ item.system.keywords.join(', ') }}
+              <div v-if="item.usage && item.usage !== 'none'" class="detail-row">
+                <strong>Usage:</strong> {{ formatActionType(item.usage) }}
               </div>
-              <div v-if="item.system.distance" class="detail-row">
-                <strong>Distance:</strong> {{ formatDistance(item.system.distance) }}
+              <div v-if="item.keywords?.length" class="detail-row">
+                <strong>Keywords:</strong> {{ item.keywords.join(', ') }}
               </div>
-              <div v-if="item.system.target" class="detail-row">
-                <strong>Target:</strong> {{ formatTarget(item.system.target) }}
+              <div v-if="item.distance" class="detail-row">
+                <strong>Distance:</strong> {{ item.distance }}
               </div>
-              <div v-if="item.system.trigger" class="detail-row">
-                <strong>Trigger:</strong> {{ item.system.trigger }}
+              <div v-if="item.target" class="detail-row">
+                <strong>Target:</strong> {{ item.target }}
               </div>
-
-              <!-- Power Roll -->
-              <div v-if="item.system.power?.roll" class="detail-row">
-                <strong>Power Roll:</strong> {{ item.system.power.roll.formula }}
-                <span v-if="item.system.power.roll.characteristics?.length">
-                  ({{ item.system.power.roll.characteristics.join(', ') }})
-                </span>
+              <div v-if="item.trigger" class="detail-row">
+                <strong>Trigger:</strong> {{ item.trigger }}
+              </div>
+              <div v-if="item.cost" class="detail-row">
+                <strong>Cost:</strong> {{ item.cost }}
               </div>
 
-              <!-- Power Tiers -->
-              <div v-if="item.system.power?.tiers?.length" class="power-tiers">
-                <strong>Power Tiers:</strong>
-                <div class="tiers-list">
-                  <div v-for="tier in item.system.power.tiers" :key="tier.tier" class="tier-item">
-                    <span class="tier-number">{{ tier.tier }}:</span>
-                    <span class="tier-display">{{ tier.display }}</span>
+              <!-- Effects -->
+              <div v-if="item.effects?.length" class="effects-section">
+                <div class="effects-list">
+                  <div v-for="(effect, effectIndex) in item.effects" :key="effectIndex" class="effect-item">
+                    <div v-if="effect.name" class="effect-name">{{ effect.name }}</div>
+
+                    <!-- Power Roll -->
+                    <div v-if="effect.roll" class="detail-row">
+                      <strong>Power Roll:</strong> {{ effect.roll }}
+                    </div>
+
+                    <!-- Power Tiers -->
+                    <div v-if="effect.tier1 || effect.tier2 || effect.tier3" class="power-tiers">
+                      <div class="tiers-list">
+                        <div v-if="effect.tier1" class="tier-item">
+                          <span class="tier-number">Tier 1:</span>
+                          <span class="tier-display">{{ effect.tier1 }}</span>
+                        </div>
+                        <div v-if="effect.tier2" class="tier-item">
+                          <span class="tier-number">Tier 2:</span>
+                          <span class="tier-display">{{ effect.tier2 }}</span>
+                        </div>
+                        <div v-if="effect.tier3" class="tier-item">
+                          <span class="tier-number">Tier 3:</span>
+                          <span class="tier-display">{{ effect.tier3 }}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Effect Text -->
+                    <div v-if="effect.effect" class="detail-row">
+                      <div class="effect-text" v-html="effect.effect"></div>
+                    </div>
+
+                    <!-- Effect Cost -->
+                    <div v-if="effect.cost" class="detail-row">
+                      <strong>Cost:</strong> {{ effect.cost }}
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Effects -->
-              <div v-if="item.system.effect?.text" class="detail-row">
-                <strong>Effect:</strong>
-                <div class="effect-text" v-html="item.system.effect.text"></div>
-              </div>
-
-              <!-- Description (for features) -->
-              <div v-if="item.system.description?.value" class="detail-row">
+              <!-- Legacy system support (fallback) -->
+              <div v-if="!item.effects?.length && item.system?.description?.value" class="detail-row">
                 <strong>Description:</strong>
                 <div class="description-text" v-html="item.system.description.value"></div>
               </div>
@@ -149,39 +172,20 @@ const capitalize = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-const formatActionType = (type: string) => {
+const formatActionType = (usage: string) => {
   const types: Record<string, string> = {
+    'Main action': 'Main Action',
+    'Maneuver': 'Maneuver',
+    'Triggered action': 'Triggered Action',
+    'Free triggered action': 'Free Triggered Action',
+    'Move action': 'Move Action',
     'main': 'Main Action',
     'move': 'Move Action',
     'triggered': 'Triggered Action',
     'villain': 'Villain Action',
     'none': 'Passive'
   }
-  return types[type] || capitalize(type)
-}
-
-const formatDistance = (distance: MonsterItem['system']['distance']) => {
-  if (!distance) return 'Special'
-
-  if (distance.type === 'melee') {
-    return `Melee ${distance.primary || 1}`
-  } else if (distance.type === 'ranged') {
-    return `Ranged ${distance.primary || 5}`
-  } else if (distance.type === 'meleeRanged') {
-    return `Melee ${distance.primary || 1} or Ranged ${distance.secondary || 5}`
-  }
-
-  return capitalize(distance.type)
-}
-
-const formatTarget = (target: MonsterItem['system']['target']) => {
-  if (!target) return 'Special'
-
-  if (target.type === 'creatureObject' && target.value) {
-    return `${target.value} creature${target.value > 1 ? 's' : ''} or object${target.value > 1 ? 's' : ''}`
-  }
-
-  return capitalize(target.type)
+  return types[usage] || capitalize(usage)
 }
 
 const toggleExpanded = (index: number) => {
@@ -224,48 +228,31 @@ const createNewItem = (type: 'ability' | 'feature'): MonsterItem => {
   const baseItem: MonsterItem = {
     name: type === 'ability' ? 'New Ability' : 'New Feature',
     type,
-    system: {
-      keywords: [],
-      ...(type === 'ability' && {
-        category: '',
-        type: 'main',
-        resource: null,
-        distance: {
-          type: 'melee',
-          primary: 1
-        },
-        target: {
-          type: 'creatureObject',
-          value: 1
-        },
-        trigger: '',
-        power: {
-          roll: {
-            formula: '2d10',
-            characteristics: ['might']
-          },
-          tiers: [
-            { tier: 1, display: 'Effect on tier 1' },
-            { tier: 2, display: 'Effect on tier 2' },
-            { tier: 3, display: 'Effect on tier 3' }
-          ]
-        },
-        effect: {
-          text: ''
-        },
-        spend: {
-          text: '',
-          value: null
+    keywords: [],
+    effects: [
+      type === 'ability'
+        ? {
+          name: '',
+          roll: '2d10 + 3',
+          tier1: 'Tier 1 effect',
+          tier2: 'Tier 2 effect',
+          tier3: 'Tier 3 effect',
+          effect: '',
+          cost: ''
         }
-      }),
-      ...(type === 'feature' && {
-        power: null,
-        description: {
-          value: 'Feature description goes here.',
-          director: ''
+        : {
+          name: '',
+          effect: type === 'feature' ? 'Feature description goes here.' : '',
+          cost: ''
         }
-      })
-    }
+    ],
+    ...(type === 'ability' && {
+      ability_type: '',
+      usage: 'Main action',
+      distance: 'Melee 1',
+      target: 'One creature',
+      cost: ''
+    })
   }
 
   return baseItem
@@ -283,12 +270,38 @@ const addNewFeature = () => {
   editAbility(formData.items.length - 1)
 }
 
+// Helper methods to handle both new and old data structures
+const getAbilityCategory = (item: MonsterItem) => {
+  // Check for new structure signature indicator
+  if (item.ability_type?.includes('Signature')) return 'signature'
+  if (item.ability_type?.includes('Villain')) return 'villain'
+  // Check for old structure
+  return item.system?.category
+}
+
+const getAbilityCost = (item: MonsterItem) => {
+  // Check for new structure: top-level cost or effects with cost field
+  if (item.cost) return item.cost
+
+  if (item.effects && item.effects.length > 0) {
+    const costEffect = item.effects.find(effect => effect.cost)
+    if (costEffect) return costEffect.cost
+  }
+
+  // Check for old structure
+  return item.system?.resource ? `${item.system.resource} Malice` : null
+}
+
 const isValid = computed(() => {
   // Validate that all items have names and required fields
   return formData.items.every(item => {
     if (!item.name || item.name.trim() === '') return false
     if (item.type === 'feature') {
-      return item.system.description?.value && item.system.description.value.trim() !== ''
+      // Check new format first, then fallback to old format
+      if (item.effects && item.effects.length > 0) {
+        return item.effects.some(effect => effect.effect && effect.effect.trim() !== '')
+      }
+      return item.system?.description?.value && item.system.description.value.trim() !== ''
     }
     // For abilities, we just need a name for now
     return true
@@ -536,6 +549,10 @@ watch(isValid, (valid) => {
   font-weight: var(--font-weight-semibold);
 }
 
+.detail-row {
+  color: var(--color-neutral-800);
+}
+
 .power-tiers {
   display: flex;
   flex-direction: column;
@@ -561,7 +578,7 @@ watch(isValid, (valid) => {
 }
 
 .tier-display {
-  color: var(--color-neutral-700);
+  color: var(--color-neutral-800);
 }
 
 .effect-text,
@@ -573,6 +590,37 @@ watch(isValid, (valid) => {
   font-size: var(--font-size-sm);
   line-height: var(--line-height-relaxed);
   color: var(--color-neutral-800);
+}
+
+.effects-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: var(--color-neutral-800);
+}
+
+.effects-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-left: var(--space-4);
+}
+
+.effect-item {
+  background: white;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-200);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: var(--color-neutral-800);
+}
+
+.effect-name {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-600);
+  font-size: var(--font-size-sm);
 }
 
 .empty-state {

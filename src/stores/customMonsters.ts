@@ -11,10 +11,7 @@ export interface CustomMonster {
   role: string;
   organization: string;
   keywords?: string[];
-  size: {
-    value: number;
-    letter: string;
-  };
+  size: string;
   speed: number;
   stamina: number;
   stability: number;
@@ -28,7 +25,7 @@ export interface CustomMonster {
   };
   immunities?: Record<string, number>;
   weaknesses?: Record<string, number>;
-  movementTypes?: string[];
+  movementTypes?: Set<string>
   items?: Array<{
     name: string;
     type: string;

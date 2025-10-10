@@ -6,16 +6,14 @@
   "role": "Brute",
   "organization": "Elite",
   "keywords": [
-    "elemental"
+    "Elemental"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 5,
   "stamina": 132,
   "stability": 2,
   "freeStrike": 6,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": -1,
@@ -30,266 +28,100 @@
   ],
   "items": [
     {
-      "name": "Fickle and Free",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The force can't be restrained, slowed, or knocked prone, and they ignore difficult terrain.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Primordial Strength",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The force's strikes gain a +<span class=\"damage-value damage-generic\">6</span> damage bonus against objects.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Stone Swim",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The force can burrow through stone, but can't drag other creatures underground when they do so.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Slam Into Dirt",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 2
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "8 damage",
+          "tier2": "12 damage; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)",
+          "tier3": "15 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "8 damage"
-            },
-            {
-              "tier": 2,
-              "display": "12 damage; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "15 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The target's space is difficult terrain.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The target's space is difficult terrain."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Convocation of Quartz",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 5",
+      "target": "Self or one elemental",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Until the start of the force's next turn, any melee strike made against the target takes a bane if it doesn't already have a bane or double bane."
         },
-        "target": {
-          "type": "self",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Target: Self or one Elemental</p> <p>Until the start of the force's next turn, any melee strike made against the target takes a bane if it doesn't already have a bane or double bane.</p><p><span class=\"heal-value\">15</span> temporary stamina</p>"
-        },
-        "spend": {
-          "text": "Until the end of the encounter, the target grows a carapace  of stone. They have a +3 bonus to stability and gain [[/heal 15 temporary]] Stamina.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the target grows a carapace  of stone. They have a +3 bonus to stability and gain <span class=\"heal-value\">15</span> temporary stamina Stamina."
+        {
+          "cost": "3 Malice",
+          "effect": "Until the end of the encounter, the target grows a carapace of stone. They have a +3 bonus to stability and gain 15 temporary Stamina."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Break Armor",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 1,
-        "keywords": [
-          "-"
-        ],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "The force takes damage.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The force halves the damage, and has damage weakness 3 and a +3 bonus to speed until the end of the encounter. This damage weakness increases by 3 each time the force uses this ability in the same encounter.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "The force takes damage.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The force halves the damage, and has damage weakness 3 and a +3 bonus to speed until the end of the encounter. This damage weakness increases by 3 each time the force uses this ability in the same encounter."
         }
-      }
+      ]
     },
     {
-      "name": "Elemental Swap",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Fickle and Free",
+      "effects": [
+        {
+          "effect": "The force can't be restrained, slowed, or knocked prone, and they ignore difficult terrain."
         }
-      }
+      ]
     },
     {
-      "name": "Split",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Primordial Strength",
+      "effects": [
+        {
+          "effect": "The force's strikes gain a +6 damage bonus against objects."
         }
-      }
+      ]
     },
     {
-      "name": "Convocation of Chaos",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "ranged",
-          "primary": 8
-        },
-        "target": {
-          "type": "selfOrAlly"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Stone Swim",
+      "effects": [
+        {
+          "effect": "The force can burrow through stone, but can't drag other creatures underground when they do so."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "116",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

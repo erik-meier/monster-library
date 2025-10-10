@@ -6,16 +6,15 @@
   "role": "Harrier",
   "organization": "Minion",
   "keywords": [
-    "abyssal"
+    "Abyssal",
+    "Demon"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 8,
   "stamina": 15,
   "stability": 0,
   "freeStrike": 4,
+  "withCaptain": "+4 damage bonus to strikes",
   "characteristics": {
     "might": 2,
     "agility": 5,
@@ -28,152 +27,56 @@
     "holy": 5
   },
   "movementTypes": [
-    "walk",
     "swim"
   ],
   "items": [
     {
-      "name": "Breacher",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While swimming, the tyburaki can jump 5 squares as part of their movement.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Soulsight",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any creature within 2 squares of the tyburaki can't be hidden from them.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Tail Bite",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 3",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "4 damage",
+          "tier2": "7 damage",
+          "tier3": "9 damage"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 damage"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage"
-            },
-            {
-              "tier": 3,
-              "display": "9 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The tyburaki can make a free strike against each enemy adjacent to the target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The tyburaki can make a free strike against each enemy adjacent to the target."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The demon activates a Malice feature available to demons of level 9 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p><p><span class=\"reference-text\">Abyssal Jaunt</span></p><p><span class=\"reference-text\">Seeping Blight</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Breacher",
+      "effects": [
+        {
+          "effect": "While swimming, the tyburaki can jump 5 squares as part of their movement."
         }
-      }
+      ]
     },
     {
-      "name": "Soul Flense",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One demon acting this turn unleashes their pent-up agony and pain on every non-demon in a 5 burst. Each target makes a <strong>Presence test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"92\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">10</span> corruption damage; the target is soul flensed</p></td></tr><tr><td data-colwidth=\"92\"><p>12-16</p></td><td><p>The target is soul flensed</p></td></tr><tr><td data-colwidth=\"92\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table> <p>The demon removes all conditions and effects on themself that can be ended by a saving throw, and transfers all those effects to each creature soul flensed this way.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Soulsight",
+      "effects": [
+        {
+          "effect": "Any creature within 2 squares of the tyburaki can't be hidden from them."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "73",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

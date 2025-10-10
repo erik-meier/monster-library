@@ -65,14 +65,13 @@ The data processing pipeline consists of 3 streamlined steps:
 ```bash
 npm run clone-monsters
 ```
-- Clones latest monster data from draw-steel Foundry module to `data/monsters-original/`
+- Clones latest monster data from the [Steel Compendium bestiary](https://github.com/SteelCompendium/data-bestiary-json/tree/main) to `data/monsters-original/`
 
 #### 2. Process Monster Data  
 ```bash
 npm run process-monsters
 ```
-- Converts complex Foundry VTT files to simplified format
-- Processes Foundry text directives into HTML  
+- Converts bestiary files to simplified format
 - Applies consistent formatting and validation
 - Creates monster index for application
 - Outputs processed files to `data/monsters/`

@@ -1,0 +1,45 @@
+{
+  "id": "kobold-malice",
+  "name": "Kobold Malice",
+  "type": "featureblock",
+  "featureblockType": "Malice Features",
+  "level": 1,
+  "flavor": "At the start of any kobolds's turn, you can spend Malice to activate one of the following features.",
+  "features": [
+    {
+      "type": "feature",
+      "name": "Maniple Tactics",
+      "cost": "3 Malice",
+      "effects": [
+        {
+          "effect": "Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a free strike."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Set the Initiative",
+      "cost": "5 Malice",
+      "effects": [
+        {
+          "effect": "Two kobolds take their turns in a row."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Shield Wall",
+      "cost": "7 Malice",
+      "effects": [
+        {
+          "effect": "Until the end of the round, all kobolds with Shield? Shield! impose an additional bane on incoming strikes and abilities."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

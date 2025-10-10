@@ -3,11 +3,11 @@
     <div v-if="loading" class="loading">
       Loading monster...
     </div>
-    
+
     <div v-else-if="error" class="error">
       Error: {{ error }}
     </div>
-    
+
     <div v-else-if="monster && form">
       <div class="header">
         <h1>Edit Monster</h1>
@@ -18,20 +18,11 @@
         <!-- Basic Information -->
         <div class="form-section">
           <h2>Basic Information</h2>
-          
+
           <div class="form-group">
             <label for="name">Monster Name *</label>
-            <input 
-              type="text" 
-              id="name" 
-              ref="nameInput"
-              v-model="form.name" 
-              required 
-              class="form-control"
-              placeholder="Enter monster name"
-              aria-describedby="name-help"
-              @keydown.enter.prevent="focusNext"
-            >
+            <input type="text" id="name" ref="nameInput" v-model="form.name" required class="form-control"
+              placeholder="Enter monster name" aria-describedby="name-help" @keydown.enter.prevent="focusNext">
             <span id="name-help" class="form-help" aria-live="polite">
               Enter a unique name for your custom monster
             </span>
@@ -40,15 +31,8 @@
           <div class="form-row">
             <div class="form-group">
               <label for="level">Level *</label>
-              <input 
-                type="number" 
-                id="level" 
-                v-model.number="form.level" 
-                required 
-                min="1" 
-                max="20"
-                class="form-control"
-              >
+              <input type="number" id="level" v-model.number="form.level" required min="1" max="20"
+                class="form-control">
             </div>
 
             <div class="form-group">
@@ -85,67 +69,34 @@
         <!-- Combat Stats -->
         <div class="form-section">
           <h2>Combat Statistics</h2>
-          
+
           <div class="form-row">
             <div class="form-group">
               <label for="ev">Encounter Value (EV) *</label>
-              <input 
-                type="number" 
-                id="ev" 
-                v-model.number="form.ev" 
-                required 
-                min="1"
-                class="form-control"
-              >
+              <input type="number" id="ev" v-model.number="form.ev" required min="1" class="form-control">
             </div>
 
             <div class="form-group">
               <label for="speed">Speed *</label>
-              <input 
-                type="number" 
-                id="speed" 
-                v-model.number="form.speed" 
-                required 
-                min="1"
-                class="form-control"
-              >
+              <input type="number" id="speed" v-model.number="form.speed" required min="1" class="form-control">
             </div>
 
             <div class="form-group">
               <label for="stamina">Stamina *</label>
-              <input 
-                type="number" 
-                id="stamina" 
-                v-model.number="form.stamina" 
-                required 
-                min="1"
-                class="form-control"
-              >
+              <input type="number" id="stamina" v-model.number="form.stamina" required min="1" class="form-control">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="stability">Stability *</label>
-              <input 
-                type="number" 
-                id="stability" 
-                v-model.number="form.stability" 
-                required 
-                class="form-control"
-              >
+              <input type="number" id="stability" v-model.number="form.stability" required class="form-control">
             </div>
 
             <div class="form-group">
               <label for="freeStrike">Free Strike *</label>
-              <input 
-                type="number" 
-                id="freeStrike" 
-                v-model.number="form.freeStrike" 
-                required 
-                min="0"
-                class="form-control"
-              >
+              <input type="number" id="freeStrike" v-model.number="form.freeStrike" required min="0"
+                class="form-control">
             </div>
           </div>
         </div>
@@ -153,29 +104,18 @@
         <!-- Size -->
         <div class="form-section">
           <h2>Size</h2>
-          
+
           <div class="form-row">
             <div class="form-group">
               <label for="sizeValue">Size Value *</label>
-              <input 
-                type="number" 
-                id="sizeValue" 
-                v-model.number="form.size.value" 
-                required 
-                min="1"
-                class="form-control"
-              >
+              <input type="number" id="sizeValue" v-model.number="form.size.value" required min="1"
+                class="form-control">
             </div>
 
             <div class="form-group">
               <label for="sizeLetter">Size Category *</label>
-              <select 
-                id="sizeLetter" 
-                v-model="form.size.letter" 
-                required 
-                class="form-control"
-                :disabled="form.size.value > 1"
-              >
+              <select id="sizeLetter" v-model="form.size.letter" required class="form-control"
+                :disabled="form.size.value > 1">
                 <option value="">Select size...</option>
                 <option value="T">Tiny (T)</option>
                 <option value="S">Small (S)</option>
@@ -192,61 +132,35 @@
         <!-- Characteristics -->
         <div class="form-section">
           <h2>Characteristics</h2>
-          
+
           <div class="characteristics-grid">
             <div class="form-group">
               <label for="might">Might *</label>
-              <input 
-                type="number" 
-                id="might" 
-                v-model.number="form.characteristics.might" 
-                required 
-                class="form-control"
-              >
+              <input type="number" id="might" v-model.number="form.characteristics.might" required class="form-control">
             </div>
 
             <div class="form-group">
               <label for="agility">Agility *</label>
-              <input 
-                type="number" 
-                id="agility" 
-                v-model.number="form.characteristics.agility" 
-                required 
-                class="form-control"
-              >
+              <input type="number" id="agility" v-model.number="form.characteristics.agility" required
+                class="form-control">
             </div>
 
             <div class="form-group">
               <label for="reason">Reason *</label>
-              <input 
-                type="number" 
-                id="reason" 
-                v-model.number="form.characteristics.reason" 
-                required 
-                class="form-control"
-              >
+              <input type="number" id="reason" v-model.number="form.characteristics.reason" required
+                class="form-control">
             </div>
 
             <div class="form-group">
               <label for="intuition">Intuition *</label>
-              <input 
-                type="number" 
-                id="intuition" 
-                v-model.number="form.characteristics.intuition" 
-                required 
-                class="form-control"
-              >
+              <input type="number" id="intuition" v-model.number="form.characteristics.intuition" required
+                class="form-control">
             </div>
 
             <div class="form-group">
               <label for="presence">Presence *</label>
-              <input 
-                type="number" 
-                id="presence" 
-                v-model.number="form.characteristics.presence" 
-                required 
-                class="form-control"
-              >
+              <input type="number" id="presence" v-model.number="form.characteristics.presence" required
+                class="form-control">
             </div>
           </div>
         </div>
@@ -294,7 +208,7 @@ export default {
   },
   async mounted() {
     await this.loadMonster()
-    
+
     // Set up focus management
     this.$nextTick(() => {
       if (this.$refs.nameInput) {
@@ -327,23 +241,23 @@ export default {
     async loadMonster() {
       this.loading = true
       this.error = null
-      
+
       try {
         const monster = this.customMonstersStore.getMonster(this.monsterId)
-        
+
         if (!monster) {
           throw new Error('Monster not found')
         }
-        
+
         this.monster = monster
-        
+
         // Check if this is an official monster (not custom)
         if (!this.isCustomMonster) {
           // Redirect to the monster view page instead of showing a dialog
           this.$router.replace(`/monster/${this.monsterId}`)
           return
         }
-        
+
         // Initialize the form with monster data
         this.initializeForm(monster)
       } catch (err) {
@@ -352,7 +266,7 @@ export default {
         this.loading = false
       }
     },
-    
+
     initializeForm(monster) {
       this.form = {
         name: monster.name,
@@ -380,14 +294,14 @@ export default {
         actions: monster.actions || []
       }
     },
-    
+
     async handleSubmit() {
       this.submitting = true
-      
+
       try {
         // Update the custom monster
         const success = this.customMonstersStore.updateMonster(this.monsterId, this.form)
-        
+
         if (success) {
           // Redirect back to the monster view
           this.$router.push(`/monster/${this.monsterId}`)
@@ -401,11 +315,11 @@ export default {
         this.submitting = false
       }
     },
-    
+
     goBack() {
       this.$router.go(-1)
     },
-    
+
     focusNext(event) {
       // Find the next focusable element
       const form = event.target.closest('form')
@@ -414,7 +328,7 @@ export default {
       )
       const currentIndex = Array.from(focusableElements).indexOf(event.target)
       const nextElement = focusableElements[currentIndex + 1]
-      
+
       if (nextElement) {
         nextElement.focus()
       }
@@ -598,7 +512,8 @@ export default {
   cursor: not-allowed;
 }
 
-.loading, .error {
+.loading,
+.error {
   text-align: center;
   padding: 2rem;
   font-size: 1.2rem;
@@ -619,21 +534,21 @@ export default {
   .monster-edit {
     padding: 1rem;
   }
-  
+
   .monster-form {
     padding: 1rem;
   }
-  
+
   .form-row,
   .characteristics-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .form-actions,
   .dialog-actions {
     flex-direction: column;
   }
-  
+
   .copy-dialog {
     margin: 0.5rem;
   }

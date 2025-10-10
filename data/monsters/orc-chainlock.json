@@ -6,16 +6,15 @@
   "role": "Hexer",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Orc"
   ],
-  "size": {
-    "value": 1,
-    "letter": "L"
-  },
+  "size": "1L",
   "speed": 5,
   "stamina": 20,
   "stability": 2,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": 2,
@@ -30,228 +29,73 @@
   ],
   "items": [
     {
-      "name": "Chain Link",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Whenever the chainlock is force moved by a creature’s melee abil ity, the creature is pulled the same distance toward the chainlock after the forced movement is resolved.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Relentless",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>If the chainlock is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">3</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the chainlock is reduced to 1 Stamina instead.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Hook and Chain",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 3
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 3",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage; pull 1; <strong class=\"potency-value\">M&lt;0</strong> the target is hooked (save ends)",
+          "tier2": "7 damage; pull 2; <strong class=\"potency-value\">M&lt;1</strong> the target is hooked (save ends)",
+          "tier3": "9 damage; pull 3; <strong class=\"potency-value\">M&lt;2</strong> the target is hooked (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage; <strong class=\"potency-value\">M&lt;0</strong> the target is hooked (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage; <strong class=\"potency-value\">M&lt;1</strong> the target is hooked (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 damage; <strong class=\"potency-value\">M&lt;2</strong> the target is hooked (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A hooked target can’t move more than 3 squares away from the chainlock’s position when this ability is used.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A hooked target can't move more than 3 squares away from the chainlock's position when this ability is used."
         }
-      }
+      ]
     },
     {
-      "name": "Overwhelming March",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each orc shifts up to their speed, moving through enemy spaces if they can. Each enemy passed through during this movement makes a <strong>Might test.</strong></p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">6</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; prone</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Mohler Trench",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>An orc acting this turn summons 2 mohlers out of the ground, who dig a trench that is a 10 × 1 line within 10 squares when they appear. The trench is 2 squares deep and is difficult terrain. The trench can’t be created directly underneath creatures.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Mohler Cavity",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The ground shakes as a group of mohlers dig a 5 cube pit beneath an area where at least one creature is on the ground. The area is difficult terrain. Each orc in the area can shift into the nearest unoccupied space outside the pit before it is completed. Each non orc in the area makes an Agility test.</p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls; prone and can’t stand (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> damage; the target falls</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>The target can shift into the nearest unoccupied space outside the pit.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
       "name": "Heavy Crossbolt",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 3,
-        "keywords": [
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage; <strong class=\"potency-value\">A&lt;0</strong> slowed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage; <strong class=\"potency-value\">A&lt;1</strong> slowed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 damage; Prone; <strong class=\"potency-value\">A&lt;2</strong> slowed (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "3 Malice",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 5",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage; <strong class=\"potency-value\">A&lt;0</strong> slowed (save ends)",
+          "tier2": "7 damage; <strong class=\"potency-value\">A&lt;1</strong> slowed (save ends)",
+          "tier3": "9 damage; prone; <strong class=\"potency-value\">A&lt;2</strong> slowed (save ends)"
         }
-      }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Chain Link",
+      "effects": [
+        {
+          "effect": "Whenever the chainlock is force moved by a creature's melee ability, the creature is pulled the same distance toward the chainlock after the forced movement is resolved."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Relentless",
+      "effects": [
+        {
+          "effect": "If the chainlock is reduced to 0 Stamina, they can make a free strike before dying. If the target of the free strike is reduced to 0 Stamina, the chainlock is reduced to 1 Stamina instead."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "217",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

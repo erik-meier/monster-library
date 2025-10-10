@@ -6,16 +6,15 @@
   "role": "",
   "organization": "Leader",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Kobold"
   ],
-  "size": {
-    "value": 1,
-    "letter": "S"
-  },
+  "size": "1S",
   "speed": 5,
   "stamina": 80,
   "stability": 2,
   "freeStrike": 2,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": 3,
@@ -30,369 +29,143 @@
   ],
   "items": [
     {
-      "name": "Shield? Shield!",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While adjacent to an ally who also has this trait, the centurion has stability 3, has cover, and grants cover to allies.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "End Effect",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the end of each of their turns, the centurion can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Maniple Tactics",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">2</span> damage free strike</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Set the Initiative",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two kobolds take their turns in a row.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Shield Wall",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Boom Pilum!",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area",
-          "ranged",
-          "weapon"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 5,
-          "secondary": 10
-        },
-        "target": {
-          "type": "enemy"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The centurion uses Pilum against each target and has a double edge. Each target is then pushed up to 3 squares.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Firetail Pilum",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7+5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "10+5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "13+5 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The centurion moves up to their speed, ignoring difficult terrain, and uses Pilum against each creature whose space they move through. They make one power roll against all targets, and the ability deals an extra <span class=\"damage-value damage-generic\">5</span> damage. While weakened by that ability, each target takes <span class=\"damage-value damage-generic\">2</span> fire damage at the start of each of their turns.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Are You Not Entertained?!",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 10
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A target who has <strong class=\"potency-value\">P&lt;2</strong> is taunted (save ends). Each ally within distance can make a <span class=\"damage-value damage-generic\">2</span> damage free strike. Additionally, until the end of the encounter, the centurion has damage immunity 2.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Testudo!",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
-        },
-        "target": {
-          "type": "ally",
-          "value": null
-        },
-        "trigger": "A creature uses an ability that targets the centurion or an ally  of the centurion within distance.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target shifts up to 2 squares before the damage is resolved. Each kobold with the Shield? Shield! trait gains damage immunity 2 against the triggering ability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Concentrate All Fire on That Hero!",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "enemy",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the start of the centurion’s next turn, the centurion and their allies gain an edge on power rolls against the target.</p>"
-        },
-        "spend": {
-          "text": "This ability targets one additional target for each 3 Malice spent.",
-          "value": null
-        }
-      }
-    },
-    {
       "name": "Pilum",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "meleeRanged",
-          "primary": 1,
-          "secondary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1 or ranged 10",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "7 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)",
+          "tier2": "10 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)",
+          "tier3": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
+        {
+          "name": "Effect",
+          "effect": "Each ally adjacent to a target can make a free strike against that target."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "10 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "13 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Each ally adjacent to a target can make a free strike against that target.</p>"
-        },
-        "spend": {
-          "text": "While weakened this way, a target is also restrained",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> While weakened this way, a target is also restrained"
+        {
+          "cost": "3 Malice",
+          "effect": "While weakened this way, a target is also restrained."
         }
-      }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Concentrate All Fire on That Hero!",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "One enemy",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Until the start of the centurion's next turn, the centurion and their allies gain an edge on power rolls against the target."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Testudo!",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Triggered action",
+      "distance": "5 burst",
+      "target": "Each ally in the area",
+      "trigger": "A creature uses an ability that targets the centurion or an ally of the centurion within distance.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target shifts up to 2 squares before the damage is resolved. Each kobold with the Shield? Shield! trait gains damage immunity 2 against the triggering ability."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "End Effect",
+      "effects": [
+        {
+          "effect": "At the end of each of their turns, the centurion can take 5 damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Firetail Pilum",
+      "ability_type": "Villain Action 1",
+      "keywords": [
+        "-"
+      ],
+      "usage": "-",
+      "distance": "Special",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The centurion moves up to their speed, ignoring difficult terrain, and uses Pilum against each creature whose space they move through. They make one power roll against all targets, and the ability deals an extra 5 damage. While weakened by that ability, each target takes 2 fire damage at the start of each of their turns."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Boom Pilum!",
+      "ability_type": "Villain Action 2",
+      "keywords": [
+        "Area",
+        "Weapon",
+        "Ranged"
+      ],
+      "usage": "-",
+      "distance": "5 cube within 10",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The centurion uses Pilum against each target and has a double edge. Each target is then pushed up to 3 squares."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Are You Not Entertained?!",
+      "ability_type": "Villain Action 3",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "-",
+      "distance": "10 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "A target who has <strong class=\"potency-value\">P&lt;2</strong> is taunted (save ends). Each ally within distance can make a free strike. Additionally, until the end of the encounter, the centurion has damage immunity 2."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Shield? Shield!",
+      "effects": [
+        {
+          "effect": "While adjacent to an ally who also has this trait, the centurion has stability 3, has cover, and grants cover to allies."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "194",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

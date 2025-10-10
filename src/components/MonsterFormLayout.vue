@@ -138,7 +138,7 @@ interface TemplateMonster {
   organization: string
   keywords: string[]
   description: string
-  size: { value: number; letter: string }
+  size: string
   speed: number
   stamina: number
   stability: number
@@ -150,7 +150,7 @@ interface TemplateMonster {
     intuition: number
     presence: number
   }
-  movementTypes: string[]
+  movementTypes: Set<string>
   items: MonsterItem[]
 }
 
@@ -300,13 +300,13 @@ function handleTemplateSelected(template: TemplateMonster) {
     role: template.role,
     organization: template.organization.toLowerCase(), // Normalize to lowercase
     keywords: template.keywords || [],
-    size: template.size || { value: 1, letter: 'M' },
+    size: template.size,
     speed: template.speed,
     stamina: template.stamina,
     stability: template.stability,
     freeStrike: template.freeStrike,
     characteristics: template.characteristics,
-    movementTypes: template.movementTypes || ['walk'],
+    movementTypes: template.movementTypes || new Set(['walk']),
     immunities: {},
     weaknesses: {},
     items: template.items || []

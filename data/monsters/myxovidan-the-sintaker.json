@@ -1,0 +1,127 @@
+{
+  "id": "myxovidan-the-sintaker",
+  "name": "Myxovidan The Sintaker",
+  "level": 6,
+  "ev": 32,
+  "role": "Hexer",
+  "organization": "Elite",
+  "keywords": [
+    "Draconian",
+    "Dragon",
+    "Humanoid"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 140,
+  "stability": 2,
+  "freeStrike": 7,
+  "withCaptain": "",
+  "characteristics": {
+    "might": -1,
+    "agility": 3,
+    "reason": 2,
+    "intuition": 2,
+    "presence": 1
+  },
+  "immunities": {
+    "corruption": 6
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Breaking Palm",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two enemies",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "10 damage; <strong class=\"potency-value\">M&lt;1</strong> weakened (save ends)",
+          "tier2": "15 damage; <strong class=\"potency-value\">M&lt;2</strong> weakened (save ends)",
+          "tier3": "18 corruption damage; <strong class=\"potency-value\">M&lt;3</strong> weakened (save ends)"
+        },
+        {
+          "cost": "2 Malice",
+          "effect": "Myxovidan regains Stamina equal to half the damage dealt."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Expunging Exhalation",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Main action",
+      "distance": "2 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "7 corruption damage; <strong class=\"potency-value\">M&lt;1</strong> the target has corruption weakness 3 (save ends)",
+          "tier2": "12 corruption damage; <strong class=\"potency-value\">M&lt;2</strong> the target has corruption weakness 3 (save ends)",
+          "tier3": "15 corruption damage; <strong class=\"potency-value\">M&lt;3</strong> the target has corruption weakness 3 (save ends)"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Step and Swap",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 3",
+      "target": "One ally",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Myxovidan and the target shift to swap places."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Anyone Can Do That",
+      "cost": "2 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "An adjacent creature damages Myxovidan with a melee ability.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Myxovidan recreates the ability to use it against the triggering creature. If the ability has a power roll, Myxovidan uses his highest characteristic score for the roll. If Myxovidan gets a higher tier outcome than the triggering creature, the Director gains 2 Malice."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Stench of Death",
+      "effects": [
+        {
+          "effect": "Whenever an enemy regains Stamina while within 5 squares of Myxovidan, they regain 3 less Stamina."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

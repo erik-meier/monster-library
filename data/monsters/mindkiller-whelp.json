@@ -1,0 +1,87 @@
+{
+  "id": "mindkiller-whelp",
+  "name": "Mindkiller Whelp",
+  "level": 6,
+  "ev": 8,
+  "role": "Hexer",
+  "organization": "Minion",
+  "keywords": [
+    "Horror",
+    "Voiceless Talker"
+  ],
+  "size": "1S",
+  "speed": 4,
+  "stamina": 9,
+  "stability": 0,
+  "freeStrike": 3,
+  "withCaptain": "+2 damage bonus to strikes",
+  "characteristics": {
+    "might": -1,
+    "agility": 3,
+    "reason": 1,
+    "intuition": 1,
+    "presence": 0
+  },
+  "immunities": {
+    "psychic": 6
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly",
+    "hover"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Eager Claws",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 damage",
+          "tier2": "5 damage; the target takes a bane on their next strike",
+          "tier3": "7 damage; the target takes a bane on their next strike"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Feast",
+      "keywords": [
+        "Psionic"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "The whelp reduces a non-minion creature to 0 Stamina.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The whelp transforms into a mindkiller whose Stamina equals their squad's Stamina pool before transforming. The Stamina pool then loses the whelp's Stamina."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Psionic Conductor",
+      "effects": [
+        {
+          "effect": "Whenever a non-minion voiceless talker within 5 squares of the whelp uses a psionic ability, they can do so as if they were in the whelp's space."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}
