@@ -437,7 +437,7 @@ async function generateMonsterStatBlocksHTML(
     }
 
     // Generate compact stat block
-    html += generateCompactStatBlock(fullMonster, encounterMonster.count)
+    html += generateCompactStatBlock(fullMonster as Record<string, unknown>, encounterMonster.count)
   }
 
   return html
@@ -447,10 +447,13 @@ async function generateMonsterStatBlocksHTML(
  * Generate a compact stat block for a monster
  */
 function generateCompactStatBlock(monster: Record<string, unknown>, count: number): string {
-  const characteristics = (monster.characteristics as Record<string, number>) || {}
-  const immunities = (monster.immunities as Record<string, number>) || {}
-  const weaknesses = (monster.weaknesses as Record<string, number>) || {}
-  const items = (monster.items as Array<Record<string, unknown>>) || []
+  const characteristics = (monster.characteristics as Record<string, number> | undefined) || {}
+  const immunities = (monster.immunities as Record<string, number> | undefined) || {}
+  const weaknesses = (monster.weaknesses as Record<string, number> | undefined) || {}
+  const items = (monster.items as Array<Record<string, unknown>> | undefined) || []
+  const size = monster.size as { value?: number; letter?: string } | undefined
+  const keywords = monster.keywords as string[] | undefined
+  const movementTypes = monster.movementTypes as string[] | undefined
 
   return `
     <div style="
@@ -472,7 +475,7 @@ function generateCompactStatBlock(monster: Record<string, unknown>, count: numbe
           font-size: 0.85rem;
           color: #737373;
         ">
-          ${formatMonsterRole(monster)} • ${formatKeywords(monster.keywords)} • ${formatMonsterEV(monster)}
+          ${formatMonsterRole(monster)} • ${formatKeywords(keywords || [])} • ${formatMonsterEV(monster)}
         </div>
       </div>
 
@@ -486,8 +489,8 @@ function generateCompactStatBlock(monster: Record<string, unknown>, count: numbe
         margin-bottom: 6px;
         font-size: 0.85rem;
       ">
-        <div><strong>Size:</strong> ${monster.size?.value}${monster.size?.letter || ''}</div>
-        <div><strong>Speed:</strong> ${monster.speed}</div>
+        <div><strong>Size:</strong> ${size?.value || ''}${size?.letter || ''}</div>
+        <div><strong>Speed:</strong> ${monster.speed || 0}</div>
         <div><strong>Stamina:</strong> 
           <span style="
             display: inline-block;
@@ -499,10 +502,10 @@ function generateCompactStatBlock(monster: Record<string, unknown>, count: numbe
             background: white;
             font-size: 1.1em;
             font-weight: bold;
-          ">${monster.stamina}</span>
+          ">${monster.stamina || 0}</span>
         </div>
-        <div><strong>Stability:</strong> ${monster.stability}</div>
-        <div><strong>Free Strike:</strong> ${formatCharacteristic(monster.freeStrike)}</div>
+        <div><strong>Stability:</strong> ${monster.stability || 0}</div>
+        <div><strong>Free Strike:</strong> ${formatCharacteristic((monster.freeStrike as number) || 0)}</div>
       </div>
 
       <!-- Characteristics -->
@@ -546,13 +549,13 @@ function generateCompactStatBlock(monster: Record<string, unknown>, count: numbe
       ">
         <strong>Immunity</strong> ${formatImmunity(immunities)} • 
         <strong>Weakness</strong> ${formatWeakness(weaknesses)} • 
-        <strong>Movement</strong> ${formatMovement(monster.movementTypes)}
+        <strong>Movement</strong> ${formatMovement(movementTypes ? new Set(movementTypes) : undefined)}
       </div>
 
       <div style="height: 1px; background: #8b4513; margin: 6px 0;"></div>
 
       <!-- Abilities (compact) -->
-      ${generateCompactAbilitiesHTML(items, monster.organization)}
+      ${generateCompactAbilitiesHTML(items, monster.organization as string | undefined)}
 
       <!-- Tracking Section -->
       <div style="
