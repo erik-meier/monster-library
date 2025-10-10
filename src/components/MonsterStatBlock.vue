@@ -56,13 +56,12 @@
       <span class="stat-item">
         <strong>Movement</strong> {{ formatMovement(monster.movementTypes) }}
       </span>
-      <template v-if="getWithCaptainAbilities().length > 0">
+      <template v-if="monster.withCaptain">
         <span class="stat-separator">•</span>
-        <span v-for="ability in getWithCaptainAbilities()" :key="ability.name" class="stat-item">
+        <div class="with-captain-ability">
           <span class="with-captain-label">With Captain:</span>
-          <span class="with-captain-text"
-            v-html="ability.system?.description?.value || ability.description || ''"></span>
-        </span>
+          <span class="with-captain-text" v-html="monster.withCaptain"></span>
+        </div>
       </template>
     </div>
     <div class="divider"></div>

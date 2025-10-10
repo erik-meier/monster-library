@@ -330,11 +330,18 @@ function generateStatBlockHTML(monster: Monster): string {
         font-size: 0.9rem;
         color: #404040;
       ">
-        <span><strong>Immunity</strong> ${formatImmunity(monster.immunities)}</span>
+        <span style="font-weight: bold; color: #8b4513; white-space: nowrap;"><strong>Immunity</strong></span><span style="color: #404040; margin-left: 4px; display: inline;"> ${formatImmunity(monster.immunities)}</span>
         <span style="color: #737373;">•</span>
-        <span><strong>Weakness</strong> ${formatWeakness(monster.weaknesses)}</span>
+        <span style="font-weight: bold; color: #8b4513; white-space: nowrap;"><strong>Weakness</strong></span><span style="color: #404040; margin-left: 4px; display: inline;"> ${formatWeakness(monster.weaknesses)}</span>
         <span style="color: #737373;">•</span>
-        <span><strong>Movement</strong> ${formatMovement(monster.movementTypes)}</span>
+        <span style="font-weight: bold; color: #8b4513; white-space: nowrap;"><strong>Movement</strong></span><span style="color: #404040; margin-left: 4px; display: inline;">${formatMovement(monster.movementTypes)}</span>
+        ${monster.withCaptain ? `
+        <span style="color: #737373;">•</span>
+        <span style="display: inline-flex; align-items: center; flex-wrap: wrap;">
+          <span style="font-weight: bold; color: #8b4513; white-space: nowrap;">With Captain:</span>
+          <span style="color: #404040; margin-left: 4px; display: inline;">${stripHTML(monster.withCaptain)}</span>
+        </span>
+        ` : ''}
       </div>
 
       <div class="divider" style="

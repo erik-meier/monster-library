@@ -15,6 +15,7 @@
   "stamina": 3,
   "stability": 0,
   "freeStrike": 2,
+  "withCaptain": "+5 bonus to ranged distance",
   "characteristics": {
     "might": 0,
     "agility": 2,

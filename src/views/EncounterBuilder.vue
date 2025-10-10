@@ -8,7 +8,7 @@
     <div class="builder-layout">
       <div class="builder-sidebar">
         <EncounterBudget :party="party" :monsters="encounterStore.monsters" />
-        <PartyConfiguration v-model="party" />
+        <PartyConfiguration :model-value="party" @update:model-value="updateParty" />
 
         <div class="encounter-management">
           <div class="management-actions">
@@ -186,10 +186,7 @@ import {
 const customMonstersStore = useCustomMonstersStore()
 const encounterStore = useEncounterStore()
 
-// State
-const party = ref<PartyConfig>({
-  heroes: [{ level: 3, victories: 0 }, { level: 3, victories: 0 }, { level: 3, victories: 0 }, { level: 3, victories: 0 }]
-})
+// State - party configuration is now stored in the encounter store
 const encounterMalice = ref<SimpleMaliceFeature[]>([])
 const searchQuery = ref('')
 const filterLevel = ref<string>('')
@@ -229,6 +226,14 @@ const allMaliceFeatures = ref<SimpleMaliceFeature[]>([])
 
 // Current encounter ID from store
 const currentEncounterId = computed(() => encounterStore.currentEncounterId)
+
+// Party configuration from store - using direct reference to avoid reactivity issues
+const party = computed(() => encounterStore.party)
+
+// Function to update party configuration
+function updateParty(newParty: PartyConfig) {
+  encounterStore.setParty(newParty)
+}
 
 // Watch for encounter being cleared and reset malice features
 watch(() => encounterStore.monsters.length, (newLength) => {

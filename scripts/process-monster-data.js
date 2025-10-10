@@ -214,6 +214,7 @@ function processStatblock(rawData, filePath) {
       stamina: parseInt(rawData.stamina) || 0,
       stability: rawData.stability || 0,
       freeStrike: rawData.free_strike || 0,
+      withCaptain: rawData.with_captain || '',
 
       // Characteristics
       characteristics: {

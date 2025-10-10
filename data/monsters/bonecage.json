@@ -14,6 +14,7 @@
   "stamina": 55,
   "stability": 5,
   "freeStrike": 4,
+  "withCaptain": "",
   "characteristics": {
     "might": 5,
     "agility": -2,

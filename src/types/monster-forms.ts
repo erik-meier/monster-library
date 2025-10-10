@@ -31,6 +31,9 @@ export interface MonsterFormData {
   immunities: Record<string, number>
   weaknesses: Record<string, number>
   
+  // Special Features
+  withCaptain?: string
+  
   // Abilities & Items
   items: MonsterItem[]
   
