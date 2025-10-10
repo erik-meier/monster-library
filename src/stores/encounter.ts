@@ -51,13 +51,14 @@ const STORAGE_KEY = 'savedEncounters'
 const AUTOSAVE_KEY = 'encounterAutosave'
 
 export const useEncounterStore = defineStore('encounter', {
-  state: (): EncounterState & { savedEncounters: Record<string, SavedEncounter>, isLoaded: boolean } => ({
+  state: (): EncounterState & { savedEncounters: Record<string, SavedEncounter>, isLoaded: boolean, currentEncounterId: string | null } => ({
     monsters: [],
     targetEV: 0,
     initiativeGroups: [],
     nextGroupId: 1,
     savedEncounters: {},
-    isLoaded: false
+    isLoaded: false,
+    currentEncounterId: null
   }),
 
   getters: {
@@ -168,6 +169,7 @@ export const useEncounterStore = defineStore('encounter', {
       this.initiativeGroups = []
       this.nextGroupId = 1
       this.targetEV = 0
+      this.currentEncounterId = null
     },
 
     setTargetEV(ev: number) {
@@ -369,6 +371,9 @@ export const useEncounterStore = defineStore('encounter', {
 
       this.savedEncounters[id] = savedEncounter
       this.saveSavedEncountersToStorage()
+      
+      // Track this as the current encounter
+      this.currentEncounterId = id
 
       return id
     },
@@ -416,6 +421,7 @@ export const useEncounterStore = defineStore('encounter', {
       this.targetEV = encounter.targetEV
       this.initiativeGroups = JSON.parse(JSON.stringify(encounter.initiativeGroups))
       this.nextGroupId = encounter.nextGroupId
+      this.currentEncounterId = id
 
       return true
     },

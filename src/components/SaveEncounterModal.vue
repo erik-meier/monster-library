@@ -10,26 +10,14 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="encounter-name" class="form-label">Encounter Name *</label>
-            <input
-              id="encounter-name"
-              v-model="formData.name"
-              type="text"
-              class="form-input"
-              placeholder="e.g., Goblin Ambush"
-              required
-              autofocus
-            />
+            <input id="encounter-name" v-model="formData.name" type="text" class="form-input"
+              placeholder="e.g., Goblin Ambush" required autofocus />
           </div>
 
           <div class="form-group">
             <label for="encounter-description" class="form-label">Description (Optional)</label>
-            <textarea
-              id="encounter-description"
-              v-model="formData.description"
-              class="form-input"
-              rows="3"
-              placeholder="Add notes about this encounter..."
-            />
+            <textarea id="encounter-description" v-model="formData.description" class="form-input" rows="3"
+              placeholder="Add notes about this encounter..." />
           </div>
 
           <div v-if="validationError" class="validation-error">
@@ -101,28 +89,34 @@ const encounterStats = computed(() => {
   }
 })
 
-// Load existing encounter data when updating
-watch(() => props.existingEncounterId, (encounterId) => {
-  if (encounterId) {
-    const existing = encounterStore.getSavedEncounter(encounterId)
-    if (existing) {
-      formData.value.name = existing.name
-      formData.value.description = existing.description || ''
+// Load existing encounter data when updating or reset form for new encounter
+watch([() => props.isOpen, () => props.existingEncounterId], ([isOpen, encounterId]) => {
+  if (isOpen) {
+    validationError.value = null
+
+    if (encounterId) {
+      // Load existing encounter data
+      const existing = encounterStore.getSavedEncounter(encounterId)
+      if (existing) {
+        formData.value.name = existing.name
+        formData.value.description = existing.description || ''
+      }
+    } else {
+      // Reset form for new encounter
+      formData.value.name = ''
+      formData.value.description = ''
     }
   }
 }, { immediate: true })
 
-// Reset form when modal opens
-watch(() => props.isOpen, (isOpen) => {
-  if (isOpen && !props.existingEncounterId) {
-    formData.value.name = ''
-    formData.value.description = ''
-  }
-  validationError.value = null
-})
-
 function handleSubmit() {
   validationError.value = null
+
+  console.log('SaveEncounterModal handleSubmit:', {
+    isUpdate: isUpdate.value,
+    existingEncounterId: props.existingEncounterId,
+    formName: formData.value.name
+  })
 
   try {
     let encounterId: string
