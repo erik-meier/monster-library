@@ -166,19 +166,16 @@ const canBeCaptain = (monster: EncounterMonster) => {
   return !isMinion(monster) && hasMinionsInGroup.value
 }
 
-// For now, we'll use local state for captain status
-// This would ideally be stored in the encounter store
-const captains = ref<Set<string>>(new Set())
-
+// Use the isCaptain property from the monster store
 const isCaptain = (monster: EncounterMonster) => {
-  return captains.value.has(monster.id)
+  return monster.isCaptain || false
 }
 
 const toggleCaptain = (monster: EncounterMonster) => {
-  if (captains.value.has(monster.id)) {
-    captains.value.delete(monster.id)
-  } else {
-    captains.value.add(monster.id)
+  // Find the monster in the store and update its captain status
+  const storeMonster = encounterStore.monsters.find(m => m.id === monster.id)
+  if (storeMonster) {
+    storeMonster.isCaptain = !storeMonster.isCaptain
   }
 }
 

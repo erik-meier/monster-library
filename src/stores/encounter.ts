@@ -10,6 +10,7 @@ export interface EncounterMonster {
   organization: string
   count: number
   groupId?: string | null  // Reference to initiative group
+  isCaptain?: boolean  // Whether this monster is a captain
 }
 
 export interface InitiativeGroup {
@@ -25,6 +26,12 @@ export interface EncounterState {
   initiativeGroups: InitiativeGroup[]
   nextGroupId: number
   party: PartyConfiguration
+  maliceFeatures: Array<{
+    id: string
+    name: string
+    level: number
+    flavor?: string
+  }>
 }
 
 export interface SavedEncounter {
@@ -36,6 +43,12 @@ export interface SavedEncounter {
   initiativeGroups: InitiativeGroup[]
   nextGroupId: number
   party: PartyConfiguration
+  maliceFeatures: Array<{
+    id: string
+    name: string
+    level: number
+    flavor?: string
+  }>
   createdAt: string
   updatedAt: string
 }
@@ -67,6 +80,7 @@ export const useEncounterStore = defineStore('encounter', {
         { level: 3, victories: 0 }
       ]
     },
+    maliceFeatures: [],
     savedEncounters: {},
     isLoaded: false,
     currentEncounterId: null
@@ -180,6 +194,7 @@ export const useEncounterStore = defineStore('encounter', {
       this.initiativeGroups = []
       this.nextGroupId = 1
       this.targetEV = 0
+      this.maliceFeatures = []
       this.currentEncounterId = null
       // Note: Party configuration is preserved when clearing encounter
     },
@@ -190,6 +205,25 @@ export const useEncounterStore = defineStore('encounter', {
 
     setParty(party: PartyConfiguration) {
       this.party = JSON.parse(JSON.stringify(party)) // Deep copy
+    },
+
+    // Malice features actions
+    addMaliceFeature(maliceFeature: { id: string; name: string; level: number; flavor?: string }) {
+      const existing = this.maliceFeatures.find(m => m.id === maliceFeature.id)
+      if (!existing) {
+        this.maliceFeatures.push({ ...maliceFeature })
+      }
+    },
+
+    removeMaliceFeature(maliceId: string) {
+      const index = this.maliceFeatures.findIndex(m => m.id === maliceId)
+      if (index !== -1) {
+        this.maliceFeatures.splice(index, 1)
+      }
+    },
+
+    clearMaliceFeatures() {
+      this.maliceFeatures = []
     },
 
     // Initiative group actions
@@ -382,6 +416,7 @@ export const useEncounterStore = defineStore('encounter', {
         initiativeGroups: JSON.parse(JSON.stringify(this.initiativeGroups)), // Deep copy
         nextGroupId: this.nextGroupId,
         party: JSON.parse(JSON.stringify(this.party)), // Deep copy
+        maliceFeatures: JSON.parse(JSON.stringify(this.maliceFeatures)), // Deep copy
         createdAt: now,
         updatedAt: now
       }
@@ -418,6 +453,7 @@ export const useEncounterStore = defineStore('encounter', {
         initiativeGroups: JSON.parse(JSON.stringify(this.initiativeGroups)), // Deep copy
         nextGroupId: this.nextGroupId,
         party: JSON.parse(JSON.stringify(this.party)), // Deep copy
+        maliceFeatures: JSON.parse(JSON.stringify(this.maliceFeatures)), // Deep copy
         updatedAt: new Date().toISOString()
       }
 
@@ -447,6 +483,7 @@ export const useEncounterStore = defineStore('encounter', {
           { level: 3, victories: 0 }
         ]
       })) // Deep copy with fallback for old encounters
+      this.maliceFeatures = JSON.parse(JSON.stringify(encounter.maliceFeatures || [])) // Deep copy with fallback for old encounters
       this.currentEncounterId = id
 
       return true
@@ -474,6 +511,7 @@ export const useEncounterStore = defineStore('encounter', {
           initiativeGroups: this.initiativeGroups,
           nextGroupId: this.nextGroupId,
           party: this.party,
+          maliceFeatures: this.maliceFeatures,
           savedAt: new Date().toISOString()
         }
         localStorage.setItem(AUTOSAVE_KEY, JSON.stringify(autoSaveData))
@@ -492,6 +530,7 @@ export const useEncounterStore = defineStore('encounter', {
           this.targetEV = autoSaveData.targetEV || 0
           this.initiativeGroups = autoSaveData.initiativeGroups || []
           this.nextGroupId = autoSaveData.nextGroupId || 1
+          this.maliceFeatures = autoSaveData.maliceFeatures || []
           // Only restore party from auto-save if it exists in the auto-save data
           // This preserves any party configuration the user has already set up
           if (autoSaveData.party) {
@@ -540,6 +579,7 @@ export const useEncounterStore = defineStore('encounter', {
           initiativeGroups: this.initiativeGroups,
           nextGroupId: this.nextGroupId,
           party: this.party,
+          maliceFeatures: this.maliceFeatures,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString()
         }

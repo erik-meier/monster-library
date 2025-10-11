@@ -2,22 +2,13 @@ import html2canvas from 'html2canvas'
 import { jsPDF } from 'jspdf'
 import type { EncounterMonster, InitiativeGroup } from '@/stores/encounter'
 import type { PartyConfiguration } from '@/utils/encounterBalance'
-import { calculatePartyStrength } from '@/utils/encounterBalance'
-import {
-  formatKeywords,
-  formatMonsterRole,
-  formatMonsterEV,
-  formatImmunity,
-  formatWeakness,
-  formatMovement,
-  formatCharacteristic,
-  formatActionDistance,
-  formatActionTargets,
-  formatTierNumber,
-  stripHTML,
-  actionHasPowerRoll
-} from './formatters.ts'
+import { 
+  calculateBudgetUsage, 
+  getCurrentEncounterDifficulty 
+} from '@/utils/encounterBalance'
 import { getMonster } from '@/data/monsters.js'
+// @ts-expect-error - Dynamic import for data bundle
+import { getMaliceFeature } from '@/data/monsters-bundle.js'
 
 export interface EncounterExportData {
   name: string
@@ -28,44 +19,53 @@ export interface EncounterExportData {
   party: PartyConfiguration
   objectives?: string
   specialRules?: string
+  maliceFeatures?: Array<{
+    id: string
+    name: string
+    level: number
+    flavor?: string
+  }>
 }
 
 /**
- * Export encounter to PDF with complete stat blocks and initiative tracker
+ * Export encounter to PDF with template-based single-page layout
  */
 export async function exportEncounterToPDF(encounter: EncounterExportData): Promise<void> {
   try {
-    // Create PDF
+    // Create PDF in landscape for better template layout
     const pdf = new jsPDF({
-      orientation: 'portrait',
+      orientation: 'landscape',
       unit: 'mm',
       format: 'a4'
     })
 
     const pageWidthMm = pdf.internal.pageSize.getWidth()
     const pageHeightMm = pdf.internal.pageSize.getHeight()
-    const marginMm = 10
-    const footerMm = 6
+    const marginMm = 8
     const contentWidthMm = pageWidthMm - marginMm * 2
-    const contentHeightMm = pageHeightMm - marginMm * 2 - footerMm
+    const contentHeightMm = pageHeightMm - marginMm * 2
 
     // CSS mm to px conversion at 96 DPI
     const cssPxPerMm = 96 / 25.4
     const contentWidthPx = Math.floor(contentWidthMm * cssPxPerMm)
+    const contentHeightPx = Math.floor(contentHeightMm * cssPxPerMm)
 
-    // Create temporary container
+    // Create temporary container with fixed dimensions for single-page template
     const tempDiv = document.createElement('div')
     tempDiv.style.position = 'absolute'
     tempDiv.style.top = '-9999px'
     tempDiv.style.left = '-9999px'
     tempDiv.style.width = `${contentWidthPx}px`
+    tempDiv.style.height = `${contentHeightPx}px`
     tempDiv.style.maxWidth = `${contentWidthPx}px`
+    tempDiv.style.maxHeight = `${contentHeightPx}px`
     tempDiv.style.backgroundColor = 'white'
-    tempDiv.style.padding = '8mm'
+    tempDiv.style.padding = '6mm'
     tempDiv.style.boxSizing = 'border-box'
     tempDiv.style.fontFamily = 'Arial, sans-serif'
-    tempDiv.style.fontSize = '11px'
-    tempDiv.style.lineHeight = '1.3'
+    tempDiv.style.fontSize = '9px'
+    tempDiv.style.lineHeight = '1.2'
+    tempDiv.style.overflow = 'hidden'
 
     // Generate encounter sheet HTML
     tempDiv.innerHTML = await generateEncounterHTML(encounter)
@@ -74,7 +74,7 @@ export async function exportEncounterToPDF(encounter: EncounterExportData): Prom
     document.body.appendChild(tempDiv)
 
     // Wait for rendering
-    await new Promise(resolve => setTimeout(resolve, 300))
+    await new Promise(resolve => setTimeout(resolve, 500))
 
     // Capture as canvas
     const canvas = await html2canvas(tempDiv, {
@@ -82,52 +82,25 @@ export async function exportEncounterToPDF(encounter: EncounterExportData): Prom
       useCORS: true,
       allowTaint: true,
       backgroundColor: 'white',
-      width: tempDiv.scrollWidth,
-      height: tempDiv.scrollHeight,
-      windowWidth: tempDiv.scrollWidth,
-      windowHeight: tempDiv.scrollHeight
+      width: tempDiv.offsetWidth,
+      height: tempDiv.offsetHeight,
+      windowWidth: tempDiv.offsetWidth,
+      windowHeight: tempDiv.offsetHeight
     })
 
     // Remove from DOM
     document.body.removeChild(tempDiv)
 
-    // Convert canvas to image dimensions
-    const imgWidth = contentWidthMm
-    const imgHeight = (canvas.height * contentWidthMm) / canvas.width
+    // Add single page to PDF
+    const imgData = canvas.toDataURL('image/png')
+    pdf.addImage(imgData, 'PNG', marginMm, marginMm, contentWidthMm, contentHeightMm)
 
-    // Add images to PDF (handle multi-page if needed)
-    let offsetY = 0
-    let pageIndex = 0
-
-    while (offsetY < imgHeight) {
-      if (pageIndex > 0) {
-        pdf.addPage()
-      }
-
-      const currentSliceHeight = Math.min(contentHeightMm, imgHeight - offsetY)
-      const sourceY = (offsetY / imgHeight) * canvas.height
-      const sourceHeight = (currentSliceHeight / imgHeight) * canvas.height
-
-      // Create a temporary canvas for this slice
-      const sliceCanvas = document.createElement('canvas')
-      sliceCanvas.width = canvas.width
-      sliceCanvas.height = sourceHeight
-      const sliceCtx = sliceCanvas.getContext('2d')!
-      sliceCtx.drawImage(canvas, 0, sourceY, canvas.width, sourceHeight, 0, 0, canvas.width, sourceHeight)
-
-      const sliceImgData = sliceCanvas.toDataURL('image/png')
-      pdf.addImage(sliceImgData, 'PNG', marginMm, marginMm, imgWidth, currentSliceHeight)
-
-      // Add footer
-      pdf.setFontSize(8)
-      pdf.setTextColor(100)
-      const footerText = 'Generated with Steel Cauldron'
-      const textWidth = pdf.getTextWidth(footerText)
-      pdf.text(footerText, (pageWidthMm - textWidth) / 2, pageHeightMm - 5)
-
-      offsetY += currentSliceHeight
-      pageIndex++
-    }
+    // Add footer
+    pdf.setFontSize(7)
+    pdf.setTextColor(120)
+    const footerText = 'Generated with Steel Cauldron'
+    const textWidth = pdf.getTextWidth(footerText)
+    pdf.text(footerText, (pageWidthMm - textWidth) / 2, pageHeightMm - 3)
 
     // Download
     const fileName = `${encounter.name?.replace(/[^a-zA-Z0-9]/g, '_') || 'encounter'}_sheet.pdf`
@@ -140,453 +113,644 @@ export async function exportEncounterToPDF(encounter: EncounterExportData): Prom
 }
 
 /**
- * Generate HTML for the complete encounter sheet
+ * Generate a stat box like in the official template
  */
-async function generateEncounterHTML(encounter: EncounterExportData): Promise<string> {
-  const totalEV = encounter.monsters.reduce((sum, m) => sum + (m.ev * m.count), 0)
-  const totalMonsters = encounter.monsters.reduce((sum, m) => sum + m.count, 0)
-  
-  // Calculate party strength for comparison
-  const partyStrength = calculatePartyStrength(encounter.party)
+function generateStatBox(label: string, value: string): string {
+  return `
+    <div style="
+      border: 2px solid #000;
+      padding: 4px;
+      text-align: center;
+      background: white;
+    ">
+      <div style="
+        font-size: 8px;
+        font-weight: bold;
+        margin-bottom: 2px;
+        text-transform: uppercase;
+        color: #000;
+      ">${label}</div>
+      <div style="
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1;
+        color: #000;
+      ">${value}</div>
+    </div>
+  `
+}
 
-  // Get full monster data for stat blocks
-  const monsterDataPromises = encounter.monsters.map(async (encounterMonster) => {
+/**
+ * Get difficulty text based on EV vs party strength
+ */
+function getDifficultyText(encounter: EncounterExportData): string {
+  // Convert EncounterMonster[] to MonsterInEncounter[] format
+  const monsters = encounter.monsters.map(monster => ({
+    id: monster.id,
+    name: monster.name,
+    level: monster.level,
+    ev: monster.ev,
+    organization: monster.organization,
+    role: monster.role,
+    count: monster.count
+  }))
+  
+  // Calculate total encounter strength (EV)
+  const encounterStrength = calculateBudgetUsage(monsters)
+  
+  // Get difficulty based on party vs encounter strength
+  return getCurrentEncounterDifficulty(encounter.party, encounterStrength)
+}
+
+/**
+ * Get malice features for the encounter with full details
+ */
+function getMaliceFeatures(encounter: EncounterExportData): string {
+  // Use actual malice features from encounter data
+  if (!encounter.maliceFeatures || encounter.maliceFeatures.length === 0) {
+    return '<span style="color: #666; font-style: italic;">No malice features selected</span>'
+  }
+
+  // Calculate total text content length to determine font sizing
+  let totalContentLength = 0
+  const fullContentHTML: string[] = []
+  
+  // First pass: generate HTML and calculate total content length
+  encounter.maliceFeatures.forEach(feature => {
     try {
-      const fullMonster = await getMonster(encounterMonster.id)
-      return { encounterMonster, fullMonster: fullMonster as unknown }
+      // Get full malice feature data
+      const maliceData = getMaliceFeature(feature.id) as {
+        name: string
+        level?: number
+        flavor?: string
+        features?: Array<{
+          name: string
+          cost?: string
+          effects?: Array<{
+            effect?: string
+            tier1?: string
+            tier2?: string
+            tier3?: string
+          }>
+        }>
+      }
+      
+      if (!maliceData) {
+        const fallbackHTML = `<div style="margin-bottom: 8px;"><strong>${feature.name} (Level ${feature.level})</strong><br/>Feature data not found</div>`
+        fullContentHTML.push(fallbackHTML)
+        totalContentLength += (feature.name + feature.level).toString().length
+        return
+      }
+
+      // Calculate text content for this feature
+      let featureTextLength = maliceData.name.length
+      if (maliceData.flavor) featureTextLength += maliceData.flavor.length
+      
+      if (maliceData.features) {
+        maliceData.features.forEach(subFeature => {
+          featureTextLength += subFeature.name.length
+          if (subFeature.effects) {
+            subFeature.effects.forEach(effect => {
+              if (effect.effect) featureTextLength += effect.effect.length
+              if (effect.tier1) featureTextLength += effect.tier1.length
+              if (effect.tier2) featureTextLength += effect.tier2.length
+              if (effect.tier3) featureTextLength += effect.tier3.length
+            })
+          }
+        })
+      }
+      
+      totalContentLength += featureTextLength
+
+      let html = `<div style="margin-bottom: 12px; padding-left: 4px;">
+        <div style="font-weight: bold; color: #000; margin-bottom: 4px;">${maliceData.name}</div>`
+      
+      if (maliceData.level) {
+        html += `<div style="color: #666; margin-bottom: 4px;">Level ${maliceData.level}</div>`
+      }
+      
+      if (maliceData.flavor) {
+        html += `<div style="color: #333; font-style: italic; margin-bottom: 6px;">${maliceData.flavor}</div>`
+      }
+
+      // Add features if they exist
+      if (maliceData.features && maliceData.features.length > 0) {
+        maliceData.features.forEach((subFeature) => {
+          html += `<div style="margin-bottom: 6px;">
+            <div style="font-weight: bold; color: #000;">
+              ${subFeature.name}${subFeature.cost ? ` (${subFeature.cost})` : ''}
+            </div>`
+          
+          if (subFeature.effects && subFeature.effects.length > 0) {
+            subFeature.effects.forEach((effect) => {
+              if (effect.effect) {
+                html += `<div style="color: #333; margin: 2px 0;">${effect.effect}</div>`
+              }
+              
+              // Add tier effects if they exist
+              if (effect.tier1 || effect.tier2 || effect.tier3) {
+                html += `<div style="margin: 4px 0;">`
+                if (effect.tier1) {
+                  html += `<div style="margin: 1px 0;"><strong>Tier 1:</strong> ${effect.tier1}</div>`
+                }
+                if (effect.tier2) {
+                  html += `<div style="margin: 1px 0;"><strong>Tier 2:</strong> ${effect.tier2}</div>`
+                }
+                if (effect.tier3) {
+                  html += `<div style="margin: 1px 0;"><strong>Tier 3:</strong> ${effect.tier3}</div>`
+                }
+                html += `</div>`
+              }
+            })
+          }
+          html += `</div>`
+        })
+      }
+      
+      html += `</div>`
+      fullContentHTML.push(html)
     } catch (error) {
-      console.warn(`Could not load full data for monster ${encounterMonster.id}`, error)
-      return { encounterMonster, fullMonster: null as unknown }
+      console.warn('Error loading malice feature data:', feature.id, error)
+      const fallbackHTML = `<div style="margin-bottom: 8px;"><strong>${feature.name} (Level ${feature.level})</strong><br/>${feature.flavor || 'Feature details unavailable'}</div>`
+      fullContentHTML.push(fallbackHTML)
+      totalContentLength += (feature.name + (feature.flavor || 'Feature details unavailable')).length
     }
   })
 
-  const monstersWithData = await Promise.all(monsterDataPromises)
+  // Determine font sizes based on total content length
+  let titleFontSize = '11px'
+  let contentFontSize = '9px'
+  let featureFontSize = '10px'
+  
+  if (totalContentLength > 2000) {
+    // Very long content - make everything smaller
+    titleFontSize = '9px'
+    contentFontSize = '7px'
+    featureFontSize = '8px'
+  } else if (totalContentLength > 1000) {
+    // Long content - make moderately smaller
+    titleFontSize = '10px'
+    contentFontSize = '8px'
+    featureFontSize = '9px'
+  }
 
+  // Apply dynamic font sizing to the generated HTML
+  const styledHTML = fullContentHTML.map(html => {
+    return html
+      .replace(/font-size:\s*11px/g, `font-size: ${titleFontSize}`)
+      .replace(/font-size:\s*10px/g, `font-size: ${featureFontSize}`)
+      .replace(/font-size:\s*9px/g, `font-size: ${contentFontSize}`)
+  }).join('')
+
+  return styledHTML
+}
+
+/**
+ * Generate round tracker boxes (horizontal layout)
+ */
+function generateRoundBoxes(): string {
   return `
-    <div style="font-family: Arial, sans-serif;">
-      <!-- Header -->
-      <div style="margin-bottom: 12px; padding-bottom: 8px; border-bottom: 3px solid #8b4513;">
-        <h1 style="
-          margin: 0 0 4px 0;
-          font-size: 1.8rem;
-          color: #2c1810;
-          text-align: center;
-        ">${encounter.name}</h1>
-        ${encounter.description ? `
-          <p style="
-            margin: 0;
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-            font-style: italic;
-          ">${encounter.description}</p>
-        ` : ''}
-      </div>
-
-      <!-- Encounter Info -->
-      <div style="
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 12px;
-        padding: 8px;
-        background: #f8f8f8;
-        border-radius: 4px;
-        border: 1px solid #ddd;
-      ">
-        <div style="text-align: center;">
-          <div style="font-weight: bold; color: #8b4513; font-size: 1.1rem;">${totalEV}</div>
-          <div style="font-size: 0.75rem; color: #666;">Total EV</div>
-        </div>
-        ${encounter.targetEV > 0 ? `
-          <div style="text-align: center;">
-            <div style="font-weight: bold; color: #666; font-size: 1.1rem;">${encounter.targetEV}</div>
-            <div style="font-size: 0.75rem; color: #666;">Target EV</div>
-          </div>
-        ` : ''}
-        <div style="text-align: center;">
-          <div style="font-weight: bold; color: #666; font-size: 1.1rem;">${partyStrength}</div>
-          <div style="font-size: 0.75rem; color: #666;">Party Strength</div>
-        </div>
-        <div style="text-align: center;">
-          <div style="font-weight: bold; color: #666; font-size: 1.1rem;">${totalMonsters}</div>
-          <div style="font-size: 0.75rem; color: #666;">Monsters</div>
-        </div>
-        <div style="text-align: center;">
-          <div style="font-weight: bold; color: #666; font-size: 1.1rem;">${encounter.initiativeGroups.length}</div>
-          <div style="font-size: 0.75rem; color: #666;">Groups</div>
-        </div>
-      </div>
-
-      ${encounter.objectives || encounter.specialRules ? `
-        <div style="margin-bottom: 12px; padding: 8px; background: #fff3cd; border-left: 3px solid #ffc107; border-radius: 4px;">
-          ${encounter.objectives ? `
-            <div style="margin-bottom: 6px;">
-              <strong style="color: #856404;">Objectives:</strong> ${encounter.objectives}
-            </div>
-          ` : ''}
-          ${encounter.specialRules ? `
-            <div>
-              <strong style="color: #856404;">Special Rules:</strong> ${encounter.specialRules}
-            </div>
-          ` : ''}
-        </div>
-      ` : ''}
-
-      <!-- Initiative Tracker -->
-      <div style="margin-bottom: 12px;">
-        <h2 style="
-          margin: 0 0 8px 0;
-          font-size: 1.2rem;
-          color: #2c1810;
-          border-bottom: 2px solid #8b4513;
-          padding-bottom: 4px;
-        ">Initiative Tracker</h2>
-
-        ${generateInitiativeTrackerHTML(encounter, monstersWithData)}
-      </div>
-
-      <!-- Monster Stat Blocks -->
-      <div style="page-break-before: auto;">
-        <h2 style="
-          margin: 16px 0 8px 0;
-          font-size: 1.2rem;
-          color: #2c1810;
-          border-bottom: 2px solid #8b4513;
-          padding-bottom: 4px;
-        ">Monster Stat Blocks</h2>
-
-        ${await generateMonsterStatBlocksHTML(monstersWithData)}
-      </div>
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    ">
+      <span style="font-size: 12px; font-weight: bold; margin-right: 8px; color: #000;">Round</span>
+      ${Array.from({ length: 5 }, (_, i) => `
+        <div style="
+          border: 2px solid #000;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 11px;
+          font-weight: bold;
+          background: white;
+          color: #000;
+        ">${i + 1}</div>
+      `).join('')}
     </div>
   `
 }
 
 /**
- * Generate initiative tracker section
+ * Generate stamina tracker for a monster
  */
-function generateInitiativeTrackerHTML(
-  encounter: EncounterExportData,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  monstersWithData: Array<{ encounterMonster: EncounterMonster; fullMonster: unknown }>
-): string {
+function generateStaminaTracker(monster: EncounterMonster, stamina?: number): string {
+  if (!stamina) {
+    return '□'.repeat(monster.count)
+  }
+  
+  // For minions (stamina <= 5), show progressive totals like 3/6/9/12
+  if (stamina <= 5 && monster.count > 1) {
+    return Array.from({ length: monster.count }, (_, i) => 
+      (stamina * (i + 1)).toString()
+    ).join('/')
+  }
+  
+  // For regular monsters, show individual stamina values
+  return Array.from({ length: monster.count }, () => stamina.toString()).join('/')
+}
+
+/**
+ * Generate encounter roster table
+ */
+async function generateEncounterRosterTable(encounter: EncounterExportData): Promise<string> {
   const sortedGroups = [...encounter.initiativeGroups].sort((a, b) => a.order - b.order)
   const ungroupedMonsters = encounter.monsters.filter(m => !m.groupId)
-
-  let html = ''
-
-  // Generate grouped monsters
-  for (const group of sortedGroups) {
-    const groupMonsters = encounter.monsters.filter(m => m.groupId === group.id)
-    const groupEV = groupMonsters.reduce((sum, m) => sum + (m.ev * m.count), 0)
-    const groupCount = groupMonsters.reduce((sum, m) => sum + m.count, 0)
-
-    html += `
-      <div style="
-        margin-bottom: 10px;
-        padding: 8px;
-        border: 2px solid #8b4513;
-        border-radius: 4px;
-        background: white;
-        page-break-inside: avoid;
-      ">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-          <div style="flex: 1;">
-            <strong style="font-size: 1rem; color: #2c1810;">${group.name}</strong>
-            <span style="margin-left: 8px; color: #666; font-size: 0.85rem;">
-              ${groupCount} monster${groupCount !== 1 ? 's' : ''} • EV ${groupEV}
-            </span>
-          </div>
-          <div style="
-            border: 2px solid #666;
-            border-radius: 4px;
-            padding: 4px 8px;
-            min-width: 50px;
-            text-align: center;
-            background: white;
-          ">
-            <div style="font-size: 0.65rem; color: #666; margin-bottom: 2px;">INIT</div>
-            <div style="height: 18px;"></div>
-          </div>
-        </div>
-
-        ${groupMonsters.map(m => `
-          <div style="
-            display: flex;
-            justify-content: space-between;
-            padding: 4px 6px;
-            margin: 4px 0;
-            background: #f8f8f8;
-            border-radius: 3px;
-            font-size: 0.85rem;
-          ">
-            <div style="flex: 1;">
-              <strong>${m.name}</strong> (${m.count}×)
-              <span style="color: #666; margin-left: 6px;">
-                Lvl ${m.level} ${m.organization} ${m.role} • EV ${m.ev}
-              </span>
-            </div>
-          </div>
-        `).join('')}
-
-        <!-- Notes section for group -->
-        <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #ddd;">
-          <div style="font-size: 0.75rem; color: #666; margin-bottom: 4px;"><strong>Notes:</strong></div>
-          <div style="
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            padding: 6px;
-            min-height: 30px;
-            background: white;
-          "></div>
-        </div>
-      </div>
-    `
-  }
-
-  // Generate ungrouped monsters
-  if (ungroupedMonsters.length > 0) {
-    html += `
-      <div style="
-        margin-bottom: 10px;
-        padding: 8px;
-        border: 2px dashed #999;
-        border-radius: 4px;
-        background: #fafafa;
-        page-break-inside: avoid;
-      ">
-        <div style="margin-bottom: 6px;">
-          <strong style="font-size: 1rem; color: #666;">Ungrouped Monsters</strong>
-        </div>
-
-        ${ungroupedMonsters.map(m => `
-          <div style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 6px;
-            margin: 4px 0;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            font-size: 0.85rem;
-          ">
-            <div style="flex: 1;">
-              <strong>${m.name}</strong> (${m.count}×)
-              <span style="color: #666; margin-left: 6px;">
-                Lvl ${m.level} ${m.organization} ${m.role} • EV ${m.ev}
-              </span>
-            </div>
-            <div style="
-              border: 2px solid #999;
-              border-radius: 4px;
-              padding: 4px 8px;
-              min-width: 50px;
-              text-align: center;
-              background: white;
-            ">
-              <div style="font-size: 0.65rem; color: #666; margin-bottom: 2px;">INIT</div>
-              <div style="height: 18px;"></div>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    `
-  }
-
-  return html
-}
-
-/**
- * Generate monster stat blocks section
- */
-async function generateMonsterStatBlocksHTML(
-  monstersWithData: Array<{ encounterMonster: EncounterMonster; fullMonster: unknown }>
-): Promise<string> {
-  const uniqueMonsters = new Map<string, { encounterMonster: EncounterMonster; fullMonster: unknown }>()
   
-  // Get unique monsters (avoid duplicates)
-  for (const monsterData of monstersWithData) {
-    if (!uniqueMonsters.has(monsterData.encounterMonster.id)) {
-      uniqueMonsters.set(monsterData.encounterMonster.id, monsterData)
+  // Fetch monster data to get stamina values
+  const monsterDataMap = new Map<string, { stamina?: number }>()
+  for (const monster of encounter.monsters) {
+    if (!monsterDataMap.has(monster.id)) {
+      try {
+        // Extract base monster ID by removing timestamp suffix (everything after underscore)
+        const baseId = monster.id.split('_')[0]
+        const fullMonster = await getMonster(baseId) as { stamina?: number }
+        if (fullMonster && typeof fullMonster.stamina === 'number') {
+          monsterDataMap.set(monster.id, { stamina: fullMonster.stamina })
+        } else {
+          console.warn(`Monster ${baseId} (${monster.name}) has no stamina data or invalid stamina:`, fullMonster?.stamina)
+          monsterDataMap.set(monster.id, {})
+        }
+      } catch (error) {
+        console.warn(`Could not load full data for monster ${monster.id.split('_')[0]}`, error)
+        monsterDataMap.set(monster.id, {})
+      }
+    }
+  }
+  
+  // Combine grouped and ungrouped monsters for the table
+  const allMonsterEntries: Array<{
+    groupNumber: string
+    name: string
+    creatures: string
+    totalEV: number
+    staminaTracker: string
+    status: string
+  }> = []
+
+  // Add grouped monsters
+  for (let i = 0; i < sortedGroups.length; i++) {
+    const group = sortedGroups[i]
+    const groupMonsters = encounter.monsters.filter(m => m.groupId === group.id)
+    
+    // Add individual monsters in group with group number
+    for (const monster of groupMonsters) {
+      const monsterData = monsterDataMap.get(monster.id)
+      const captainIndicator = monster.isCaptain ? ' ★' : ''
+      allMonsterEntries.push({
+        groupNumber: (i + 1).toString(),
+        name: monster.name + captainIndicator,
+        creatures: `${monster.count}×`,
+        totalEV: monster.ev * monster.count,
+        staminaTracker: generateStaminaTracker(monster, monsterData?.stamina),
+        status: ''
+      })
     }
   }
 
-  let html = ''
-
-  for (const { encounterMonster, fullMonster } of uniqueMonsters.values()) {
-    if (!fullMonster) {
-      html += `
-        <div style="
-          margin-bottom: 12px;
-          padding: 8px;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          background: #f8f8f8;
-          page-break-inside: avoid;
-        ">
-          <h3 style="margin: 0 0 4px 0; color: #8b4513;">${encounterMonster.name}</h3>
-          <p style="margin: 0; color: #666; font-size: 0.85rem;">
-            Level ${encounterMonster.level} ${encounterMonster.organization} ${encounterMonster.role} • EV ${encounterMonster.ev}
-          </p>
-          <p style="margin: 4px 0 0 0; color: #999; font-style: italic; font-size: 0.85rem;">
-            Full stat block not available
-          </p>
-        </div>
-      `
-      continue
-    }
-
-    // Generate compact stat block
-    html += generateCompactStatBlock(fullMonster as Record<string, unknown>, encounterMonster.count)
+  // Add ungrouped monsters
+  for (const monster of ungroupedMonsters) {
+    const monsterData = monsterDataMap.get(monster.id)
+    const captainIndicator = monster.isCaptain ? ' ★' : ''
+    allMonsterEntries.push({
+      groupNumber: '-',
+      name: monster.name + captainIndicator,
+      creatures: `${monster.count}×`,
+      totalEV: monster.ev * monster.count,
+      staminaTracker: generateStaminaTracker(monster, monsterData?.stamina),
+      status: ''
+    })
   }
 
-  return html
+  return `
+    <table style="
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      color: #000;
+    ">
+      <thead>
+        <tr style="border-bottom: 2px solid #000; height: 36px;">
+          <th style="
+            padding: 8px 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            width: 8%;
+            color: #000;
+            vertical-align: middle;
+          ">Group</th>
+          <th style="
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 12px;
+            width: 22%;
+            color: #000;
+            vertical-align: middle;
+          ">Name ★=Captain</th>
+          <th style="
+            padding: 8px 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            width: 10%;
+            color: #000;
+            vertical-align: middle;
+          ">Count</th>
+          <th style="
+            padding: 8px 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            width: 8%;
+            color: #000;
+            vertical-align: middle;
+          ">EV</th>
+          <th style="
+            padding: 8px 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            width: 18%;
+            color: #000;
+            vertical-align: middle;
+          ">Stamina Tracker</th>
+          <th style="
+            padding: 8px 6px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 12px;
+            width: 34%;
+            color: #000;
+            vertical-align: middle;
+          ">Notes/Effects</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${allMonsterEntries.map((entry, index) => `
+          <tr style="${index % 2 === 0 ? 'background: #f8f8f8;' : ''} border-bottom: 1px solid #ccc; height: 40px;">
+            <td style="
+              padding: 8px 6px;
+              font-size: 12px;
+              text-align: center;
+              color: #000;
+              font-weight: bold;
+              vertical-align: middle;
+            ">${entry.groupNumber}</td>
+            <td style="
+              padding: 8px 6px;
+              font-size: 12px;
+              color: #000;
+              vertical-align: middle;
+            ">${entry.name}</td>
+            <td style="padding: 8px 6px; font-size: 12px; text-align: center; color: #000; vertical-align: middle;">${entry.creatures}</td>
+            <td style="padding: 8px 6px; text-align: center; font-size: 12px; font-weight: bold; color: #000; vertical-align: middle;">${entry.totalEV || ''}</td>
+            <td style="
+              padding: 8px 6px;
+              text-align: center;
+              font-size: 11px;
+              font-family: monospace;
+              letter-spacing: 1px;
+              color: #000;
+              font-weight: bold;
+              vertical-align: middle;
+            ">${entry.staminaTracker}</td>
+            <td style="
+              padding: 8px 6px;
+              font-size: 10px;
+              border-left: 1px solid #ddd;
+              min-height: 40px;
+              color: #000;
+              vertical-align: middle;
+            ">${entry.status}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `
 }
 
 /**
- * Generate a compact stat block for a monster
+ * Generate HTML for the template-based encounter sheet
  */
-function generateCompactStatBlock(monster: Record<string, unknown>, count: number): string {
-  const characteristics = (monster.characteristics as Record<string, number> | undefined) || {}
-  const immunities = (monster.immunities as Record<string, number> | undefined) || {}
-  const weaknesses = (monster.weaknesses as Record<string, number> | undefined) || {}
-  const items = (monster.items as Array<Record<string, unknown>> | undefined) || []
-  const size = monster.size as { value?: number; letter?: string } | undefined
-  const keywords = monster.keywords as string[] | undefined
-  const movementTypes = monster.movementTypes as string[] | undefined
+async function generateEncounterHTML(encounter: EncounterExportData): Promise<string> {
+  const totalMonsters = encounter.monsters.reduce((sum, m) => sum + m.count, 0)
+  const avgLevel = Math.round(encounter.monsters.reduce((sum, m) => 
+    sum + (m.level * m.count), 0) / Math.max(totalMonsters, 1))
+
+  // Get party size and victories from party configuration
+  const partySize = encounter.party.heroes.length
+  const totalVictories = encounter.party.heroes.reduce((sum, hero) => sum + hero.victories, 0)
 
   return `
     <div style="
-      margin-bottom: 12px;
-      padding: 10px;
-      border: 2px solid #8b4513;
-      border-radius: 4px;
-      background: white;
-      page-break-inside: avoid;
+      font-family: Arial, sans-serif;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 10px;
+      font-size: 12px;
+      color: #000;
     ">
-      <!-- Monster Header -->
-      <div style="margin-bottom: 6px;">
-        <h3 style="
-          margin: 0 0 2px 0;
-          font-size: 1.2rem;
-          color: #8b4513;
-        ">${monster.name} ${count > 1 ? `(${count}×)` : ''}</h3>
+      <!-- Header with encounter title -->
+      <div style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 0;
+        border-bottom: 3px solid #000;
+        border-top: 1px solid #000;
+        position: relative;
+      ">
+        <!-- Draw Steel branding in top left -->
         <div style="
-          font-size: 0.85rem;
-          color: #737373;
-        ">
-          ${formatMonsterRole(monster)} • ${formatKeywords(keywords || [])} • ${formatMonsterEV(monster)}
-        </div>
+          position: absolute;
+          left: 8px;
+          top: 8px;
+          font-size: 10px;
+          font-weight: bold;
+          color: #666;
+          letter-spacing: 1px;
+        ">DRAW STEEL</div>
+        
+        <div style="
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          height: 1px;
+          background: #000;
+        "></div>
+        <h1 style="
+          margin: 0;
+          font-size: 18px;
+          font-weight: bold;
+          letter-spacing: 2px;
+          text-align: center;
+          color: #000;
+        ">${encounter.name}</h1>
+        <div style="
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -1px;
+          height: 1px;
+          background: #000;
+        "></div>
       </div>
 
-      <div style="height: 1px; background: #8b4513; margin: 6px 0;"></div>
-
-      <!-- Core Stats -->
+      <!-- Main content area -->
       <div style="
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        gap: 6px;
-        margin-bottom: 6px;
-        font-size: 0.85rem;
+        grid-template-columns: 2fr 1fr;
+        gap: 15px;
+        height: 100%;
       ">
-        <div><strong>Size:</strong> ${size?.value || ''}${size?.letter || ''}</div>
-        <div><strong>Speed:</strong> ${monster.speed || 0}</div>
-        <div><strong>Stamina:</strong> 
-          <span style="
-            display: inline-block;
-            border: 2px solid #000;
-            border-radius: 3px;
-            padding: 2px 12px;
-            min-width: 40px;
-            text-align: center;
-            background: white;
-            font-size: 1.1em;
-            font-weight: bold;
-          ">${monster.stamina || 0}</span>
-        </div>
-        <div><strong>Stability:</strong> ${monster.stability || 0}</div>
-        <div><strong>Free Strike:</strong> ${formatCharacteristic((monster.freeStrike as number) || 0)}</div>
-      </div>
+        <!-- Left side: Encounter details and roster -->
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          ${encounter.description ? `
+            <!-- Encounter description -->
+            <div style="text-align: center; padding: 6px;">
+              <p style="
+                margin: 0;
+                font-size: 11px;
+                color: #333;
+                font-style: italic;
+              ">${encounter.description}</p>
+            </div>
+          ` : ''}
 
-      <!-- Characteristics -->
-      <div style="
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 6px;
-        margin-bottom: 6px;
-        font-size: 0.8rem;
-        padding: 6px;
-        background: #f8f8f8;
-        border-radius: 3px;
-      ">
-        <div style="text-align: center;">
-          <div style="font-size: 0.7rem; color: #666;">MIGHT</div>
-          <div style="font-weight: bold;">${formatCharacteristic(characteristics.might || 0)}</div>
-        </div>
-        <div style="text-align: center;">
-          <div style="font-size: 0.7rem; color: #666;">AGILITY</div>
-          <div style="font-weight: bold;">${formatCharacteristic(characteristics.agility || 0)}</div>
-        </div>
-        <div style="text-align: center;">
-          <div style="font-size: 0.7rem; color: #666;">REASON</div>
-          <div style="font-weight: bold;">${formatCharacteristic(characteristics.reason || 0)}</div>
-        </div>
-        <div style="text-align: center;">
-          <div style="font-size: 0.7rem; color: #666;">INTUITION</div>
-          <div style="font-weight: bold;">${formatCharacteristic(characteristics.intuition || 0)}</div>
-        </div>
-        <div style="text-align: center;">
-          <div style="font-size: 0.7rem; color: #666;">PRESENCE</div>
-          <div style="font-weight: bold;">${formatCharacteristic(characteristics.presence || 0)}</div>
-        </div>
-      </div>
-
-      <!-- Defense & Movement -->
-      <div style="
-        font-size: 0.8rem;
-        color: #404040;
-        margin-bottom: 6px;
-      ">
-        <strong>Immunity</strong> ${formatImmunity(immunities)} • 
-        <strong>Weakness</strong> ${formatWeakness(weaknesses)} • 
-        <strong>Movement</strong> ${formatMovement(movementTypes ? new Set(movementTypes) : undefined)}
-      </div>
-
-      <div style="height: 1px; background: #8b4513; margin: 6px 0;"></div>
-
-      <!-- Abilities (compact) -->
-      ${generateCompactAbilitiesHTML(items, monster.organization as string | undefined)}
-
-      <!-- Tracking Section -->
-      <div style="
-        margin-top: 8px;
-        padding: 6px;
-        background: #f8f8f8;
-        border-radius: 3px;
-        border: 1px solid #ddd;
-      ">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.8rem;">
-          <div>
-            <strong style="font-size: 0.75rem; color: #666;">Malice Tracker:</strong>
+          <!-- Condition boxes -->
+          <div style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0;
+          ">
             <div style="
               border: 2px solid #000;
-              border-radius: 3px;
               padding: 8px;
-              min-height: 25px;
+              text-align: left;
               background: white;
-              margin-top: 3px;
+            ">
+              <div style="
+                font-size: 10px;
+                font-weight: bold;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                color: #000;
+              ">SUCCESS CONDITION</div>
+              <div style="
+                min-height: 30px;
+                border-bottom: 1px solid #ccc;
+                margin: 4px 0;
+              "></div>
+            </div>
+            <div style="
+              border: 2px solid #000;
+              padding: 8px;
+              text-align: left;
+              background: white;
+            ">
+              <div style="
+                font-size: 10px;
+                font-weight: bold;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                color: #000;
+              ">FAILURE CONDITION</div>
+              <div style="
+                min-height: 30px;
+                border-bottom: 1px solid #ccc;
+                margin: 4px 0;
+              "></div>
+            </div>
+          </div>
+
+          <!-- Stats boxes -->
+          <div style="
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin: 8px 0;
+          ">
+            ${generateStatBox('NUMBER OF HEROES', partySize.toString())}
+            ${generateStatBox('AVERAGE LEVEL', avgLevel.toString())}
+            ${generateStatBox('HEROES\' VICTORIES', totalVictories.toString())}
+            ${generateStatBox('DIFFICULTY', getDifficultyText(encounter))}
+          </div>
+
+          <!-- Encounter roster (moved up and expanded) -->
+          <div style="
+            border: 2px solid #000;
+            padding: 8px;
+            flex: 1;
+          ">
+            <h3 style="
+              margin: 0 0 8px 0;
+              font-size: 14px;
+              font-weight: bold;
+              text-align: center;
+              text-decoration: underline;
+              color: #000;
+            ">ENCOUNTER ROSTER</h3>
+            
+            ${await generateEncounterRosterTable(encounter)}
+          </div>
+        </div>
+
+        <!-- Right side: Malice and round trackers -->
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <!-- Round tracker (horizontal) -->
+          <div style="
+            border: 2px solid #000;
+            padding: 10px;
+          ">
+            ${generateRoundBoxes()}
+          </div>
+
+          <!-- Malice tracker -->
+          <div style="
+            border: 2px solid #000;
+            padding: 10px;
+            text-align: center;
+          ">
+            <h3 style="
+              margin: 0 0 8px 0;
+              font-size: 14px;
+              font-weight: bold;
+              text-decoration: underline;
+              color: #000;
+            ">Malice</h3>
+            <div style="
+              border: 2px solid #000;
+              height: 80px;
+              background: white;
             "></div>
           </div>
-          <div>
-            <strong style="font-size: 0.75rem; color: #666;">Status/Conditions:</strong>
-            <div style="
-              border: 1px solid #999;
-              border-radius: 3px;
-              padding: 8px;
-              min-height: 25px;
-              background: white;
-              margin-top: 3px;
-            "></div>
+          
+          <!-- Malice features -->
+          <div style="
+            border: 2px solid #000;
+            padding: 10px;
+            flex: 1;
+          ">
+            <h4 style="
+              margin: 0 0 8px 0;
+              font-size: 12px;
+              font-weight: bold;
+              text-align: center;
+              text-decoration: underline;
+              color: #000;
+            ">MALICE FEATURES</h4>
+            <div style="font-size: 10px; line-height: 1.3; color: #000;">
+              ${getMaliceFeatures(encounter)}
+            </div>
           </div>
         </div>
       </div>
@@ -594,78 +758,4 @@ function generateCompactStatBlock(monster: Record<string, unknown>, count: numbe
   `
 }
 
-/**
- * Generate compact abilities HTML
- */
-function generateCompactAbilitiesHTML(items: Array<Record<string, unknown>>, organization?: string): string {
-  if (!items || items.length === 0) return '<div style="font-size: 0.85rem; color: #999; font-style: italic;">No abilities</div>'
 
-  return items.map(item => {
-    const system = item.system as Record<string, unknown> | undefined
-    const isSignature = system?.category === 'signature'
-    const hasPowerRoll = actionHasPowerRoll(item as never)
-    const distance = system?.distance as Record<string, unknown> | undefined
-    const target = system?.target as Record<string, unknown> | undefined
-    const trigger = system?.trigger as string | undefined
-    const power = system?.power as Record<string, unknown> | undefined
-    const effect = system?.effect as Record<string, string> | undefined
-    const description = system?.description as Record<string, string> | undefined
-    const keywords = system?.keywords as string[] | undefined
-
-    return `
-      <div style="margin-bottom: 8px; font-size: 0.8rem; page-break-inside: avoid;">
-        <div style="margin-bottom: 3px;">
-          <strong style="color: #8b4513; font-size: 0.9rem;">${item.name}</strong>
-          ${isSignature ? '<span style="color: #ff6b6b; font-size: 0.75rem; margin-left: 4px;">[SIGNATURE]</span>' : ''}
-          ${system?.type && system.type !== 'none' ? 
-            `<span style="color: #666; font-size: 0.75rem; margin-left: 4px;">(${system.type})</span>` : ''}
-        </div>
-
-        ${distance ? `
-          <div style="color: #666; font-size: 0.75rem; margin-bottom: 2px;">
-            ${formatActionDistance(distance as never)} • ${formatActionTargets(target as never, organization)}
-          </div>
-        ` : ''}
-
-        ${trigger ? `
-          <div style="
-            background: #fff3cd;
-            padding: 3px 5px;
-            border-radius: 2px;
-            font-size: 0.75rem;
-            margin-bottom: 3px;
-          ">
-            <strong>Trigger:</strong> ${stripHTML(trigger)}
-          </div>
-        ` : ''}
-
-        ${hasPowerRoll && power?.tiers ? `
-          <div style="margin: 3px 0; font-size: 0.75rem;">
-            ${(power.tiers as Array<Record<string, unknown>>).map((tier: Record<string, unknown>) => `
-              <div><strong>${formatTierNumber(tier.tier as number)}:</strong> ${stripHTML(tier.display as string)}</div>
-            `).join('')}
-          </div>
-        ` : ''}
-
-        ${effect?.text || description?.value ? `
-          <div style="color: #555; font-size: 0.75rem; line-height: 1.3;">
-            ${stripHTML(effect?.text || description?.value || '')}
-          </div>
-        ` : ''}
-
-        ${keywords && keywords.length > 0 ? `
-          <div style="
-            font-size: 0.7rem;
-            color: #999;
-            font-style: italic;
-            margin-top: 2px;
-            padding-top: 2px;
-            border-top: 1px solid #eee;
-          ">
-            ${formatKeywords(keywords)}
-          </div>
-        ` : ''}
-      </div>
-    `
-  }).join('')
-}

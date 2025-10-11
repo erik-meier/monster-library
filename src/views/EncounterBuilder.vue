@@ -17,8 +17,7 @@
               Save Encounter
             </button>
             <button type="button" class="btn btn-primary" @click="exportEncounterPDF"
-              :disabled="encounterStore.monsters.length === 0 || exportingPDF"
-              title="Export encounter sheet as PDF">
+              :disabled="encounterStore.monsters.length === 0 || exportingPDF" title="Export encounter sheet as PDF">
               {{ exportingPDF ? 'Exporting...' : '📄 Export PDF' }}
             </button>
             <button type="button" class="btn btn-secondary" @click="showLoadModal = !showLoadModal">
@@ -52,12 +51,12 @@
 
           <CollapsibleSection title="Malice Features" :expanded="encounterMaliceExpanded"
             @toggle="encounterMaliceExpanded = $event" ref="encounterMaliceSection">
-            <p v-if="encounterMalice.length === 0" class="empty-state">
+            <p v-if="encounterStore.maliceFeatures.length === 0" class="empty-state">
               No malice features added yet. Use the search below to add malice features to your encounter.
             </p>
 
             <div v-else class="malice-list">
-              <div v-for="malice in encounterMalice" :key="malice.id" class="malice-entry">
+              <div v-for="malice in encounterStore.maliceFeatures" :key="malice.id" class="malice-entry">
                 <div class="malice-info">
                   <h3 class="malice-name">{{ malice.name }}</h3>
                   <div class="malice-stats">
@@ -173,7 +172,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import PartyConfiguration from '@/components/PartyConfiguration.vue'
 import EncounterBudget from '@/components/EncounterBudget.vue'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
@@ -193,7 +192,6 @@ const customMonstersStore = useCustomMonstersStore()
 const encounterStore = useEncounterStore()
 
 // State - party configuration is now stored in the encounter store
-const encounterMalice = ref<SimpleMaliceFeature[]>([])
 const searchQuery = ref('')
 const filterLevel = ref<string>('')
 const filterOrg = ref<string>('')
@@ -242,13 +240,7 @@ function updateParty(newParty: PartyConfig) {
   encounterStore.setParty(newParty)
 }
 
-// Watch for encounter being cleared and reset malice features
-watch(() => encounterStore.monsters.length, (newLength) => {
-  // If monsters array is cleared, also clear malice features
-  if (newLength === 0) {
-    encounterMalice.value = []
-  }
-})
+// Watch is no longer needed since malice features are managed in the store
 
 onMounted(async () => {
   // Load all monsters and malice features using dynamic import
@@ -380,19 +372,18 @@ function addMonsterToEncounter(monster: SimpleMonster, count: number = 1) {
 
 
 function addMaliceToEncounter(malice: SimpleMaliceFeature) {
-  const existing = encounterMalice.value.find((m) => m.id === malice.id)
-  if (!existing) {
-    encounterMalice.value.push(malice)
-    updateCollapsibleHeights()
-  }
+  encounterStore.addMaliceFeature({
+    id: malice.id,
+    name: malice.name,
+    level: malice.level,
+    flavor: malice.flavor
+  })
+  updateCollapsibleHeights()
 }
 
 function removeMalice(id: string) {
-  const index = encounterMalice.value.findIndex((m) => m.id === id)
-  if (index !== -1) {
-    encounterMalice.value.splice(index, 1)
-    updateCollapsibleHeights()
-  }
+  encounterStore.removeMaliceFeature(id)
+  updateCollapsibleHeights()
 }
 
 // Encounter management handlers
@@ -453,7 +444,8 @@ async function exportEncounterPDF() {
       targetEV: encounterStore.targetEV,
       party: encounterStore.party,
       objectives: '', // Could be extended to support user-entered objectives
-      specialRules: '' // Could be extended to support user-entered special rules
+      specialRules: '', // Could be extended to support user-entered special rules
+      maliceFeatures: encounterStore.maliceFeatures
     }
 
     await exportEncounterToPDF(encounterData)
@@ -534,7 +526,6 @@ onMounted(() => {
 })
 
 // Clean up interval on unmount
-import { onUnmounted } from 'vue'
 onUnmounted(() => {
   if (autoSaveInterval) {
     clearInterval(autoSaveInterval)
