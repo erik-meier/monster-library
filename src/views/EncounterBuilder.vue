@@ -73,94 +73,116 @@
           </CollapsibleSection>
         </div>
 
+        <!-- Add Monsters and Malice Features -->
         <div class="section-card">
-          <CollapsibleSection title="Add Monsters" :expanded="monstersListExpanded"
-            @toggle="monstersListExpanded = $event">
-            <div class="search-section">
-              <input v-model="searchQuery" type="text" placeholder="Search monsters by name, level, or role..."
-                class="form-input search-input" />
+          <div class="section-navigator">
+            <button type="button" :class="['nav-tab', { active: activeSection === 'monsters' }]"
+              @click="switchToSection('monsters')">
+              🐉 Monsters
+            </button>
+            <button type="button" :class="['nav-tab', { active: activeSection === 'malice' }]"
+              @click="switchToSection('malice')">
+              ⚡ Malice Features
+            </button>
+          </div>
 
-              <div class="filter-controls">
-                <select v-model="filterLevel" class="form-input filter-select">
-                  <option value="">All Levels</option>
-                  <option v-for="level in 10" :key="level" :value="level">Level {{ level }}</option>
-                </select>
+          <!-- Content Container with fixed height -->
+          <div class="section-content-container">
+            <!-- Monsters Section -->
+            <div v-show="activeSection === 'monsters'" class="section-content">
+              <CollapsibleSection title="Add Monsters" :expanded="monstersListExpanded"
+                @toggle="monstersListExpanded = $event">
+                <div class="search-section">
+                  <input v-model="searchQuery" type="text" placeholder="Search monsters by name, level, or role..."
+                    class="form-input search-input" />
 
-                <select v-model="filterOrg" class="form-input filter-select">
-                  <option value="">All Organizations</option>
-                  <option value="Minion">Minion</option>
-                  <option value="Standard">Standard</option>
-                  <option value="Elite">Elite</option>
-                  <option value="Leader">Leader</option>
-                  <option value="Solo">Solo</option>
-                </select>
-              </div>
-            </div>
+                  <div class="filter-controls">
+                    <select v-model="filterLevel" class="form-input filter-select">
+                      <option value="">All Levels</option>
+                      <option v-for="level in 10" :key="level" :value="level">Level {{ level }}</option>
+                    </select>
 
-            <div v-if="filteredMonsters.length === 0" class="no-results">
-              No monsters match your search criteria.
-            </div>
-
-            <div v-else class="available-monsters">
-              <div v-for="monster in filteredMonsters.slice(0, 20)" :key="monster.id" class="available-monster">
-                <div class="monster-info">
-                  <h4 class="monster-name">{{ monster.name }}</h4>
-                  <div class="monster-stats">
-                    <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' +
-                      monster.role : '' }}</span>
-                    <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
+                    <select v-model="filterOrg" class="form-input filter-select">
+                      <option value="">All Organizations</option>
+                      <option value="Minion">Minion</option>
+                      <option value="Horde">Horde</option>
+                      <option value="Platoon">Platoon</option>
+                      <option value="Elite">Elite</option>
+                      <option value="Leader">Leader</option>
+                      <option value="Solo">Solo</option>
+                    </select>
                   </div>
                 </div>
-                <div class="monster-add-buttons">
-                  <button type="button" class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster)">
-                    + Add
-                  </button>
-                  <button v-if="monster.organization.toLowerCase() === 'minion'" type="button"
-                    class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster, 4)"
-                    title="Add a full group of 4 minions">
-                    + Add 4
-                  </button>
+
+                <div v-if="filteredMonsters.length === 0" class="no-results">
+                  No monsters match your search criteria.
                 </div>
-              </div>
-            </div>
 
-            <p v-if="filteredMonsters.length > 20" class="results-note">
-              Showing 20 of {{ filteredMonsters.length }} results. Refine your search to see more.
-            </p>
-          </CollapsibleSection>
-        </div>
-
-        <div class="section-card">
-          <CollapsibleSection title="Add Malice Features" :expanded="maliceListExpanded"
-            @toggle="maliceListExpanded = $event">
-            <div class="search-section">
-              <input v-model="maliceSearchQuery" type="text" placeholder="Search malice features by name or level..."
-                class="form-input search-input" />
-            </div>
-
-            <div v-if="filteredMaliceFeatures.length === 0" class="no-results">
-              No malice features match your search criteria.
-            </div>
-
-            <div v-else class="available-malice">
-              <div v-for="malice in filteredMaliceFeatures.slice(0, 20)" :key="malice.id" class="available-malice-item">
-                <div class="malice-info">
-                  <h4 class="malice-name">{{ malice.name }}</h4>
-                  <div class="malice-stats">
-                    <span class="stat-badge">Level {{ malice.level }}</span>
+                <div v-else class="available-monsters">
+                  <div v-for="monster in filteredMonsters.slice(0, 20)" :key="monster.id" class="available-monster">
+                    <div class="monster-info">
+                      <h4 class="monster-name">{{ monster.name }}</h4>
+                      <div class="monster-stats">
+                        <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ?
+                          '\
+                          ' + monster.role : '' }}</span>
+                        <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
+                      </div>
+                    </div>
+                    <div class="monster-add-buttons">
+                      <button type="button" class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster)">
+                        +1
+                      </button>
+                      <button v-if="monster.organization.toLowerCase() === 'minion'" type="button"
+                        class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster, 4)"
+                        title="Add a full group of 4 minions">
+                        +4
+                      </button>
+                    </div>
                   </div>
-                  <p v-if="malice.flavor" class="malice-flavor-preview">{{ malice.flavor }}</p>
                 </div>
-                <button type="button" class="btn btn-primary btn-sm" @click="addMaliceToEncounter(malice)">
-                  + Add
-                </button>
-              </div>
+
+                <p v-if="filteredMonsters.length > 20" class="results-note">
+                  Showing 20 of {{ filteredMonsters.length }} results. Refine your search to see more.
+                </p>
+              </CollapsibleSection>
             </div>
 
-            <p v-if="filteredMaliceFeatures.length > 20" class="results-note">
-              Showing 20 of {{ filteredMaliceFeatures.length }} results. Refine your search to see more.
-            </p>
-          </CollapsibleSection>
+            <!-- Malice Features Section -->
+            <div v-show="activeSection === 'malice'" class="section-content">
+              <CollapsibleSection title="Add Malice Features" :expanded="maliceListExpanded"
+                @toggle="maliceListExpanded = $event">
+                <div class="search-section">
+                  <input v-model="maliceSearchQuery" type="text"
+                    placeholder="Search malice features by name or level..." class="form-input search-input" />
+                </div>
+
+                <div v-if="filteredMaliceFeatures.length === 0" class="no-results">
+                  No malice features match your search criteria.
+                </div>
+
+                <div v-else class="available-malice">
+                  <div v-for="malice in filteredMaliceFeatures.slice(0, 20)" :key="malice.id"
+                    class="available-malice-item">
+                    <div class="malice-info">
+                      <h4 class="malice-name">{{ malice.name }}</h4>
+                      <div class="malice-stats">
+                        <span class="stat-badge">Level {{ malice.level }}</span>
+                      </div>
+                      <p v-if="malice.flavor" class="malice-flavor-preview">{{ malice.flavor }}</p>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm" @click="addMaliceToEncounter(malice)">
+                      + Add
+                    </button>
+                  </div>
+                </div>
+
+                <p v-if="filteredMaliceFeatures.length > 20" class="results-note">
+                  Showing 20 of {{ filteredMaliceFeatures.length }} results. Refine your search to see more.
+                </p>
+              </CollapsibleSection>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -204,6 +226,15 @@ const showSaveModal = ref(false)
 const showLoadModal = ref(false)
 const showTemplatesModal = ref(false)
 const exportingPDF = ref(false)
+
+// Navigator state for switching between sections
+const activeSection = ref<'monsters' | 'malice'>('monsters')
+
+// Smooth section switching
+function switchToSection(section: 'monsters' | 'malice') {
+  if (activeSection.value === section) return
+  activeSection.value = section
+}
 
 // Template refs for CollapsibleSection components
 const initiativeTrackerSection = ref()
@@ -790,6 +821,60 @@ onUnmounted(() => {
   overflow: hidden;
 }
 
+/* Section Navigator */
+.section-navigator {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+/* Section Content Container */
+.section-content-container {
+  position: relative;
+  min-height: 400px;
+  /* Provide a minimum height to reduce layout shifts */
+}
+
+.section-content {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.nav-tab {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.nav-tab:hover {
+  background: var(--color-neutral-200);
+  border-color: var(--color-neutral-400);
+}
+
+.nav-tab.active {
+  background: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-tab.active:hover {
+  background: var(--color-primary-700);
+  border-color: var(--color-primary-700);
+}
+
+
+
 /* Mobile responsive */
 @media (max-width: 1024px) {
   .builder-layout {
@@ -836,6 +921,11 @@ onUnmounted(() => {
 
   .filter-controls {
     flex-direction: column;
+  }
+
+  .nav-tab {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
   }
 }
 </style>
