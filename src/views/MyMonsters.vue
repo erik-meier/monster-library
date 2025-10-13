@@ -60,102 +60,84 @@
       </div>
 
       <div v-else class="monsters-section">
-        <h2>Your Custom Monsters ({{ customMonsters.length }})</h2>
-
-        <div class="monsters-grid">
-          <div v-for="monster in sortedCustomMonsters" :key="monster.id" class="monster-card">
-            <div class="monster-header">
-              <h3 class="monster-name">{{ monster.name }}</h3>
-              <div class="monster-level">Level {{ monster.level }}</div>
-            </div>
-
-            <div class="monster-details">
-              <div class="detail-row">
-                <span class="detail-label">Role:</span>
-                <span class="detail-value">{{ monster.role || 'None' }}</span>
+        <CollapsibleSection title="Custom Monsters" :expanded="true">
+          <div class="monsters-grid">
+            <div v-for="monster in sortedCustomMonsters" :key="monster.id" class="monster-card">
+              <div class="monster-card-header">
+                <h3 class="monster-name">{{ monster.name }}</h3>
+                <span class="monster-ev">EV {{ monster.ev }}</span>
               </div>
 
-              <div class="detail-row">
-                <span class="detail-label">Organization:</span>
-                <span class="detail-value">{{ monster.organization }}</span>
+              <div class="monster-card-footer">
+                <div class="monster-role">
+                  Level {{ monster.level }}{{ formatRoleOrganization(monster) ? ` ${formatRoleOrganization(monster)}`
+                  : '' }}
+                </div>
               </div>
 
-              <div class="detail-row">
-                <span class="detail-label">EV:</span>
-                <span class="detail-value">{{ monster.ev }}</span>
+              <div class="monster-meta">
+                <div class="created-date">
+                  Created: {{ formatDate(monster.createdAt) }}
+                </div>
+                <div v-if="monster.updatedAt !== monster.createdAt" class="updated-date">
+                  Updated: {{ formatDate(monster.updatedAt) }}
+                </div>
               </div>
 
+              <div class="monster-actions">
+                <router-link :to="`/monster/${monster.id}`" class="btn btn-sm btn-secondary">
+                  View
+                </router-link>
 
-            </div>
+                <router-link :to="`/monster/${monster.id}?edit=true`" class="btn btn-sm btn-primary">
+                  Edit
+                </router-link>
 
-            <div class="monster-meta">
-              <div class="created-date">
-                Created: {{ formatDate(monster.createdAt) }}
+                <button @click="deleteMonster(monster)" class="btn btn-sm btn-danger"
+                  :disabled="deleting === monster.id">
+                  {{ deleting === monster.id ? 'Deleting...' : 'Delete' }}
+                </button>
               </div>
-              <div v-if="monster.updatedAt !== monster.createdAt" class="updated-date">
-                Updated: {{ formatDate(monster.updatedAt) }}
-              </div>
-            </div>
-
-            <div class="monster-actions">
-              <router-link :to="`/monster/${monster.id}`" class="btn btn-sm btn-secondary">
-                View
-              </router-link>
-
-              <router-link :to="`/monster/${monster.id}?edit=true`" class="btn btn-sm btn-primary">
-                Edit
-              </router-link>
-
-              <button @click="deleteMonster(monster)" class="btn btn-sm btn-danger" :disabled="deleting === monster.id">
-                {{ deleting === monster.id ? 'Deleting...' : 'Delete' }}
-              </button>
             </div>
           </div>
-        </div>
+        </CollapsibleSection>
       </div>
 
       <!-- Custom Malice Features Section -->
       <div v-if="customMaliceFeatures.length > 0" class="malice-section">
-        <h2>Your Custom Malice Features ({{ customMaliceFeatures.length }})</h2>
-
-        <div class="malice-grid">
-          <div v-for="malice in customMaliceFeatures" :key="malice.id" class="malice-card">
-            <div class="malice-header">
-              <h3 class="malice-name">{{ malice.name }}</h3>
-              <div class="malice-level">Level {{ malice.level || 1 }}+</div>
-            </div>
-
-            <div class="malice-details">
-              <div class="detail-row">
-                <span class="detail-label">Features:</span>
-                <span class="detail-value">{{ malice.features?.length || 0 }}</span>
+        <CollapsibleSection title="Custom Malice Features" :expanded="true">
+          <div class="malice-grid">
+            <div v-for="malice in customMaliceFeatures" :key="malice.id" class="malice-card">
+              <div class="malice-card-header">
+                <h3 class="malice-name">{{ malice.name }}</h3>
+                <div class="malice-level">Level {{ malice.level || 1 }}+</div>
               </div>
-            </div>
 
-            <div class="malice-meta">
-              <div class="created-date">
-                Created: {{ formatDate(malice.createdAt) }}
+              <div class="malice-meta">
+                <div class="created-date">
+                  Created: {{ formatDate(malice.createdAt) }}
+                </div>
+                <div v-if="malice.updatedAt !== malice.createdAt" class="updated-date">
+                  Updated: {{ formatDate(malice.updatedAt) }}
+                </div>
               </div>
-              <div v-if="malice.updatedAt !== malice.createdAt" class="updated-date">
-                Updated: {{ formatDate(malice.updatedAt) }}
+
+              <div class="malice-actions">
+                <router-link :to="`/malice/${malice.id}`" class="btn btn-sm btn-secondary">
+                  View
+                </router-link>
+
+                <router-link :to="`/malice/${malice.id}`" class="btn btn-sm btn-primary">
+                  Edit
+                </router-link>
+
+                <button @click="deleteMaliceFeature(malice)" class="btn btn-sm btn-danger">
+                  Delete
+                </button>
               </div>
-            </div>
-
-            <div class="malice-actions">
-              <router-link :to="`/malice/${malice.id}`" class="btn btn-sm btn-secondary">
-                View
-              </router-link>
-
-              <router-link :to="`/malice/${malice.id}`" class="btn btn-sm btn-primary">
-                Edit
-              </router-link>
-
-              <button @click="deleteMaliceFeature(malice)" class="btn btn-sm btn-danger">
-                Delete
-              </button>
             </div>
           </div>
-        </div>
+        </CollapsibleSection>
       </div>
     </div>
 
@@ -190,6 +172,7 @@ import { useCustomMonstersStore } from '@/stores/customMonsters'
 import { useCustomMaliceStore } from '@/stores/customMalice'
 import ExportImportPanel from '@/components/ExportImportPanel.vue'
 import MonsterTemplates from '@/components/MonsterTemplates.vue'
+import CollapsibleSection from '@/components/CollapsibleSection.vue'
 import type { CustomMonster } from '@/stores/customMonsters'
 import type { MonsterItem } from '@/types/monster-forms'
 
@@ -256,6 +239,14 @@ function formatDate(dateString: string) {
     hour: '2-digit',
     minute: '2-digit'
   })
+}
+
+function formatRoleOrganization(monster: CustomMonster) {
+  if (!monster.role && !monster.organization) return ''
+  if (!monster.role) return monster.organization
+  if (!monster.organization) return monster.role
+  if (monster.role === monster.organization) return monster.role
+  return `${monster.organization} ${monster.role}`
 }
 
 function deleteMonster(monster: CustomMonster) {
@@ -449,13 +440,20 @@ onMounted(async () => {
   border: 2px solid var(--color-neutral-200);
 }
 
-.monsters-section h2 {
-  font-size: var(--font-size-2xl);
-  margin-bottom: var(--space-6);
-  color: var(--color-neutral-700);
-  border-bottom: 2px solid var(--color-neutral-200);
-  padding-bottom: var(--space-2);
-  font-weight: var(--font-weight-semibold);
+.monsters-section {
+  margin-bottom: var(--space-8);
+}
+
+.section-header {
+  margin-bottom: var(--space-4);
+  padding: var(--space-4) 0;
+}
+
+.section-count {
+  color: var(--color-neutral-600);
+  font-size: var(--font-size-sm);
+  margin: 0;
+  font-weight: var(--font-weight-medium);
 }
 
 .monsters-grid {
@@ -469,57 +467,79 @@ onMounted(async () => {
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
-  cursor: pointer;
   transition: var(--transition-all);
-  border-left: 4px solid var(--color-primary-600);
+  border: 1px solid var(--color-neutral-200);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.monster-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-primary-600), var(--color-primary-700));
+  transform: scaleY(1);
+  transition: transform var(--duration-normal) var(--ease-out);
 }
 
 .monster-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-200);
 }
 
-.monster-header {
+.monster-card:hover::before {
+  transform: scaleY(1.1);
+}
+
+.monster-card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: var(--space-4);
+  gap: var(--space-3);
 }
 
 .monster-name {
+  color: var(--color-primary-700);
   font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary-600);
   margin: 0;
+  font-weight: var(--font-weight-bold);
+  flex: 1;
+  line-height: var(--line-height-tight);
 }
 
-.monster-level {
-  background: var(--color-primary-600);
+.monster-ev {
+  background: var(--color-success-600);
   color: white;
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
 }
 
-.monster-details {
+.monster-card-footer {
   margin-bottom: var(--space-4);
 }
 
-.detail-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: var(--space-2);
-  font-size: var(--font-size-sm);
-}
-
-.detail-label {
-  color: var(--color-neutral-500);
-  font-weight: var(--font-weight-medium);
-}
-
-.detail-value {
-  color: var(--color-neutral-700);
+.monster-role {
+  background-color: var(--color-primary-600);
+  color: white;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+  text-transform: capitalize;
+  box-shadow: var(--shadow-sm);
+  display: inline-block;
 }
 
 .monster-meta {
@@ -665,13 +685,6 @@ onMounted(async () => {
   margin-top: var(--space-8);
 }
 
-.malice-section h2 {
-  color: var(--color-primary-700);
-  margin-bottom: var(--space-6);
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-}
-
 .malice-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -684,66 +697,96 @@ onMounted(async () => {
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-neutral-200);
-  transition: all 0.2s ease;
-  animation: fadeIn 0.3s ease;
+  transition: var(--transition-all);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.malice-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-warning-500), var(--color-warning-600));
+  transform: scaleY(1);
+  transition: transform var(--duration-normal) var(--ease-out);
 }
 
 .malice-card:hover {
-  border-color: var(--color-primary-300);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-warning-200);
 }
 
-.malice-header {
+.malice-card:hover::before {
+  transform: scaleY(1.1);
+}
+
+.malice-card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: var(--space-4);
-  flex-wrap: wrap;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 
 .malice-name {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary-700);
+  color: var(--color-warning-700);
   margin: 0;
   flex: 1;
+  line-height: var(--line-height-tight);
 }
 
 .malice-level {
-  background: var(--color-primary-600);
+  background: var(--color-warning-600);
   color: white;
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   white-space: nowrap;
+  box-shadow: var(--shadow-sm);
 }
 
-.malice-details {
+.malice-info {
   margin-bottom: var(--space-4);
 }
 
-.malice-flavor {
-  font-style: italic;
-  color: var(--color-neutral-600);
-  margin-top: var(--space-2);
-  line-height: var(--line-height-relaxed);
+.malice-feature-count {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-neutral-700);
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-warning-50);
+  border-radius: var(--radius-base);
+  border: 1px solid var(--color-warning-200);
+}
+
+.feature-icon {
+  font-size: var(--font-size-base);
 }
 
 .malice-meta {
   margin-bottom: var(--space-4);
   padding-top: var(--space-4);
   border-top: 1px solid var(--color-neutral-200);
-  color: var(--color-neutral-700);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
 }
 
 .malice-actions {
   display: flex;
-  gap: var(--space-3);
-  justify-content: flex-end;
+  gap: var(--space-2);
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
