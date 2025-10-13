@@ -18,7 +18,8 @@
               <span v-if="getResourceCost(action)" class="malice-cost">{{ getResourceCost(action) }}</span>
             </h4>
             <div class="action-power-info">
-              <span v-if="actionHasPowerRoll(action)" class="action-power-roll">{{
+              <span v-if="actionHasPowerRoll(action)" class="action-power-roll clickable"
+                @click="handlePowerRollClick(action)">{{
                 formatPowerRoll(getPowerRoll(action), chr) }}</span>
               <span class="action-type-badge" v-if="getActionType(action)">
                 {{ getActionType(action) }}
@@ -85,10 +86,15 @@
       </div>
     </div>
   </div>
+
+  <RollResultModal :show="showRollModal" :result="rollResult" :characteristicName="rollName"
+    @close="showRollModal = false" @reroll="rerollCurrent" />
 </template>
 
 <script>
+import { ref } from 'vue'
 import PowerRoll from './PowerRoll.vue'
+import RollResultModal from './RollResultModal.vue'
 import {
   formatActionDistance,
   formatActionTargets,
@@ -96,11 +102,13 @@ import {
   actionHasPowerRoll,
   extractDescription
 } from '@/utils/formatters'
+import { rollPowerRoll, parsePowerRollModifier } from '@/utils/diceRoller'
 
 export default {
   name: 'ActionsList',
   components: {
     PowerRoll,
+    RollResultModal,
   },
   props: {
     title: {
@@ -144,6 +152,59 @@ export default {
         if (bRes == null) return -1;
         return aRes - bRes;
       });
+    }
+  },
+  setup() {
+    const showRollModal = ref(false)
+    const rollResult = ref({
+      roll1: 1,
+      roll2: 1,
+      total: 2,
+      modifier: 0,
+      tier: 1
+    })
+    const rollName = ref('')
+    const currentFormula = ref('')
+
+    const handlePowerRollClick = (action) => {
+      // Get the power roll formula
+      let formula = ''
+      if (action.effects) {
+        const rollEffect = action.effects.find(effect => effect.roll)
+        if (rollEffect) formula = rollEffect.roll
+      } else {
+        formula = action.system?.power?.roll?.formula || ''
+      }
+
+      if (!formula) return
+
+      // Parse the formula to get the modifier
+      const modifier = parsePowerRollModifier(formula)
+      
+      // Store current formula for rerolls
+      currentFormula.value = formula
+      
+      // Set the roll name (action name)
+      rollName.value = action.name || 'Power Roll'
+      
+      // Perform the roll
+      rollResult.value = rollPowerRoll(modifier)
+      showRollModal.value = true
+    }
+
+    const rerollCurrent = () => {
+      if (currentFormula.value) {
+        const modifier = parsePowerRollModifier(currentFormula.value)
+        rollResult.value = rollPowerRoll(modifier)
+      }
+    }
+
+    return {
+      showRollModal,
+      rollResult,
+      rollName,
+      handlePowerRollClick,
+      rerollCurrent
     }
   },
   methods: {
@@ -615,6 +676,18 @@ export default {
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-sm);
+}
+
+.action-power-roll.clickable {
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.action-power-roll.clickable:hover {
+  background: var(--color-primary-100);
+  color: var(--color-primary-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .action-type-badge {

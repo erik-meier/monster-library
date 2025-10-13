@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { rollPowerRoll, calculateTier, getTierLabel } from '@/utils/diceRoller'
+import { rollPowerRoll, calculateTier, getTierLabel, parsePowerRollModifier } from '@/utils/diceRoller'
 
 describe('diceRoller', () => {
   describe('calculateTier', () => {
@@ -74,6 +74,33 @@ describe('diceRoller', () => {
       const result = rollPowerRoll(7)
       expect(result.modifier).toBe(7)
       expect(result.total).toBe(result.roll1 + result.roll2 + 7)
+    })
+  })
+
+  describe('parsePowerRollModifier', () => {
+    it('parses positive modifiers with spaces', () => {
+      expect(parsePowerRollModifier('2d10 + 5')).toBe(5)
+      expect(parsePowerRollModifier('2d10 + 2')).toBe(2)
+      expect(parsePowerRollModifier('2d10 + 10')).toBe(10)
+    })
+
+    it('parses positive modifiers without spaces', () => {
+      expect(parsePowerRollModifier('2d10+5')).toBe(5)
+      expect(parsePowerRollModifier('2d10+2')).toBe(2)
+    })
+
+    it('parses negative modifiers', () => {
+      expect(parsePowerRollModifier('2d10 - 2')).toBe(-2)
+      expect(parsePowerRollModifier('2d10-3')).toBe(-3)
+    })
+
+    it('returns 0 for formula with no modifier', () => {
+      expect(parsePowerRollModifier('2d10')).toBe(0)
+    })
+
+    it('returns 0 for empty or invalid formulas', () => {
+      expect(parsePowerRollModifier('')).toBe(0)
+      expect(parsePowerRollModifier('invalid')).toBe(0)
     })
   })
 })
