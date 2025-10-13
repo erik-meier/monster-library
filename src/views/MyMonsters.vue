@@ -60,100 +60,83 @@
       </div>
 
       <div v-else class="monsters-section">
-        <CollapsibleSection title="Your Custom Monsters" :expanded="true">
-          <template #default>
-            <div class="section-header">
-              <p class="section-count">{{ customMonsters.length }} monster{{ customMonsters.length !== 1 ? 's' : '' }}</p>
-            </div>
+        <CollapsibleSection title="Custom Monsters" :expanded="true">
+          <div class="monsters-grid">
+            <div v-for="monster in sortedCustomMonsters" :key="monster.id" class="monster-card">
+              <div class="monster-card-header">
+                <h3 class="monster-name">{{ monster.name }}</h3>
+                <span class="monster-ev">EV {{ monster.ev }}</span>
+              </div>
 
-            <div class="monsters-grid">
-              <div v-for="monster in sortedCustomMonsters" :key="monster.id" class="monster-card">
-                <div class="monster-card-header">
-                  <h3 class="monster-name">{{ monster.name }}</h3>
-                  <span class="monster-ev">EV {{ monster.ev }}</span>
-                </div>
-
-                <div class="monster-card-footer">
-                  <div class="monster-role">
-                    Level {{ monster.level }}{{ formatRoleOrganization(monster) ? ` ${formatRoleOrganization(monster)}` : '' }}
-                  </div>
-                </div>
-
-                <div class="monster-meta">
-                  <div class="created-date">
-                    Created: {{ formatDate(monster.createdAt) }}
-                  </div>
-                  <div v-if="monster.updatedAt !== monster.createdAt" class="updated-date">
-                    Updated: {{ formatDate(monster.updatedAt) }}
-                  </div>
-                </div>
-
-                <div class="monster-actions">
-                  <router-link :to="`/monster/${monster.id}`" class="btn btn-sm btn-secondary">
-                    View
-                  </router-link>
-
-                  <router-link :to="`/monster/${monster.id}?edit=true`" class="btn btn-sm btn-primary">
-                    Edit
-                  </router-link>
-
-                  <button @click="deleteMonster(monster)" class="btn btn-sm btn-danger" :disabled="deleting === monster.id">
-                    {{ deleting === monster.id ? 'Deleting...' : 'Delete' }}
-                  </button>
+              <div class="monster-card-footer">
+                <div class="monster-role">
+                  Level {{ monster.level }}{{ formatRoleOrganization(monster) ? ` ${formatRoleOrganization(monster)}`
+                  : '' }}
                 </div>
               </div>
+
+              <div class="monster-meta">
+                <div class="created-date">
+                  Created: {{ formatDate(monster.createdAt) }}
+                </div>
+                <div v-if="monster.updatedAt !== monster.createdAt" class="updated-date">
+                  Updated: {{ formatDate(monster.updatedAt) }}
+                </div>
+              </div>
+
+              <div class="monster-actions">
+                <router-link :to="`/monster/${monster.id}`" class="btn btn-sm btn-secondary">
+                  View
+                </router-link>
+
+                <router-link :to="`/monster/${monster.id}?edit=true`" class="btn btn-sm btn-primary">
+                  Edit
+                </router-link>
+
+                <button @click="deleteMonster(monster)" class="btn btn-sm btn-danger"
+                  :disabled="deleting === monster.id">
+                  {{ deleting === monster.id ? 'Deleting...' : 'Delete' }}
+                </button>
+              </div>
             </div>
-          </template>
+          </div>
         </CollapsibleSection>
       </div>
 
       <!-- Custom Malice Features Section -->
       <div v-if="customMaliceFeatures.length > 0" class="malice-section">
-        <CollapsibleSection title="Your Custom Malice Features" :expanded="true">
-          <template #default>
-            <div class="section-header">
-              <p class="section-count">{{ customMaliceFeatures.length }} malice feature{{ customMaliceFeatures.length !== 1 ? 's' : '' }}</p>
-            </div>
+        <CollapsibleSection title="Custom Malice Features" :expanded="true">
+          <div class="malice-grid">
+            <div v-for="malice in customMaliceFeatures" :key="malice.id" class="malice-card">
+              <div class="malice-card-header">
+                <h3 class="malice-name">{{ malice.name }}</h3>
+                <div class="malice-level">Level {{ malice.level || 1 }}+</div>
+              </div>
 
-            <div class="malice-grid">
-              <div v-for="malice in customMaliceFeatures" :key="malice.id" class="malice-card">
-                <div class="malice-card-header">
-                  <h3 class="malice-name">{{ malice.name }}</h3>
-                  <div class="malice-level">Level {{ malice.level || 1 }}+</div>
+              <div class="malice-meta">
+                <div class="created-date">
+                  Created: {{ formatDate(malice.createdAt) }}
                 </div>
-
-                <div class="malice-info">
-                  <div class="malice-feature-count">
-                    <span class="feature-icon">✨</span>
-                    <span>{{ malice.features?.length || 0 }} feature{{ (malice.features?.length || 0) !== 1 ? 's' : '' }}</span>
-                  </div>
-                </div>
-
-                <div class="malice-meta">
-                  <div class="created-date">
-                    Created: {{ formatDate(malice.createdAt) }}
-                  </div>
-                  <div v-if="malice.updatedAt !== malice.createdAt" class="updated-date">
-                    Updated: {{ formatDate(malice.updatedAt) }}
-                  </div>
-                </div>
-
-                <div class="malice-actions">
-                  <router-link :to="`/malice/${malice.id}`" class="btn btn-sm btn-secondary">
-                    View
-                  </router-link>
-
-                  <router-link :to="`/malice/${malice.id}`" class="btn btn-sm btn-primary">
-                    Edit
-                  </router-link>
-
-                  <button @click="deleteMaliceFeature(malice)" class="btn btn-sm btn-danger">
-                    Delete
-                  </button>
+                <div v-if="malice.updatedAt !== malice.createdAt" class="updated-date">
+                  Updated: {{ formatDate(malice.updatedAt) }}
                 </div>
               </div>
+
+              <div class="malice-actions">
+                <router-link :to="`/malice/${malice.id}`" class="btn btn-sm btn-secondary">
+                  View
+                </router-link>
+
+                <router-link :to="`/malice/${malice.id}`" class="btn btn-sm btn-primary">
+                  Edit
+                </router-link>
+
+                <button @click="deleteMaliceFeature(malice)" class="btn btn-sm btn-danger">
+                  Delete
+                </button>
+              </div>
             </div>
-          </template>
+          </div>
         </CollapsibleSection>
       </div>
     </div>
