@@ -6,10 +6,11 @@
       <div class="export-section">
         <h4>Export Monsters</h4>
         <div class="export-buttons">
-          <button class="btn btn-secondary" @click="exportAllCustomMonsters" :disabled="customMonsterCount === 0"
-            title="Export all your custom monsters as JSON">
+          <button class="btn btn-secondary" @click="exportAllCustomMonsters"
+            :disabled="customMonsterCount === 0 && customMaliceCount === 0"
+            title="Export all your custom monsters and malice features as JSON">
             <span class="btn-icon">📦</span>
-            Export All Custom ({{ customMonsterCount }})
+            Export All Custom ({{ customMonsterCount }} monsters, {{ customMaliceCount }} malice)
           </button>
 
           <button class="btn btn-outline" @click="createBackup" title="Create a full backup including all settings">
@@ -56,6 +57,15 @@
               <span class="stat-number">{{ importPreview.invalidMonsters }}</span>
               <span class="stat-label">Invalid</span>
             </div>
+            <div class="stat-item" v-if="importPreview.totalMaliceFeatures && importPreview.totalMaliceFeatures > 0">
+              <span class="stat-number">{{ importPreview.totalMaliceFeatures }}</span>
+              <span class="stat-label">Total Malice</span>
+            </div>
+            <div class="stat-item success"
+              v-if="importPreview.validMaliceFeatures && importPreview.validMaliceFeatures > 0">
+              <span class="stat-number">{{ importPreview.validMaliceFeatures }}</span>
+              <span class="stat-label">Valid Malice</span>
+            </div>
             <div class="stat-item warning" v-if="importPreview.warnings.length > 0">
               <span class="stat-number">{{ importPreview.warnings.length }}</span>
               <span class="stat-label">Warnings</span>
@@ -69,8 +79,9 @@
           <div class="preview-message-list">
             <div v-for="(warning, index) in importPreview.warnings" :key="index" class="preview-message-item warning">
               <div class="message-header">
-                <strong>{{ warning.monster }}</strong>
+                <strong>{{ warning.monster || warning.malice }}</strong>
                 <span class="warning-type" v-if="warning.type === 'id_collision'">ID Collision</span>
+                <span class="item-type-badge" v-if="warning.malice">Malice</span>
               </div>
               <div class="message-content">
                 {{ warning.message }}
@@ -88,7 +99,8 @@
           <div class="preview-message-list">
             <div v-for="(error, index) in importPreview.errors" :key="index" class="preview-message-item error">
               <div class="message-header">
-                <strong>{{ error.monster }}</strong>
+                <strong>{{ error.monster || error.malice }}</strong>
+                <span class="item-type-badge" v-if="error.malice">Malice</span>
               </div>
               <div class="message-content">
                 {{ error.error }}
@@ -138,10 +150,13 @@
         <h4>Import Results</h4>
         <div class="import-stats">
           <span class="stat">
-            <strong>{{ importResult.imported }}</strong> imported
+            <strong>{{ importResult.imported }}</strong> monsters imported
           </span>
           <span class="stat">
             <strong>{{ importResult.skipped }}</strong> skipped
+          </span>
+          <span class="stat" v-if="importResult.importedMalice && importResult.importedMalice > 0">
+            <strong>{{ importResult.importedMalice }}</strong> malice imported
           </span>
           <span class="stat" v-if="importResult.errors.length > 0">
             <strong>{{ importResult.errors.length }}</strong> errors
@@ -161,7 +176,7 @@
         <h5>⚠️ Warnings</h5>
         <div class="message-list">
           <div v-for="(warning, index) in importResult.warnings" :key="index" class="message-item warning">
-            <strong>{{ warning.monster }}:</strong>
+            <strong>{{ warning.monster || warning.malice }}{{ warning.malice ? ' (Malice)' : '' }}:</strong>
             {{ warning.message }}
             <br><small>{{ warning.action }}</small>
           </div>
@@ -173,7 +188,7 @@
         <h5>❌ Errors</h5>
         <div class="message-list">
           <div v-for="(error, index) in importResult.errors" :key="index" class="message-item error">
-            <strong>{{ error.monster || 'System' }}:</strong>
+            <strong>{{ error.monster || error.malice || 'System' }}{{ error.malice ? ' (Malice)' : '' }}:</strong>
             {{ error.error }}
             <div v-if="error.details && error.details.length > 0" class="error-details">
               <ul>
@@ -203,14 +218,15 @@
               Restore from Backup
             </label>
 
-            <button class="btn btn-danger" @click="showClearConfirm = true" title="Clear all custom monster data">
+            <button class="btn btn-danger" @click="showClearConfirm = true"
+              title="Clear all custom monster and malice data">
               <span class="btn-icon">🗑️</span>
               Clear All Data
             </button>
           </div>
 
           <p class="warning-text">
-            ⚠️ <strong>Warning:</strong> Restore will replace all existing custom monsters.
+            ⚠️ <strong>Warning:</strong> Restore will replace all existing custom monsters and malice features.
             Create a backup first if you want to preserve current data.
           </p>
         </div>
@@ -220,8 +236,8 @@
     <!-- Confirmation Dialog -->
     <div v-if="showClearConfirm" class="modal-overlay" @click.self="showClearConfirm = false">
       <div class="modal clear-confirm-modal">
-        <h3>Clear All Custom Monsters</h3>
-        <p>This will permanently delete all your custom monsters. This action cannot be undone.</p>
+        <h3>Clear All Custom Data</h3>
+        <p>This will permanently delete all your custom monsters and malice features. This action cannot be undone.</p>
         <p><strong>Are you sure you want to continue?</strong></p>
         <div class="modal-actions">
           <button class="btn btn-outline" @click="showClearConfirm = false">
@@ -239,6 +255,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
+import { useCustomMaliceStore } from '@/stores/customMalice'
 import {
   exportAllMonsters,
   importMonsters,
@@ -252,6 +269,7 @@ import {
 } from '@/utils/exportImport'
 
 const customMonstersStore = useCustomMonstersStore()
+const customMaliceStore = useCustomMaliceStore()
 
 // Refs
 const fileInput = ref<HTMLInputElement>()
@@ -264,19 +282,21 @@ const pendingImportContent = ref<string>('')
 
 // Computed
 const customMonsterCount = computed(() => customMonstersStore.customMonsterCount)
+const customMaliceCount = computed(() => customMaliceStore.getCustomMaliceCount)
 
 // Export functions
 function exportAllCustomMonsters() {
   const monsters = customMonstersStore.getAllCustomMonsters()
-  if (monsters.length === 0) return
+  const maliceFeatures = customMaliceStore.getAllCustomMalice
+  if (monsters.length === 0 && maliceFeatures.length === 0) return
 
-  const jsonContent = exportAllMonsters(monsters)
+  const jsonContent = exportAllMonsters(monsters, maliceFeatures)
   const filename = generateExportFilename('custom-monsters-export')
   downloadFile(jsonContent, filename)
 }
 
 function createBackup() {
-  const backupContent = createFullBackup()
+  const backupContent = createFullBackup(customMonstersStore, customMaliceStore)
   const filename = generateExportFilename('monster-library-backup')
   downloadFile(backupContent, filename)
 }
@@ -296,7 +316,7 @@ function handleFileUpload(event: Event) {
       importResult.value = null
 
       // Generate preview
-      importPreview.value = previewImport(content)
+      importPreview.value = previewImport(content, customMonstersStore, customMaliceStore)
       pendingImportContent.value = content
       showImportPreview.value = true
     }
@@ -309,7 +329,7 @@ function handleFileUpload(event: Event) {
 
 function confirmImport() {
   if (pendingImportContent.value) {
-    importResult.value = importMonsters(pendingImportContent.value)
+    importResult.value = importMonsters(pendingImportContent.value, customMonstersStore, customMaliceStore)
     showImportPreview.value = false
     importPreview.value = null
     pendingImportContent.value = ''
@@ -328,7 +348,7 @@ function handleBackupRestore(event: Event) {
 
   if (!file) return
 
-  if (!confirm('This will replace all existing custom monsters. Are you sure?')) {
+  if (!confirm('This will replace all existing custom monsters and malice features. Are you sure?')) {
     target.value = ''
     return
   }
@@ -337,7 +357,7 @@ function handleBackupRestore(event: Event) {
   reader.onload = (e) => {
     const content = e.target?.result as string
     if (content) {
-      importResult.value = restoreFromBackup(content)
+      importResult.value = restoreFromBackup(content, customMonstersStore, customMaliceStore)
     }
   }
   reader.readAsText(file)
@@ -352,6 +372,8 @@ function clearImportResult() {
 
 function clearAllData() {
   customMonstersStore.clearAllCustomMonsters()
+  customMaliceStore.customMaliceFeatures.clear()
+  customMaliceStore.saveToStorage()
   showClearConfirm.value = false
   importResult.value = {
     success: true,
@@ -360,7 +382,7 @@ function clearAllData() {
     errors: [],
     warnings: [{
       monster: 'System',
-      message: 'All custom monster data has been cleared',
+      message: 'All custom monster and malice feature data has been cleared',
       action: 'Data deleted successfully'
     }]
   }
@@ -455,11 +477,12 @@ function clearAllData() {
 
 /* Import Results */
 .import-results {
-  background: var(--color-neutral-100);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
   margin: var(--space-4) 0;
-  border: 1px solid var(--color-neutral-200);
+  border: 2px solid var(--color-neutral-300);
+  box-shadow: var(--shadow-md);
 }
 
 .import-summary {
@@ -472,15 +495,17 @@ function clearAllData() {
 }
 
 .import-summary.success {
-  background: var(--color-success-50);
-  border: 1px solid var(--color-success-200);
-  color: var(--color-success-800);
+  background: var(--color-success-100);
+  border: 2px solid var(--color-success-600);
+  color: var(--color-success-700);
+  box-shadow: var(--shadow-sm);
 }
 
 .import-summary.error {
-  background: var(--color-error-50);
-  border: 1px solid var(--color-error-200);
-  color: var(--color-error-800);
+  background: var(--color-error-100);
+  border: 2px solid var(--color-error-600);
+  color: var(--color-error-700);
+  box-shadow: var(--shadow-sm);
 }
 
 .import-summary h4 {
@@ -493,6 +518,7 @@ function clearAllData() {
   display: flex;
   gap: var(--space-4);
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
 }
 
 .import-warnings,
@@ -503,8 +529,9 @@ function clearAllData() {
 .import-warnings h5,
 .import-errors h5 {
   margin: 0 0 var(--space-2) 0;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-800);
 }
 
 .message-list {
@@ -529,14 +556,16 @@ function clearAllData() {
 
 .message-item.warning {
   background: var(--color-warning-50);
-  color: var(--color-warning-800);
-  border-bottom-color: var(--color-warning-200);
+  color: var(--color-warning-700);
+  border-bottom-color: var(--color-warning-300);
+  border-left: 3px solid var(--color-warning-600);
 }
 
 .message-item.error {
   background: var(--color-error-50);
-  color: var(--color-error-800);
-  border-bottom-color: var(--color-error-200);
+  color: var(--color-error-700);
+  border-bottom-color: var(--color-error-300);
+  border-left: 3px solid var(--color-error-600);
 }
 
 .error-details {
@@ -682,21 +711,24 @@ function clearAllData() {
 }
 
 .stat-item.success {
-  background: var(--color-success-50);
-  border-color: var(--color-success-200);
-  color: var(--color-success-800);
+  background: var(--color-success-100);
+  border-color: var(--color-success-600);
+  color: var(--color-success-700);
+  border-width: 2px;
 }
 
 .stat-item.error {
-  background: var(--color-error-50);
-  border-color: var(--color-error-200);
-  color: var(--color-error-800);
+  background: var(--color-error-100);
+  border-color: var(--color-error-600);
+  color: var(--color-error-700);
+  border-width: 2px;
 }
 
 .stat-item.warning {
   background: var(--color-warning-50);
-  border-color: var(--color-warning-200);
-  color: var(--color-warning-800);
+  border-color: var(--color-warning-600);
+  color: var(--color-warning-700);
+  border-width: 2px;
 }
 
 .stat-number {
@@ -744,12 +776,16 @@ function clearAllData() {
 
 .preview-message-item.warning {
   background: var(--color-warning-50);
-  border-bottom-color: var(--color-warning-200);
+  border-bottom-color: var(--color-warning-300);
+  border-left: 3px solid var(--color-warning-600);
+  color: var(--color-warning-700);
 }
 
 .preview-message-item.error {
   background: var(--color-error-50);
-  border-bottom-color: var(--color-error-200);
+  border-bottom-color: var(--color-error-300);
+  border-left: 3px solid var(--color-error-600);
+  color: var(--color-error-700);
 }
 
 .message-header {
@@ -762,6 +798,16 @@ function clearAllData() {
 .warning-type {
   background: var(--color-warning-500);
   color: var(--color-neutral-900);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+}
+
+.item-type-badge {
+  background: var(--color-primary-600);
+  color: white;
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-xs);
