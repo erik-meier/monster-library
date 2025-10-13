@@ -31,8 +31,41 @@
                     <span v-if="feature.cost" class="feature-cost">{{ feature.cost }}</span>
                 </div>
 
+                <!-- Action properties for ability-type features -->
+                <div v-if="feature.type === 'ability'" class="action-properties">
+                    <!-- Action Type / Usage -->
+                    <div v-if="feature.usage" class="action-property">
+                        <span class="property-label">Action:</span>
+                        <span class="property-value">{{ feature.usage }}</span>
+                    </div>
+
+                    <!-- Keywords -->
+                    <div v-if="feature.keywords && feature.keywords.length > 0" class="action-property">
+                        <span class="property-label">Keywords:</span>
+                        <span class="property-value">{{ feature.keywords.join(', ') }}</span>
+                    </div>
+
+                    <!-- Distance -->
+                    <div v-if="feature.distance" class="action-property">
+                        <span class="property-label">Distance:</span>
+                        <span class="property-value">{{ feature.distance }}</span>
+                    </div>
+
+                    <!-- Target -->
+                    <div v-if="feature.target" class="action-property">
+                        <span class="property-label">Target:</span>
+                        <span class="property-value">{{ feature.target }}</span>
+                    </div>
+                </div>
+
                 <div v-if="feature.effects" class="feature-effects">
                     <div v-for="(effect, effectIndex) in feature.effects" :key="effectIndex" class="effect">
+                        <!-- Power roll for ability-type features -->
+                        <div v-if="feature.type === 'ability' && effect.roll" class="power-roll-info">
+                            <span class="power-roll-label">Power Roll:</span>
+                            <span class="power-roll-value">{{ effect.roll }}</span>
+                        </div>
+
                         <div v-if="effect.effect" class="effect-description" v-html="formatEffectText(effect.effect)">
                         </div>
 
@@ -204,6 +237,56 @@ export default {
     padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
     border: 1px solid var(--color-error-200);
+}
+
+.action-properties {
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-3);
+    padding: var(--space-2);
+    background: var(--color-neutral-100);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.action-property {
+    display: flex;
+    gap: var(--space-2);
+    font-size: var(--font-size-sm);
+}
+
+.property-label {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-700);
+    min-width: 5rem;
+}
+
+.property-value {
+    color: var(--color-neutral-800);
+}
+
+.power-roll-info {
+    margin-bottom: var(--space-2);
+    padding: var(--space-2);
+    background: var(--color-neutral-100);
+    border-radius: var(--radius-sm);
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+.power-roll-label {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-700);
+    font-size: var(--font-size-sm);
+}
+
+.power-roll-value {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-neutral-800);
+    font-size: var(--font-size-base);
+    font-family: monospace;
 }
 
 .feature-effects {
