@@ -433,7 +433,7 @@ async function generateEncounterRosterTable(encounter: EncounterExportData): Pro
   const maxRowHeight = 40
   
   const numRows = allMonsterEntries.length
-  let dynamicRowHeight = Math.max(minRowHeight, Math.min(maxRowHeight, (availableHeight - headerHeight) / numRows))
+  const dynamicRowHeight = Math.max(minRowHeight, Math.min(maxRowHeight, (availableHeight - headerHeight) / numRows))
   
   // Adjust font sizes based on row height
   let cellFontSize = '12px'
