@@ -142,6 +142,63 @@ describe('Export/Import Utilities', () => {
       expect(typeof downloadFile).toBe('function')
     })
   })
+
+  describe('Malice Feature Export', () => {
+    const sampleMalice = {
+      id: 'test-malice-1',
+      name: 'Test Malice Features',
+      featureblockType: 'Malice Features',
+      level: 1,
+      features: [{
+        name: 'Test Feature',
+        effects: [{
+          tier1: 'Tier 1 effect',
+          tier2: 'Tier 2 effect',
+          tier3: 'Tier 3 effect'
+        }]
+      }],
+      isCustom: true as const,
+      createdAt: '2024-01-01T00:00:00.000Z',
+      updatedAt: '2024-01-01T00:00:00.000Z'
+    }
+
+    it('should export monsters with malice features', () => {
+      const monsters = [sampleMonster]
+      const maliceFeatures = [sampleMalice]
+      
+      const jsonString = exportAllMonsters(monsters, maliceFeatures)
+      const exportData = JSON.parse(jsonString)
+
+      expect(exportData.metadata.totalMonsters).toBe(1)
+      expect(exportData.metadata.totalMaliceFeatures).toBe(1)
+      expect(exportData.monsters).toHaveLength(1)
+      expect(exportData.maliceFeatures).toHaveLength(1)
+      expect(exportData.maliceFeatures[0].name).toBe('Test Malice Features')
+    })
+
+    it('should export monsters without malice features', () => {
+      const monsters = [sampleMonster]
+      
+      const jsonString = exportAllMonsters(monsters)
+      const exportData = JSON.parse(jsonString)
+
+      expect(exportData.metadata.totalMonsters).toBe(1)
+      expect(exportData.metadata.totalMaliceFeatures).toBe(0)
+      expect(exportData.monsters).toHaveLength(1)
+      expect(exportData.maliceFeatures).toHaveLength(0)
+    })
+
+    it('should handle empty malice array', () => {
+      const monsters = [sampleMonster]
+      const maliceFeatures: typeof sampleMalice[] = []
+      
+      const jsonString = exportAllMonsters(monsters, maliceFeatures)
+      const exportData = JSON.parse(jsonString)
+
+      expect(exportData.metadata.totalMaliceFeatures).toBe(0)
+      expect(exportData.maliceFeatures).toHaveLength(0)
+    })
+  })
 })
 
 describe('Data Validation', () => {

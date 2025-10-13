@@ -6,10 +6,10 @@
       <div class="export-section">
         <h4>Export Monsters</h4>
         <div class="export-buttons">
-          <button class="btn btn-secondary" @click="exportAllCustomMonsters" :disabled="customMonsterCount === 0"
-            title="Export all your custom monsters as JSON">
+          <button class="btn btn-secondary" @click="exportAllCustomMonsters" :disabled="customMonsterCount === 0 && customMaliceCount === 0"
+            title="Export all your custom monsters and malice features as JSON">
             <span class="btn-icon">📦</span>
-            Export All Custom ({{ customMonsterCount }})
+            Export All Custom ({{ customMonsterCount }} monsters, {{ customMaliceCount }} malice)
           </button>
 
           <button class="btn btn-outline" @click="createBackup" title="Create a full backup including all settings">
@@ -56,6 +56,14 @@
               <span class="stat-number">{{ importPreview.invalidMonsters }}</span>
               <span class="stat-label">Invalid</span>
             </div>
+            <div class="stat-item" v-if="importPreview.totalMaliceFeatures && importPreview.totalMaliceFeatures > 0">
+              <span class="stat-number">{{ importPreview.totalMaliceFeatures }}</span>
+              <span class="stat-label">Total Malice</span>
+            </div>
+            <div class="stat-item success" v-if="importPreview.validMaliceFeatures && importPreview.validMaliceFeatures > 0">
+              <span class="stat-number">{{ importPreview.validMaliceFeatures }}</span>
+              <span class="stat-label">Valid Malice</span>
+            </div>
             <div class="stat-item warning" v-if="importPreview.warnings.length > 0">
               <span class="stat-number">{{ importPreview.warnings.length }}</span>
               <span class="stat-label">Warnings</span>
@@ -69,8 +77,9 @@
           <div class="preview-message-list">
             <div v-for="(warning, index) in importPreview.warnings" :key="index" class="preview-message-item warning">
               <div class="message-header">
-                <strong>{{ warning.monster }}</strong>
+                <strong>{{ warning.monster || warning.malice }}</strong>
                 <span class="warning-type" v-if="warning.type === 'id_collision'">ID Collision</span>
+                <span class="item-type-badge" v-if="warning.malice">Malice</span>
               </div>
               <div class="message-content">
                 {{ warning.message }}
@@ -88,7 +97,8 @@
           <div class="preview-message-list">
             <div v-for="(error, index) in importPreview.errors" :key="index" class="preview-message-item error">
               <div class="message-header">
-                <strong>{{ error.monster }}</strong>
+                <strong>{{ error.monster || error.malice }}</strong>
+                <span class="item-type-badge" v-if="error.malice">Malice</span>
               </div>
               <div class="message-content">
                 {{ error.error }}
@@ -138,10 +148,13 @@
         <h4>Import Results</h4>
         <div class="import-stats">
           <span class="stat">
-            <strong>{{ importResult.imported }}</strong> imported
+            <strong>{{ importResult.imported }}</strong> monsters imported
           </span>
           <span class="stat">
             <strong>{{ importResult.skipped }}</strong> skipped
+          </span>
+          <span class="stat" v-if="importResult.importedMalice && importResult.importedMalice > 0">
+            <strong>{{ importResult.importedMalice }}</strong> malice imported
           </span>
           <span class="stat" v-if="importResult.errors.length > 0">
             <strong>{{ importResult.errors.length }}</strong> errors
@@ -161,7 +174,7 @@
         <h5>⚠️ Warnings</h5>
         <div class="message-list">
           <div v-for="(warning, index) in importResult.warnings" :key="index" class="message-item warning">
-            <strong>{{ warning.monster }}:</strong>
+            <strong>{{ warning.monster || warning.malice }}{{ warning.malice ? ' (Malice)' : '' }}:</strong>
             {{ warning.message }}
             <br><small>{{ warning.action }}</small>
           </div>
@@ -173,7 +186,7 @@
         <h5>❌ Errors</h5>
         <div class="message-list">
           <div v-for="(error, index) in importResult.errors" :key="index" class="message-item error">
-            <strong>{{ error.monster || 'System' }}:</strong>
+            <strong>{{ error.monster || error.malice || 'System' }}{{ error.malice ? ' (Malice)' : '' }}:</strong>
             {{ error.error }}
             <div v-if="error.details && error.details.length > 0" class="error-details">
               <ul>
@@ -239,6 +252,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
+import { useCustomMaliceStore } from '@/stores/customMalice'
 import {
   exportAllMonsters,
   importMonsters,
@@ -252,6 +266,7 @@ import {
 } from '@/utils/exportImport'
 
 const customMonstersStore = useCustomMonstersStore()
+const customMaliceStore = useCustomMaliceStore()
 
 // Refs
 const fileInput = ref<HTMLInputElement>()
@@ -264,19 +279,21 @@ const pendingImportContent = ref<string>('')
 
 // Computed
 const customMonsterCount = computed(() => customMonstersStore.customMonsterCount)
+const customMaliceCount = computed(() => customMaliceStore.getCustomMaliceCount)
 
 // Export functions
 function exportAllCustomMonsters() {
   const monsters = customMonstersStore.getAllCustomMonsters()
-  if (monsters.length === 0) return
+  const maliceFeatures = customMaliceStore.getAllCustomMalice
+  if (monsters.length === 0 && maliceFeatures.length === 0) return
 
-  const jsonContent = exportAllMonsters(monsters)
+  const jsonContent = exportAllMonsters(monsters, maliceFeatures)
   const filename = generateExportFilename('custom-monsters-export')
   downloadFile(jsonContent, filename)
 }
 
 function createBackup() {
-  const backupContent = createFullBackup()
+  const backupContent = createFullBackup(customMonstersStore, customMaliceStore)
   const filename = generateExportFilename('monster-library-backup')
   downloadFile(backupContent, filename)
 }
@@ -296,7 +313,7 @@ function handleFileUpload(event: Event) {
       importResult.value = null
 
       // Generate preview
-      importPreview.value = previewImport(content)
+      importPreview.value = previewImport(content, customMonstersStore, customMaliceStore)
       pendingImportContent.value = content
       showImportPreview.value = true
     }
@@ -309,7 +326,7 @@ function handleFileUpload(event: Event) {
 
 function confirmImport() {
   if (pendingImportContent.value) {
-    importResult.value = importMonsters(pendingImportContent.value)
+    importResult.value = importMonsters(pendingImportContent.value, customMonstersStore, customMaliceStore)
     showImportPreview.value = false
     importPreview.value = null
     pendingImportContent.value = ''
@@ -328,7 +345,7 @@ function handleBackupRestore(event: Event) {
 
   if (!file) return
 
-  if (!confirm('This will replace all existing custom monsters. Are you sure?')) {
+  if (!confirm('This will replace all existing custom monsters and malice features. Are you sure?')) {
     target.value = ''
     return
   }
@@ -337,7 +354,7 @@ function handleBackupRestore(event: Event) {
   reader.onload = (e) => {
     const content = e.target?.result as string
     if (content) {
-      importResult.value = restoreFromBackup(content)
+      importResult.value = restoreFromBackup(content, customMonstersStore, customMaliceStore)
     }
   }
   reader.readAsText(file)
@@ -762,6 +779,16 @@ function clearAllData() {
 .warning-type {
   background: var(--color-warning-500);
   color: var(--color-neutral-900);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+}
+
+.item-type-badge {
+  background: var(--color-primary-600);
+  color: white;
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-xs);
