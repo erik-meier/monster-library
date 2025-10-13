@@ -16,6 +16,10 @@
               :disabled="encounterStore.monsters.length === 0">
               Save Encounter
             </button>
+            <button type="button" class="btn btn-primary" @click="exportEncounterPDF"
+              :disabled="encounterStore.monsters.length === 0 || exportingPDF" title="Export encounter sheet as PDF">
+              {{ exportingPDF ? 'Exporting...' : '📄 Export PDF' }}
+            </button>
             <button type="button" class="btn btn-secondary" @click="showLoadModal = !showLoadModal">
               {{ showLoadModal ? 'Hide' : 'Load' }} Saved
             </button>
@@ -40,6 +44,13 @@
         <div class="section-card">
           <h2>Encounter Summary</h2>
 
+          <!-- Encounter Name Input -->
+          <div class="encounter-name-section">
+            <label for="encounter-name" class="encounter-name-label">Encounter Name</label>
+            <input id="encounter-name" v-model="encounterName" type="text" placeholder="Enter encounter name..."
+              class="form-input encounter-name-input" />
+          </div>
+
           <CollapsibleSection title="Encounter Monsters" :expanded="initiativeTrackerExpanded"
             @toggle="initiativeTrackerExpanded = $event" ref="initiativeTrackerSection">
             <InitiativeTracker @height-changed="updateCollapsibleHeights" />
@@ -47,12 +58,12 @@
 
           <CollapsibleSection title="Malice Features" :expanded="encounterMaliceExpanded"
             @toggle="encounterMaliceExpanded = $event" ref="encounterMaliceSection">
-            <p v-if="encounterMalice.length === 0" class="empty-state">
+            <p v-if="encounterStore.maliceFeatures.length === 0" class="empty-state">
               No malice features added yet. Use the search below to add malice features to your encounter.
             </p>
 
             <div v-else class="malice-list">
-              <div v-for="malice in encounterMalice" :key="malice.id" class="malice-entry">
+              <div v-for="malice in encounterStore.maliceFeatures" :key="malice.id" class="malice-entry">
                 <div class="malice-info">
                   <h3 class="malice-name">{{ malice.name }}</h3>
                   <div class="malice-stats">
@@ -69,106 +80,128 @@
           </CollapsibleSection>
         </div>
 
+        <!-- Add Monsters and Malice Features -->
         <div class="section-card">
-          <CollapsibleSection title="Add Monsters" :expanded="monstersListExpanded"
-            @toggle="monstersListExpanded = $event">
-            <div class="search-section">
-              <input v-model="searchQuery" type="text" placeholder="Search monsters by name, level, or role..."
-                class="form-input search-input" />
+          <div class="section-navigator">
+            <button type="button" :class="['nav-tab', { active: activeSection === 'monsters' }]"
+              @click="switchToSection('monsters')">
+              🐉 Monsters
+            </button>
+            <button type="button" :class="['nav-tab', { active: activeSection === 'malice' }]"
+              @click="switchToSection('malice')">
+              ⚡ Malice Features
+            </button>
+          </div>
 
-              <div class="filter-controls">
-                <select v-model="filterLevel" class="form-input filter-select">
-                  <option value="">All Levels</option>
-                  <option v-for="level in 10" :key="level" :value="level">Level {{ level }}</option>
-                </select>
+          <!-- Content Container with fixed height -->
+          <div class="section-content-container">
+            <!-- Monsters Section -->
+            <div v-show="activeSection === 'monsters'" class="section-content">
+              <CollapsibleSection title="Add Monsters" :expanded="monstersListExpanded"
+                @toggle="monstersListExpanded = $event" ref="monstersListSection">
+                <div class="search-section">
+                  <input v-model="searchQuery" type="text" placeholder="Search monsters by name, level, or role..."
+                    class="form-input search-input" />
 
-                <select v-model="filterOrg" class="form-input filter-select">
-                  <option value="">All Organizations</option>
-                  <option value="Minion">Minion</option>
-                  <option value="Standard">Standard</option>
-                  <option value="Elite">Elite</option>
-                  <option value="Leader">Leader</option>
-                  <option value="Solo">Solo</option>
-                </select>
-              </div>
-            </div>
+                  <div class="filter-controls">
+                    <select v-model="filterLevel" class="form-input filter-select">
+                      <option value="">All Levels</option>
+                      <option v-for="level in 10" :key="level" :value="level">Level {{ level }}</option>
+                    </select>
 
-            <div v-if="filteredMonsters.length === 0" class="no-results">
-              No monsters match your search criteria.
-            </div>
-
-            <div v-else class="available-monsters">
-              <div v-for="monster in filteredMonsters.slice(0, 20)" :key="monster.id" class="available-monster">
-                <div class="monster-info">
-                  <h4 class="monster-name">{{ monster.name }}</h4>
-                  <div class="monster-stats">
-                    <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ? ' ' +
-                      monster.role : '' }}</span>
-                    <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
+                    <select v-model="filterOrg" class="form-input filter-select">
+                      <option value="">All Organizations</option>
+                      <option value="Minion">Minion</option>
+                      <option value="Horde">Horde</option>
+                      <option value="Platoon">Platoon</option>
+                      <option value="Elite">Elite</option>
+                      <option value="Leader">Leader</option>
+                      <option value="Solo">Solo</option>
+                    </select>
                   </div>
                 </div>
-                <div class="monster-add-buttons">
-                  <button type="button" class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster)">
-                    + Add
-                  </button>
-                  <button v-if="monster.organization.toLowerCase() === 'minion'" type="button"
-                    class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster, 4)"
-                    title="Add a full group of 4 minions">
-                    + Add 4
-                  </button>
+
+                <div v-if="filteredMonsters.length === 0" class="no-results">
+                  No monsters match your search criteria.
                 </div>
-              </div>
-            </div>
 
-            <p v-if="filteredMonsters.length > 20" class="results-note">
-              Showing 20 of {{ filteredMonsters.length }} results. Refine your search to see more.
-            </p>
-          </CollapsibleSection>
-        </div>
-
-        <div class="section-card">
-          <CollapsibleSection title="Add Malice Features" :expanded="maliceListExpanded"
-            @toggle="maliceListExpanded = $event">
-            <div class="search-section">
-              <input v-model="maliceSearchQuery" type="text" placeholder="Search malice features by name or level..."
-                class="form-input search-input" />
-            </div>
-
-            <div v-if="filteredMaliceFeatures.length === 0" class="no-results">
-              No malice features match your search criteria.
-            </div>
-
-            <div v-else class="available-malice">
-              <div v-for="malice in filteredMaliceFeatures.slice(0, 20)" :key="malice.id" class="available-malice-item">
-                <div class="malice-info">
-                  <h4 class="malice-name">{{ malice.name }}</h4>
-                  <div class="malice-stats">
-                    <span class="stat-badge">Level {{ malice.level }}</span>
+                <div v-else class="available-monsters">
+                  <div v-for="monster in filteredMonsters.slice(0, 20)" :key="monster.id" class="available-monster">
+                    <div class="monster-info">
+                      <h4 class="monster-name">{{ monster.name }}</h4>
+                      <div class="monster-stats">
+                        <span class="stat-badge">Level {{ monster.level }} {{ monster.organization }}{{ monster.role ?
+                          '\
+                          ' + monster.role : '' }}</span>
+                        <span class="stat-badge ev-badge">EV {{ monster.ev }}</span>
+                      </div>
+                    </div>
+                    <div class="monster-add-buttons">
+                      <button type="button" class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster)">
+                        +1
+                      </button>
+                      <button v-if="monster.organization.toLowerCase() === 'minion'" type="button"
+                        class="btn btn-primary btn-sm" @click="addMonsterToEncounter(monster, 4)"
+                        title="Add a full group of 4 minions">
+                        +4
+                      </button>
+                    </div>
                   </div>
-                  <p v-if="malice.flavor" class="malice-flavor-preview">{{ malice.flavor }}</p>
                 </div>
-                <button type="button" class="btn btn-primary btn-sm" @click="addMaliceToEncounter(malice)">
-                  + Add
-                </button>
-              </div>
+
+                <p v-if="filteredMonsters.length > 20" class="results-note">
+                  Showing 20 of {{ filteredMonsters.length }} results. Refine your search to see more.
+                </p>
+              </CollapsibleSection>
             </div>
 
-            <p v-if="filteredMaliceFeatures.length > 20" class="results-note">
-              Showing 20 of {{ filteredMaliceFeatures.length }} results. Refine your search to see more.
-            </p>
-          </CollapsibleSection>
+            <!-- Malice Features Section -->
+            <div v-show="activeSection === 'malice'" class="section-content">
+              <CollapsibleSection title="Add Malice Features" :expanded="maliceListExpanded"
+                @toggle="maliceListExpanded = $event" ref="maliceListSection">
+                <div class="search-section">
+                  <input v-model="maliceSearchQuery" type="text"
+                    placeholder="Search malice features by name or level..." class="form-input search-input" />
+                </div>
+
+                <div v-if="filteredMaliceFeatures.length === 0" class="no-results">
+                  No malice features match your search criteria.
+                </div>
+
+                <div v-else class="available-malice">
+                  <div v-for="malice in filteredMaliceFeatures.slice(0, 20)" :key="malice.id"
+                    class="available-malice-item">
+                    <div class="malice-info">
+                      <h4 class="malice-name">{{ malice.name }}</h4>
+                      <div class="malice-stats">
+                        <span class="stat-badge">Level {{ malice.level }}</span>
+                      </div>
+                      <p v-if="malice.flavor" class="malice-flavor-preview">{{ malice.flavor }}</p>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm" @click="addMaliceToEncounter(malice)">
+                      + Add
+                    </button>
+                  </div>
+                </div>
+
+                <p v-if="filteredMaliceFeatures.length > 20" class="results-note">
+                  Showing 20 of {{ filteredMaliceFeatures.length }} results. Refine your search to see more.
+                </p>
+              </CollapsibleSection>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Save Encounter Modal -->
     <SaveEncounterModal :is-open="showSaveModal" :existing-encounter-id="currentEncounterId ?? undefined"
-      @close="showSaveModal = false" @saved="handleEncounterSaved" />
+      :initial-name="encounterName" @close="showSaveModal = false" @saved="handleEncounterSaved" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import PartyConfiguration from '@/components/PartyConfiguration.vue'
 import EncounterBudget from '@/components/EncounterBudget.vue'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
@@ -181,13 +214,13 @@ import { useEncounterStore } from '@/stores/encounter'
 import {
   type PartyConfiguration as PartyConfig
 } from '@/utils/encounterBalance'
+import { exportEncounterToPDF } from '@/utils/encounterPdfExport'
 
 // Stores
 const customMonstersStore = useCustomMonstersStore()
 const encounterStore = useEncounterStore()
 
 // State - party configuration is now stored in the encounter store
-const encounterMalice = ref<SimpleMaliceFeature[]>([])
 const searchQuery = ref('')
 const filterLevel = ref<string>('')
 const filterOrg = ref<string>('')
@@ -199,10 +232,29 @@ const maliceSearchQuery = ref('')
 const showSaveModal = ref(false)
 const showLoadModal = ref(false)
 const showTemplatesModal = ref(false)
+const exportingPDF = ref(false)
+
+// Encounter name state
+const encounterName = ref('New Encounter')
+
+// Navigator state for switching between sections
+const activeSection = ref<'monsters' | 'malice'>('monsters')
+
+// Smooth section switching
+async function switchToSection(section: 'monsters' | 'malice') {
+  if (activeSection.value === section) return
+  activeSection.value = section
+  
+  // Wait for the DOM to update, then refresh collapsible section heights
+  await nextTick()
+  updateCollapsibleHeights()
+}
 
 // Template refs for CollapsibleSection components
 const initiativeTrackerSection = ref()
 const encounterMaliceSection = ref()
+const monstersListSection = ref()
+const maliceListSection = ref()
 
 interface SimpleMonster {
   id: string
@@ -235,13 +287,7 @@ function updateParty(newParty: PartyConfig) {
   encounterStore.setParty(newParty)
 }
 
-// Watch for encounter being cleared and reset malice features
-watch(() => encounterStore.monsters.length, (newLength) => {
-  // If monsters array is cleared, also clear malice features
-  if (newLength === 0) {
-    encounterMalice.value = []
-  }
-})
+// Watch is no longer needed since malice features are managed in the store
 
 onMounted(async () => {
   // Load all monsters and malice features using dynamic import
@@ -350,6 +396,12 @@ async function updateCollapsibleHeights() {
   if (encounterMaliceSection.value?.updateHeight) {
     encounterMaliceSection.value.updateHeight()
   }
+  if (monstersListSection.value?.updateHeight) {
+    monstersListSection.value.updateHeight()
+  }
+  if (maliceListSection.value?.updateHeight) {
+    maliceListSection.value.updateHeight()
+  }
 }
 
 // Methods
@@ -373,19 +425,18 @@ function addMonsterToEncounter(monster: SimpleMonster, count: number = 1) {
 
 
 function addMaliceToEncounter(malice: SimpleMaliceFeature) {
-  const existing = encounterMalice.value.find((m) => m.id === malice.id)
-  if (!existing) {
-    encounterMalice.value.push(malice)
-    updateCollapsibleHeights()
-  }
+  encounterStore.addMaliceFeature({
+    id: malice.id,
+    name: malice.name,
+    level: malice.level,
+    flavor: malice.flavor
+  })
+  updateCollapsibleHeights()
 }
 
 function removeMalice(id: string) {
-  const index = encounterMalice.value.findIndex((m) => m.id === id)
-  if (index !== -1) {
-    encounterMalice.value.splice(index, 1)
-    updateCollapsibleHeights()
-  }
+  encounterStore.removeMaliceFeature(id)
+  updateCollapsibleHeights()
 }
 
 // Encounter management handlers
@@ -398,6 +449,12 @@ function handleEncounterSaved(encounterId: string) {
 function handleLoadEncounter(encounterId: string) {
   const success = encounterStore.loadEncounter(encounterId)
   if (success) {
+    // Load the encounter name from the saved encounter
+    const savedEncounter = encounterStore.getSavedEncounter(encounterId)
+    if (savedEncounter) {
+      encounterName.value = savedEncounter.name
+    }
+
     // Clear any auto-save since we explicitly loaded an encounter
     encounterStore.clearAutoSave()
     // The store automatically tracks the loaded encounter ID
@@ -414,6 +471,49 @@ function handleExportEncounter(encounterId: string) {
   console.log('Encounter exported:', encounterId)
 }
 
+// PDF Export handler
+async function exportEncounterPDF() {
+  if (encounterStore.monsters.length === 0) {
+    alert('Cannot export empty encounter')
+    return
+  }
+
+  exportingPDF.value = true
+
+  try {
+    // Use the current encounter name from the input field
+    let encounterDescription = ''
+
+    // If we have a current encounter ID, get its description
+    if (encounterStore.currentEncounterId) {
+      const savedEncounter = encounterStore.getSavedEncounter(encounterStore.currentEncounterId)
+      if (savedEncounter) {
+        encounterDescription = savedEncounter.description || ''
+      }
+    }
+
+    // Prepare encounter data for export
+    const encounterData = {
+      name: encounterName.value,
+      description: encounterDescription,
+      monsters: encounterStore.monsters,
+      initiativeGroups: encounterStore.initiativeGroups,
+      targetEV: encounterStore.targetEV,
+      party: encounterStore.party,
+      objectives: '', // Could be extended to support user-entered objectives
+      specialRules: '', // Could be extended to support user-entered special rules
+      maliceFeatures: encounterStore.maliceFeatures
+    }
+
+    await exportEncounterToPDF(encounterData)
+  } catch (error) {
+    console.error('Failed to export encounter PDF:', error)
+    alert('Failed to export encounter PDF. Please try again.')
+  } finally {
+    exportingPDF.value = false
+  }
+}
+
 function handleTemplateSelected(template: { monsters: Array<{ id: string, name: string, level: number, ev: number, role: string, organization: string, count: number }>, targetEV: number }) {
   // Ask if user wants to replace or add to current encounter
   const hasMonstersAlready = encounterStore.monsters.length > 0
@@ -426,6 +526,9 @@ function handleTemplateSelected(template: { monsters: Array<{ id: string, name: 
   if (shouldProceed) {
     // Clear current encounter (this also clears the tracked encounter ID)
     encounterStore.clearEncounter()
+
+    // Reset encounter name to default
+    encounterName.value = 'New Encounter'
 
     // Add all monsters from template
     template.monsters.forEach(monster => {
@@ -483,7 +586,6 @@ onMounted(() => {
 })
 
 // Clean up interval on unmount
-import { onUnmounted } from 'vue'
 onUnmounted(() => {
   if (autoSaveInterval) {
     clearInterval(autoSaveInterval)
@@ -554,6 +656,28 @@ onUnmounted(() => {
   text-align: center;
   color: var(--color-neutral-500);
   font-style: italic;
+}
+
+/* Encounter Name Section */
+.encounter-name-section {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.encounter-name-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-700);
+}
+
+.encounter-name-input {
+  width: 100%;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-700);
 }
 
 
@@ -748,6 +872,60 @@ onUnmounted(() => {
   overflow: hidden;
 }
 
+/* Section Navigator */
+.section-navigator {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+/* Section Content Container */
+.section-content-container {
+  position: relative;
+  min-height: 400px;
+  /* Provide a minimum height to reduce layout shifts */
+}
+
+.section-content {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.nav-tab {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.nav-tab:hover {
+  background: var(--color-neutral-200);
+  border-color: var(--color-neutral-400);
+}
+
+.nav-tab.active {
+  background: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-tab.active:hover {
+  background: var(--color-primary-700);
+  border-color: var(--color-primary-700);
+}
+
+
+
 /* Mobile responsive */
 @media (max-width: 1024px) {
   .builder-layout {
@@ -794,6 +972,11 @@ onUnmounted(() => {
 
   .filter-controls {
     flex-direction: column;
+  }
+
+  .nav-tab {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
   }
 }
 </style>
