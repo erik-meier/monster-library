@@ -15,7 +15,7 @@
                 <div class="nav-actions">
                     <button v-if="!isCustomMalice && !isEditing" @click="copyToCustom" class="btn btn-outline"
                         title="Copy to create editable version">
-                        📋 Copy
+                        Create Copy to Edit
                     </button>
                     <button v-if="isCustomMalice && !isEditing" @click="startEditing" class="btn btn-outline">
                         ✏️ Edit
@@ -87,7 +87,27 @@ const relatedMonsters = computed(() => {
     if (!maliceBlock.value) return []
 
     const maliceId = route.params.maliceId
-    return customMaliceStore.getLinkedMonsters(maliceId)
+    const linkedMonsters = customMaliceStore.getLinkedMonsters(maliceId)
+
+    // The store returns monster data but we need to ensure each has an id property
+    // We need to get the monster IDs and combine them with the monster data
+    const customMonsterIds = customMaliceStore.customMaliceMappings.get(maliceId) || []
+    const index = getMonsterIndex()
+    const officialMonsterIds = index.maliceMappings?.[maliceId] || []
+    const allMonsterIds = [...customMonsterIds, ...officialMonsterIds]
+
+    return allMonsterIds
+        .map(monsterId => {
+            const monsterData = index.card[monsterId]
+            if (monsterData) {
+                return {
+                    id: monsterId,
+                    ...monsterData
+                }
+            }
+            return null
+        })
+        .filter(Boolean)
 })
 
 const backNavigation = computed(() => {

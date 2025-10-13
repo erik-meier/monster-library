@@ -5,13 +5,13 @@
       <p>Quick-start with pre-built encounter templates</p>
     </div>
 
-    <div class="templates-grid">
-      <div
-        v-for="template in templates"
-        :key="template.id"
-        class="template-card"
-        @click="selectTemplate(template)"
-      >
+    <div v-if="templates.length === 0" class="coming-soon">
+      <h4>Coming Soon</h4>
+      <p>Pre-built encounter templates are being developed and will be available in a future update.</p>
+    </div>
+
+    <div v-else class="templates-grid">
+      <div v-for="template in templates" :key="template.id" class="template-card" @click="selectTemplate(template)">
         <div class="template-header">
           <h4 class="template-name">{{ template.name }}</h4>
           <div class="template-badges">
@@ -194,6 +194,33 @@ function selectTemplate(template: EncounterTemplate) {
 
 .template-card .btn {
   margin-top: auto;
+}
+
+/* Coming Soon Message */
+.coming-soon {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--color-neutral-600);
+  background: var(--color-neutral-50);
+  border: 2px dashed var(--color-neutral-300);
+  border-radius: var(--radius-lg);
+  margin: var(--space-4) 0;
+}
+
+.coming-soon h4 {
+  margin: 0 0 var(--space-3) 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-700);
+}
+
+.coming-soon p {
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 768px) {
