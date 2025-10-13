@@ -31,21 +31,22 @@
           </div>
 
           <div class="feature-item">
+            <div class="feature-icon">⚔️</div>
+            <h3><router-link to="/encounter-builder">Encounter Builder</router-link></h3>
+            <p>Create and manage your own encounters using custom monsters and settings.</p>
+          </div>
+
+          <div class="feature-item">
             <div class="feature-icon">📱</div>
             <h3>Mobile Friendly</h3>
             <p>Access your monsters on any device - perfect for gaming sessions at the table or on the go.</p>
           </div>
 
+
           <div class="feature-item">
             <div class="feature-icon">💾</div>
             <h3>Export & Import</h3>
-            <p>Export monsters as JSON files for backup or sharing. Import custom monsters from your community.</p>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">📋</div>
-            <h3>Monster Templates</h3>
-            <p>Start from existing monsters when creating custom ones. Customize any stat to fit your needs.</p>
+            <p>Export monsters or encounters as JSON files for backup or sharing.</p>
           </div>
 
           <div class="feature-item">
@@ -121,6 +122,10 @@
           Monster data is sourced from the <a href="https://github.com/SteelCompendium/data-bestiary-json"
             title="Steel Compendium Bestiary">Steel Compendium Bestiary</a>, which is available under
           the DRAW STEEL Creator License.
+        </p>
+        <p class="legal-text">
+          Steel Cauldron is open source. View the source code on <a href="https://github.com/erik-meier/monster-library"
+            title="Steel Cauldron Source Code">GitHub</a>.
         </p>
       </section>
 
