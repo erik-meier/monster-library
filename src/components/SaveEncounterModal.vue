@@ -61,6 +61,7 @@ import { useEncounterStore } from '@/stores/encounter'
 interface Props {
   isOpen: boolean
   existingEncounterId?: string
+  initialName?: string
 }
 
 const props = defineProps<Props>()
@@ -90,20 +91,29 @@ const encounterStats = computed(() => {
 })
 
 // Load existing encounter data when updating or reset form for new encounter
-watch([() => props.isOpen, () => props.existingEncounterId], ([isOpen, encounterId]) => {
+watch([() => props.isOpen, () => props.existingEncounterId, () => props.initialName], ([isOpen, encounterId, initialName]) => {
   if (isOpen) {
     validationError.value = null
 
     if (encounterId) {
-      // Load existing encounter data
-      const existing = encounterStore.getSavedEncounter(encounterId)
-      if (existing) {
-        formData.value.name = existing.name
-        formData.value.description = existing.description || ''
+      // For existing encounters, use initialName if provided (current encounter name from field),
+      // otherwise fall back to saved encounter data
+      if (initialName) {
+        formData.value.name = initialName
+        // Still get description from saved data
+        const existing = encounterStore.getSavedEncounter(encounterId)
+        formData.value.description = existing?.description || ''
+      } else {
+        // Load existing encounter data as fallback
+        const existing = encounterStore.getSavedEncounter(encounterId)
+        if (existing) {
+          formData.value.name = existing.name
+          formData.value.description = existing.description || ''
+        }
       }
     } else {
-      // Reset form for new encounter
-      formData.value.name = ''
+      // Reset form for new encounter, use initialName if provided
+      formData.value.name = initialName || ''
       formData.value.description = ''
     }
   }

@@ -44,6 +44,13 @@
         <div class="section-card">
           <h2>Encounter Summary</h2>
 
+          <!-- Encounter Name Input -->
+          <div class="encounter-name-section">
+            <label for="encounter-name" class="encounter-name-label">Encounter Name</label>
+            <input id="encounter-name" v-model="encounterName" type="text" placeholder="Enter encounter name..."
+              class="form-input encounter-name-input" />
+          </div>
+
           <CollapsibleSection title="Encounter Monsters" :expanded="initiativeTrackerExpanded"
             @toggle="initiativeTrackerExpanded = $event" ref="initiativeTrackerSection">
             <InitiativeTracker @height-changed="updateCollapsibleHeights" />
@@ -91,7 +98,7 @@
             <!-- Monsters Section -->
             <div v-show="activeSection === 'monsters'" class="section-content">
               <CollapsibleSection title="Add Monsters" :expanded="monstersListExpanded"
-                @toggle="monstersListExpanded = $event">
+                @toggle="monstersListExpanded = $event" ref="monstersListSection">
                 <div class="search-section">
                   <input v-model="searchQuery" type="text" placeholder="Search monsters by name, level, or role..."
                     class="form-input search-input" />
@@ -151,7 +158,7 @@
             <!-- Malice Features Section -->
             <div v-show="activeSection === 'malice'" class="section-content">
               <CollapsibleSection title="Add Malice Features" :expanded="maliceListExpanded"
-                @toggle="maliceListExpanded = $event">
+                @toggle="maliceListExpanded = $event" ref="maliceListSection">
                 <div class="search-section">
                   <input v-model="maliceSearchQuery" type="text"
                     placeholder="Search malice features by name or level..." class="form-input search-input" />
@@ -189,7 +196,7 @@
 
     <!-- Save Encounter Modal -->
     <SaveEncounterModal :is-open="showSaveModal" :existing-encounter-id="currentEncounterId ?? undefined"
-      @close="showSaveModal = false" @saved="handleEncounterSaved" />
+      :initial-name="encounterName" @close="showSaveModal = false" @saved="handleEncounterSaved" />
   </div>
 </template>
 
@@ -227,18 +234,27 @@ const showLoadModal = ref(false)
 const showTemplatesModal = ref(false)
 const exportingPDF = ref(false)
 
+// Encounter name state
+const encounterName = ref('New Encounter')
+
 // Navigator state for switching between sections
 const activeSection = ref<'monsters' | 'malice'>('monsters')
 
 // Smooth section switching
-function switchToSection(section: 'monsters' | 'malice') {
+async function switchToSection(section: 'monsters' | 'malice') {
   if (activeSection.value === section) return
   activeSection.value = section
+  
+  // Wait for the DOM to update, then refresh collapsible section heights
+  await nextTick()
+  updateCollapsibleHeights()
 }
 
 // Template refs for CollapsibleSection components
 const initiativeTrackerSection = ref()
 const encounterMaliceSection = ref()
+const monstersListSection = ref()
+const maliceListSection = ref()
 
 interface SimpleMonster {
   id: string
@@ -380,6 +396,12 @@ async function updateCollapsibleHeights() {
   if (encounterMaliceSection.value?.updateHeight) {
     encounterMaliceSection.value.updateHeight()
   }
+  if (monstersListSection.value?.updateHeight) {
+    monstersListSection.value.updateHeight()
+  }
+  if (maliceListSection.value?.updateHeight) {
+    maliceListSection.value.updateHeight()
+  }
 }
 
 // Methods
@@ -427,6 +449,12 @@ function handleEncounterSaved(encounterId: string) {
 function handleLoadEncounter(encounterId: string) {
   const success = encounterStore.loadEncounter(encounterId)
   if (success) {
+    // Load the encounter name from the saved encounter
+    const savedEncounter = encounterStore.getSavedEncounter(encounterId)
+    if (savedEncounter) {
+      encounterName.value = savedEncounter.name
+    }
+
     // Clear any auto-save since we explicitly loaded an encounter
     encounterStore.clearAutoSave()
     // The store automatically tracks the loaded encounter ID
@@ -453,22 +481,20 @@ async function exportEncounterPDF() {
   exportingPDF.value = true
 
   try {
-    // Get the current encounter name or generate one
-    let encounterName = 'Encounter'
+    // Use the current encounter name from the input field
     let encounterDescription = ''
 
-    // If we have a current encounter ID, get its name and description
+    // If we have a current encounter ID, get its description
     if (encounterStore.currentEncounterId) {
       const savedEncounter = encounterStore.getSavedEncounter(encounterStore.currentEncounterId)
       if (savedEncounter) {
-        encounterName = savedEncounter.name
         encounterDescription = savedEncounter.description || ''
       }
     }
 
     // Prepare encounter data for export
     const encounterData = {
-      name: encounterName,
+      name: encounterName.value,
       description: encounterDescription,
       monsters: encounterStore.monsters,
       initiativeGroups: encounterStore.initiativeGroups,
@@ -500,6 +526,9 @@ function handleTemplateSelected(template: { monsters: Array<{ id: string, name: 
   if (shouldProceed) {
     // Clear current encounter (this also clears the tracked encounter ID)
     encounterStore.clearEncounter()
+
+    // Reset encounter name to default
+    encounterName.value = 'New Encounter'
 
     // Add all monsters from template
     template.monsters.forEach(monster => {
@@ -627,6 +656,28 @@ onUnmounted(() => {
   text-align: center;
   color: var(--color-neutral-500);
   font-style: italic;
+}
+
+/* Encounter Name Section */
+.encounter-name-section {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.encounter-name-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-700);
+}
+
+.encounter-name-input {
+  width: 100%;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-700);
 }
 
 

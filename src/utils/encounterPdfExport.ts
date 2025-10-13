@@ -251,13 +251,13 @@ function getMaliceFeatures(encounter: EncounterExportData): string {
               if (effect.tier1 || effect.tier2 || effect.tier3) {
                 html += `<div style="margin: 4px 0;">`
                 if (effect.tier1) {
-                  html += `<div style="margin: 1px 0;"><strong>Tier 1:</strong> ${effect.tier1}</div>`
+                  html += `<div style="margin: 1px 0;"><strong style="font-family: 'DS Open Glyphs', sans-serif;">{</strong> ${effect.tier1}</div>`
                 }
                 if (effect.tier2) {
-                  html += `<div style="margin: 1px 0;"><strong>Tier 2:</strong> ${effect.tier2}</div>`
+                  html += `<div style="margin: 1px 0;"><strong style="font-family: 'DS Open Glyphs', sans-serif;">_</strong> ${effect.tier2}</div>`
                 }
                 if (effect.tier3) {
-                  html += `<div style="margin: 1px 0;"><strong>Tier 3:</strong> ${effect.tier3}</div>`
+                  html += `<div style="margin: 1px 0;"><strong style="font-family: 'DS Open Glyphs', sans-serif;">}</strong> ${effect.tier3}</div>`
                 }
                 html += `</div>`
               }
@@ -425,65 +425,88 @@ async function generateEncounterRosterTable(encounter: EncounterExportData): Pro
     })
   }
 
+  // Calculate dynamic row heights based on number of entries
+  // Available space: roughly 300px, minus header (36px) = 264px
+  const availableHeight = 264
+  const headerHeight = 36
+  const minRowHeight = 24
+  const maxRowHeight = 40
+  
+  const numRows = allMonsterEntries.length
+  let dynamicRowHeight = Math.max(minRowHeight, Math.min(maxRowHeight, (availableHeight - headerHeight) / numRows))
+  
+  // Adjust font sizes based on row height
+  let cellFontSize = '12px'
+  let headerFontSize = '12px'
+  
+  if (dynamicRowHeight < 30) {
+    cellFontSize = '10px'
+    headerFontSize = '11px'
+  }
+  if (dynamicRowHeight < 26) {
+    cellFontSize = '9px'
+    headerFontSize = '10px'
+  }
+
   return `
     <table style="
       width: 100%;
       border-collapse: collapse;
-      font-size: 11px;
+      font-size: ${cellFontSize};
       color: #000;
     ">
       <thead>
-        <tr style="border-bottom: 2px solid #000; height: 36px;">
+        <tr style="border-bottom: 2px solid #000; height: ${headerHeight}px;">
           <th style="
-            padding: 8px 6px;
+            padding: 4px 3px;
             text-align: center;
             font-weight: bold;
-            font-size: 12px;
+            font-size: ${headerFontSize};
             width: 8%;
             color: #000;
             vertical-align: middle;
           ">Group</th>
           <th style="
-            padding: 8px 6px;
+            padding: 4px 3px;
             text-align: left;
             font-weight: bold;
-            font-size: 12px;
+            font-size: ${headerFontSize};
             width: 22%;
             color: #000;
             vertical-align: middle;
           ">Name ★=Captain</th>
           <th style="
-            padding: 8px 6px;
+            padding: 4px 3px;
             text-align: center;
             font-weight: bold;
-            font-size: 12px;
+            font-size: ${headerFontSize};
             width: 10%;
             color: #000;
             vertical-align: middle;
           ">Count</th>
           <th style="
-            padding: 8px 6px;
+            padding: 4px 3px;
             text-align: center;
             font-weight: bold;
-            font-size: 12px;
+            font-size: ${headerFontSize};
             width: 8%;
             color: #000;
             vertical-align: middle;
           ">EV</th>
           <th style="
-            padding: 8px 6px;
+            padding: 4px 3px;
             text-align: center;
             font-weight: bold;
-            font-size: 12px;
+            font-size: ${headerFontSize};
             width: 18%;
             color: #000;
             vertical-align: middle;
           ">Stamina Tracker</th>
           <th style="
-            padding: 8px 6px;
+            padding: 4px 3px;
             text-align: left;
             font-weight: bold;
-            font-size: 12px;
+            font-size: ${headerFontSize};
             width: 34%;
             color: #000;
             vertical-align: middle;
@@ -492,27 +515,27 @@ async function generateEncounterRosterTable(encounter: EncounterExportData): Pro
       </thead>
       <tbody>
         ${allMonsterEntries.map((entry, index) => `
-          <tr style="${index % 2 === 0 ? 'background: #f8f8f8;' : ''} border-bottom: 1px solid #ccc; height: 40px;">
+          <tr style="${index % 2 === 0 ? 'background: #f8f8f8;' : ''} border-bottom: 1px solid #ccc; height: ${dynamicRowHeight}px;">
             <td style="
-              padding: 8px 6px;
-              font-size: 12px;
+              padding: 4px 3px;
+              font-size: ${cellFontSize};
               text-align: center;
               color: #000;
               font-weight: bold;
               vertical-align: middle;
             ">${entry.groupNumber}</td>
             <td style="
-              padding: 8px 6px;
-              font-size: 12px;
+              padding: 4px 3px;
+              font-size: ${cellFontSize};
               color: #000;
               vertical-align: middle;
             ">${entry.name}</td>
-            <td style="padding: 8px 6px; font-size: 12px; text-align: center; color: #000; vertical-align: middle;">${entry.creatures}</td>
-            <td style="padding: 8px 6px; text-align: center; font-size: 12px; font-weight: bold; color: #000; vertical-align: middle;">${entry.totalEV || ''}</td>
+            <td style="padding: 4px 3px; font-size: ${cellFontSize}; text-align: center; color: #000; vertical-align: middle;">${entry.creatures}</td>
+            <td style="padding: 4px 3px; text-align: center; font-size: ${cellFontSize}; font-weight: bold; color: #000; vertical-align: middle;">${entry.totalEV || ''}</td>
             <td style="
-              padding: 8px 6px;
+              padding: 4px 3px;
               text-align: center;
-              font-size: 11px;
+              font-size: ${parseInt(cellFontSize) - 1}px;
               font-family: monospace;
               letter-spacing: 1px;
               color: #000;
@@ -520,10 +543,10 @@ async function generateEncounterRosterTable(encounter: EncounterExportData): Pro
               vertical-align: middle;
             ">${entry.staminaTracker}</td>
             <td style="
-              padding: 8px 6px;
-              font-size: 10px;
+              padding: 4px 3px;
+              font-size: ${parseInt(cellFontSize) - 1}px;
               border-left: 1px solid #ddd;
-              min-height: 40px;
+              min-height: ${dynamicRowHeight}px;
               color: #000;
               vertical-align: middle;
             ">${entry.status}</td>
@@ -544,7 +567,7 @@ async function generateEncounterHTML(encounter: EncounterExportData): Promise<st
 
   // Get party size and victories from party configuration
   const partySize = encounter.party.heroes.length
-  const totalVictories = encounter.party.heroes.reduce((sum, hero) => sum + hero.victories, 0)
+  const totalVictories = (encounter.party.heroes.reduce((sum, hero) => sum + hero.victories, 0)/partySize || 0).toFixed(0)
 
   return `
     <div style="
