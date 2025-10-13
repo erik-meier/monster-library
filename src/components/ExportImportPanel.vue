@@ -6,7 +6,8 @@
       <div class="export-section">
         <h4>Export Monsters</h4>
         <div class="export-buttons">
-          <button class="btn btn-secondary" @click="exportAllCustomMonsters" :disabled="customMonsterCount === 0 && customMaliceCount === 0"
+          <button class="btn btn-secondary" @click="exportAllCustomMonsters"
+            :disabled="customMonsterCount === 0 && customMaliceCount === 0"
             title="Export all your custom monsters and malice features as JSON">
             <span class="btn-icon">📦</span>
             Export All Custom ({{ customMonsterCount }} monsters, {{ customMaliceCount }} malice)
@@ -60,7 +61,8 @@
               <span class="stat-number">{{ importPreview.totalMaliceFeatures }}</span>
               <span class="stat-label">Total Malice</span>
             </div>
-            <div class="stat-item success" v-if="importPreview.validMaliceFeatures && importPreview.validMaliceFeatures > 0">
+            <div class="stat-item success"
+              v-if="importPreview.validMaliceFeatures && importPreview.validMaliceFeatures > 0">
               <span class="stat-number">{{ importPreview.validMaliceFeatures }}</span>
               <span class="stat-label">Valid Malice</span>
             </div>
@@ -216,14 +218,15 @@
               Restore from Backup
             </label>
 
-            <button class="btn btn-danger" @click="showClearConfirm = true" title="Clear all custom monster data">
+            <button class="btn btn-danger" @click="showClearConfirm = true"
+              title="Clear all custom monster and malice data">
               <span class="btn-icon">🗑️</span>
               Clear All Data
             </button>
           </div>
 
           <p class="warning-text">
-            ⚠️ <strong>Warning:</strong> Restore will replace all existing custom monsters.
+            ⚠️ <strong>Warning:</strong> Restore will replace all existing custom monsters and malice features.
             Create a backup first if you want to preserve current data.
           </p>
         </div>
@@ -233,8 +236,8 @@
     <!-- Confirmation Dialog -->
     <div v-if="showClearConfirm" class="modal-overlay" @click.self="showClearConfirm = false">
       <div class="modal clear-confirm-modal">
-        <h3>Clear All Custom Monsters</h3>
-        <p>This will permanently delete all your custom monsters. This action cannot be undone.</p>
+        <h3>Clear All Custom Data</h3>
+        <p>This will permanently delete all your custom monsters and malice features. This action cannot be undone.</p>
         <p><strong>Are you sure you want to continue?</strong></p>
         <div class="modal-actions">
           <button class="btn btn-outline" @click="showClearConfirm = false">
@@ -369,6 +372,8 @@ function clearImportResult() {
 
 function clearAllData() {
   customMonstersStore.clearAllCustomMonsters()
+  customMaliceStore.customMaliceFeatures.clear()
+  customMaliceStore.saveToStorage()
   showClearConfirm.value = false
   importResult.value = {
     success: true,
@@ -377,7 +382,7 @@ function clearAllData() {
     errors: [],
     warnings: [{
       monster: 'System',
-      message: 'All custom monster data has been cleared',
+      message: 'All custom monster and malice feature data has been cleared',
       action: 'Data deleted successfully'
     }]
   }
@@ -472,11 +477,12 @@ function clearAllData() {
 
 /* Import Results */
 .import-results {
-  background: var(--color-neutral-100);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
   margin: var(--space-4) 0;
-  border: 1px solid var(--color-neutral-200);
+  border: 2px solid var(--color-neutral-300);
+  box-shadow: var(--shadow-md);
 }
 
 .import-summary {
@@ -489,15 +495,17 @@ function clearAllData() {
 }
 
 .import-summary.success {
-  background: var(--color-success-50);
-  border: 1px solid var(--color-success-200);
-  color: var(--color-success-800);
+  background: var(--color-success-100);
+  border: 2px solid var(--color-success-600);
+  color: var(--color-success-700);
+  box-shadow: var(--shadow-sm);
 }
 
 .import-summary.error {
-  background: var(--color-error-50);
-  border: 1px solid var(--color-error-200);
-  color: var(--color-error-800);
+  background: var(--color-error-100);
+  border: 2px solid var(--color-error-600);
+  color: var(--color-error-700);
+  box-shadow: var(--shadow-sm);
 }
 
 .import-summary h4 {
@@ -510,6 +518,7 @@ function clearAllData() {
   display: flex;
   gap: var(--space-4);
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
 }
 
 .import-warnings,
@@ -520,8 +529,9 @@ function clearAllData() {
 .import-warnings h5,
 .import-errors h5 {
   margin: 0 0 var(--space-2) 0;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-800);
 }
 
 .message-list {
@@ -546,14 +556,16 @@ function clearAllData() {
 
 .message-item.warning {
   background: var(--color-warning-50);
-  color: var(--color-warning-800);
-  border-bottom-color: var(--color-warning-200);
+  color: var(--color-warning-700);
+  border-bottom-color: var(--color-warning-300);
+  border-left: 3px solid var(--color-warning-600);
 }
 
 .message-item.error {
   background: var(--color-error-50);
-  color: var(--color-error-800);
-  border-bottom-color: var(--color-error-200);
+  color: var(--color-error-700);
+  border-bottom-color: var(--color-error-300);
+  border-left: 3px solid var(--color-error-600);
 }
 
 .error-details {
@@ -699,21 +711,24 @@ function clearAllData() {
 }
 
 .stat-item.success {
-  background: var(--color-success-50);
-  border-color: var(--color-success-200);
-  color: var(--color-success-800);
+  background: var(--color-success-100);
+  border-color: var(--color-success-600);
+  color: var(--color-success-700);
+  border-width: 2px;
 }
 
 .stat-item.error {
-  background: var(--color-error-50);
-  border-color: var(--color-error-200);
-  color: var(--color-error-800);
+  background: var(--color-error-100);
+  border-color: var(--color-error-600);
+  color: var(--color-error-700);
+  border-width: 2px;
 }
 
 .stat-item.warning {
   background: var(--color-warning-50);
-  border-color: var(--color-warning-200);
-  color: var(--color-warning-800);
+  border-color: var(--color-warning-600);
+  color: var(--color-warning-700);
+  border-width: 2px;
 }
 
 .stat-number {
@@ -761,12 +776,16 @@ function clearAllData() {
 
 .preview-message-item.warning {
   background: var(--color-warning-50);
-  border-bottom-color: var(--color-warning-200);
+  border-bottom-color: var(--color-warning-300);
+  border-left: 3px solid var(--color-warning-600);
+  color: var(--color-warning-700);
 }
 
 .preview-message-item.error {
   background: var(--color-error-50);
-  border-bottom-color: var(--color-error-200);
+  border-bottom-color: var(--color-error-300);
+  border-left: 3px solid var(--color-error-600);
+  color: var(--color-error-700);
 }
 
 .message-header {
