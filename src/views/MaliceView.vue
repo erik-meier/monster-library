@@ -87,7 +87,6 @@ const relatedMonsters = computed(() => {
     if (!maliceBlock.value) return []
 
     const maliceId = route.params.maliceId
-    const linkedMonsters = customMaliceStore.getLinkedMonsters(maliceId)
 
     // The store returns monster data but we need to ensure each has an id property
     // We need to get the monster IDs and combine them with the monster data
