@@ -17,12 +17,12 @@
         @save="handleSave" @cancel="cancelEdit" />
 
       <div class="monster-actions">
-        <button class="btn btn-secondary" @click="viewRandomMonster" :disabled="loadingRandom || editMode">
-          {{ loadingRandom ? 'Loading...' : 'Random Monster' }}
-        </button>
-
         <button class="btn btn-primary" @click="exportToPDF" :disabled="exportingPDF || editMode">
           {{ exportingPDF ? 'Exporting...' : '📄 Export PDF' }}
+        </button>
+
+        <button class="btn btn-primary" @click="startEncounterWithMonster" :disabled="editMode">
+          ⚔️ Start Encounter
         </button>
 
         <!-- Edit Mode Controls -->
@@ -57,6 +57,7 @@ import MonsterStatBlock from '@/components/MonsterStatBlock.vue'
 import MonsterStatBlockEditable from '@/components/MonsterStatBlockEditable.vue'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
 import { useCustomMonstersStore } from '@/stores/customMonsters'
+import { useEncounterStore } from '@/stores/encounter'
 import { exportMonsterToPDF } from '@/utils/pdfExport'
 
 export default {
@@ -74,7 +75,8 @@ export default {
   },
   setup() {
     const customMonstersStore = useCustomMonstersStore()
-    return { customMonstersStore }
+    const encounterStore = useEncounterStore()
+    return { customMonstersStore, encounterStore }
   },
   data() {
     return {
@@ -324,6 +326,31 @@ export default {
         alert('Failed to export PDF. Please try again.')
       } finally {
         this.exportingPDF = false
+      }
+    },
+
+    startEncounterWithMonster() {
+      if (!this.monster) return
+
+      try {
+        // Clear any existing encounter to start fresh
+        this.encounterStore.clearEncounter()
+
+        // Add the current monster to the encounter
+        this.encounterStore.addMonster({
+          id: this.monsterId,
+          name: this.monster.name,
+          level: this.monster.level,
+          ev: this.monster.ev,
+          role: this.monster.role || '',
+          organization: this.monster.organization || ''
+        })
+
+        // Navigate to the encounter builder
+        this.$router.push('/encounter-builder')
+      } catch (error) {
+        console.error('Failed to start encounter:', error)
+        alert('Failed to start encounter. Please try again.')
       }
     }
   }

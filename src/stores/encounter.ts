@@ -351,12 +351,6 @@ export const useEncounterStore = defineStore('encounter', {
             message: 'Monster count must be greater than 0'
           })
         }
-        if (monster.level < 1 || monster.level > 10) {
-          errors.push({
-            field: `monsters[${index}].level`,
-            message: 'Monster level must be between 1 and 10'
-          })
-        }
       })
 
       // Validate initiative groups
