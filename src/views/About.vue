@@ -113,6 +113,25 @@
       </section>
 
       <section class="about-section">
+        <h2>☕ Support the Project</h2>
+        <div class="support-content">
+          <div class="support-text">
+            <p>
+              Steel Cauldron is a passion project created to help the Draw Steel community.
+              If you find it useful and would like to support its development, I would greatly appreciate it!
+            </p>
+          </div>
+          <div class="support-buttons">
+            <a href="https://buymeacoffee.com/errmeierx" target="_blank" rel="noopener noreferrer"
+              class="btn btn-coffee">
+              <span class="coffee-icon">☕</span>
+              Buy me a coffee
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section">
         <h2>📜 Legal</h2>
         <p class="legal-text">
           Steel Cauldron is an independent product published under the DRAW STEEL Creator License
@@ -403,6 +422,52 @@ kbd {
   box-shadow: var(--shadow-sm);
 }
 
+.support-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.support-text {
+  flex: 1;
+}
+
+.support-text p {
+  margin: 0;
+}
+
+.support-buttons {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.btn-coffee {
+  background: linear-gradient(135deg, #ff813f, #ff6b35);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: var(--transition-all);
+}
+
+.btn-coffee:hover {
+  background: linear-gradient(135deg, #ff6b35, #ff5722);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-coffee:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.coffee-icon {
+  font-size: var(--font-size-lg);
+}
+
 @media (max-width: 768px) {
   .about-page {
     padding: var(--space-4) var(--space-2);
@@ -454,6 +519,16 @@ kbd {
 
   .btn {
     width: 100%;
+  }
+
+  .support-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+
+  .support-buttons {
+    justify-content: center;
   }
 }
 </style>
