@@ -48,15 +48,28 @@
               <select id="ability-type-select" v-model="formData.ability_type" class="form-select">
                 <option value="">Regular Ability</option>
                 <option value="Signature Ability">Signature Ability</option>
-                <option value="Villain Action 1">Villain Action 1</option>
-                <option value="Villain Action 2">Villain Action 2</option>
-                <option value="Villain Action 3">Villain Action 3</option>
+                <option value="Villain Action">Villain Action</option>
               </select>
               <div v-if="errors.signature" class="error-message" role="alert">{{ errors.signature }}</div>
             </div>
 
-            <div v-if="!(formData.ability_type && formData.ability_type.startsWith('Villain Action'))"
-              class="form-group">
+            <div v-if="isVillainAction" class="form-group">
+              <label for="villain-action-number" class="form-label">Number</label>
+              <select id="villain-action-number" v-model="villainActionNumber" class="form-select">
+                <option :value="1">1</option>
+                <option :value="2">2</option>
+                <option :value="3">3</option>
+                <option :value="4">4</option>
+                <option :value="5">5</option>
+                <option :value="6">6</option>
+                <option :value="7">7</option>
+                <option :value="8">8</option>
+                <option :value="9">9</option>
+              </select>
+              <div class="help-text">Ordering villain actions makes it easiser for directors to use them</div>
+            </div>
+
+            <div v-if="!isVillainAction" class="form-group">
               <label for="usage-type" class="form-label">Usage</label>
               <select id="usage-type" v-model="formData.usage" class="form-select">
                 <option value="Main action">Main Action</option>
@@ -279,6 +292,21 @@ const effectsSection = ref<{ updateHeight: () => void } | null>(null)
 const keywordsSection = ref<{ updateHeight: () => void } | null>(null)
 const powerRollSection = ref<{ updateHeight: () => void } | null>(null)
 
+// Villain action state
+const villainActionNumber = ref(1)
+
+// Initialize villain action number from existing data
+const initializeVillainActionNumber = () => {
+  if (formData.ability_type && formData.ability_type.startsWith('Villain Action ')) {
+    const match = formData.ability_type.match(/Villain Action (\d+)/)
+    if (match) {
+      villainActionNumber.value = parseInt(match[1], 10)
+      // Normalize the ability_type to just "Villain Action"
+      formData.ability_type = 'Villain Action'
+    }
+  }
+}
+
 // Power roll state
 const hasPowerRoll = ref(false)
 const powerRollFormula = ref('')
@@ -295,6 +323,7 @@ const errors = reactive({
 })
 
 const isFeature = computed(() => formData.type === 'feature')
+const isVillainAction = computed(() => formData.ability_type === 'Villain Action' || formData.ability_type?.startsWith('Villain Action '))
 const isTriggeredAction = computed(() => formData.usage?.includes('Triggered'))
 
 // Feature description computed property 
@@ -512,6 +541,11 @@ const handleSave = () => {
   validateFields()
   if (isValid.value) {
     try {
+      // Ensure villain action has the correct format
+      if (isVillainAction.value) {
+        formData.ability_type = `Villain Action ${villainActionNumber.value}`
+      }
+
       // Ensure power roll is properly handled
       if (hasPowerRoll.value && !isFeature.value) {
         ensurePowerRollEffect()
@@ -552,6 +586,7 @@ const handleEscape = (event: KeyboardEvent) => {
 
 onMounted(() => {
   document.addEventListener('keydown', handleEscape, true)
+  initializeVillainActionNumber()
   initializePowerRollState()
   validateFields()
 })
@@ -603,6 +638,16 @@ watch(() => formData.effects, async () => {
     effectsSection.value.updateHeight()
   }
 }, { deep: true })
+
+// Watch ability_type changes to handle villain action selection
+watch(() => formData.ability_type, (newType, oldType) => {
+  if (newType !== 'Villain Action' && !newType?.startsWith('Villain Action ')) {
+    // Switched away from villain action, clear usage field
+    if (oldType === 'Villain Action' || oldType?.startsWith('Villain Action ')) {
+      formData.usage = 'Main action'
+    }
+  }
+})
 </script>
 
 <style scoped>

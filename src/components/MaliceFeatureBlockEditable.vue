@@ -41,10 +41,15 @@
         <div class="features-section">
             <template v-if="editMode">
                 <div class="features-edit-header">
-                    <h3>Malice Features</h3>
-                    <button @click="addFeature" class="btn btn-outline btn-add-small">
-                        + Add Feature
-                    </button>
+                    <h3>Malice Features & Abilities</h3>
+                    <div class="add-buttons">
+                        <button @click="addFeature" class="btn btn-outline btn-add-small">
+                            + Add Feature
+                        </button>
+                        <button @click="addAbility" class="btn btn-outline btn-add-small">
+                            + Add Ability
+                        </button>
+                    </div>
                 </div>
 
                 <div v-if="editableData.features && editableData.features.length > 0" class="features-list-edit">
@@ -55,58 +60,47 @@
                                     placeholder="Feature Name" />
                             </div>
                             <div class="feature-edit-actions">
-                                <button @click="removeFeature(index)" class="btn-remove-small">×</button>
+                                <button @click="editFeature(index)" class="btn-edit-small" type="button"
+                                    title="Edit feature details">
+                                    ✏️
+                                </button>
+                                <button @click="removeFeature(index)" class="btn-remove-small" type="button"
+                                    title="Remove feature">
+                                    ×
+                                </button>
                             </div>
                         </div>
 
-                        <div class="feature-cost-edit">
-                            <label>Cost:</label>
-                            <input v-model="feature.cost" @input="debouncedUpdateField" class="feature-cost-input"
-                                placeholder="e.g., 3 Malice" />
-                        </div>
+                        <!-- Enhanced preview of feature details -->
+                        <div class="feature-edit-preview">
+                            <div class="feature-meta-info">
+                                <div v-if="feature.type === 'ability'" class="feature-type-badge ability">Ability</div>
+                                <div v-else class="feature-type-badge feature">Feature</div>
+                                <div v-if="feature.cost" class="feature-cost">{{ feature.cost }}</div>
+                                <div v-else class="feature-cost missing">⚠️ Cost required</div>
+                            </div>
 
-                        <div class="feature-effects-edit">
-                            <label>Effects:</label>
-                            <div v-if="feature.effects && feature.effects.length > 0">
+                            <!-- Ability-specific info -->
+                            <div v-if="feature.type === 'ability'" class="ability-info">
+                                <div v-if="feature.usage" class="ability-usage">{{ feature.usage }}</div>
+                                <div v-if="feature.distance" class="ability-distance">{{ feature.distance }}</div>
+                                <div v-if="feature.target" class="ability-target">{{ feature.target }}</div>
+                            </div>
+
+                            <!-- Feature effects preview -->
+                            <div v-if="feature.effects && feature.effects.length > 0" class="feature-effects">
                                 <div v-for="(effect, effectIndex) in feature.effects" :key="effectIndex"
-                                    class="effect-edit">
-                                    <textarea v-model="effect.effect" @input="debouncedUpdateField"
-                                        class="effect-description-edit" placeholder="Describe the effect..."
-                                        rows="2"></textarea>
-
-                                    <!-- Tier effects for tests -->
-                                    <div v-if="showTierEffects(effect)" class="tier-effects-edit">
-                                        <div class="tier-effect-row">
-                                            <label>Tier 1:</label>
-                                            <input v-model="effect.tier1" @input="debouncedUpdateField"
-                                                class="tier-input" placeholder="Success result" />
-                                        </div>
-                                        <div class="tier-effect-row">
-                                            <label>Tier 2:</label>
-                                            <input v-model="effect.tier2" @input="debouncedUpdateField"
-                                                class="tier-input" placeholder="Partial success result" />
-                                        </div>
-                                        <div class="tier-effect-row">
-                                            <label>Tier 3:</label>
-                                            <input v-model="effect.tier3" @input="debouncedUpdateField"
-                                                class="tier-input" placeholder="Failure result" />
-                                        </div>
+                                    class="effect-text">
+                                    <div v-if="effect.roll" class="feature-power-roll">
+                                        <strong>Power Roll:</strong> {{ effect.roll }}
                                     </div>
-
-                                    <div class="effect-controls">
-                                        <button @click="toggleTierEffects(effect)" class="btn-link">
-                                            {{ showTierEffects(effect) ? 'Remove Test Tiers' : 'Add Test Tiers' }}
-                                        </button>
-                                        <button v-if="feature.effects.length > 1"
-                                            @click="removeEffect(feature, effectIndex)" class="btn-remove-small">
-                                            Remove Effect
-                                        </button>
+                                    <div v-if="effect.effect" class="effect-description" v-html="effect.effect"></div>
+                                    <div v-if="effect.tier1 || effect.tier2 || effect.tier3" class="tier-count">
+                                        Has {{ [effect.tier1, effect.tier2, effect.tier3].filter(Boolean).length }} tier
+                                        effects
                                     </div>
                                 </div>
                             </div>
-                            <button @click="addEffect(feature)" class="btn btn-outline btn-add-small">
-                                + Add Effect
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -117,75 +111,9 @@
             </template>
 
             <template v-else>
-                <div v-if="maliceBlock.features && maliceBlock.features.length > 0">
-                    <div v-for="(feature, index) in maliceBlock.features" :key="index" class="feature">
-                        <div class="feature-header">
-                            <h3 class="feature-name">{{ feature.name }}</h3>
-                            <span v-if="feature.cost" class="feature-cost">{{ feature.cost }}</span>
-                        </div>
-
-                        <!-- Action properties for ability-type features -->
-                        <div v-if="feature.type === 'ability'" class="action-properties">
-                            <!-- Action Type / Usage -->
-                            <div v-if="feature.usage" class="action-property">
-                                <span class="property-label">Action:</span>
-                                <span class="property-value">{{ feature.usage }}</span>
-                            </div>
-
-                            <!-- Keywords -->
-                            <div v-if="feature.keywords && feature.keywords.length > 0" class="action-property">
-                                <span class="property-label">Keywords:</span>
-                                <span class="property-value">{{ feature.keywords.join(', ') }}</span>
-                            </div>
-
-                            <!-- Distance -->
-                            <div v-if="feature.distance" class="action-property">
-                                <span class="property-label">Distance:</span>
-                                <span class="property-value">{{ feature.distance }}</span>
-                            </div>
-
-                            <!-- Target -->
-                            <div v-if="feature.target" class="action-property">
-                                <span class="property-label">Target:</span>
-                                <span class="property-value">{{ feature.target }}</span>
-                            </div>
-                        </div>
-
-                        <div v-if="feature.effects" class="feature-effects">
-                            <div v-for="(effect, effectIndex) in feature.effects" :key="effectIndex" class="effect">
-                                <!-- Power roll for ability-type features -->
-                                <div v-if="feature.type === 'ability' && effect.roll" class="power-roll-info">
-                                    <span class="power-roll-label">Power Roll:</span>
-                                    <span class="power-roll-value">{{ effect.roll }}</span>
-                                </div>
-
-                                <div v-if="effect.effect" class="effect-description"
-                                    v-html="formatEffectText(effect.effect)"></div>
-
-                                <!-- Tier effects for tests -->
-                                <div v-if="effect.tier1 || effect.tier2 || effect.tier3" class="tier-effects">
-                                    <div v-if="effect.tier1" class="tier-outcome tier-1">
-                                        <span class="tier-number">
-                                            <span class="glyph-icon glyph-tier-1" aria-label="Tier 1"></span>
-                                        </span>
-                                        <span class="tier-text" v-html="formatEffectText(effect.tier1)"></span>
-                                    </div>
-                                    <div v-if="effect.tier2" class="tier-outcome tier-2">
-                                        <span class="tier-number">
-                                            <span class="glyph-icon glyph-tier-2" aria-label="Tier 2"></span>
-                                        </span>
-                                        <span class="tier-text" v-html="formatEffectText(effect.tier2)"></span>
-                                    </div>
-                                    <div v-if="effect.tier3" class="tier-outcome tier-3">
-                                        <span class="tier-number">
-                                            <span class="glyph-icon glyph-tier-3" aria-label="Tier 3"></span>
-                                        </span>
-                                        <span class="tier-text" v-html="formatEffectText(effect.tier3)"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div v-if="maliceBlock.features && maliceBlock.features.length > 0" class="actions-list">
+                    <ActionDisplay v-for="(feature, index) in maliceBlock.features" :key="index" :action="feature"
+                        @power-roll-click="handlePowerRollClick" />
                 </div>
             </template>
         </div>
@@ -213,10 +141,26 @@
             </div>
         </div>
     </div>
+
+    <!-- Feature Editor Modal -->
+    <div v-if="showFeatureEditor" class="editor-modal-overlay" @click.self="handleFeatureCancel">
+        <div class="editor-modal-container">
+            <AbilityEditor v-if="editingFeature" :model-value="editingFeature" :existing-items="editableData.features"
+                :editing-index="editingFeatureIndex" @update:model-value="handleFeatureUpdate" @save="handleFeatureSave"
+                @cancel="handleFeatureCancel" />
+        </div>
+    </div>
+
+    <RollResultModal :show="showRollModal" :result="rollResult" :characteristicName="rollName"
+        @close="showRollModal = false" @reroll="rerollCurrent" />
 </template>
 
 <script setup>
 import { ref, watch, onMounted, onUnmounted } from 'vue'
+import ActionDisplay from './ActionDisplay.vue'
+import RollResultModal from './RollResultModal.vue'
+import AbilityEditor from './AbilityEditor.vue'
+import { rollPowerRoll, parsePowerRollModifier } from '@/utils/diceRoller'
 
 const props = defineProps({
     maliceBlock: {
@@ -234,6 +178,23 @@ const emit = defineEmits(['save', 'cancel', 'update:maliceBlock'])
 // Editable data
 const editableData = ref({})
 const originalData = ref({})
+
+// Roll modal state
+const showRollModal = ref(false)
+const rollResult = ref({
+    roll1: 1,
+    roll2: 1,
+    total: 2,
+    modifier: 0,
+    tier: 1
+})
+const rollName = ref('')
+const currentFormula = ref('')
+
+// Feature editor state
+const showFeatureEditor = ref(false)
+const editingFeature = ref(null)
+const editingFeatureIndex = ref(null)
 
 // Initialize editable data
 const initializeEditableData = () => {
@@ -264,46 +225,102 @@ const updateField = () => {
     emit('update:maliceBlock', { ...editableData.value })
 }
 
-// Helper methods
-const formatEffectText = (text) => {
-    if (!text) return ''
+// Power roll functionality now handled by ActionDisplay component
 
-    // Basic text formatting - could be expanded with more sophisticated processing
-    return text
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // **bold** text
-        .replace(/\*(.*?)\*/g, '<em>$1</em>') // *italic* text
-}
-
-const showTierEffects = (effect) => {
-    return effect.tier1 !== undefined || effect.tier2 !== undefined || effect.tier3 !== undefined
-}
-
-const toggleTierEffects = (effect) => {
-    if (showTierEffects(effect)) {
-        // Remove tier effects
-        delete effect.tier1
-        delete effect.tier2
-        delete effect.tier3
-    } else {
-        // Add tier effects
-        effect.tier1 = ''
-        effect.tier2 = ''
-        effect.tier3 = ''
+// Power roll click handler
+const handlePowerRollClick = (feature) => {
+    // Get the power roll formula from the feature
+    let formula = ''
+    if (feature.effects) {
+        const rollEffect = feature.effects.find(effect => effect.roll)
+        if (rollEffect) formula = rollEffect.roll
     }
-    debouncedUpdateField()
+
+    if (!formula) return
+
+    // Parse the formula to get the modifier
+    const modifier = parsePowerRollModifier(formula)
+
+    // Store current formula for rerolls
+    currentFormula.value = formula
+
+    // Set the roll name (feature name)
+    rollName.value = feature.name || 'Power Roll'
+
+    // Perform the roll
+    rollResult.value = rollPowerRoll(modifier)
+    showRollModal.value = true
 }
+
+const rerollCurrent = () => {
+    if (currentFormula.value) {
+        const modifier = parsePowerRollModifier(currentFormula.value)
+        rollResult.value = rollPowerRoll(modifier)
+    }
+}
+
+
 
 // Feature management
 const addFeature = () => {
-    editableData.value.features.push({
+    const newFeature = {
         type: 'feature',
         name: '',
         cost: '',
         effects: [{
             effect: ''
-        }]
-    })
-    debouncedUpdateField()
+        }],
+        // Ensure it has the structure the AbilityEditor expects
+        system: {
+            description: { value: '' },
+            keywords: []
+        }
+    }
+
+    // Set up editing state - normalize for the editor
+    editingFeature.value = normalizeFeatureForEditor(JSON.parse(JSON.stringify(newFeature)))
+    editingFeatureIndex.value = null // New feature, no index yet
+    showFeatureEditor.value = true
+}
+
+const addAbility = () => {
+    const newAbility = {
+        type: 'ability',
+        name: '',
+        cost: '',
+        usage: '',
+        distance: '',
+        target: '',
+        effects: [{
+            effect: ''
+        }],
+        // Ensure it has the structure the AbilityEditor expects
+        system: {
+            type: 'action',
+            category: 'regular',
+            keywords: [],
+            distance: { type: 'ranged', value: 1, unit: 'square' },
+            target: { type: 'creature', value: 1 },
+            power: {
+                roll: { formula: '' },
+                tiers: []
+            }
+        }
+    }
+
+    // Set up editing state - normalize for the editor
+    editingFeature.value = normalizeFeatureForEditor(JSON.parse(JSON.stringify(newAbility)))
+    editingFeatureIndex.value = null // New ability, no index yet
+    showFeatureEditor.value = true
+}
+
+const editFeature = (index) => {
+    if (editableData.value.features && editableData.value.features[index]) {
+        // Deep copy to avoid direct mutations during editing
+        editingFeature.value = normalizeFeatureForEditor(JSON.parse(JSON.stringify(editableData.value.features[index])))
+        editingFeatureIndex.value = index
+        showFeatureEditor.value = true
+    }
 }
 
 const removeFeature = (index) => {
@@ -311,23 +328,142 @@ const removeFeature = (index) => {
     debouncedUpdateField()
 }
 
-const addEffect = (feature) => {
-    if (!feature.effects) {
-        feature.effects = []
+// Normalize feature data for the editor
+const normalizeFeatureForEditor = (feature) => {
+    // Ensure basic structure exists
+    if (!feature.system) {
+        feature.system = {}
     }
-    feature.effects.push({
-        effect: ''
-    })
+
+    // Ensure description structure 
+    if (!feature.system.description) {
+        feature.system.description = { value: '' }
+    }
+
+    // Ensure keywords array exists
+    if (!feature.system.keywords) {
+        feature.system.keywords = []
+    }
+
+    if (feature.type === 'ability') {
+        // For abilities, ensure proper structure
+        if (!feature.system.type) {
+            feature.system.type = 'action'
+        }
+
+        if (!feature.system.category) {
+            feature.system.category = 'regular'
+        }
+
+        // Ensure distance structure
+        if (!feature.system.distance) {
+            feature.system.distance = { type: 'ranged', value: 1, unit: 'square' }
+        }
+
+        // Ensure target structure
+        if (!feature.system.target) {
+            feature.system.target = { type: 'creature', value: 1 }
+        }
+
+        // Ensure power structure for abilities that might have rolls
+        if (!feature.system.power) {
+            feature.system.power = {
+                roll: { formula: '' },
+                tiers: []
+            }
+        }
+    } else {
+        // For features, simpler structure
+        if (!feature.system.power) {
+            feature.system.power = null
+        }
+    }
+
+    return feature
+}
+
+// Validation functions
+const validateMaliceCost = (item) => {
+    // Check for malice cost - it should be present and non-empty
+    const hasCost = item.cost && item.cost.trim() !== ''
+    const hasResourceCost = item.system?.resource && item.system.resource > 0
+
+    return hasCost || hasResourceCost
+}
+
+const validateFeature = (item) => {
+    const errors = []
+
+    if (!item.name || item.name.trim() === '') {
+        errors.push('Feature name is required')
+    }
+
+    if (!validateMaliceCost(item)) {
+        errors.push('Malice cost is required for all malice features and abilities')
+    }
+
+    return errors
+}
+
+// Feature editor handlers
+const handleFeatureSave = () => {
+    if (!editableData.value.features) {
+        editableData.value.features = []
+    }
+
+    // Validate the feature before saving
+    const validationErrors = validateFeature(editingFeature.value)
+    if (validationErrors.length > 0) {
+        alert(`Cannot save: ${validationErrors.join(', ')}`)
+        return
+    }
+
+    if (editingFeatureIndex.value !== null) {
+        // Update existing feature
+        editableData.value.features[editingFeatureIndex.value] = JSON.parse(JSON.stringify(editingFeature.value))
+    } else {
+        // Add new feature
+        editableData.value.features.push(JSON.parse(JSON.stringify(editingFeature.value)))
+    }
+
+    // Close editor and update
+    showFeatureEditor.value = false
+    editingFeature.value = null
+    editingFeatureIndex.value = null
     debouncedUpdateField()
 }
 
-const removeEffect = (feature, effectIndex) => {
-    feature.effects.splice(effectIndex, 1)
-    debouncedUpdateField()
+const handleFeatureCancel = () => {
+    // Close editor without saving
+    showFeatureEditor.value = false
+    editingFeature.value = null
+    editingFeatureIndex.value = null
+}
+
+const handleFeatureUpdate = (updatedFeature) => {
+    // Update the editing feature with changes from the editor
+    editingFeature.value = JSON.parse(JSON.stringify(updatedFeature))
 }
 
 // Save/Cancel handlers
 const handleSave = () => {
+    // Validate all features before saving
+    const allErrors = []
+
+    if (editableData.value.features) {
+        editableData.value.features.forEach((feature, index) => {
+            const errors = validateFeature(feature)
+            if (errors.length > 0) {
+                allErrors.push(`Feature ${index + 1} (${feature.name || 'Unnamed'}): ${errors.join(', ')}`)
+            }
+        })
+    }
+
+    if (allErrors.length > 0) {
+        alert(`Cannot save malice block:\n${allErrors.join('\n')}`)
+        return
+    }
+
     emit('save', { ...editableData.value })
 }
 
@@ -359,7 +495,11 @@ const handleKeydown = (event) => {
     // Escape to cancel
     if (event.key === 'Escape') {
         event.preventDefault()
-        handleCancel()
+        if (showFeatureEditor.value) {
+            handleFeatureCancel()
+        } else {
+            handleCancel()
+        }
     }
 }
 
@@ -524,6 +664,11 @@ onUnmounted(() => {
     color: var(--color-primary-600);
 }
 
+.add-buttons {
+    display: flex;
+    gap: var(--space-2);
+}
+
 .features-list-edit {
     display: flex;
     flex-direction: column;
@@ -557,6 +702,108 @@ onUnmounted(() => {
     border: 1px solid var(--color-primary-300);
     border-radius: var(--radius-sm);
     padding: var(--space-2);
+}
+
+.btn-edit-small {
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-primary-600);
+    color: var(--color-primary-600);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-edit-small:hover {
+    background: var(--color-primary-600);
+    color: white;
+}
+
+.feature-edit-preview {
+    margin-top: var(--space-3);
+    padding: var(--space-3);
+    background: var(--color-neutral-50);
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--color-primary-400);
+}
+
+.feature-effects {
+    margin-top: var(--space-2);
+}
+
+.effect-text {
+    margin-bottom: var(--space-2);
+}
+
+.feature-power-roll {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary-700);
+    margin-bottom: var(--space-1);
+}
+
+.effect-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-700);
+    line-height: var(--line-height-relaxed);
+}
+
+.tier-count {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-500);
+    font-style: italic;
+}
+
+.feature-meta-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.feature-type-badge {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feature-type-badge.feature {
+    background: var(--color-info-100);
+    color: var(--color-info-700);
+    border: 1px solid var(--color-info-300);
+}
+
+.feature-type-badge.ability {
+    background: var(--color-success-100);
+    color: var(--color-success-700);
+    border: 1px solid var(--color-success-300);
+}
+
+.feature-cost.missing {
+    background: var(--color-warning-100);
+    color: var(--color-warning-700);
+    border: 1px solid var(--color-warning-300);
+}
+
+.ability-info {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.ability-usage,
+.ability-distance,
+.ability-target {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1) var(--space-2);
+    background: var(--color-neutral-100);
+    border-radius: var(--radius-sm);
+    color: var(--color-neutral-700);
 }
 
 .feature-cost-edit {
@@ -669,6 +916,30 @@ onUnmounted(() => {
     color: var(--color-primary-600);
     margin: 0;
     flex: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.power-roll-badge {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-neutral-700);
+    background: var(--color-neutral-100);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+}
+
+.power-roll-badge.clickable {
+    cursor: pointer;
+    transition: var(--transition-colors);
+}
+
+.power-roll-badge.clickable:hover {
+    background: var(--color-primary-100);
+    color: var(--color-primary-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 .feature-cost {
@@ -681,154 +952,14 @@ onUnmounted(() => {
     border: 1px solid var(--color-error-200);
 }
 
-.action-properties {
-    margin-top: var(--space-2);
-    margin-bottom: var(--space-3);
-    padding: var(--space-2);
-    background: var(--color-neutral-100);
-    border-radius: var(--radius-sm);
+/* Action display uses shared ActionDisplay component */
+.actions-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-1);
-}
-
-.action-property {
-    display: flex;
     gap: var(--space-2);
-    font-size: var(--font-size-sm);
 }
 
-.property-label {
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-neutral-700);
-    min-width: 5rem;
-}
-
-.property-value {
-    color: var(--color-neutral-800);
-}
-
-.power-roll-info {
-    margin-bottom: var(--space-2);
-    padding: var(--space-2);
-    background: var(--color-neutral-100);
-    border-radius: var(--radius-sm);
-    display: flex;
-    gap: var(--space-2);
-    align-items: center;
-}
-
-.power-roll-label {
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-neutral-700);
-    font-size: var(--font-size-sm);
-}
-
-.power-roll-value {
-    font-weight: var(--font-weight-bold);
-    color: var(--color-neutral-800);
-    font-size: var(--font-size-base);
-    font-family: monospace;
-}
-
-.feature-effects {
-    color: var(--color-neutral-800);
-    line-height: var(--line-height-relaxed);
-}
-
-.effect {
-    margin-bottom: var(--space-3);
-}
-
-.effect:last-child {
-    margin-bottom: 0;
-}
-
-.effect-description {
-    margin-bottom: var(--space-2);
-}
-
-.tier-effects {
-    background: var(--color-neutral-50);
-    border: 1px solid var(--color-neutral-200);
-    border-radius: var(--radius-md);
-    padding: var(--space-2);
-    margin: var(--space-2) 0;
-}
-
-.tier-outcome {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: var(--space-2);
-    padding: var(--space-2);
-    border-radius: var(--radius-base);
-    border-left: 4px solid;
-}
-
-.tier-outcome:last-child {
-    margin-bottom: 0;
-}
-
-.tier-outcome.tier-1 {
-    background: var(--color-error-50);
-    border-left-color: var(--color-error-600);
-}
-
-.tier-outcome.tier-2 {
-    background: var(--color-warning-50);
-    border-left-color: var(--color-warning-600);
-}
-
-.tier-outcome.tier-3 {
-    background: var(--color-success-50);
-    border-left-color: var(--color-success-600);
-}
-
-.tier-number {
-    background: white;
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-xs);
-    min-width: 3rem;
-    height: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: var(--space-3);
-    flex-shrink: 0;
-    padding: 0 var(--space-1);
-}
-
-.tier-1 .tier-number {
-    border-color: var(--color-error-600);
-    color: var(--color-neutral-800);
-    background: var(--color-error-50);
-}
-
-.tier-2 .tier-number {
-    border-color: var(--color-warning-600);
-    color: var(--color-neutral-800);
-    background: var(--color-warning-50);
-}
-
-.tier-3 .tier-number {
-    border-color: var(--color-success-600);
-    color: var(--color-neutral-800);
-    background: var(--color-success-50);
-}
-
-.tier-number {
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tier-text {
-    flex: 1;
-    line-height: var(--line-height-snug);
-    color: var(--color-neutral-800);
-    transform: translateY(1px);
-}
+/* Tier styling now handled in PowerRoll component */
 
 /* Edit controls */
 .edit-controls {
@@ -982,6 +1113,10 @@ onUnmounted(() => {
         gap: var(--space-2);
     }
 
+    .add-buttons {
+        justify-content: center;
+    }
+
     .button-group {
         flex-direction: column;
     }
@@ -1029,6 +1164,18 @@ onUnmounted(() => {
         align-items: stretch;
         gap: var(--space-1);
     }
+
+    .action-mechanics {
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+
+    .action-usage,
+    .action-distance,
+    .action-target {
+        font-size: var(--font-size-sm);
+        padding: var(--space-1) var(--space-2);
+    }
 }
 
 /* Ensure proper spacing for nested HTML content */
@@ -1046,5 +1193,34 @@ onUnmounted(() => {
 
 .effect-description :deep(strong) {
     color: var(--color-primary-700);
+}
+
+/* Modal styles for Feature Editor */
+.editor-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--space-4);
+}
+
+.editor-modal-container {
+    background: var(--color-neutral-50);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 800px;
+}
+
+/* Ensure modal is above other content */
+.editor-modal-overlay::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 </style>

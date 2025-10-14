@@ -25,73 +25,9 @@
 
         <!-- Features -->
         <div v-if="maliceBlock.features && maliceBlock.features.length > 0" class="features-section">
-            <div v-for="(feature, index) in maliceBlock.features" :key="index" class="feature">
-                <div class="feature-header">
-                    <h3 class="feature-name">{{ feature.name }}</h3>
-                    <span v-if="feature.cost" class="feature-cost">{{ feature.cost }}</span>
-                </div>
-
-                <!-- Action properties for ability-type features -->
-                <div v-if="feature.type === 'ability'" class="action-properties">
-                    <!-- Action Type / Usage -->
-                    <div v-if="feature.usage" class="action-property">
-                        <span class="property-label">Action:</span>
-                        <span class="property-value">{{ feature.usage }}</span>
-                    </div>
-
-                    <!-- Keywords -->
-                    <div v-if="feature.keywords && feature.keywords.length > 0" class="action-property">
-                        <span class="property-label">Keywords:</span>
-                        <span class="property-value">{{ feature.keywords.join(', ') }}</span>
-                    </div>
-
-                    <!-- Distance -->
-                    <div v-if="feature.distance" class="action-property">
-                        <span class="property-label">Distance:</span>
-                        <span class="property-value">{{ feature.distance }}</span>
-                    </div>
-
-                    <!-- Target -->
-                    <div v-if="feature.target" class="action-property">
-                        <span class="property-label">Target:</span>
-                        <span class="property-value">{{ feature.target }}</span>
-                    </div>
-                </div>
-
-                <div v-if="feature.effects" class="feature-effects">
-                    <div v-for="(effect, effectIndex) in feature.effects" :key="effectIndex" class="effect">
-                        <!-- Power roll for ability-type features -->
-                        <div v-if="feature.type === 'ability' && effect.roll" class="power-roll-info">
-                            <span class="power-roll-label">Power Roll:</span>
-                            <span class="power-roll-value">{{ effect.roll }}</span>
-                        </div>
-
-                        <div v-if="effect.effect" class="effect-description" v-html="formatEffectText(effect.effect)">
-                        </div>
-
-                        <!-- Tier effects for tests -->
-                        <div v-if="effect.tier1 || effect.tier2 || effect.tier3" class="tier-effects">
-                            <div v-if="effect.tier1" class="tier-outcome tier-1">
-                                <span class="tier-number">
-                                    <span class="glyph-icon glyph-tier-1" aria-label="Tier 1"></span>
-                                </span>
-                                <span class="tier-text" v-html="formatEffectText(effect.tier1)"></span>
-                            </div>
-                            <div v-if="effect.tier2" class="tier-outcome tier-2">
-                                <span class="tier-number">
-                                    <span class="glyph-icon glyph-tier-2" aria-label="Tier 2"></span>
-                                </span>
-                                <span class="tier-text" v-html="formatEffectText(effect.tier2)"></span>
-                            </div>
-                            <div v-if="effect.tier3" class="tier-outcome tier-3">
-                                <span class="tier-number">
-                                    <span class="glyph-icon glyph-tier-3" aria-label="Tier 3"></span>
-                                </span>
-                                <span class="tier-text" v-html="formatEffectText(effect.tier3)"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="actions-list">
+                <ActionDisplay v-for="(feature, index) in maliceBlock.features" :key="index" :action="feature"
+                    @power-roll-click="handlePowerRollClick" />
             </div>
         </div>
 
@@ -104,27 +40,67 @@
                 <span v-if="maliceBlock.source.license"> • {{ maliceBlock.source.license }}</span>
             </div>
         </div>
+
+        <RollResultModal :show="showRollModal" :result="rollResult" :characteristicName="rollName"
+            @close="showRollModal = false" @reroll="rerollCurrent" />
     </div>
 </template>
 
-<script>
-export default {
-    name: 'MaliceFeatureBlock',
-    props: {
-        maliceBlock: {
-            type: Object,
-            required: true
-        }
-    },
-    methods: {
-        formatEffectText(text) {
-            if (!text) return ''
+<script setup>
+import { ref } from 'vue'
+import ActionDisplay from './ActionDisplay.vue'
+import RollResultModal from './RollResultModal.vue'
+import { rollPowerRoll, parsePowerRollModifier } from '@/utils/diceRoller'
 
-            // Basic text formatting - could be expanded with more sophisticated processing
-            return text
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // **bold** text
-                .replace(/\*(.*?)\*/g, '<em>$1</em>') // *italic* text
-        }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const props = defineProps({
+    maliceBlock: {
+        type: Object,
+        required: true
+    }
+})
+
+// Roll modal state
+const showRollModal = ref(false)
+const rollResult = ref({
+    roll1: 1,
+    roll2: 1,
+    total: 2,
+    modifier: 0,
+    tier: 1
+})
+const rollName = ref('')
+const currentFormula = ref('')
+
+// Power roll click handler
+const handlePowerRollClick = (feature) => {
+    // Get the power roll formula from the feature
+    let formula = ''
+    if (feature.effects) {
+        const rollEffect = feature.effects.find(effect => effect.roll)
+        if (rollEffect) formula = rollEffect.roll
+    }
+
+    if (!formula) return
+
+    // Parse the formula to get the modifier
+    const modifier = parsePowerRollModifier(formula)
+
+    // Store current formula for rerolls
+    currentFormula.value = formula
+
+    // Set the roll name (feature name)
+    rollName.value = feature.name || 'Power Roll'
+
+    // Perform the roll
+    rollResult.value = rollPowerRoll(modifier)
+    showRollModal.value = true
+}
+
+const rerollCurrent = () => {
+    if (currentFormula.value) {
+        const modifier = parsePowerRollModifier(currentFormula.value)
+        rollResult.value = rollPowerRoll(modifier)
     }
 }
 </script>
@@ -200,193 +176,13 @@ export default {
     margin: var(--space-4) 0;
 }
 
-.feature {
-    margin-bottom: var(--space-4);
-    padding: var(--space-4);
-    border: 1px solid var(--color-neutral-200);
-    border-radius: var(--radius-md);
-    background: var(--color-neutral-50);
-}
-
-.feature:last-child {
-    margin-bottom: 0;
-}
-
-.feature-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--space-3);
-    flex-wrap: wrap;
-    gap: var(--space-2);
-}
-
-.feature-name {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-primary-600);
-    margin: 0;
-    flex: 1;
-}
-
-.feature-cost {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-error-700);
-    background: var(--color-error-50);
-    padding: var(--space-1) var(--space-2);
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--color-error-200);
-}
-
-.action-properties {
-    margin-top: var(--space-2);
-    margin-bottom: var(--space-3);
-    padding: var(--space-2);
-    background: var(--color-neutral-100);
-    border-radius: var(--radius-sm);
+.actions-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-1);
-}
-
-.action-property {
-    display: flex;
     gap: var(--space-2);
-    font-size: var(--font-size-sm);
 }
 
-.property-label {
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-neutral-700);
-    min-width: 5rem;
-}
-
-.property-value {
-    color: var(--color-neutral-800);
-}
-
-.power-roll-info {
-    margin-bottom: var(--space-2);
-    padding: var(--space-2);
-    background: var(--color-neutral-100);
-    border-radius: var(--radius-sm);
-    display: flex;
-    gap: var(--space-2);
-    align-items: center;
-}
-
-.power-roll-label {
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-neutral-700);
-    font-size: var(--font-size-sm);
-}
-
-.power-roll-value {
-    font-weight: var(--font-weight-bold);
-    color: var(--color-neutral-800);
-    font-size: var(--font-size-base);
-    font-family: monospace;
-}
-
-.feature-effects {
-    color: var(--color-neutral-800);
-    line-height: var(--line-height-relaxed);
-}
-
-.effect {
-    margin-bottom: var(--space-3);
-}
-
-.effect:last-child {
-    margin-bottom: 0;
-}
-
-.effect-description {
-    margin-bottom: var(--space-2);
-}
-
-.tier-effects {
-    background: var(--color-neutral-50);
-    border: 1px solid var(--color-neutral-200);
-    border-radius: var(--radius-md);
-    padding: var(--space-2);
-    margin: var(--space-2) 0;
-}
-
-.tier-outcome {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: var(--space-2);
-    padding: var(--space-2);
-    border-radius: var(--radius-base);
-    border-left: 4px solid;
-}
-
-.tier-outcome:last-child {
-    margin-bottom: 0;
-}
-
-.tier-outcome.tier-1 {
-    background: var(--color-error-50);
-    border-left-color: var(--color-error-600);
-}
-
-.tier-outcome.tier-2 {
-    background: var(--color-warning-50);
-    border-left-color: var(--color-warning-600);
-}
-
-.tier-outcome.tier-3 {
-    background: var(--color-success-50);
-    border-left-color: var(--color-success-600);
-}
-
-.tier-number {
-    background: white;
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-xs);
-    min-width: 3rem;
-    height: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: var(--space-3);
-    flex-shrink: 0;
-    padding: 0 var(--space-1);
-}
-
-.tier-1 .tier-number {
-    border-color: var(--color-error-600);
-    color: var(--color-neutral-800);
-    background: var(--color-error-50);
-}
-
-.tier-2 .tier-number {
-    border-color: var(--color-warning-600);
-    color: var(--color-neutral-800);
-    background: var(--color-warning-50);
-}
-
-.tier-3 .tier-number {
-    border-color: var(--color-success-600);
-    color: var(--color-neutral-800);
-    background: var(--color-success-50);
-}
-
-.tier-number {
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tier-text {
-    flex: 1;
-    line-height: var(--line-height-snug);
-    color: var(--color-neutral-800);
-    transform: translateY(1px);
-}
+/* Feature styling now handled by shared ActionDisplay component */
 
 .source-info {
     margin-top: var(--space-4);
@@ -416,19 +212,6 @@ export default {
         font-size: var(--font-size-sm);
     }
 
-    .feature {
-        padding: var(--space-3);
-    }
-
-    .feature-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-2);
-    }
-
-    .feature-name {
-        font-size: var(--font-size-lg);
-    }
 }
 
 @media (max-width: 480px) {
@@ -439,30 +222,6 @@ export default {
     .malice-name {
         font-size: var(--font-size-xl);
         letter-spacing: 0.5px;
-    }
-
-    .feature {
-        padding: var(--space-2);
-    }
-
-    .feature-name {
-        font-size: var(--font-size-base);
-    }
-
-    .tier-effects {
-        padding: var(--space-3);
-    }
-
-    .tier-outcome {
-        padding: var(--space-2);
-    }
-
-    .tier-number {
-        min-width: 2.5rem;
-        height: 1.25rem;
-        font-size: var(--font-size-xs);
-        margin-right: var(--space-2);
-        padding: 0 var(--space-1);
     }
 }
 

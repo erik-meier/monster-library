@@ -198,7 +198,7 @@
         <div class="movement-types-edit">
           <label v-for="moveType in MOVEMENT_TYPES" :key="moveType" class="movement-checkbox">
             <input type="checkbox" :value="moveType"
-              :checked="editableData.movementTypes && editableData.movementTypes.includes(moveType)"
+              :checked="editableData.movementTypes && Array.isArray(editableData.movementTypes) && editableData.movementTypes.includes(moveType)"
               @change="updateMovementTypes" />
             <span>{{ capitalize(moveType) }}</span>
           </label>
@@ -406,7 +406,7 @@ const initializeEditableData = () => {
     },
     immunities: props.monster.immunities || {},
     weaknesses: props.monster.weaknesses || {},
-    movementTypes: props.monster.movementTypes || ['walk'],
+    movementTypes: Array.isArray(props.monster.movementTypes) ? props.monster.movementTypes : ['walk'],
     items: props.monster.items || props.monster.abilities || [],
     withCaptain: props.monster.withCaptain || ''
   }
@@ -907,7 +907,7 @@ const updateMovementTypes = (event) => {
   const value = event.target.value
   const isChecked = event.target.checked
 
-  if (!editableData.value.movementTypes) {
+  if (!Array.isArray(editableData.value.movementTypes)) {
     editableData.value.movementTypes = []
   }
 
