@@ -201,7 +201,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import PartyConfiguration from '@/components/PartyConfiguration.vue'
 import EncounterBudget from '@/components/EncounterBudget.vue'
 import CollapsibleSection from '@/components/CollapsibleSection.vue'
@@ -244,7 +244,7 @@ const activeSection = ref<'monsters' | 'malice'>('monsters')
 async function switchToSection(section: 'monsters' | 'malice') {
   if (activeSection.value === section) return
   activeSection.value = section
-  
+
   // Wait for the DOM to update, then refresh collapsible section heights
   await nextTick()
   updateCollapsibleHeights()
@@ -287,7 +287,20 @@ function updateParty(newParty: PartyConfig) {
   encounterStore.setParty(newParty)
 }
 
-// Watch is no longer needed since malice features are managed in the store
+// Watch for changes to current encounter ID to update encounter name
+watch(currentEncounterId, (newId, oldId) => {
+  if (newId && newId !== oldId) {
+    // Ensure saved encounters are loaded first
+    encounterStore.loadSavedEncounters()
+    const savedEncounter = encounterStore.getSavedEncounter(newId)
+    if (savedEncounter) {
+      encounterName.value = savedEncounter.name
+    }
+  } else if (!newId) {
+    // Reset to default when no encounter is loaded
+    encounterName.value = 'New Encounter'
+  }
+})
 
 onMounted(async () => {
   // Load all monsters and malice features using dynamic import
@@ -329,6 +342,16 @@ onMounted(async () => {
       level: data.level,
       flavor: data.flavor || ''
     }))
+  }
+
+  // Check if an encounter was loaded (e.g., from MyEncounters dashboard)
+  if (encounterStore.currentEncounterId) {
+    // Ensure saved encounters are loaded first
+    encounterStore.loadSavedEncounters()
+    const savedEncounter = encounterStore.getSavedEncounter(encounterStore.currentEncounterId)
+    if (savedEncounter) {
+      encounterName.value = savedEncounter.name
+    }
   }
 })
 
