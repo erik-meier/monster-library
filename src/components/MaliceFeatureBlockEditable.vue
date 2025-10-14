@@ -146,8 +146,8 @@
     <div v-if="showFeatureEditor" class="editor-modal-overlay" @click.self="handleFeatureCancel">
         <div class="editor-modal-container">
             <AbilityEditor v-if="editingFeature" :model-value="editingFeature" :existing-items="editableData.features"
-                :editing-index="editingFeatureIndex" @update:model-value="handleFeatureUpdate" @save="handleFeatureSave"
-                @cancel="handleFeatureCancel" />
+                :editing-index="editingFeatureIndex" :is-malice-context="true" @update:model-value="handleFeatureUpdate"
+                @save="handleFeatureSave" @cancel="handleFeatureCancel" />
         </div>
     </div>
 

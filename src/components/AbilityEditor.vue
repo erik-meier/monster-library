@@ -24,12 +24,19 @@
               {{ formData.type === 'ability' ? 'Ability (Active)' : 'Feature (Passive)' }}
             </div>
           </div>
-        </div>
-      </CollapsibleSection>
 
-      <!-- Feature-specific fields -->
-      <CollapsibleSection v-if="isFeature" title="Feature Description" :expanded="true" id="feature-description">
-        <div class="form-group">
+          <!-- Malice Cost (when in malice context) -->
+          <div v-if="isMaliceContext" class="form-group">
+            <label for="malice-cost-basic" class="form-label required">Malice Cost</label>
+            <input id="malice-cost-basic" v-model="formData.cost" type="text" class="form-input"
+              :class="{ invalid: errors.maliceCost }" placeholder="e.g., '2 Malice'" required />
+            <div v-if="errors.maliceCost" class="error-message" role="alert">{{ errors.maliceCost }}</div>
+            <div class="help-text">All malice {{ isFeature ? 'features' : 'abilities' }} require a cost</div>
+          </div>
+        </div>
+
+        <!-- Feature Description (for features) -->
+        <div v-if="isFeature" class="form-group" style="margin-top: var(--space-4);">
           <label for="feature-description" class="form-label required">Description</label>
           <textarea id="feature-description" v-model="featureDescription" class="form-textarea"
             :class="{ invalid: errors.description }" rows="4" placeholder="Describe what this feature does..." />
@@ -37,6 +44,8 @@
           <div class="help-text">HTML is supported for formatting</div>
         </div>
       </CollapsibleSection>
+
+
 
       <!-- Ability-specific fields -->
       <template v-if="!isFeature">
@@ -80,7 +89,8 @@
               </select>
             </div>
 
-            <div class="form-group">
+            <!-- Malice Cost (only show when NOT in malice context, since it's in Basic Info when in malice context) -->
+            <div v-if="!isMaliceContext" class="form-group">
               <label for="malice-cost" class="form-label">Malice Cost</label>
               <input id="malice-cost" v-model="formData.cost" type="text" class="form-input"
                 placeholder="e.g., '2 Malice'" />
@@ -149,8 +159,9 @@
         </div>
       </CollapsibleSection>
 
-      <!-- Power Roll Section (for abilities only) -->
-      <CollapsibleSection v-if="!isFeature" title="Power Roll" :expanded="true" id="power-roll" ref="powerRollSection">
+      <!-- Power Roll Section (for abilities, or features in malice context) -->
+      <CollapsibleSection v-if="!isFeature || isMaliceContext" title="Power Roll" :expanded="true" id="power-roll"
+        ref="powerRollSection">
         <div class="power-roll-section">
           <div class="power-roll-toggle">
             <label class="toggle-switch">
@@ -259,6 +270,7 @@ interface Props {
   modelValue: MonsterItem
   existingItems?: MonsterItem[]
   editingIndex?: number | null
+  isMaliceContext?: boolean
 }
 
 interface Emits {
@@ -267,7 +279,9 @@ interface Emits {
   (e: 'cancel'): void
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  isMaliceContext: false
+})
 const emit = defineEmits<Emits>()
 
 // Initialize form data with new simplified structure
@@ -319,7 +333,8 @@ const powerRollTiers = reactive({
 const errors = reactive({
   name: '',
   description: '',
-  signature: ''
+  signature: '',
+  maliceCost: ''
 })
 
 const isFeature = computed(() => formData.type === 'feature')
@@ -371,7 +386,12 @@ const validateFields = () => {
     errors.signature = ''
   }
 
-  // No longer need power roll validation since we handle it separately
+  // Validate malice cost when in malice context
+  if (props.isMaliceContext) {
+    errors.maliceCost = formData.cost?.trim() === '' || !formData.cost ? 'Malice cost is required for all malice features and abilities' : ''
+  } else {
+    errors.maliceCost = ''
+  }
 
   if (isFeature.value) {
     errors.description = featureDescription.value.trim() === '' ? 'Description is required for features' : ''
@@ -547,7 +567,7 @@ const handleSave = () => {
       }
 
       // Ensure power roll is properly handled
-      if (hasPowerRoll.value && !isFeature.value) {
+      if (hasPowerRoll.value && (!isFeature.value || props.isMaliceContext)) {
         ensurePowerRollEffect()
       }
 

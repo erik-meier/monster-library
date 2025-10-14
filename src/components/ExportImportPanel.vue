@@ -124,7 +124,7 @@
             <div v-for="monster in importPreview.monsters.slice(0, 10)" :key="monster.id" class="monster-item">
               <span class="monster-name">{{ monster.name }}</span>
               <span class="monster-details">Level {{ monster.level }} {{ monster.role }} {{ monster.organization
-                }}</span>
+              }}</span>
             </div>
             <div v-if="importPreview.monsters.length > 10" class="more-monsters">
               ... and {{ importPreview.monsters.length - 10 }} more monsters
@@ -548,6 +548,7 @@ function clearAllData() {
   border-bottom: 1px solid var(--color-neutral-200);
   font-size: var(--font-size-xs);
   line-height: var(--line-height-relaxed);
+  color: var(--color-neutral-700);
 }
 
 .message-item:last-child {
@@ -561,6 +562,10 @@ function clearAllData() {
   border-left: 3px solid var(--color-warning-600);
 }
 
+.message-item.warning .message-content {
+  color: var(--color-warning-800);
+}
+
 .message-item.error {
   background: var(--color-error-50);
   color: var(--color-error-700);
@@ -568,14 +573,20 @@ function clearAllData() {
   border-left: 3px solid var(--color-error-600);
 }
 
+.message-item.error .message-content {
+  color: var(--color-error-800);
+}
+
 .error-details {
   margin-top: var(--space-2);
   padding-left: var(--space-4);
+  color: var(--color-error-600);
 }
 
 .error-details ul {
   margin: var(--space-1) 0 0 0;
   padding-left: var(--space-4);
+  color: var(--color-error-600);
 }
 
 /* Advanced Options */
@@ -708,6 +719,7 @@ function clearAllData() {
   border: 1px solid var(--color-neutral-200);
   min-width: 80px;
   box-shadow: var(--shadow-sm);
+  color: var(--color-neutral-700);
 }
 
 .stat-item.success {
@@ -753,6 +765,7 @@ function clearAllData() {
   margin: 0 0 var(--space-3) 0;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-800);
 }
 
 .preview-message-list {
@@ -768,6 +781,7 @@ function clearAllData() {
   padding: var(--space-3);
   border-bottom: 1px solid var(--color-neutral-200);
   font-size: var(--font-size-sm);
+  color: var(--color-neutral-700);
 }
 
 .preview-message-item:last-child {
@@ -781,11 +795,19 @@ function clearAllData() {
   color: var(--color-warning-700);
 }
 
+.preview-message-item.warning .message-content {
+  color: var(--color-warning-800);
+}
+
 .preview-message-item.error {
   background: var(--color-error-50);
   border-bottom-color: var(--color-error-300);
   border-left: 3px solid var(--color-error-600);
   color: var(--color-error-700);
+}
+
+.preview-message-item.error .message-content {
+  color: var(--color-error-800);
 }
 
 .message-header {
@@ -796,8 +818,8 @@ function clearAllData() {
 }
 
 .warning-type {
-  background: var(--color-warning-500);
-  color: var(--color-neutral-900);
+  background: var(--color-warning-600);
+  color: white;
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-xs);
@@ -818,6 +840,7 @@ function clearAllData() {
 .message-content {
   margin-bottom: var(--space-1);
   font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-800);
 }
 
 .message-action {
@@ -834,6 +857,7 @@ function clearAllData() {
   margin: 0 0 var(--space-3) 0;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-800);
 }
 
 .monster-list {
