@@ -1,0 +1,145 @@
+{
+  "id": "devil-legate",
+  "name": "Devil Legate",
+  "level": 5,
+  "ev": 28,
+  "role": "Defender",
+  "organization": "Elite",
+  "keywords": [
+    "Devil",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 6,
+  "stamina": 160,
+  "stability": 2,
+  "freeStrike": 6,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 3,
+    "agility": 1,
+    "reason": 0,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {
+    "fire": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Infernal Pike",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "9 damage",
+          "tier2": "14 damage; <strong class=\"potency-value\">A&lt;2</strong> slowed (save ends)",
+          "tier3": "17 damage; <strong class=\"potency-value\">A&lt;3</strong> slowed (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "If the targets are adjacent to each other, this ability deals an extra 3 damage."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Writ of Execution",
+      "keywords": [
+        "Charge",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "effect": "**Power Roll + 3**",
+          "tier1": "6 damage; <strong class=\"potency-value\">M&lt;1</strong> prone",
+          "tier2": "11 damage; <strong class=\"potency-value\">M&lt;2</strong> prone and can't stand (save ends)",
+          "tier3": "14 damage; <strong class=\"potency-value\">M&lt;3</strong> prone and can't stand (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "If this ability is used as part of the Charge main action, the legate ignores difficult terrain during the charge. Each creature and object whose space the legate moves through takes the damage from this ability, but not its additional effects."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Law and Order",
+      "keywords": [
+        "Melee"
+      ],
+      "usage": "Maneuver",
+      "distance": "Melee 1",
+      "target": "One creature",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target is taunted by the legate (save ends). The legate can have only one creature taunted at a time."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Devilish Charm",
+      "cost": "2 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 5",
+      "target": "The triggering creature",
+      "trigger": "A creature targets the legate with a strike.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target makes a Presence test.",
+          "tier1": "The legate chooses a new target for the strike.",
+          "tier2": "The legate halves the triggering damage.",
+          "tier3": "The target takes a bane on the strike."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Hellish Bailiff",
+      "effects": [
+        {
+          "effect": "The legate has damage immunity 3 while in one of the Seven Cities of Hell or within 10 squares of a non-minion devil who is of a higher level than them."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "True Name",
+      "effects": [
+        {
+          "effect": "If a creature within 10 squares speaks the legate's true name, the legate loses their damage immunities, any nondamaging effects of their signature ability, and their Devilish Charm ability until the end of the encounter."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

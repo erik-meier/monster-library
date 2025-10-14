@@ -23,6 +23,19 @@ interface TargetData {
 }
 
 interface ActionData {
+  // New simplified structure
+  effects?: Array<{
+    name?: string
+    roll?: string
+    tier1?: string
+    tier2?: string 
+    tier3?: string
+    effect?: string
+    cost?: string
+    trigger?: string
+  }>
+  
+  // Legacy system structure
   system?: {
     power?: {
       tiers?: Array<{ tier: number; display: string }>
@@ -96,11 +109,9 @@ export function formatWeakness(weakness?: Record<string, number>): string {
 /**
  * Format movement types into display string
  */
-export function formatMovement(movement?: string | string[]): string {
+export function formatMovement(movement?: Set<string>): string {
   if (!movement) return '—'
-  if (typeof movement === 'string') return movement
-  if (Array.isArray(movement)) return movement.join(', ')
-  return movement
+  return Array.from(movement).join(', ')
 }
 
 /**
@@ -213,7 +224,14 @@ export function stripHTML(text: string): string {
  * Check if an action/ability has a power roll
  */
 export function actionHasPowerRoll(action: ActionData): boolean {
-  // Check for tiers array in the new flattened structure
+  // Check for new format: effects array with roll field or tier fields
+  if (action.effects && Array.isArray(action.effects)) {
+    const hasRoll = action.effects.some(effect => effect.roll);
+    const hasTiers = action.effects.some(effect => effect.tier1 || effect.tier2 || effect.tier3);
+    if (hasRoll || hasTiers) return true;
+  }
+  
+  // Check for tiers array in the old structure
   if (action.system?.power?.tiers && action.system.power.tiers.length > 0) {
     return true
   }

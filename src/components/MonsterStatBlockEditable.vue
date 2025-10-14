@@ -64,16 +64,8 @@
 
     <!-- Core Stats -->
     <div class="core-stats-grid">
-      <div class="stat-labels">
-        <div class="stat-label">Size</div>
-        <div class="stat-label">Speed</div>
-        <div class="stat-label">Stamina</div>
-        <div class="stat-label">Stability</div>
-        <div class="stat-label">Free Strike</div>
-      </div>
-
       <div v-if="!editMode" class="stat-values">
-        <div class="stat-value">{{ monster.size?.value || 1 }}{{ monster.size?.letter || 'M' }}</div>
+        <div class="stat-value">{{ monster.size }}</div>
         <div class="stat-value">{{ monster.speed }}</div>
         <div class="stat-value">{{ monster.stamina }}</div>
         <div class="stat-value">{{ monster.stability }}</div>
@@ -83,16 +75,7 @@
       <div v-else class="stat-edit-values">
         <div class="stat-edit-item">
           <div class="size-edit">
-            <input v-model.number="editableData.size.value" type="number" min="1" class="size-input"
-              @blur="updateField('size')" />
-            <select v-model="editableData.size.letter" class="form-select size-select"
-              :disabled="editableData.size.value > 1" @change="updateField('size')">
-              <option value="">—</option>
-              <option value="T">T</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-            </select>
+            <input v-model="editableData.size" type="text" class="size-input" @blur="updateField('size')" />
           </div>
         </div>
         <div class="stat-edit-item">
@@ -112,6 +95,14 @@
             @blur="updateField('freeStrike')" />
         </div>
       </div>
+    </div>
+
+    <div class="stat-labels">
+      <div class="stat-label">Size</div>
+      <div class="stat-label">Speed</div>
+      <div class="stat-label">Stamina</div>
+      <div class="stat-label">Stability</div>
+      <div class="stat-label">Free Strike</div>
     </div>
 
     <div class="divider"></div>
@@ -148,6 +139,13 @@
       <span class="stat-item">
         <strong>Movement</strong> {{ formatMovement(monster.movementTypes) }}
       </span>
+      <template v-if="editableData.withCaptain">
+        <span class="stat-separator">•</span>
+        <span class="stat-item with-captain-ability">
+          <span class="with-captain-label">With Captain:</span>
+          <span class="with-captain-text" v-html="editableData.withCaptain"></span>
+        </span>
+      </template>
     </div>
 
     <!-- Editable Defenses -->
@@ -200,24 +198,22 @@
         <div class="movement-types-edit">
           <label v-for="moveType in MOVEMENT_TYPES" :key="moveType" class="movement-checkbox">
             <input type="checkbox" :value="moveType"
-              :checked="editableData.movementTypes && editableData.movementTypes.includes(moveType)"
+              :checked="editableData.movementTypes && Array.isArray(editableData.movementTypes) && editableData.movementTypes.includes(moveType)"
               @change="updateMovementTypes" />
             <span>{{ capitalize(moveType) }}</span>
           </label>
         </div>
       </div>
+
+      <!-- With Captain Edit -->
+      <div class="defense-edit-section">
+        <h4>With Captain</h4>
+        <textarea v-model="editableData.withCaptain" @input="updateField('withCaptain')" class="with-captain-textarea"
+          placeholder="Enter With Captain feature description..." rows="3"></textarea>
+      </div>
     </div>
 
     <div class="divider"></div>
-
-    <!-- With Captain Features (Non-edit mode) -->
-    <div v-if="!editMode && getWithCaptainAbilities().length > 0" class="with-captain-section">
-      <div v-for="ability in getWithCaptainAbilities()" :key="ability.name" class="with-captain-ability">
-        <span class="with-captain-label">With Captain:</span>
-        <span class="with-captain-text" v-html="ability.system?.description?.value || ability.description || ''"></span>
-      </div>
-      <div class="divider"></div>
-    </div>
 
     <!-- Abilities (Non-edit mode) -->
     <div v-if="!editMode && getRegularAbilities().length > 0">
@@ -225,11 +221,25 @@
         :monster="monster" />
     </div>
 
+    <!-- Malice Features Button (Non-edit mode) -->
+    <div v-if="!editMode && hasMaliceFeatures()" class="malice-features-section">
+      <div class="divider"></div>
+      <div class="malice-features-button-container">
+        <button @click="viewMaliceFeatures" class="btn btn-malice">
+          <span class="malice-icon">🎭</span>
+          View Malice Features
+        </button>
+      </div>
+    </div>
+
     <!-- Editable Abilities -->
     <div v-else class="abilities-edit">
       <div class="abilities-edit-header">
         <h4>Abilities & Features</h4>
-        <button @click="addAbility" class="btn-add-small" type="button">+ Add Ability</button>
+        <div class="add-buttons">
+          <button @click="addAbility" class="btn-add-small" type="button">+ Add Ability</button>
+          <button @click="addFeature" class="btn-add-small" type="button">+ Add Feature</button>
+        </div>
       </div>
 
       <div v-if="editableData.items && editableData.items.length > 0" class="abilities-list-edit">
@@ -254,47 +264,48 @@
             <!-- Type and Category Info -->
             <div v-if="item.type === 'feature'" class="ability-type-badge feature">Feature</div>
             <div v-else class="ability-info-row">
-              <span v-if="item.system?.category === 'signature'" class="ability-type-badge signature">Signature</span>
+              <span v-if="getAbilityCategory(item) === 'signature'"
+                class="ability-type-badge signature">Signature</span>
               <!-- Removed heroic tag display as requested -->
-              <span v-if="item.system?.type" class="ability-action-type">{{ formatActionType(item.system.type) }}</span>
-              <span v-if="item.system?.resource" class="ability-resource">{{ item.system.resource }} Malice</span>
+              <span v-if="getAbilityType(item)" class="ability-action-type">{{ getAbilityType(item) }}</span>
+              <span v-if="getAbilityCost(item)" class="ability-resource">{{ getAbilityCost(item) }}</span>
             </div>
 
             <!-- Range and Target Info -->
             <div v-if="item.type === 'ability'" class="ability-targeting">
-              <span v-if="item.system?.distance" class="ability-range">{{ formatRange(item.system.distance) }}</span>
-              <span v-if="item.system?.target" class="ability-target">{{ formatTarget(item.system.target) }}</span>
+              <span v-if="getAbilityDistance(item)" class="ability-range">{{ getAbilityDistance(item) }}</span>
+              <span v-if="getAbilityTarget(item)" class="ability-target">{{ getAbilityTarget(item) }}</span>
             </div>
 
             <!-- Power Roll Info -->
-            <div v-if="item.system?.power?.roll" class="ability-power">
-              <strong>{{ item.system.power.roll.formula }}</strong>
-              <span v-if="item.system?.power?.tiers" class="tier-count">({{ item.system.power.tiers.length }}
+            <div v-if="getAbilityPowerRoll(item)" class="ability-power">
+              <strong>{{ getAbilityPowerRoll(item) }}</strong>
+              <span v-if="getAbilityTiers(item).length > 0" class="tier-count">({{ getAbilityTiers(item).length }}
                 tiers)</span>
             </div>
 
             <!-- Description or Effects -->
-            <div v-if="item.type === 'feature' && item.system?.description?.value" class="ability-description"
-              v-html="item.system.description.value"></div>
-            <div v-else-if="item.system?.effect?.text" class="ability-effects">
-              <div class="effect-text"><strong>Effect:</strong> <span v-html="item.system.effect.text"></span></div>
+            <div v-if="item.type === 'feature' && getFeatureDescription(item)" class="ability-description"
+              v-html="getFeatureDescription(item)"></div>
+            <div v-else-if="getAbilityEffect(item)" class="ability-effects">
+              <div class="effect-text"><strong>Effect:</strong> <span v-html="getAbilityEffect(item)"></span></div>
             </div>
 
             <!-- Keywords -->
-            <div v-if="item.system?.keywords && item.system.keywords.length > 0" class="ability-keywords">
-              Keywords: {{ item.system.keywords.join(', ') }}
+            <div v-if="getAbilityKeywords(item).length > 0" class="ability-keywords">
+              Keywords: {{ getAbilityKeywords(item).join(', ') }}
             </div>
 
             <!-- Trigger (for triggered abilities) -->
-            <div v-if="item.system?.trigger" class="ability-trigger">
-              <strong>Trigger:</strong> {{ item.system.trigger }}
+            <div v-if="getAbilityTrigger(item)" class="ability-trigger">
+              <strong>Trigger:</strong> {{ getAbilityTrigger(item) }}
             </div>
           </div>
         </div>
       </div>
 
       <div v-else class="no-abilities">
-        <p>No abilities added yet. Click "Add Ability" to create one.</p>
+        <p>No abilities or features added yet. Click "Add Ability" or "Add Feature" to create one.</p>
       </div>
     </div>
 
@@ -330,6 +341,7 @@ import { ref, watch, onMounted, onUnmounted } from 'vue'
 import ActionsList from './ActionsList.vue'
 import AbilityEditor from './AbilityEditor.vue'
 import { DAMAGE_TYPES, MOVEMENT_TYPES } from '@/types/monster-forms'
+import { getMaliceForMonster } from '@/data/monsters-bundle.js'
 
 const props = defineProps({
   monster: {
@@ -380,10 +392,7 @@ const initializeEditableData = () => {
     ev: props.monster.ev || 1,
     role: props.monster.role || '',
     organization: props.monster.organization || '',
-    size: {
-      value: props.monster.size?.value || 1,
-      letter: props.monster.size?.letter || 'M'
-    },
+    size: props.monster.size || '',
     speed: props.monster.speed || 6,
     stamina: props.monster.stamina || 10,
     stability: props.monster.stability || 0,
@@ -397,8 +406,9 @@ const initializeEditableData = () => {
     },
     immunities: props.monster.immunities || {},
     weaknesses: props.monster.weaknesses || {},
-    movementTypes: props.monster.movementTypes || ['walk'],
-    items: props.monster.items || props.monster.abilities || []
+    movementTypes: Array.isArray(props.monster.movementTypes) ? props.monster.movementTypes : ['walk'],
+    items: props.monster.items || props.monster.abilities || [],
+    withCaptain: props.monster.withCaptain || ''
   }
 
   editableData.value = data
@@ -490,18 +500,111 @@ const getMaxCharacteristic = () => {
   return values.length > 0 ? Math.max(...values) : 0
 }
 
-const getWithCaptainAbilities = () => {
-  const items = editableData.value.items || props.monster.items || []
-  return items.filter(item =>
-    item.name && item.name.toLowerCase() === 'with captain'
-  )
-}
-
 const getRegularAbilities = () => {
   const items = editableData.value.items || props.monster.items || []
   return items.filter(item =>
-    !item.name || item.name.toLowerCase() !== 'with captain'
+    !item.name
   )
+}
+
+// Malice features functionality
+const getMaliceFeatures = () => {
+  return getMaliceForMonster(props.monster.id);
+}
+
+const hasMaliceFeatures = () => {
+  return getMaliceFeatures() !== null;
+}
+
+const viewMaliceFeatures = () => {
+  const maliceBlock = getMaliceFeatures();
+  if (maliceBlock) {
+    // Use router.push to navigate to malice view
+    // This assumes we'll have a route set up for /malice/:id
+    window.location.href = `#/malice/${maliceBlock.id}`;
+  }
+}
+
+// Helper methods to handle both new and old data structures
+const getAbilityCategory = (item) => {
+  if (item.ability_type?.includes('Signature')) return 'signature'
+  return item.system?.category
+}
+
+const getAbilityCost = (item) => {
+  if (item.effects) {
+    const costEffect = item.effects.find(effect => effect.cost)
+    if (costEffect) return costEffect.cost
+  }
+  return item.system?.resource ? `${item.system.resource} Malice` : null
+}
+
+const getAbilityType = (item) => {
+  if (item.usage) return item.usage
+  if (item.ability_type?.includes('Villain Action')) return item.ability_type
+  if (item.system?.type) return formatActionType(item.system.type)
+  return null
+}
+
+const getAbilityDistance = (item) => {
+  if (item.distance) return item.distance
+  return formatRange(item.system?.distance)
+}
+
+const getAbilityTarget = (item) => {
+  if (item.target) return item.target
+  return formatTarget(item.system?.target)
+}
+
+const getAbilityPowerRoll = (item) => {
+  if (item.effects) {
+    const rollEffect = item.effects.find(effect => effect.roll)
+    if (rollEffect) return rollEffect.roll
+  }
+  return item.system?.power?.roll?.formula || null
+}
+
+const getAbilityTiers = (item) => {
+  if (item.effects) {
+    const rollEffect = item.effects.find(effect => effect.tier1 || effect.tier2 || effect.tier3)
+    if (rollEffect) {
+      const tiers = []
+      if (rollEffect.tier1) tiers.push({ tier: 1, display: rollEffect.tier1 })
+      if (rollEffect.tier2) tiers.push({ tier: 2, display: rollEffect.tier2 })
+      if (rollEffect.tier3) tiers.push({ tier: 3, display: rollEffect.tier3 })
+      return tiers
+    }
+  }
+  return item.system?.power?.tiers || []
+}
+
+const getFeatureDescription = (item) => {
+  // For features, check if there are effects with descriptions
+  if (item.effects) {
+    const descEffect = item.effects.find(effect => effect.effect)
+    if (descEffect) return descEffect.effect
+  }
+  return item.system?.description?.value
+}
+
+const getAbilityEffect = (item) => {
+  if (item.effects) {
+    const effectData = item.effects.find(effect => effect.effect && !effect.roll)
+    if (effectData) return effectData.effect
+  }
+  return item.system?.effect?.text
+}
+
+const getAbilityKeywords = (item) => {
+  return item.keywords || item.system?.keywords || []
+}
+
+const getAbilityTrigger = (item) => {
+  // Check for new structure: top-level trigger field
+  if (item.trigger) {
+    return item.trigger
+  }
+  return item.system?.trigger
 }
 
 // Ability formatting helpers
@@ -804,7 +907,7 @@ const updateMovementTypes = (event) => {
   const value = event.target.value
   const isChecked = event.target.checked
 
-  if (!editableData.value.movementTypes) {
+  if (!Array.isArray(editableData.value.movementTypes)) {
     editableData.value.movementTypes = []
   }
 
@@ -869,6 +972,27 @@ const addAbility = () => {
   // Set up editing state - normalize just to be safe
   editingAbility.value = normalizeAbilityForEditor(JSON.parse(JSON.stringify(newAbility)))
   editingAbilityIndex.value = null // New ability, no index yet
+  showAbilityEditor.value = true
+}
+
+const addFeature = () => {
+  if (!editableData.value.items) {
+    editableData.value.items = []
+  }
+
+  const newFeature = {
+    name: 'New Feature',
+    type: 'feature',
+    effects: [
+      {
+        effect: ''
+      }
+    ]
+  }
+
+  // Set up editing state
+  editingAbility.value = JSON.parse(JSON.stringify(newFeature))
+  editingAbilityIndex.value = null // New feature, no index yet
   showAbilityEditor.value = true
 }
 
@@ -1335,6 +1459,24 @@ onUnmounted(() => {
   margin: 0;
 }
 
+.with-captain-textarea {
+  width: 100%;
+  padding: var(--space-2);
+  border: 1px solid #007bff;
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-base);
+  background: white;
+  resize: vertical;
+  min-height: 60px;
+}
+
+.with-captain-textarea:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
 .divider {
   height: 2px;
   background: linear-gradient(to right, transparent, var(--color-primary-700), transparent);
@@ -1503,17 +1645,9 @@ onUnmounted(() => {
 }
 
 /* With Captain styles */
-.with-captain-section {
-  margin: var(--space-4) 0;
-}
-
 .with-captain-ability {
-  margin-bottom: var(--space-2);
-  text-align: center;
-  font-size: var(--font-size-sm);
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
+  display: inline-flex;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -1554,6 +1688,11 @@ onUnmounted(() => {
 .abilities-edit-header h4 {
   margin: 0;
   color: var(--color-primary-700);
+}
+
+.add-buttons {
+  display: flex;
+  gap: var(--space-2);
 }
 
 .abilities-list-edit {
@@ -1793,6 +1932,44 @@ onUnmounted(() => {
 /* Ensure modal is above other content */
 .editor-modal-overlay::backdrop {
   background: rgba(0, 0, 0, 0.75);
+}
+
+/* Malice Features styles */
+.malice-features-section {
+  margin: var(--space-4) 0;
+}
+
+.malice-features-button-container {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-2) 0;
+}
+
+.btn-malice {
+  background: var(--color-accent-600);
+  color: white;
+  border-color: var(--color-accent-600);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.btn-malice:hover {
+  background: var(--color-accent-700);
+  border-color: var(--color-accent-700);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.malice-icon {
+  font-size: var(--font-size-lg);
 }
 
 @media (max-width: 768px) {

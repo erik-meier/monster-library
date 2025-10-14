@@ -1,0 +1,121 @@
+{
+  "id": "shieldscale-drangolin",
+  "name": "Shieldscale Drangolin",
+  "level": 1,
+  "ev": 12,
+  "role": "Brute",
+  "organization": "Elite",
+  "keywords": [
+    "Beast",
+    "Kobold"
+  ],
+  "size": "2 or 3",
+  "speed": 7,
+  "stamina": 80,
+  "stability": 0,
+  "freeStrike": 5,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 2,
+    "agility": 1,
+    "reason": -3,
+    "intuition": 0,
+    "presence": -2
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "burrow"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Fiery Claws",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 fire damage",
+          "tier2": "10 fire damage",
+          "tier3": "13 fire damage"
+        },
+        {
+          "name": "Special",
+          "effect": "If the drangolin is size 3, the distance becomes Melee 2."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Drangolin Plume",
+      "cost": "5 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Main action",
+      "distance": "Self; see below",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The drangolin shifts up to their speed and uses Fiery Claws against each creature who comes adjacent to them during the shift. The drangolin makes one power roll against all targets."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Erupt",
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "2 burst",
+      "target": "Each creature in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The drangolin uses the Dig maneuver to breach the surface before using this ability. Each target in the area where the drangolin breaches takes an extra 2 fire damage."
+        },
+        {
+          "roll": "2d10 + 2",
+          "tier1": "6 damage; push 1; <strong class=\"potency-value\">A&lt;0</strong> prone",
+          "tier2": "8 damage; push 3; <strong class=\"potency-value\">A&lt;0</strong> prone",
+          "tier3": "11 damage; push 5; <strong class=\"potency-value\">A&lt;0</strong> prone"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Ashen Cloud",
+      "effects": [
+        {
+          "effect": "Any ally adjacent to the drangolin has concealment."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Burrow Bond",
+      "effects": [
+        {
+          "effect": "When the drangolin burrows, each adjacent size 1S or smaller ally can move with them."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

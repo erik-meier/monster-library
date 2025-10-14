@@ -1,0 +1,74 @@
+{
+  "id": "troll-ravager",
+  "name": "Troll Ravager",
+  "level": 9,
+  "ev": 11,
+  "role": "Harrier",
+  "organization": "Minion",
+  "keywords": [
+    "Giant",
+    "Troll"
+  ],
+  "size": "2",
+  "speed": 8,
+  "stamina": 15,
+  "stability": 2,
+  "freeStrike": 4,
+  "withCaptain": "+2 bonus to speed",
+  "characteristics": {
+    "might": 4,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 1,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {
+    "acid": 5,
+    "fire": 0
+  },
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Dine and Dash",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "4 damage; the ravager can shift 1 square",
+          "tier2": "6 damage; the ravager shifts up to 2 squares",
+          "tier3": "8 damage; the ravager shifts up to 3 squares"
+        },
+        {
+          "name": "Effect",
+          "effect": "The ravager's squad's Stamina pool regains Stamina equal to half the damage dealt."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Group Appetite",
+      "effects": [
+        {
+          "effect": "The ravager dies only if their squad's Stamina pool is reduced to 0 Stamina by acid or fire damage, if they end their turn with 0 Stamina in their squad's Stamina pool, or if they take acid or fire damage while their squad's Stamina pool is at 0 Stamina."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

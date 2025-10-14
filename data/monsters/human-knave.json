@@ -6,16 +6,15 @@
   "role": "Defender",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Human",
+    "Humanoid"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 50,
   "stability": 0,
   "freeStrike": 4,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": 0,
@@ -33,212 +32,62 @@
   ],
   "items": [
     {
-      "name": "I'm Your Enemy",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Whenever an adjacent creature the knave has taunted deals dam age to a creature other than the knave, the knave can make a free strike against them.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Overwhelm",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>An enemy who starts their turn adjacent to the knave can’t shift.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Supernatural Insight",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The knave ignores concealment if it’s granted by a supernatural effect.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Morningstar and Javelin",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "meleeRanged",
-          "primary": 1,
-          "secondary": 5
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1 or ranged 5",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "6 damage",
+          "tier2": "9 damage",
+          "tier3": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> the target has a double bane on their next power roll"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "6 damage"
-            },
-            {
-              "tier": 2,
-              "display": "9 damage"
-            },
-            {
-              "tier": 3,
-              "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> the target has a double bane on their next  power roll"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The target is taunted (EoT).</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The target is taunted (EoT)."
         }
-      }
+      ]
     },
     {
-      "name": "Alchemical Device",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 3,
-          "secondary": 10
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "4 corruption damage; <strong class=\"potency-value\">X&lt;0</strong>, slowed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "6 corruption damage; <strong class=\"potency-value\">X&lt;1</strong>, slowed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "9 corruption damage; <strong class=\"potency-value\">X&lt;2</strong>, restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Note:</span></strong></span> Targets each enemy <strong>and object</strong> in the area.</p><p></p> <p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">Special:</span></strong></span> This ability can’t be used by a minion.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "I'm Your Enemy",
+      "effects": [
+        {
+          "effect": "Whenever an adjacent creature the knave has taunted deals damage to a creature other than the knave, the knave can make a free strike against them."
         }
-      }
+      ]
     },
     {
-      "name": "Exploit Opening",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A human's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Overwhelm",
+      "effects": [
+        {
+          "effect": "An enemy who starts their turn adjacent to the knave can't shift."
         }
-      }
+      ]
     },
     {
-      "name": "Staying Power",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "a human's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Supernatural Insight",
+      "effects": [
+        {
+          "effect": "The knave ignores concealment if it's granted by a supernatural effect."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "182",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

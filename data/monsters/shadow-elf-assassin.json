@@ -1,0 +1,101 @@
+{
+  "id": "shadow-elf-assassin",
+  "name": "Shadow Elf Assassin",
+  "level": 6,
+  "ev": 16,
+  "role": "Artillery",
+  "organization": "Platoon",
+  "keywords": [
+    "Fey",
+    "Humanoid",
+    "Shadow Elf"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 70,
+  "stability": 0,
+  "freeStrike": 7,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 0,
+    "agility": 3,
+    "reason": 2,
+    "intuition": 1,
+    "presence": 1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "climb"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Lumina Assault",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 15",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "10 damage",
+          "tier2": "15 damage",
+          "tier3": "18 damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "The next ability used against the target has a double edge."
+        },
+        {
+          "cost": "5 Malice",
+          "effect": "Each non-minion ally within 3 squares of the target can make a free strike against them."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Splitbow",
+      "cost": "2 Malice",
+      "keywords": [
+        "Area",
+        "Ranged",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "4 x 1 line within 10",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "5 damage; <strong class=\"potency-value\">I&lt;1</strong> bleeding (save ends)",
+          "tier2": "10 damage; <strong class=\"potency-value\">I&lt;2</strong> bleeding (save ends)",
+          "tier3": "12 damage; <strong class=\"potency-value\">I&lt;3</strong> bleeding (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "Each target is pushed up to 4 squares."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Of the Umbra",
+      "effects": [
+        {
+          "effect": "The assassin ignores concealment created by darkness. While the assassin is in direct sunlight, they have damage weakness 3. While the assassin has concealment, they have damage immunity 3."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

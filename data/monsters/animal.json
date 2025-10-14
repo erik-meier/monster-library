@@ -6,16 +6,14 @@
   "role": "Harrier",
   "organization": "Elite",
   "keywords": [
-    "animal"
+    "Animal"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 6,
   "stamina": 60,
   "stability": 0,
   "freeStrike": 4,
+  "withCaptain": "",
   "characteristics": {
     "might": 0,
     "agility": 2,
@@ -30,109 +28,59 @@
   ],
   "items": [
     {
-      "name": "Nature's Spirit",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While outdoors or in a natural environment, the animal can negate a bane on their abilities or turn a double bane into a bane.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Natural Weapon",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "6 damage",
+          "tier2": "9 damage",
+          "tier3": "12 damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "6 damage"
-            },
-            {
-              "tier": 2,
-              "display": "9 damage"
-            },
-            {
-              "tier": 3,
-              "display": "12 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The animal shifts up to 2 squares between strikes.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The animal shifts up to 2 squares between strikes."
         }
-      }
+      ]
     },
     {
-      "name": "Rush",
       "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "-"
-        ],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The animal moves up to their speed.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "name": "Rush",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The animal moves up to their speed."
         }
-      }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Nature's Spirit",
+      "effects": [
+        {
+          "effect": "While outdoors or in a natural environment, the animal can negate a bane on their abilities or turn a double bane into a bane."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "41",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

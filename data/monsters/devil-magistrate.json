@@ -1,0 +1,144 @@
+{
+  "id": "devil-magistrate",
+  "name": "Devil Magistrate",
+  "level": 6,
+  "ev": 32,
+  "role": "Harrier",
+  "organization": "Elite",
+  "keywords": [
+    "Devil",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 7,
+  "stamina": 160,
+  "stability": 0,
+  "freeStrike": 7,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 1,
+    "agility": 3,
+    "reason": 0,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {
+    "fire": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Edge of the Law",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "10 damage",
+          "tier2": "15 damage",
+          "tier3": "18 fire damage; <strong class=\"potency-value\">R&lt;3</strong> dazed (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "The magistrate shifts up to 3 squares before or after using this ability, or between each strike."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Verdict",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature",
+      "effects": [
+        {
+          "effect": "**Power Roll + 3**",
+          "tier1": "11 damage",
+          "tier2": "17 damage",
+          "tier3": "21 damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "This ability has a double edge if the magistrate was hidden from the target, and deals an extra 5 damage if the target is dazed."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Justice Turns Its Gaze",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The magistrate turns invisible until the start of their next turn, and can attempt to hide as a free maneuver before the end of the current turn."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Devilish Charm",
+      "cost": "2 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 5",
+      "target": "The triggering creature",
+      "trigger": "A creature targets the magistrate with a strike.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target makes a Presence test.",
+          "tier1": "The magistrate chooses a new target for the strike.",
+          "tier2": "The magistrate halves the triggering damage.",
+          "tier3": "The target takes a bane on the strike."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Leading",
+      "effects": [
+        {
+          "effect": "Whenever the magistrate moves away from an enemy who is adjacent to one of the magistrate's allies, they can shift instead."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "True Name",
+      "effects": [
+        {
+          "effect": "If a creature within 10 squares speaks the magistrate's true name, the magistrate loses their damage immunities, any nondamaging effects of their signature ability, and their Devilish Charm ability until the end of the encounter."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

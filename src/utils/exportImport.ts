@@ -1,10 +1,11 @@
 /**
  * Export/Import utilities for monster data
- * Handles JSON export/import with validation and collision avoidance
+ * Handles JSON export/import with validation and type safety
  */
 
 import { validateMonster, type ValidationResult } from '../../tests/helpers/validation-utils'
 import { useCustomMonstersStore, type CustomMonster } from '@/stores/customMonsters'
+import { useCustomMaliceStore, type CustomMaliceFeature } from '@/stores/customMalice'
 import { getAllMonsters as getBundledMonsters } from '@/data/monsters.js'
 
 export interface ExportData {
@@ -13,21 +14,27 @@ export interface ExportData {
     version: string
     application: string
     totalMonsters: number
+    totalMaliceFeatures?: number
   }
   monsters: CustomMonster[]
+  maliceFeatures?: CustomMaliceFeature[]
 }
 
 export interface ImportResult {
   success: boolean
   imported: number
   skipped: number
+  importedMalice?: number
+  skippedMalice?: number
   errors: Array<{
     monster?: string
+    malice?: string
     error: string
     details?: ValidationResult['errors']
   }>
   warnings: Array<{
-    monster: string
+    monster?: string
+    malice?: string
     message: string
     action: string
   }>
@@ -38,18 +45,45 @@ export interface ImportPreview {
   totalMonsters: number
   validMonsters: number
   invalidMonsters: number
+  totalMaliceFeatures?: number
+  validMaliceFeatures?: number
+  invalidMaliceFeatures?: number
   warnings: Array<{
-    monster: string
+    monster?: string
+    malice?: string
     type: 'id_collision' | 'validation_warning' | 'other'
     message: string
     action: string
   }>
   errors: Array<{
-    monster: string
+    monster?: string
+    malice?: string
     error: string
     details?: ValidationResult['errors']
   }>
   monsters: CustomMonster[]
+  maliceFeatures?: CustomMaliceFeature[]
+}
+
+/**
+ * JSON replacer function to handle Sets and other special types
+ */
+function jsonReplacer(key: string, value: unknown): unknown {
+  if (value instanceof Set) {
+    return Array.from(value)
+  }
+  return value
+}
+
+/**
+ * JSON reviver function to reconstruct Sets from arrays
+ */
+function jsonReviver(key: string, value: unknown): unknown {
+  // Reconstruct Sets for movementTypes field
+  if (key === 'movementTypes' && Array.isArray(value)) {
+    return new Set(value)
+  }
+  return value
 }
 
 /**
@@ -66,24 +100,28 @@ export function exportMonster(monster: CustomMonster): string {
     monsters: [monster]
   }
   
-  return JSON.stringify(exportData, null, 2)
+  return JSON.stringify(exportData, jsonReplacer, 2)
 }
 
 /**
  * Export all custom monsters as a single JSON file
+ * @param monsters - Array of custom monsters to export
+ * @param maliceFeatures - Optional array of custom malice features to export
  */
-export function exportAllMonsters(monsters: CustomMonster[]): string {
+export function exportAllMonsters(monsters: CustomMonster[], maliceFeatures?: CustomMaliceFeature[]): string {
   const exportData: ExportData = {
     metadata: {
       exportDate: new Date().toISOString(),
       version: '1.0',
       application: 'Steel Cauldron Monster Library',
-      totalMonsters: monsters.length
+      totalMonsters: monsters.length,
+      totalMaliceFeatures: maliceFeatures?.length || 0
     },
-    monsters: monsters
+    monsters: monsters,
+    maliceFeatures: maliceFeatures || []
   }
   
-  return JSON.stringify(exportData, null, 2)
+  return JSON.stringify(exportData, jsonReplacer, 2)
 }
 
 /**
@@ -170,20 +208,29 @@ function generateUniqueId(baseId: string, existingIds: Set<string>): string {
  * Preview import data to show potential warnings and errors before importing
  * @param jsonContent - JSON string containing monster data
  * @param customMonstersStore - Optional store instance, will use global store if not provided
+ * @param customMaliceStore - Optional malice store instance, will use global store if not provided
  */
-export function previewImport(jsonContent: string, customMonstersStore?: ReturnType<typeof useCustomMonstersStore>): ImportPreview {
+export function previewImport(
+  jsonContent: string, 
+  customMonstersStore?: ReturnType<typeof useCustomMonstersStore>,
+  customMaliceStore?: ReturnType<typeof useCustomMaliceStore>
+): ImportPreview {
   const preview: ImportPreview = {
     isValid: false,
     totalMonsters: 0,
     validMonsters: 0,
     invalidMonsters: 0,
+    totalMaliceFeatures: 0,
+    validMaliceFeatures: 0,
+    invalidMaliceFeatures: 0,
     warnings: [],
     errors: [],
-    monsters: []
+    monsters: [],
+    maliceFeatures: []
   }
 
   try {
-    const data = JSON.parse(jsonContent)
+    const data = JSON.parse(jsonContent, jsonReviver)
     const validation = validateImportData(data)
     
     if (!validation.isValid) {
@@ -197,15 +244,18 @@ export function previewImport(jsonContent: string, customMonstersStore?: ReturnT
     const exportData = validation.exportData!
     preview.totalMonsters = exportData.monsters.length
     
-    // Use provided store or create new one
-    const store = customMonstersStore || useCustomMonstersStore()
-    store.loadFromStorage()
+    // Use provided stores or create new ones
+    const monstersStore = customMonstersStore || useCustomMonstersStore()
+    const maliceStore = customMaliceStore || useCustomMaliceStore()
+    
+    monstersStore.loadFromStorage()
+    maliceStore.loadFromStorage()
     
     // Get all existing IDs (custom + bundled)
     const existingIds = new Set<string>()
     
     // Add all custom monster IDs
-    Object.keys(store.customMonsters).forEach(id => existingIds.add(id))
+    Object.keys(monstersStore.customMonsters).forEach(id => existingIds.add(id))
     
     // Add all bundled monster IDs
     const bundledMonsters = getBundledMonsters()
@@ -253,7 +303,54 @@ export function previewImport(jsonContent: string, customMonstersStore?: ReturnT
       }
     }
 
-    preview.isValid = preview.validMonsters > 0
+    // Preview malice features if present
+    if (exportData.maliceFeatures && Array.isArray(exportData.maliceFeatures)) {
+      preview.totalMaliceFeatures = exportData.maliceFeatures.length
+      
+      const existingMaliceIds = new Set<string>()
+      for (const [id] of maliceStore.customMaliceFeatures) {
+        existingMaliceIds.add(id)
+      }
+
+      for (const maliceData of exportData.maliceFeatures) {
+        try {
+          // Validate malice data
+          if (!maliceStore.validateMaliceData(maliceData)) {
+            preview.errors.push({
+              malice: maliceData.name || 'Unknown',
+              error: 'Malice feature failed validation'
+            })
+            preview.invalidMaliceFeatures = (preview.invalidMaliceFeatures || 0) + 1
+            continue
+          }
+
+          // Check for ID collisions
+          if (existingMaliceIds.has(maliceData.id)) {
+            const newId = generateUniqueId(maliceData.id, existingMaliceIds)
+            preview.warnings.push({
+              malice: maliceData.name,
+              type: 'id_collision',
+              message: `ID collision detected`,
+              action: `Will be renamed from '${maliceData.id}' to '${newId}'`
+            })
+            existingMaliceIds.add(newId)
+          } else {
+            existingMaliceIds.add(maliceData.id)
+          }
+
+          preview.maliceFeatures!.push(maliceData)
+          preview.validMaliceFeatures = (preview.validMaliceFeatures || 0) + 1
+        } catch (error) {
+          preview.errors.push({
+            malice: maliceData.name || 'Unknown',
+            error: `Malice preview error: ${error instanceof Error ? error.message : 'Unknown error'}`
+          })
+          preview.invalidMaliceFeatures = (preview.invalidMaliceFeatures || 0) + 1
+        }
+      }
+    }
+
+    preview.isValid = preview.validMonsters > 0 || (preview.validMaliceFeatures || 0) > 0
 
   } catch (error) {
     preview.errors.push({
@@ -269,18 +366,25 @@ export function previewImport(jsonContent: string, customMonstersStore?: ReturnT
  * Import monsters from JSON data
  * @param jsonContent - JSON string containing monster data
  * @param customMonstersStore - Optional store instance, will use global store if not provided
+ * @param customMaliceStore - Optional malice store instance, will use global store if not provided
  */
-export function importMonsters(jsonContent: string, customMonstersStore?: ReturnType<typeof useCustomMonstersStore>): ImportResult {
+export function importMonsters(
+  jsonContent: string, 
+  customMonstersStore?: ReturnType<typeof useCustomMonstersStore>,
+  customMaliceStore?: ReturnType<typeof useCustomMaliceStore>
+): ImportResult {
   const result: ImportResult = {
     success: false,
     imported: 0,
     skipped: 0,
+    importedMalice: 0,
+    skippedMalice: 0,
     errors: [],
     warnings: []
   }
 
   try {
-    const data = JSON.parse(jsonContent)
+    const data = JSON.parse(jsonContent, jsonReviver)
     const validation = validateImportData(data)
     
     if (!validation.isValid) {
@@ -290,17 +394,19 @@ export function importMonsters(jsonContent: string, customMonstersStore?: Return
 
     const exportData = validation.exportData!
     
-    // Use provided store or create new one
-    const store = customMonstersStore || useCustomMonstersStore()
+    // Use provided stores or create new ones
+    const monstersStore = customMonstersStore || useCustomMonstersStore()
+    const maliceStore = customMaliceStore || useCustomMaliceStore()
     
     // Load existing data to check for collisions
-    store.loadFromStorage()
+    monstersStore.loadFromStorage()
+    maliceStore.loadFromStorage()
     
     // Get all existing IDs (custom + bundled)
     const existingIds = new Set<string>()
     
     // Add all custom monster IDs
-    Object.keys(store.customMonsters).forEach(id => existingIds.add(id))
+    Object.keys(monstersStore.customMonsters).forEach(id => existingIds.add(id))
     
     // Add all bundled monster IDs
     const bundledMonsters = getBundledMonsters()
@@ -343,7 +449,7 @@ export function importMonsters(jsonContent: string, customMonstersStore?: Return
         }
 
         // Create the monster
-        store.customMonsters[finalId] = monsterToImport
+        monstersStore.customMonsters[finalId] = monsterToImport
         existingIds.add(finalId)
         result.imported++
         
@@ -355,9 +461,68 @@ export function importMonsters(jsonContent: string, customMonstersStore?: Return
       }
     }
 
+    // Import malice features if present
+    if (exportData.maliceFeatures && Array.isArray(exportData.maliceFeatures)) {
+      const existingMaliceIds = new Set<string>()
+      
+      // Get all existing custom malice IDs
+      for (const [id] of maliceStore.customMaliceFeatures) {
+        existingMaliceIds.add(id)
+      }
+
+      for (const maliceData of exportData.maliceFeatures) {
+        try {
+          // Validate malice data
+          if (!maliceStore.validateMaliceData(maliceData)) {
+            result.errors.push({
+              malice: maliceData.name || 'Unknown',
+              error: 'Malice feature failed validation'
+            })
+            continue
+          }
+
+          // Handle ID collisions
+          let finalId = maliceData.id
+          if (existingMaliceIds.has(maliceData.id)) {
+            finalId = generateUniqueId(maliceData.id, existingMaliceIds)
+            result.warnings.push({
+              malice: maliceData.name,
+              message: `ID collision detected`,
+              action: `Renamed from '${maliceData.id}' to '${finalId}'`
+            })
+          }
+
+          // Ensure the malice has the custom flag and timestamps
+          const now = new Date().toISOString()
+          const maliceToImport: CustomMaliceFeature = {
+            ...maliceData,
+            id: finalId,
+            isCustom: true,
+            createdAt: maliceData.createdAt || now,
+            updatedAt: now
+          }
+
+          maliceStore.customMaliceFeatures.set(finalId, maliceToImport)
+          existingMaliceIds.add(finalId)
+          result.importedMalice = (result.importedMalice || 0) + 1
+        } catch (error) {
+          result.errors.push({
+            malice: maliceData.name || 'Unknown',
+            error: `Malice import error: ${error instanceof Error ? error.message : 'Unknown error'}`
+          })
+        }
+      }
+
+      if (result.importedMalice && result.importedMalice > 0) {
+        maliceStore.saveToStorage()
+      }
+    }
+
     // Save all changes
     if (result.imported > 0) {
-      store.saveToStorage()
+      monstersStore.saveToStorage()
+      result.success = true
+    } else if (result.importedMalice && result.importedMalice > 0) {
       result.success = true
     }
 
@@ -371,17 +536,24 @@ export function importMonsters(jsonContent: string, customMonstersStore?: Return
 }
 
 /**
- * Create a backup of all monster data (both custom and bundled)
+ * Create a backup of all monster data and malice features
  * @param customMonstersStore - Optional store instance, will use global store if not provided
+ * @param customMaliceStore - Optional malice store instance, will use global store if not provided
  */
-export function createFullBackup(customMonstersStore?: ReturnType<typeof useCustomMonstersStore>): string {
-  // Use provided store or create new one
-  const store = customMonstersStore || useCustomMonstersStore()
+export function createFullBackup(
+  customMonstersStore?: ReturnType<typeof useCustomMonstersStore>,
+  customMaliceStore?: ReturnType<typeof useCustomMaliceStore>
+): string {
+  // Use provided stores or create new ones
+  const monstersStore = customMonstersStore || useCustomMonstersStore()
+  const maliceStore = customMaliceStore || useCustomMaliceStore()
   
-  store.loadFromStorage()
+  monstersStore.loadFromStorage()
+  maliceStore.loadFromStorage()
   
-  const allMonsters = store.getAllMonsters()
-  const customMonsters = store.getAllCustomMonsters()
+  const allMonsters = monstersStore.getAllMonsters()
+  const customMonsters = monstersStore.getAllCustomMonsters()
+  const customMaliceFeatures = maliceStore.getAllCustomMalice
   
   const backupData = {
     metadata: {
@@ -390,48 +562,60 @@ export function createFullBackup(customMonstersStore?: ReturnType<typeof useCust
       application: 'Steel Cauldron Monster Library - Full Backup',
       totalMonsters: allMonsters.length,
       customMonsters: customMonsters.length,
-      bundledMonsters: allMonsters.length - customMonsters.length
+      bundledMonsters: allMonsters.length - customMonsters.length,
+      customMaliceFeatures: customMaliceFeatures.length
     },
     customMonsters: customMonsters,
+    customMaliceFeatures: customMaliceFeatures,
     // Note: We don't backup bundled monsters as they come from the source data
     applicationInfo: {
       localStorage: {
         customMonstersKey: 'customMonsters',
-        dataSize: JSON.stringify(store.customMonsters).length
+        customMaliceKey: 'customMaliceFeatures',
+        monstersDataSize: JSON.stringify(monstersStore.customMonsters).length,
+        maliceDataSize: JSON.stringify(Array.from(maliceStore.customMaliceFeatures.entries())).length
       }
     }
   }
   
-  return JSON.stringify(backupData, null, 2)
+  return JSON.stringify(backupData, jsonReplacer, 2)
 }
 
 /**
  * Restore from a full backup
  * @param jsonContent - JSON string containing backup data  
  * @param customMonstersStore - Optional store instance, will use global store if not provided
+ * @param customMaliceStore - Optional malice store instance, will use global store if not provided
  */
-export function restoreFromBackup(jsonContent: string, customMonstersStore?: ReturnType<typeof useCustomMonstersStore>): ImportResult {
+export function restoreFromBackup(
+  jsonContent: string, 
+  customMonstersStore?: ReturnType<typeof useCustomMonstersStore>,
+  customMaliceStore?: ReturnType<typeof useCustomMaliceStore>
+): ImportResult {
   const result: ImportResult = {
     success: false,
     imported: 0,
     skipped: 0,
+    importedMalice: 0,
+    skippedMalice: 0,
     errors: [],
     warnings: []
   }
 
   try {
-    const backupData = JSON.parse(jsonContent)
+    const backupData = JSON.parse(jsonContent, jsonReviver)
     
     if (!backupData.customMonsters) {
       // Try to import as regular export data
-      return importMonsters(jsonContent, customMonstersStore)
+      return importMonsters(jsonContent, customMonstersStore, customMaliceStore)
     }
 
-    // Use provided store or create new one
-    const store = customMonstersStore || useCustomMonstersStore()
+    // Use provided stores or create new ones
+    const monstersStore = customMonstersStore || useCustomMonstersStore()
+    const maliceStore = customMaliceStore || useCustomMaliceStore()
     
     // Clear existing custom monsters
-    store.clearAllCustomMonsters()
+    monstersStore.clearAllCustomMonsters()
     result.warnings.push({
       monster: 'System',
       message: 'All existing custom monsters were cleared for restore',
@@ -451,7 +635,7 @@ export function restoreFromBackup(jsonContent: string, customMonstersStore?: Ret
           continue
         }
 
-        store.customMonsters[monster.id] = monster
+        monstersStore.customMonsters[monster.id] = monster
         result.imported++
       } catch (error) {
         result.errors.push({
@@ -461,8 +645,44 @@ export function restoreFromBackup(jsonContent: string, customMonstersStore?: Ret
       }
     }
 
-    if (result.imported > 0) {
-      store.saveToStorage()
+    // Import custom malice features if present in backup
+    if (backupData.customMaliceFeatures && Array.isArray(backupData.customMaliceFeatures)) {
+      // Clear existing malice features
+      maliceStore.customMaliceFeatures.clear()
+      result.warnings.push({
+        malice: 'System',
+        message: 'All existing custom malice features were cleared for restore',
+        action: 'Previous malice data replaced'
+      })
+
+      for (const malice of backupData.customMaliceFeatures) {
+        try {
+          // Validate malice data
+          if (!maliceStore.validateMaliceData(malice)) {
+            result.errors.push({
+              malice: malice.name || 'Unknown',
+              error: 'Malice feature failed validation'
+            })
+            continue
+          }
+
+          maliceStore.customMaliceFeatures.set(malice.id, malice)
+          result.importedMalice = (result.importedMalice || 0) + 1
+        } catch (error) {
+          result.errors.push({
+            malice: malice.name || 'Unknown',
+            error: `Malice restore error: ${error instanceof Error ? error.message : 'Unknown error'}`
+          })
+        }
+      }
+
+      if (result.importedMalice && result.importedMalice > 0) {
+        maliceStore.saveToStorage()
+      }
+    }
+
+    if (result.imported > 0 || (result.importedMalice && result.importedMalice > 0)) {
+      monstersStore.saveToStorage()
       result.success = true
     }
 

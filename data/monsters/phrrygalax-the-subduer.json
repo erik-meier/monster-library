@@ -1,0 +1,141 @@
+{
+  "id": "phrrygalax-the-subduer",
+  "name": "Phrrygalax The Subduer",
+  "level": 6,
+  "ev": 32,
+  "role": "Brute",
+  "organization": "Elite",
+  "keywords": [
+    "Draconian",
+    "Dragon",
+    "Humanoid"
+  ],
+  "size": "1L",
+  "speed": 5,
+  "stamina": 180,
+  "stability": 3,
+  "freeStrike": 7,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 3,
+    "agility": 2,
+    "reason": 0,
+    "intuition": 0,
+    "presence": 3
+  },
+  "immunities": {
+    "fire": 6
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Baneful Blade",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "10 damage",
+          "tier2": "16 damage; <strong class=\"potency-value\">M&lt;1</strong> bleeding (save ends)",
+          "tier3": "19 damage; <strong class=\"potency-value\">M&lt;2</strong> 3 damage, bleeding (save ends)"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Spinning Spit",
+      "cost": "2 Malice",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Main action",
+      "distance": "1 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "7 fire damage",
+          "tier2": "13 fire damage",
+          "tier3": "16 fire damage"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Heavy Landing",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Phrrygalax flies up to his speed and lands in an unoccupied space on the ground. Each creature adjacent to where he lands who has <strong class=\"potency-value\">A&lt;2</strong> is knocked prone."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Armor of the Ancients",
+      "cost": "2 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "Phrrygalax takes acid, cold, corruption, fire, lightning, or poison damage.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Phrrygalax takes no damage and instead regains the same amount of Stamina. He then swaps his current damage immunity with the triggering damage type."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Still Your Tongue!",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Free triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "Phrrygalax hears a creature within 5 squares reciting the oath of Good King Omund's Dragon Phalanx.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Phrrygalax shifts up to his speed and uses Baneful Blade against the triggering creature. That ability deals an extra 7 damage."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Oathbreaker's Vengeance",
+      "effects": [
+        {
+          "effect": "Whenever Phrrygalax fails a saving throw, he deals an additional 7 damage on his next strike."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

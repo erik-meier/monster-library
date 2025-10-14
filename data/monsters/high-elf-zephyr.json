@@ -6,17 +6,16 @@
   "role": "Harrier",
   "organization": "Platoon",
   "keywords": [
-    "fey",
-    "humanoid"
+    "Fey",
+    "High Elf",
+    "Humanoid"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 7,
   "stamina": 30,
   "stability": 0,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 0,
     "agility": 2,
@@ -31,234 +30,68 @@
   ],
   "items": [
     {
-      "name": "Like the Wind",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The zephyr doesn't provoke opportunity attacks by moving.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Otherworldly Grace",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the start of each of their turns, the zephyr can choose one effect on them that can be ended by a saving throw. That effect instead ends at the end of their turn.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Sweeping Blade",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 2
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage",
+          "tier2": "7 damage",
+          "tier3": "9 damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage"
-            },
-            {
-              "tier": 3,
-              "display": "9 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>On a tier 3 outcome, the zephyr can make a free strike against a creature adjacent to the target. If they do so and that creature and the target both have <strong class=\"potency-value\">A&lt;2</strong>, the creature and the target are both prone. On any tier outcome, the zephyr can then shift up to 2 squares</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "On a tier 3 outcome, the zephyr can make a free strike against a creature adjacent to the target. If they do so and that creature and the target both have <strong class=\"potency-value\">A&lt;2</strong>, the creature and the target are both prone. On any tier outcome, the zephyr can then shift up to 2 squares."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Windwalk",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "-"
-        ],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The zephyr flies up to their speed. If they don't end this movment on solid ground, they are prone.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The zephyr flies up to their speed. If they don't end this movment on solid ground, they are prone."
         }
-      }
+      ]
     },
     {
-      "name": "Chaincast",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever a high elf uses a magic ability, they can use it as if they were occupying the square of another high elf on the encounter map to whom they have line of effect.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Like the Wind",
+      "effects": [
+        {
+          "effect": "The zephyr doesn't provoke opportunity attacks by moving."
         }
-      }
+      ]
     },
     {
-      "name": "Gift From an Accursed Tome",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "main",
-        "resource": 5,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "line",
-          "primary": 5,
-          "secondary": 1,
-          "tertiary": 1
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;1</strong> chosen condition (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "9 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;2</strong> chosen condition (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "12 cold/corruption/poison damage; <strong class=\"potency-value\">R&lt;3</strong> chosen condition (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The high elf chooses a damage type and condition from one of the following combinations: cold damage and slowed, poison dam age and weakened, or corruption damage and frightened.</p> <p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Otherworldly Grace",
+      "effects": [
+        {
+          "effect": "At the start of each of their turns, the zephyr can choose one effect on them that can be ended by a saving throw. That effect instead ends at the end of their turn."
         }
-      }
-    },
-    {
-      "name": "In Defiance of Time",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each high elf in the encounter gains a +4 bonus to speed, and whenever a high elf uses an ability against an enemy, each high elf adjacent to that enemy can make a free strike against them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "123",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

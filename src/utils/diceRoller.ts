@@ -52,3 +52,27 @@ export function getTierLabel(tier: number): string {
   }
   return tierMap[tier] || tier.toString()
 }
+
+/**
+ * Parse a power roll formula (e.g., "2d10 + 5", "2d10 + 2", "2d10") and extract the modifier
+ * @param formula The power roll formula string
+ * @returns The modifier number, or 0 if no modifier found
+ */
+export function parsePowerRollModifier(formula: string): number {
+  if (!formula) return 0
+  
+  // Match patterns like "2d10 + 5", "2d10 - 2", "2d10+5", "2d10-2"
+  const match = formula.match(/2d10\s*([+-])\s*(\d+)/)
+  if (!match) {
+    // Check if it's just "2d10" with no modifier
+    if (formula.trim() === '2d10') {
+      return 0
+    }
+    return 0
+  }
+  
+  const sign = match[1]
+  const value = parseInt(match[2])
+  
+  return sign === '-' ? -value : value
+}

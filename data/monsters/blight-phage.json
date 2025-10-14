@@ -6,16 +6,15 @@
   "role": "Controller",
   "organization": "Horde",
   "keywords": [
-    "abyssal"
+    "Abyssal",
+    "Demon"
   ],
-  "size": {
-    "value": 3,
-    "letter": "M"
-  },
+  "size": "3",
   "speed": 6,
   "stamina": 40,
   "stability": 0,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 0,
     "agility": 0,
@@ -32,187 +31,78 @@
   ],
   "items": [
     {
-      "name": "Lethe",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While the blight phage is winded, they gain an edge on strikes, and any strike made against them gains an edge.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Soulsight",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any creature within 2 squares of the blight phage can't be hidden from them.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Blight Pus",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "7 corruption damage",
+          "tier2": "10 corruption damage",
+          "tier3": "11 corruption damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 corruption damage"
-            },
-            {
-              "tier": 2,
-              "display": "10 corruption damage"
-            },
-            {
-              "tier": 3,
-              "display": "11 corruption damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A puddle of blight-digested soul juice-covers the ground in the target's square, which is affected as if by Seeping Blight (see the Level 7+ Demon Malice feature).</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A puddle of blight—digested soul juice—covers the ground in the target's square, which is affected as if by Seeping Blight (see the Level 7+ Demon Malice feature)."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Blight Rain",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 5,
-          "secondary": 1
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Maneuver",
+      "distance": "5 cube within 1",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "name": "Special",
+          "effect": "The blight phage must create the cube beneath themself."
         },
-        "target": {
-          "type": "enemy",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The blight phage spins and sheds corruptive blight to fill the area, which is treated as if affected by Seeping Blight."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": [
-              "reason"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p><strong>Special:</strong> The blight phage must create the cube beneath themself.</p> <p>The blight phage spins and sheds corruptive blight to fill the area, which is treated as if affected by Seeping Blight.</p>"
-        },
-        "spend": {
-          "text": "The blight phage chooses three 2 cube areas within 10  squares of the phage. Each area is covered with blight and treated as if affected by Seeping Blight.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The blight phage chooses three 2 cube areas within 10  squares of the phage. Each area is covered with blight and treated as if affected by Seeping Blight."
+        {
+          "cost": "2 Malice",
+          "effect": "The blight phage chooses three 2 cube areas within 10 squares of the phage. Each area is covered with blight and treated as if affected by Seeping Blight."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The demon activates a Malice feature available to demons of level 6 or lower.</p><p><span class=\"reference-text\">Abyssal Rift</span></p><p><span class=\"reference-text\">Soulburn</span></p><p><span class=\"reference-text\">Abyssal Evolution</span></p><p><span class=\"reference-text\">Abyssal Jaunt</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Lethe",
+      "effects": [
+        {
+          "effect": "While the blight phage is winded, they gain an edge on strikes, and any strike made against them gains an edge."
         }
-      }
+      ]
     },
     {
-      "name": "Seeping Blight",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 4",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>One demon acting this turn expels blight—digested soul juice— onto the ground around them in a 3 burst that lingers until the start of their next turn. Any enemy who enters the area or starts their turn there takes <span class=\"damage-value damage-generic\">6</span> corruption damage, and has a double bane on power rolls until the start of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Soulsight",
+      "effects": [
+        {
+          "effect": "Any creature within 2 squares of the blight phage can't be hidden from them."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "70",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

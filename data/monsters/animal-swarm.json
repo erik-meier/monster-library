@@ -6,17 +6,15 @@
   "role": "Hexer",
   "organization": "Elite",
   "keywords": [
-    "animal",
-    "swarm"
+    "Animal",
+    "Swarm"
   ],
-  "size": {
-    "value": 2,
-    "letter": "M"
-  },
+  "size": "2",
   "speed": 5,
   "stamina": 40,
   "stability": 1,
   "freeStrike": 4,
+  "withCaptain": "",
   "characteristics": {
     "might": -2,
     "agility": 1,
@@ -31,122 +29,68 @@
   ],
   "items": [
     {
-      "name": "Swarm",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The animal swarm can move through spaces as if they were a size 1M creature, and can occupy other creatures' spaces. At the start of each of the animal swarm's turns, they can make a free strike against each creature whose space they share.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Nature's Spirit",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While outdoors or in a natural environment, the animal swarm can negate a bane on their abilities or turn a double bane into a bane.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Flurry",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "6 damage",
+          "tier2": "9 damage; pull 1",
+          "tier3": "12 damage; pull 2"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "intuition"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "6 damage"
-            },
-            {
-              "tier": 2,
-              "display": "9 damage; pull 1"
-            },
-            {
-              "tier": 3,
-              "display": "12 damage; pull 2"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>If the target is pulled into the animal swarm, that forced movement deals damage only at the Director's determination.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "If the target is pulled into the animal swarm, that forced movement deals damage only at the Director's determination."
         }
-      }
+      ]
     },
     {
-      "name": "Impede",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "aura",
-          "primary": 1
-        },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "intuition"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The area is difficult terrain for enemies until the start of the animal swarm's next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Swarm",
+      "effects": [
+        {
+          "effect": "The animal swarm can move through spaces as if they were a size 1M creature, and can occupy other creatures' spaces. At the start of each of the animal swarm's turns, they can make a free strike against each creature whose space they share."
         }
-      }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Impede",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Maneuver",
+      "distance": "1 aura",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The area is difficult terrain for enemies until the start of the animal swarm's next turn."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Nature's Spirit",
+      "effects": [
+        {
+          "effect": "While outdoors or in a natural environment, the animal swarm can negate a bane on their abilities or turn a double bane into a bane."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "41",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

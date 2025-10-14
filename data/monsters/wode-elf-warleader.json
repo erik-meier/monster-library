@@ -6,16 +6,16 @@
   "role": "",
   "organization": "Leader",
   "keywords": [
-    "fey"
+    "Fey",
+    "Humanoid",
+    "Wode Elf"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 7,
   "stamina": 120,
   "stability": 2,
   "freeStrike": 5,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": 3,
@@ -26,382 +26,155 @@
   "immunities": {},
   "weaknesses": {},
   "movementTypes": [
-    "teleport",
-    "walk"
+    "teleport"
   ],
   "items": [
     {
-      "name": "End Effect",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the end of each of their turns, the warleader can take <span class=\"damage-value damage-generic\">5</span> damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Into the Green",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The warleader can attempt to hide at the end of each of their turns.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Masking Glamor",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Abilities targeting the warleader that would take a bane from cover or concealment have a double bane instead.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Wodeblade",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)",
+          "tier2": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)",
+          "tier3": "15 damage; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
+        {
+          "name": "Effect",
+          "effect": "The warleader can teleport up to 3 squares between each strike."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "8 damage; <strong class=\"potency-value\">M&lt;1</strong> restrained (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "12 damage; <strong class=\"potency-value\">M&lt;2</strong> restrained (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "15 damage; <strong class=\"potency-value\">M&lt;3</strong> restrained (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The warleader can teleport up to 3 squares between each strike.</p><p><br /><span class=\"damage-value damage-generic\">3</span></p>"
-        },
-        "spend": {
-          "text": "A target restrained by this ability takes an extra 3 damage.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> A target restrained by this ability takes an extra 3 damage."
+        {
+          "cost": "2 Malice",
+          "effect": "A target restrained by this ability takes an extra 3 damage."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Fairness Is a Human Concept",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 5,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 10
-        },
-        "target": {
-          "type": "ally",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each non-minion target can make a free strike, then each target shifts up to 3 squares. A target who has cover or concealment at the end of this shift can attempt to hide at the end of the warleader's turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "5 Malice",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Maneuver",
+      "distance": "10 burst",
+      "target": "Each ally in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each non-minion target can make a free strike, then each target shifts up to 3 squares. A target who has cover or concealment at the end of this shift can attempt to hide at the end of the warleader's turn."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Wode Sickness",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "enemy",
-          "value": 1
-        },
-        "trigger": "An ally ends their turn.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The target must not have taken their turn this round. The target takes their turn immediately, and if they have <strong class=\"potency-value\">P&lt;2</strong> they are bleeding and take a bane on strikes until the end of their turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 10",
+      "target": "One enemy",
+      "trigger": "An ally ends their turn.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target must not have taken their turn this round. The target takes their turn immediately, and if they have <strong class=\"potency-value\">P&lt;2</strong> they are bleeding and take a bane on strikes until the end of their turn."
         }
-      }
+      ]
     },
     {
+      "type": "feature",
+      "name": "End Effect",
+      "effects": [
+        {
+          "effect": "At the end of each of their turns, the warleader can take 5 damage to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Into the Green",
+      "effects": [
+        {
+          "effect": "The warleader can attempt to hide at the end of each of their turns."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Masking Glamor",
+      "effects": [
+        {
+          "effect": "Abilities targeting the warleader that would take a bane from cover or concealment have a double bane instead."
+        }
+      ]
+    },
+    {
+      "type": "ability",
       "name": "You Will All Witness my Blade",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The warleader uses Wodeblade against each target and gains an edge on the power roll.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 1",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "-",
+      "distance": "5 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The warleader uses Wodeblade against each target and gains an edge on the power roll."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Suppressing Volley",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
-        },
-        "target": {
-          "type": "ally",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The warleader can use Wodeblade. Each target can then make a free strike.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 2",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "-",
+      "distance": "5 burst",
+      "target": "Each ally in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The warleader can use Wodeblade. Each target can then make a free strike."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Is It Now or Is It Then?",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
-        },
-        "target": {
-          "type": "ally",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target is invisible until the start of the next round. The warleader then uses Wodeblade.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 3",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "-",
+      "distance": "5 burst",
+      "target": "Self and each ally in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target is invisible until the start of the next round. The warleader then uses Wodeblade."
         }
-      }
-    },
-    {
-      "name": "Forest Network",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Punishing Regrowth",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Vines Everywhere",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "140",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

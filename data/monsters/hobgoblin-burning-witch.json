@@ -1,0 +1,93 @@
+{
+  "id": "hobgoblin-burning-witch",
+  "name": "Hobgoblin Burning Witch",
+  "level": 4,
+  "ev": 12,
+  "role": "Controller",
+  "organization": "Platoon",
+  "keywords": [
+    "Goblin",
+    "Hobgoblin",
+    "Humanoid",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 50,
+  "stability": 0,
+  "freeStrike": 5,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 0,
+    "agility": 1,
+    "reason": 2,
+    "intuition": 2,
+    "presence": 3
+  },
+  "immunities": {
+    "fire": 4
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "teleport"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Soul Burn",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "4 corruption or fire damage",
+          "tier2": "6 corruption or fire damage",
+          "tier3": "8 corruption or fire damage"
+        },
+        {
+          "cost": "2 Malice",
+          "effect": "Each target who has <strong class=\"potency-value\">P&lt;2</strong> is weakened (save ends). Any enemy who starts their turn within 3 squares of a target weakened this way and who has <strong class=\"potency-value\">P&lt;2</strong> is weakened (save ends)."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Burning Legion",
+      "cost": "1 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "Three creatures",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target can teleport up to 5 squares. Each creature adjacent to a target at their destination takes 3 fire damage."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Infernal Ichor",
+      "effects": [
+        {
+          "effect": "When the burning witch is reduced to 0 Stamina, they spray burning blood. Each creature adjacent to the burning witch takes 3 fire damage."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

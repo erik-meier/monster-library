@@ -6,16 +6,14 @@
   "role": "Controller",
   "organization": "Elite",
   "keywords": [
-    "elemental"
+    "Elemental"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 7,
   "stamina": 80,
   "stability": 1,
   "freeStrike": 5,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": 0,
@@ -28,260 +26,95 @@
   },
   "weaknesses": {},
   "movementTypes": [
-    "walk",
     "swim"
   ],
   "items": [
     {
-      "name": "Fickle and Free",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The essence can't be restrained, slowed, or knocked prone, and they ignore difficult terrain.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Water Glide",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Whenever the essence starts their turn in a space containing water, they can fly until the end of their turn. While flying, the essence doesn't provoke opportunity attacks.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Water Wing",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "melee",
-          "strike"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Melee",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "7 damage; slide 1",
+          "tier2": "11 damage; slide 2",
+          "tier3": "14 damage; slide 3"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 damage; slide 1"
-            },
-            {
-              "tier": 2,
-              "display": "11 damage; slide 2"
-            },
-            {
-              "tier": 3,
-              "display": "14 damage; slide 3"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>If a target has <strong class=\"potency-value\">P&lt;2</strong>, their stability is reduced to 0 and they move 2 additional squares whenever they are force moved (save ends).</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "If a target has <strong class=\"potency-value\">P&lt;2</strong>, their stability is reduced to 0 and they move 2 additional squares whenever they are force moved (save ends)."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Convocation of Waves",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 5",
+      "target": "Self or one elemental",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Until the start of the essence's next turn, the target has cold immunity 5."
         },
-        "target": {
-          "type": "self",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the essence's next turn, the target has cold immunity 5.</p>"
-        },
-        "spend": {
-          "text": "Until the end of the encounter, the ground within 1  square of the target is a pool of water that is difficult terrain. This  water extends out behind the target as they move, creating a  stream that lasts until the end of the encounter. Any enemy who  ends their turn in the stream and has M<2 is slowed (save ends).",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the ground within 1  square of the target is a pool of water that is difficult terrain. This  water extends out behind the target as they move, creating a  stream that lasts until the end of the encounter. Any enemy who  ends their turn in the stream and has <strong class=\"potency-value\">M&lt;2</strong> is slowed (save ends)."
+        {
+          "cost": "3 Malice",
+          "effect": "Until the end of the encounter, the ground within 1 square of the target is a pool of water that is difficult terrain. This water extends out behind the target as they move, creating a stream that lasts until the end of the encounter. Any enemy who ends their turn in the stream and has <strong class=\"potency-value\">M&lt;2</strong> is slowed (save ends)."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Sea-Salted Wounds",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 1,
-        "keywords": [
-          "melee"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "enemy",
-          "value": 1
-        },
-        "trigger": "An ally deals rolled damage to the target.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The essence makes a free strike against the target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "Melee"
+      ],
+      "usage": "Triggered action",
+      "distance": "Melee 1",
+      "target": "One enemy",
+      "trigger": "An ally deals rolled damage to the target.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The essence makes a free strike against the target."
         }
-      }
+      ]
     },
     {
-      "name": "Elemental Swap",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Fickle and Free",
+      "effects": [
+        {
+          "effect": "The essence can't be restrained, slowed, or knocked prone, and they ignore difficult terrain."
         }
-      }
+      ]
     },
     {
-      "name": "Split",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Water Glide",
+      "effects": [
+        {
+          "effect": "Whenever the essence starts their turn in a space containing water, they can fly until the end of their turn. While flying, the essence doesn't provoke opportunity attacks."
         }
-      }
-    },
-    {
-      "name": "Convocation of Chaos",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "ranged",
-          "primary": 8
-        },
-        "target": {
-          "type": "selfOrAlly"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "115",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

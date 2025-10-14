@@ -31,21 +31,22 @@
           </div>
 
           <div class="feature-item">
+            <div class="feature-icon">⚔️</div>
+            <h3><router-link to="/encounter-builder">Encounter Builder</router-link></h3>
+            <p>Create and manage your own encounters using custom monsters and settings.</p>
+          </div>
+
+          <div class="feature-item">
             <div class="feature-icon">📱</div>
             <h3>Mobile Friendly</h3>
             <p>Access your monsters on any device - perfect for gaming sessions at the table or on the go.</p>
           </div>
 
+
           <div class="feature-item">
             <div class="feature-icon">💾</div>
             <h3>Export & Import</h3>
-            <p>Export monsters as JSON files for backup or sharing. Import custom monsters from your community.</p>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">📋</div>
-            <h3>Monster Templates</h3>
-            <p>Start from existing monsters when creating custom ones. Customize any stat to fit your needs.</p>
+            <p>Export monsters or encounters as JSON files for backup or sharing.</p>
           </div>
 
           <div class="feature-item">
@@ -104,8 +105,30 @@
 
       <section class="about-section">
         <h2>🎨 Art Credits</h2>
-        <a href="https://www.flaticon.com/free-icons/cauldron" title="cauldron icons">Cauldron icons created by Ashok
-          creative - Flaticon</a>
+        <p><a href="https://www.flaticon.com/free-icons/cauldron" title="cauldron icons">Cauldron icons created by
+            Ashok
+            creative - Flaticon</a></p>
+        <p><a href="https://mrmattdollar.itch.io/draw-steel-symbols-font" title="Draw Steel Glyphs">Draw Steel Glyphs
+            by MrMattDollar</a></p>
+      </section>
+
+      <section class="about-section">
+        <h2>☕ Support the Project</h2>
+        <div class="support-content">
+          <div class="support-text">
+            <p>
+              Steel Cauldron is a passion project created to help the Draw Steel community.
+              If you find it useful and would like to support its development, I would greatly appreciate it!
+            </p>
+          </div>
+          <div class="support-buttons">
+            <a href="https://buymeacoffee.com/errmeierx" target="_blank" rel="noopener noreferrer"
+              class="btn btn-coffee">
+              <span class="coffee-icon">☕</span>
+              Buy me a coffee
+            </a>
+          </div>
+        </div>
       </section>
 
       <section class="about-section">
@@ -115,8 +138,13 @@
           and is not affiliated with MCDM Productions, LLC. DRAW STEEL © 2024 MCDM Productions, LLC.
         </p>
         <p class="legal-text">
-          Monster data is sourced from the Draw Steel Foundry VTT module, which is available under
+          Monster data is sourced from the <a href="https://github.com/SteelCompendium/data-bestiary-json"
+            title="Steel Compendium Bestiary">Steel Compendium Bestiary</a>, which is available under
           the DRAW STEEL Creator License.
+        </p>
+        <p class="legal-text">
+          Steel Cauldron is open source. View the source code on <a href="https://github.com/erik-meier/monster-library"
+            title="Steel Cauldron Source Code">GitHub</a>.
         </p>
       </section>
 
@@ -394,6 +422,52 @@ kbd {
   box-shadow: var(--shadow-sm);
 }
 
+.support-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.support-text {
+  flex: 1;
+}
+
+.support-text p {
+  margin: 0;
+}
+
+.support-buttons {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.btn-coffee {
+  background: linear-gradient(135deg, #ff813f, #ff6b35);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: var(--transition-all);
+}
+
+.btn-coffee:hover {
+  background: linear-gradient(135deg, #ff6b35, #ff5722);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-coffee:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.coffee-icon {
+  font-size: var(--font-size-lg);
+}
+
 @media (max-width: 768px) {
   .about-page {
     padding: var(--space-4) var(--space-2);
@@ -445,6 +519,16 @@ kbd {
 
   .btn {
     width: 100%;
+  }
+
+  .support-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+
+  .support-buttons {
+    justify-content: center;
   }
 }
 </style>

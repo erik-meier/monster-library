@@ -1,0 +1,148 @@
+{
+  "id": "devil-jurist",
+  "name": "Devil Jurist",
+  "level": 5,
+  "ev": 28,
+  "role": "Artillery",
+  "organization": "Elite",
+  "keywords": [
+    "Devil",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 6,
+  "stamina": 120,
+  "stability": 0,
+  "freeStrike": 7,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 0,
+    "agility": 2,
+    "reason": 1,
+    "intuition": 1,
+    "presence": 3
+  },
+  "immunities": {
+    "fire": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly"
+  ],
+  "items": [
+    {
+      "type": "feature",
+      "name": "Hellfire",
+      "effects": [
+        {
+          "effect": "Fire damage dealt by the jurist ignores damage immunity."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Fire and Brimstone",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 12",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "10 fire damage",
+          "tier2": "15 fire damage; <strong class=\"potency-value\">A&lt;2</strong> burning (save ends)",
+          "tier3": "18 fire damage; <strong class=\"potency-value\">A&lt;3</strong> burning (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "A burning creature takes 1d6 fire damage at the start of each of their turns. A burning object takes 1d6 fire damage at the end of each round."
+        },
+        {
+          "cost": "1+ Malice",
+          "effect": "The jurist can target one additional creature or object for each Malice spent."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Dismissal with Prejudice",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Main action",
+      "distance": "2 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "effect": "**Power Roll + 3**",
+          "tier1": "6 damage; slide 1",
+          "tier2": "10 damage; slide 3",
+          "tier3": "12 damage; slide 5"
+        },
+        {
+          "name": "Effect",
+          "effect": "If the target has <strong class=\"potency-value\">M&lt;2</strong>, the forced distance movement gains a +3 bonus."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Ashes to Ashes",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 12",
+      "target": "One creature",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "If the target is burning (see Fire and Brimstone), they take 6 fire damage."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Devilish Charm",
+      "cost": "2 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 5",
+      "target": "The triggering creature",
+      "trigger": "A creature targets the jurist with a strike.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target makes a Presence test.",
+          "tier1": "The jurist chooses a new target for the strike.",
+          "tier2": "The jurist halves the triggering damage.",
+          "tier3": "The target takes a bane on the strike."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "True Name",
+      "effects": [
+        {
+          "effect": "If a creature within 10 squares speaks the jurist's true name, the jurist loses their fire immunity, any nondamaging effects of their signature ability, and their Devilish Charm ability until the end of the encounter."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

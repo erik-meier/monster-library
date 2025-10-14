@@ -6,16 +6,15 @@
   "role": "Harrier",
   "organization": "Horde",
   "keywords": [
-    "abyssal"
+    "Abyssal",
+    "Demon"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 6,
   "stamina": 15,
   "stability": 0,
   "freeStrike": 1,
+  "withCaptain": "",
   "characteristics": {
     "might": 0,
     "agility": 2,
@@ -32,230 +31,73 @@
   ],
   "items": [
     {
-      "name": "Lethe",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While the ruinant is winded, they gain an edge on strikes, and any strike made against them gains an edge.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Soulsight",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any creature within 2 squares of the ruinant can't be hidden from them.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Bloodletting Claws",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "3 damage"
-            },
-            {
-              "tier": 2,
-              "display": "4 damage"
-            },
-            {
-              "tier": 3,
-              "display": "5 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "3 damage",
+          "tier2": "4 damage",
+          "tier3": "5 damage; <strong class=\"potency-value\">M&lt;2</strong> bleeding (save ends)"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Salt Wounds",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "cost": "3 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "Three creatures",
+      "effects": [
+        {
+          "name": "Special",
+          "effect": "Each target must be at less than full Stamina."
         },
-        "target": {
-          "type": "creature",
-          "value": 3
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "1 corruption damage"
-            },
-            {
-              "tier": 2,
-              "display": "2 corruption damage"
-            },
-            {
-              "tier": 3,
-              "display": "3 corruption damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p><strong>Special:</strong> Each target must be at less than full Stamina.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "roll": "2d10 + 2",
+          "tier1": "1 corruption damage",
+          "tier2": "2 corruption damage",
+          "tier3": "3 corruption damage"
         }
-      }
+      ]
     },
     {
-      "name": "Soulburn",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special",
-          "primary": null,
-          "secondary": null
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each demon acting this turn has a double edge on abilities.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Lethe",
+      "effects": [
+        {
+          "effect": "While the ruinant is winded, they gain an edge on strikes, and any strike made against them gains an edge."
         }
-      }
+      ]
     },
     {
-      "name": "Abyssal Evolution",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A demon minion of your choice transforms into a non-minion horde demon of the same level.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Soulsight",
+      "effects": [
+        {
+          "effect": "Any creature within 2 squares of the ruinant can't be hidden from them."
         }
-      }
-    },
-    {
-      "name": "Abyssal Rift",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two size 2 rifts to the Abyssal Wasteland appear at locations of your choice. Any demon can use an abyssal rift as a portal to another abyssal rift in the encounter, moving into any space in one rift and appearing immediately in any unoccupied space in the other rift. A non-demon who enters a rift for the first time in a round or starts their turn there takes corruption damage equal to the level of the highest-level demon on the encounter map. An abyssal rift is an immovable object that has 25 Stamina, damage immunity 2, and holy weakness 5. The rift closes when there are no demons remaining on the encounter map. Additionally, a creature who has the Magic or Psionics skill can make a <strong>Reason test or Intuition test</strong> as a maneuver while adjacent to a rift to destabilize and close it.</p><p></p><table><tbody><tr><td data-colwidth=\"105\"><p>11 or less</p></td><td><p>The rift remains open and regains <span class=\"heal-value\">5</span>  stamina Stamina.</p></td></tr><tr><td data-colwidth=\"105\"><p>12-16</p></td><td><p>The rift remains open.</p></td></tr><tr><td data-colwidth=\"105\"><p>17+</p></td><td><p>The rift closes.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "63",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

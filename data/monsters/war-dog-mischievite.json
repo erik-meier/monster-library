@@ -6,17 +6,16 @@
   "role": "Harrier",
   "organization": "Horde",
   "keywords": [
-    "humanoid",
-    "soulless"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 6,
   "stamina": 35,
   "stability": 0,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 1,
     "agility": 3,
@@ -31,193 +30,73 @@
   ],
   "items": [
     {
-      "name": "Crafty",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The mischievite doesn't provoke opportunity attacks by moving.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Loyalty Collar",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>When the mischievite is reduced to 0 Stamina, their loyalty collar explodes, dealing <span class=\"damage-value damage-generic\">2d6</span> damage to each adjacent enemy and object.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Fuse-Iron Knives",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "meleeRanged",
-          "primary": 1,
-          "secondary": 5
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1 or ranged 5",
+      "target": "Two creatures",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "5 damage",
+          "tier2": "7 damage",
+          "tier3": "8 damage; <strong class=\"potency-value\">R&lt;3</strong> the target is dazzled (save ends)"
         },
-        "target": {
-          "type": "creature",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage"
-            },
-            {
-              "tier": 3,
-              "display": "8 damage; <strong class=\"potency-value\">A&lt;3</strong> the target is dazzled (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A dazzled target takes a bane on strikes and has line of effect only within 1 square.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A dazzled target takes a bane on strikes and has line of effect only within 1 square."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Misdirection",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 3
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 3",
+      "target": "One ally or dazzled creature",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The mischievite swaps positions with the target. An ally targeted by this ability can make a free strike before or after being swapped."
         },
-        "target": {
-          "type": "creature",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>NOTE: Targets one ally or dazzled creature</p><p>The mischievite swaps positions with the target. An ally targeted by this ability can make a free strike before or after being swapped.</p>"
-        },
-        "spend": {
-          "text": "The mischievite can use this ability as a triggered action  when they are targeted by an ability. If they do, the swapped target  becomes the new target of the triggering ability.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The mischievite can use this ability as a triggered action  when they are targeted by an ability. If they do, the swapped target  becomes the new target of the triggering ability."
+        {
+          "cost": "2 Malice",
+          "effect": "The mischievite can use this ability as a triggered action when they are targeted by an ability. If they do, the swapped target becomes the new target of the triggering ability."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Crafty",
+      "effects": [
+        {
+          "effect": "The mischievite doesn't provoke opportunity attacks by moving."
         }
-      }
+      ]
     },
     {
-      "name": "Loyalty Unto Death",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 5,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10,
-          "secondary": null
-        },
-        "target": {
-          "type": "ally",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p><strong>Note:</strong> Targets Two War Dogs</p><p>Each target who has a loyalty collar shifts up to their speed, then is reduced to 0 Stamina. After each target’s Loyalty Collar trait is resolved, each enemy adjacent to either target makes a <strong>Presence test.</strong></p><table><tbody><tr><td data-colwidth=\"98\"><p>11 or less</p></td><td><p>Push 4; the enemy is frightened of the nearest non-minion war dog (save ends)</p></td></tr><tr><td data-colwidth=\"98\"><p>12-16</p></td><td><p>Push 2; the enemy is frightened of the nearest non-minion war dog (EoT)</p></td></tr><tr><td data-colwidth=\"98\"><p>17+</p></td><td><p>Push 2</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Loyalty Collar",
+      "effects": [
+        {
+          "effect": "When the mischievite is reduced to 0 Stamina, their loyalty collar explodes, dealing 2d6 damage to each adjacent enemy and object."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "307",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

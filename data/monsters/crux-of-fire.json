@@ -6,16 +6,14 @@
   "role": "Artillery",
   "organization": "Elite",
   "keywords": [
-    "elemental"
+    "Elemental"
   ],
-  "size": {
-    "value": 1,
-    "letter": "T"
-  },
+  "size": "1T",
   "speed": 6,
   "stamina": 80,
   "stability": 0,
   "freeStrike": 6,
+  "withCaptain": "",
   "characteristics": {
     "might": -1,
     "agility": 2,
@@ -32,242 +30,82 @@
   ],
   "items": [
     {
-      "name": "Fickle and Free",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The crux can't be restrained, slowed, or knocked prone, and they ignore difficult terrain.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Spitfire",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 12
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 12",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "8 fire damage",
+          "tier2": "12 fire damage; <strong class=\"potency-value\">A&lt;1</strong> the target is burning (save ends)",
+          "tier3": "15 fire damage; <strong class=\"potency-value\">A&lt;2</strong> the target is burning (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "8 fire damage"
-            },
-            {
-              "tier": 2,
-              "display": "12 fire damage; <strong class=\"potency-value\">A&lt;1</strong> the target is burning (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "15 fire damage; <strong class=\"potency-value\">A&lt;2</strong> the target is burning (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>A burning creature takes <span class=\"damage-value damage-generic\">1d6</span> fire damage at the start of each of their turns. A burning object takes <span class=\"damage-value damage-generic\">1d6</span> fire damage at the end of each round.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "A burning creature takes 1d6 fire damage at the start of each of their turns. A burning object takes 1d6 fire damage at the end of each round."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Convocation of Flames",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 5",
+      "target": "Self or one elemental",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Until the start of the crux's next turn, the target has fire immunity 5."
         },
-        "target": {
-          "type": "selfOrAlly",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the crux's next turn, the target has fire immunity 5.</p>"
-        },
-        "spend": {
-          "text": "Until the end of the encounter, the ground within 3 squares  of the target is wreathed in fire. Any enemy who enters that area for  the first time in a round or starts their turn there takes 3 fire damage.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the ground within 3 squares  of the target is wreathed in fire. Any enemy who enters that area for  the first time in a round or starts their turn there takes 3 fire damage."
+        {
+          "cost": "3 Malice",
+          "effect": "Until the end of the encounter, the ground within 3 squares of the target is wreathed in fire. Any enemy who enters that area for the first time in a round or starts their turn there takes 3 fire damage."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Flame Jet",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 1,
-        "keywords": [
-          "magic"
-        ],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "The crux takes damage.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The crux ignores any effects associated with the damage and can fly up to their speed. If the crux doesn't end this movement on solid ground, they fall.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "Magic"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "The crux takes damage.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The crux ignores any effects associated with the damage and can fly up to their speed. If the crux doesn't end this movement on solid ground, they fall."
         }
-      }
+      ]
     },
     {
-      "name": "Elemental Swap",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Fickle and Free",
+      "effects": [
+        {
+          "effect": "The crux can't be restrained, slowed, or knocked prone, and they ignore difficult terrain."
         }
-      }
-    },
-    {
-      "name": "Split",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Convocation of Chaos",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "ranged",
-          "primary": 8
-        },
-        "target": {
-          "type": "selfOrAlly"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "114",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

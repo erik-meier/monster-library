@@ -6,16 +6,14 @@
   "role": "Controller",
   "organization": "Elite",
   "keywords": [
-    "elemental"
+    "Elemental"
   ],
-  "size": {
-    "value": 3,
-    "letter": "M"
-  },
+  "size": "3",
   "speed": 8,
   "stamina": 120,
   "stability": 2,
   "freeStrike": 6,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": 0,
@@ -28,261 +26,96 @@
   },
   "weaknesses": {},
   "movementTypes": [
-    "climb",
-    "walk"
+    "climb"
   ],
   "items": [
     {
-      "name": "Fickle and Free",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The field can't be restrained, slowed, or knocked prone, and they ignore difficult terrain.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Roots Run Deep",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The field can target any creature touching the ground with their abilities, even if they don't have line of effect to that creature.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Hampering Roots",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 8
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 8",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "8 damage",
+          "tier2": "13 damage; <strong class=\"potency-value\">R&lt;1</strong> prone and can't stand (save ends)",
+          "tier3": "16 damage; <strong class=\"potency-value\">R&lt;2</strong> prone and can't stand (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "8 damage"
-            },
-            {
-              "tier": 2,
-              "display": "13 damage; <strong class=\"potency-value\">R&lt;1</strong> prone and can't stand (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "16 damage; <strong class=\"potency-value\">R&lt;2</strong> prone and can't stand (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>If a target made prone this way is already prone, they are instead restrained (save ends). If the target was also unable to stand, that effect ends when they are no longer restrained this way.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "If a target made prone this way is already prone, they are instead restrained (save ends). If the target was also unable to stand, that effect ends when they are no longer restrained this way."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Convocation of Verdure",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 5",
+      "target": "Self or one elemental",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target gains 15 temporary Stamina that lasts until the start of the field's next turn."
         },
-        "target": {
-          "type": "selfOrAlly",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The target gains <span class=\"heal-value\">15</span> temporary stamina that lasts until the start of the field's next turn.</p>"
-        },
-        "spend": {
-          "text": "Until the end of the encounter, the ground within 1 square  of the target is overgrown with underbrush and vines. Whenever any  enemy makes a strike against the target while within line of effect  of that area, the enemy is pulled 5 squares toward the area after the  strike is resolved. Any enemy who enters the area for the first time in  a round or starts their turn there is knocked prone.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, the ground within 1 square  of the target is overgrown with underbrush and vines. Whenever any  enemy makes a strike against the target while within line of effect  of that area, the enemy is pulled 5 squares toward the area after the  strike is resolved. Any enemy who enters the area for the first time in  a round or starts their turn there is knocked prone."
+        {
+          "cost": "3 Malice",
+          "effect": "Until the end of the encounter, the ground within 1 square of the target is overgrown with underbrush and vines. Whenever any enemy makes a strike against the target while within line of effect of that area, the enemy is pulled 5 squares toward the area after the strike is resolved. Any enemy who enters the area for the first time in a round or starts their turn there is knocked prone."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Rose Thorn Lash",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 1,
-        "keywords": [
-          "magic",
-          "melee"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 3
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "A creature or object within distance deals damage to the field.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The target takes <span class=\"damage-value damage-generic\">6</span> damage, and if they have <strong class=\"potency-value\">A&lt;2</strong>, they are bleeding (save ends).</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "Magic",
+        "Melee"
+      ],
+      "usage": "Triggered action",
+      "distance": "Melee 3",
+      "target": "The triggering creature or object",
+      "trigger": "A creature or object within distance deals damage to the field.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target takes 6 damage, and if they have <strong class=\"potency-value\">A&lt;2</strong>, they are bleeding (save ends)."
         }
-      }
+      ]
     },
     {
-      "name": "Elemental Swap",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Fickle and Free",
+      "effects": [
+        {
+          "effect": "The field can't be restrained, slowed, or knocked prone, and they ignore difficult terrain."
         }
-      }
+      ]
     },
     {
-      "name": "Split",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Roots Run Deep",
+      "effects": [
+        {
+          "effect": "The field can target any creature touching the ground with their abilities, even if they don't have line of effect to that creature."
         }
-      }
-    },
-    {
-      "name": "Convocation of Chaos",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "ranged",
-          "primary": 8
-        },
-        "target": {
-          "type": "selfOrAlly"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "115",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

@@ -1,0 +1,72 @@
+{
+  "id": "shadow-elf-nightstrike",
+  "name": "Shadow Elf Nightstrike",
+  "level": 4,
+  "ev": 6,
+  "role": "Ambusher",
+  "organization": "Minion",
+  "keywords": [
+    "Fey",
+    "Humanoid",
+    "Shadow Elf"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 8,
+  "stability": 0,
+  "freeStrike": 3,
+  "withCaptain": "Gain an edge on strikes",
+  "characteristics": {
+    "might": 1,
+    "agility": 3,
+    "reason": 0,
+    "intuition": 1,
+    "presence": 0
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "climb"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Vault",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 2",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 damage",
+          "tier2": "5 damage",
+          "tier3": "7 damage"
+        },
+        {
+          "name": "Effect",
+          "effect": "The nightstrike shifts to leap over the target and into an unoccupied space adjacent to the target, opposite from the nightstrike's original space."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Of the Umbra",
+      "effects": [
+        {
+          "effect": "The nightstrike ignores concealment created by darkness. While the nightstrike is in direct sunlight, they have damage weakness 3. While the nightstrike has concealment, they have damage immunity 3."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

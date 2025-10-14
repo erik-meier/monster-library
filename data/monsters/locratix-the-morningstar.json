@@ -1,0 +1,142 @@
+{
+  "id": "locratix-the-morningstar",
+  "name": "Locratix The Morningstar",
+  "level": 6,
+  "ev": 32,
+  "role": "Harrier",
+  "organization": "Elite",
+  "keywords": [
+    "Draconian",
+    "Dragon",
+    "Humanoid"
+  ],
+  "size": "1M",
+  "speed": 8,
+  "stamina": 160,
+  "stability": 2,
+  "freeStrike": 7,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 1,
+    "agility": 3,
+    "reason": 1,
+    "intuition": 2,
+    "presence": 2
+  },
+  "immunities": {
+    "acid": 6
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "fly"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Skewer",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "10 damage",
+          "tier2": "15 damage; <strong class=\"potency-value\">M&lt;1</strong> slowed (save ends)",
+          "tier3": "18 damage; <strong class=\"potency-value\">M&lt;2</strong> slowed (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "Locratix deals 6 damage to each creature or object in a 2 x 1 line behind the target."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Acidic Stun",
+      "cost": "2 Malice",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Main action",
+      "distance": "3 x 1 line within 1",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "7 acid damage; <strong class=\"potency-value\">M&lt;1</strong> dazed (save ends)",
+          "tier2": "12 acid damage; <strong class=\"potency-value\">M&lt;2</strong> dazed (save ends)",
+          "tier3": "15 acid damage; <strong class=\"potency-value\">M&lt;3</strong> dazed (save ends)"
+        },
+        {
+          "name": "Effect",
+          "effect": "While dazed this way, a target takes an extra 6 damage from Locratix's abilities."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Takeoff",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Locratix flies up to her speed. Any creature adjacent to the space on the ground she took off from who has <strong class=\"potency-value\">A&lt;2</strong> is knocked prone."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Stay Back!",
+      "keywords": [
+        "Melee"
+      ],
+      "usage": "Triggered action",
+      "distance": "Melee 2",
+      "target": "The triggering creature",
+      "trigger": "A creature within distance moves or is forced moved.",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "7 acid damage; <strong class=\"potency-value\">A&lt;1</strong> the target's speed is 0 (EoT)",
+          "tier2": "12 acid damage; <strong class=\"potency-value\">A&lt;2</strong> the target's speed is 0 (EoT)",
+          "tier3": "15 acid damage; <strong class=\"potency-value\">A&lt;3</strong> the target's speed is 0 (EoT)"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Flighty",
+      "effects": [
+        {
+          "effect": "When Locratix deals rolled damage to an enemy, that enemy can't use Locratix as the trigger for any of their triggered actions until the start of Locratix's next turn."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Absorbing Scales",
+      "effects": [
+        {
+          "effect": "When Locratix takes damage of any type for which she has damage immunity, she has damage immunity 6 against the next strike made against her."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

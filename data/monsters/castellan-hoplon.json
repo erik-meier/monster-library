@@ -6,17 +6,16 @@
   "role": "Defender",
   "organization": "Elite",
   "keywords": [
-    "humanoid",
-    "soulless"
+    "Humanoid",
+    "Soulless",
+    "War Dog"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 260,
-  "stability": 1,
+  "stability": 3,
   "freeStrike": 10,
+  "withCaptain": "",
   "characteristics": {
     "might": 5,
     "agility": 2,
@@ -25,7 +24,7 @@
     "presence": 4
   },
   "immunities": {
-    "all": 3
+    "damage": 3
   },
   "weaknesses": {},
   "movementTypes": [
@@ -33,288 +32,109 @@
   ],
   "items": [
     {
-      "name": "Hold the Line",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Each ally within 3 squares of Hoplon has cover and damage immunity 2.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Last Stand",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The first time in an encounter that Hoplon is reduced to 0 Stamina, he instead has 1 Stamina and gains damage immunity 10 until the end of his next turn. When Hoplon is reduced to 0 Stamina again, each ally within 5 squares of him gains damage immunity 3 and deals an extra <span class=\"damage-value damage-generic\">5</span> damage on strikes, all until the end of the encounter.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Inspiring Strike",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "15 damage",
+          "tier2": "20 damage; push 3",
+          "tier3": "24 damage; push 5"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "15 damage"
-            },
-            {
-              "tier": 2,
-              "display": "20 damage; push 3"
-            },
-            {
-              "tier": 3,
-              "display": "24 damage; push 5"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Two allies within 10 squares of Hoplon each shift up to their speed, then can take the Defend main action or make a free strike.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Two allies within 10 squares of Hoplon each shift up to their speed, then can take the Defend main action or make a free strike."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Summon the Onyx Tower",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 5,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 15
-        },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A 10-square-tall tower made of black stone shimmers into being in an unoccupied space that is 5 squares on a side. The tower has three floors, an entrance in the middle of each side on the ground floor, and a crenelated rooftop. Any war dog inside or adjacent to the tower has damage immunity 2 and regains <span class=\"heal-value\">5</span>  stamina at the start of each of their turns, and war dogs inside the tower can observe through and have line of effect through its walls. This ability can be used only once per encounter.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "5 Malice",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 15",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "A 10-square-tall tower made of black stone shimmers into being in an unoccupied space that is 5 squares on a side. The tower has three floors, an entrance in the middle of each side on the ground floor, and a crenelated rooftop. Any war dog inside or adjacent to the tower has damage immunity 2 and regains 5 Stamina at the start of each of their turns, and war dogs inside the tower can observe through and have line of effect through its walls. This ability can be used only once per encounter."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Shield Warden",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 2,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 3
+      "cost": "2 Malice",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Maneuver",
+      "distance": "3 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "<strong class=\"potency-value\">R&lt;3</strong> taunted (EoT)",
+          "tier2": "<strong class=\"potency-value\">R&lt;4</strong> taunted (EoT)",
+          "tier3": "<strong class=\"potency-value\">R&lt;5</strong> taunted (EoT)"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "<strong class=\"potency-value\">R&lt;3</strong> taunted (EoT)"
-            },
-            {
-              "tier": 2,
-              "display": "<strong class=\"potency-value\">R&lt;4</strong> taunted (EoT)"
-            },
-            {
-              "tier": 3,
-              "display": "<strong class=\"potency-value\">R&lt;5</strong> taunted (EoT)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Until the start of Hoplon's next turn, any enemy ability that includes him as a target takes a bane.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Until the start of Hoplon's next turn, any enemy ability that includes him as a target takes a bane."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Timely Intervention",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [
-          "magic"
-        ],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self",
-          "value": null
-        },
-        "trigger": "An enemy within 10 squares targets an ally with an ability.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Hoplon teleports to an unoccupied space adjacent to the enemy and becomes the new target of the ability. He can then make a free strike against the enemy, and if that enemy has <strong class=\"potency-value\">R&lt;4</strong> they are taunted until the end of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "Magic"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "An enemy within 10 squares targets an ally with an ability.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Hoplon teleports to an unoccupied space adjacent to the enemy and becomes the new target of the ability. He can then make a free strike against the enemy, and if that enemy has <strong class=\"potency-value\">R&lt;4</strong> they are taunted until the end of their next turn."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The war dog activates a Malice feature available to war dogs of level 3 or lower.</p><p><span class=\"reference-text\">Fire for Effect</span></p><p><span class=\"reference-text\">Fodder Run</span></p><p><span class=\"reference-text\">Reconstitute</span></p><p><span class=\"reference-text\">Loyalty Unto Death</span></p><p><span class=\"reference-text\">Alchemical Cloud</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Hold the Line",
+      "effects": [
+        {
+          "effect": "Each ally within 3 squares of Hoplon has cover and damage immunity 2."
         }
-      }
+      ]
     },
     {
-      "name": "Cry Havoc",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 7,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 3
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "5",
-            "characteristics": []
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 psychic damage"
-            },
-            {
-              "tier": 2,
-              "display": "11 psychic damage; <strong class=\"potency-value\">P&lt;4</strong> frightened (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "14 psychic damage; <strong class=\"potency-value\">P&lt;5</strong> frightened (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>Each war dog within distance deals an extra <span class=\"damage-value damage-generic\">15</span> damage with strikes until the end of their next turn. Additionally, they end any effect on them that can be ended by a saving throw or that ends at the end of their turn, then shift up to their speed and can make a free strike.</p><p><strong>Special:</strong> This ability can’t be used by a minion.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Last Stand",
+      "effects": [
+        {
+          "effect": "The first time in an encounter that Hoplon is reduced to 0 Stamina, he instead has 1 Stamina and gains damage immunity 10 until the end of his next turn. When Hoplon is reduced to 0 Stamina again, each ally within 5 squares of him gains damage immunity 3 and deals an extra 5 damage on strikes, all until the end of the encounter."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "316",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

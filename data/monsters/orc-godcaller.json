@@ -6,16 +6,15 @@
   "role": "Support",
   "organization": "Platoon",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Orc"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 6,
   "stamina": 30,
   "stability": 0,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 1,
     "agility": 0,
@@ -30,146 +29,79 @@
   ],
   "items": [
     {
-      "name": "Relentless",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>If the godcaller is reduced to 0 Stamina, they can make a <span class=\"damage-value damage-generic\">3</span> damage free strike before dying. If the target of the free strike is reduced to 0 Stamina, the godcaller is reduced to 1 Stamina instead.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Power Chord",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "melee",
-          "ranged",
-          "strike"
-        ],
-        "distance": {
-          "type": "meleeRanged",
-          "primary": 1,
-          "secondary": 10
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 sonic damage"
-            },
-            {
-              "tier": 2,
-              "display": "7 sonic damage"
-            },
-            {
-              "tier": 3,
-              "display": "9 sonic damage; <strong class=\"potency-value\">P&lt;2</strong> weakened (save ends)"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Melee",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1 or ranged 10",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 sonic damage",
+          "tier2": "7 sonic damage",
+          "tier3": "9 sonic damage; <strong class=\"potency-value\">P&lt;2</strong> weakened (save ends)"
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Cadenza",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One ally",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target moves up to their speed and can use a main action."
         },
-        "target": {
-          "type": "ally",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The target moves up to their speed and can use a main action.</p>"
-        },
-        "spend": {
-          "text": "The godcaller targets a second ally.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> The godcaller targets a second ally."
+        {
+          "cost": "3 Malice",
+          "effect": "The godcaller targets a second ally."
         }
-      }
+      ]
     },
     {
-      "name": "Rallying Ostinato",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 2,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "selfAlly",
-          "value": 3
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target regains <span class=\"heal-value\">15</span>  stamina and ignores difficult terrain until the end of the encounter.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "name": "Rallying Ostinato",
+      "cost": "2 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "Self and three allies",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target regains 15 Stamina and ignores difficult terrain until the end of the encounter."
         }
-      }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Relentless",
+      "effects": [
+        {
+          "effect": "If the godcaller is reduced to 0 Stamina, they can make a free strike before dying. If the target of the free strike is reduced to 0 Stamina, the godcaller is reduced to 1 Stamina instead."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "219",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

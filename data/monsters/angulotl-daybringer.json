@@ -6,16 +6,15 @@
   "role": "",
   "organization": "Leader",
   "keywords": [
-    "humanoid"
+    "Angulotl",
+    "Humanoid"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 80,
   "stability": 1,
   "freeStrike": 4,
+  "withCaptain": "",
   "characteristics": {
     "might": 3,
     "agility": 2,
@@ -28,413 +27,149 @@
   },
   "weaknesses": {},
   "movementTypes": [
-    "walk",
-    "swim",
-    "climb"
+    "climb",
+    "swim"
   ],
   "items": [
     {
-      "name": "Toxiferous",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Whenever an adjacent enemy grabs the daybringer or uses a melee ability against them, that enemy takes <span class=\"damage-value damage-generic\">3</span> poison damage.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Wet",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Angulotls make use of a unique effect called “wet.” While wet, an angulotl doesn’t provoke opportunity attacks by moving. At the same time, any non-angulotl who is wet and ends their turn with none of their movement remaining slips and falls prone. Several angulotl abilities can impose this effect, but a creature in an encounter featuring angulotls can also become wet by entering water, as the Director determines.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Moisturizing End Effect",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>At the end of each of the daybringer’s turns, they can either take <span class=\"damage-value damage-generic\">5</span> damage or end the wet effect on an adjacent creature in order to end one effect on them that can be ended by a saving throw. This damage can’t be reduced in any way.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Acid Grasp",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "7 acid damage; <strong class=\"potency-value\">A&lt;1</strong> dazed (save ends)",
+          "tier2": "10 acid damage; <strong class=\"potency-value\">A&lt;2</strong> dazed (save ends)",
+          "tier3": "13 acid damage; <strong class=\"potency-value\">A&lt;3</strong> dazed (save ends)"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 2
+        {
+          "name": "Effect",
+          "effect": "The next time the target makes a strike against the daybringer, the target takes 4 acid damage after the strike is resolved."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": [
-              "might"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "7 acid damage; <strong class=\"potency-value\">A&lt;1</strong> dazed (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "10 acid damage; <strong class=\"potency-value\">A&lt;2</strong> dazed (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "13 acid damage; <strong class=\"potency-value\">A&lt;3</strong> dazed (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The next time the target makes a strike against the daybringer, the target takes <span class=\"damage-value damage-generic\">4</span> acid damage after the strike is resolved.</p>"
-        },
-        "spend": {
-          "text": "The daybringer jumps up to 3 squares before or after using this ability.",
-          "value": 1,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">1 Malice:</strong> The daybringer jumps up to 3 squares before or after using this ability."
+        {
+          "cost": "1 Malice",
+          "effect": "The daybringer jumps up to 3 squares before or after using this ability."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Sun Lamp",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "self"
-        },
-        "target": {
-          "type": "self"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The daybringer expands their throat to make it resemble the sun until the start of their next turn. During that time, each angulotl who starts their turn within 10 squares of the daybringer regains <span class=\"heal-value\">5</span>  stamina and gains a +3 bonus to speed until the end of their turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "keywords": [
+        "-"
+      ],
+      "usage": "Maneuver",
+      "distance": "Self",
+      "target": "Self",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The daybringer expands their throat to make it resemble the sun until the start of their next turn. During that time, each angulotl who starts their turn within 10 squares of the daybringer regains 5 Stamina and gains a +3 bonus to speed until the end of their turn."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Tongue Slap",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "melee",
-          "primary": 5
+      "keywords": [
+        "Melee"
+      ],
+      "usage": "Triggered action",
+      "distance": "Melee 5",
+      "target": "One creature",
+      "trigger": "The target makes a strike against the daybringer or an ally that isn't a critical hit.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The outcome of the strike's power roll is reduced by one tier."
         },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "The target makes a strike against the daybringer or an ally that isn’t a critical hit.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The outcome of the strike’s power roll is reduced by one tier.</p>"
-        },
-        "spend": {
-          "text": "The target is pulled up to 4 squares after the strike resolves.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The target is pulled up to 4 squares after the strike resolves."
+        {
+          "cost": "2 Malice",
+          "effect": "The target is pulled up to 4 squares after the strike resolves."
         }
-      }
+      ]
     },
     {
+      "type": "feature",
+      "name": "Moisturizing End Effect",
+      "effects": [
+        {
+          "effect": "At the end of each of the daybringer's turns, they can either take 5 damage or end the wet effect on an adjacent creature in order to end one effect on them that can be ended by a saving throw. This damage can't be reduced in any way."
+        }
+      ]
+    },
+    {
+      "type": "ability",
       "name": "New Dawn",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Four <a href=\"/monster/angulotl-pollywogs\" class=\"monster-link\">angulotl pollywogs</a> erupt from the daybringer’s back and waddle into unoccupied spaces within distance.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 1",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "-",
+      "distance": "Ranged 10",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Four **angulotl pollywogs** erupt from the daybringer's back and waddle into unoccupied spaces within distance."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Plague of Frogs",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 8
-        },
-        "target": {
-          "type": "selfAlly",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target can jump up to 4 squares. Each non-minion target can make a free strike at the end of the jump.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 2",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "-",
+      "distance": "8 burst",
+      "target": "Self and each ally in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target can jump up to 4 squares. Each non-minion target can make a free strike at the end of the jump."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "It Is Day",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The encounter map dries up and each enemy and object on it is illuminated until the end of the encounter. An illuminated creature or object can’t hide or become invisible, and any strike made against an illuminated target gains an edge. Additionally, each enemy in the encounter who is wet has that effect end and takes <span class=\"damage-value damage-generic\">6</span> acid damage. Each angulotl in the encounter has a double edge on their next strike.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 3",
+      "keywords": [
+        "-"
+      ],
+      "usage": "-",
+      "distance": "Special",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The encounter map dries up and each enemy and object on it is illuminated until the end of the encounter. An illuminated creature or object can't hide or become invisible, and any strike made against an illuminated target gains an edge. Additionally, each enemy in the encounter who is wet has that effect end and takes 6 acid damage. Each angulotl in the encounter has a double edge on their next strike."
         }
-      }
+      ]
     },
     {
-      "name": "Leapfrog",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, when an angulotl moves through an inactive angulotl’s space, the inactive angulotl can use a free triggered action to jump 3 squares.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Toxiferous",
+      "effects": [
+        {
+          "effect": "Whenever an adjacent enemy grabs the daybringer or uses a melee ability against them, that enemy takes 3 poison damage."
         }
-      }
-    },
-    {
-      "name": "Resonating Croak",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each angulotl in the encounter puffs out their throat and starts loudly droning Any non-angulotl adjacent to an angulotl makes an <strong>Intuition test.</strong></p><p></p><table><tbody><tr><td data-colwidth=\"103\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage; slowed (EoT)</p></td></tr><tr><td data-colwidth=\"103\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">4</span> sonic damage</p></td></tr><tr><td data-colwidth=\"103\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Rainfall",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 3",
-            "characteristics": []
-          },
-          "effects": {
-            "g8BNA1tbnI9d59oQ": {
-              "name": "Wet",
-              "img": null,
-              "type": "applied",
-              "_id": "g8BNA1tbnI9d59oQ",
-              "applied": {
-                "tier1": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.weak",
-                    "characteristic": "none"
-                  }
-                },
-                "tier2": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.average",
-                    "characteristic": ""
-                  }
-                },
-                "tier3": {
-                  "effects": {
-                    "Du8EMyrd7nZQ66Yk": {
-                      "condition": "always",
-                      "end": "encounter",
-                      "properties": []
-                    }
-                  },
-                  "display": "",
-                  "potency": {
-                    "value": "@potency.strong",
-                    "characteristic": ""
-                  }
-                }
-              }
-            }
-          }
-        },
-        "effect": {
-          "text": "<p>An angulotl calls clouds to cover the encounter map and unleash rain until the end of the round. Any creature or object that is exposed to the sky is wet until the end of the encounter.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "38",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

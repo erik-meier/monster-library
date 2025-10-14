@@ -2,7 +2,7 @@
 
 ## Repository Overview
 
-**Steel Cauldron** is a Vue.js web application that serves as a comprehensive monster library for the Draw Steel tabletop roleplaying game. The app allows users to browse, search, and view detailed stat blocks for 238+ monsters.
+**Steel Cauldron** is a Vue.js web application that serves as a comprehensive monster library for the Draw Steel tabletop roleplaying game. The app allows users to browse, search, and view detailed stat blocks for hundreds of monsters.
 
 ### Key Features
 - Browse and search through Draw Steel monsters
@@ -51,13 +51,14 @@ npm run build-data            # Bundle monster data
 npm run preview               # Preview production build
 
 # Code Quality
-npm run lint                  # Run ESLint with auto-fix
+npm run lint                  # Run ESLint
+npm run lint:fix              # Run ESLint with auto-fix
 npm run format               # Format code with Prettier
 npm run type-check           # TypeScript type checking
 
 # Testing
 npm test                     # Run tests in watch mode
-npm run test:run            # Run tests once (CI mode)
+npm run test:run            # Run tests once (CI mode) - prefer this for local validation too
 
 # Data Management
 npm run clone-monsters       # Clone latest monster data
@@ -165,7 +166,7 @@ Each monster JSON file contains:
 4. **Use design system components** - Reference `STYLE_GUIDE.md` for buttons, forms, cards, etc.
 5. Add to router if it's a page component
 6. Include responsive design considerations
-7. **Test against design system** - Ensure consistency with existing components
+7. **Test against design system** - Ensure consistency with existing components and update tests if needed
 
 ### Updating Monster Data
 1. Use `npm run refresh-all` for complete updates

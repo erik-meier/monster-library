@@ -6,16 +6,14 @@
   "role": "Harrier",
   "organization": "Elite",
   "keywords": [
-    "elemental"
+    "Elemental"
   ],
-  "size": {
-    "value": 1,
-    "letter": "S"
-  },
+  "size": "1S",
   "speed": 8,
   "stamina": 100,
   "stability": 0,
   "freeStrike": 5,
+  "withCaptain": "",
   "characteristics": {
     "might": 1,
     "agility": 2,
@@ -28,248 +26,86 @@
   },
   "weaknesses": {},
   "movementTypes": [
-    "walk",
     "fly"
   ],
   "items": [
     {
-      "name": "Fickle and Free",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The essence can't be restrained, slowed, or knocked prone, and they ignore difficult terrain.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Bluster",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "Main action",
+      "distance": "1 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage",
+          "tier2": "5 damage, 4 lightning damage; push 1",
+          "tier3": "5 damage, 7 lightning damage; push 3"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage"
-            },
-            {
-              "tier": 2,
-              "display": "5 damage; 4 lightning damage; push 1"
-            },
-            {
-              "tier": 3,
-              "display": "5 damage; 7 lightning damage; push 3"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The essence shifts up to 3 squares before or after using this ability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The essence shifts up to 3 squares before or after using this ability."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Convocation of Squalls",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "maneuver",
-        "resource": null,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 5",
+      "target": "Self or one elemental",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Until the start of the essence's next turn, the target has lightning immunity 5."
         },
-        "target": {
-          "type": "selfOrAlly",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Note: Targets Self or one Elemental.</p><p>Until the start of the essence’s next turn, the target has light ning immunity 5.</p>"
-        },
-        "spend": {
-          "text": "Until the end of the encounter, a vortex surrounds the tar get in a 3 aura. The area is difficult terrain for enemies. Additionally,  at the end of each of the target’s turns, they can push one creature in  the area up to 5 squares.",
-          "value": 3,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">3 Malice:</strong> Until the end of the encounter, a vortex surrounds the tar get in a 3 aura. The area is difficult terrain for enemies. Additionally,  at the end of each of the target’s turns, they can push one creature in  the area up to 5 squares."
+        {
+          "cost": "3 Malice",
+          "effect": "Until the end of the encounter, a vortex surrounds the target in a 3 aura. The area is difficult terrain for enemies. Additionally, at the end of each of the target's turns, they can push one creature in the area up to 5 squares."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Thunderclap",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 1,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "A creature within distance deals damage to the essence.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The target takes <span class=\"damage-value damage-generic\">5</span> lightning damage.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "1 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Triggered action",
+      "distance": "Ranged 5",
+      "target": "The triggering creature",
+      "trigger": "A creature within distance deals damage to the essence.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target takes 5 lightning damage."
         }
-      }
+      ]
     },
     {
-      "name": "Elemental Swap",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two elementals on the encounter map teleport to swap places, and each has damage immunity 2 until the end of the round.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Fickle and Free",
+      "effects": [
+        {
+          "effect": "The essence can't be restrained, slowed, or knocked prone, and they ignore difficult terrain."
         }
-      }
-    },
-    {
-      "name": "Split",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>An elemental acting this turn cleaves themself into two separate elementals. Each elemental has the same statistics as the original, except that each has half the original’s current Stamina and is one size smaller. Both elementals can then shift up to their speed.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Convocation of Chaos",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "ranged",
-          "primary": 8
-        },
-        "target": {
-          "type": "selfOrAlly"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Note: Targets Self or one Elemental</p><p>Until the end of the encounter, the target has a +5 bonus to speed and a +5 damage bonus to strikes. Additionally, whenever an elemental within the target’s line of effect uses an ability with “Convocation” in the name, the target also gains the effects of that ability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "114",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

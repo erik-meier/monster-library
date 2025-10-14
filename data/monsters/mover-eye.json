@@ -1,0 +1,69 @@
+{
+  "id": "mover-eye",
+  "name": "Mover Eye",
+  "level": 6,
+  "ev": 0,
+  "role": "Controller",
+  "organization": "",
+  "keywords": [
+    "Eyestalk",
+    "Horror",
+    "Overmind"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 30,
+  "stability": 0,
+  "freeStrike": 3,
+  "withCaptain": "",
+  "characteristics": {
+    "might": -1,
+    "agility": 1,
+    "reason": 4,
+    "intuition": 1,
+    "presence": -1
+  },
+  "immunities": {},
+  "weaknesses": {},
+  "movementTypes": [
+    "fly",
+    "hover"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Telekinetic Beam",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 6",
+      "target": "Two creatures or objects",
+      "effects": [
+        {
+          "roll": "2d10 + 4",
+          "tier1": "11 damage; slide 4",
+          "tier2": "17 damage; slide 5",
+          "tier3": "20 damage; slide 6"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Psionic Barrier",
+      "effects": [
+        {
+          "effect": "The mover eye has damage immunity 15. When they use a main action, they lose this immunity until the end of the round."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

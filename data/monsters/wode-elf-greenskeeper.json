@@ -6,17 +6,16 @@
   "role": "Defender",
   "organization": "Platoon",
   "keywords": [
-    "fey",
-    "humanoid"
+    "Fey",
+    "Humanoid",
+    "Wode Elf"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 7,
   "stamina": 40,
   "stability": 0,
   "freeStrike": 3,
+  "withCaptain": "",
   "characteristics": {
     "might": 0,
     "agility": 2,
@@ -31,206 +30,65 @@
   ],
   "items": [
     {
-      "name": "Masking Glamor",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Abilities targeting the greenskeeper that would take a bane from cover or concealment have a double bane instead.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Growing Longsword",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "5 damage",
+          "tier2": "7 damage",
+          "tier3": "9 damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
+        {
+          "name": "Effect",
+          "effect": "The target is taunted until the end of their next turn, and the greenskeeper shifts up to 3 squares."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "5 damage"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage"
-            },
-            {
-              "tier": 3,
-              "display": "9 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The target is taunted until the end of their next turn, and the greenskeeper shifts up to 3 squares</p>"
-        },
-        "spend": {
-          "text": "The distance increases to Melee 5.",
-          "value": 2,
-          "formattedText": "<strong class=\"malice-cost-emphasis\">2 Malice:</strong> The distance increases to Melee 5."
+        {
+          "cost": "2 Malice",
+          "effect": "The distance increases to Melee 5."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Overgrowth",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 3,
-        "keywords": [
-          "area",
-          "ranged"
-        ],
-        "distance": {
-          "type": "cube",
-          "primary": 3,
-          "secondary": 10
-        },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The area is overgrown with heavy brush and brambles until the end of the encounter, providing cover and concealment for the greenskeeper and their allies. The area is difficult terrain for enemies and any enemy who starts their turn in the area takes <span class=\"damage-value damage-generic\">3</span> damage.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "3 Malice",
+      "keywords": [
+        "Area",
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "3 cube within 10",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The area is overgrown with heavy brush and brambles until the end of the encounter, providing cover and concealment for the greenskeeper and their allies. The area is difficult terrain for enemies and any enemy who starts their turn in the area takes 3 damage."
         }
-      }
+      ]
     },
     {
-      "name": "Forest Network",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each wode elf who ends this turn hidden can shift up to their speed while remaining hidden.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Masking Glamor",
+      "effects": [
+        {
+          "effect": "Abilities targeting the greenskeeper that would take a bane from cover or concealment have a double bane instead."
         }
-      }
-    },
-    {
-      "name": "Punishing Regrowth",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, each wode elf gains an edge on abili ties, and their strikes can slide a target up to 2 squares in addition to their usual effects. If a strike already imposes forced movement, this slide happens after that forced movement. A creature force moved by a wode elf’s strike who ends this forced movement in difficult terrain is restrained until the end of their next turn.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Vines Everywhere",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Vines rapidly grow across the entire encounter map. Each enemy in the encounter makes an <strong>Agility test.</strong></p><table><tbody><tr><td data-colwidth=\"93\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">8</span> damage; restrained (save ends)</p></td></tr><tr><td data-colwidth=\"93\"><p>12-16</p></td><td><p>Restrained (EoT)</p></td></tr><tr><td data-colwidth=\"93\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "138",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

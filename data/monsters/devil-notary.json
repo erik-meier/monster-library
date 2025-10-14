@@ -1,0 +1,73 @@
+{
+  "id": "devil-notary",
+  "name": "Devil Notary",
+  "level": 5,
+  "ev": 7,
+  "role": "Hexer",
+  "organization": "Minion",
+  "keywords": [
+    "Devil",
+    "Infernal"
+  ],
+  "size": "1M",
+  "speed": 6,
+  "stamina": 8,
+  "stability": 0,
+  "freeStrike": 3,
+  "withCaptain": "+5 bonus to ranged distance",
+  "characteristics": {
+    "might": 0,
+    "agility": 1,
+    "reason": 3,
+    "intuition": 1,
+    "presence": 2
+  },
+  "immunities": {
+    "fire": 5
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "walk"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Importunity",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Magic",
+        "Ranged",
+        "Strike"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 5",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "3 fire damage",
+          "tier2": "5 fire damage; <strong class=\"potency-value\">R&lt;2</strong> the target takes a bane on their next strike",
+          "tier3": "6 fire damage; <strong class=\"potency-value\">R&lt;3</strong> the target takes a bane on their next strike"
+        },
+        {
+          "name": "Effect",
+          "effect": "One non-minion devil within 5 squares of the notary gains an edge on their next strike."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "True Name",
+      "effects": [
+        {
+          "effect": "If a creature within 10 squares speaks the notary's true name, the notary loses their fire immunity and any nondamaging effects of their signature ability until the end of the encounter."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}

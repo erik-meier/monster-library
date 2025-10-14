@@ -6,16 +6,15 @@
   "role": "Artillery",
   "organization": "Minion",
   "keywords": [
-    "humanoid"
+    "Human",
+    "Humanoid"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 5,
   "stamina": 3,
   "stability": 0,
   "freeStrike": 2,
+  "withCaptain": "+5 bonus to ranged distance",
   "characteristics": {
     "might": 0,
     "agility": 2,
@@ -33,145 +32,39 @@
   ],
   "items": [
     {
-      "name": "Supernatural Insight",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The archer ignores concealment if it’s granted by a supernatural effect.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "With Captain",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>With Captain: +5 bonus to ranged distance</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Crossbow",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "ranged",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "2 damage"
-            },
-            {
-              "tier": 2,
-              "display": "4 damage"
-            },
-            {
-              "tier": 3,
-              "display": "5 damage"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "2 damage",
+          "tier2": "4 damage",
+          "tier3": "5 damage"
         }
-      }
+      ]
     },
     {
-      "name": "Exploit Opening",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A human's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each human acting this turn gains an edge on abilities until the end of their turn, or has a double edge on any ability that targets an enemy affected by a condition.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "type": "feature",
+      "name": "Supernatural Insight",
+      "effects": [
+        {
+          "effect": "The archer ignores concealment if it's granted by a supernatural effect."
         }
-      }
-    },
-    {
-      "name": "Staying Power",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "triggered",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "a human's turn starts",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each non-minion human in the encounter regains Stamina equal to 5 times their level.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "181",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

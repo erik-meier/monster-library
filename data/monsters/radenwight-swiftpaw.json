@@ -6,16 +6,15 @@
   "role": "Harrier",
   "organization": "Minion",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Radenwight"
   ],
-  "size": {
-    "value": 1,
-    "letter": "S"
-  },
+  "size": "1S",
   "speed": 7,
   "stamina": 4,
   "stability": 0,
   "freeStrike": 1,
+  "withCaptain": "Gain an edge on strikes",
   "characteristics": {
     "might": 0,
     "agility": 2,
@@ -26,160 +25,52 @@
   "immunities": {},
   "weaknesses": {},
   "movementTypes": [
-    "walk",
     "climb"
   ],
   "items": [
     {
-      "name": "Rat Race",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "A Radenwight's turn starts.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each radenwight in the encounter shifts up to their speed. If a radenwight ends this shift adjacent to one or more radenwights, they can make a melee free strike against each enemy adjacent to them.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Ready Rodent",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "triggered",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creature",
-          "value": 1
-        },
-        "trigger": "An ally deals damage to the target.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The Swiftpaw makes a free strike against the target.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
       "name": "Rapier Flunge",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
-        },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "1 damage; slide 1; the swiftpaw can shift 1 square"
-            },
-            {
-              "tier": 2,
-              "display": "2 damage; slide 2; the swiftpaw can shift up to 2 squares"
-            },
-            {
-              "tier": 3,
-              "display": "3 damage; slide 3; the swiftpaw can shift up to 3 squares"
-            }
-          ]
-        },
-        "effect": {},
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object per minion",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "1 damage; slide 1, the swiftpaw can shift 1 square",
+          "tier2": "2 damage; slide 2, the swiftpaw shifts up to 2 squares",
+          "tier3": "3 damage; slide 3, the swiftpaw shifts up to 3 squares"
         }
-      }
+      ]
     },
     {
-      "name": "Rally the Rodents",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "A Radenwight's turn starts.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>A radenwight uses music to coordinate living rats, forming a 10 wall of rats scurrying atop one another into unoccupied spaces anywhere on the encounter map. The wall doesn’t block line of effect for radenwights and their allies, but it does for other creatures as the rats coordinate their movements with the radenwights. Each square of the wall has 10 Stamina.</p><p>If the last radenwight in the encounter dies and the wall is still standing, the rats let out a hideous screech as they disperse. Each enemy on the encounter map makes an Intuition test.</p><p></p><table><tbody><tr><td data-colwidth=\"104\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">7</span> sonic damage; the target can’t take a respite activity during their next respite.</p></td></tr><tr><td data-colwidth=\"104\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">5</span> sonic damage.</p></td></tr><tr><td data-colwidth=\"104\"><p>17+</p></td><td><p>No effect.</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "name": "Ready Rodent",
+      "keywords": [
+        "Melee",
+        "Weapon"
+      ],
+      "usage": "Triggered action",
+      "distance": "Melee 1",
+      "target": "One creature",
+      "trigger": "An ally deals damage to the target.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The swiftpaw makes a free strike against the target."
         }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "227",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

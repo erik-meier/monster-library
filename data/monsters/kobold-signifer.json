@@ -6,16 +6,15 @@
   "role": "Support",
   "organization": "Horde",
   "keywords": [
-    "humanoid"
+    "Humanoid",
+    "Kobold"
   ],
-  "size": {
-    "value": 1,
-    "letter": "S"
-  },
+  "size": "1S",
   "speed": 5,
   "stamina": 15,
   "stability": 0,
   "freeStrike": 1,
+  "withCaptain": "",
   "characteristics": {
     "might": 0,
     "agility": 1,
@@ -30,213 +29,73 @@
   ],
   "items": [
     {
-      "name": "Shield? Shield!",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>While adjacent to an ally who also has this trait, the signifer has stability 1, has cover, and grants cover to allies.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
-      "name": "Upholding High Standards",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>Any ally who starts their turn within 5 squares of the signifer gains a +2 bonus to speed and a +2 damage bonus to strikes until the end of their turn. Additionally, if the signifer is killed, any kobold minion can enter their space during the same encounter to retrieve the signum battle standard they carry (no action required) and replace their stat block with the signifer stat block.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Signum",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 2",
+          "tier1": "3 damage",
+          "tier2": "4 damage",
+          "tier3": "5 damage"
         },
-        "target": {
-          "type": "creatureObject",
-          "value": 1
+        {
+          "name": "Effect",
+          "effect": "One ally within 10 squares of the signifer can shift up to their speed if they end that shift adjacent to an ally."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": [
-              "presence"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "3 damage"
-            },
-            {
-              "tier": 2,
-              "display": "4 damage"
-            },
-            {
-              "tier": 3,
-              "display": "5 damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>One ally within 10 squares of the signifer can shift up to their speed if they end that shift adjacent to an ally.</p>"
-        },
-        "spend": {
-          "text": "One additional ally can shift for each 2 Malice spent.",
-          "value": null
+        {
+          "cost": "2+ Malice",
+          "effect": "One additional ally can shift for each 2 Malice spent."
         }
-      }
+      ]
     },
     {
-      "name": "Maniple Tactics",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 3,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Up to 3 kobolds make a free strike, swaps positions with an adjacent kobold, and then that kobold makes a <span class=\"damage-value damage-generic\">1</span> damage free strike</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Set the Initiative",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two kobolds take their turns in a row.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Shield Wall",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 7,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, all kobolds with <strong>Shield? Shield!</strong> Impose an additional bane on incoming strikes and abilities.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
       "name": "Glory to the Legion",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 5,
-        "keywords": [
-          "area"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
-        },
-        "target": {
-          "type": "ally",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 2",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target regains <span class=\"heal-value\">5</span>  stamina</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "5 Malice",
+      "keywords": [
+        "Area"
+      ],
+      "usage": "Maneuver",
+      "distance": "5 burst",
+      "target": "Each ally in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target regains 5 Stamina."
         }
-      }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Shield? Shield!",
+      "effects": [
+        {
+          "effect": "While adjacent to an ally who also has this trait, the signifer has stability 1, has cover, and grants cover to allies."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Upholding High Standards",
+      "effects": [
+        {
+          "effect": "Any ally who starts their turn within 5 squares of the signifer gains a +2 bonus to speed and a +2 damage bonus to strikes until the end of their turn. Additionally, if the signifer is killed, any kobold minion can enter their space during the same encounter to retrieve the signum battle standard they carry (no action required) and replace their stat block with the signifer stat block."
+        }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "193",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

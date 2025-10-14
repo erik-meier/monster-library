@@ -6,16 +6,15 @@
   "role": "",
   "organization": "Leader",
   "keywords": [
-    "undead"
+    "Undead",
+    "Vampire"
   ],
-  "size": {
-    "value": 1,
-    "letter": "M"
-  },
+  "size": "1M",
   "speed": 12,
   "stamina": 200,
   "stability": 3,
   "freeStrike": 7,
+  "withCaptain": "",
   "characteristics": {
     "might": 2,
     "agility": 5,
@@ -29,373 +28,158 @@
   },
   "weaknesses": {},
   "movementTypes": [
-    "walk",
     "climb",
+    "hover",
     "teleport"
   ],
   "items": [
     {
-      "name": "Lord's Bloodthirst",
-      "type": "feature",
-      "system": {
-        "keywords": [],
-        "power": null,
-        "description": {
-          "value": "<p>The vampire has speed 15 and an edge on power rolls while any creature within 20 squares of them is bleeding. Any bleeding creature within 5 squares of the vampire can't hide.</p>",
-          "director": ""
-        }
-      }
-    },
-    {
+      "type": "ability",
       "name": "Crimson Embrace",
-      "type": "ability",
-      "system": {
-        "category": "signature",
-        "type": "main",
-        "resource": null,
-        "keywords": [
-          "melee",
-          "strike",
-          "weapon"
-        ],
-        "distance": {
-          "type": "melee",
-          "primary": 1
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Melee",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Melee 1",
+      "target": "One creature",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "13 corruption damage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)",
+          "tier2": "21 corruption damage; <strong class=\"potency-value\">M&lt;4</strong> bleeding (save ends)",
+          "tier3": "24 corruption damage; <strong class=\"potency-value\">M&lt;5</strong> bleeding (save ends)"
         },
-        "target": {
-          "type": "creature",
-          "value": 1
+        {
+          "name": "Effect",
+          "effect": "The vampire regains Stamina equal to half the damage dealt, and can end one effect on them that can be ended by a saving throw."
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "13 corruption damage; <strong class=\"potency-value\">M&lt;3</strong> bleeding (save ends)"
-            },
-            {
-              "tier": 2,
-              "display": "21 corruption damage; <strong class=\"potency-value\">M&lt;4</strong> bleeding (save ends)"
-            },
-            {
-              "tier": 3,
-              "display": "24 corruption damage; <strong class=\"potency-value\">M&lt;5</strong> bleeding (save ends)"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The vampire regains Stamina equal to half the damage dealt, and can end one effect on them that can be ended by a saving throw.</p>"
-        },
-        "spend": {
-          "text": "The vampire shifts 3 after striking the last target, and can  target one additional creature for every 2 malice spent.",
-          "value": null
+        {
+          "cost": "2+ Malice",
+          "effect": "The vampire shifts 3 after striking the last target, and can target one additional creature for every 2 malice spent."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Arise, My Children",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "maneuver",
-        "resource": 2,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 10
-        },
-        "target": {
-          "type": "special",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Two <a href=\"/monster/blood-starved-vampires\" class=\"monster-link\">blood-starved vampires</a> appear in unoccupied spaces within distance.</p><p></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "2 Malice",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "Special",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Two blood-starved vampires appear in unoccupied spaces within distance."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Redirected Charm",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "freeTriggered",
-        "resource": 3,
-        "keywords": [
-          "magic",
-          "ranged"
-        ],
-        "distance": {
-          "type": "ranged",
-          "primary": 5
-        },
-        "target": {
-          "type": "enemy",
-          "value": 1
-        },
-        "trigger": "A creature makes a strike against the vampire.",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The target becomes the new target of the strike.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "cost": "3 Malice",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "Free triggered action",
+      "distance": "Ranged 5",
+      "target": "One enemy",
+      "trigger": "A creature makes a strike against the vampire.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The target becomes the new target of the strike."
         }
-      }
+      ]
     },
     {
+      "type": "feature",
+      "name": "Lord's Bloodthirst",
+      "effects": [
+        {
+          "effect": "The vampire has speed 15 and an edge on power rolls while any creature within 20 squares of them is bleeding. Any bleeding creature within 5 squares of the vampire can't hide."
+        }
+      ]
+    },
+    {
+      "type": "ability",
       "name": "Let Us Feast!",
-      "type": "ability",
-      "system": {
-        "category": "villain",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "ranged"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 20
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target who has <strong class=\"potency-value\">P&lt;4</strong> is now bleeding (save ends).</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+      "ability_type": "Villain Action 1",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "-",
+      "distance": "20 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target who has <strong class=\"potency-value\">P&lt;4</strong> is now bleeding (save ends)."
         }
-      }
+      ]
     },
     {
+      "type": "ability",
       "name": "Red Mist Rising",
-      "type": "ability",
-      "system": {
-        "category": "villain",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 5
+      "ability_type": "Villain Action 2",
+      "keywords": [
+        "Area",
+        "Magic"
+      ],
+      "usage": "-",
+      "distance": "5 burst",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 5",
+          "tier1": "2 damage; <strong class=\"potency-value\">M&lt;3</strong> 6 corruption damage",
+          "tier2": "7 damage; <strong class=\"potency-value\">M&lt;4</strong> 6 corruption damage",
+          "tier3": "10 damage; <strong class=\"potency-value\">M&lt;5</strong> 6 corruption damage"
         },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": [
-              "agility"
-            ]
-          },
-          "tiers": [
-            {
-              "tier": 1,
-              "display": "2 damage; 6 corruption damage"
-            },
-            {
-              "tier": 2,
-              "display": "7 damage; 6 corruption damage"
-            },
-            {
-              "tier": 3,
-              "display": "10 damage; 6 corruption damage"
-            }
-          ]
-        },
-        "effect": {
-          "text": "<p>The vampire turns to mist, filling the area. Until the end of the round, the vampire can't move or be targeted by abilities, but they can use Crimson Embrace against a target in the area. The vampire reforms in an unoccupied space in the area at the end of the round.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "The vampire turns to mist, filling the area. Until the end of the round, the vampire can't move or be targeted by abilities, but they can use Crimson Embrace against a target in the area. The vampire reforms in an unoccupied space in the area at the end of the round."
         }
-      }
+      ]
     },
     {
-      "name": "Prior Malice Features",
       "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>The undead activates a Malice feature available to undead of level 3 or lower.</p><p><span class=\"reference-text\">Dread March</span></p><p><span class=\"reference-text\">Paranormal Fling</span></p><p><span class=\"reference-text\">Ravenous Horde</span></p><p><span class=\"reference-text\">The Grasping, the Hungry</span></p><p><span class=\"reference-text\">Blood Hunger</span></p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
-      "name": "Necrotic Rupture",
-      "type": "ability",
-      "system": {
-        "category": "heroic",
-        "type": "none",
-        "resource": 5,
-        "keywords": [],
-        "distance": {
-          "type": "special"
-        },
-        "target": {
-          "type": "special"
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Until the end of the round, whenever an undead is reduced to 0 Stamina, they deal <span class=\"damage-value damage-generic\">8</span> corruption damage to each enemy within 3 squares of them</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
-    },
-    {
       "name": "Sacrifice",
-      "type": "ability",
-      "system": {
-        "category": "villain",
-        "type": "villain",
-        "resource": null,
-        "keywords": [],
-        "distance": {
-          "type": "ranged",
-          "primary": 20
+      "ability_type": "Villain Action 3",
+      "keywords": [
+        "Magic",
+        "Ranged"
+      ],
+      "usage": "-",
+      "distance": "Ranged 20",
+      "target": "Each chosen ally",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Each target is marked for sacrifice. At the end of the round, each target who isn't dead or destroyed takes 50 corruption damage. The vampire then uses the following ability."
         },
-        "target": {
-          "type": "ally",
-          "value": null
+        {
+          "effect": "**Wave of Blood:**\n\n| **Area, Magic** |                         **-** |\n| --------------- | ----------------------------: |\n| **📏 20 burst** | **🎯 Each enemy in the area** |"
         },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target is marked for sacrifice. At the end of the round, each target who isn’t dead or destroyed takes <span class=\"damage-value damage-generic\">50</span> corruption damage. The vampire then uses the <strong>Wave of Blood </strong>ability.</p>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
+        {
+          "name": "Effect",
+          "effect": "Each target makes a **Might test**. This ability deals an extra 5 damage for each creature killed by the Sacrifice villain action.",
+          "tier1": "11 corruption damage",
+          "tier2": "8 corruption damage",
+          "tier3": "2 corruption damage"
         }
-      }
-    },
-    {
-      "name": "Wave of Blood",
-      "type": "ability",
-      "system": {
-        "category": "",
-        "type": "villain",
-        "resource": null,
-        "keywords": [
-          "area",
-          "magic"
-        ],
-        "distance": {
-          "type": "burst",
-          "primary": 20
-        },
-        "target": {
-          "type": "enemy",
-          "value": null
-        },
-        "trigger": "",
-        "power": {
-          "roll": {
-            "formula": "2d10 + 5",
-            "characteristics": []
-          },
-          "effects": {}
-        },
-        "effect": {
-          "text": "<p>Each target makes a <strong>Might test</strong>. This ability deals an extra <span class=\"damage-value damage-generic\">5</span> damage for each creature killed by the Sacrifice villain action.</p><table><tbody><tr><td data-colwidth=\"101\"><p>11 or less</p></td><td><p><span class=\"damage-value damage-generic\">11</span> corruption damage</p></td></tr><tr><td data-colwidth=\"101\"><p>12-16</p></td><td><p><span class=\"damage-value damage-generic\">8</span> corruption damage</p></td></tr><tr><td data-colwidth=\"101\"><p>17+</p></td><td><p><span class=\"damage-value damage-generic\">2</span> corruption damage</p></td></tr></tbody></table>"
-        },
-        "spend": {
-          "text": "",
-          "value": null
-        }
-      }
+      ]
     }
   ],
   "source": {
     "book": "Monsters",
-    "page": "272",
+    "page": "",
     "license": "Draw Steel Creator License"
   }
 }

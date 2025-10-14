@@ -1,0 +1,141 @@
+{
+  "id": "voiceless-talker-artillerist",
+  "name": "Voiceless Talker Artillerist",
+  "level": 6,
+  "ev": 32,
+  "role": "Artillery",
+  "organization": "Elite",
+  "keywords": [
+    "Horror",
+    "Voiceless Talker"
+  ],
+  "size": "1M",
+  "speed": 5,
+  "stamina": 140,
+  "stability": 2,
+  "freeStrike": 7,
+  "withCaptain": "",
+  "characteristics": {
+    "might": 0,
+    "agility": 3,
+    "reason": 3,
+    "intuition": 2,
+    "presence": 1
+  },
+  "immunities": {
+    "psychic": 6
+  },
+  "weaknesses": {},
+  "movementTypes": [
+    "hover",
+    "teleport"
+  ],
+  "items": [
+    {
+      "type": "ability",
+      "name": "Psionic Rifle Burst",
+      "ability_type": "Signature Ability",
+      "keywords": [
+        "Psionic",
+        "Ranged",
+        "Strike",
+        "Weapon"
+      ],
+      "usage": "Main action",
+      "distance": "Ranged 10",
+      "target": "One creature or object",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "11 damage",
+          "tier2": "19 damage; the strike spreads 1 square",
+          "tier3": "22 damage; the strike spreads 2 squares"
+        },
+        {
+          "name": "Effect",
+          "effect": "The strike's spread is the distance it expands from a target to nearby enemies. Each enemy within that distance takes 3 damage."
+        },
+        {
+          "cost": "2 Malice",
+          "effect": "Each enemy within the strike spread takes an extra 3 damage."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Mind Jolt",
+      "keywords": [
+        "Area",
+        "Psionic"
+      ],
+      "usage": "Main action",
+      "distance": "10 x 1 line within 10",
+      "target": "Each enemy in the area",
+      "effects": [
+        {
+          "roll": "2d10 + 3",
+          "tier1": "6 lightning damage",
+          "tier2": "10 lightning damage; <strong class=\"potency-value\">I&lt;2</strong> slowed (save ends)",
+          "tier3": "13 lightning damage; <strong class=\"potency-value\">I&lt;3</strong> slowed (save ends)"
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "In Our Sights",
+      "keywords": [
+        "Ranged"
+      ],
+      "usage": "Maneuver",
+      "distance": "Ranged 10",
+      "target": "One creature",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "Until the start of the artillerist's next turn, the next psionic ability used against the target automatically treats its initial power roll as a 17. The creature using the ability can still roll to determine if they score a critical hit."
+        }
+      ]
+    },
+    {
+      "type": "ability",
+      "name": "Tactical Reposition",
+      "cost": "1 Malice",
+      "keywords": [
+        "-"
+      ],
+      "usage": "Triggered action",
+      "distance": "Self",
+      "target": "Self",
+      "trigger": "The artillerist takes damage.",
+      "effects": [
+        {
+          "name": "Effect",
+          "effect": "The artillerist can teleport up to 5 squares and ignores any effects associated with the damage."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Psionic Conductor",
+      "effects": [
+        {
+          "effect": "Whenever a non-minion voiceless talker within 5 squares of the artillerist uses a psionic ability, they can do so as if they were in the artillerist's space."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Locked On",
+      "effects": [
+        {
+          "effect": "The artillerist ignores invisibility, cover, and concealment. A creature can't hide from the artillerist while the artillerist has line of effect to the."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "book": "Monsters",
+    "page": "",
+    "license": "Draw Steel Creator License"
+  }
+}
