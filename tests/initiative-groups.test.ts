@@ -225,7 +225,10 @@ describe('Initiative Groups', () => {
       store.moveMonsterToGroup('monster-2', groupId)
       
       const totalEV = store.getGroupTotalEV(groupId)
-      expect(totalEV).toBe(5) // 1 + 4
+      // Monster-1: Minion with EV 1, count 1 = (1/4) * 1 = 0.25
+      // Monster-2: Solo with EV 4, count 1 = 4 * 1 = 4
+      // Total: 0.25 + 4 = 4.25
+      expect(totalEV).toBe(4.25)
     })
 
     it('should calculate group monster count', () => {
