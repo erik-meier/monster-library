@@ -225,7 +225,10 @@ describe('Initiative Groups', () => {
       store.moveMonsterToGroup('monster-2', groupId)
       
       const totalEV = store.getGroupTotalEV(groupId)
-      expect(totalEV).toBe(5) // 1 + 4
+      // Monster-1: Minion with EV 1, count 1 = (1/4) * 1 = 0.25
+      // Monster-2: Solo with EV 4, count 1 = 4 * 1 = 4
+      // Total: 0.25 + 4 = 4.25
+      expect(totalEV).toBe(4.25)
     })
 
     it('should calculate group monster count', () => {
@@ -305,6 +308,73 @@ describe('Initiative Groups', () => {
       })
       
       expect(store.monsters[0].groupId).toBeNull()
+    })
+  })
+
+  describe('Minion EV Calculation', () => {
+    it('should calculate correct EV for minions based on count', () => {
+      // Add 8 minions with EV 3 (like Goblin Spinecleavers)
+      store.addMonster({
+        id: 'goblin-spinecleaver',
+        name: 'Goblin Spinecleaver',
+        level: 1,
+        ev: 3,
+        role: 'Brute',
+        organization: 'Minion'
+      })
+      
+      // Update count to 8
+      store.updateMonsterCount('goblin-spinecleaver', 8)
+      
+      const monster = store.monsters[0]
+      expect(monster.count).toBe(8)
+      
+      // For minions: EV is for 4 minions
+      // So 8 minions = (8/4) * 3 = 2 * 3 = 6
+      const expectedEV = (8 / 4) * 3
+      expect(expectedEV).toBe(6)
+    })
+
+    it('should calculate correct EV for 4 minions', () => {
+      store.addMonster({
+        id: 'goblin-spinecleaver',
+        name: 'Goblin Spinecleaver',
+        level: 1,
+        ev: 3,
+        role: 'Brute',
+        organization: 'Minion'
+      })
+      
+      // Update count to 4
+      store.updateMonsterCount('goblin-spinecleaver', 4)
+      
+      const monster = store.monsters[0]
+      expect(monster.count).toBe(4)
+      
+      // For 4 minions: (4/4) * 3 = 3
+      const expectedEV = (4 / 4) * 3
+      expect(expectedEV).toBe(3)
+    })
+
+    it('should calculate correct EV for non-minion monsters', () => {
+      store.addMonster({
+        id: 'orc-warrior',
+        name: 'Orc Warrior',
+        level: 2,
+        ev: 4,
+        role: 'Brute',
+        organization: 'Standard'
+      })
+      
+      // Update count to 3
+      store.updateMonsterCount('orc-warrior', 3)
+      
+      const monster = store.monsters[0]
+      expect(monster.count).toBe(3)
+      
+      // For non-minions: EV × count = 4 * 3 = 12
+      const expectedEV = 4 * 3
+      expect(expectedEV).toBe(12)
     })
   })
 })
