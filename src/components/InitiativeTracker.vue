@@ -70,7 +70,7 @@
             </div>
             <div class="monster-stats-row">
               <span class="stat">Level {{ monster.level }} {{ monster.organization }} {{ monster.role }}</span>
-              <span class="stat">EV {{ monster.ev }}</span>
+              <span class="stat">EV {{ getDisplayEV(monster) }}</span>
             </div>
           </div>
 
@@ -132,6 +132,17 @@ const ungroupedMonsters = computed(() => {
 // Helper functions for ungrouped monster operations
 const isMinion = (monster: EncounterMonster) => {
   return monster.organization?.toLowerCase() === 'minion'
+}
+
+// Calculate display EV for a monster based on its count
+// For minions, EV represents 4 minions, so we need to adjust for the actual count
+const getDisplayEV = (monster: EncounterMonster) => {
+  if (isMinion(monster)) {
+    // For minions: EV is for 4 minions, so effective EV = (count / 4) * base_ev
+    return Math.round(((monster.count / 4) * monster.ev) * 10) / 10
+  }
+  // For non-minions: EV × count
+  return Math.round((monster.ev * monster.count) * 10) / 10
 }
 
 const isSplittable = (monster: EncounterMonster) => {
