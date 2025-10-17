@@ -57,7 +57,8 @@
 
         <div class="monster-info">
           <div class="monster-header">
-            <router-link :to="`/monster/${monster.id}`" class="monster-name monster-link" @click="handleMonsterLinkClick">
+            <router-link :to="`/monster/${getBaseId(monster.id)}`" class="monster-name monster-link"
+              @click="handleMonsterLinkClick">
               {{ monster.name }}
             </router-link>
             <label v-if="canBeCaptain(monster)" class="captain-checkbox">
@@ -158,6 +159,11 @@ const totalMonsterCount = computed(() => {
 // Helper functions for captain logic
 const isMinion = (monster: EncounterMonster) => {
   return monster.organization?.toLowerCase() === 'minion'
+}
+
+// Extract base monster ID by removing timestamp suffixes (e.g., "monster-id_1234567" -> "monster-id")
+const getBaseId = (monsterId: string) => {
+  return monsterId.split('_')[0]
 }
 
 // Calculate display EV for a monster based on its count
