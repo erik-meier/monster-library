@@ -65,7 +65,10 @@
 
           <div class="monster-content">
             <div class="monster-name-row">
-              <span class="monster-name">{{ monster.name }}</span>
+              <router-link :to="`/monster/${monster.id}`" class="monster-name monster-link"
+                @click="handleMonsterLinkClick">
+                {{ monster.name }}
+              </router-link>
               <span class="monster-count-badge">×{{ monster.count }}</span>
             </div>
             <div class="monster-stats-row">
@@ -298,6 +301,14 @@ const handleUngroupedDrop = (event: DragEvent) => {
 const removeUngroupedMonster = (monster: EncounterMonster) => {
   encounterStore.removeMonster(monster.id)
 }
+
+// Handle monster link clicks - auto-save encounter before navigating
+const handleMonsterLinkClick = () => {
+  // Auto-save the encounter to prevent restore dialog when returning
+  if (encounterStore.monsters.length > 0) {
+    encounterStore.autoSaveEncounter()
+  }
+}
 </script>
 
 <style scoped>
@@ -456,6 +467,23 @@ const removeUngroupedMonster = (monster: EncounterMonster) => {
   text-overflow: ellipsis;
   white-space: nowrap;
   flex: 1;
+}
+
+.monster-link {
+  color: var(--color-primary-600);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.monster-link:hover {
+  color: var(--color-primary-700);
+  text-decoration: underline;
+}
+
+.monster-link:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .monster-count-badge {
