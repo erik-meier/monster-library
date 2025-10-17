@@ -57,7 +57,10 @@
 
         <div class="monster-info">
           <div class="monster-header">
-            <span class="monster-name">{{ monster.name }}</span>
+            <router-link :to="`/monster/${getBaseId(monster.id)}`" class="monster-name monster-link"
+              @click="handleMonsterLinkClick">
+              {{ monster.name }}
+            </router-link>
             <label v-if="canBeCaptain(monster)" class="captain-checkbox">
               <input type="checkbox" :checked="isCaptain(monster)" @change="toggleCaptain(monster)" @click.stop />
               <span class="captain-label">Captain</span>
@@ -65,7 +68,7 @@
           </div>
           <div class="monster-details">
             <span class="detail-badge">Level {{ monster.level }} {{ monster.organization }} {{ monster.role }}</span>
-            <span class="detail-badge">EV {{ monster.ev }}</span>
+            <span class="detail-badge">EV {{ getDisplayEV(monster) }}</span>
           </div>
         </div>
 
@@ -158,6 +161,22 @@ const isMinion = (monster: EncounterMonster) => {
   return monster.organization?.toLowerCase() === 'minion'
 }
 
+// Extract base monster ID by removing timestamp suffixes (e.g., "monster-id_1234567" -> "monster-id")
+const getBaseId = (monsterId: string) => {
+  return monsterId.split('_')[0]
+}
+
+// Calculate display EV for a monster based on its count
+// For minions, EV represents 4 minions, so we need to adjust for the actual count
+const getDisplayEV = (monster: EncounterMonster) => {
+  if (isMinion(monster)) {
+    // For minions: EV is for 4 minions, so effective EV = (count / 4) * base_ev
+    return Math.round(((monster.count / 4) * monster.ev) * 10) / 10
+  }
+  // For non-minions: EV × count
+  return Math.round((monster.ev * monster.count) * 10) / 10
+}
+
 const hasMinionsInGroup = computed(() => {
   return monstersInGroup.value.some(m => isMinion(m))
 })
@@ -176,6 +195,14 @@ const toggleCaptain = (monster: EncounterMonster) => {
   const storeMonster = encounterStore.monsters.find(m => m.id === monster.id)
   if (storeMonster) {
     storeMonster.isCaptain = !storeMonster.isCaptain
+  }
+}
+
+// Handle monster link clicks - auto-save encounter before navigating
+const handleMonsterLinkClick = () => {
+  // Auto-save the encounter to prevent restore dialog when returning
+  if (encounterStore.monsters.length > 0) {
+    encounterStore.autoSaveEncounter()
   }
 }
 
@@ -608,6 +635,23 @@ const isSplittable = (monster: EncounterMonster) => {
   text-overflow: ellipsis;
   white-space: nowrap;
   flex: 1;
+}
+
+.monster-link {
+  color: var(--color-primary-600);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.monster-link:hover {
+  color: var(--color-primary-700);
+  text-decoration: underline;
+}
+
+.monster-link:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .captain-checkbox {

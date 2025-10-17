@@ -65,12 +65,15 @@
 
           <div class="monster-content">
             <div class="monster-name-row">
-              <span class="monster-name">{{ monster.name }}</span>
+              <router-link :to="`/monster/${monster.id}`" class="monster-name monster-link"
+                @click="handleMonsterLinkClick">
+                {{ monster.name }}
+              </router-link>
               <span class="monster-count-badge">×{{ monster.count }}</span>
             </div>
             <div class="monster-stats-row">
               <span class="stat">Level {{ monster.level }} {{ monster.organization }} {{ monster.role }}</span>
-              <span class="stat">EV {{ monster.ev }}</span>
+              <span class="stat">EV {{ getDisplayEV(monster) }}</span>
             </div>
           </div>
 
@@ -132,6 +135,17 @@ const ungroupedMonsters = computed(() => {
 // Helper functions for ungrouped monster operations
 const isMinion = (monster: EncounterMonster) => {
   return monster.organization?.toLowerCase() === 'minion'
+}
+
+// Calculate display EV for a monster based on its count
+// For minions, EV represents 4 minions, so we need to adjust for the actual count
+const getDisplayEV = (monster: EncounterMonster) => {
+  if (isMinion(monster)) {
+    // For minions: EV is for 4 minions, so effective EV = (count / 4) * base_ev
+    return Math.round(((monster.count / 4) * monster.ev) * 10) / 10
+  }
+  // For non-minions: EV × count
+  return Math.round((monster.ev * monster.count) * 10) / 10
 }
 
 const isSplittable = (monster: EncounterMonster) => {
@@ -286,6 +300,14 @@ const handleUngroupedDrop = (event: DragEvent) => {
 
 const removeUngroupedMonster = (monster: EncounterMonster) => {
   encounterStore.removeMonster(monster.id)
+}
+
+// Handle monster link clicks - auto-save encounter before navigating
+const handleMonsterLinkClick = () => {
+  // Auto-save the encounter to prevent restore dialog when returning
+  if (encounterStore.monsters.length > 0) {
+    encounterStore.autoSaveEncounter()
+  }
 }
 </script>
 
@@ -445,6 +467,23 @@ const removeUngroupedMonster = (monster: EncounterMonster) => {
   text-overflow: ellipsis;
   white-space: nowrap;
   flex: 1;
+}
+
+.monster-link {
+  color: var(--color-primary-600);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.monster-link:hover {
+  color: var(--color-primary-700);
+  text-decoration: underline;
+}
+
+.monster-link:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .monster-count-badge {

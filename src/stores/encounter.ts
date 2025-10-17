@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import type { PartyConfiguration } from '@/utils/encounterBalance'
+import { calculateMonsterCost } from '@/utils/encounterBalance'
 
 export interface EncounterMonster {
   id: string
@@ -88,7 +89,7 @@ export const useEncounterStore = defineStore('encounter', {
 
   getters: {
     totalEV: (state) => {
-      return state.monsters.reduce((sum, monster) => sum + (monster.ev * monster.count), 0)
+      return state.monsters.reduce((sum, monster) => sum + calculateMonsterCost(monster), 0)
     },
     
     totalMonsters: (state) => {
@@ -132,7 +133,7 @@ export const useEncounterStore = defineStore('encounter', {
 
     getGroupTotalEV: (state) => (groupId: string) => {
       const monsters = state.monsters.filter(m => m.groupId === groupId)
-      return monsters.reduce((sum, monster) => sum + (monster.ev * monster.count), 0)
+      return monsters.reduce((sum, monster) => sum + calculateMonsterCost(monster), 0)
     },
 
     getGroupMonsterCount: (state) => (groupId: string) => {

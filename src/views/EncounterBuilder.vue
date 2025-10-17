@@ -65,7 +65,10 @@
             <div v-else class="malice-list">
               <div v-for="malice in encounterStore.maliceFeatures" :key="malice.id" class="malice-entry">
                 <div class="malice-info">
-                  <h3 class="malice-name">{{ malice.name }}</h3>
+                  <router-link :to="`/malice/${malice.id}`" class="malice-name malice-link"
+                    @click="handleMaliceLinkClick">
+                    {{ malice.name }}
+                  </router-link>
                   <div class="malice-stats">
                     <span class="stat-badge">Level {{ malice.level }}</span>
                   </div>
@@ -462,6 +465,14 @@ function removeMalice(id: string) {
   updateCollapsibleHeights()
 }
 
+// Handle malice link clicks - auto-save encounter before navigating
+function handleMaliceLinkClick() {
+  // Auto-save the encounter to prevent restore dialog when returning
+  if (encounterStore.monsters.length > 0) {
+    encounterStore.autoSaveEncounter()
+  }
+}
+
 // Encounter management handlers
 function handleEncounterSaved(encounterId: string) {
   console.log('Encounter saved:', encounterId)
@@ -829,6 +840,23 @@ onUnmounted(() => {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
   color: var(--color-neutral-900);
+}
+
+.malice-link {
+  color: var(--color-primary-600);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.malice-link:hover {
+  color: var(--color-primary-700);
+  text-decoration: underline;
+}
+
+.malice-link:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .malice-stats {
