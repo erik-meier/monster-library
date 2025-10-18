@@ -198,12 +198,11 @@ const toggleCaptain = (monster: EncounterMonster) => {
   }
 }
 
-// Handle monster link clicks - auto-save encounter before navigating
+// Handle monster link clicks - clear auto-save to prevent restore dialog when returning
 const handleMonsterLinkClick = () => {
-  // Auto-save the encounter to prevent restore dialog when returning
-  if (encounterStore.monsters.length > 0) {
-    encounterStore.autoSaveEncounter()
-  }
+  // Clear any existing auto-save since we're just viewing a monster temporarily
+  // This prevents the restore dialog when returning to the encounter builder
+  encounterStore.clearAutoSave()
 }
 
 // Watch for changes that affect height

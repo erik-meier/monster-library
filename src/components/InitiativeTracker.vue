@@ -65,7 +65,7 @@
 
           <div class="monster-content">
             <div class="monster-name-row">
-              <router-link :to="`/monster/${monster.id}`" class="monster-name monster-link"
+              <router-link :to="`/monster/${getBaseId(monster.id)}`" class="monster-name monster-link"
                 @click="handleMonsterLinkClick">
                 {{ monster.name }}
               </router-link>
@@ -135,6 +135,11 @@ const ungroupedMonsters = computed(() => {
 // Helper functions for ungrouped monster operations
 const isMinion = (monster: EncounterMonster) => {
   return monster.organization?.toLowerCase() === 'minion'
+}
+
+// Extract base monster ID by removing timestamp suffixes (e.g., "monster-id_1234567" -> "monster-id")
+const getBaseId = (monsterId: string) => {
+  return monsterId.split('_')[0]
 }
 
 // Calculate display EV for a monster based on its count
@@ -302,12 +307,11 @@ const removeUngroupedMonster = (monster: EncounterMonster) => {
   encounterStore.removeMonster(monster.id)
 }
 
-// Handle monster link clicks - auto-save encounter before navigating
+// Handle monster link clicks - clear auto-save to prevent restore dialog when returning
 const handleMonsterLinkClick = () => {
-  // Auto-save the encounter to prevent restore dialog when returning
-  if (encounterStore.monsters.length > 0) {
-    encounterStore.autoSaveEncounter()
-  }
+  // Clear any existing auto-save since we're just viewing a monster temporarily
+  // This prevents the restore dialog when returning to the encounter builder
+  encounterStore.clearAutoSave()
 }
 </script>
 

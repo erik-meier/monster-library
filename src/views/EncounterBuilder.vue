@@ -465,12 +465,11 @@ function removeMalice(id: string) {
   updateCollapsibleHeights()
 }
 
-// Handle malice link clicks - auto-save encounter before navigating
+// Handle malice link clicks - clear auto-save to prevent restore dialog when returning
 function handleMaliceLinkClick() {
-  // Auto-save the encounter to prevent restore dialog when returning
-  if (encounterStore.monsters.length > 0) {
-    encounterStore.autoSaveEncounter()
-  }
+  // Clear any existing auto-save since we're just viewing a malice feature temporarily
+  // This prevents the restore dialog when returning to the encounter builder
+  encounterStore.clearAutoSave()
 }
 
 // Encounter management handlers
